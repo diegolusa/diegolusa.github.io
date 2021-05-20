@@ -1,0 +1,662 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.1.1">
+    
+    
+      
+        <title>Linguagens de Programação - Diego A. Lusa</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.9299cb39.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ef6f36e2.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7C&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:""}</style>
+      
+    
+    
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="black" data-md-color-accent="">
+  
+    
+    <script>function __prefix(e){return new URL("../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+      <script>var palette=__get("__palette");if(null!==palette&&"object"==typeof palette.color)for(var key in palette.color)document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#linguagens-de-maquina" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Diego A. Lusa" class="md-header__button md-logo" aria-label="Diego A. Lusa" data-md-component="logo">
+      
+  <img src="../../img/cpp/foto.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Diego A. Lusa
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Linguagens de Programação
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="black" data-md-color-accent="" type="radio" name="__palette" id="__palette_1">
+          <label class="md-header__button md-icon" title="Mudar para modo escuro" for="__palette_2" hidden>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M7 10a2 2 0 0 1 2 2 2 2 0 0 1-2 2 2 2 0 0 1-2-2 2 2 0 0 1 2-2m10-3a5 5 0 0 1 5 5 5 5 0 0 1-5 5H7a5 5 0 0 1-5-5 5 5 0 0 1 5-5h10M7 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3h10a3 3 0 0 0 3-3 3 3 0 0 0-3-3H7z"/></svg>
+          </label>
+        
+          
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="" type="radio" name="__palette" id="__palette_2">
+          <label class="md-header__button md-icon" title="Mudar para modo claro" for="__palette_1" hidden>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3z"/></svg>
+          </label>
+        
+      </form>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Diego A. Lusa" class="md-nav__button md-logo" aria-label="Diego A. Lusa" data-md-component="logo">
+      
+  <img src="../../img/cpp/foto.png" alt="logo">
+
+    </a>
+    Diego A. Lusa
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
+      
+      <label class="md-nav__link" for="__nav_2">
+        Programação
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Programação" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Programação
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Linguagens de Programação
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Linguagens de Programação
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#linguagens-de-maquina" class="md-nav__link">
+    Linguagens de Máquina
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#linguagem-assembly" class="md-nav__link">
+    Linguagem Assembly
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#linguagens-de-alto-nvel" class="md-nav__link">
+    Linguagens de Alto Nı́vel
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#linguagens-de-sistema" class="md-nav__link">
+    Linguagens de Sistema
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#linguagens-de-domnio-especfico" class="md-nav__link">
+    Linguagens de Domı́nio Especı́fico
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#linguagens-visuais" class="md-nav__link">
+    Linguagens Visuais
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#linguagens-esotericas" class="md-nav__link">
+    Linguagens Esotéricas
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ambiente/" class="md-nav__link">
+        Ambiente de Desenvolvimento
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../compilacao/" class="md-nav__link">
+        Compilação
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../identificadores/" class="md-nav__link">
+        Identificadores
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../io/" class="md-nav__link">
+        Entrada e Saída
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../condicionais/" class="md-nav__link">
+        Condicionais
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../iteracao/" class="md-nav__link">
+        Iteração
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../estruturas-dados/" class="md-nav__link">
+        Estruturas de Dados
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ponteiros/" class="md-nav__link">
+        Ponteiros
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about/" class="md-nav__link">
+        Sobre
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                  <h1>Linguagens de Programação</h1>
+                
+                <p>A comunicação humana é possı́vel por meio de diferentes linguagens. No caso do computador, o mesmo se aplica, pois fazemos uso de uma linguagem de programação para elaborar rotinas de computação, ensinando o passo-a-passo para o computador.</p>
+<div class="admonition info">
+<p class="admonition-title">Importante</p>
+<p>Programar é a arte de escrever sequências de instruções (comandos) para, computacionalmente, resolver problemas do mundo real por meio de uma linguagem de programação.</p>
+</div>
+<p>O programador converte problemas do mundo real em <strong>algoritmos</strong> através do processo de abstração. O algoritmo representa a solução computacional do problema, que irá se tornar operacional a partir do momento em que for <strong>codificado</strong> por meio de uma linguagem de programação. Só então o usuário final terá condições de utilizar o <strong>programa</strong> (que é resultado da compilação ou interpretação da codificação) para atender suas necessidades.</p>
+<div class="admonition note">
+<p class="admonition-title">Do problema ao programa</p>
+<p><strong>Problema &gt; Algoritmo &gt; Código-Fonte &gt; Programa</strong></p>
+</div>
+<p>As linguagens de programação podem ser classificadas sob diferentes perspectivas. É possível agrupá-las quanto à:</p>
+<ul>
+<li><em>Geração</em></li>
+<li><em>Domínio da Aplicação</em></li>
+<li><em>Implementação</em></li>
+<li><em>Paradigma</em></li>
+</ul>
+<p>A classificação acima, contudo, não é consenso. De qualquer forma, vamos tentar explorar as linguagens de programação a partir da ótica das gerações e paradigmas.</p>
+<h2 id="linguagens-de-maquina">Linguagens de Máquina</h2>
+<p>Interpretada diretamente pelo hardware. É a linguagem que o processador reconhece. Compiladores, interpretadores e montadores convertem linguagens de mais alto nível para linguagem de máquina. Representa a <strong>1º geração das linguagens de programação</strong>.</p>
+<p>Código em linguagem de máquina é normalmente representado em hexadecimal para tornar a leitura mais simples. Contudo, sua codificação original é binária. Programar neste nível é complexo e exige do profissional profundo conhecimento da arquitetura do hardware em que o programa irá executar. Este tipo de código só é portavel para arquiteturas identicas, uma vez que é altamente dependente do hardware que executa.</p>
+<pre><code>8B542408 83FA0077 06B80000 0000C383
+FA027706 B8010000 00C353BB 01000000
+B9010000 008D0419 83FA0376 078BD989
+</code></pre>
+<h2 id="linguagem-assembly">Linguagem Assembly</h2>
+<p>A intepretação de código de máquina por seres humanos é extremamente difícil. Reconhecer a funcionalidade do código a partir de sequências de códigos hexadecimais é praticamente uma odisséia. Isso porque o código de máquina não se preocupa com questões de legibilidade,  afinal o processador não precisa desta <em>feature</em>. </p>
+<p>A fim de tornar a programação uma atividade mais amigável para seres humanos, desenvolvou-se uma linguagem cuja sintaxe era mais próxima da escrita em inglês, com as devidas restrições para tornar o código não ambíguo. Além de facilitar a compreensão do algoritmo, a linguagem Assembly trouxe recursos de abstração que permitiram manter a complexidade do programa sob controle (até certo ponto, é claro).</p>
+<p>A Linguagem Assembly foi a primeira tentativa de adicionar abstrações (símbolos chamado de mnemônicos) sobre a linguagem de máquina na esperança de que a programação de software não fosse equiparável a um dos 
+<a href="http://www.perseus.tufts.edu/Herakles/labors.html" target="_blank">Doze Trabalhos de Hércules</a>. Ela representa a <strong>2ª geração das linguagens de programação</strong>.</p>
+<div class="admonition note">
+<p class="admonition-title">Nota</p>
+<p>Perceba que tornou-se necessário "passar" o código-fonte para um software chamado <a href="https://en.wikipedia.org/wiki/Comparison_of_assemblers" target="_blank">Assembler</a> (montador) para gerar o código em linguagem de máquina (executável).</p>
+</div>
+<pre><code>;---------------------------------------------------------------------;
+
+START:
+;---------------------------------------------------------------------;
+;    TEST FOR PRESENCE OF CALCULATOR                      ;
+;---------------------------------------------------------------------;
+           SUB     AX,AX
+           MOV     ES,AX
+           SUB     BH,BH
+           MOV     BL,INT_NUMBER
+           SHL     BX,1
+           SHL     BX,1
+           MOV     DI,ES:[BX]
+           MOV     ES,ES:[BX+Lógica2]
+           ADD     DI,4
+           LEA     SI,TAG
+           MOV     CX,TAG_LEN
+     REPE  CMPSB
+           JE      CALL_CALC
+           MOV     BX,SCREEN_HANDLE
+           MOV     CX,MESSAGE_LEN
+           LEA     DX,MESSAGE
+           MOV     AH,40h
+           INT     21h
+           JMP     SHORT CALC_EXIT
+;---------------------------------------------------------------------;
+;    CALL CALCULATOR                              ;
+;---------------------------------------------------------------------;
+CALL_CALC:
+           MOV     AL,INT_NUMBER
+           MOV     BYTE PTR INT_CODE,AL
+           DB      0CDh      ; INT
+</code></pre>
+<p>Código-fonte extraído de <a href="https://assembly.happycodings.com/code13.html">https://assembly.happycodings.com/code13.html</a>.</p>
+<h2 id="linguagens-de-alto-nvel">Linguagens de Alto Nı́vel</h2>
+<p>A escrita do algoritmo é feita utilizando-se um conjunto de comandos (palavras reservadas) em inglês que determinam as ações que o computador deve realizar. Se na linguagem Assembly, os comandos representam "apelidos" para instrução de máquina, nas linguagens de alto nível, os comandos representam ações abstratas. Tais linguagens abrangem diferentes paradigmas, como estruturado, orientado a objetos, funcional e lógico, por exemplo. </p>
+<p>Ao utilizar linguanges de alto nível, o programador aumenta significativamente a portabilidade de seu código dentre as diferentes <a href="https://www.tecmundo.com.br/historia/2157-a-historia-dos-processadores.htm" target="_blank">arquiteturas de máquina</a> existentes, diferentemente da linguagem assembly ou de máquina, que são altamente acopladas ao <a href="https://www.gta.ufrj.br/ensino/EEL580/apresentacoes/Parte2.pdf" target="_blank">conjunto de instruções da CPU</a>.</p>
+<p>Em termos de geração, as linguagens de alto nível podem enquadrar-se como sendo de <strong>3ª, 4ª ou 5ª geração</strong>.</p>
+<p>Veja abaixo um trecho de código escrito na linguagem C++.</p>
+<pre><code class="language-c++">#include &lt;iostream&gt;
+
+using namespace std;
+
+int saldo;//variável global
+
+int main(){
+    int parcela1, parcela2;//variáveis locais
+    parcela1 =10, parcela2 = 12;
+    saldo = parcela1 + parcela2;
+
+    {//início de bloco
+        cout&lt;&lt; saldo &lt;&lt; endl;
+        int saldo = 14; //variavel local
+        cout&lt;&lt; saldo &lt;&lt; endl;
+    }//fim de bloco
+    cout&lt;&lt; saldo &lt;&lt; endl ;
+    return 0;
+}
+</code></pre>
+<h2 id="linguagens-de-sistema">Linguagens de Sistema</h2>
+<p>São linguagens de alto nível utilizadas para programação de sistemas. Caracterizam-se por oferecer acesso facilitado ao hardware, ao mesmo tempo que oferecem recursos típicos de linguagens de próposito geral, como estruturas de seleção, laços de repetição e blocos, por exemplo. Uma destas linguagens chama-se <a href="https://www.rust-lang.org/pt-BR/learn">Rust</a>.</p>
+<pre><code class="language-rust">
+fn main() {    
+    println!(&quot;Hello World!&quot;);
+}
+
+</code></pre>
+<h2 id="linguagens-de-domnio-especfico">Linguagens de Domı́nio Especı́fico</h2>
+<p>De alto nı́vel, aplicada a um contexto especı́fico, com expressividade limitada. Expressões regulares são exemplos desta categoria. <a href="http://www.dcc.ufrj.br/~fabiom/dsl/Aula02.pdf">Saiba mais sobre DSL</a>.</p>
+<h2 id="linguagens-visuais">Linguagens Visuais</h2>
+<p>Toda linguagem que não é baseada em texto. Exemplos deste tipo de linguagem são o <a href="https://scratch.mit.edu/">Scratch</a> e o <a href="https://developers.google.com/blockly/">Blockly</a>.</p>
+<h2 id="linguagens-esotericas">Linguagens Esotéricas</h2>
+<p>Linguagens que não tem propósito de uso, especificamente. <a href="https://exame.abril.com.br/tecnologia/conheca-10-linguagens-bizarras-nas-quais-voce-nunca-vai-ter-que-programar/">Neste link você encontrará algumas delas</a>.</p>
+<p>Ficou curioso sobre a classificação das linguagens de programação? Que tal ler o conteúdo <a href="http://cs.lmu.edu/~ray/notes/pltypes/">deste link</a> para começar :)</p>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+          <a href="#" class="md-top md-icon" data-md-component="top" data-md-state="hidden">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"/></svg>
+          </a>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        <a href="../.." class="md-footer__link md-footer__link--prev" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Home
+            </div>
+          </div>
+        </a>
+      
+      
+        <a href="../ambiente/" class="md-footer__link md-footer__link--next" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Ambiente de Desenvolvimento
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright &copy; 2021 -  Diego A. Lusas
+          </div>
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+  <div class="md-footer-social">
+    
+      
+      
+        
+        
+      
+      <a href="https://linkedin.com/xyz" target="_blank" rel="noopener" title="linkedin.com" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/></svg>
+      </a>
+    
+      
+      
+        
+        
+      
+      <a href="http://github.com/diegolusa" target="_blank" rel="noopener" title="github.com" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+      </a>
+    
+  </div>
+
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.top", "navigation.instant", "toc.integrate", "header.autohide"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}, "search": "../../assets/javascripts/workers/search.fe42c31b.min.js", "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.7353b375.min.js"></script>
+      
+    
+  </body>
+</html>
