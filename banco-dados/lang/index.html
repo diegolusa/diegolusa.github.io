@@ -9,7 +9,7 @@
       
       
       
-      <link rel="icon" href="../../assets/images/favicon.png">
+      <link rel="icon" href="../../img/icon.ico">
       <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.1.1">
     
     
@@ -410,9 +410,9 @@
                 
                   <h1>Structured Query Language - SQL</h1>
                 
-                <h2 id="data-definition-language">Data Definition Language</h2>
-<h2 id="data-manipulation-language">Data Manipulation Language</h2>
-<h3 id="comando-insert">Comando INSERT</h3>
+                <h2 id="data-definition-language">Data Definition Language<a class="headerlink" href="#data-definition-language" title="Permanent link">&para;</a></h2>
+<h2 id="data-manipulation-language">Data Manipulation Language<a class="headerlink" href="#data-manipulation-language" title="Permanent link">&para;</a></h2>
+<h3 id="comando-insert">Comando INSERT<a class="headerlink" href="#comando-insert" title="Permanent link">&para;</a></h3>
 <p>{: .notice--info}</p>
 <p>Responsável por adicionar novas linhas a uma tabela, o comando INSERT apresenta sintaxe muito simples, embora com algumas variações. A forma trivial de escrevê-lo é especificando todas as colunas da tabela e os seus respectivos valores. Observe o trecho de código a seguir:</p>
 <pre><code class="language-sql">INSERT INTO quote
@@ -465,7 +465,7 @@ VALUES
       'Pão')
 RETURNING id;
 </code></pre>
-<h3 id="comando-delete">Comando DELETE</h3>
+<h3 id="comando-delete">Comando DELETE<a class="headerlink" href="#comando-delete" title="Permanent link">&para;</a></h3>
 <p>{: .notice--info}</p>
 <p>A exclusão de linhas de uma tabela é realizada pelo comando <code>delete</code>. Não confunda, portanto com o comando <code>drop</code>, cuja finalidade é remover do dicionário (schema) a definição e dados (se houver) de um objeto existente na base de dados.</p>
 <p>O comando <code>delete</code> não requer a especificação de filtros. Neste caso, <strong>todas</strong> as linhas da tabela serão removidas, o que pode ser imprudente. Normalmente todo comando <code>delete</code> acompanha condições que determinam quais linhas devem ser excluídas dentre todas as existentes. Tais condições são expressas na cláusula <strong>WHERE</strong>, na forma de condições lógicas.</p>
@@ -488,7 +488,7 @@ DELETE FROM estudante
 WHERE data_validade &gt; current_date - interval '10 days' 
 returning id, nome;
 </code></pre>
-<h3 id="comando-update">Comando UPDATE</h3>
+<h3 id="comando-update">Comando UPDATE<a class="headerlink" href="#comando-update" title="Permanent link">&para;</a></h3>
 <p>{: .notice--info}</p>
 <p>Para realizar modificações em dados armazenados, utilizamos o comando <strong>UPDATE</strong>. Por meio dele é possível alterar valores de uma ou mais colunas da linha (ou linhas) de uma tabela.</p>
 <p>Se definido sem filtros, a alteração solicitada será efetivada em todas as linhas, contudo nos cenários triviais de uso, este não é o objetivo pretendido. Normalmente utilizamos condições que restringem o efeito da atualização para uma quantia menor de linhas.</p>
@@ -518,7 +518,7 @@ WHERE codigo = 25;
 SET nome = 'Feijão', preco = preco * 0.15 
 WHERE codigo = 25 RETURNING preco;
 </code></pre>
-<h3 id="comando-select">Comando SELECT</h3>
+<h3 id="comando-select">Comando SELECT<a class="headerlink" href="#comando-select" title="Permanent link">&para;</a></h3>
 <p>{: .notice--info}</p>
 <p>Certamente podemos afirmar que o comando <a href="https://www.postgresql.org/docs/current/sql-select.html"><strong>select</strong></a> é um dos mais importantes da linguagem SQL. Isso porque através dele temos condições de recompor as informações do mundo fragmentados nas diferentes tabelas da base, respondendo às consultas dos usuários. A informação é, portanto, o que se busca apresentar nos diferentes softwares que construímos para interagir com bases de dados. </p>
 <p>Proporcional a importância do comando <strong>select</strong> é a sua complexidade e variação de sintaxe. Logo, extrair todo pontencial do comando pode levar certo tempo de estudo e dedicação.</p>
@@ -566,7 +566,7 @@ where
    and tipo_clinica = 'M'
 </code></pre>
 <p>Na query acima, condicionamos ao retorno linhas da tabela <code>internacao</code> que possuem valor igual a <code>M</code> na coluna <code>tipo_clinica</code> e cuja <code>data_hora_internacao</code> registra uma estampa de tempo de até 3 dias. </p>
-<h2 id="juncoes-internas">Junções Internas</h2>
+<h2 id="juncoes-internas">Junções Internas<a class="headerlink" href="#juncoes-internas" title="Permanent link">&para;</a></h2>
                 
                   
                 
@@ -611,7 +611,7 @@ where
         
         
       
-      <a href="https://linkedin.com/xyz" target="_blank" rel="noopener" title="linkedin.com" class="md-footer-social__link">
+      <a href="https://www.linkedin.com/in/diegolusa/" target="_blank" rel="noopener" title="www.linkedin.com" class="md-footer-social__link">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/></svg>
       </a>
     

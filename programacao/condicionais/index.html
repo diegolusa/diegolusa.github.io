@@ -9,7 +9,7 @@
       
       
       
-      <link rel="icon" href="../../assets/images/favicon.png">
+      <link rel="icon" href="../../img/icon.ico">
       <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.1.1">
     
     
@@ -63,6 +63,11 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
+      
+        
+        <a href="#logica-booleana" class="md-skip">
+          Skip to content
+        </a>
       
     </div>
     <div data-md-component="announce">
@@ -334,9 +339,70 @@
       <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Condicionais
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         Condicionais
       </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#logica-booleana" class="md-nav__link">
+    Lógica Booleana
+  </a>
+  
+    <nav class="md-nav" aria-label="Lógica Booleana">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#operador-and-conjuncao" class="md-nav__link">
+    Operador AND (conjunção)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#operador-or-disjuncao" class="md-nav__link">
+    Operador OR (disjunção)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#operador-not" class="md-nav__link">
+    Operador NOT (~)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#logica-booleana-aplicada-a-programacao" class="md-nav__link">
+    Lógica booleana aplicada à programação
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -414,7 +480,160 @@
                 
                   <h1>Condicionais</h1>
                 
-                
+                <p>Na programação, os estruturas de seleção são um dos componentes básicos na construção dos programas. Entendemos por estruturas de seleção comandos que permitem desviar o fluxo natural de execução das instruções de um programa sob determinadas condições. Tais estruturas permitem criar ramificações de fluxo e estão intimamente relacionadas com o uso da lógica booleana.</p>
+<p>Desta forma, a compreensão de desvios condicionais requer bons fundamentos de lógica, o que tentaremos oferecer na sequência, antes de propriamente apresentarmos os comandos de seleção.</p>
+<h2 id="logica-booleana">Lógica Booleana<a class="headerlink" href="#logica-booleana" title="Permanent link">&para;</a></h2>
+<p>Como sabemos, computação e matemática são áreas irmãs. Uma das mais relevantes contribuições da matemática incorporadas à computação foi do matemático inglês George Boole (1815-1864), que desenvolveu um sistema algébrico binário essencial ao funcionamento dos computadores. De modo simplificado, as ideias de Boole permitem obter conclusões lógicas a partir de variáveis que representam apenas dois valores (0 e 1) e operadores que retornam apenas dois valores (0 e 1).</p>
+<div class="admonition info">
+<p class="admonition-title">Dica</p>
+<p><strong>0</strong> indica FALSO e <strong>1</strong>, VERDADEIRO</p>
+</div>
+<p>A aplicação da Lógica Booleana, como normalmente é conhecida, vai desde a construção de circuitos de hardware a partir de portas lógicas até a programação, quando se faz necessário realizar testes lógicos no código. Mas afinal, o que são testes lógicos e qual é a relação destes com o sistema algébrico desenvolvido por Boole?</p>
+<p>Nós, humanos, expressamos e avaliamos proposições lógicas a todo o momento. De forma prática, vamos entender <strong>proposição lógica</strong> como sendo uma <code>declaração que pode ser avaliada como VERDADEIRA ou FALSA, mas nunca ambas</code>. Logo, as duas afirmações abaixo podem ser consideradas proposições lógicas:</p>
+<ul>
+<li><em>p</em>: Vai chover amanhã</li>
+<li><em>q</em>: Tenho 10 reais na carteira</li>
+</ul>
+<p>Tanto para <em>p</em> quanto para <em>q</em>, somente existem duas possibilidades de conclusão: <strong>V</strong>erdadeiro ou <strong>F</strong>also. Sabemos também que os operadores lógicos somente podem retornar <strong>V</strong> ou <strong>F</strong>, o que nos leva a concluir que expressões lógicas que combinam várias proposições, ao final, se reduzem a  <strong>V</strong> ou <strong>F</strong>. Mas, para elaborar tais expressões, precisamos conhecer o funcionamento de três operadores lógicos básicos: <code>AND</code>, <code>OR</code> e <code>NOT</code>.</p>
+<div class="admonition warning">
+<p class="admonition-title">Atenção</p>
+<p>Estamos direcionando o entendimento da lógica booleana para a programação, omitindo alguns formalismos matemáticos propositalmente.</p>
+</div>
+<h3 id="operador-and-conjuncao">Operador AND (conjunção)<a class="headerlink" href="#operador-and-conjuncao" title="Permanent link">&para;</a></h3>
+<p>O operador lógico <strong>AND</strong> (^), também conhecido como conjunção, é definido como sendo um <code>operador lógico binário que retorna VERDADEIRO sempre que TODOS os seus operandos forem verdadeiros</code>.</p>
+<p>Para facilitar a compreensão, utilizamos uma tabela de valores lógicos, a <strong>tabela verdade</strong>, para expressar os possíveis resultados da aplicação do operador <strong>AND</strong> sobre duas proposições. Vamos supor que <em>p</em> tenha seus valores expressos na coluna e <em>q</em>, nas linhas. Deste modo, os possívels resultados de <em>p</em> ^ <em>q</em> são:</p>
+<table>
+<thead>
+<tr>
+<th align="center"><strong>AND</strong></th>
+<th align="center"><strong>V</strong></th>
+<th align="center"><strong>F</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center"><strong>F</strong></td>
+<td align="center">F</td>
+<td align="center">F</td>
+</tr>
+<tr>
+<td align="center"><strong>V</strong></td>
+<td align="center"><span style="color:red;font-weight:bolder;">V</span></td>
+<td align="center">F</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition info">
+<p class="admonition-title">Resumo</p>
+<p>A conclusão lógica do operador AND somente é verdadeira se todas as proposições forem verdadeiras.</p>
+</div>
+<h3 id="operador-or-disjuncao">Operador OR (disjunção)<a class="headerlink" href="#operador-or-disjuncao" title="Permanent link">&para;</a></h3>
+<p>O operador lógico <strong>OR</strong> (∨), também conhecido como disjunção, é definido como sendo um <code>operador lógico binário que retorna FALSO sempre que TODOS os seus operandos forem falsos</code>.</p>
+<p>Utilizando a tabela verdade para expressar os possívels resultados de <em>p</em> v <em>q</em> temos:</p>
+<table>
+<thead>
+<tr>
+<th align="center"><strong>OR</strong></th>
+<th align="center"><strong>V</strong></th>
+<th align="center"><strong>F</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center"><strong>F</strong></td>
+<td align="center">V</td>
+<td align="center"><span style="color:red;font-weight:bolder;">F</span></td>
+</tr>
+<tr>
+<td align="center"><strong>V</strong></td>
+<td align="center">V</td>
+<td align="center">V</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition info">
+<p class="admonition-title">Resumo</p>
+<p>A conclusão lógica do operador OR somente é falsas se todas as proposições forem falsas.</p>
+</div>
+<h3 id="operador-not">Operador NOT (~)<a class="headerlink" href="#operador-not" title="Permanent link">&para;</a></h3>
+<p>O operador lógico <strong>NOT</strong> (~), também conhecido como negação, é definido como sendo um <code>operador lógico unário que retorna a negação (inverso lógico) de seu operando</code>.</p>
+<p>Utilizando a tabela verdade para expressar os possívels resultados de <em>~p</em> temos:</p>
+<table>
+<thead>
+<tr>
+<th align="center"><strong>p</strong></th>
+<th align="center"><strong>~p</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center"><strong>F</strong></td>
+<td align="center">V</td>
+</tr>
+<tr>
+<td align="center"><strong>V</strong></td>
+<td align="center">F</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition info">
+<p class="admonition-title">Resumo</p>
+<p>A conclusão lógica do operador NOT é <em>verdadeiro</em> quando receber <em>falso</em>, e <em>falso</em> quando receber verdadeiro</p>
+</div>
+<p>Tudo bem, sabemos o que são proposições lógicas e conhecemos os três operadores lógicos básicos. Mas, de que forma utilizamos tais recursos na programação? ...É justamente isso que vou apresentar na sequência ;)</p>
+<h2 id="logica-booleana-aplicada-a-programacao">Lógica booleana aplicada à programação<a class="headerlink" href="#logica-booleana-aplicada-a-programacao" title="Permanent link">&para;</a></h2>
+<p>Microprocessadores possuem uma ou mais unidades lógico-aritméticas (ULA), componente que, como o próprio nome sugere, tem a capacidade de executar instruções aritméticas e instruções lógicas. Utilizando linguagens de programação de alto nível, como C++, temos acesso a estes recursos através de operadores, símbolos que a linguagem define para tais finalidades.</p>
+<p>Especificamente sobre as operações lógicas, precisamos lembrar que o C++ define um tipo de dado específico para representar valores booleanos, o tipo <a href="../identificadores/#literais-booleanos">bool</a>. Quanto aos operadores lógicos, os símbolos utilizados são: <code>&amp;&amp;</code> para AND, <code>||</code> para OR e <code>!</code> para NOT.</p>
+<p>Já os operadores de comparação principais são os seguintes:</p>
+<table>
+<thead>
+<tr>
+<th align="center">Operador</th>
+<th align="center">Significado</th>
+<th align="center">Exemplo</th>
+<th align="center">Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">&gt;</td>
+<td align="center">maior que</td>
+<td align="center">a &gt; b</td>
+<td align="center">verdadeiro, se a for maior que b</td>
+</tr>
+<tr>
+<td align="center">&lt;</td>
+<td align="center">menor que</td>
+<td align="center">a &lt; b</td>
+<td align="center">verdadeiro, se a for menor que b</td>
+</tr>
+<tr>
+<td align="center">&gt;=</td>
+<td align="center">maior ou igual a</td>
+<td align="center">a &gt;= b</td>
+<td align="center">verdadeiro, se a for maior ou igual a b</td>
+</tr>
+<tr>
+<td align="center">&lt;=</td>
+<td align="center">menor ou igual a</td>
+<td align="center">a &lt;= b</td>
+<td align="center">verdadeiro, se a for menor ou igual a b</td>
+</tr>
+<tr>
+<td align="center">==</td>
+<td align="center">igual</td>
+<td align="center">a == b</td>
+<td align="center">verdadeiro, se iguais</td>
+</tr>
+<tr>
+<td align="center">!=</td>
+<td align="center">diferente</td>
+<td align="center">a !== b</td>
+<td align="center">verdadeiro, se diferentes</td>
+</tr>
+</tbody>
+</table>
+<p>...em construção... </p>
                 
                   
                 
@@ -492,7 +711,7 @@
         
         
       
-      <a href="https://linkedin.com/xyz" target="_blank" rel="noopener" title="linkedin.com" class="md-footer-social__link">
+      <a href="https://www.linkedin.com/in/diegolusa/" target="_blank" rel="noopener" title="www.linkedin.com" class="md-footer-social__link">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/></svg>
       </a>
     

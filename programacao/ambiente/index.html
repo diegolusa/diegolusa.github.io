@@ -9,7 +9,7 @@
       
       
       
-      <link rel="icon" href="../../assets/images/favicon.png">
+      <link rel="icon" href="../../img/icon.ico">
       <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.1.1">
     
     
@@ -463,7 +463,7 @@
                 <p>Para codificar em C++ é preciso minimamente do compilador e de um editor de texto. A instalação do compilador apresenta diferenças de acordo com a plataforma. Já o editor de texto pode ser qualquer um disponível no mercado.</p>
 <p>Quando falamos de codificação profissional de software, os editores de texto são substituídos por IDEs (<em>Integrated Development Environment</em>) com a finalidade de aumentar a produtividade e a qualidade do código-fonte. As IDEs agregam diversos <em>plugins</em> que auxiliam o desenvolvedor na tarefa de codificação.</p>
 <p>Na sequência apresento a configuração do ambiente mínimo para desenvolvimento em C++ nas plataformas Linux (<em>Debian based</em>) e Windows.</p>
-<h2 id="plataforma-linux">Plataforma Linux</h2>
+<h2 id="plataforma-linux">Plataforma Linux<a class="headerlink" href="#plataforma-linux" title="Permanent link">&para;</a></h2>
 <p>Normalmente as distribuições Linux já possuem o compilador g++ instalado. Para verificar se o compilador está corretamente instalado, podemos abrir o terminal e executar o comando abaixo, que solicita a versão do mesmo.</p>
 <pre><code class="language-bash">g++ --version
 </code></pre>
@@ -474,7 +474,7 @@ This is free software; see the source for copying conditions.  There is NO warra
 Caso o compilador não esteja instalado no sistema, será preciso utilizar a ferramenta de gestão de pacotes da distribuição para instalação. Em distruições baseadas no Debian (Ubuntu, por exemplo), o comando apt-get install realiza a instalação do compilador via terminal. A checagem da instalação pode ser realizada utilizando o comando g++ --version, conforme demonstrando anteriormente.
 </code></pre>
 <p>Caso o compilador não esteja disponível no sistema, será preciso utilizar a ferramenta de gestão de pacotes da distribuição para instalação. Em distruições baseadas no Debian (Ubuntu, por exemplo), o comando <code>sudo apt-get install g++</code> realiza a instalação do compilador via terminal. A checagem da instalação pode ser realizada utilizando o comando <code>g++ --version</code>, conforme demonstrando anteriormente.</p>
-<h2 id="windows-plataforma-windows">Windows Plataforma Windows</h2>
+<h2 id="windows-plataforma-windows">Windows Plataforma Windows<a class="headerlink" href="#windows-plataforma-windows" title="Permanent link">&para;</a></h2>
 <p>Assim como na plataforma Linux, no Windows temos diferentes opções de editores e IDEs para desenvolvimento em C++. Uma destas soluções é o <a href="https://sourceforge.net/projects/orwelldevcpp/files/latest/download">DevC++</a>, uma ferramenta gratuita e com bons recursos para quem está iniciando na linguagem. Outras opções também podem ser consideradas, como <em>Code::Blocks</em>,  <em>Netbeans</em>, <em>Eclipse</em>, <em>Clion</em> e <em>Visual Studio Code</em>. Basicamente, a diferença entre uma IDE e outra refere-se ao conjunto de ferramentas e recursos oferecidos pelas mesmas.</p>
 <p>Interessante observar que boa parte destas ferramentas vem com o compilador integrado, o que facilita o processo de instalação. Dos listados abaixo, a exceção fica para o Visual Studio Code.</p>
 <ol>
@@ -492,7 +492,7 @@ Caso o compilador não esteja instalado no sistema, será preciso utilizar a fer
 <p><img alt="Tela inicial do VS Code" src="/img/cpp/vscode-tela.png" /></p>
 <p>Programas escritos em C++ podem compreender um ou mais arquivos de código-fonte. Ao conjunto de arquivos que formam o programa chamamos de <strong>projeto</strong>. No VS Code podemos mapear o projeto abrindo a pasta raiz que contém os arquivos. Ainda, para deixar o ambiente completo, podemos instalar uma extensão específica para a linguagem C++, que irá nos auxiliar nas tarefas relacionadas à codificação. Existem inúmeras extensões, mas recomendo a <a href="https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools">C/C++ for Visual Studio Code</a>. É possível instalar a extensão diretamente pelo VS Code procurando pela mesma na tela <em>Extensions</em> (observe a imagem a seguir).</p>
 <p><img alt="Extensão C++ para VS Code" src="/img/cpp/vscode-extension-c++.png" /></p>
-<h2 id="execucao">Execução</h2>
+<h2 id="execucao">Execução<a class="headerlink" href="#execucao" title="Permanent link">&para;</a></h2>
 <p>Com a extensão <em>C/C++ for Visual Studio Code</em> instalada, o VS Code já tem condições de compilar o código-fonte e executar o programa gerado de forma integrada. O processo é muito simples! Utilize o botão direito do mouse na tela de edição do código-fonte e escolha a opção <em>Run Code</em>.</p>
 <p><img alt="Execução de código C++ no VS Code" src="/img/cpp/vscode-extension-c++-run.png" /></p>
 <div class="admonition warning">
@@ -576,7 +576,7 @@ Caso o compilador não esteja instalado no sistema, será preciso utilizar a fer
         
         
       
-      <a href="https://linkedin.com/xyz" target="_blank" rel="noopener" title="linkedin.com" class="md-footer-social__link">
+      <a href="https://www.linkedin.com/in/diegolusa/" target="_blank" rel="noopener" title="www.linkedin.com" class="md-footer-social__link">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/></svg>
       </a>
     

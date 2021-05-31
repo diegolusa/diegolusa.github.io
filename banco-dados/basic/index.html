@@ -9,7 +9,7 @@
       
       
       
-      <link rel="icon" href="../../assets/images/favicon.png">
+      <link rel="icon" href="../../img/icon.ico">
       <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.1.1">
     
     
@@ -410,13 +410,13 @@
                 
                   <h1>Fundamentos de Sistemas de Banco de Dados</h1>
                 
-                <h2 id="do-que-iremos-falar">Do que iremos falar</h2>
+                <h2 id="do-que-iremos-falar">Do que iremos falar<a class="headerlink" href="#do-que-iremos-falar" title="Permanent link">&para;</a></h2>
 <p>Quando falamos em computadores e softwares, somos inevitavelmente remetidos a dados digitais. Praticamente todos os serviços que utilizamos, de alguma forma, dependem de dados para operar. Tais dados representam entradas e saídas e, boa parte do tempo, precisam estar armazenados de forma persistente. Mas afinal, você sabe como estes dados são armazenados? Será que na história da computação o armazenamento de dados sempre foi imprescindível? E, para não esquecer, o que entendemos como dados?</p>
 <p>Para responder a estas e outras perguntas, siga comigo nos próximos capítulos ;)</p>
-<h2 id="dados-metadados-e-informacao">Dados, Metadados e Informação</h2>
+<h2 id="dados-metadados-e-informacao">Dados, Metadados e Informação<a class="headerlink" href="#dados-metadados-e-informacao" title="Permanent link">&para;</a></h2>
 <p>É importante diferenciarmos o termo <em>dados</em> de <em>metadados</em> desde o princípio da nossa jornada. Deste ponto em diante, quando você encontrar a palavra <em>dados</em>, estamos nos referindo a um meio de representação de fatos do mundo em formato digital. Os dados são tanto uma interpretação dos objetos que representam quanto um objeto a ser interpretado. E para sua interpretação precisamos de um contexto, um sistema de representação dos dados, ao que chamamos de <em>metadados</em>. </p>
 <p>Vamos imaginar o número 14084218014. Você saberia o que ele representa? Sem um contexto, possivelmente não. Agora se eu disser que estamos falando do CPF de pacientes internados em determinado hospital? Bem, agora você reconhece o significado do número 14084218014 (nosso dado) a partir dos metadados que fornecemos.</p>
-<h2 id="um-pouco-de-historia">Um pouco de história</h2>
+<h2 id="um-pouco-de-historia">Um pouco de história<a class="headerlink" href="#um-pouco-de-historia" title="Permanent link">&para;</a></h2>
 <p>Sabemos que o computador é fruto da industria de guerra e que seus primeiros usos foram para fins militares. Nesse período, em que os fundamentos da computação estavam sendo construídos, os programas desenvolvidos tinham como principal objetivo a execução de cálculos complexos. Não haviam interfaces gráficas, sequer telas, para exibir os resultados. No caso do <a href="https://pt.wikipedia.org/wiki/ENIAC">ENIAC</a>, primeiro computador digital eletrônico, a resposta era gerada a partir de uma sequência de lâmpadas.</p>
 <p>Na medida que os computadores receberam novas tarefas, passando a ser utilizados em universidades, indústrias, prestação de serviços e, é claro, em nossos lares, a necessidade pelo armazenamento de dados se ampliou significativamente. </p>
 <p>Partimos então de um contexto onde os dados processados pelos softwares eram inputados a cada execução por operadores humanos e cuja resposta final servia ao momento ( não sendo armazenada digitalmente para usos posteriores), para um cenário onde os dados digitais representam ativos de imenso valor para indivíduos e organizações.</p>
@@ -434,17 +434,17 @@
 {: .notice--info}</p>
 <p>Perceba que sistemas de arquivos não dispõem de linguagens de consulta e manipulação de dados, tampouco permitem definir o <em>schema</em> dos dados de maneira aprimorada. Questões como isolamento e atomicidade não são plenamente atendidas, bem como a durabilidade em seu sentido mais estrito. Há também a questão do acesso pouco eficiente a dados cuja localização é desconhecida.</p>
 <p>Para facilitara  compreensão das diferenças entre <strong>SGBD</strong> e sistema de arquivos, devemos ter em mente que o cenário de uso deve considerar dados compostos por pequenos fragmentos constantemente atualizados e consultados. Em tal situação, o uso do sistema de arquivos em detrimento de um <strong>SGBD</strong> pode ocasionar os seguintes efeitos:</p>
-<h3 id="redundancia-e-inconsistencia">Redundância e Inconsistência</h3>
+<h3 id="redundancia-e-inconsistencia">Redundância e Inconsistência<a class="headerlink" href="#redundancia-e-inconsistencia" title="Permanent link">&para;</a></h3>
 <p><em>Redundância</em> ocorre quando uma mesma informação é representada diversas vezes na base de dados. Imagine, por exemplo, os dados de seu endereço "espalhados" em diversas cópias no site de e-commerce que você costuma fazer compras. Seria um caso de redundância.</p>
 <p>Ter dados redundantes não implica, necessariamente, em problemas. É só pensar na recomendação que ouvimos a todo o momento: "Faça cópias de segurança de seus arquivos!". Redundância é o fundamento do backup, e fazer backup é bom ;)</p>
 <p>O problema com dados redundantes está na sua gestão. Se existem cópias de uma mesma informação, é preciso mantê-las sob controle, de modo que todas representem o mesmo fato do mundo. Ou seja, precisamos manter sincronizadas as diferentes cópias existentes. </p>
 <p>Pense comigo: se no site de e-commerce haviam diferentes cópias de seu endereço, mas apenas uma delas recebeu a atualização do seu endereço, quais problemas poderiam ocorrer? Talvez um deles seja você não receber o produto que comprou :[</p>
-<h3 id="dificuldade-de-acesso">Dificuldade de Acesso</h3>
-<h3 id="problemas-de-integridade">Problemas de Integridade</h3>
-<h3 id="dificuldades-de-compartilhamento">Dificuldades de Compartilhamento</h3>
-<h3 id="problemas-de-atomicidade">Problemas de Atomicidade</h3>
-<h3 id="problemas-de-isolamento">Problemas de Isolamento</h3>
-<h3 id="problemas-de-seguranca">Problemas de Segurança</h3>
+<h3 id="dificuldade-de-acesso">Dificuldade de Acesso<a class="headerlink" href="#dificuldade-de-acesso" title="Permanent link">&para;</a></h3>
+<h3 id="problemas-de-integridade">Problemas de Integridade<a class="headerlink" href="#problemas-de-integridade" title="Permanent link">&para;</a></h3>
+<h3 id="dificuldades-de-compartilhamento">Dificuldades de Compartilhamento<a class="headerlink" href="#dificuldades-de-compartilhamento" title="Permanent link">&para;</a></h3>
+<h3 id="problemas-de-atomicidade">Problemas de Atomicidade<a class="headerlink" href="#problemas-de-atomicidade" title="Permanent link">&para;</a></h3>
+<h3 id="problemas-de-isolamento">Problemas de Isolamento<a class="headerlink" href="#problemas-de-isolamento" title="Permanent link">&para;</a></h3>
+<h3 id="problemas-de-seguranca">Problemas de Segurança<a class="headerlink" href="#problemas-de-seguranca" title="Permanent link">&para;</a></h3>
                 
                   
                 
@@ -489,7 +489,7 @@
         
         
       
-      <a href="https://linkedin.com/xyz" target="_blank" rel="noopener" title="linkedin.com" class="md-footer-social__link">
+      <a href="https://www.linkedin.com/in/diegolusa/" target="_blank" rel="noopener" title="www.linkedin.com" class="md-footer-social__link">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/></svg>
       </a>
     

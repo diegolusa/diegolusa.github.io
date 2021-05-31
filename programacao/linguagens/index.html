@@ -9,7 +9,7 @@
       
       
       
-      <link rel="icon" href="../../assets/images/favicon.png">
+      <link rel="icon" href="../../img/icon.ico">
       <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.1.1">
     
     
@@ -506,14 +506,14 @@
 <li><em>Paradigma</em></li>
 </ul>
 <p>A classificação acima, contudo, não é consenso. De qualquer forma, vamos tentar explorar as linguagens de programação a partir da ótica das gerações e paradigmas.</p>
-<h2 id="linguagens-de-maquina">Linguagens de Máquina</h2>
+<h2 id="linguagens-de-maquina">Linguagens de Máquina<a class="headerlink" href="#linguagens-de-maquina" title="Permanent link">&para;</a></h2>
 <p>Interpretada diretamente pelo hardware. É a linguagem que o processador reconhece. Compiladores, interpretadores e montadores convertem linguagens de mais alto nível para linguagem de máquina. Representa a <strong>1º geração das linguagens de programação</strong>.</p>
 <p>Código em linguagem de máquina é normalmente representado em hexadecimal para tornar a leitura mais simples. Contudo, sua codificação original é binária. Programar neste nível é complexo e exige do profissional profundo conhecimento da arquitetura do hardware em que o programa irá executar. Este tipo de código só é portavel para arquiteturas identicas, uma vez que é altamente dependente do hardware que executa.</p>
 <pre><code>8B542408 83FA0077 06B80000 0000C383
 FA027706 B8010000 00C353BB 01000000
 B9010000 008D0419 83FA0376 078BD989
 </code></pre>
-<h2 id="linguagem-assembly">Linguagem Assembly</h2>
+<h2 id="linguagem-assembly">Linguagem Assembly<a class="headerlink" href="#linguagem-assembly" title="Permanent link">&para;</a></h2>
 <p>A intepretação de código de máquina por seres humanos é extremamente difícil. Reconhecer a funcionalidade do código a partir de sequências de códigos hexadecimais é praticamente uma odisséia. Isso porque o código de máquina não se preocupa com questões de legibilidade,  afinal o processador não precisa desta <em>feature</em>. </p>
 <p>A fim de tornar a programação uma atividade mais amigável para seres humanos, desenvolvou-se uma linguagem cuja sintaxe era mais próxima da escrita em inglês, com as devidas restrições para tornar o código não ambíguo. Além de facilitar a compreensão do algoritmo, a linguagem Assembly trouxe recursos de abstração que permitiram manter a complexidade do programa sob controle (até certo ponto, é claro).</p>
 <p>A Linguagem Assembly foi a primeira tentativa de adicionar abstrações (símbolos chamado de mnemônicos) sobre a linguagem de máquina na esperança de que a programação de software não fosse equiparável a um dos 
@@ -556,7 +556,7 @@ CALL_CALC:
            DB      0CDh      ; INT
 </code></pre>
 <p>Código-fonte extraído de <a href="https://assembly.happycodings.com/code13.html">https://assembly.happycodings.com/code13.html</a>.</p>
-<h2 id="linguagens-de-alto-nvel">Linguagens de Alto Nı́vel</h2>
+<h2 id="linguagens-de-alto-nvel">Linguagens de Alto Nı́vel<a class="headerlink" href="#linguagens-de-alto-nvel" title="Permanent link">&para;</a></h2>
 <p>A escrita do algoritmo é feita utilizando-se um conjunto de comandos (palavras reservadas) em inglês que determinam as ações que o computador deve realizar. Se na linguagem Assembly, os comandos representam "apelidos" para instrução de máquina, nas linguagens de alto nível, os comandos representam ações abstratas. Tais linguagens abrangem diferentes paradigmas, como estruturado, orientado a objetos, funcional e lógico, por exemplo. </p>
 <p>Ao utilizar linguanges de alto nível, o programador aumenta significativamente a portabilidade de seu código dentre as diferentes <a href="https://www.tecmundo.com.br/historia/2157-a-historia-dos-processadores.htm" target="_blank">arquiteturas de máquina</a> existentes, diferentemente da linguagem assembly ou de máquina, que são altamente acopladas ao <a href="https://www.gta.ufrj.br/ensino/EEL580/apresentacoes/Parte2.pdf" target="_blank">conjunto de instruções da CPU</a>.</p>
 <p>Em termos de geração, as linguagens de alto nível podem enquadrar-se como sendo de <strong>3ª, 4ª ou 5ª geração</strong>.</p>
@@ -581,7 +581,7 @@ int main(){
     return 0;
 }
 </code></pre>
-<h2 id="linguagens-de-sistema">Linguagens de Sistema</h2>
+<h2 id="linguagens-de-sistema">Linguagens de Sistema<a class="headerlink" href="#linguagens-de-sistema" title="Permanent link">&para;</a></h2>
 <p>São linguagens de alto nível utilizadas para programação de sistemas. Caracterizam-se por oferecer acesso facilitado ao hardware, ao mesmo tempo que oferecem recursos típicos de linguagens de próposito geral, como estruturas de seleção, laços de repetição e blocos, por exemplo. Uma destas linguagens chama-se <a href="https://www.rust-lang.org/pt-BR/learn">Rust</a>.</p>
 <pre><code class="language-rust">
 fn main() {    
@@ -589,11 +589,11 @@ fn main() {
 }
 
 </code></pre>
-<h2 id="linguagens-de-domnio-especfico">Linguagens de Domı́nio Especı́fico</h2>
+<h2 id="linguagens-de-domnio-especfico">Linguagens de Domı́nio Especı́fico<a class="headerlink" href="#linguagens-de-domnio-especfico" title="Permanent link">&para;</a></h2>
 <p>De alto nı́vel, aplicada a um contexto especı́fico, com expressividade limitada. Expressões regulares são exemplos desta categoria. <a href="http://www.dcc.ufrj.br/~fabiom/dsl/Aula02.pdf">Saiba mais sobre DSL</a>.</p>
-<h2 id="linguagens-visuais">Linguagens Visuais</h2>
+<h2 id="linguagens-visuais">Linguagens Visuais<a class="headerlink" href="#linguagens-visuais" title="Permanent link">&para;</a></h2>
 <p>Toda linguagem que não é baseada em texto. Exemplos deste tipo de linguagem são o <a href="https://scratch.mit.edu/">Scratch</a> e o <a href="https://developers.google.com/blockly/">Blockly</a>.</p>
-<h2 id="linguagens-esotericas">Linguagens Esotéricas</h2>
+<h2 id="linguagens-esotericas">Linguagens Esotéricas<a class="headerlink" href="#linguagens-esotericas" title="Permanent link">&para;</a></h2>
 <p>Linguagens que não tem propósito de uso, especificamente. <a href="https://exame.abril.com.br/tecnologia/conheca-10-linguagens-bizarras-nas-quais-voce-nunca-vai-ter-que-programar/">Neste link você encontrará algumas delas</a>.</p>
 <p>Ficou curioso sobre a classificação das linguagens de programação? Que tal ler o conteúdo <a href="http://cs.lmu.edu/~ray/notes/pltypes/">deste link</a> para começar :)</p>
                 
@@ -673,7 +673,7 @@ fn main() {
         
         
       
-      <a href="https://linkedin.com/xyz" target="_blank" rel="noopener" title="linkedin.com" class="md-footer-social__link">
+      <a href="https://www.linkedin.com/in/diegolusa/" target="_blank" rel="noopener" title="www.linkedin.com" class="md-footer-social__link">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/></svg>
       </a>
     

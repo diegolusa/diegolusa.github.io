@@ -9,7 +9,7 @@
       
       
       
-      <link rel="icon" href="../../assets/images/favicon.png">
+      <link rel="icon" href="../../img/icon.ico">
       <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.1.1">
     
     
@@ -422,7 +422,7 @@
                 <p>Codificar um software compreende, basicamente, modificar estados conforme sequência e regras previamente definidas. Neste processo, dar nomes às estruturas e, por vezes, inicializá-las com valores é tarefa trivial. </p>
 <p>Por ser praticamente indissociável da prática de programação, toda linguagem estabelece regras para nomenclatura de identificadores (nome que o programador atribui às estruturas) e para definição de literais (valores fixos).</p>
 <p>Na sequência vamos abordar como variáveis e literais são definidos na linguagem C++.</p>
-<h1 id="variaveis">Variáveis</h1>
+<h1 id="variaveis">Variáveis<a class="headerlink" href="#variaveis" title="Permanent link">&para;</a></h1>
 <p>Um programa é composto por <strong>instruções</strong> e <strong>dados</strong>, ambos armazenados na memória RAM do computador. Enquanto que instruções, em sua maioria, representam que tipo de manipulação o processador deve executar com os dados (somas, subtrações, multiplicações, etc.), as variáveis representam os espaços de armazenamento de dados do programa.</p>
 <p>Os dados são armazenados em <strong>variáveis</strong>, que nada mais são que espaços de memória RAM reservados para tal finalidade. Precisamos lembrar que variáveis apresentam alguma propriedades importantes:</p>
 <ul>
@@ -439,10 +439,10 @@
     float preco;
     double lucro_liquido;
 </code></pre>
-<h1 id="literais">Literais</h1>
+<h1 id="literais">Literais<a class="headerlink" href="#literais" title="Permanent link">&para;</a></h1>
 <p>Literal é todo valor informado de forma fixa no código. É comum utilizar a expressão <code>hard code</code> para descrever a operação. Normalmente os literais são utilizados para iniciar estruturas do programa, ou seja, definir seu valor inicial.</p>
 <p>Os literais podem representar números inteiros, números reais, valores booleanos, caracteres ou sequência de caracteres. Para cada caso existem particularidades, as quais iremos tratar a seguir.</p>
-<h2 id="literais-para-numeros-inteiros">Literais para números inteiros</h2>
+<h2 id="literais-para-numeros-inteiros">Literais para números inteiros<a class="headerlink" href="#literais-para-numeros-inteiros" title="Permanent link">&para;</a></h2>
 <p><a href="https://pt.wikipedia.org/wiki/Número_inteiro">Números inteiros</a>  são números não fracionais, ou seja, não apresentam valores após a vírgula. Sua representação se dá, normalmente, em base decimal. Contudo, o C++ aceita também números representados em <a href="https://pt.wikipedia.org/wiki/Sistema_octal">base octal</a>, <a href="https://pt.wikipedia.org/wiki/Sistema_de_numera%C3%A7%C3%A3o_hexadecimal">hexadecimal</a> e <a href="https://pt.wikipedia.org/wiki/Sistema_de_numera%C3%A7%C3%A3o_bin%C3%A1rio">binária</a>.</p>
 <p>Quando em <strong>decimal</strong>, um número pode ser expresso utilizando somente caracteres de 0 a 9. A representação decimal é a mais confortável na perspectiva do programador porque é o sistema de representação numérico do nosso dia-a-dia. Literais inteiros expressos em decimal podem utilizar aspa simples para demarcar milhares. Tal recurso conforme apenas maior legibilidade ao código-fonte. Observe o trecho de código a seguir:</p>
 <pre><code class="language-c++">    var_int = 24'000;       //base decimal    
@@ -494,7 +494,7 @@
 </table>
 <p>Em nosso exemplo, <code>F2</code> equivale ao valor <code>242</code> em decimal, visto que é o resultado da expressão <code>15*16 + 2</code>.</p>
 <p>E finalmente chegamos a representação <strong>binária</strong>, natural da máquina. Literais inteiros expressos em binário são sequências de <code>0s</code> e <code>1s</code> prefixados com <code>0b</code> ou <code>0B</code>.</p>
-<h2 id="literais-para-numeros-de-ponto-flutuante">Literais para números de ponto flutuante</h2>
+<h2 id="literais-para-numeros-de-ponto-flutuante">Literais para números de ponto flutuante<a class="headerlink" href="#literais-para-numeros-de-ponto-flutuante" title="Permanent link">&para;</a></h2>
 <p>Ponto flutuante é o nome dado para um número real representado digitalmente no computador. Quando informamos um literal que expressa um número real na programação, devemos utilizar o caractere <code>.</code> para separar a parte decimal da inteira. Também é possível utilizar aspas simples para separar os milhares.</p>
 <p>Números de ponto flutuante podem ser armazenados com precisão simples (identificados com o tipo <code>float</code>) ou com precisão dupla (tipo <code>double</code>). Números de precisão simples utilizam 32 bits de espaço de memória, enquanto números de precisão dupla utilizam 64 bits. Outra importante diferença refere-se a quantidade de casas decimais armazenadas: enquanto um tipo <code>float</code> armazena até <code>7</code> casas decimais, um <code>double</code> armazena <code>15</code> casas.  </p>
 <pre><code class="language-c++">    float var_float;
@@ -503,7 +503,7 @@
     var_float = 1'234.34;
     var_double = 345;
 </code></pre>
-<h2 id="literais-booleanos">Literais booleanos</h2>
+<h2 id="literais-booleanos">Literais booleanos<a class="headerlink" href="#literais-booleanos" title="Permanent link">&para;</a></h2>
 <p><a href="https://www.tecmundo.com.br/programacao/1527-logica-booleana-saiba-um-pouco-mais-sobre-esta-logica-e-como-ela-funciona.htm">Álgebra booleana</a> é um formalizmo matemático utilizado na computação para implementar testes lógicos. Na álgebra booleana temos dois estados possíveis para um proposição lógica: <code>verdadeiro</code> e <code>falso</code>. </p>
 <p>No C++, o estado <code>verdadeiro</code> é representado pelo literal <code>true</code> (ou pelo literal inteiro <code>1</code>). Já o estado <code>falso</code> é representado pelo literal <code>false</code> (ou pelo literal inteiro <code>0</code>). Observe o exemplo:</p>
 <pre><code class="language-c++">    bool var_true, var_false;
@@ -513,7 +513,7 @@
     var_true = 1;
     var_false = 0;
 </code></pre>
-<h2 id="literais-para-caracteres">Literais para caracteres</h2>
+<h2 id="literais-para-caracteres">Literais para caracteres<a class="headerlink" href="#literais-para-caracteres" title="Permanent link">&para;</a></h2>
 <p>Caracteres são os símbolos do alfabeto, pontuação, entre outros. Nem todo caractere tem representação gráfica (quebra de linha e fim de arquivo, por exemplo). </p>
 <p>Para representar caracteres computacionalmente, pode-se utilizar <code>1</code> ou <code>2</code> bytes. O padrão <a href="https://www.unicode.org/standard/WhatIsUnicode.html">Unicode</a> é a norma atual para representação de caracteres de forma universal, independementente de plataforma, programa, linguagem ou mesmo idioma.</p>
 <p>O padrão Unicode utiliza <code>2</code> bytes para representar o código numérico de cada um dos <code>137,929</code> caracteres existentes (<a href="https://www.unicode.org/versions/Unicode12.0.0/UnicodeStandard-12.0.pdf">Versão 12</a>)</p>
@@ -523,12 +523,12 @@
     var_char = 'B';
 
 </code></pre>
-<h2 id="literais-para-strings">Literais para strings</h2>
+<h2 id="literais-para-strings">Literais para strings<a class="headerlink" href="#literais-para-strings" title="Permanent link">&para;</a></h2>
 <p>Strings são sequências de caracteres, ou simplesmente, a forma de expressar texto na programação. Literais são definidos no C++ por meio de aspas duplas, conforme demonstra o exemplo. </p>
 <pre><code class="language-c++">    string var_string;
     var_string = &quot;Olá, isso é um texto&quot;;
 </code></pre>
-<h2 id="um-pouco-de-codigo">Um pouco de código</h2>
+<h2 id="um-pouco-de-codigo">Um pouco de código<a class="headerlink" href="#um-pouco-de-codigo" title="Permanent link">&para;</a></h2>
 <p>Observe o código-fonte do programa a seguir. Perceba que nele são declaradas variáveis cuja inicialização faz uso dos literais que estudamos anteriormente. </p>
 <script src="https://gist.github.com/diegolusa/97572b0ca9fbfdd74ffce4003a7e7172.js"></script>
                 
@@ -608,7 +608,7 @@
         
         
       
-      <a href="https://linkedin.com/xyz" target="_blank" rel="noopener" title="linkedin.com" class="md-footer-social__link">
+      <a href="https://www.linkedin.com/in/diegolusa/" target="_blank" rel="noopener" title="www.linkedin.com" class="md-footer-social__link">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/></svg>
       </a>
     
