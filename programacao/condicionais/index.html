@@ -398,6 +398,40 @@
     Lógica booleana aplicada à programação
   </a>
   
+    <nav class="md-nav" aria-label="Lógica booleana aplicada à programação">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#comando-if-else" class="md-nav__link">
+    Comando IF ELSE
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comando-if-else-if" class="md-nav__link">
+    Comando IF ELSE IF
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#operador-ternario" class="md-nav__link">
+    Operador ternário
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#switch" class="md-nav__link">
+    Switch
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -633,7 +667,110 @@
 </tr>
 </tbody>
 </table>
-<p>...em construção... </p>
+<p>Utilizando os operadores lógicos e os operadores de comparação temos como escrever expressões lógicas em nossos programas. Imaginemos por um instante que estamos trabalhando em código para seleção de candidatos. Nossos critérios de seleção serão <em>idade igual ou superior a 18 anos, altura superior a 160cm e peso superior a 60kg</em>. Em nosso código, armazenamos a idade do candidato em uma variável inteira chamava <code>idade_c</code>, altura em uma variável inteira <code>altura_c</code> e peso, em uma variável de ponto fluturante <code>peso_c</code>.</p>
+<p>Após atribuir os dados às respectivas variáveis, poderíamos codificar a expressão abaixo para determinar se o candidato será selecionado ou não:</p>
+<div class="highlight"><pre><span></span><code><span class="kt">bool</span> <span class="n">is_selecionado</span> <span class="o">=</span> <span class="n">idade_c</span> <span class="o">&gt;=</span> <span class="mi">18</span> <span class="o">&amp;&amp;</span> <span class="n">altura_c</span> <span class="o">&gt;</span> <span class="mi">160</span> <span class="o">&amp;&amp;</span> <span class="n">peso_c</span> <span class="o">&gt;</span> <span class="mf">60.0</span><span class="p">;</span>
+</code></pre></div>
+<p>Observe que utilizamos o operador <code>&amp;&amp;</code>, uma vez que as três condições (proposições) devem ser atendidas. Portanto, a variável <code>is_selecionado</code> receberá <code>true</code> somente nesta situação.</p>
+<p>Mas o que faremos com a variável <code>is_selecionado</code>? Sabemos que sendo <code>true</code> precisamos indicar ao usuário de nosso programa que o candidato atende os critérios. Ou seja, precisamos <strong>condicionar</strong> a execução de determinadas instruções do programa ao resultado de avaliação da expressão lógica. Como fazer então?</p>
+<h3 id="comando-if-else">Comando IF ELSE<a class="headerlink" href="#comando-if-else" title="Permanent link">&para;</a></h3>
+<p>Um dos comandos da linguagem C++ (e de boa parte das outras) é o <code>if</code>. Utilizamos ele para criar desvios condicionais na execução das instruções, que, pela ordem natural, são executadas em sequência.</p>
+<p>A estrutura do comando <code>if</code> é simples e para demostrar, vamos seguir falando do nosso programa hipotético de seleção de candidatos. Observe o código a seguir:</p>
+<div class="highlight"><pre><span></span><code><span class="kt">bool</span> <span class="n">is_selecionado</span> <span class="o">=</span> <span class="n">idade_c</span> <span class="o">&gt;=</span> <span class="mi">18</span> <span class="o">&amp;&amp;</span> <span class="n">altura_c</span> <span class="o">&gt;</span> <span class="mi">160</span> <span class="o">&amp;&amp;</span> <span class="n">peso_c</span> <span class="o">&gt;</span> <span class="mf">60.0</span><span class="p">;</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="n">is_selecionado</span><span class="p">){</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Candidato atende aos critérios de seleção&quot;</span><span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Candidato desclassificado&quot;</span><span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Perceba que existem três partes do comando <code>if</code> no código.</p>
+<ul>
+<li><strong>expressão lógica</strong>: sempre fica entre os parênteses <code>()</code>. É parte obrigatória do comando e requer qualquer expressão lógica válida, que possa ser reduzida a <code>true</code> ou <code>false</code>. Em nosso exemplo, estamos avaliando o valor contido na variável <code>is_selecionado</code>, que é do tipo  <code>bool</code>. </li>
+<li><strong>bloco de comandos para o resultado true</strong>: é o primeiro par de chaves <code>{}</code> logo após a expressão lógica. Pode conter uma ou mais instruções, que serão executadas somente quando o resultado da expressão lógica for avaliado como <code>true</code>. É parte obrigatória do comando.</li>
+<li><strong>bloco de comandos para o resultado false (else)</strong>: par de chaves imediatamente após a palavra <code>else</code>. Pode conter uma ou mais instruções que serão executadas somente quando o resultado da expressão lógica for avaliado como <code>false</code>. É parte <em>opcional</em> do comando.</li>
+</ul>
+<p>Então, conforme explicamos, nosso código irá executar a instrução <code>cout &lt;&lt; "Candidato atende aos critérios de seleção"&lt;&lt; endl;</code> quando <code>is_selecionado</code> for <code>true</code> e <code>cout &lt;&lt; "Candidato desclassificado"&lt;&lt; endl;</code> quando for <code>false</code>.</p>
+<p>A expressão lógica pode ser informada diretamente no comando <code>if</code>. Inclusive, esta é a forma mais comum de encontrá-la. Assim, podemos simplificar nosso trecho de código, eliminando a variável <code>is_selecionado</code>. Teríamos então:</p>
+<div class="highlight"><pre><span></span><code><span class="k">if</span> <span class="p">(</span><span class="n">idade_c</span> <span class="o">&gt;=</span> <span class="mi">18</span> <span class="o">&amp;&amp;</span> <span class="n">altura_c</span> <span class="o">&gt;</span> <span class="mi">160</span> <span class="o">&amp;&amp;</span> <span class="n">peso_c</span> <span class="o">&gt;</span> <span class="mf">60.0</span><span class="p">){</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Candidato atende aos critérios de seleção&quot;</span><span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Candidato desclassificado&quot;</span><span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="comando-if-else-if">Comando IF ELSE IF<a class="headerlink" href="#comando-if-else-if" title="Permanent link">&para;</a></h3>
+<p>Uma variação do comando <code>if</code> permite especificar condições para os blocos <code>else</code>. Para demonstrar seu uso, vamos imaginar um novo programa que apresente a situação de estudantes com base na média final em determinada disciplina. A relação entre as notas e as respectivas situações estão na tabela que segue.</p>
+<table>
+<thead>
+<tr>
+<th align="center">Nota</th>
+<th align="center">Situação</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">0-4.9</td>
+<td align="center">Reprovado</td>
+</tr>
+<tr>
+<td align="center">5.0-6.9</td>
+<td align="center">Exame</td>
+</tr>
+<tr>
+<td align="center">7.0-10</td>
+<td align="center">Aprovado</td>
+</tr>
+</tbody>
+</table>
+<p>Uma possível codificação para o programa em questão seria:</p>
+<div class="highlight"><pre><span></span><code><span class="cm">/*definição de variáveis e leitura de dados...*/</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="n">nota</span><span class="o">&gt;=</span><span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="n">nota</span> <span class="o">&lt;=</span><span class="mf">4.9</span><span class="p">){</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span><span class="s">&quot;Reprovado&quot;</span><span class="p">;</span>
+<span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">nota</span><span class="o">&gt;=</span><span class="mf">5.0</span> <span class="o">&amp;&amp;</span> <span class="n">nota</span> <span class="o">&lt;=</span><span class="mf">6.9</span><span class="p">){</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span><span class="s">&quot;Exame&quot;</span><span class="p">;</span>
+<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span><span class="s">&quot;Aprovado&quot;</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Note que o <code>else if</code> pode aparecer várias vezes na mesma instrução, tantas quantas forem necessárias. E, mais importante: assim que uma condição for avaliada como <code>true</code>, nenhuma outra da mesma instrução será avaliada. </p>
+<h3 id="operador-ternario">Operador ternário<a class="headerlink" href="#operador-ternario" title="Permanent link">&para;</a></h3>
+<p>Para algumas situações, podemos utilizar uma simplificação de sintaxe da estrutura <code>if else</code> chamada <strong>operador ternário</strong>. Seu uso é especialmente interessante para testes simples, como aquele que fizemos no programa de seleção de candidatos. Veja a diferença:</p>
+<div class="highlight"><pre><span></span><code>    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="p">(</span><span class="n">idade_c</span> <span class="o">&gt;=</span> <span class="mi">18</span> <span class="o">&amp;&amp;</span> <span class="n">altura_c</span> <span class="o">&gt;</span> <span class="mi">160</span> <span class="o">&amp;&amp;</span> <span class="n">peso_c</span> <span class="o">&gt;</span> <span class="mf">60.0</span> <span class="o">?</span> <span class="s">&quot;Candidato atende aos critérios de seleção&quot;</span><span class="o">:</span> <span class="s">&quot;Candidato desclassificado&quot;</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+</code></pre></div>
+<p>Pelo código, percebemos que a sintaxe do comando é: <code>expressão lógica ? valor quando true : valor quando false</code>. É simples de usar, mas pode prejudicar a legibilidade do código se aplicado para testes mais complexos. Vale o bom senso ;)</p>
+<h3 id="switch">Switch<a class="headerlink" href="#switch" title="Permanent link">&para;</a></h3>
+<p>Finalizamos nosso estudo com o comando <code>switch</code>,  uma estrutura de decisão baseada em casos. Antes de conhecermos a sintaxe do comando, vamos propor um código de exemplo:</p>
+<div class="highlight"><pre><span></span><code>    <span class="kt">int</span> <span class="n">nota</span><span class="p">;</span>
+    <span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">nota</span><span class="p">;</span>
+
+    <span class="k">switch</span><span class="p">(</span><span class="n">nota</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">case</span> <span class="mi">1</span><span class="o">:</span>
+        <span class="k">case</span> <span class="mi">2</span><span class="o">:</span>
+        <span class="k">case</span> <span class="mi">3</span><span class="o">:</span>
+        <span class="k">case</span> <span class="mi">4</span><span class="o">:</span>
+            <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Reprovado&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+            <span class="k">break</span><span class="p">;</span>
+        <span class="k">case</span> <span class="mi">5</span> <span class="o">:</span>
+        <span class="k">case</span> <span class="mi">6</span> <span class="o">:</span>
+            <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Exame&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+            <span class="k">break</span><span class="p">;</span>
+        <span class="k">case</span> <span class="mi">7</span> <span class="o">:</span>
+        <span class="k">case</span> <span class="mi">8</span> <span class="o">:</span>
+        <span class="k">case</span> <span class="mi">9</span> <span class="o">:</span>
+        <span class="k">case</span> <span class="mi">10</span><span class="o">:</span>
+            <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Aprovado&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+            <span class="k">break</span><span class="p">;</span>
+        <span class="k">default</span><span class="o">:</span>
+            <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Nota inválida&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+    <span class="p">}</span>   
+</code></pre></div>
+<p>Nosso exemplo trás importantes informações acerca da sintaxe e uso do comando <code>switch</code>. O primeiro deles é que devemos informar uma variável (ou expressão) que possa ser avaliada como inteiro ou tipo enumerável. No código, a variável <code>nota</code> entre parenteses <code>()</code> serve  a tal finalidade. Objetivamente estamos consultando o valor de <code>nota</code> e estabelecendo o que fazer para cada um dos valores de interesse. Estes valores de interesse estão expressos nos casos (<code>case</code>).</p>
+<p>Então, se a leitura da variável <code>nota</code> indicar que seu valor é <code>4</code>, o programa vai executar as instruções <code>cout &lt;&lt; "Exame" &lt;&lt; endl;</code> e <code>break</code>. E se o valor for <code>1</code>, vai executar todas as instruções que seguem nos próximos <code>cases</code> até encontrar o <code>break</code>. </p>
+<p>Opa, como assim executar os "outros cases"? Exatamente isso: o comando <code>break</code> indica a interrupção do processamento do <code>switch</code>. Se ele não estiver presente, a execução irá iniciar pelo <code>case</code> pertinente ao valor da expressão, continuando até o final, passando pelas instruções de outros casos. Então, se você quer finalizar a execução naquele <code>case</code> específico, deve colocar o comando <code>break</code>.</p>
+<p>Ok, mas por que o código anterior não tem break em vários <code>cases</code>? Bem, porque notas entre <code>1</code> e <code>4</code> estão associadas com a situação <code>Reprovado</code>. Para não repetir a mesma instrução várias vezes, colocamos o break somente no <code>case 4</code>. O mesmo vale para <code>5</code> e <code>6</code> e <code>7</code> a <code>10</code>.</p>
+<p>Já o comando <code>default</code> é especial, executado quando nenhum dos <code>cases</code> anteriores corresponde ao valor da expressão avaliada. A presença do  <code>default</code> é opcional no comando <code>switch</code>.</p>
+<p>Para mais informações sobre desvios condicionais, recomendo a leitura do <a href="https://www.w3schools.com/cpp/cpp_conditions.asp">tutorial da W3C</a> que trata deste assunto.</p>
                 
                   
                 

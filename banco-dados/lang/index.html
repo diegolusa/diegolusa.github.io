@@ -415,156 +415,155 @@
 <h3 id="comando-insert">Comando INSERT<a class="headerlink" href="#comando-insert" title="Permanent link">&para;</a></h3>
 <p>{: .notice--info}</p>
 <p>Responsável por adicionar novas linhas a uma tabela, o comando INSERT apresenta sintaxe muito simples, embora com algumas variações. A forma trivial de escrevê-lo é especificando todas as colunas da tabela e os seus respectivos valores. Observe o trecho de código a seguir:</p>
-<pre><code class="language-sql">INSERT INTO quote
-            (id,
-             entrance_exam_id,
-             NAME,
-             reference_code,
-             description,
-             comment,
-             is_universal_access)
-VALUES      (1,
-             1,
-             'ACESSO UNIVERSAL',
-             '1',
-             'Vagas de acesso universal',
-             '',
-             true); 
-</code></pre>
-<p>Para ter sucesso na execução, o comando <code>insert</code> deve respeitar a sintaxe e as <code>constraints</code> definidas para as colunas da tabela. <strong>Todas</strong> as colunas obrigatórias (<code>not null</code>) devem aparecer no comando, com exceção daquelas que possuem valor <code>default</code>, que podem ser omitidas. </p>
+<p><div class="highlight"><pre><span></span><code><span class="k">INSERT</span> <span class="k">INTO</span> <span class="n">quote</span>
+            <span class="p">(</span><span class="n">id</span><span class="p">,</span>
+             <span class="n">entrance_exam_id</span><span class="p">,</span>
+             <span class="n">NAME</span><span class="p">,</span>
+             <span class="n">reference_code</span><span class="p">,</span>
+             <span class="n">description</span><span class="p">,</span>
+             <span class="k">comment</span><span class="p">,</span>
+             <span class="n">is_universal_access</span><span class="p">)</span>
+<span class="k">VALUES</span>      <span class="p">(</span><span class="mi">1</span><span class="p">,</span>
+             <span class="mi">1</span><span class="p">,</span>
+             <span class="s1">&#39;ACESSO UNIVERSAL&#39;</span><span class="p">,</span>
+             <span class="s1">&#39;1&#39;</span><span class="p">,</span>
+             <span class="s1">&#39;Vagas de acesso universal&#39;</span><span class="p">,</span>
+             <span class="s1">&#39;&#39;</span><span class="p">,</span>
+             <span class="k">true</span><span class="p">);</span> 
+</code></pre></div>
+Para ter sucesso na execução, o comando <code>insert</code> deve respeitar a sintaxe e as <code>constraints</code> definidas para as colunas da tabela. <strong>Todas</strong> as colunas obrigatórias (<code>not null</code>) devem aparecer no comando, com exceção daquelas que possuem valor <code>default</code>, que podem ser omitidas. </p>
 <p>Ainda, quando a(s) coluna(s) representam chaves estrangeiras, os valores informados devem respeitar a <em>integridade referencial</em>, ou seja, devem estar presentes como valores de chave primária na tabela referenciada. E, para não esquecer, os valores informados devem respeitar o <em>domínio</em> de dados da coluna.</p>
 <p>Quando há necessidade de adicionar múltiplas linhas em uma tabela não precisamos repetir diversas vezes o comando <code>insert</code>. Nestes casos, é possível informar vários valores de tupla (linha) na cláusula <strong>VALUES</strong>. No exemplo abaixo, o resultado da execução será a inserção de duas linhas na tabela <code>produto</code>.</p>
-<pre><code class="language-sql">INSERT INTO produto 
-        (id, 
-        nome                    
-        )
-VALUES
-        (default,'Lápis'), 
-        (default,'Caneta');
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">INSERT</span> <span class="k">INTO</span> <span class="n">produto</span> 
+        <span class="p">(</span><span class="n">id</span><span class="p">,</span> 
+        <span class="n">nome</span>                    
+        <span class="p">)</span>
+<span class="k">VALUES</span>
+        <span class="p">(</span><span class="k">default</span><span class="p">,</span><span class="s1">&#39;Lápis&#39;</span><span class="p">),</span> 
+        <span class="p">(</span><span class="k">default</span><span class="p">,</span><span class="s1">&#39;Caneta&#39;</span><span class="p">);</span>
+</code></pre></div>
 <p>Outra variação de grande utilidade é a possibilidade de substituir <strong>VALUES</strong> por um comando de <strong>SELECT</strong>. Observe:</p>
-<pre><code class="language-sql">INSERT INTO produto 
-        (
-        nome                    
-        )
-SELECT 
-    item_nome 
-FROM
-    item_nota_fiscal
-WHERE 
-    tipo = 'P';
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">INSERT</span> <span class="k">INTO</span> <span class="n">produto</span> 
+        <span class="p">(</span>
+        <span class="n">nome</span>                    
+        <span class="p">)</span>
+<span class="k">SELECT</span> 
+    <span class="n">item_nome</span> 
+<span class="k">FROM</span>
+    <span class="n">item_nota_fiscal</span>
+<span class="k">WHERE</span> 
+    <span class="n">tipo</span> <span class="o">=</span> <span class="s1">&#39;P&#39;</span><span class="p">;</span>
+</code></pre></div>
 <p>Por fim, o PostgreSQL possibilita o retorno de valores em comandos de <code>insert</code> através da cláusula <code>returning</code>. Esse recurso é especialmente útil para obter valores de colunas configuradas como <code>default</code>, incluíndo tipos seriais utilizados em chaves primárias, bem como para comandos de PL/SQL que envolvem a atribuição de variáveis (<a href="https://www.postgresql.org/docs/current/sql-insert.html">Vide Documentação</a>).</p>
-<p>No exemplo abaixo, o comando <code>insert</code> irá retornar o valor gerado para a coluna <code>id</code>, tal qual faria um comando <code>select</code> análogo.</p>
-<pre><code class="language-sql">INSERT INTO produto 
-        (id,
-        nome                    
-        ) 
-VALUES
-      (default,
-      'Pão')
-RETURNING id;
-</code></pre>
+<p>No exemplo abaixo, o comando <code>insert</code> irá retornar o valor gerado para a coluna <code>id</code>, tal qual faria um comando <code>select</code> análogo.
+<div class="highlight"><pre><span></span><code><span class="k">INSERT</span> <span class="k">INTO</span> <span class="n">produto</span> 
+        <span class="p">(</span><span class="n">id</span><span class="p">,</span>
+        <span class="n">nome</span>                    
+        <span class="p">)</span> 
+<span class="k">VALUES</span>
+      <span class="p">(</span><span class="k">default</span><span class="p">,</span>
+      <span class="s1">&#39;Pão&#39;</span><span class="p">)</span>
+<span class="n">RETURNING</span> <span class="n">id</span><span class="p">;</span>
+</code></pre></div></p>
 <h3 id="comando-delete">Comando DELETE<a class="headerlink" href="#comando-delete" title="Permanent link">&para;</a></h3>
 <p>{: .notice--info}</p>
 <p>A exclusão de linhas de uma tabela é realizada pelo comando <code>delete</code>. Não confunda, portanto com o comando <code>drop</code>, cuja finalidade é remover do dicionário (schema) a definição e dados (se houver) de um objeto existente na base de dados.</p>
 <p>O comando <code>delete</code> não requer a especificação de filtros. Neste caso, <strong>todas</strong> as linhas da tabela serão removidas, o que pode ser imprudente. Normalmente todo comando <code>delete</code> acompanha condições que determinam quais linhas devem ser excluídas dentre todas as existentes. Tais condições são expressas na cláusula <strong>WHERE</strong>, na forma de condições lógicas.</p>
-<pre><code class="language-sql">
---irá excluir todas as linhas da tabela estudante
-DELETE FROM estudante;
+<div class="highlight"><pre><span></span><code><span class="c1">--irá excluir todas as linhas da tabela estudante</span>
+<span class="k">DELETE</span> <span class="k">FROM</span> <span class="n">estudante</span><span class="p">;</span>
 
-/*irá excluir somente as linhas 
-cujas condições forem satisfeitas*/
+<span class="cm">/*irá excluir somente as linhas </span>
+<span class="cm">cujas condições forem satisfeitas*/</span>
 
-DELETE FROM estudante 
-  WHERE
-      cpf = '012365478963' or
-      status = 'C';
-</code></pre>
+<span class="k">DELETE</span> <span class="k">FROM</span> <span class="n">estudante</span> 
+  <span class="k">WHERE</span>
+      <span class="n">cpf</span> <span class="o">=</span> <span class="s1">&#39;012365478963&#39;</span> <span class="k">or</span>
+      <span class="n">status</span> <span class="o">=</span> <span class="s1">&#39;C&#39;</span><span class="p">;</span>
+</code></pre></div>
 <p>A exclusão das linhas somente ocorre quando nenhuma <code>constraint</code> for violada. Casos típicos são linhas referenciadas em chaves estrangeiras, as quais não podem ser excluídas pois implicaria na violação da <strong>restrição de integrade referencial</strong>. </p>
 <p>Um meio de contornar a restrição e permitir a exclusão da linha com dependência é valer-se da cláusula <strong>ON DELETE CASCADE</strong> no momento de criar a chave estrangeira. Isso, contudo, irá depender das regras do negócio, que por vezes tornam inviável o uso de tal recurso. Pense, por exemplo, se ao excluir o registro de uma cidade, todos os dados de habitantes a ela associados fossem excluídos automaticamente. Certamente não parece ser a melhor estratégia.</p>
 <p>Da mesma forma que ocorre com o comando <strong>INSERT</strong>, o PostgreSQL possibilita o retorno de valores em comandos de <code>delete</code> através da cláusula <code>returning</code>. Observe o comando abaixo (<a href="https://www.postgresql.org/docs/current/sql-delete.html">Vide Documentação</a>):</p>
-<pre><code class="language-sql">DELETE FROM produto 
-WHERE data_validade &gt; current_date - interval '10 days' 
-returning id, nome;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">DELETE</span> <span class="k">FROM</span> <span class="n">produto</span> 
+<span class="k">WHERE</span> <span class="n">data_validade</span> <span class="o">&gt;</span> <span class="k">current_date</span> <span class="o">-</span> <span class="nb">interval</span> <span class="s1">&#39;10 days&#39;</span> 
+<span class="n">returning</span> <span class="n">id</span><span class="p">,</span> <span class="n">nome</span><span class="p">;</span>
+</code></pre></div>
 <h3 id="comando-update">Comando UPDATE<a class="headerlink" href="#comando-update" title="Permanent link">&para;</a></h3>
 <p>{: .notice--info}</p>
 <p>Para realizar modificações em dados armazenados, utilizamos o comando <strong>UPDATE</strong>. Por meio dele é possível alterar valores de uma ou mais colunas da linha (ou linhas) de uma tabela.</p>
 <p>Se definido sem filtros, a alteração solicitada será efetivada em todas as linhas, contudo nos cenários triviais de uso, este não é o objetivo pretendido. Normalmente utilizamos condições que restringem o efeito da atualização para uma quantia menor de linhas.</p>
-<pre><code class="language-sql">--Todas as linhas de produto terão o valor da coluna nome alterado para Feijão
-UPDATE produto SET nome = 'Feijão';
+<div class="highlight"><pre><span></span><code><span class="c1">--Todas as linhas de produto terão o valor da coluna nome alterado para Feijão</span>
+<span class="k">UPDATE</span> <span class="n">produto</span> <span class="k">SET</span> <span class="n">nome</span> <span class="o">=</span> <span class="s1">&#39;Feijão&#39;</span><span class="p">;</span>
 
---O mesmo comando, agora com filtro
-UPDATE produto SET nome = 'Feijão' 
-        WHERE codigo = 25;
-</code></pre>
+<span class="c1">--O mesmo comando, agora com filtro</span>
+<span class="k">UPDATE</span> <span class="n">produto</span> <span class="k">SET</span> <span class="n">nome</span> <span class="o">=</span> <span class="s1">&#39;Feijão&#39;</span> 
+        <span class="k">WHERE</span> <span class="n">codigo</span> <span class="o">=</span> <span class="mi">25</span><span class="p">;</span>
+</code></pre></div>
 <p>No comando <code>update</code> podemos especificar apenas uma tabela. A partir da cláusula <code>set</code> informamos qual será o novo valor das colunas que desejamos modificar. É possível informar uma ou mais colunas na mesma instrução, assim como utilizar o valor atual de colunas para compor novos. Observe:</p>
-<pre><code class="language-sql">--Modificando várias colunas em uma única instrução
+<div class="highlight"><pre><span></span><code><span class="c1">--Modificando várias colunas em uma única instrução</span>
 
-UPDATE produto 
-SET nome = 'Feijão', preco=4.86, peso=2000 
-WHERE codigo = 25;
+<span class="k">UPDATE</span> <span class="n">produto</span> 
+<span class="k">SET</span> <span class="n">nome</span> <span class="o">=</span> <span class="s1">&#39;Feijão&#39;</span><span class="p">,</span> <span class="n">preco</span><span class="o">=</span><span class="mi">4</span><span class="p">.</span><span class="mi">86</span><span class="p">,</span> <span class="n">peso</span><span class="o">=</span><span class="mi">2000</span> 
+<span class="k">WHERE</span> <span class="n">codigo</span> <span class="o">=</span> <span class="mi">25</span><span class="p">;</span>
 
---Novos valores de coluna com base nos atuais
+<span class="c1">--Novos valores de coluna com base nos atuais</span>
 
-UPDATE produto 
-SET preco= preco+ preco * 0.05 
-WHERE codigo = 25;
-</code></pre>
+<span class="k">UPDATE</span> <span class="n">produto</span> 
+<span class="k">SET</span> <span class="n">preco</span><span class="o">=</span> <span class="n">preco</span><span class="o">+</span> <span class="n">preco</span> <span class="o">*</span> <span class="mi">0</span><span class="p">.</span><span class="mi">05</span> 
+<span class="k">WHERE</span> <span class="n">codigo</span> <span class="o">=</span> <span class="mi">25</span><span class="p">;</span>
+</code></pre></div>
 <p>Você deve ter observado que a cláusula <code>set</code> é uma sequência de pares de coluna/valor separados por vírgula. Utilizando o trecho <code>preco= preco + preco * 0.05</code> como exemplo, percebemos que à esquerda da igualdade temos o nome da coluna que terá o valor modificado, enquanto que na direita encontramos o novo valor. Quando o nome de uma coluna aparece na direita (nosso exemplo), estamos lendo o valor atual para utilizá-lo de alguma forma na composição do novo. Assim, supondo que a coluna <code>preco</code> tenha por valor atual <code>2.40</code>, o novo valor será o resultado da expressão <code>2.40 + 2.40 * 0.05</code>, ou seja, <code>2.52</code>.</p>
 <p>O PostgreSQL possibilita o retorno de valores em comandos <code>update</code> através da cláusula <code>returning</code>. Observe o comando abaixo (<a href="https://www.postgresql.org/docs/current/sql-update.html">Vide Documentação</a>):</p>
-<pre><code class="language-sql">UPDATE produto 
-SET nome = 'Feijão', preco = preco * 0.15 
-WHERE codigo = 25 RETURNING preco;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">UPDATE</span> <span class="n">produto</span> 
+<span class="k">SET</span> <span class="n">nome</span> <span class="o">=</span> <span class="s1">&#39;Feijão&#39;</span><span class="p">,</span> <span class="n">preco</span> <span class="o">=</span> <span class="n">preco</span> <span class="o">*</span> <span class="mi">0</span><span class="p">.</span><span class="mi">15</span> 
+<span class="k">WHERE</span> <span class="n">codigo</span> <span class="o">=</span> <span class="mi">25</span> <span class="n">RETURNING</span> <span class="n">preco</span><span class="p">;</span>
+</code></pre></div>
 <h3 id="comando-select">Comando SELECT<a class="headerlink" href="#comando-select" title="Permanent link">&para;</a></h3>
 <p>{: .notice--info}</p>
 <p>Certamente podemos afirmar que o comando <a href="https://www.postgresql.org/docs/current/sql-select.html"><strong>select</strong></a> é um dos mais importantes da linguagem SQL. Isso porque através dele temos condições de recompor as informações do mundo fragmentados nas diferentes tabelas da base, respondendo às consultas dos usuários. A informação é, portanto, o que se busca apresentar nos diferentes softwares que construímos para interagir com bases de dados. </p>
 <p>Proporcional a importância do comando <strong>select</strong> é a sua complexidade e variação de sintaxe. Logo, extrair todo pontencial do comando pode levar certo tempo de estudo e dedicação.</p>
 <p>Em termos gerais, o comando <strong>select</strong> representa o meio que temos, em bases relacionais, para recuperar dados. O seu retorno representa uma <strong>relação</strong> (nome formal dado às tabelas), uma vez que falamos em um retorno estruturado em linhas e colunas.</p>
 <p>Vamos começar nosso estudo entendendo as principais seções que compõem o comando <strong>select</strong>. Para tal, considere o código SQL abaixo:</p>
-<pre><code class="language-sql">select medico_id,
-       paciente_id,
-       anamnese,
-       data_hora_alta
-from
-        internacao
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">select</span> <span class="n">medico_id</span><span class="p">,</span>
+       <span class="n">paciente_id</span><span class="p">,</span>
+       <span class="n">anamnese</span><span class="p">,</span>
+       <span class="n">data_hora_alta</span>
+<span class="k">from</span>
+        <span class="n">internacao</span>
+</code></pre></div>
 <p>Observe a cláusula <strong>from</strong>. Nela especificamos a(s) relação(ões) que iremos consultar. A tabela <code>internacao</code> é nossa relação e estamos interessados em recuperar as linhas que ela contém. </p>
 <p>Sabemos que relações são segmentadas em colunas e, na consulta, podemos limitar a quais delas gostaríamos de receber no retorno. Portanto, somente as colunas <code>medico_id</code>, <code>paciente_id</code>, <code>anamnese</code> e <code>data_hora_alta</code> de todas as linhas armazenadas em <code>internacao</code> serão retornadas. Perceba que a lista de colunas deve ser expressa entre as cláusulas <strong>select</strong> e <strong>from</strong>, utilizando vírgula como caractere separador e respeitando a nomenclatura utilizada no momento da criação da tabela. Para os casos onde todas as colunas devem estar presentes na saída, utilizamos um asterisco para simplificar a escrita da consulta. Neste caso, teríamos:</p>
-<pre><code class="language-sql">select * from internacao
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">select</span> <span class="o">*</span> <span class="k">from</span> <span class="n">internacao</span>
+</code></pre></div>
 <p>Bem, e se você preferir mudar o nome de saída da coluna...como faria? Neste caso, basta utilizar o recurso de troca de nomes (<em>rename</em>). Veja:</p>
-<pre><code class="language-sql">select medico_id as &quot;codigo do médico&quot;,
-       paciente_id paciente,
-       anamnese,
-       data_hora_alta as saida_paciente
-from
-        internacao
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">select</span> <span class="n">medico_id</span> <span class="k">as</span> <span class="ss">&quot;codigo do médico&quot;</span><span class="p">,</span>
+       <span class="n">paciente_id</span> <span class="n">paciente</span><span class="p">,</span>
+       <span class="n">anamnese</span><span class="p">,</span>
+       <span class="n">data_hora_alta</span> <span class="k">as</span> <span class="n">saida_paciente</span>
+<span class="k">from</span>
+        <span class="n">internacao</span>
+</code></pre></div>
 <p>Ao optar por renomear colunas, quando utilizamos nomes compostos com espaços entre as palavras, será preciso envolver com aspas duplas (<code>medico_id as "codigo do médico"</code>). O operador <strong>as</strong> é opcional, logo fica a seu critério utilizá-lo ou não. Apenas mantenha um padrão de escrita, aderindo a uma das formas apenas.</p>
 <p><strong>Atenção:</strong> A operção <em>rename</em> não realiza alterações de schema. Seu efeito vale apenas no contexto da query.
 {: .notice--warning}</p>
 <p>Além de nomes de colunas, podemos solicitar saída de expressões. É possível, por exemplo, realizar chamadas de funções, cálculos matemáticos e até fazer uso de subqueries no espaço reservado às colunas. Contudo, precisamos utilizar tais liberdades com moderação, pois em alguns casos podemos comprometer o desempenho da consulta (veremos estas situações em outro post). </p>
-<pre><code class="language-sql">select 
-       upper(anamnese),
-       age(data_hora_alta) as tempo_de_saida,
-       3*9 as calculo   
-from
-        internacao
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">select</span> 
+       <span class="k">upper</span><span class="p">(</span><span class="n">anamnese</span><span class="p">),</span>
+       <span class="n">age</span><span class="p">(</span><span class="n">data_hora_alta</span><span class="p">)</span> <span class="k">as</span> <span class="n">tempo_de_saida</span><span class="p">,</span>
+       <span class="mi">3</span><span class="o">*</span><span class="mi">9</span> <span class="k">as</span> <span class="n">calculo</span>   
+<span class="k">from</span>
+        <span class="n">internacao</span>
+</code></pre></div>
 <p>Até o momento sabemos como especificar as colunas (ou expressões) e a relação para nossas consultas via <strong>select</strong>. Da forma que apresentamos até então, <strong>todas</strong> as linhas da relação serão retornadas, uma vez que não definimos <strong>filtros</strong> para os dados. É pouco provável que suas <em>queries</em> considerem a integralidade de linhas de uma tabela, logo saber restringir o retorno apenas as linhas de interesse é de fundamental importância. </p>
 <p>A cláusula que nos permite condicionar linhas ao retorno chama-se <strong>where</strong>. Nela, expressamos as restrições na forma de condições lógicas, elaboradas por meio de operadores de comparação (<code>&lt; &gt; = &lt;= &gt;= &lt;&gt;</code>) e conectores lógicos (<code>NOT AND OR</code>) envolvendo colunas e/ou expressões.</p>
-<pre><code class="language-sql">select 
-        * 
-from
-   internacao
-where
-   data_hora_internacao &gt; 
-        current_timestamp - interval '3 days'
-   and tipo_clinica = 'M'
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">select</span> 
+        <span class="o">*</span> 
+<span class="k">from</span>
+   <span class="n">internacao</span>
+<span class="k">where</span>
+   <span class="n">data_hora_internacao</span> <span class="o">&gt;</span> 
+        <span class="k">current_timestamp</span> <span class="o">-</span> <span class="nb">interval</span> <span class="s1">&#39;3 days&#39;</span>
+   <span class="k">and</span> <span class="n">tipo_clinica</span> <span class="o">=</span> <span class="s1">&#39;M&#39;</span>
+</code></pre></div>
 <p>Na query acima, condicionamos ao retorno linhas da tabela <code>internacao</code> que possuem valor igual a <code>M</code> na coluna <code>tipo_clinica</code> e cuja <code>data_hora_internacao</code> registra uma estampa de tempo de até 3 dias. </p>
 <h2 id="juncoes-internas">Junções Internas<a class="headerlink" href="#juncoes-internas" title="Permanent link">&para;</a></h2>
                 
