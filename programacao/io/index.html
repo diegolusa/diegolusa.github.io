@@ -228,10 +228,61 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../../informatica/editores-texto/" class="md-nav__link">
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_1" type="checkbox" id="__nav_2_1" >
+      
+      <label class="md-nav__link" for="__nav_2_1">
         Editores de Texto
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Editores de Texto" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_1">
+          <span class="md-nav__icon md-icon"></span>
+          Editores de Texto
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../informatica/editores-texto/introducao/" class="md-nav__link">
+        Writer
       </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../informatica/editores-texto/estilos/" class="md-nav__link">
+        Estilos
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../informatica/editores-texto/abnt/" class="md-nav__link">
+        ABNT
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -349,7 +400,7 @@
       
         <li class="md-nav__item">
   <a href="#cin-e-cout" class="md-nav__link">
-    cin e cout
+    Cin e cout
   </a>
   
 </li>
@@ -357,6 +408,20 @@
         <li class="md-nav__item">
   <a href="#estudo-de-caso" class="md-nav__link">
     Estudo de caso
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#formatando-a-saida-de-dados" class="md-nav__link">
+    Formatando a saída de dados
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#colocar-codigo-de-exemplo" class="md-nav__link">
+    Colocar código de exemplo.
   </a>
   
 </li>
@@ -455,12 +520,14 @@
                 
                 <p>Programas de computador são criados basicamente para processar dados. Espera-se, portanto, que hajam meios do programa receber tais dados e devolver os resultados do processamento. Um destes meios são os <code>consoles</code>, ou seja, janelas do sistema operacional que permitem apenas comandos na forma de texto. Outra forma típica de coletar e apresentar dados são por interfaces gráficas baseadas em janelas. De qualquer modo, em todos os casos, estamos falando de operações de <code>input/output</code> (também conhecidas como <code>i/o</code>).</p>
 <p>Neste artigo iremos explorar o processo de <code>i/o</code> em <code>console</code> do C++ por meio da biblioteça <a href="http://www.cplusplus.com/reference/iostream/"><code>iostream</code></a>.</p>
-<h2 id="cin-e-cout">cin e cout<a class="headerlink" href="#cin-e-cout" title="Permanent link">&para;</a></h2>
+<h2 id="cin-e-cout">Cin e cout<a class="headerlink" href="#cin-e-cout" title="Permanent link">&para;</a></h2>
 <p>Em C++ utilizamos o objeto <code>cin</code> para ler valores do teclado, enquanto que utilizamos <code>cout</code> para imprimir valores em tela. Vamos começar nosso estudo pela entrada de dados.</p>
 <p>Para lermos informações do teclado precisamos informar ao objeto <code>cin</code> a variável de destino. Deste modo, o valor informado será transferido (registrado) na variável para posteriormente ser utilizado. Neste processo, podemos informar uma ou mais variáveis na mesma instrução, logo após o operação de extração <code>&gt;&gt;</code>.</p>
-<p><strong>Importante:</strong> Toda variável, para ser utilizada, deve obrigatoriamente ter sido declarada em instruções anteriores. Somente podemos utilizar aquilo que já foi "criado".
-{:.notice--info}</p>
-<p>Supondo que quisessemos ler o preço de um determinado produto do supermercado para uma variável de nosso programa, inicialmente deveríamos realizar a declaração da variável e, após, faríamos a leitura. Considerando que preço refere-se um número com casas decimais, devemos utilizar os tipos de dados de ponto flutuante, como <code>float</code> ou <code>double</code>. Então, de forma bem resumida, teríamos no mínimo duas instruções em nosso programa:</p>
+<div class="admonition warning">
+<p class="admonition-title">Atenção</p>
+<p>Toda variável no C++, para ser utilizada, deve obrigatoriamente ter sido declarada em instruções anteriores. Somente podemos utilizar aquilo que já foi "criado". </p>
+</div>
+<p>Supondo que quiséssemos ler o preço de determinado produto do supermercado para uma variável de nosso programa, primeiro deveríamos realizar a declaração da mesma e, após, a leitura. Considerando que <em>preço</em> refere-se a um conceito numérico com possibilidade de casas decimais, devemos utilizar, na declaração, tipos de dados de ponto flutuante, como <code>float</code> ou <code>double</code>. Logo, de forma bem resumida, teríamos no mínimo duas etapas em nosso programa relacionadas a este contexto:</p>
 <ul>
 <li>Declaração da variável: <code>float preco_produto;</code></li>
 <li>Leitura de valor de produto do console: <code>cin &gt;&gt; preco_produto;</code></li>
@@ -471,10 +538,12 @@
 <ul>
 <li>Declaração da variável: <code>float preco_produto;</code></li>
 <li>Apresentar mensagem em tela: <code>cout &lt;&lt; "Informe o valor do produto:"</code></li>
-<li>Leitura de valor de produto do console: <code>cin &gt;&gt; preco_produto;</code></li>
+<li>Leitura de valor do produto do console: <code>cin &gt;&gt; preco_produto;</code></li>
 </ul>
-<p><strong>Atenção:</strong> Percebeu que o operador que acompanha o <code>cout</code> é oposto em sentido ao do <code>cin</code>? Pois é, enquanto o <strong>operador de extração</strong> <code>&gt;&gt;</code> é utilizado no objeto <code>cin</code>, o do <code>cout</code> chama-se <strong>operador de inserção</strong> e se opõem em sentido, apontando para a esquerda <code>&lt;&lt;</code>.
-{: .notice--warning}</p>
+<div class="admonition warning">
+<p class="admonition-title">Atenção</p>
+<p>Percebeu que o operador que acompanha o <code>cout</code> é oposto em sentido ao do <code>cin</code>? Pois é, enquanto o <strong>operador de extração</strong> <code>&gt;&gt;</code> é utilizado no objeto <code>cin</code>, o do <code>cout</code> chama-se <strong>operador de inserção</strong> e se opõem em sentido, apontando para a esquerda <code>&lt;&lt;</code>.</p>
+</div>
 <h2 id="estudo-de-caso">Estudo de caso<a class="headerlink" href="#estudo-de-caso" title="Permanent link">&para;</a></h2>
 <p>Observe nosso programa exemplo abaixo. Tenha especial atenção aos tipos de dado utilizados na declação das variáveis e aos usos dos objetos de entrada e saída. </p>
 <p>Execute o código com especial atenção às mensagens exibidas em tela, buscando relacionar com a instrução que as gera.</p>
@@ -502,6 +571,18 @@
     <span class="n">cout</span> <span class="o">&lt;&lt;</span><span class="n">endl</span> <span class="o">&lt;&lt;</span> <span class="n">nome</span> <span class="o">&lt;&lt;</span><span class="s">&quot;, nascido em &quot;</span> <span class="o">&lt;&lt;</span><span class="n">ano_nascimento</span> <span class="o">&lt;&lt;</span> <span class="s">&quot; tem peso igual a &quot;</span><span class="o">&lt;&lt;</span> <span class="n">peso</span> <span class="o">&lt;&lt;</span><span class="n">endl</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></div>
+<h2 id="formatando-a-saida-de-dados">Formatando a saída de dados<a class="headerlink" href="#formatando-a-saida-de-dados" title="Permanent link">&para;</a></h2>
+<p>A apresentação das informações ao usuário é muito importante, afinal estamos falado de tornar a experiência de uso do software o mais agradável possível. Na interação via console, podemos trabalhar a saída com auxílio de recursos da biblioteca <a href="#todo"><code>iomanip</code></a>.</p>
+<p>O primeiro passo para utilizar a biblioteca é incluí-la no programa através da diretiva <code>#include</code>. Feito isso, temos acesso aos seguintes recursos:</p>
+<ul>
+<li><code>setfill</code>: permite definir o caractere utilizado para preencher espaços vazios.</li>
+<li><code>setw</code>: especifica o número de colunas reservadas para impressão do valor que segue.</li>
+<li><code>left</code>: alinhamento da saída em tela à esquerda.</li>
+<li><code>right</code>: alinhamento da saída em tela à direita.</li>
+<li><code>setprecision</code>: configura quantas casas decimais serão impressos na saída de números de ponto flutuante.</li>
+<li><code>setiosflags</code>: ativa flags do mecanismo de io, como o tipo de representação numérica utilizada na saída, por exemplo.</li>
+</ul>
+<h2 id="colocar-codigo-de-exemplo">Colocar código de exemplo.<a class="headerlink" href="#colocar-codigo-de-exemplo" title="Permanent link">&para;</a></h2>
                 
                   
                 
