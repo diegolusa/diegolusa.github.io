@@ -446,11 +446,11 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#titulos" class="md-nav__link">
-    Títulos
+  <a href="#capitulos" class="md-nav__link">
+    Capítulos
   </a>
   
-    <nav class="md-nav" aria-label="Títulos">
+    <nav class="md-nav" aria-label="Capítulos">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -508,8 +508,15 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#sumario_1" class="md-nav__link">
-    Sumário
+  <a href="#sumario-automatico" class="md-nav__link">
+    Sumário automático
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#legendas" class="md-nav__link">
+    Legendas
   </a>
   
 </li>
@@ -795,7 +802,7 @@
 <p>Nossos próximos itens de formatação serão os títulos. Configurá-los corretamente é o segredo para a geração do sumário de forma simples. Neste procedimento estaremos alterando <strong>estilos de parágrafo</strong>.</p>
 <p>Por padrão, o LibreOffice Writer trás estilos específicos para títulos. Logo, é mais rápido modificar estes existentes do que criar novos. Para encontrá-los, um dos caminhos é pela aba de estilos, filtrando por  <em>Estilos de Texto</em>.</p>
 <p><img alt="Título de primeiro nível" src="../../../img/informatica/abnt/abnt-estilos-titulo.png" /></p>
-<h4 id="titulos">Títulos<a class="headerlink" href="#titulos" title="Permanent link">&para;</a></h4>
+<h4 id="capitulos">Capítulos<a class="headerlink" href="#capitulos" title="Permanent link">&para;</a></h4>
 <p>Começaremos a configuração pelo título de primeiro nível, que estabelece os capítulos do documento e, pela norma, deve sempre iniciar nova página. Para modificarmos o estilo <em>Título 1</em> devemos clicar com o botão direito do mouse sobre ele, escolhendo a opção <strong>Modificar</strong>. Lembre-se que já apresentamos as <a href="../estilos/#estilos-de-paragrafo">telas de edição de estilos de parágrafo</a>. Caso não lembre, sugiro uma nova leitura.</p>
 <p>Os demais níveis você poderá formatar utilizando como referência os exemplos aqui apresentados. Haverá variação do tamanho da fonte e efeitos aplicados. Revise a norma para detalhes. E, o mais importante: certifique-se de configurar os títulos do nível correto e de aplicar o estilo nos respectivos títulos. </p>
 <p>Na sequência apresentamos os passos de configuração para <em>Título 1</em>.</p>
@@ -843,10 +850,37 @@ Aba <em>Fonte</em></p>
 <p>Em <em>número</em>, informe a sequência de número arábicos (1,2,3). Verifique se o estilo de parágrafo informado condiz com àqueles que você utilizou. Faça as alterações conforme necessário. No campo <em>mostrar subníveis</em> você deve informar os níveis que irão compor a numeração. Aumente este valor para o máximo possível (todos os níveis anteriores). Demais itens podem ficar com os valores padrão. Repita a configuração para cada nível existente no seu documento.</p>
 <p>Por fim, na aba <em>Posição</em>, campo <em>numeração seguida de</em>, informe <em>Espaço</em>.</p>
 <p><img alt="Numeração de capítulos." src="../../../img/informatica/abnt/abnt-titulo-numeracao-capitulos-posicao.png" /></p>
-<h4 id="sumario_1">Sumário<a class="headerlink" href="#sumario_1" title="Permanent link">&para;</a></h4>
+<h4 id="sumario-automatico">Sumário automático<a class="headerlink" href="#sumario-automatico" title="Permanent link">&para;</a></h4>
 <p>Uma vez configurados os estilos e numeração dos capítulos, a geração do sumário de forma automática se torna possível. Para o procedimento, devemos ir até a página reservada ao sumário na seção de elementos pré-textuais.</p>
-<p>Após, acessar a aba <em>Referências</em>, botão <em>Referências</em> que está a direita, opção <em>Sumário, Índice ou Bibliografia</em></p>
+<p>Após, acessar a aba <em>Referências</em>, botão <em>Referências</em> que está a direita, opção <em>Sumário, Índice ou Bibliografia</em>.</p>
+<p>Em <em>Título</em> deixaremos o valor padrão. No campo <em>Tipo</em> deve estar <em>Sumário</em> e em <em>Para</em>, o valor deve ser <em>Documento inteiro</em>. Ao clicar em <em>OK</em>, o índice do sumário será inserido automáticamente no local em que o cursor foi posicionando no documento.</p>
 <p><img alt="Adicionar sumário ao documento" src="../../../img/informatica/abnt/abnt-sumario.png" /></p>
+<p>Quando o sumário é inserido, cada entrada gerada vincula-se com estilos pré-definidos. Logo, precisaremos ajustar a formatação destes estilos para atender os critérios da ABNT, que orienta a apresentação de cada entrada no mesmo formato em que aparece no corpo do texto. O que temos de momento é algo semelhante a imagem abaixo (irá depender dos títulos definidos em seu documento).</p>
+<p><img alt="Formato padrão do sumário inserido no documento" src="../../../img/informatica/abnt/abnt-sumario-formato-padrao.png" /></p>
+<p>Para ajustarmos a formatação das entradas do sumário devemos inicialmente saber quais estilos são utilizados. Para isso, será preciso clicar com o botão direito do mouse sobre qualquer parte do sumário e escolher a opção <em>Editar Índice</em>. Na tela apresentada, escolhemos a aba <em>Estilos</em>.</p>
+<p><img alt="Estilos para entradas do sumário" src="../../../img/informatica/abnt/abnt-sumario-estilos.png" /></p>
+<p>Perceba que, no lado esquerdo da tela, temos cada nível e o respectivo estilo entre <code>[]</code>. Já no lado direito são listados todos os estilos de parágrafo disponíveis para que seja possível vincular o nível ao estilo desejado.</p>
+<p>Nossa opção será, novamente, editar os estilos padrão (<em>Título de sumário</em>, <em>Sumário 1</em>, <em>Sumário 2</em>, etc), adequando-os àquilo que precisamos. O passo-a-passo para realizar o ajuste é idêntico a edição de qualquer outro estilo de parágrafo.</p>
+<p>Além dos estilos, precisamos ajustar a construção das entradas, especificamente a <em>parada de tabulação</em>. Você deve ter percebido que o espaço entre o número da página e o texto do capítulo está sendo preenchido com <code>.</code>, sendo que o correto é <em>espaço</em>. Então, para este ajuste, devemos acessar a aba <em>Entradas</em>, e, para cada nível desejado, alterar o caractere da <em>parada de tabulação</em>. </p>
+<div class="admonition info">
+<p class="admonition-title">Dica</p>
+<p>Clicar primeiro sobre o número do nível, após no "T" e, por fim, informar o caractere de preenchimento correto. </p>
+</div>
+<p><img alt="Alterando a parada de tabulação das entradas do sumário" src="../../../img/informatica/abnt/abnt-sumario-caractere-preenchimento.png" /></p>
+<h4 id="legendas">Legendas<a class="headerlink" href="#legendas" title="Permanent link">&para;</a></h4>
+<p>Legendas são aplicadas a tabelas e ilustrações. Compreendem a descrição do item, de forma objetiva, bem como indicam a sequência do elemento dentro do texto. Segundo a norma, devem estar em tamanho <code>10</code>, entre linhas simples, caracteres em maiúsculo.</p>
+<ul>
+<li><strong>Quadros</strong>:  apresentação tabular de dados, com moldura em torno (borda externa). Utilizado para apresentar conteúdo teórico e dados numéricos <em>sem tratamento estatístico</em>. </li>
+<li>
+<p><strong>Tabelas</strong>: apresentação tabular de dados numéricos <em>com tratamento estatístico</em>.</p>
+</li>
+<li>
+<p><strong>Ilustrações</strong>: São imagens, figuras, gráficos, diagramas, entre outros.</p>
+</li>
+</ul>
+<p>A inserção de legendas segue o mesma estratégia para todos os tipos citados. Por conta disso, iremos utilizar tabelas e imagens como estudo de caso. </p>
+<p>Inserir tabelas no Writer pode ser feito através do menu <em>Tabela -&gt; Inserir Tabela</em>.</p>
+<p><img alt="Adicionar tabela ao documento" src="../../../img/informatica/abnt/abnt-inserir-tabela.png" /></p>
 <p>continua...</p>
 <h3 id="elementos-pos-textuais">Elementos pós-textuais<a class="headerlink" href="#elementos-pos-textuais" title="Permanent link">&para;</a></h3>
 <h2 id="referencias">Referências<a class="headerlink" href="#referencias" title="Permanent link">&para;</a></h2>
