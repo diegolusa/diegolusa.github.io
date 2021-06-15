@@ -531,7 +531,7 @@ Para ter sucesso na execução, o comando <code>insert</code> deve respeitar a s
       <span class="n">cpf</span> <span class="o">=</span> <span class="s1">&#39;012365478963&#39;</span> <span class="k">or</span>
       <span class="n">status</span> <span class="o">=</span> <span class="s1">&#39;C&#39;</span><span class="p">;</span>
 </code></pre></div>
-<p>A exclusão das linhas somente ocorre quando nenhuma <code>constraint</code> for violada. Casos típicos são linhas referenciadas em chaves estrangeiras, as quais não podem ser excluídas pois implicaria na violação da <strong>restrição de integrade referencial</strong>. </p>
+<p>A exclusão das linhas somente ocorre quando nenhuma <code>constraint</code> for violada. Casos típicos são linhas referenciadas em chaves estrangeiras, as quais não podem ser excluídas pois implicaria na violação da <strong>restrição de integridade referencial</strong>. </p>
 <p>Um meio de contornar a restrição e permitir a exclusão da linha com dependência é valer-se da cláusula <strong>ON DELETE CASCADE</strong> no momento de criar a chave estrangeira. Isso, contudo, irá depender das regras do negócio, que por vezes tornam inviável o uso de tal recurso. Pense, por exemplo, se ao excluir o registro de uma cidade, todos os dados de habitantes a ela associados fossem excluídos automaticamente. Certamente não parece ser a melhor estratégia.</p>
 <p>Da mesma forma que ocorre com o comando <strong>INSERT</strong>, o PostgreSQL possibilita o retorno de valores em comandos de <code>delete</code> através da cláusula <code>returning</code>. Observe o comando abaixo (<a href="https://www.postgresql.org/docs/current/sql-delete.html">Vide Documentação</a>):</p>
 <div class="highlight"><pre><span></span><code><span class="k">DELETE</span> <span class="k">FROM</span> <span class="n">produto</span> 
@@ -571,7 +571,7 @@ Para ter sucesso na execução, o comando <code>insert</code> deve respeitar a s
 <h3 id="comando-select">Comando SELECT<a class="headerlink" href="#comando-select" title="Permanent link">&para;</a></h3>
 <p>{: .notice--info}</p>
 <p>Certamente podemos afirmar que o comando <a href="https://www.postgresql.org/docs/current/sql-select.html"><strong>select</strong></a> é um dos mais importantes da linguagem SQL. Isso porque através dele temos condições de recompor as informações do mundo fragmentados nas diferentes tabelas da base, respondendo às consultas dos usuários. A informação é, portanto, o que se busca apresentar nos diferentes softwares que construímos para interagir com bases de dados. </p>
-<p>Proporcional a importância do comando <strong>select</strong> é a sua complexidade e variação de sintaxe. Logo, extrair todo pontencial do comando pode levar certo tempo de estudo e dedicação.</p>
+<p>Proporcional a importância do comando <strong>select</strong> é a sua complexidade e variação de sintaxe. Logo, extrair todo potencial do comando pode levar certo tempo de estudo e dedicação.</p>
 <p>Em termos gerais, o comando <strong>select</strong> representa o meio que temos, em bases relacionais, para recuperar dados. O seu retorno representa uma <strong>relação</strong> (nome formal dado às tabelas), uma vez que falamos em um retorno estruturado em linhas e colunas.</p>
 <p>Vamos começar nosso estudo entendendo as principais seções que compõem o comando <strong>select</strong>. Para tal, considere o código SQL abaixo:</p>
 <div class="highlight"><pre><span></span><code><span class="k">select</span> <span class="n">medico_id</span><span class="p">,</span>
@@ -594,9 +594,9 @@ Para ter sucesso na execução, o comando <code>insert</code> deve respeitar a s
         <span class="n">internacao</span>
 </code></pre></div>
 <p>Ao optar por renomear colunas, quando utilizamos nomes compostos com espaços entre as palavras, será preciso envolver com aspas duplas (<code>medico_id as "codigo do médico"</code>). O operador <strong>as</strong> é opcional, logo fica a seu critério utilizá-lo ou não. Apenas mantenha um padrão de escrita, aderindo a uma das formas apenas.</p>
-<p><strong>Atenção:</strong> A operção <em>rename</em> não realiza alterações de schema. Seu efeito vale apenas no contexto da query.
+<p><strong>Atenção:</strong> A operação <em>rename</em> não realiza alterações de schema. Seu efeito vale apenas no contexto da query.
 {: .notice--warning}</p>
-<p>Além de nomes de colunas, podemos solicitar saída de expressões. É possível, por exemplo, realizar chamadas de funções, cálculos matemáticos e até fazer uso de subqueries no espaço reservado às colunas. Contudo, precisamos utilizar tais liberdades com moderação, pois em alguns casos podemos comprometer o desempenho da consulta (veremos estas situações em outro post). </p>
+<p>Além de nomes de colunas, podemos solicitar saída de expressões. É possível, por exemplo, realizar chamadas de funções, cálculos matemáticos e até fazer uso de <em>subqueries</em> no espaço reservado às colunas. Contudo, precisamos utilizar tais liberdades com moderação, pois em alguns casos podemos comprometer o desempenho da consulta (veremos estas situações em outro post). </p>
 <div class="highlight"><pre><span></span><code><span class="k">select</span> 
        <span class="k">upper</span><span class="p">(</span><span class="n">anamnese</span><span class="p">),</span>
        <span class="n">age</span><span class="p">(</span><span class="n">data_hora_alta</span><span class="p">)</span> <span class="k">as</span> <span class="n">tempo_de_saida</span><span class="p">,</span>

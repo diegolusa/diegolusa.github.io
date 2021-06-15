@@ -478,7 +478,7 @@
 <p>Os dados são armazenados em <strong>variáveis</strong>, que nada mais são que espaços de memória RAM reservados para tal finalidade. Precisamos lembrar que variáveis apresentam alguma propriedades importantes:</p>
 <ul>
 <li>
-<p><strong><em>Nome</em></strong>: O nome da variável é a identificação que o programador atribui à área de memória. O nome deve ser suficientemente claro para indicar o significado dos dados nela armazemados. A nomenclatura de variáveis deve respeitar as restrições impostas a identificadores da linguagem, bem como padrões de legibilidade de código que a boa prática recomenda. Também há diferença entre caracteres maiúsculos e minúsculos.</p>
+<p><strong><em>Nome</em></strong>: O nome da variável é a identificação que o programador atribui à área de memória. O nome deve ser suficientemente claro para indicar o significado dos dados nela armazenados. A nomenclatura de variáveis deve respeitar as restrições impostas a identificadores da linguagem, bem como padrões de legibilidade de código que a boa prática recomenda. Também há diferença entre caracteres maiúsculos e minúsculos.</p>
 </li>
 <li>
 <p><strong><em>Tipo</em></strong>: Variáveis, em linguagens fortemente tipadas, devem indicar qual é a natureza dos dados que o programador poderá nelas armazenar. O tipo representa uma restrição, limitando o conjunto de valores aceitos. A linguagem C++ define um conjunto de tipos básicos. Sugiro a leitura <a href="http://www.cplusplus.com/doc/tutorial/variables/">deste tutorial</a> para maiores detalhes.</p>
@@ -555,7 +555,7 @@ Um método simples para conversão de octal para decimal é utilizar uma tabela 
     <span class="n">var_double</span> <span class="o">=</span> <span class="mi">345</span><span class="p">;</span>
 </code></pre></div>
 <h2 id="literais-booleanos">Literais booleanos<a class="headerlink" href="#literais-booleanos" title="Permanent link">&para;</a></h2>
-<p><a href="https://www.tecmundo.com.br/programacao/1527-logica-booleana-saiba-um-pouco-mais-sobre-esta-logica-e-como-ela-funciona.htm">Álgebra booleana</a> é um formalizmo matemático utilizado na computação para implementar testes lógicos. Na álgebra booleana temos dois estados possíveis para um proposição lógica: <code>verdadeiro</code> e <code>falso</code>. </p>
+<p><a href="https://www.tecmundo.com.br/programacao/1527-logica-booleana-saiba-um-pouco-mais-sobre-esta-logica-e-como-ela-funciona.htm">Álgebra booleana</a> é um formalismo matemático utilizado na computação para implementar testes lógicos. Na álgebra booleana temos dois estados possíveis para um proposição lógica: <code>verdadeiro</code> e <code>falso</code>. </p>
 <p>No C++, o estado <code>verdadeiro</code> é representado pelo literal <code>true</code> (ou pelo literal inteiro <code>1</code>). Já o estado <code>falso</code> é representado pelo literal <code>false</code> (ou pelo literal inteiro <code>0</code>). Observe o exemplo:</p>
 <div class="highlight"><pre><span></span><code>    <span class="kt">bool</span> <span class="n">var_true</span><span class="p">,</span> <span class="n">var_false</span><span class="p">;</span>
     <span class="n">var_true</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
@@ -566,7 +566,7 @@ Um método simples para conversão de octal para decimal é utilizar uma tabela 
 </code></pre></div>
 <h2 id="literais-para-caracteres">Literais para caracteres<a class="headerlink" href="#literais-para-caracteres" title="Permanent link">&para;</a></h2>
 <p>Caracteres são os símbolos do alfabeto, pontuação, entre outros. Nem todo caractere tem representação gráfica (quebra de linha e fim de arquivo, por exemplo). </p>
-<p>Para representar caracteres computacionalmente, pode-se utilizar <code>1</code> ou <code>2</code> bytes. O padrão <a href="https://www.unicode.org/standard/WhatIsUnicode.html">Unicode</a> é a norma atual para representação de caracteres de forma universal, independementente de plataforma, programa, linguagem ou mesmo idioma.</p>
+<p>Para representar caracteres computacionalmente, pode-se utilizar <code>1</code> ou <code>2</code> bytes. O padrão <a href="https://www.unicode.org/standard/WhatIsUnicode.html">Unicode</a> é a norma atual para representação de caracteres de forma universal, independentemente de plataforma, programa, linguagem ou mesmo idioma.</p>
 <p>O padrão Unicode utiliza <code>2</code> bytes para representar o código numérico de cada um dos <code>137,929</code> caracteres existentes (<a href="https://www.unicode.org/versions/Unicode12.0.0/UnicodeStandard-12.0.pdf">Versão 12</a>)</p>
 <p>Em C++, os literais de caracteres são representados envolvidos por aspas simples. Observe o exemplo:</p>
 <div class="highlight"><pre><span></span><code>    <span class="kt">char</span> <span class="n">var_char</span><span class="p">;</span>
