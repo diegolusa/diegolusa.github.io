@@ -521,6 +521,26 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#entradas-bibliograficas-e-bibliografia" class="md-nav__link">
+    Entradas bibliográficas e bibliografia
+  </a>
+  
+    <nav class="md-nav" aria-label="Entradas bibliográficas e bibliografia">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#banco-de-dados-bibliografico" class="md-nav__link">
+    Banco de dados bibliográfico
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -733,13 +753,13 @@
                 
                   <h1>ABNT</h1>
                 
-                <p>Em diversas situações, a formatação do documento não é de livre escolha do autor. Um exemplo clássico são trabalhos acadêmicos de conclusão de curso, como artigos, monografias, teses, dissertações, entre outros. Para estes, a instituição define o modelo (<em>template</em>) do documento, que deve ser seguido a rigor pelo autor.</p>
+                <p>Em diversas situações, a formatação do documento não é de livre escolha do autor. Um exemplo clássico são trabalhos acadêmicos de conclusão de curso, como artigos, monografias, teses, dissertações, entre outros. Para estes, a instituição define o modelo (<code>template</code>) do documento, que deve ser seguido a rigor pelo autor.</p>
 <p>Boa parte das regras de formatação contidas nestes modelos são baseados em normas da Associação Brasileira de Normas Técnicas (ABNT). Tentaremos, neste artigo, abordar alguns elementos presentes nestas normas para a formatação de trabalhos de conclusão de curso. Contudo, aviso que o objetivo não será apresentar detalhadamente a especificação ditada pela norma, mas como configuramos no writer tais informações do modo correto.</p>
 <h2 id="partes-de-documento">Partes de Documento<a class="headerlink" href="#partes-de-documento" title="Permanent link">&para;</a></h2>
 <p>Trabalhos acadêmicos tem suas partes divididas em três categorias: elementos pré-textuais, elementos textuais e pós-textuais. Vamos abordar cada um deles e apresentar dicas de como podemos configurar a formatação no LibreOffice Writer.</p>
 <p><img alt="Elementos de trabalhos acadêmicos" src="../../../img/informatica/abnt/abnt-elementos-trabalhos-academicos.png" /></p>
 <p><small>Fonte:  Manual ABNT: Regras Gerais de Estilo e Formatação de Trabalhos Acadêmicos, pg. 13</small></p>
-<p>De antemão, devemos considerar que as páginas devem ser configuradas para <strong>formato A4</strong>, <strong>orientação retrato</strong>, e <strong>margens esquerda e superior em 3cm, direita e inferior, 2 cm</strong>. Quanto a fonte, devemos utilizar <em>Times New Roman</em> ou <em>Arial</em> em <strong>tamanho 12</strong> para corpo do texto e <strong>10</strong>, para citações, notas de rodapé, paginação e legendas.</p>
+<p>De antemão, devemos considerar que as páginas devem ser configuradas para <code>formato A4</code>, <code>orientação retrato</code>, e <code>margens esquerda e superior em 3cm, direita e inferior, 2 cm</code>. Quanto a fonte, devemos utilizar <code>Times New Roman</code> ou <code>Arial</code> em <code>tamanho 12</code> para corpo do texto e <code>10</code>, para citações, notas de rodapé, paginação e legendas.</p>
 <p>Para configurar as páginas, sugiro criar estilos e, considerando a existência de três segmentos no documento (pré-textuais, textuais e pós-textuais), pode ser interessante realizar a criação de três novos estilos de página. Caso esteja com dúvidas sobre como criar tais estilos, sugiro a leitura do <a href="../estilos/#estilos-de-pagina">tópico que falamos sobre o recurso</a>.</p>
 <p>Será importante também colocar todos os elementos pré-textuais obrigatório e àqueles opcionais que farão parte do trabalho, um em cada página (apenas reservar a página). Assim teremos ideia do número de páginas utilizadas e, também, do que será necessário configurar para gerar os índices de forma automática.</p>
 <h3 id="elementos-pre-textuais">Elementos pré-textuais<a class="headerlink" href="#elementos-pre-textuais" title="Permanent link">&para;</a></h3>
@@ -766,7 +786,7 @@
 <h4 id="resumo">Resumo<a class="headerlink" href="#resumo" title="Permanent link">&para;</a></h4>
 <p>Item obrigatório, escrito na língua vernácula (do país). Apresenta os pontos relevantes do documento. Acompanha ao final a lista de palavras-chave.</p>
 <h4 id="resumo-em-lingua-estrangeira">Resumo em Língua Estrangeira<a class="headerlink" href="#resumo-em-lingua-estrangeira" title="Permanent link">&para;</a></h4>
-<p>Corresponde ao <em>abstract</em>, versão do resumo escrito em inglês, acompanhado das <em>keywords</em> (palavras-chave). É obrigatório apresentá-lo.</p>
+<p>Corresponde ao <code>abstract</code>, versão do resumo escrito em inglês, acompanhado das <code>keywords</code> (palavras-chave). É obrigatório apresentá-lo.</p>
 <h4 id="lista-de-ilustracoes">Lista de Ilustrações<a class="headerlink" href="#lista-de-ilustracoes" title="Permanent link">&para;</a></h4>
 <p>Índice contendo as legendas das ilustrações apresentadas no texto, conforme sua ordem de aparição. É opcional.</p>
 <h4 id="lista-de-tabelas">Lista de Tabelas<a class="headerlink" href="#lista-de-tabelas" title="Permanent link">&para;</a></h4>
@@ -778,113 +798,130 @@
 <h4 id="sumario">Sumário<a class="headerlink" href="#sumario" title="Permanent link">&para;</a></h4>
 <p>Último dos elementos pré-textuais. É obrigatório constar no documento. Corresponde a organização de tópicos do trabalho (capítulos, seções, etc), apresentadas na ordem em que aparecem com o respectivo número de página.</p>
 <h3 id="elementos-textuais">Elementos textuais<a class="headerlink" href="#elementos-textuais" title="Permanent link">&para;</a></h3>
-<p>Os elementos textuais devem contemplar a <strong>Introdução</strong>, <strong>Desenvolvimento</strong> e <strong>Conclusão</strong> do trabalho e naturalmente são obrigatórios. </p>
-<p>Em termos de formatação, os pontos mais relevantes dos elementos textuais são <em>títulos</em>, <em>numeração de páginas</em>, <em>corpo do texto</em>, <em>citações</em>, <em>figuras</em>, <em>quadros</em> e <em>tabelas</em>. </p>
+<p>Os elementos textuais devem contemplar a <code>Introdução</code>, <code>Desenvolvimento</code> e <code>Conclusão</code> do trabalho e naturalmente são obrigatórios. </p>
+<p>Em termos de formatação, os pontos mais relevantes dos elementos textuais são <code>títulos</code>, <code>numeração de páginas</code>, <code>corpo do texto</code>, <code>citações</code>, <code>figuras</code>, <code>quadros</code> e <code>tabelas</code>. </p>
 <p>Vamos começar analisando a questão da numeração de páginas. Neste ponto, precisamos saber exatamente quantas páginas iremos utilizar nos elementos pré-textuais (todos os obrigatórios e os opcionais escolhidos). Também devemos nos atentar de que a capa não é contabilizada.</p>
 <p>Então, para nosso tutorial, vamos supor que nosso trabalho tenha os seguintes elementos pré-textuais:</p>
 <ul>
-<li><em>Capa</em> </li>
-<li><em>Folha de Rosto</em></li>
-<li><em>Folha de Aprovação</em></li>
-<li><em>Agradecimentos</em></li>
-<li><em>Lista de Ilustrações</em></li>
-<li><em>Lista de Tabelas</em></li>
-<li><em>Resumo</em></li>
-<li><em>Abstract</em></li>
-<li><em>Sumário</em></li>
+<li><code>Capa</code> </li>
+<li><code>Folha de Rosto</code></li>
+<li><code>Folha de Aprovação</code></li>
+<li><code>Agradecimentos</code></li>
+<li><code>Lista de Ilustrações</code></li>
+<li><code>Lista de Tabelas</code></li>
+<li><code>Resumo</code></li>
+<li><code>Abstract</code></li>
+<li><code>Sumário</code></li>
 </ul>
-<p>Considerando que teremos 9 páginas de elementos pré-textuais e que a capa não entra na contagem, a numeração de páginas, que será apresentada a partir da <em>Introdução</em>, deve iniciar em 9. Para conseguirmos ocultar a numeração dos elementos pré-textuais e apresentarmos a partir dos elementos textuais, devemos utilizar o recurso <strong>quebra manual de página</strong>, em conjunto com os estilos de página que criamos anteriormente. </p>
-<p>Antes de realizar a quebra de página, você deve reservar as páginas para os elementos pré-textuais. Utilize o atalho <em>CTRL+ENTER</em> para inserir nova página no documento. Agora, estando com o cursor na última página dos elementos pré-textuais (referente ao sumário), vá até o menu <strong>Inserir -&gt; Mais quebras -&gt; Quebra Manual</strong> e configure os valores conforme a imagem a seguir. Perceba que iremos utilizar o estilo de página que criamos, alterando a sequência de numeração para <em>9</em>.</p>
+<p>Considerando que teremos 9 páginas de elementos pré-textuais e que a capa não entra na contagem, a numeração de páginas, que será apresentada a partir da <code>Introdução</code>, deve iniciar em 9. Para conseguirmos ocultar a numeração dos elementos pré-textuais e apresentarmos a partir dos elementos textuais, devemos utilizar o recurso <code>quebra manual de página</code>, em conjunto com os estilos de página que criamos anteriormente. </p>
+<p>Antes de realizar a quebra de página, você deve reservar as páginas para os elementos pré-textuais. Utilize o atalho <code>CTRL+ENTER</code> para inserir nova página no documento. Agora, estando com o cursor na última página dos elementos pré-textuais (referente ao sumário), vá até o menu <code>Inserir -&gt; Mais quebras -&gt; Quebra Manual</code> e configure os valores conforme a imagem a seguir. Perceba que iremos utilizar o estilo de página que criamos, alterando a sequência de numeração para <code>9</code>.</p>
 <p><img alt="Inserir quebra manual de página" src="../../../img/informatica/abnt/abnt-quebra-manual-pagina.png" /></p>
 <p>As quebras de página são extremamente úteis porque definem regiões do documento em que podemos aplicar estilos de página diferentes. Além disso, cada região terá cabeçalho e rodapé específicos, o que nos permitirá ocultar o número de página dos elementos pré-textuais de forma simples.</p>
-<p>Sabemos que o número de página deve estar no canto superior direito do documento, em fonte <em>Arial</em> ou <em>Times New Roman</em>, tamanho 10. O primeiro passo para adicioná-lo é exibir o cabeçalho da página, clicar no espaço correspondente e finalmente acessar o menu <strong>Inserir -&gt; Número de Página</strong>.</p>
+<p>Sabemos que o número de página deve estar no canto superior direito do documento, em fonte <code>Arial</code> ou <code>Times New Roman</code>, <code>tamanho 10</code>. O primeiro passo para adicioná-lo é exibir o cabeçalho da página, clicar no espaço correspondente e finalmente acessar o menu <code>Inserir -&gt; Número de Página</code>.</p>
 <p><img alt="Número de página adicionado ao cabeçalho da região reservada para os elementos textuais do documento" src="../../../img/informatica/abnt/abnt-inserir-numero-pagina.png" /></p>
-<p>Nossos próximos itens de formatação serão os títulos. Configurá-los corretamente é o segredo para a geração do sumário de forma simples. Neste procedimento estaremos alterando <strong>estilos de parágrafo</strong>.</p>
-<p>Por padrão, o LibreOffice Writer trás estilos específicos para títulos. Logo, é mais rápido modificar estes existentes do que criar novos. Para encontrá-los, um dos caminhos é pela aba de estilos, filtrando por  <em>Estilos de Texto</em>.</p>
+<p>Nossos próximos itens de formatação serão os títulos. Configurá-los corretamente é o segredo para a geração do sumário de forma simples. Neste procedimento estaremos alterando <code>estilos de parágrafo</code>.</p>
+<p>Por padrão, o LibreOffice Writer trás estilos específicos para títulos. Logo, é mais rápido modificar estes existentes do que criar novos. Para encontrá-los, um dos caminhos é pela aba de estilos, filtrando por  <code>Estilos de Texto</code>.</p>
 <p><img alt="Título de primeiro nível" src="../../../img/informatica/abnt/abnt-estilos-titulo.png" /></p>
 <h4 id="capitulos">Capítulos<a class="headerlink" href="#capitulos" title="Permanent link">&para;</a></h4>
-<p>Começaremos a configuração pelo título de primeiro nível, que estabelece os capítulos do documento e, pela norma, deve sempre iniciar nova página. Para modificarmos o estilo <em>Título 1</em> devemos clicar com o botão direito do mouse sobre ele, escolhendo a opção <strong>Modificar</strong>. Lembre-se que já apresentamos as <a href="../estilos/#estilos-de-paragrafo">telas de edição de estilos de parágrafo</a>. Caso não lembre, sugiro uma nova leitura.</p>
+<p>Começaremos a configuração pelo título de primeiro nível, que estabelece os capítulos do documento e, pela norma, deve sempre iniciar nova página. Para modificarmos o estilo <code>Título 1</code> devemos clicar com o botão direito do mouse sobre ele, escolhendo a opção <code>Modificar</code>. Lembre-se que já apresentamos as <a href="../estilos/#estilos-de-paragrafo">telas de edição de estilos de parágrafo</a>. Caso não lembre, sugiro uma nova leitura.</p>
 <p>Os demais níveis você poderá formatar utilizando como referência os exemplos aqui apresentados. Haverá variação do tamanho da fonte e efeitos aplicados. Revise a norma para detalhes. E, o mais importante: certifique-se de configurar os títulos do nível correto e de aplicar o estilo nos respectivos títulos. </p>
-<p>Na sequência apresentamos os passos de configuração para <em>Título 1</em>.</p>
+<p>Na sequência apresentamos os passos de configuração para <code>Título 1</code>.</p>
 <h5 id="alinhamento-do-texto">Alinhamento do texto<a class="headerlink" href="#alinhamento-do-texto" title="Permanent link">&para;</a></h5>
 <div class="admonition info">
 <p class="admonition-title">Dica</p>
-<p>Alinhar à esquerda. Aba <em>Alinhamento</em>, <em>Opções</em>. </p>
+<p>Alinhar à esquerda. Aba <code>Alinhamento</code>, <code>Opções</code>. </p>
 </div>
 <p><img alt="Alinhamento do título de primeiro nível" src="../../../img/informatica/abnt/abnt-titulo-primeiro-nivel-alinhamento.png" />  </p>
 <h5 id="caracteres">Caracteres<a class="headerlink" href="#caracteres" title="Permanent link">&para;</a></h5>
 <div class="admonition info">
 <p class="admonition-title">Dica</p>
-<p>Converter automaticamente todos os caracteres para maiúsculo. Aba <em>Efeitos da fonte</em>, <em>Efeitos</em></p>
+<p>Converter automaticamente todos os caracteres para maiúsculo. Aba <code>Efeitos da fonte</code>, <code>Efeitos</code></p>
 </div>
 <p><img alt="Converter caracteres para maiúsculo no título de primeiro nível" src="../../../img/informatica/abnt/abnt-titulo-primeiro-nivel-efeitos-fonte.png" />  </p>
 <h5 id="fonte">Fonte<a class="headerlink" href="#fonte" title="Permanent link">&para;</a></h5>
 <div class="admonition info">
 <p class="admonition-title">Dica</p>
-<p>A norma define que a fonte seja <em>Aria</em> ou <em>Times New Roman</em>, tamanho 14 e um efeito, como negrito. Estas configurações são encontradas na 
-Aba <em>Fonte</em></p>
+<p>A norma define que a fonte seja <code>Aria</code> ou <code>Times New Roman</code>, tamanho 14 e um efeito, como negrito. Estas configurações são encontradas na 
+Aba <code>Fonte</code></p>
 </div>
 <p><img alt="Configuração de fonte para título de primeiro nível" src="../../../img/informatica/abnt/abnt-titulo-primeiro-nivel-fonte.png" />  </p>
 <h5 id="fluxo-do-texto">Fluxo do texto<a class="headerlink" href="#fluxo-do-texto" title="Permanent link">&para;</a></h5>
 <div class="admonition info">
 <p class="admonition-title">Dica</p>
-<p>Títulos de primeiro nível devem iniciar nova página.Aba <em>Fluxo do texto</em>, <em>Quebras</em></p>
+<p>Títulos de primeiro nível devem iniciar nova página.Aba <code>Fluxo do texto</code>, <code>Quebras</code></p>
 </div>
 <p><img alt="Fluxo do texto para título de primeiro nível" src="../../../img/informatica/abnt/abnt-titulo-primeiro-nivel-fluxo.png" /></p>
 <h5 id="nivel-do-paragrafo">Nível do parágrafo<a class="headerlink" href="#nivel-do-paragrafo" title="Permanent link">&para;</a></h5>
 <div class="admonition info">
 <p class="admonition-title">Dica</p>
-<p>Verificar se o parágrafo está vinculado ao <em>nível 1</em> do texto. Esta configuração está indisponível para edição. </p>
+<p>Verificar se o parágrafo está vinculado ao <code>nível 1</code> do texto. Esta configuração está indisponível para edição. </p>
 </div>
 <p><img alt="Verificar nível de tópico do título de primeiro nível" src="../../../img/informatica/abnt/abnt-titulo-primeiro-nivel-estrutura-topicos.png" /></p>
 <h5 id="espacamento">Espaçamento<a class="headerlink" href="#espacamento" title="Permanent link">&para;</a></h5>
 <div class="admonition info">
 <p class="admonition-title">Dica</p>
-<p>Antes ou após o parágrafo deve-se deixar a distância equivalente a duas linhas de texto. No caso do título de primeiro nível, informamos somente o espaço abaixo do parágrafo. Tal configuração é feita na Aba <em>Recuo e Espaçamento</em>. Importante observar que, para os demais níveis, deve ser configurado o espaço acima e abaixo do parágrafo. </p>
+<p>Antes ou após o parágrafo deve-se deixar a distância equivalente a duas linhas de texto. No caso do título de primeiro nível, informamos somente o espaço abaixo do parágrafo. Tal configuração é feita na Aba <code>Recuo e Espaçamento</code>. Importante observar que, para os demais níveis, deve ser configurado o espaço acima e abaixo do parágrafo. </p>
 </div>
 <p><img alt="Configurar o espaçamento após o parágrafo." src="../../../img/informatica/abnt/abnt-titulo-recuo.png" /></p>
 <h4 id="numeracao-dos-capitulos">Numeração dos capítulos<a class="headerlink" href="#numeracao-dos-capitulos" title="Permanent link">&para;</a></h4>
-<p>A numeração de títulos deve utilizar números arábicos, identificando a sequência em que aparecem no documento. Considerando que você configurou e aplicou os estilos corretamente, iremos agora configurar a numeração por meio do menu <em>Ferramentas -&gt; Numeração de Capítulos</em>.</p>
+<p>A numeração de títulos deve utilizar números arábicos, identificando a sequência em que aparecem no documento. Considerando que você configurou e aplicou os estilos corretamente, iremos agora configurar a numeração por meio do menu <code>Ferramentas -&gt; Numeração de Capítulos</code>.</p>
 <p><img alt="Numeração de capítulos." src="../../../img/informatica/abnt/abnt-titulo-numeracao-capitulos.png" /></p>
-<p>Observe na tela acima que, no lado esquerdo, temos os <strong>10</strong> níveis de tópicos possíveis. Clicando sobre um deles, temos a possibilidade de configurar o <em>número</em>, <em>ínicio da contagem</em>, <em>estilo de parágrafo associado ao nível</em>, <em>estilo de caractere</em>, <em>mostrar subníveis</em> e <em>separadores</em>.</p>
-<p>Em <em>número</em>, informe a sequência de número arábicos (1,2,3). Verifique se o estilo de parágrafo informado condiz com àqueles que você utilizou. Faça as alterações conforme necessário. No campo <em>mostrar subníveis</em> você deve informar os níveis que irão compor a numeração. Aumente este valor para o máximo possível (todos os níveis anteriores). Demais itens podem ficar com os valores padrão. Repita a configuração para cada nível existente no seu documento.</p>
-<p>Por fim, na aba <em>Posição</em>, campo <em>numeração seguida de</em>, informe <em>Espaço</em>.</p>
+<p>Observe na tela acima que, no lado esquerdo, temos os <code>10</code> níveis de tópicos possíveis. Clicando sobre um deles, temos a possibilidade de configurar o <code>número</code>, <code>ínicio da contagem</code>, <code>estilo de parágrafo associado ao nível</code>, <code>estilo de caractere</code>, <code>mostrar subníveis</code> e <code>separadores</code>.</p>
+<p>Em <code>número</code>, informe a sequência de número arábicos (1,2,3). Verifique se o estilo de parágrafo informado condiz com àqueles que você utilizou. Faça as alterações conforme necessário. No campo <code>mostrar subníveis</code> você deve informar os níveis que irão compor a numeração. Aumente este valor para o máximo possível (todos os níveis anteriores). Demais itens podem ficar com os valores padrão. Repita a configuração para cada nível existente no seu documento.</p>
+<p>Por fim, na aba <code>Posição</code>, campo <code>numeração seguida de</code>, informe <code>Espaço</code>.</p>
 <p><img alt="Numeração de capítulos." src="../../../img/informatica/abnt/abnt-titulo-numeracao-capitulos-posicao.png" /></p>
 <h4 id="sumario-automatico">Sumário automático<a class="headerlink" href="#sumario-automatico" title="Permanent link">&para;</a></h4>
 <p>Uma vez configurados os estilos e numeração dos capítulos, a geração do sumário de forma automática se torna possível. Para o procedimento, devemos ir até a página reservada ao sumário na seção de elementos pré-textuais.</p>
-<p>Após, acessar a aba <em>Referências</em>, botão <em>Referências</em> que está a direita, opção <em>Sumário, Índice ou Bibliografia</em>.</p>
-<p>Em <em>Título</em> deixaremos o valor padrão. No campo <em>Tipo</em> deve estar <em>Sumário</em> e em <em>Para</em>, o valor deve ser <em>Documento inteiro</em>. Ao clicar em <em>OK</em>, o índice do sumário será inserido automáticamente no local em que o cursor foi posicionando no documento.</p>
+<p>Após, acessar a aba <code>Referências</code>, botão <code>Referências</code> que está a direita, opção <code>Sumário, Índice ou Bibliografia</code>.</p>
+<p>Em <code>Título</code> deixaremos o valor padrão. No campo <code>Tipo</code> deve estar <code>Sumário</code> e em <code>Para</code>, o valor deve ser <code>Documento inteiro</code>. Ao clicar em <code>OK</code>, o índice do sumário será inserido automáticamente no local em que o cursor foi posicionando no documento.</p>
 <p><img alt="Adicionar sumário ao documento" src="../../../img/informatica/abnt/abnt-sumario.png" /></p>
 <p>Quando o sumário é inserido, cada entrada gerada vincula-se com estilos pré-definidos. Logo, precisaremos ajustar a formatação destes estilos para atender os critérios da ABNT, que orienta a apresentação de cada entrada no mesmo formato em que aparece no corpo do texto. O que temos de momento é algo semelhante a imagem abaixo (irá depender dos títulos definidos em seu documento).</p>
 <p><img alt="Formato padrão do sumário inserido no documento" src="../../../img/informatica/abnt/abnt-sumario-formato-padrao.png" /></p>
-<p>Para ajustarmos a formatação das entradas do sumário devemos inicialmente saber quais estilos são utilizados. Para isso, será preciso clicar com o botão direito do mouse sobre qualquer parte do sumário e escolher a opção <em>Editar Índice</em>. Na tela apresentada, escolhemos a aba <em>Estilos</em>.</p>
+<p>Para ajustarmos a formatação das entradas do sumário devemos inicialmente saber quais estilos são utilizados. Para isso, será preciso clicar com o botão direito do mouse sobre qualquer parte do sumário e escolher a opção <code>Editar Índice</code>. Na tela apresentada, escolhemos a aba <code>Estilos</code>.</p>
 <p><img alt="Estilos para entradas do sumário" src="../../../img/informatica/abnt/abnt-sumario-estilos.png" /></p>
 <p>Perceba que, no lado esquerdo da tela, temos cada nível e o respectivo estilo entre <code>[]</code>. Já no lado direito são listados todos os estilos de parágrafo disponíveis para que seja possível vincular o nível ao estilo desejado.</p>
-<p>Nossa opção será, novamente, editar os estilos padrão (<em>Título de sumário</em>, <em>Sumário 1</em>, <em>Sumário 2</em>, etc), adequando-os àquilo que precisamos. O passo-a-passo para realizar o ajuste é idêntico a edição de qualquer outro estilo de parágrafo.</p>
-<p>Além dos estilos, precisamos ajustar a construção das entradas, especificamente a <em>parada de tabulação</em>. Você deve ter percebido que o espaço entre o número da página e o texto do capítulo está sendo preenchido com <code>.</code>, sendo que o correto é <em>espaço</em>. Então, para este ajuste, devemos acessar a aba <em>Entradas</em>, e, para cada nível desejado, alterar o caractere da <em>parada de tabulação</em>. </p>
+<p>Nossa opção será, novamente, editar os estilos padrão (<code>Título de sumário</code>, <code>Sumário 1</code>, <code>Sumário 2</code>, etc), adequando-os àquilo que precisamos. O passo-a-passo para realizar o ajuste é idêntico a edição de qualquer outro estilo de parágrafo.</p>
+<p>Além dos estilos, precisamos ajustar a construção das entradas, especificamente a <code>parada de tabulação</code>. Você deve ter percebido que o espaço entre o número da página e o texto do capítulo está sendo preenchido com <code>.</code>, sendo que o correto é <code>espaço</code>. Então, para este ajuste, devemos acessar a aba <code>Entradas</code>, e, para cada nível desejado, alterar o caractere da <code>parada de tabulação</code>. </p>
 <div class="admonition info">
 <p class="admonition-title">Dica</p>
 <p>Clicar primeiro sobre o número do nível, após no "T" e, por fim, informar o caractere de preenchimento correto. </p>
 </div>
 <p><img alt="Alterando a parada de tabulação das entradas do sumário" src="../../../img/informatica/abnt/abnt-sumario-caractere-preenchimento.png" /></p>
 <h4 id="legendas">Legendas<a class="headerlink" href="#legendas" title="Permanent link">&para;</a></h4>
-<p>Legendas são aplicadas a tabelas e ilustrações. Compreendem a descrição do item, de forma objetiva, bem como indicam a sequência do elemento dentro do texto. Segundo a norma, devem estar em tamanho <code>10</code>, entre linhas simples, caracteres em maiúsculo.</p>
+<p>Legendas são aplicadas a tabelas, quadros e ilustrações. Compreendem a descrição do item, de forma objetiva, bem como indicam a sequência do elemento dentro do texto. Segundo a norma, devem estar em tamanho de fonte <code>10</code>, entre linhas simples, caracteres em maiúsculo.</p>
 <ul>
-<li><strong>Quadros</strong>:  apresentação tabular de dados, com moldura em torno (borda externa). Utilizado para apresentar conteúdo teórico e dados numéricos <em>sem tratamento estatístico</em>. </li>
+<li><code>Quadros</code>:  apresentação tabular de dados, com moldura em torno (borda externa). Utilizado para apresentar conteúdo teórico e dados numéricos <em>sem tratamento estatístico</em>. </li>
 <li>
-<p><strong>Tabelas</strong>: apresentação tabular de dados numéricos <em>com tratamento estatístico</em>.</p>
+<p><code>Tabelas</code>: apresentação tabular de dados numéricos <em>com tratamento estatístico</em>.</p>
 </li>
 <li>
-<p><strong>Ilustrações</strong>: São imagens, figuras, gráficos, diagramas, entre outros.</p>
+<p><code>Ilustrações</code>: São imagens, figuras, gráficos, diagramas, entre outros.</p>
 </li>
 </ul>
 <p>A inserção de legendas segue o mesma estratégia para todos os tipos citados. Por conta disso, iremos utilizar tabelas e imagens como estudo de caso. </p>
-<p>Inserir tabelas no Writer pode ser feito através do menu <em>Tabela -&gt; Inserir Tabela</em>.</p>
+<p>Inserir tabelas no Writer pode ser feito através do menu <code>Tabela -&gt; Inserir Tabela</code>.</p>
 <p><img alt="Adicionar tabela ao documento" src="../../../img/informatica/abnt/abnt-inserir-tabela.png" /></p>
-<p>continua...</p>
+<p>O campo <code>nome</code> é utilizado para identificar o objeto internamente  e não será apresentado no texto. Em <code>Opções</code>, é útil marcar <code>Título</code> e, após, <code>Repetir linhas de título nas novas páginas</code>. Tal configuração aplica-se quando o conteúdo da tabela excede o espaço disponível da página e gera uma quebra. Neste caso, as primeiras <code>n</code> linhas da tabela serão repetidas na próxima página. Também é possível marcar um estilo predefinido de estilo para tabelas, caso necessário.</p>
+<p>Uma vez inserida no texto, já podemos adicionar a legenda para nossa tabela, clicando com o botão direito sobre qualquer célula da mesma, opção <code>Inserir Legenda</code>. O procedimento é exatamente o mesmo para outros tipos de elementos, como quadros, imagens, etc. A tela a seguir será apresentada:</p>
+<p><img alt="Inserir legenda" src="../../../img/informatica/abnt/abnt-legendas.png" /></p>
+<p>Em <code>Legenda</code>, informamos o texto que irá aparecer no documento. Em <code>Categoria</code>, informamos qual é o "tipo" do objeto (se não houver na lista, é possível informar um novo). A <code>Numeração</code> corresponde a configuração de como a sequência será apresentada (segundo a norma, utilizar números arábicos). O caractere que irá separar o número do texto da legenda deve ser especificado em <code>Separador</code>. Aqui utilizamos o traço (-). Por fim, em <code>Posição</code>, informar <code>em cima</code>.</p>
+<p>Podemos repetir este procedimento para todo objeto que requer legenda no documento. Contudo, é mais prático configurar opções de inserção automática de legendas. Conseguimos isso por meio do botão <code>Automático</code>. Na tela apresentada, marcamos para quais objetos desejos que o Writer insira as legendas automaticamente, assim como a configuração esperada.</p>
+<p><img alt="Inserir legenda automática" src="../../../img/informatica/abnt/abnt-legendas-automaticas.png" /></p>
+<p>Quanto à formatação do texto legenda, este deve ser realizado por meio do estilo correspondente. Editar o estilo a partir do texto é simples. Basta clicar sobre o texto com o botão direito do mouse, escolher a opção <code>Parágrafo -&gt; Editar Estilo</code>. A norma recomenda que a fonte seja <code>Arial</code> ou <code>Times New Roman</code>, tamanho <code>10</code>, <code>negrito</code>, caracteres em maiúsculo.</p>
+<p>Quando temos legendas inseridas em nosso documento, podemos solicitar ao writer que insira o índice automático, se assim desejarmos, na folha correspondente dos elementos pré-textuais. O processo é idêntico à inserção do sumário, com a simples diferença de que devemos alterar o tipo de índice a ser inserido. Os campos importantes são <code>Título</code>, <code>Tipo</code> e <code>Categoria</code>, que devem estar alinhados com os objetos que você deseja listar no índice. Já a formatação do índice deve ser feita pelos estilos correspondentes, tal qual explicamos com relação ao sumário.</p>
+<p><img alt="Inserir índice de tabelas" src="../../../img/informatica/abnt/abnt-indice-tabelas.png" /></p>
+<h4 id="entradas-bibliograficas-e-bibliografia">Entradas bibliográficas e bibliografia<a class="headerlink" href="#entradas-bibliograficas-e-bibliografia" title="Permanent link">&para;</a></h4>
+<p>Quando elaboramos documentos acadêmicos/científicos, consultamos diferentes fontes para endossar nossas afirmações. Livros, revistas científicas, web sites, documentos digitais são exemplos de fontes que podemos utilizar. Todos estes recursos precisam ser citados no texto e jamais podemos utilizar uma afirmação alheia como se fosse nossa. Tal prática constitui crime de plágio e é repudiada por qualquer acadêmico sério.</p>
+<p>Manter controle das citações não é tarefa simples, especialmente quando o documento faz uso de dezenas ou até centenas delas. Além disso, a norma ABNT especifica detalhadamente como devemos citar e apresentar a bibliografia que utilizamos.</p>
+<p>Para nos auxiliar neste tarefa, o LibreOffice Writer oferece ferramentas específicas, voltadas ao gerenciamento de bibliografia de documentos. Para facilitar a compreensão, iremos dividir o assunto em três temas específicos: <code>banco de dados bibliográfico</code>, <code>entrada bibliográfica</code> e <code>bibliografia</code>.</p>
+<h5 id="banco-de-dados-bibliografico">Banco de dados bibliográfico<a class="headerlink" href="#banco-de-dados-bibliografico" title="Permanent link">&para;</a></h5>
+<p>O banco de dados bibliográfico constitui o repositório de todas as referências já cadastradas no LibreOffice Writer. Cada registro contém os detalhes da obra, como autores, título, ano de publicação, entre outros campos. </p>
+<p>Logo, o primeiro do processo do processo será cadastrar a obra neste banco de dados. Para isso, devemos acessar o menu <code>Ferramentas -&gt; Banco de Dados Bibliográfico</code>.</p>
+<p><img alt="Banco de dados bibliográficos" src="../../../img/informatica/abnt/ref/biblio_banco_dados_entrada.png" /></p>
+<p>...continua</p>
 <h3 id="elementos-pos-textuais">Elementos pós-textuais<a class="headerlink" href="#elementos-pos-textuais" title="Permanent link">&para;</a></h3>
 <h2 id="referencias">Referências<a class="headerlink" href="#referencias" title="Permanent link">&para;</a></h2>
-<p>BRITO, G. F.; CHOI, V. P.; ALMEIDA, A.<strong>Manual ABNT: Regras Gerais de Estilo e Formatação de Trabalhos Acadêmicos</strong> (4ª edição revisada e ampliada).  2014. Disponível em: &lt;<a href="http://biblioteca.fecap.br/wp-content/uploads/2016/03/Manual-ABNT_-regras-gerais-de-estilo-e-formatação-de-trabalhos-acadêmicos.pdf">http://biblioteca.fecap.br/wp-content/uploads/2016/03/Manual-ABNT_-regras-gerais-de-estilo-e-formatação-de-trabalhos-acadêmicos.pdf</a>&gt;. Acesso em: 5 jun. 2021.</p>
+<p>BRITO, G. F.; CHOI, V. P.; ALMEIDA, A. <strong>Manual ABNT: Regras Gerais de Estilo e Formatação de Trabalhos Acadêmicos</strong> (4ª edição revisada e ampliada).  2014. Disponível em: &lt;<a href="http://biblioteca.fecap.br/wp-content/uploads/2016/03/Manual-ABNT_-regras-gerais-de-estilo-e-formatação-de-trabalhos-acadêmicos.pdf">http://biblioteca.fecap.br/wp-content/uploads/2016/03/Manual-ABNT_-regras-gerais-de-estilo-e-formatação-de-trabalhos-acadêmicos.pdf</a>&gt;. Acesso em: 5 jun. 2021.</p>
                 
               
               
