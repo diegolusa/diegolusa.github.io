@@ -540,6 +540,8 @@
 <h2 id="estudo-de-caso">Estudo de caso<a class="headerlink" href="#estudo-de-caso" title="Permanent link">&para;</a></h2>
 <p>Observe nosso programa exemplo abaixo. Tenha especial atenção aos tipos de dado utilizados na declaração das variáveis e aos usos dos objetos de entrada e saída. </p>
 <p>Execute o código com especial atenção às mensagens exibidas em tela, buscando relacionar com a instrução que as gera.</p>
+<div class="admonition example">
+<p class="admonition-title">Exemplo</p>
 <div class="highlight"><pre><span></span><code><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
 
 <span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
@@ -564,6 +566,7 @@
     <span class="n">cout</span> <span class="o">&lt;&lt;</span><span class="n">endl</span> <span class="o">&lt;&lt;</span> <span class="n">nome</span> <span class="o">&lt;&lt;</span><span class="s">&quot;, nascido em &quot;</span> <span class="o">&lt;&lt;</span><span class="n">ano_nascimento</span> <span class="o">&lt;&lt;</span> <span class="s">&quot; tem peso igual a &quot;</span><span class="o">&lt;&lt;</span> <span class="n">peso</span> <span class="o">&lt;&lt;</span><span class="n">endl</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></div>
+</div>
 <h2 id="formatando-a-saida-de-dados">Formatando a saída de dados<a class="headerlink" href="#formatando-a-saida-de-dados" title="Permanent link">&para;</a></h2>
 <p>A apresentação das informações ao usuário é muito importante, afinal estamos falado de tornar a experiência de uso do software o mais agradável possível. Na interação via console, podemos trabalhar a saída com auxílio de recursos da biblioteca <a href="https://en.cppreference.com/w/cpp/header/iomanip"><code>iomanip</code></a>.</p>
 <p>O primeiro passo para utilizar a biblioteca é incluí-la no programa através da diretiva <code>#include</code>. Feito isso, temos acesso aos seguintes recursos:</p>
@@ -576,6 +579,8 @@
 <li><code>setiosflags</code>: ativa <em>flags</em> do mecanismo de io, como o tipo de representação numérica utilizada na saída, por exemplo.</li>
 </ul>
 <p>Vejamos o exemplo a seguir:</p>
+<div class="admonition example">
+<p class="admonition-title">Exemplo</p>
 <div class="highlight"><pre><span></span><code><span class="cp">#include</span> <span class="cpf">&lt;iomanip&gt;</span><span class="cp"></span>
 
 <span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
@@ -603,6 +608,7 @@
     <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></div>
+</div>
                 
                   
                 
