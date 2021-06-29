@@ -64,6 +64,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#for" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -397,9 +402,64 @@
       <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Laços de Repetição
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
-        Iteração
+        Laços de Repetição
       </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#for" class="md-nav__link">
+    For
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#while" class="md-nav__link">
+    While
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#do-while" class="md-nav__link">
+    Do While
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#break" class="md-nav__link">
+    Break
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#continue" class="md-nav__link">
+    Continue
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -463,9 +523,101 @@
               
                 
                 
-                  <h1>Iteração</h1>
+                  <h1>Laços de Repetição</h1>
                 
-                
+                <p>Os <code>laços de repetição</code> são comandos que permitem <strong>iterar (repetir)</strong> um conjunto de instruções sob determinadas condições. Junto com os comandos de desvio condicional, integram os comandos de controle de fluxo e são imprescindíveis na programação estruturada (e em outros paradigmas também).</p>
+<p>Temos três laços de repetição na linguagem C++: <code>for</code>, <code>while</code> e <code>do while</code>. Todos eles servem ao mesmo propósito, apresentando sutis diferenças entre si. </p>
+<h2 id="for">For<a class="headerlink" href="#for" title="Permanent link">&para;</a></h2>
+<p>Começaremos nossa análise pelo laço <code>for</code>. Podemos dividir sua estrutura em um <em>cabeçalho</em> e um <em>corpo</em>. No <em>cabeçalho</em> temos três segmentos separados por ponto-e-vírgula. Vamos chamá-los de  <code>s1</code>, <code>s2</code> e <code>s3</code>, que irão compor o cabeçalho da seguinte forma: <code>for(s1;s2;s3)</code>.</p>
+<p>O segmento <code>s1</code> representa o espaço para inicialização/declaração das variáveis de controle. Executa somente uma vez, no início da execução do laço. Pode ser omitido, caso o programador assim deseje. </p>
+<p>O segmento <code>s2</code> representa a condição de parada do laço, avaliada antes de cada iteração iniciar. Caso o retorno da expressão lógica seja <code>false</code>, as instruções do corpo do laço não serão executas e o controle de execução avança para o comando imediatamente posterior o fechamento do laço. O segmento pode ser omitido, indicando que o laço irá repetir indefinidamente (<em>looping</em>). <strong>Se a condição especificada for falsa na primeira avaliação, então o laço não irá executar nenhuma vez as instruções contidas no corpo.</strong></p>
+<p>O terceiro segmento, <code>s3</code>, corresponde ao espaço para incremento/decremento das variáveis de controle. A execução das instruções nele contidas se dá ao final de cada iteração. Assim como os demais,  o segmento <code>s3</code> pode ser omitido.</p>
+<p>O <code>corpo</code> do laço é composto por uma ou mais instruções delimitadas por <code>{ }</code>. Assim como comandos de seleção, podemos aninhar um laço dentro do corpo de outro laço de repetição. Logo, qualquer instrução é aceita.</p>
+<p>Vejamos um programa exemplo que imprime no console números inteiros de 1 a 10, construído com auxílio do laço <code>for</code>. No segmento <code>s1</code> temos a instrução <code>int i=1</code>, que corresponde à declaração e inicialização de uma variável chamada <code>i</code> com valor <code>1</code>. Esta variável tem escopo restrito ao laço, não sendo "visível" fora dele. A condição <code>i&lt;=10</code> indica que o laço irá repetir as instruções do corpo enquanto o valor da variável <code>i</code> for inferior ou igual a <code>10</code>. Já a instrução <code>i++</code> indica que a variável <code>i</code> aumentará em uma unidade a cada iteração.</p>
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
+
+<span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span> <span class="n">i</span><span class="o">&lt;=</span><span class="mi">10</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">){</span>
+        <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">i</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>O operador <code>++</code> é chamado de <strong>incremento</strong>. Aplica-se a variáveis inteiras, aumentando seu valor em 1. Pode ser utilizado pré-fixado (antes da variável) ou pós-fixado (após a variável). <a href="">link para diferença</a>
+A instrução <code>i++</code> é equivalente a <code>i=i+1</code>. </p>
+</div>
+<p>Este mesmo programa, com poucas alterações, poderia contar de 10 a 1. Todas as adequações seriam realizadas no cabeçalho, modificando as instruções dos três segmentos. Observe o resultado:</p>
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
+
+<span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">10</span><span class="p">;</span> <span class="n">i</span><span class="o">&gt;=</span><span class="mi">1</span><span class="p">;</span> <span class="n">i</span><span class="o">--</span><span class="p">){</span>
+        <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">i</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>O operador <code>--</code> é chamado de <strong>decremento</strong>. Aplica-se a variáveis inteiras, diminuindo seu valor em 1. Pode ser utilizado pré-fixado (antes da variável) ou pós-fixado (após a variável). <a href="">link para diferença</a>
+A instrução <code>i--</code> é equivalente a <code>i=i-1</code>. </p>
+</div>
+<p>O laço <code>for</code> permite compor instruções de cabeçalho mais complexas. Podemos ter múltiplas inicializações e múltiplos controles de incremento/decremento de variáveis de controle. Ainda sobre a questão do "pulo" da variável de controle, podemos utilizar qualquer quantidade; não estamos limitados a <code>+1</code> ou  <code>-1</code>.</p>
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
+
+<span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="kt">int</span> <span class="n">f</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">4</span><span class="p">,</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">-2</span><span class="p">,</span> <span class="n">l</span> <span class="o">=</span> <span class="mi">6</span><span class="p">;</span> <span class="n">l</span> <span class="o">&gt;</span> <span class="n">j</span> <span class="o">&amp;&amp;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">l</span><span class="p">;</span> <span class="n">i</span> <span class="o">+=</span> <span class="mi">2</span><span class="p">,</span> <span class="n">l</span><span class="o">++</span><span class="p">,</span> <span class="n">j</span><span class="o">--</span><span class="p">)</span>
+        <span class="n">f</span> <span class="o">+=</span> <span class="n">i</span> <span class="o">+</span> <span class="n">j</span> <span class="o">+</span> <span class="n">l</span><span class="p">;</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">f</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<h2 id="while">While<a class="headerlink" href="#while" title="Permanent link">&para;</a></h2>
+<p>O laço <code>while</code> difere do <code>for</code> por apresentar apenas a condição de parada em seu cabeçalho. Neste aspecto, sua sintaxe é mais simples. Contudo, os demais controles devem ser realizados pelo programador no corpo do laço (ou fora dele), de modo evitar estados de <em>looping</em> não planejados.</p>
+<p>Para demonstrar seu funcionamento, reutilizaremos o programa que exibe números de 10 a 1 no console. Comparando com a versão utilizando <code>for</code> percebemos que a declaração da variável de controle ocorreu antes da instrução <code>while</code> para garantir que a variável exista na interpretação da condição lógica <code>i&lt;=10</code>. Já o decremento <code>i--</code> precisou ser adicionado após a última instrução, para garantir que toda iteração irá reduzir o valor da variável em 1 unidade.</p>
+<p>Assim como o laço <code>for</code>, o <code>while</code> pode vir a não executar nenhuma vez caso a condição seja falsa na primeira avaliação.</p>
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
+
+<span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">10</span><span class="p">;</span>
+    <span class="k">while</span> <span class="p">(</span><span class="n">i</span><span class="o">&gt;=</span><span class="mi">1</span><span class="p">){</span>
+      <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">i</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+      <span class="n">i</span><span class="o">--</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h2 id="do-while">Do While<a class="headerlink" href="#do-while" title="Permanent link">&para;</a></h2>
+<p>A construção do <code>do while</code> difere do <code>while</code> unicamente pela avaliação da condição de parada ser realizada ao final da iteração. <strong>Portanto, este laço irá garantir, no mínimo, uma execução das instruções em seu corpo</strong>. É justamente esta peculiaridade que utilizamos como critério para sua escolha no código. </p>
+<p>Aplicaremos o laço <code>do while</code> em nosso já conhecido programa para contar números entre 10 e 1. Faça a comparação com as versões utilizando <code>while</code> e <code>for</code> para fins de estudo.</p>
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
+
+<span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">10</span><span class="p">;</span>
+
+    <span class="k">do</span> <span class="p">{</span>
+        <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">i</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+        <span class="n">i</span><span class="o">--</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">while</span> <span class="p">(</span><span class="n">i</span><span class="o">&gt;=</span><span class="mi">1</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>...continua</p>
+<h2 id="break">Break<a class="headerlink" href="#break" title="Permanent link">&para;</a></h2>
+<h2 id="continue">Continue<a class="headerlink" href="#continue" title="Permanent link">&para;</a></h2>
                 
                   
                 
