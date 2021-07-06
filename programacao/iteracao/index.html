@@ -401,65 +401,12 @@
       
       <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
       
+        
       
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Laços de Repetição
-          <span class="md-nav__icon md-icon"></span>
-        </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
         Laços de Repetição
       </a>
-      
-        
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#for" class="md-nav__link">
-    For
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#while" class="md-nav__link">
-    While
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#do-while" class="md-nav__link">
-    Do While
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#break" class="md-nav__link">
-    Break
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#continue" class="md-nav__link">
-    Continue
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
       
     </li>
   
@@ -522,8 +469,6 @@
             <article class="md-content__inner md-typeset">
               
                 
-                
-                  <h1>Laços de Repetição</h1>
                 
                 <p>Os <code>laços de repetição</code> são comandos que permitem <strong>iterar (repetir)</strong> um conjunto de instruções sob determinadas condições. Junto com os comandos de desvio condicional, integram os comandos de controle de fluxo e são imprescindíveis na programação estruturada (e em outros paradigmas também).</p>
 <p>Temos três laços de repetição na linguagem C++: <code>for</code>, <code>while</code> e <code>do while</code>. Todos eles servem ao mesmo propósito, apresentando sutis diferenças entre si. </p>
@@ -615,9 +560,68 @@ A instrução <code>i--</code> é equivalente a <code>i=i-1</code>. </p>
     <span class="k">while</span> <span class="p">(</span><span class="n">i</span><span class="o">&gt;=</span><span class="mi">1</span><span class="p">);</span>
 <span class="p">}</span>
 </code></pre></div>
-<p>...continua</p>
 <h2 id="break">Break<a class="headerlink" href="#break" title="Permanent link">&para;</a></h2>
+<p>O comando <code>break</code> é utilizado para interromper a execução de laços de repetição e o comando <code>switch</code>. Sempre que, em um destes comandos, houver um <code>break</code>, a execução finaliza naquele ponto e a próxima instrução será aquela imediatamente posterior ao final do bloco.</p>
+<p>Utilizamos <code>break</code> quando  temos intenção de finalizar o laço mesmo que a condição especificada em sua construção ainda permita novas iterações.</p>
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
+
+<span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">i</span> <span class="o">&lt;</span> <span class="mi">20</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">){</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">i</span><span class="o">&gt;</span><span class="mi">14</span><span class="p">){</span>
+            <span class="k">break</span><span class="p">;</span>
+
+        <span class="p">}</span>
+        <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">i</span> <span class="o">&lt;&lt;</span><span class="n">endl</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span><span class="s">&quot;FIM&quot;</span> <span class="o">&lt;&lt;</span><span class="n">endl</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
 <h2 id="continue">Continue<a class="headerlink" href="#continue" title="Permanent link">&para;</a></h2>
+<p>O comando <code>continue</code> diferencia-se do <code>break</code> porque seu efeito é ignorar as demais instruções que sucedem o comando no corpo do laço. Sempre que executado, uma nova iteração inicia, como é o caso do programa abaixo.</p>
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
+
+<span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">i</span> <span class="o">&lt;</span> <span class="mi">20</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">){</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">i</span><span class="o">%</span><span class="mi">2</span><span class="o">==</span><span class="mi">0</span><span class="p">){</span>
+            <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">i</span> <span class="o">&lt;&lt;</span> <span class="s">&quot; PAR&quot;</span> <span class="o">&lt;&lt;</span><span class="n">endl</span><span class="p">;</span>
+            <span class="k">continue</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">i</span> <span class="o">&lt;&lt;</span> <span class="s">&quot; ÍMPAR&quot;</span> <span class="o">&lt;&lt;</span><span class="n">endl</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h1 id="goto">Goto<a class="headerlink" href="#goto" title="Permanent link">&para;</a></h1>
+<p>O comando <code>goto</code> permite realizar um desvio incondicional no fluxo de execução das instruções. Seu uso deve restrito àquelas situações em que nenhum outro comando pode ser utilizado,  sendo, portanto, excepcional.</p>
+<p>Para utilizar o comando <code>goto</code> é preciso marcar instruções com rótulos (<em>labels</em>). Com isso é possível "saltar" para qualquer linha rotulada. No programa abaixo definimos o rótulo <code>fim</code> para a instrução <code>cout &lt;&lt;"FIM" &lt;&lt;endl;</code>, de modo que a linha <code>goto fim;</code> levará a execução do programa imediatamente a este ponto.</p>
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
+
+<span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">i</span> <span class="o">&lt;</span> <span class="mi">20</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">){</span>
+
+        <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">x</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">x</span><span class="o">&lt;</span> <span class="mi">15</span><span class="p">;</span><span class="n">x</span><span class="o">++</span><span class="p">){</span>
+
+            <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">y</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">y</span> <span class="o">&lt;</span> <span class="mi">100</span><span class="p">;</span> <span class="n">y</span><span class="o">++</span><span class="p">){</span>
+                <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">i</span> <span class="o">&lt;&lt;</span><span class="s">&quot; - &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">x</span> <span class="o">&lt;&lt;</span><span class="s">&quot; - &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">y</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+                <span class="k">if</span> <span class="p">(</span><span class="n">y</span> <span class="o">==</span><span class="mi">10</span><span class="p">)</span>
+                    <span class="k">goto</span> <span class="n">fim</span><span class="p">;</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+        <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">i</span> <span class="o">&lt;&lt;</span><span class="n">endl</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="nl">fim</span><span class="p">:</span> <span class="n">cout</span> <span class="o">&lt;&lt;</span><span class="s">&quot;FIM&quot;</span> <span class="o">&lt;&lt;</span><span class="n">endl</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
                 
                   
                 
