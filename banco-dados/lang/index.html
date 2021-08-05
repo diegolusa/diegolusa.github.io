@@ -1,469 +1,237 @@
 
-<!doctype html>
-<html lang="en" class="no-js">
-  <head>
-    
-      <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width,initial-scale=1">
-      
-      
-      
-      
-      <link rel="icon" href="../../img/icon.ico">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.1.1">
-    
-    
-      
-        <title>Structured Query Language - SQL - Diego A. Lusa</title>
-      
-    
-    
-      <link rel="stylesheet" href="../../assets/stylesheets/main.9299cb39.min.css">
-      
-        
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.ef6f36e2.min.css">
-        
-      
-    
-    
-    
-      
-        
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7C&display=fallback">
-        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:""}</style>
-      
-    
-    
-    
-      <link rel="stylesheet" href="../../css/custom.css">
-    
-    
-      
-    
-    
-  </head>
-  
-  
-    
-    
-      
-    
-    
-    
-    
-    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="black" data-md-color-accent="">
-  
-    
-    <script>function __prefix(e){return new URL("../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
-    
-      <script>var palette=__get("__palette");if(null!==palette&&"object"==typeof palette.color)for(var key in palette.color)document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
-    
-    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
-    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
-    <label class="md-overlay" for="__drawer"></label>
-    <div data-md-component="skip">
-      
-        
-        <a href="#data-definition-language" class="md-skip">
+<!DOCTYPE html>
+
+<html class="no-js" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<link href="../../img/icon.ico" rel="icon"/>
+<meta content="mkdocs-1.1.2, mkdocs-material-7.1.1" name="generator"/>
+<title>Structured Query Language - SQL - Diego A. Lusa</title>
+<link href="../../assets/stylesheets/main.9299cb39.min.css" rel="stylesheet"/>
+<link href="../../assets/stylesheets/palette.ef6f36e2.min.css" rel="stylesheet"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7C&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font-family:"Roboto";--md-code-font-family:""}</style>
+<link href="../../css/custom.css" rel="stylesheet"/>
+</head>
+<body data-md-color-accent="" data-md-color-primary="black" data-md-color-scheme="default" dir="ltr">
+<script>function __prefix(e){return new URL("../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+<script>var palette=__get("__palette");if(null!==palette&&"object"==typeof palette.color)for(var key in palette.color)document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#data-definition-language">
           Skip to content
         </a>
-      
-    </div>
-    <div data-md-component="announce">
-      
-    </div>
-    
-      <header class="md-header" data-md-component="header">
-  <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../.." title="Diego A. Lusa" class="md-header__button md-logo" aria-label="Diego A. Lusa" data-md-component="logo">
-      
-  <img src="../../img/icon.png" alt="logo">
-
-    </a>
-    <label class="md-header__button md-icon" for="__drawer">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
-    </label>
-    <div class="md-header__title" data-md-component="header-title">
-      <div class="md-header__ellipsis">
-        <div class="md-header__topic">
-          <span class="md-ellipsis">
+</div>
+<div data-md-component="announce">
+</div>
+<header class="md-header" data-md-component="header">
+<nav aria-label="Header" class="md-header__inner md-grid">
+<a aria-label="Diego A. Lusa" class="md-header__button md-logo" data-md-component="logo" href="../.." title="Diego A. Lusa">
+<img alt="logo" src="../../img/icon.png"/>
+</a>
+<label class="md-header__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"></path></svg>
+</label>
+<div class="md-header__title" data-md-component="header-title">
+<div class="md-header__ellipsis">
+<div class="md-header__topic">
+<span class="md-ellipsis">
             Diego A. Lusa
           </span>
-        </div>
-        <div class="md-header__topic" data-md-component="header-topic">
-          <span class="md-ellipsis">
+</div>
+<div class="md-header__topic" data-md-component="header-topic">
+<span class="md-ellipsis">
             
               Structured Query Language - SQL
             
           </span>
-        </div>
-      </div>
-    </div>
-    
-      <form class="md-header__option" data-md-component="palette">
-        
-          
-          
-          <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="black" data-md-color-accent="" type="radio" name="__palette" id="__palette_1">
-          <label class="md-header__button md-icon" title="Mudar para modo escuro" for="__palette_2" hidden>
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M7 10a2 2 0 0 1 2 2 2 2 0 0 1-2 2 2 2 0 0 1-2-2 2 2 0 0 1 2-2m10-3a5 5 0 0 1 5 5 5 5 0 0 1-5 5H7a5 5 0 0 1-5-5 5 5 0 0 1 5-5h10M7 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3h10a3 3 0 0 0 3-3 3 3 0 0 0-3-3H7z"/></svg>
-          </label>
-        
-          
-          
-          <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="" type="radio" name="__palette" id="__palette_2">
-          <label class="md-header__button md-icon" title="Mudar para modo claro" for="__palette_1" hidden>
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3z"/></svg>
-          </label>
-        
-      </form>
-    
-    
-    
-      <label class="md-header__button md-icon" for="__search">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
-      </label>
-      
+</div>
+</div>
+</div>
+<form class="md-header__option" data-md-component="palette">
+<input class="md-option" data-md-color-accent="" data-md-color-media="" data-md-color-primary="black" data-md-color-scheme="default" id="__palette_1" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_2" hidden="" title="Mudar para modo escuro">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10a2 2 0 0 1 2 2 2 2 0 0 1-2 2 2 2 0 0 1-2-2 2 2 0 0 1 2-2m10-3a5 5 0 0 1 5 5 5 5 0 0 1-5 5H7a5 5 0 0 1-5-5 5 5 0 0 1 5-5h10M7 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3h10a3 3 0 0 0 3-3 3 3 0 0 0-3-3H7z"></path></svg>
+</label>
+<input class="md-option" data-md-color-accent="" data-md-color-media="" data-md-color-primary="black" data-md-color-scheme="slate" id="__palette_2" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_1" hidden="" title="Mudar para modo claro">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3z"></path></svg>
+</label>
+</form>
+<label class="md-header__button md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"></path></svg>
+</label>
 <div class="md-search" data-md-component="search" role="dialog">
-  <label class="md-search__overlay" for="__search"></label>
-  <div class="md-search__inner" role="search">
-    <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
-      <label class="md-search__icon md-icon" for="__search">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
-      </label>
-      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
-      </button>
-    </form>
-    <div class="md-search__output">
-      <div class="md-search__scrollwrap" data-md-scrollfix>
-        <div class="md-search-result" data-md-component="search-result">
-          <div class="md-search-result__meta">
+<label class="md-search__overlay" for="__search"></label>
+<div class="md-search__inner" role="search">
+<form class="md-search__form" name="search">
+<input aria-label="Search" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" data-md-state="active" name="query" placeholder="Search" required="" spellcheck="false" type="text"/>
+<label class="md-search__icon md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"></path></svg>
+</label>
+<button aria-label="Clear" class="md-search__icon md-icon" tabindex="-1" type="reset">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"></path></svg>
+</button>
+</form>
+<div class="md-search__output">
+<div class="md-search__scrollwrap" data-md-scrollfix="">
+<div class="md-search-result" data-md-component="search-result">
+<div class="md-search-result__meta">
             Initializing search
           </div>
-          <ol class="md-search-result__list"></ol>
-        </div>
-      </div>
-    </div>
-  </div>
+<ol class="md-search-result__list"></ol>
 </div>
-    
-    
-  </nav>
+</div>
+</div>
+</div>
+</div>
+</nav>
 </header>
-    
-    <div class="md-container" data-md-component="container">
-      
-      
-        
-      
-      <main class="md-main" data-md-component="main">
-        <div class="md-main__inner md-grid">
-          
-            
-              
-              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
-                <div class="md-sidebar__scrollwrap">
-                  <div class="md-sidebar__inner">
-                    
-
-
-  
-
-<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navigation" data-md-level="0">
-  <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="Diego A. Lusa" class="md-nav__button md-logo" aria-label="Diego A. Lusa" data-md-component="logo">
-      
-  <img src="../../img/icon.png" alt="logo">
-
-    </a>
+<div class="md-container" data-md-component="container">
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Navigation" class="md-nav md-nav--primary md-nav--integrated" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="Diego A. Lusa" class="md-nav__button md-logo" data-md-component="logo" href="../.." title="Diego A. Lusa">
+<img alt="logo" src="../../img/icon.png"/>
+</a>
     Diego A. Lusa
   </label>
-  
-  <ul class="md-nav__list" data-md-scrollfix>
-    
-      
-      
-      
-
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../.." class="md-nav__link">
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../..">
         Home
       </a>
-    </li>
-  
-
-    
-      
-      
-      
-
-  
-  
-  
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
-      
-      <label class="md-nav__link" for="__nav_2">
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" id="__nav_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2">
         Informática
         <span class="md-nav__icon md-icon"></span>
-      </label>
-      <nav class="md-nav" aria-label="Informática" data-md-level="1">
-        <label class="md-nav__title" for="__nav_2">
-          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="Informática" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_2">
+<span class="md-nav__icon md-icon"></span>
           Informática
         </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
-            
-  
-  
-  
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_1" type="checkbox" id="__nav_2_1" >
-      
-      <label class="md-nav__link" for="__nav_2_1">
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_1" id="__nav_2_1" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_1">
         Editores de Texto
         <span class="md-nav__icon md-icon"></span>
-      </label>
-      <nav class="md-nav" aria-label="Editores de Texto" data-md-level="2">
-        <label class="md-nav__title" for="__nav_2_1">
-          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="Editores de Texto" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_1">
+<span class="md-nav__icon md-icon"></span>
           Editores de Texto
         </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../informatica/editores-texto/introducao/" class="md-nav__link">
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../informatica/editores-texto/introducao/">
         Writer
       </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../informatica/editores-texto/estilos/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../informatica/editores-texto/estilos/">
         Estilos
       </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../informatica/editores-texto/abnt/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../informatica/editores-texto/abnt/">
         ABNT
       </a>
-    </li>
-  
-
-          
-        </ul>
-      </nav>
-    </li>
-  
-
-          
-        </ul>
-      </nav>
-    </li>
-  
-
-    
-      
-      
-      
-
-  
-  
-  
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
-      
-      <label class="md-nav__link" for="__nav_3">
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" id="__nav_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_3">
         Programação
         <span class="md-nav__icon md-icon"></span>
-      </label>
-      <nav class="md-nav" aria-label="Programação" data-md-level="1">
-        <label class="md-nav__title" for="__nav_3">
-          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="Programação" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_3">
+<span class="md-nav__icon md-icon"></span>
           Programação
         </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../programacao/linguagens/" class="md-nav__link">
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../programacao/linguagens/">
         Linguagens de Programação
       </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../programacao/ambiente/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../programacao/ambiente/">
         Ambiente de Desenvolvimento
       </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../programacao/compilacao/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../programacao/compilacao/">
         Compilação
       </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../programacao/identificadores/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../programacao/identificadores/">
         Identificadores
       </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../programacao/io/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../programacao/io/">
         Entrada e Saída
       </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../programacao/condicionais/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../programacao/condicionais/">
         Condicionais
       </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../programacao/iteracao/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../programacao/iteracao/">
         Laços de Repetição
       </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../programacao/arranjos/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../programacao/arranjos/">
         Arranjos
       </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../programacao/ponteiros/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../programacao/ponteiros/">
         Ponteiros
       </a>
-    </li>
-  
-
-          
-        </ul>
-      </nav>
-    </li>
-  
-
-    
-      
-      
-      
-
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../about/" class="md-nav__link">
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../about/">
         Sobre
       </a>
-    </li>
-  
-
-    
-  </ul>
+</li>
+</ul>
 </nav>
-                  </div>
-                </div>
-              </div>
-            
-            
-          
-          <div class="md-content" data-md-component="content">
-            <article class="md-content__inner md-typeset">
-              
-                
-                
-                  <h1>Structured Query Language - SQL</h1>
-                
-                <h2 id="data-definition-language">Data Definition Language<a class="headerlink" href="#data-definition-language" title="Permanent link">&para;</a></h2>
-<h2 id="data-manipulation-language">Data Manipulation Language<a class="headerlink" href="#data-manipulation-language" title="Permanent link">&para;</a></h2>
-<h3 id="comando-insert">Comando INSERT<a class="headerlink" href="#comando-insert" title="Permanent link">&para;</a></h3>
+</div>
+</div>
+</div>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<h1>Structured Query Language - SQL</h1>
+<h2 id="data-definition-language">Data Definition Language<a class="headerlink" href="#data-definition-language" title="Permanent link">¶</a></h2>
+<h2 id="data-manipulation-language">Data Manipulation Language<a class="headerlink" href="#data-manipulation-language" title="Permanent link">¶</a></h2>
+<h3 id="comando-insert">Comando INSERT<a class="headerlink" href="#comando-insert" title="Permanent link">¶</a></h3>
 <p>{: .notice--info}</p>
 <p>Responsável por adicionar novas linhas a uma tabela, o comando INSERT apresenta sintaxe muito simples, embora com algumas variações. A forma trivial de escrevê-lo é especificando todas as colunas da tabela e os seus respectivos valores. Observe o trecho de código a seguir:</p>
 <p><div class="highlight"><pre><span></span><code><span class="k">INSERT</span> <span class="k">INTO</span> <span class="n">quote</span>
@@ -476,10 +244,10 @@
              <span class="n">is_universal_access</span><span class="p">)</span>
 <span class="k">VALUES</span>      <span class="p">(</span><span class="mi">1</span><span class="p">,</span>
              <span class="mi">1</span><span class="p">,</span>
-             <span class="s1">&#39;ACESSO UNIVERSAL&#39;</span><span class="p">,</span>
-             <span class="s1">&#39;1&#39;</span><span class="p">,</span>
-             <span class="s1">&#39;Vagas de acesso universal&#39;</span><span class="p">,</span>
-             <span class="s1">&#39;&#39;</span><span class="p">,</span>
+             <span class="s1">'ACESSO UNIVERSAL'</span><span class="p">,</span>
+             <span class="s1">'1'</span><span class="p">,</span>
+             <span class="s1">'Vagas de acesso universal'</span><span class="p">,</span>
+             <span class="s1">''</span><span class="p">,</span>
              <span class="k">true</span><span class="p">);</span> 
 </code></pre></div>
 Para ter sucesso na execução, o comando <code>insert</code> deve respeitar a sintaxe e as <code>constraints</code> definidas para as colunas da tabela. <strong>Todas</strong> as colunas obrigatórias (<code>not null</code>) devem aparecer no comando, com exceção daquelas que possuem valor <code>default</code>, que podem ser omitidas. </p>
@@ -490,8 +258,8 @@ Para ter sucesso na execução, o comando <code>insert</code> deve respeitar a s
         <span class="n">nome</span>                    
         <span class="p">)</span>
 <span class="k">VALUES</span>
-        <span class="p">(</span><span class="k">default</span><span class="p">,</span><span class="s1">&#39;Lápis&#39;</span><span class="p">),</span> 
-        <span class="p">(</span><span class="k">default</span><span class="p">,</span><span class="s1">&#39;Caneta&#39;</span><span class="p">);</span>
+        <span class="p">(</span><span class="k">default</span><span class="p">,</span><span class="s1">'Lápis'</span><span class="p">),</span> 
+        <span class="p">(</span><span class="k">default</span><span class="p">,</span><span class="s1">'Caneta'</span><span class="p">);</span>
 </code></pre></div>
 <p>Outra variação de grande utilidade é a possibilidade de substituir <strong>VALUES</strong> por um comando de <strong>SELECT</strong>. Observe:</p>
 <div class="highlight"><pre><span></span><code><span class="k">INSERT</span> <span class="k">INTO</span> <span class="n">produto</span> 
@@ -503,7 +271,7 @@ Para ter sucesso na execução, o comando <code>insert</code> deve respeitar a s
 <span class="k">FROM</span>
     <span class="n">item_nota_fiscal</span>
 <span class="k">WHERE</span> 
-    <span class="n">tipo</span> <span class="o">=</span> <span class="s1">&#39;P&#39;</span><span class="p">;</span>
+    <span class="n">tipo</span> <span class="o">=</span> <span class="s1">'P'</span><span class="p">;</span>
 </code></pre></div>
 <p>Por fim, o PostgreSQL possibilita o retorno de valores em comandos de <code>insert</code> através da cláusula <code>returning</code>. Esse recurso é especialmente útil para obter valores de colunas configuradas como <code>default</code>, incluíndo tipos seriais utilizados em chaves primárias, bem como para comandos de PL/SQL que envolvem a atribuição de variáveis (<a href="https://www.postgresql.org/docs/current/sql-insert.html">Vide Documentação</a>).</p>
 <p>No exemplo abaixo, o comando <code>insert</code> irá retornar o valor gerado para a coluna <code>id</code>, tal qual faria um comando <code>select</code> análogo.
@@ -513,10 +281,10 @@ Para ter sucesso na execução, o comando <code>insert</code> deve respeitar a s
         <span class="p">)</span> 
 <span class="k">VALUES</span>
       <span class="p">(</span><span class="k">default</span><span class="p">,</span>
-      <span class="s1">&#39;Pão&#39;</span><span class="p">)</span>
+      <span class="s1">'Pão'</span><span class="p">)</span>
 <span class="n">RETURNING</span> <span class="n">id</span><span class="p">;</span>
 </code></pre></div></p>
-<h3 id="comando-delete">Comando DELETE<a class="headerlink" href="#comando-delete" title="Permanent link">&para;</a></h3>
+<h3 id="comando-delete">Comando DELETE<a class="headerlink" href="#comando-delete" title="Permanent link">¶</a></h3>
 <p>{: .notice--info}</p>
 <p>A exclusão de linhas de uma tabela é realizada pelo comando <code>delete</code>. Não confunda, portanto com o comando <code>drop</code>, cuja finalidade é remover do dicionário (schema) a definição e dados (se houver) de um objeto existente na base de dados.</p>
 <p>O comando <code>delete</code> não requer a especificação de filtros. Neste caso, <strong>todas</strong> as linhas da tabela serão removidas, o que pode ser imprudente. Normalmente todo comando <code>delete</code> acompanha condições que determinam quais linhas devem ser excluídas dentre todas as existentes. Tais condições são expressas na cláusula <strong>WHERE</strong>, na forma de condições lógicas.</p>
@@ -528,32 +296,32 @@ Para ter sucesso na execução, o comando <code>insert</code> deve respeitar a s
 
 <span class="k">DELETE</span> <span class="k">FROM</span> <span class="n">estudante</span> 
   <span class="k">WHERE</span>
-      <span class="n">cpf</span> <span class="o">=</span> <span class="s1">&#39;012365478963&#39;</span> <span class="k">or</span>
-      <span class="n">status</span> <span class="o">=</span> <span class="s1">&#39;C&#39;</span><span class="p">;</span>
+      <span class="n">cpf</span> <span class="o">=</span> <span class="s1">'012365478963'</span> <span class="k">or</span>
+      <span class="n">status</span> <span class="o">=</span> <span class="s1">'C'</span><span class="p">;</span>
 </code></pre></div>
 <p>A exclusão das linhas somente ocorre quando nenhuma <code>constraint</code> for violada. Casos típicos são linhas referenciadas em chaves estrangeiras, as quais não podem ser excluídas pois implicaria na violação da <strong>restrição de integridade referencial</strong>. </p>
 <p>Um meio de contornar a restrição e permitir a exclusão da linha com dependência é valer-se da cláusula <strong>ON DELETE CASCADE</strong> no momento de criar a chave estrangeira. Isso, contudo, irá depender das regras do negócio, que por vezes tornam inviável o uso de tal recurso. Pense, por exemplo, se ao excluir o registro de uma cidade, todos os dados de habitantes a ela associados fossem excluídos automaticamente. Certamente não parece ser a melhor estratégia.</p>
 <p>Da mesma forma que ocorre com o comando <strong>INSERT</strong>, o PostgreSQL possibilita o retorno de valores em comandos de <code>delete</code> através da cláusula <code>returning</code>. Observe o comando abaixo (<a href="https://www.postgresql.org/docs/current/sql-delete.html">Vide Documentação</a>):</p>
 <div class="highlight"><pre><span></span><code><span class="k">DELETE</span> <span class="k">FROM</span> <span class="n">produto</span> 
-<span class="k">WHERE</span> <span class="n">data_validade</span> <span class="o">&gt;</span> <span class="k">current_date</span> <span class="o">-</span> <span class="nb">interval</span> <span class="s1">&#39;10 days&#39;</span> 
+<span class="k">WHERE</span> <span class="n">data_validade</span> <span class="o">&gt;</span> <span class="k">current_date</span> <span class="o">-</span> <span class="nb">interval</span> <span class="s1">'10 days'</span> 
 <span class="n">returning</span> <span class="n">id</span><span class="p">,</span> <span class="n">nome</span><span class="p">;</span>
 </code></pre></div>
-<h3 id="comando-update">Comando UPDATE<a class="headerlink" href="#comando-update" title="Permanent link">&para;</a></h3>
+<h3 id="comando-update">Comando UPDATE<a class="headerlink" href="#comando-update" title="Permanent link">¶</a></h3>
 <p>{: .notice--info}</p>
 <p>Para realizar modificações em dados armazenados, utilizamos o comando <strong>UPDATE</strong>. Por meio dele é possível alterar valores de uma ou mais colunas da linha (ou linhas) de uma tabela.</p>
 <p>Se definido sem filtros, a alteração solicitada será efetivada em todas as linhas, contudo nos cenários triviais de uso, este não é o objetivo pretendido. Normalmente utilizamos condições que restringem o efeito da atualização para uma quantia menor de linhas.</p>
 <div class="highlight"><pre><span></span><code><span class="c1">--Todas as linhas de produto terão o valor da coluna nome alterado para Feijão</span>
-<span class="k">UPDATE</span> <span class="n">produto</span> <span class="k">SET</span> <span class="n">nome</span> <span class="o">=</span> <span class="s1">&#39;Feijão&#39;</span><span class="p">;</span>
+<span class="k">UPDATE</span> <span class="n">produto</span> <span class="k">SET</span> <span class="n">nome</span> <span class="o">=</span> <span class="s1">'Feijão'</span><span class="p">;</span>
 
 <span class="c1">--O mesmo comando, agora com filtro</span>
-<span class="k">UPDATE</span> <span class="n">produto</span> <span class="k">SET</span> <span class="n">nome</span> <span class="o">=</span> <span class="s1">&#39;Feijão&#39;</span> 
+<span class="k">UPDATE</span> <span class="n">produto</span> <span class="k">SET</span> <span class="n">nome</span> <span class="o">=</span> <span class="s1">'Feijão'</span> 
         <span class="k">WHERE</span> <span class="n">codigo</span> <span class="o">=</span> <span class="mi">25</span><span class="p">;</span>
 </code></pre></div>
 <p>No comando <code>update</code> podemos especificar apenas uma tabela. A partir da cláusula <code>set</code> informamos qual será o novo valor das colunas que desejamos modificar. É possível informar uma ou mais colunas na mesma instrução, assim como utilizar o valor atual de colunas para compor novos. Observe:</p>
 <div class="highlight"><pre><span></span><code><span class="c1">--Modificando várias colunas em uma única instrução</span>
 
 <span class="k">UPDATE</span> <span class="n">produto</span> 
-<span class="k">SET</span> <span class="n">nome</span> <span class="o">=</span> <span class="s1">&#39;Feijão&#39;</span><span class="p">,</span> <span class="n">preco</span><span class="o">=</span><span class="mi">4</span><span class="p">.</span><span class="mi">86</span><span class="p">,</span> <span class="n">peso</span><span class="o">=</span><span class="mi">2000</span> 
+<span class="k">SET</span> <span class="n">nome</span> <span class="o">=</span> <span class="s1">'Feijão'</span><span class="p">,</span> <span class="n">preco</span><span class="o">=</span><span class="mi">4</span><span class="p">.</span><span class="mi">86</span><span class="p">,</span> <span class="n">peso</span><span class="o">=</span><span class="mi">2000</span> 
 <span class="k">WHERE</span> <span class="n">codigo</span> <span class="o">=</span> <span class="mi">25</span><span class="p">;</span>
 
 <span class="c1">--Novos valores de coluna com base nos atuais</span>
@@ -565,10 +333,10 @@ Para ter sucesso na execução, o comando <code>insert</code> deve respeitar a s
 <p>Você deve ter observado que a cláusula <code>set</code> é uma sequência de pares de coluna/valor separados por vírgula. Utilizando o trecho <code>preco= preco + preco * 0.05</code> como exemplo, percebemos que à esquerda da igualdade temos o nome da coluna que terá o valor modificado, enquanto que na direita encontramos o novo valor. Quando o nome de uma coluna aparece na direita (nosso exemplo), estamos lendo o valor atual para utilizá-lo de alguma forma na composição do novo. Assim, supondo que a coluna <code>preco</code> tenha por valor atual <code>2.40</code>, o novo valor será o resultado da expressão <code>2.40 + 2.40 * 0.05</code>, ou seja, <code>2.52</code>.</p>
 <p>O PostgreSQL possibilita o retorno de valores em comandos <code>update</code> através da cláusula <code>returning</code>. Observe o comando abaixo (<a href="https://www.postgresql.org/docs/current/sql-update.html">Vide Documentação</a>):</p>
 <div class="highlight"><pre><span></span><code><span class="k">UPDATE</span> <span class="n">produto</span> 
-<span class="k">SET</span> <span class="n">nome</span> <span class="o">=</span> <span class="s1">&#39;Feijão&#39;</span><span class="p">,</span> <span class="n">preco</span> <span class="o">=</span> <span class="n">preco</span> <span class="o">*</span> <span class="mi">0</span><span class="p">.</span><span class="mi">15</span> 
+<span class="k">SET</span> <span class="n">nome</span> <span class="o">=</span> <span class="s1">'Feijão'</span><span class="p">,</span> <span class="n">preco</span> <span class="o">=</span> <span class="n">preco</span> <span class="o">*</span> <span class="mi">0</span><span class="p">.</span><span class="mi">15</span> 
 <span class="k">WHERE</span> <span class="n">codigo</span> <span class="o">=</span> <span class="mi">25</span> <span class="n">RETURNING</span> <span class="n">preco</span><span class="p">;</span>
 </code></pre></div>
-<h3 id="comando-select">Comando SELECT<a class="headerlink" href="#comando-select" title="Permanent link">&para;</a></h3>
+<h3 id="comando-select">Comando SELECT<a class="headerlink" href="#comando-select" title="Permanent link">¶</a></h3>
 <p>{: .notice--info}</p>
 <p>Certamente podemos afirmar que o comando <a href="https://www.postgresql.org/docs/current/sql-select.html"><strong>select</strong></a> é um dos mais importantes da linguagem SQL. Isso porque através dele temos condições de recompor as informações do mundo fragmentados nas diferentes tabelas da base, respondendo às consultas dos usuários. A informação é, portanto, o que se busca apresentar nos diferentes softwares que construímos para interagir com bases de dados. </p>
 <p>Proporcional a importância do comando <strong>select</strong> é a sua complexidade e variação de sintaxe. Logo, extrair todo potencial do comando pode levar certo tempo de estudo e dedicação.</p>
@@ -586,7 +354,7 @@ Para ter sucesso na execução, o comando <code>insert</code> deve respeitar a s
 <div class="highlight"><pre><span></span><code><span class="k">select</span> <span class="o">*</span> <span class="k">from</span> <span class="n">internacao</span>
 </code></pre></div>
 <p>Bem, e se você preferir mudar o nome de saída da coluna...como faria? Neste caso, basta utilizar o recurso de troca de nomes (<em>rename</em>). Veja:</p>
-<div class="highlight"><pre><span></span><code><span class="k">select</span> <span class="n">medico_id</span> <span class="k">as</span> <span class="ss">&quot;codigo do médico&quot;</span><span class="p">,</span>
+<div class="highlight"><pre><span></span><code><span class="k">select</span> <span class="n">medico_id</span> <span class="k">as</span> <span class="ss">"codigo do médico"</span><span class="p">,</span>
        <span class="n">paciente_id</span> <span class="n">paciente</span><span class="p">,</span>
        <span class="n">anamnese</span><span class="p">,</span>
        <span class="n">data_hora_alta</span> <span class="k">as</span> <span class="n">saida_paciente</span>
@@ -612,83 +380,47 @@ Para ter sucesso na execução, o comando <code>insert</code> deve respeitar a s
    <span class="n">internacao</span>
 <span class="k">where</span>
    <span class="n">data_hora_internacao</span> <span class="o">&gt;</span> 
-        <span class="k">current_timestamp</span> <span class="o">-</span> <span class="nb">interval</span> <span class="s1">&#39;3 days&#39;</span>
-   <span class="k">and</span> <span class="n">tipo_clinica</span> <span class="o">=</span> <span class="s1">&#39;M&#39;</span>
+        <span class="k">current_timestamp</span> <span class="o">-</span> <span class="nb">interval</span> <span class="s1">'3 days'</span>
+   <span class="k">and</span> <span class="n">tipo_clinica</span> <span class="o">=</span> <span class="s1">'M'</span>
 </code></pre></div>
 <p>Na query acima, condicionamos ao retorno linhas da tabela <code>internacao</code> que possuem valor igual a <code>M</code> na coluna <code>tipo_clinica</code> e cuja <code>data_hora_internacao</code> registra uma estampa de tempo de até 3 dias. </p>
-<h2 id="juncoes-internas">Junções Internas<a class="headerlink" href="#juncoes-internas" title="Permanent link">&para;</a></h2>
-                
-                  
-                
-              
-              
-                
-
-
-              
-            </article>
-          </div>
-        </div>
-        
-          <a href="#" class="md-top md-icon" data-md-component="top" data-md-state="hidden">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"/></svg>
-          </a>
-        
-      </main>
-      
-        
+<h2 id="juncoes-internas">Junções Internas<a class="headerlink" href="#juncoes-internas" title="Permanent link">¶</a></h2>
+</article>
+</div>
+</div>
+<a class="md-top md-icon" data-md-component="top" data-md-state="hidden" href="#">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path></svg>
+</a>
+</main>
 <footer class="md-footer">
-  
-  <div class="md-footer-meta md-typeset">
-    <div class="md-footer-meta__inner md-grid">
-      <div class="md-footer-copyright">
-        
-          <div class="md-footer-copyright__highlight">
-            Copyright &copy; 2021 -  Diego A. Lusa
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-footer-copyright">
+<div class="md-footer-copyright__highlight">
+            Copyright © 2021 -  Diego A. Lusa
           </div>
         
         Made with
-        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+        <a href="https://squidfunk.github.io/mkdocs-material/" rel="noopener" target="_blank">
           Material for MkDocs
         </a>
-        
-      </div>
-      
-  <div class="md-footer-social">
-    
-      
-      
-        
-        
-      
-      <a href="https://www.linkedin.com/in/diegolusa/" target="_blank" rel="noopener" title="www.linkedin.com" class="md-footer-social__link">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/></svg>
-      </a>
-    
-      
-      
-        
-        
-      
-      <a href="http://github.com/diegolusa" target="_blank" rel="noopener" title="github.com" class="md-footer-social__link">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
-      </a>
-    
-  </div>
-
-    </div>
-  </div>
+</div>
+<div class="md-footer-social">
+<a class="md-footer-social__link" href="https://www.linkedin.com/in/diegolusa/" rel="noopener" target="_blank" title="www.linkedin.com">
+<svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"></path></svg>
+</a>
+<a class="md-footer-social__link" href="http://github.com/diegolusa" rel="noopener" target="_blank" title="github.com">
+<svg viewbox="0 0 496 512" xmlns="http://www.w3.org/2000/svg"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"></path></svg>
+</a>
+</div>
+</div>
+</div>
 </footer>
-      
-    </div>
-    <div class="md-dialog" data-md-component="dialog">
-      <div class="md-dialog__inner md-typeset"></div>
-    </div>
-    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.top", "navigation.instant", "toc.integrate", "header.autohide"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}, "search": "../../assets/javascripts/workers/search.fe42c31b.min.js", "version": null}</script>
-    
-    
-      <script src="../../assets/javascripts/bundle.7353b375.min.js"></script>
-      
-    
-  </body>
+</div>
+<div class="md-dialog" data-md-component="dialog">
+<div class="md-dialog__inner md-typeset"></div>
+</div>
+<script id="__config" type="application/json">{"base": "../..", "features": ["navigation.top", "navigation.instant", "toc.integrate", "header.autohide"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}, "search": "../../assets/javascripts/workers/search.fe42c31b.min.js", "version": null}</script>
+<script src="../../assets/javascripts/bundle.7353b375.min.js"></script>
+</body>
 </html>

@@ -1,467 +1,237 @@
 
-<!doctype html>
-<html lang="en" class="no-js">
-  <head>
-    
-      <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width,initial-scale=1">
-      
-      
-      
-      
-      <link rel="icon" href="../../img/icon.ico">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.1.1">
-    
-    
-      
-        <title>Estudo de Caso - Hospital_Db - Diego A. Lusa</title>
-      
-    
-    
-      <link rel="stylesheet" href="../../assets/stylesheets/main.9299cb39.min.css">
-      
-        
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.ef6f36e2.min.css">
-        
-      
-    
-    
-    
-      
-        
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7C&display=fallback">
-        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:""}</style>
-      
-    
-    
-    
-      <link rel="stylesheet" href="../../css/custom.css">
-    
-    
-      
-    
-    
-  </head>
-  
-  
-    
-    
-      
-    
-    
-    
-    
-    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="black" data-md-color-accent="">
-  
-    
-    <script>function __prefix(e){return new URL("../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
-    
-      <script>var palette=__get("__palette");if(null!==palette&&"object"==typeof palette.color)for(var key in palette.color)document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
-    
-    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
-    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
-    <label class="md-overlay" for="__drawer"></label>
-    <div data-md-component="skip">
-      
-    </div>
-    <div data-md-component="announce">
-      
-    </div>
-    
-      <header class="md-header" data-md-component="header">
-  <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../.." title="Diego A. Lusa" class="md-header__button md-logo" aria-label="Diego A. Lusa" data-md-component="logo">
-      
-  <img src="../../img/icon.png" alt="logo">
+<!DOCTYPE html>
 
-    </a>
-    <label class="md-header__button md-icon" for="__drawer">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
-    </label>
-    <div class="md-header__title" data-md-component="header-title">
-      <div class="md-header__ellipsis">
-        <div class="md-header__topic">
-          <span class="md-ellipsis">
+<html class="no-js" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<link href="../../img/icon.ico" rel="icon"/>
+<meta content="mkdocs-1.1.2, mkdocs-material-7.1.1" name="generator"/>
+<title>Estudo de Caso - Hospital_Db - Diego A. Lusa</title>
+<link href="../../assets/stylesheets/main.9299cb39.min.css" rel="stylesheet"/>
+<link href="../../assets/stylesheets/palette.ef6f36e2.min.css" rel="stylesheet"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7C&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font-family:"Roboto";--md-code-font-family:""}</style>
+<link href="../../css/custom.css" rel="stylesheet"/>
+</head>
+<body data-md-color-accent="" data-md-color-primary="black" data-md-color-scheme="default" dir="ltr">
+<script>function __prefix(e){return new URL("../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+<script>var palette=__get("__palette");if(null!==palette&&"object"==typeof palette.color)for(var key in palette.color)document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+</div>
+<div data-md-component="announce">
+</div>
+<header class="md-header" data-md-component="header">
+<nav aria-label="Header" class="md-header__inner md-grid">
+<a aria-label="Diego A. Lusa" class="md-header__button md-logo" data-md-component="logo" href="../.." title="Diego A. Lusa">
+<img alt="logo" src="../../img/icon.png"/>
+</a>
+<label class="md-header__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"></path></svg>
+</label>
+<div class="md-header__title" data-md-component="header-title">
+<div class="md-header__ellipsis">
+<div class="md-header__topic">
+<span class="md-ellipsis">
             Diego A. Lusa
           </span>
-        </div>
-        <div class="md-header__topic" data-md-component="header-topic">
-          <span class="md-ellipsis">
+</div>
+<div class="md-header__topic" data-md-component="header-topic">
+<span class="md-ellipsis">
             
               Estudo de Caso - Hospital_Db
             
           </span>
-        </div>
-      </div>
-    </div>
-    
-      <form class="md-header__option" data-md-component="palette">
-        
-          
-          
-          <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="black" data-md-color-accent="" type="radio" name="__palette" id="__palette_1">
-          <label class="md-header__button md-icon" title="Mudar para modo escuro" for="__palette_2" hidden>
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M7 10a2 2 0 0 1 2 2 2 2 0 0 1-2 2 2 2 0 0 1-2-2 2 2 0 0 1 2-2m10-3a5 5 0 0 1 5 5 5 5 0 0 1-5 5H7a5 5 0 0 1-5-5 5 5 0 0 1 5-5h10M7 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3h10a3 3 0 0 0 3-3 3 3 0 0 0-3-3H7z"/></svg>
-          </label>
-        
-          
-          
-          <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="" type="radio" name="__palette" id="__palette_2">
-          <label class="md-header__button md-icon" title="Mudar para modo claro" for="__palette_1" hidden>
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3z"/></svg>
-          </label>
-        
-      </form>
-    
-    
-    
-      <label class="md-header__button md-icon" for="__search">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
-      </label>
-      
+</div>
+</div>
+</div>
+<form class="md-header__option" data-md-component="palette">
+<input class="md-option" data-md-color-accent="" data-md-color-media="" data-md-color-primary="black" data-md-color-scheme="default" id="__palette_1" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_2" hidden="" title="Mudar para modo escuro">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10a2 2 0 0 1 2 2 2 2 0 0 1-2 2 2 2 0 0 1-2-2 2 2 0 0 1 2-2m10-3a5 5 0 0 1 5 5 5 5 0 0 1-5 5H7a5 5 0 0 1-5-5 5 5 0 0 1 5-5h10M7 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3h10a3 3 0 0 0 3-3 3 3 0 0 0-3-3H7z"></path></svg>
+</label>
+<input class="md-option" data-md-color-accent="" data-md-color-media="" data-md-color-primary="black" data-md-color-scheme="slate" id="__palette_2" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_1" hidden="" title="Mudar para modo claro">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3z"></path></svg>
+</label>
+</form>
+<label class="md-header__button md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"></path></svg>
+</label>
 <div class="md-search" data-md-component="search" role="dialog">
-  <label class="md-search__overlay" for="__search"></label>
-  <div class="md-search__inner" role="search">
-    <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
-      <label class="md-search__icon md-icon" for="__search">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
-      </label>
-      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
-      </button>
-    </form>
-    <div class="md-search__output">
-      <div class="md-search__scrollwrap" data-md-scrollfix>
-        <div class="md-search-result" data-md-component="search-result">
-          <div class="md-search-result__meta">
+<label class="md-search__overlay" for="__search"></label>
+<div class="md-search__inner" role="search">
+<form class="md-search__form" name="search">
+<input aria-label="Search" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" data-md-state="active" name="query" placeholder="Search" required="" spellcheck="false" type="text"/>
+<label class="md-search__icon md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"></path></svg>
+</label>
+<button aria-label="Clear" class="md-search__icon md-icon" tabindex="-1" type="reset">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"></path></svg>
+</button>
+</form>
+<div class="md-search__output">
+<div class="md-search__scrollwrap" data-md-scrollfix="">
+<div class="md-search-result" data-md-component="search-result">
+<div class="md-search-result__meta">
             Initializing search
           </div>
-          <ol class="md-search-result__list"></ol>
-        </div>
-      </div>
-    </div>
-  </div>
+<ol class="md-search-result__list"></ol>
 </div>
-    
-    
-  </nav>
+</div>
+</div>
+</div>
+</div>
+</nav>
 </header>
-    
-    <div class="md-container" data-md-component="container">
-      
-      
-        
-      
-      <main class="md-main" data-md-component="main">
-        <div class="md-main__inner md-grid">
-          
-            
-              
-              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
-                <div class="md-sidebar__scrollwrap">
-                  <div class="md-sidebar__inner">
-                    
-
-
-  
-
-<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navigation" data-md-level="0">
-  <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="Diego A. Lusa" class="md-nav__button md-logo" aria-label="Diego A. Lusa" data-md-component="logo">
-      
-  <img src="../../img/icon.png" alt="logo">
-
-    </a>
+<div class="md-container" data-md-component="container">
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Navigation" class="md-nav md-nav--primary md-nav--integrated" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="Diego A. Lusa" class="md-nav__button md-logo" data-md-component="logo" href="../.." title="Diego A. Lusa">
+<img alt="logo" src="../../img/icon.png"/>
+</a>
     Diego A. Lusa
   </label>
-  
-  <ul class="md-nav__list" data-md-scrollfix>
-    
-      
-      
-      
-
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../.." class="md-nav__link">
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../..">
         Home
       </a>
-    </li>
-  
-
-    
-      
-      
-      
-
-  
-  
-  
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
-      
-      <label class="md-nav__link" for="__nav_2">
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" id="__nav_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2">
         Informática
         <span class="md-nav__icon md-icon"></span>
-      </label>
-      <nav class="md-nav" aria-label="Informática" data-md-level="1">
-        <label class="md-nav__title" for="__nav_2">
-          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="Informática" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_2">
+<span class="md-nav__icon md-icon"></span>
           Informática
         </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
-            
-  
-  
-  
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_1" type="checkbox" id="__nav_2_1" >
-      
-      <label class="md-nav__link" for="__nav_2_1">
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_1" id="__nav_2_1" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_1">
         Editores de Texto
         <span class="md-nav__icon md-icon"></span>
-      </label>
-      <nav class="md-nav" aria-label="Editores de Texto" data-md-level="2">
-        <label class="md-nav__title" for="__nav_2_1">
-          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="Editores de Texto" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_1">
+<span class="md-nav__icon md-icon"></span>
           Editores de Texto
         </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../informatica/editores-texto/introducao/" class="md-nav__link">
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../informatica/editores-texto/introducao/">
         Writer
       </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../informatica/editores-texto/estilos/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../informatica/editores-texto/estilos/">
         Estilos
       </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../informatica/editores-texto/abnt/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../informatica/editores-texto/abnt/">
         ABNT
       </a>
-    </li>
-  
-
-          
-        </ul>
-      </nav>
-    </li>
-  
-
-          
-        </ul>
-      </nav>
-    </li>
-  
-
-    
-      
-      
-      
-
-  
-  
-  
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
-      
-      <label class="md-nav__link" for="__nav_3">
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" id="__nav_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_3">
         Programação
         <span class="md-nav__icon md-icon"></span>
-      </label>
-      <nav class="md-nav" aria-label="Programação" data-md-level="1">
-        <label class="md-nav__title" for="__nav_3">
-          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="Programação" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_3">
+<span class="md-nav__icon md-icon"></span>
           Programação
         </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../programacao/linguagens/" class="md-nav__link">
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../programacao/linguagens/">
         Linguagens de Programação
       </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../programacao/ambiente/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../programacao/ambiente/">
         Ambiente de Desenvolvimento
       </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../programacao/compilacao/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../programacao/compilacao/">
         Compilação
       </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../programacao/identificadores/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../programacao/identificadores/">
         Identificadores
       </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../programacao/io/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../programacao/io/">
         Entrada e Saída
       </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../programacao/condicionais/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../programacao/condicionais/">
         Condicionais
       </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../programacao/iteracao/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../programacao/iteracao/">
         Laços de Repetição
       </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../programacao/arranjos/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../programacao/arranjos/">
         Arranjos
       </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../programacao/ponteiros/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../programacao/ponteiros/">
         Ponteiros
       </a>
-    </li>
-  
-
-          
-        </ul>
-      </nav>
-    </li>
-  
-
-    
-      
-      
-      
-
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../about/" class="md-nav__link">
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../about/">
         Sobre
       </a>
-    </li>
-  
-
-    
-  </ul>
+</li>
+</ul>
 </nav>
-                  </div>
-                </div>
-              </div>
-            
-            
-          
-          <div class="md-content" data-md-component="content">
-            <article class="md-content__inner md-typeset">
-              
-                
-                
-                  <h1>Estudo de Caso - Hospital_Db</h1>
-                
-                <p>Em nossos tutoriais, utilizaremos a base de dados <em>sig_hospitalar_db</em> como estudo de caso. Trata-se de uma base que mapeia o universo de discurso de um hospital fictício. Logo temos tabelas armazenando dados de pacientes, acompanhantes, profissionais, internações, medicações e procedimentos, todas de modo simplificado, com finalidade didática, apenas. Observe, portanto, que o foco está na estrutura da base e não propriamente na fidedignidade com o mapeamento de dados reais de ambientes hospitalares.</p>
+</div>
+</div>
+</div>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<h1>Estudo de Caso - Hospital_Db</h1>
+<p>Em nossos tutoriais, utilizaremos a base de dados <em>sig_hospitalar_db</em> como estudo de caso. Trata-se de uma base que mapeia o universo de discurso de um hospital fictício. Logo temos tabelas armazenando dados de pacientes, acompanhantes, profissionais, internações, medicações e procedimentos, todas de modo simplificado, com finalidade didática, apenas. Observe, portanto, que o foco está na estrutura da base e não propriamente na fidedignidade com o mapeamento de dados reais de ambientes hospitalares.</p>
 <p>Considerando que você já tenha realizado a instalação do servidor PostgreSQL em sua máquina, passaremos ao passo seguinte, no qual a base de dados <em>sig_hospitalar_db</em> será criada. Tal operação pode ser realizada via <em>psql</em> ou por meio da IDE de sua preferência (<a href="https://www.pgadmin.org/download/">PgAdmin4</a>, por exemplo). Caso opte pelo <em>psql</em>, utilize o comando <code>create database sig_hospitalar_db;</code> no terminal. </p>
 <p>Agora, conectado à base <em>sig_hospitalar_db</em>, proceda com a execução dos comandos abaixo na íntegra.</p>
 <div class="highlight"><pre><span></span><code><span class="k">begin</span><span class="p">;</span>
 
-<span class="k">create</span> <span class="k">domain</span> <span class="n">t_nome</span> <span class="k">as</span> <span class="nb">varchar</span><span class="p">(</span><span class="mi">200</span><span class="p">)</span> <span class="k">not</span> <span class="k">null</span> <span class="k">check</span><span class="p">(</span><span class="n">value</span> <span class="o">~</span><span class="s1">&#39;[a-zA-z]+&#39;</span><span class="p">);</span>
+<span class="k">create</span> <span class="k">domain</span> <span class="n">t_nome</span> <span class="k">as</span> <span class="nb">varchar</span><span class="p">(</span><span class="mi">200</span><span class="p">)</span> <span class="k">not</span> <span class="k">null</span> <span class="k">check</span><span class="p">(</span><span class="n">value</span> <span class="o">~</span><span class="s1">'[a-zA-z]+'</span><span class="p">);</span>
 
 <span class="k">create</span> <span class="k">table</span> <span class="n">bairro</span><span class="p">(</span>
     <span class="n">id</span> <span class="nb">serial</span> <span class="k">not</span> <span class="k">null</span> <span class="k">primary</span> <span class="k">key</span><span class="p">,</span>
@@ -473,17 +243,17 @@
 
 
 <span class="k">insert</span> <span class="k">into</span> <span class="n">bairro</span> <span class="k">values</span>
-        <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;Centro&#39;</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span>
-        <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;Sol Nascente&#39;</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span>
-        <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="s1">&#39;São Paulo&#39;</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span>
+        <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s1">'Centro'</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span>
+        <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="s1">'Sol Nascente'</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span>
+        <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="s1">'São Paulo'</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span>
 
-        <span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="s1">&#39;Vera Cruz&#39;</span><span class="p">,</span><span class="mi">2</span><span class="p">),</span>
-        <span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="s1">&#39;Centro&#39;</span><span class="p">,</span><span class="mi">2</span><span class="p">),</span>
-        <span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="s1">&#39;São Cristovão&#39;</span><span class="p">,</span><span class="mi">2</span><span class="p">),</span>
+        <span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="s1">'Vera Cruz'</span><span class="p">,</span><span class="mi">2</span><span class="p">),</span>
+        <span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="s1">'Centro'</span><span class="p">,</span><span class="mi">2</span><span class="p">),</span>
+        <span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="s1">'São Cristovão'</span><span class="p">,</span><span class="mi">2</span><span class="p">),</span>
 
-        <span class="p">(</span><span class="mi">7</span><span class="p">,</span> <span class="s1">&#39;Centro&#39;</span><span class="p">,</span><span class="mi">3</span><span class="p">),</span>
-        <span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="s1">&#39;Três Vendas&#39;</span><span class="p">,</span><span class="mi">3</span><span class="p">),</span>
-        <span class="p">(</span><span class="mi">9</span><span class="p">,</span> <span class="s1">&#39;Fátima&#39;</span><span class="p">,</span><span class="mi">3</span><span class="p">);</span>
+        <span class="p">(</span><span class="mi">7</span><span class="p">,</span> <span class="s1">'Centro'</span><span class="p">,</span><span class="mi">3</span><span class="p">),</span>
+        <span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="s1">'Três Vendas'</span><span class="p">,</span><span class="mi">3</span><span class="p">),</span>
+        <span class="p">(</span><span class="mi">9</span><span class="p">,</span> <span class="s1">'Fátima'</span><span class="p">,</span><span class="mi">3</span><span class="p">);</span>
 
 <span class="k">create</span> <span class="k">table</span> <span class="n">cidade</span><span class="p">(</span>
     <span class="n">id</span> <span class="nb">serial</span> <span class="k">not</span> <span class="k">null</span> <span class="k">primary</span> <span class="k">key</span><span class="p">,</span>
@@ -491,13 +261,13 @@
 <span class="p">);</span>
 
 <span class="k">insert</span> <span class="k">into</span> <span class="n">cidade</span> <span class="k">values</span> 
-    <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="s1">&#39;Tapejara&#39;</span><span class="p">),</span>
-    <span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="s1">&#39;Passo Fundo&#39;</span><span class="p">),</span>
-    <span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="s1">&#39;Erechim&#39;</span><span class="p">);</span>
+    <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="s1">'Tapejara'</span><span class="p">),</span>
+    <span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="s1">'Passo Fundo'</span><span class="p">),</span>
+    <span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="s1">'Erechim'</span><span class="p">);</span>
 
 
-<span class="k">create</span> <span class="k">domain</span> <span class="n">t_cnpj</span> <span class="k">as</span> <span class="nb">char</span><span class="p">(</span><span class="mi">14</span><span class="p">)</span> <span class="k">check</span> <span class="p">(</span><span class="n">value</span> <span class="o">~</span> <span class="s1">&#39;^[0-9]{14}$&#39;</span><span class="p">);</span>
-<span class="k">create</span> <span class="k">domain</span> <span class="n">t_cpf</span> <span class="k">as</span> <span class="nb">char</span><span class="p">(</span><span class="mi">11</span><span class="p">)</span> <span class="k">check</span> <span class="p">(</span><span class="n">value</span> <span class="o">~</span> <span class="s1">&#39;^[0-9]{11}$&#39;</span><span class="p">);</span>
+<span class="k">create</span> <span class="k">domain</span> <span class="n">t_cnpj</span> <span class="k">as</span> <span class="nb">char</span><span class="p">(</span><span class="mi">14</span><span class="p">)</span> <span class="k">check</span> <span class="p">(</span><span class="n">value</span> <span class="o">~</span> <span class="s1">'^[0-9]{14}$'</span><span class="p">);</span>
+<span class="k">create</span> <span class="k">domain</span> <span class="n">t_cpf</span> <span class="k">as</span> <span class="nb">char</span><span class="p">(</span><span class="mi">11</span><span class="p">)</span> <span class="k">check</span> <span class="p">(</span><span class="n">value</span> <span class="o">~</span> <span class="s1">'^[0-9]{11}$'</span><span class="p">);</span>
 
 <span class="k">create</span> <span class="k">table</span> <span class="n">convenio</span><span class="p">(</span>
     <span class="n">id</span> <span class="nb">serial</span> <span class="k">not</span> <span class="k">null</span> <span class="k">primary</span> <span class="k">key</span><span class="p">,</span>
@@ -505,14 +275,14 @@
     <span class="n">cnpj</span> <span class="n">t_cnpj</span> <span class="k">not</span> <span class="k">null</span> <span class="k">unique</span><span class="p">,</span>
     <span class="n">descricao</span> <span class="nb">text</span>
 <span class="p">);</span>
-<span class="k">comment</span> <span class="k">on</span> <span class="k">table</span> <span class="n">convenio</span> <span class="k">is</span> <span class="s1">&#39;Armazena os diferentes planos de saúde utilizados pelos pacientes em suas internações&#39;</span><span class="p">;</span>
+<span class="k">comment</span> <span class="k">on</span> <span class="k">table</span> <span class="n">convenio</span> <span class="k">is</span> <span class="s1">'Armazena os diferentes planos de saúde utilizados pelos pacientes em suas internações'</span><span class="p">;</span>
 
 
 
 <span class="k">insert</span> <span class="k">into</span> <span class="n">convenio</span> <span class="k">values</span> 
-    <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="s1">&#39;UNIMED&#39;</span><span class="p">,</span><span class="s1">&#39;16034061000100&#39;</span><span class="p">,</span><span class="k">null</span><span class="p">),</span>
-    <span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="s1">&#39;IPE Saúde&#39;</span><span class="p">,</span> <span class="s1">&#39;40355755000123&#39;</span><span class="p">,</span><span class="k">null</span><span class="p">),</span>
-    <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="s1">&#39;Cassi&#39;</span><span class="p">,</span><span class="s1">&#39;63364447000160&#39;</span><span class="p">,</span> <span class="k">null</span><span class="p">);</span>
+    <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="s1">'UNIMED'</span><span class="p">,</span><span class="s1">'16034061000100'</span><span class="p">,</span><span class="k">null</span><span class="p">),</span>
+    <span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="s1">'IPE Saúde'</span><span class="p">,</span> <span class="s1">'40355755000123'</span><span class="p">,</span><span class="k">null</span><span class="p">),</span>
+    <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="s1">'Cassi'</span><span class="p">,</span><span class="s1">'63364447000160'</span><span class="p">,</span> <span class="k">null</span><span class="p">);</span>
 
 <span class="k">create</span> <span class="k">table</span> <span class="n">diagnostico</span><span class="p">(</span>
         <span class="n">id</span> <span class="nb">serial</span> <span class="k">not</span> <span class="k">null</span> <span class="k">primary</span> <span class="k">key</span><span class="p">,</span>
@@ -521,16 +291,16 @@
         <span class="n">descricao</span> <span class="nb">text</span>
 <span class="p">);</span>
 
-<span class="k">comment</span> <span class="k">on</span> <span class="k">table</span> <span class="n">diagnostico</span> <span class="k">is</span> <span class="s1">&#39;Armazena dados acerca dos diagnósticos médicos&#39;</span><span class="p">;</span>
-<span class="k">comment</span> <span class="k">on</span> <span class="k">column</span> <span class="n">diagnostico</span><span class="p">.</span><span class="n">cid</span> <span class="k">is</span> <span class="s1">&#39;Classificação Internacional de Doenças&#39;</span><span class="p">;</span>
+<span class="k">comment</span> <span class="k">on</span> <span class="k">table</span> <span class="n">diagnostico</span> <span class="k">is</span> <span class="s1">'Armazena dados acerca dos diagnósticos médicos'</span><span class="p">;</span>
+<span class="k">comment</span> <span class="k">on</span> <span class="k">column</span> <span class="n">diagnostico</span><span class="p">.</span><span class="n">cid</span> <span class="k">is</span> <span class="s1">'Classificação Internacional de Doenças'</span><span class="p">;</span>
 
 
 
 <span class="k">insert</span> <span class="k">into</span> <span class="n">diagnostico</span><span class="p">(</span><span class="n">id</span><span class="p">,</span> <span class="n">cid</span><span class="p">,</span><span class="n">nome</span><span class="p">)</span> <span class="k">VALUES</span>
-    <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="s1">&#39;A000&#39;</span><span class="p">,</span><span class="s1">&#39;Cólera devida a Vibrio cholerae 01, biótipo cholerae&#39;</span><span class="p">),</span>
-    <span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="s1">&#39;A009&#39;</span><span class="p">,</span><span class="s1">&#39;Cólera não especificada&#39;</span><span class="p">),</span>
-    <span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="s1">&#39;B000&#39;</span><span class="p">,</span><span class="s1">&#39;Eczema herpético&#39;</span><span class="p">),</span>
-    <span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="s1">&#39;B008&#39;</span><span class="p">,</span><span class="s1">&#39;Outras formas de infecção devida ao vírus do herpes&#39;</span><span class="p">);</span>
+    <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="s1">'A000'</span><span class="p">,</span><span class="s1">'Cólera devida a Vibrio cholerae 01, biótipo cholerae'</span><span class="p">),</span>
+    <span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="s1">'A009'</span><span class="p">,</span><span class="s1">'Cólera não especificada'</span><span class="p">),</span>
+    <span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="s1">'B000'</span><span class="p">,</span><span class="s1">'Eczema herpético'</span><span class="p">),</span>
+    <span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="s1">'B008'</span><span class="p">,</span><span class="s1">'Outras formas de infecção devida ao vírus do herpes'</span><span class="p">);</span>
 
 
 <span class="k">create</span> <span class="k">table</span> <span class="n">diagnostico_prescricao</span> <span class="p">(</span>
@@ -539,7 +309,7 @@
     <span class="k">primary</span> <span class="k">key</span><span class="p">(</span><span class="n">prescricao_id</span><span class="p">,</span> <span class="n">diagnostico_id</span><span class="p">)</span>
 <span class="p">);</span>
 
-<span class="k">comment</span> <span class="k">on</span> <span class="k">table</span> <span class="n">diagnostico_prescricao</span> <span class="k">is</span> <span class="s1">&#39;Armazena os diagnósticos da prescrição&#39;</span><span class="p">;</span>
+<span class="k">comment</span> <span class="k">on</span> <span class="k">table</span> <span class="n">diagnostico_prescricao</span> <span class="k">is</span> <span class="s1">'Armazena os diagnósticos da prescrição'</span><span class="p">;</span>
 
 <span class="k">insert</span> <span class="k">into</span> <span class="n">diagnostico_prescricao</span> <span class="k">values</span>
     <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">),</span>
@@ -549,28 +319,28 @@
 
 <span class="k">create</span> <span class="k">table</span> <span class="n">enfermeiro</span><span class="p">(</span>
     <span class="n">pessoa_id</span> <span class="nb">integer</span> <span class="k">not</span> <span class="k">null</span> <span class="k">primary</span> <span class="k">key</span><span class="p">,</span>
-    <span class="n">coren</span> <span class="nb">char</span><span class="p">(</span><span class="mi">7</span><span class="p">)</span> <span class="k">not</span> <span class="k">null</span> <span class="k">check</span> <span class="p">(</span><span class="n">coren</span> <span class="o">~</span> <span class="s1">&#39;^[0-9]{7}$&#39;</span><span class="p">)</span>
+    <span class="n">coren</span> <span class="nb">char</span><span class="p">(</span><span class="mi">7</span><span class="p">)</span> <span class="k">not</span> <span class="k">null</span> <span class="k">check</span> <span class="p">(</span><span class="n">coren</span> <span class="o">~</span> <span class="s1">'^[0-9]{7}$'</span><span class="p">)</span>
 
 <span class="p">);</span>
 
-<span class="k">comment</span> <span class="k">on</span> <span class="k">column</span> <span class="n">enfermeiro</span><span class="p">.</span><span class="n">coren</span> <span class="k">is</span> <span class="s1">&#39;Código de registro do enfermeiro no Conselho Regional de Enfermagem&#39;</span><span class="p">;</span>
+<span class="k">comment</span> <span class="k">on</span> <span class="k">column</span> <span class="n">enfermeiro</span><span class="p">.</span><span class="n">coren</span> <span class="k">is</span> <span class="s1">'Código de registro do enfermeiro no Conselho Regional de Enfermagem'</span><span class="p">;</span>
 
 <span class="k">insert</span> <span class="k">into</span> <span class="n">enfermeiro</span> <span class="k">values</span> 
-    <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;0123654&#39;</span><span class="p">),</span>
-    <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;0251687&#39;</span><span class="p">);</span>
+    <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s1">'0123654'</span><span class="p">),</span>
+    <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="s1">'0251687'</span><span class="p">);</span>
 
 <span class="k">create</span> <span class="k">table</span> <span class="n">especialidade</span><span class="p">(</span>
     <span class="n">id</span> <span class="nb">serial</span> <span class="k">not</span> <span class="k">null</span> <span class="k">primary</span> <span class="k">key</span><span class="p">,</span>
     <span class="n">nome</span> <span class="n">t_nome</span>
 <span class="p">);</span>
 
-<span class="k">comment</span> <span class="k">on</span> <span class="k">table</span> <span class="n">especialidade</span> <span class="k">is</span> <span class="s1">&#39;Armazena as especialidades médicas, como cardiologia, pediatria, etc.&#39;</span><span class="p">;</span>
+<span class="k">comment</span> <span class="k">on</span> <span class="k">table</span> <span class="n">especialidade</span> <span class="k">is</span> <span class="s1">'Armazena as especialidades médicas, como cardiologia, pediatria, etc.'</span><span class="p">;</span>
 
 <span class="k">insert</span> <span class="k">into</span> <span class="n">especialidade</span> <span class="k">values</span> 
-    <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;Cardiologia&#39;</span><span class="p">),</span>
-    <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;Pediatria&#39;</span><span class="p">),</span>
-    <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="s1">&#39;Otorinolaringologia&#39;</span><span class="p">),</span>
-    <span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="s1">&#39;Ortopedia&#39;</span><span class="p">);</span>
+    <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s1">'Cardiologia'</span><span class="p">),</span>
+    <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="s1">'Pediatria'</span><span class="p">),</span>
+    <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="s1">'Otorinolaringologia'</span><span class="p">),</span>
+    <span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="s1">'Ortopedia'</span><span class="p">);</span>
 
 <span class="k">create</span> <span class="k">table</span> <span class="n">evolucao_internacao</span><span class="p">(</span>
     <span class="n">internacao_id</span> <span class="nb">integer</span> <span class="k">not</span> <span class="k">null</span><span class="p">,</span>
@@ -580,41 +350,41 @@
     <span class="k">primary</span> <span class="k">key</span> <span class="p">(</span><span class="n">internacao_id</span><span class="p">,</span> <span class="n">data_hora</span><span class="p">)</span>
 <span class="p">);</span>
 
-<span class="k">comment</span> <span class="k">on</span> <span class="k">table</span> <span class="n">evolucao_internacao</span> <span class="k">is</span> <span class="s1">&#39;Evolução é a descrição do estado do paciente. Os enfermeiros fazem várias evoluções do paciente durante a internação&#39;</span><span class="p">;</span>
+<span class="k">comment</span> <span class="k">on</span> <span class="k">table</span> <span class="n">evolucao_internacao</span> <span class="k">is</span> <span class="s1">'Evolução é a descrição do estado do paciente. Os enfermeiros fazem várias evoluções do paciente durante a internação'</span><span class="p">;</span>
 
 <span class="k">insert</span> <span class="k">into</span> <span class="n">evolucao_internacao</span> <span class="k">values</span> 
-    <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="k">default</span><span class="p">,</span><span class="s1">&#39;Pariatur tempor nulla aliquip elit est proident consequat deserunt incididunt et minim. Aliquip consequat cupidatat do proident aliquip aliquip magna sit consequat anim aliqua proident. Amet mollit in consectetur ut. Sint laborum elit occaecat laboris. Consequat veniam dolor proident fugiat. Commodo qui aliqua anim veniam non velit non reprehenderit consequat dolor voluptate cillum. Tempor et qui tempor consequat.</span>
+    <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="k">default</span><span class="p">,</span><span class="s1">'Pariatur tempor nulla aliquip elit est proident consequat deserunt incididunt et minim. Aliquip consequat cupidatat do proident aliquip aliquip magna sit consequat anim aliqua proident. Amet mollit in consectetur ut. Sint laborum elit occaecat laboris. Consequat veniam dolor proident fugiat. Commodo qui aliqua anim veniam non velit non reprehenderit consequat dolor voluptate cillum. Tempor et qui tempor consequat.</span>
 <span class="s1">Sunt labore veniam non duis eiusmod laboris voluptate sit dolore nisi. Incididunt eiusmod nostrud eu consequat velit ex eu adipisicing tempor tempor occaecat anim. Ex commodo nisi ullamco ex officia consectetur eu laborum. Lorem magna Lorem aliqua ullamco adipisicing sunt consectetur reprehenderit minim dolore voluptate qui quis. Voluptate anim fugiat consectetur irure commodo aliquip nisi adipisicing. Cillum adipisicing nostrud sit anim mollit aliqua do deserunt exercitation cupidatat. Officia dolor duis incididunt minim velit cillum et cillum adipisicing esse Lorem labore sunt reprehenderit.</span>
 <span class="s1">Nisi fugiat incididunt culpa dolore ex ullamco sit et velit est sit ut. Do sint sint magna aliqua veniam sint aute velit adipisicing aute tempor sint aliquip irure. Non sunt consequat eiusmod deserunt anim. Nostrud tempor sint eiusmod pariatur officia aliqua reprehenderit. Ex reprehenderit enim Lorem proident id eiusmod id eiusmod est minim. Sunt sint et reprehenderit occaecat do aute amet.</span>
 <span class="s1">Sit do consectetur in tempor deserunt sunt velit mollit do proident sunt ex. Excepteur aliqua fugiat ut tempor dolore nostrud consequat reprehenderit anim quis consectetur nulla proident qui. Sit dolor Lorem proident laboris aute consequat irure cillum mollit nisi fugiat duis. Est dolore qui sunt quis voluptate magna esse sint occaecat. Occaecat voluptate nulla tempor veniam pariatur consectetur sunt non elit cupidatat deserunt reprehenderit elit laboris. Lorem duis officia sit sit voluptate ea dolore.</span>
-<span class="s1">Nostrud anim ea adipisicing cillum. Aute ipsum est dolor magna non. Consectetur aliqua esse reprehenderit qui aliquip do tempor irure. Amet est deserunt do in.&#39;</span><span class="p">,</span><span class="mi">2</span><span class="p">);</span>
+<span class="s1">Nostrud anim ea adipisicing cillum. Aute ipsum est dolor magna non. Consectetur aliqua esse reprehenderit qui aliquip do tempor irure. Amet est deserunt do in.'</span><span class="p">,</span><span class="mi">2</span><span class="p">);</span>
 
 
 <span class="k">insert</span> <span class="k">into</span> <span class="n">evolucao_internacao</span> <span class="k">values</span> 
-    <span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="k">default</span><span class="p">,</span><span class="s1">&#39;Pariatur tempor nulla aliquip elit est proident consequat deserunt incididunt et minim. Aliquip consequat cupidatat do proident aliquip aliquip magna sit consequat anim aliqua proident. Amet mollit in consectetur ut. Sint laborum elit occaecat laboris. Consequat veniam dolor proident fugiat. Commodo qui aliqua anim veniam non velit non reprehenderit consequat dolor voluptate cillum. Tempor et qui tempor consequat.</span>
+    <span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="k">default</span><span class="p">,</span><span class="s1">'Pariatur tempor nulla aliquip elit est proident consequat deserunt incididunt et minim. Aliquip consequat cupidatat do proident aliquip aliquip magna sit consequat anim aliqua proident. Amet mollit in consectetur ut. Sint laborum elit occaecat laboris. Consequat veniam dolor proident fugiat. Commodo qui aliqua anim veniam non velit non reprehenderit consequat dolor voluptate cillum. Tempor et qui tempor consequat.</span>
 <span class="s1">Sunt labore veniam non duis eiusmod laboris voluptate sit dolore nisi. Incididunt eiusmod nostrud eu consequat velit ex eu adipisicing tempor tempor occaecat anim. Ex commodo nisi ullamco ex officia consectetur eu laborum. Lorem magna Lorem aliqua ullamco adipisicing sunt consectetur reprehenderit minim dolore voluptate qui quis. Voluptate anim fugiat consectetur irure commodo aliquip nisi adipisicing. Cillum adipisicing nostrud sit anim mollit aliqua do deserunt exercitation cupidatat. Officia dolor duis incididunt minim velit cillum et cillum adipisicing esse Lorem labore sunt reprehenderit.</span>
 <span class="s1">Nisi fugiat incididunt culpa dolore ex ullamco sit et velit est sit ut. Do sint sint magna aliqua veniam sint aute velit adipisicing aute tempor sint aliquip irure. Non sunt consequat eiusmod deserunt anim. Nostrud tempor sint eiusmod pariatur officia aliqua reprehenderit. Ex reprehenderit enim Lorem proident id eiusmod id eiusmod est minim. Sunt sint et reprehenderit occaecat do aute amet.</span>
 <span class="s1">Sit do consectetur in tempor deserunt sunt velit mollit do proident sunt ex. Excepteur aliqua fugiat ut tempor dolore nostrud consequat reprehenderit anim quis consectetur nulla proident qui. Sit dolor Lorem proident laboris aute consequat irure cillum mollit nisi fugiat duis. Est dolore qui sunt quis voluptate magna esse sint occaecat. Occaecat voluptate nulla tempor veniam pariatur consectetur sunt non elit cupidatat deserunt reprehenderit elit laboris. Lorem duis officia sit sit voluptate ea dolore.</span>
-<span class="s1">Nostrud anim ea adipisicing cillum. Aute ipsum est dolor magna non. Consectetur aliqua esse reprehenderit qui aliquip do tempor irure. Amet est deserunt do in.&#39;</span><span class="p">,</span><span class="mi">1</span><span class="p">);</span>
+<span class="s1">Nostrud anim ea adipisicing cillum. Aute ipsum est dolor magna non. Consectetur aliqua esse reprehenderit qui aliquip do tempor irure. Amet est deserunt do in.'</span><span class="p">,</span><span class="mi">1</span><span class="p">);</span>
 
 <span class="k">insert</span> <span class="k">into</span> <span class="n">evolucao_internacao</span> <span class="k">values</span> 
-    <span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="k">default</span><span class="p">,</span><span class="s1">&#39;Pariatur tempor nulla aliquip elit est proident consequat deserunt incididunt et minim. Aliquip consequat cupidatat do proident aliquip aliquip magna sit consequat anim aliqua proident. Amet mollit in consectetur ut. Sint laborum elit occaecat laboris. Consequat veniam dolor proident fugiat. Commodo qui aliqua anim veniam non velit non reprehenderit consequat dolor voluptate cillum. Tempor et qui tempor consequat.</span>
+    <span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="k">default</span><span class="p">,</span><span class="s1">'Pariatur tempor nulla aliquip elit est proident consequat deserunt incididunt et minim. Aliquip consequat cupidatat do proident aliquip aliquip magna sit consequat anim aliqua proident. Amet mollit in consectetur ut. Sint laborum elit occaecat laboris. Consequat veniam dolor proident fugiat. Commodo qui aliqua anim veniam non velit non reprehenderit consequat dolor voluptate cillum. Tempor et qui tempor consequat.</span>
 <span class="s1">Sunt labore veniam non duis eiusmod laboris voluptate sit dolore nisi. Incididunt eiusmod nostrud eu consequat velit ex eu adipisicing tempor tempor occaecat anim. Ex commodo nisi ullamco ex officia consectetur eu laborum. Lorem magna Lorem aliqua ullamco adipisicing sunt consectetur reprehenderit minim dolore voluptate qui quis. Voluptate anim fugiat consectetur irure commodo aliquip nisi adipisicing. Cillum adipisicing nostrud sit anim mollit aliqua do deserunt exercitation cupidatat. Officia dolor duis incididunt minim velit cillum et cillum adipisicing esse Lorem labore sunt reprehenderit.</span>
 <span class="s1">Nisi fugiat incididunt culpa dolore ex ullamco sit et velit est sit ut. Do sint sint magna aliqua veniam sint aute velit adipisicing aute tempor sint aliquip irure. Non sunt consequat eiusmod deserunt anim. Nostrud tempor sint eiusmod pariatur officia aliqua reprehenderit. Ex reprehenderit enim Lorem proident id eiusmod id eiusmod est minim. Sunt sint et reprehenderit occaecat do aute amet.</span>
 <span class="s1">Sit do consectetur in tempor deserunt sunt velit mollit do proident sunt ex. Excepteur aliqua fugiat ut tempor dolore nostrud consequat reprehenderit anim quis consectetur nulla proident qui. Sit dolor Lorem proident laboris aute consequat irure cillum mollit nisi fugiat duis. Est dolore qui sunt quis voluptate magna esse sint occaecat. Occaecat voluptate nulla tempor veniam pariatur consectetur sunt non elit cupidatat deserunt reprehenderit elit laboris. Lorem duis officia sit sit voluptate ea dolore.</span>
-<span class="s1">Nostrud anim ea adipisicing cillum. Aute ipsum est dolor magna non. Consectetur aliqua esse reprehenderit qui aliquip do tempor irure. Amet est deserunt do in.&#39;</span><span class="p">,</span><span class="mi">2</span><span class="p">);</span>
+<span class="s1">Nostrud anim ea adipisicing cillum. Aute ipsum est dolor magna non. Consectetur aliqua esse reprehenderit qui aliquip do tempor irure. Amet est deserunt do in.'</span><span class="p">,</span><span class="mi">2</span><span class="p">);</span>
 
 <span class="k">create</span> <span class="k">table</span> <span class="n">funcionario</span><span class="p">(</span>
     <span class="n">pessoa_id</span> <span class="nb">integer</span> <span class="k">not</span> <span class="k">null</span> <span class="k">primary</span> <span class="k">key</span><span class="p">,</span>
-    <span class="n">pis_pasep</span> <span class="nb">char</span><span class="p">(</span><span class="mi">11</span><span class="p">)</span> <span class="k">not</span> <span class="k">null</span> <span class="k">check</span> <span class="p">(</span><span class="n">pis_pasep</span> <span class="o">~</span> <span class="s1">&#39;^[0-9]{11}$&#39;</span><span class="p">)</span>
+    <span class="n">pis_pasep</span> <span class="nb">char</span><span class="p">(</span><span class="mi">11</span><span class="p">)</span> <span class="k">not</span> <span class="k">null</span> <span class="k">check</span> <span class="p">(</span><span class="n">pis_pasep</span> <span class="o">~</span> <span class="s1">'^[0-9]{11}$'</span><span class="p">)</span>
 <span class="p">);</span>
 
 <span class="k">insert</span> <span class="k">into</span> <span class="n">funcionario</span> <span class="k">values</span> 
-    <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="s1">&#39;83919800958&#39;</span><span class="p">),</span>
-    <span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="s1">&#39;84811096999&#39;</span><span class="p">),</span>
-    <span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="s1">&#39;31859934560&#39;</span><span class="p">),</span>
-    <span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="s1">&#39;12649826837&#39;</span><span class="p">),</span>
-    <span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="s1">&#39;94340833899&#39;</span><span class="p">);</span>
+    <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="s1">'83919800958'</span><span class="p">),</span>
+    <span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="s1">'84811096999'</span><span class="p">),</span>
+    <span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="s1">'31859934560'</span><span class="p">),</span>
+    <span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="s1">'12649826837'</span><span class="p">),</span>
+    <span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="s1">'94340833899'</span><span class="p">);</span>
 
 <span class="k">create</span> <span class="k">table</span> <span class="n">internacao</span><span class="p">(</span>
     <span class="n">id</span> <span class="n">bigserial</span> <span class="k">not</span> <span class="k">null</span> <span class="k">primary</span> <span class="k">key</span><span class="p">,</span>
@@ -622,22 +392,22 @@
     <span class="n">leito_id</span> <span class="nb">integer</span> <span class="k">not</span> <span class="k">null</span><span class="p">,</span>
     <span class="n">paciente_id</span> <span class="nb">integer</span> <span class="k">not</span> <span class="k">null</span><span class="p">,</span>
     <span class="n">data_hora_internacao</span> <span class="k">timestamp</span> <span class="k">not</span> <span class="k">null</span> <span class="k">default</span> <span class="k">CURRENT_TIMESTAMP</span><span class="p">,</span>
-    <span class="n">tipo_clinica</span> <span class="nb">char</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="k">not</span> <span class="k">null</span> <span class="k">default</span> <span class="s1">&#39;M&#39;</span> <span class="k">check</span> <span class="p">(</span><span class="n">tipo_clinica</span> <span class="k">in</span> <span class="p">(</span><span class="s1">&#39;M&#39;</span><span class="p">,</span><span class="s1">&#39;O&#39;</span><span class="p">,</span><span class="s1">&#39;P&#39;</span><span class="p">,</span><span class="s1">&#39;A&#39;</span><span class="p">)</span> <span class="p">),</span>
+    <span class="n">tipo_clinica</span> <span class="nb">char</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="k">not</span> <span class="k">null</span> <span class="k">default</span> <span class="s1">'M'</span> <span class="k">check</span> <span class="p">(</span><span class="n">tipo_clinica</span> <span class="k">in</span> <span class="p">(</span><span class="s1">'M'</span><span class="p">,</span><span class="s1">'O'</span><span class="p">,</span><span class="s1">'P'</span><span class="p">,</span><span class="s1">'A'</span><span class="p">)</span> <span class="p">),</span>
     <span class="n">convenio_id</span> <span class="nb">integer</span> <span class="k">not</span> <span class="k">null</span><span class="p">,</span>
     <span class="n">data_hora_alta</span> <span class="k">timestamp</span><span class="p">,</span>
     <span class="n">registrante_id</span> <span class="nb">integer</span> <span class="k">not</span> <span class="k">null</span><span class="p">,</span>
     <span class="n">anamnese</span> <span class="nb">text</span> <span class="k">not</span> <span class="k">null</span>
 <span class="p">);</span>
-<span class="k">comment</span> <span class="k">on</span> <span class="k">column</span> <span class="n">internacao</span><span class="p">.</span><span class="n">tipo_clinica</span> <span class="k">is</span> <span class="s1">&#39;M - Médica, O - Obstétrica, C - Cirúrgica, P - Pediátrica, A - Ambulatório &#39;</span><span class="p">;</span>
-<span class="k">comment</span> <span class="k">on</span> <span class="k">table</span> <span class="n">internacao</span> <span class="k">is</span> <span class="s1">&#39;Internação é o procedimento em que o paciente torna-se interno ao hospital para tratar de sua saúde&#39;</span><span class="p">;</span>
+<span class="k">comment</span> <span class="k">on</span> <span class="k">column</span> <span class="n">internacao</span><span class="p">.</span><span class="n">tipo_clinica</span> <span class="k">is</span> <span class="s1">'M - Médica, O - Obstétrica, C - Cirúrgica, P - Pediátrica, A - Ambulatório '</span><span class="p">;</span>
+<span class="k">comment</span> <span class="k">on</span> <span class="k">table</span> <span class="n">internacao</span> <span class="k">is</span> <span class="s1">'Internação é o procedimento em que o paciente torna-se interno ao hospital para tratar de sua saúde'</span><span class="p">;</span>
 
 
 <span class="k">insert</span> <span class="k">into</span> <span class="n">internacao</span><span class="p">(</span><span class="n">id</span><span class="p">,</span> <span class="n">medico_id</span><span class="p">,</span> <span class="n">leito_id</span><span class="p">,</span><span class="n">paciente_id</span><span class="p">,</span><span class="n">registrante_id</span><span class="p">,</span> <span class="n">anamnese</span><span class="p">,</span><span class="n">convenio_id</span><span class="p">)</span> <span class="k">values</span> 
-    <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">12</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="s1">&#39;Paciente queixou-se de dores abdominais intensas&#39;</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span>
-    <span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">13</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="s1">&#39;Paciente apresenta febre de 39 graus&#39;</span><span class="p">,</span><span class="mi">2</span><span class="p">),</span>
-    <span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">12</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="s1">&#39;Paciente apresenta desequilibrio e síncopes frequentes&#39;</span><span class="p">,</span><span class="mi">3</span><span class="p">),</span>
-    <span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">11</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">14</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="s1">&#39;Paciente episódios de amnésia e hipersonia &#39;</span><span class="p">,</span><span class="mi">3</span><span class="p">),</span>
-    <span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">15</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="s1">&#39;Paciente queixou-se de dores lombares intensas&#39;</span><span class="p">,</span><span class="mi">1</span><span class="p">);</span>
+    <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">12</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="s1">'Paciente queixou-se de dores abdominais intensas'</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span>
+    <span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">13</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="s1">'Paciente apresenta febre de 39 graus'</span><span class="p">,</span><span class="mi">2</span><span class="p">),</span>
+    <span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">12</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="s1">'Paciente apresenta desequilibrio e síncopes frequentes'</span><span class="p">,</span><span class="mi">3</span><span class="p">),</span>
+    <span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">11</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">14</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="s1">'Paciente episódios de amnésia e hipersonia '</span><span class="p">,</span><span class="mi">3</span><span class="p">),</span>
+    <span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">15</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="s1">'Paciente queixou-se de dores lombares intensas'</span><span class="p">,</span><span class="mi">1</span><span class="p">);</span>
 
 <span class="k">create</span> <span class="k">table</span> <span class="n">leito</span> <span class="p">(</span>
     <span class="n">id</span> <span class="nb">serial</span> <span class="k">not</span> <span class="k">null</span> <span class="k">primary</span> <span class="k">key</span><span class="p">,</span>
@@ -647,26 +417,26 @@
 <span class="p">);</span>
 
 <span class="k">insert</span> <span class="k">into</span> <span class="n">leito</span> <span class="k">values</span> 
-<span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="s1">&#39;A1&#39;</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="k">NULL</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="s1">&#39;A2&#39;</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="k">NULL</span><span class="p">),</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="s1">&#39;A3&#39;</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="k">NULL</span><span class="p">),</span> 
-<span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="s1">&#39;B1&#39;</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="k">NULL</span><span class="p">),</span> <span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="s1">&#39;B2&#39;</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="k">NULL</span><span class="p">),</span> <span class="p">(</span><span class="mi">6</span><span class="p">,</span><span class="s1">&#39;B3&#39;</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="k">NULL</span><span class="p">),</span> 
-<span class="p">(</span><span class="mi">7</span><span class="p">,</span><span class="s1">&#39;C1&#39;</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="k">NULL</span><span class="p">),</span> <span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="s1">&#39;C2&#39;</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="k">NULL</span><span class="p">),</span> <span class="p">(</span><span class="mi">9</span><span class="p">,</span><span class="s1">&#39;C3&#39;</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="k">NULL</span><span class="p">),</span> 
-<span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="s1">&#39;D1&#39;</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="k">NULL</span><span class="p">),</span> <span class="p">(</span><span class="mi">11</span><span class="p">,</span><span class="s1">&#39;D2&#39;</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="k">NULL</span><span class="p">),</span> <span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="s1">&#39;D3&#39;</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="k">NULL</span><span class="p">);</span>
+<span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="s1">'A1'</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="k">NULL</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="s1">'A2'</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="k">NULL</span><span class="p">),</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="s1">'A3'</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="k">NULL</span><span class="p">),</span> 
+<span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="s1">'B1'</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="k">NULL</span><span class="p">),</span> <span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="s1">'B2'</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="k">NULL</span><span class="p">),</span> <span class="p">(</span><span class="mi">6</span><span class="p">,</span><span class="s1">'B3'</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="k">NULL</span><span class="p">),</span> 
+<span class="p">(</span><span class="mi">7</span><span class="p">,</span><span class="s1">'C1'</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="k">NULL</span><span class="p">),</span> <span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="s1">'C2'</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="k">NULL</span><span class="p">),</span> <span class="p">(</span><span class="mi">9</span><span class="p">,</span><span class="s1">'C3'</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="k">NULL</span><span class="p">),</span> 
+<span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="s1">'D1'</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="k">NULL</span><span class="p">),</span> <span class="p">(</span><span class="mi">11</span><span class="p">,</span><span class="s1">'D2'</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="k">NULL</span><span class="p">),</span> <span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="s1">'D3'</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="k">NULL</span><span class="p">);</span>
 
 <span class="k">create</span> <span class="k">table</span> <span class="n">quarto</span> <span class="p">(</span>
     <span class="n">id</span> <span class="nb">serial</span> <span class="k">not</span> <span class="k">null</span> <span class="k">primary</span> <span class="k">key</span><span class="p">,</span>
     <span class="n">nome</span> <span class="nb">varchar</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span> <span class="k">not</span> <span class="k">null</span> <span class="k">unique</span><span class="p">,</span>
     <span class="n">posto_id</span> <span class="nb">integer</span> <span class="k">not</span> <span class="k">null</span><span class="p">,</span>
-    <span class="n">tipo</span> <span class="nb">char</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="k">not</span> <span class="k">null</span> <span class="k">check</span> <span class="p">(</span><span class="n">tipo</span> <span class="k">in</span> <span class="p">(</span><span class="s1">&#39;P&#39;</span><span class="p">,</span><span class="s1">&#39;N&#39;</span><span class="p">)),</span>
+    <span class="n">tipo</span> <span class="nb">char</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="k">not</span> <span class="k">null</span> <span class="k">check</span> <span class="p">(</span><span class="n">tipo</span> <span class="k">in</span> <span class="p">(</span><span class="s1">'P'</span><span class="p">,</span><span class="s1">'N'</span><span class="p">)),</span>
     <span class="n">numero_banheiros</span> <span class="nb">smallint</span> <span class="k">not</span> <span class="k">null</span>
 <span class="p">);</span>
 
 
 
 <span class="k">insert</span> <span class="k">into</span> <span class="n">quarto</span> <span class="k">values</span>
-    <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="s1">&#39;A&#39;</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="s1">&#39;P&#39;</span><span class="p">,</span><span class="mi">2</span><span class="p">),</span>
-    <span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="s1">&#39;B&#39;</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="s1">&#39;P&#39;</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span>
-    <span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="s1">&#39;C&#39;</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="s1">&#39;P&#39;</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span>
-    <span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="s1">&#39;D&#39;</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="s1">&#39;P&#39;</span><span class="p">,</span><span class="mi">3</span><span class="p">);</span>
+    <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="s1">'A'</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="s1">'P'</span><span class="p">,</span><span class="mi">2</span><span class="p">),</span>
+    <span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="s1">'B'</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="s1">'P'</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span>
+    <span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="s1">'C'</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="s1">'P'</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span>
+    <span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="s1">'D'</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="s1">'P'</span><span class="p">,</span><span class="mi">3</span><span class="p">);</span>
 
 
 <span class="k">create</span> <span class="k">table</span> <span class="n">material</span> <span class="p">(</span>
@@ -676,20 +446,20 @@
     <span class="n">descricao</span> <span class="nb">text</span>
 <span class="p">)</span> <span class="p">;</span>
 
-<span class="k">comment</span> <span class="k">on</span> <span class="k">table</span> <span class="n">material</span> <span class="k">is</span> <span class="s1">&#39;Itens não medicamentosos utilizados no hospital&#39;</span><span class="p">;</span>
+<span class="k">comment</span> <span class="k">on</span> <span class="k">table</span> <span class="n">material</span> <span class="k">is</span> <span class="s1">'Itens não medicamentosos utilizados no hospital'</span><span class="p">;</span>
 
 
 <span class="k">insert</span> <span class="k">into</span> <span class="n">material</span> <span class="k">values</span> 
-    <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="s1">&#39;Esparadrapo&#39;</span><span class="p">,</span><span class="mi">0</span><span class="p">.</span><span class="mi">56</span><span class="p">,</span> <span class="k">null</span><span class="p">),</span>
-    <span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="s1">&#39;Micropore&#39;</span><span class="p">,</span><span class="mi">1</span><span class="p">.</span><span class="mi">5</span><span class="p">,</span> <span class="k">null</span><span class="p">),</span>
-    <span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="s1">&#39;Adesivo&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">.</span><span class="mi">5</span><span class="p">,</span><span class="k">null</span><span class="p">),</span>
-    <span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="s1">&#39;Agulha para Sutura&#39;</span><span class="p">,</span><span class="mi">3</span><span class="p">.</span><span class="mi">50</span><span class="p">,</span><span class="k">null</span><span class="p">),</span>
-    <span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="s1">&#39;Algodão&#39;</span><span class="p">,</span><span class="mi">2</span><span class="p">.</span><span class="mi">89</span><span class="p">,</span><span class="k">null</span><span class="p">),</span>
-    <span class="p">(</span><span class="mi">6</span><span class="p">,</span><span class="s1">&#39;Atadura&#39;</span><span class="p">,</span><span class="mi">8</span><span class="p">.</span><span class="mi">56</span><span class="p">,</span> <span class="k">null</span><span class="p">),</span>
-    <span class="p">(</span><span class="mi">7</span><span class="p">,</span><span class="s1">&#39;Curativos&#39;</span><span class="p">,</span><span class="mi">15</span><span class="p">.</span><span class="mi">69</span><span class="p">,</span> <span class="k">null</span><span class="p">),</span>
-    <span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="s1">&#39;Bolsa Térmica&#39;</span><span class="p">,</span> <span class="mi">12</span><span class="p">.</span><span class="mi">5</span><span class="p">,</span><span class="k">null</span><span class="p">),</span>
-    <span class="p">(</span><span class="mi">9</span><span class="p">,</span><span class="s1">&#39;Coletores&#39;</span><span class="p">,</span><span class="mi">40</span><span class="p">,</span><span class="k">null</span><span class="p">),</span>
-    <span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="s1">&#39;Compressas&#39;</span><span class="p">,</span><span class="mi">2</span><span class="p">.</span><span class="mi">98</span><span class="p">,</span><span class="k">null</span><span class="p">);</span>
+    <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="s1">'Esparadrapo'</span><span class="p">,</span><span class="mi">0</span><span class="p">.</span><span class="mi">56</span><span class="p">,</span> <span class="k">null</span><span class="p">),</span>
+    <span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="s1">'Micropore'</span><span class="p">,</span><span class="mi">1</span><span class="p">.</span><span class="mi">5</span><span class="p">,</span> <span class="k">null</span><span class="p">),</span>
+    <span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="s1">'Adesivo'</span><span class="p">,</span> <span class="mi">2</span><span class="p">.</span><span class="mi">5</span><span class="p">,</span><span class="k">null</span><span class="p">),</span>
+    <span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="s1">'Agulha para Sutura'</span><span class="p">,</span><span class="mi">3</span><span class="p">.</span><span class="mi">50</span><span class="p">,</span><span class="k">null</span><span class="p">),</span>
+    <span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="s1">'Algodão'</span><span class="p">,</span><span class="mi">2</span><span class="p">.</span><span class="mi">89</span><span class="p">,</span><span class="k">null</span><span class="p">),</span>
+    <span class="p">(</span><span class="mi">6</span><span class="p">,</span><span class="s1">'Atadura'</span><span class="p">,</span><span class="mi">8</span><span class="p">.</span><span class="mi">56</span><span class="p">,</span> <span class="k">null</span><span class="p">),</span>
+    <span class="p">(</span><span class="mi">7</span><span class="p">,</span><span class="s1">'Curativos'</span><span class="p">,</span><span class="mi">15</span><span class="p">.</span><span class="mi">69</span><span class="p">,</span> <span class="k">null</span><span class="p">),</span>
+    <span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="s1">'Bolsa Térmica'</span><span class="p">,</span> <span class="mi">12</span><span class="p">.</span><span class="mi">5</span><span class="p">,</span><span class="k">null</span><span class="p">),</span>
+    <span class="p">(</span><span class="mi">9</span><span class="p">,</span><span class="s1">'Coletores'</span><span class="p">,</span><span class="mi">40</span><span class="p">,</span><span class="k">null</span><span class="p">),</span>
+    <span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="s1">'Compressas'</span><span class="p">,</span><span class="mi">2</span><span class="p">.</span><span class="mi">98</span><span class="p">,</span><span class="k">null</span><span class="p">);</span>
 
 
 
@@ -704,7 +474,7 @@
 
 <span class="p">);</span>
 
-<span class="k">comment</span> <span class="k">on</span> <span class="k">table</span> <span class="n">material_prescricao</span> <span class="k">is</span> <span class="s1">&#39;Armazena os diferentes materiais usados na prescrição&#39;</span><span class="p">;</span>
+<span class="k">comment</span> <span class="k">on</span> <span class="k">table</span> <span class="n">material_prescricao</span> <span class="k">is</span> <span class="s1">'Armazena os diferentes materiais usados na prescrição'</span><span class="p">;</span>
 
 
 <span class="k">insert</span> <span class="k">into</span> <span class="n">material_prescricao</span> <span class="k">values</span> 
@@ -723,20 +493,20 @@
 
 
 <span class="k">insert</span> <span class="k">into</span> <span class="n">medicamento</span> <span class="k">values</span> 
-    <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="s1">&#39;cloreto de sódio&#39;</span><span class="p">,</span> <span class="s1">&#39;3,4 mEq/mL (20%)&#39;</span><span class="p">,</span> <span class="s1">&#39;solução injetável&#39;</span><span class="p">),</span>
-    <span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="s1">&#39;cloridrato de amiodarona&#39;</span><span class="p">,</span> <span class="s1">&#39;50 mg/mL&#39;</span><span class="p">,</span> <span class="s1">&#39;solução injetável&#39;</span><span class="p">),</span>
-    <span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="s1">&#39;cloridrato de amiodarona&#39;</span><span class="p">,</span> <span class="s1">&#39;200 mg&#39;</span><span class="p">,</span> <span class="s1">&#39;comprimido&#39;</span><span class="p">),</span>
-    <span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="s1">&#39;cloridrato de clindamicina&#39;</span><span class="p">,</span> <span class="s1">&#39;150 mg&#39;</span><span class="p">,</span> <span class="s1">&#39;cápsula&#39;</span><span class="p">),</span>
-    <span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="s1">&#39;cloridrato de clomipramina&#39;</span><span class="p">,</span> <span class="s1">&#39;10 mg&#39;</span><span class="p">,</span> <span class="s1">&#39;comprimido&#39;</span><span class="p">);</span>
+    <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="s1">'cloreto de sódio'</span><span class="p">,</span> <span class="s1">'3,4 mEq/mL (20%)'</span><span class="p">,</span> <span class="s1">'solução injetável'</span><span class="p">),</span>
+    <span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="s1">'cloridrato de amiodarona'</span><span class="p">,</span> <span class="s1">'50 mg/mL'</span><span class="p">,</span> <span class="s1">'solução injetável'</span><span class="p">),</span>
+    <span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="s1">'cloridrato de amiodarona'</span><span class="p">,</span> <span class="s1">'200 mg'</span><span class="p">,</span> <span class="s1">'comprimido'</span><span class="p">),</span>
+    <span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="s1">'cloridrato de clindamicina'</span><span class="p">,</span> <span class="s1">'150 mg'</span><span class="p">,</span> <span class="s1">'cápsula'</span><span class="p">),</span>
+    <span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="s1">'cloridrato de clomipramina'</span><span class="p">,</span> <span class="s1">'10 mg'</span><span class="p">,</span> <span class="s1">'comprimido'</span><span class="p">);</span>
 
 
 <span class="k">create</span> <span class="k">table</span> <span class="n">medico</span> <span class="p">(</span>
     <span class="n">pessoa_id</span> <span class="nb">integer</span> <span class="k">not</span> <span class="k">null</span> <span class="k">primary</span> <span class="k">key</span><span class="p">,</span>
-    <span class="n">crm</span> <span class="nb">char</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span> <span class="k">not</span> <span class="k">null</span> <span class="k">check</span> <span class="p">(</span><span class="n">crm</span> <span class="o">~</span> <span class="s1">&#39;^[0-6]{6}&#39;</span><span class="p">)</span>
+    <span class="n">crm</span> <span class="nb">char</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span> <span class="k">not</span> <span class="k">null</span> <span class="k">check</span> <span class="p">(</span><span class="n">crm</span> <span class="o">~</span> <span class="s1">'^[0-6]{6}'</span><span class="p">)</span>
 <span class="p">);</span>
 
 <span class="k">insert</span> <span class="k">into</span> <span class="n">medico</span> <span class="k">values</span> 
-<span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="s1">&#39;000345&#39;</span><span class="p">),(</span><span class="mi">9</span><span class="p">,</span> <span class="s1">&#39;000346&#39;</span><span class="p">),(</span><span class="mi">10</span><span class="p">,</span> <span class="s1">&#39;000350&#39;</span><span class="p">),(</span><span class="mi">11</span><span class="p">,</span> <span class="s1">&#39;000351&#39;</span><span class="p">);</span>
+<span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="s1">'000345'</span><span class="p">),(</span><span class="mi">9</span><span class="p">,</span> <span class="s1">'000346'</span><span class="p">),(</span><span class="mi">10</span><span class="p">,</span> <span class="s1">'000350'</span><span class="p">),(</span><span class="mi">11</span><span class="p">,</span> <span class="s1">'000351'</span><span class="p">);</span>
 
 
 <span class="k">create</span> <span class="k">table</span> <span class="n">medico_especialidade</span> <span class="p">(</span>
@@ -745,7 +515,7 @@
     <span class="k">primary</span> <span class="k">key</span> <span class="p">(</span><span class="n">medico_id</span><span class="p">,</span> <span class="n">especialidade_id</span><span class="p">)</span>
 <span class="p">);</span>
 
-<span class="k">comment</span> <span class="k">on</span> <span class="k">table</span> <span class="n">medico_especialidade</span> <span class="k">is</span> <span class="s1">&#39;Relaciona as especialidades aos médicos&#39;</span><span class="p">;</span>
+<span class="k">comment</span> <span class="k">on</span> <span class="k">table</span> <span class="n">medico_especialidade</span> <span class="k">is</span> <span class="s1">'Relaciona as especialidades aos médicos'</span><span class="p">;</span>
 
 
 <span class="k">insert</span> <span class="k">into</span> <span class="n">medico_especialidade</span> <span class="k">values</span>
@@ -761,64 +531,64 @@
     <span class="k">primary</span> <span class="k">key</span><span class="p">(</span><span class="n">prescricao_id</span><span class="p">,</span> <span class="n">medicamento_id</span><span class="p">,</span><span class="n">data_hora_lancamento</span><span class="p">)</span>
 <span class="p">);</span>
 
-<span class="k">comment</span> <span class="k">on</span> <span class="k">table</span> <span class="n">medicamento_prescricao</span> <span class="k">is</span> <span class="s1">&#39;Armazena os diferentes medicamentos usados na prescrição&#39;</span><span class="p">;</span>
+<span class="k">comment</span> <span class="k">on</span> <span class="k">table</span> <span class="n">medicamento_prescricao</span> <span class="k">is</span> <span class="s1">'Armazena os diferentes medicamentos usados na prescrição'</span><span class="p">;</span>
 
 <span class="k">insert</span> <span class="k">into</span>  <span class="n">medicamento_prescricao</span> <span class="k">values</span> 
-    <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="k">default</span><span class="p">,</span><span class="s1">&#39;6/6 horas&#39;</span><span class="p">,</span><span class="s1">&#39;1 comprimido&#39;</span><span class="p">),</span>
-    <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="k">default</span><span class="p">,</span><span class="s1">&#39;12/12 horas&#39;</span><span class="p">,</span><span class="s1">&#39;1 capsula&#39;</span><span class="p">),</span>
-    <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="k">default</span><span class="p">,</span><span class="s1">&#39;6/6 horas&#39;</span><span class="p">,</span><span class="s1">&#39;10 ml&#39;</span><span class="p">);</span>
+    <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="k">default</span><span class="p">,</span><span class="s1">'6/6 horas'</span><span class="p">,</span><span class="s1">'1 comprimido'</span><span class="p">),</span>
+    <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="k">default</span><span class="p">,</span><span class="s1">'12/12 horas'</span><span class="p">,</span><span class="s1">'1 capsula'</span><span class="p">),</span>
+    <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="k">default</span><span class="p">,</span><span class="s1">'6/6 horas'</span><span class="p">,</span><span class="s1">'10 ml'</span><span class="p">);</span>
 
 
 <span class="k">create</span> <span class="k">table</span> <span class="n">paciente</span> <span class="p">(</span>
     <span class="n">pessoa_id</span> <span class="nb">integer</span> <span class="k">not</span> <span class="k">null</span> <span class="k">primary</span> <span class="k">key</span><span class="p">,</span>
     <span class="n">responsavel_id</span> <span class="nb">integer</span> <span class="k">not</span> <span class="k">null</span><span class="p">,</span>
     <span class="n">nome_mae</span> <span class="n">t_nome</span><span class="p">,</span>
-    <span class="n">cartao_sus</span> <span class="nb">char</span><span class="p">(</span><span class="mi">15</span><span class="p">)</span> <span class="k">not</span> <span class="k">null</span> <span class="k">unique</span> <span class="k">check</span><span class="p">(</span><span class="n">cartao_sus</span> <span class="o">~</span><span class="s1">&#39;^[0-9]{14}&#39;</span><span class="p">)</span>
+    <span class="n">cartao_sus</span> <span class="nb">char</span><span class="p">(</span><span class="mi">15</span><span class="p">)</span> <span class="k">not</span> <span class="k">null</span> <span class="k">unique</span> <span class="k">check</span><span class="p">(</span><span class="n">cartao_sus</span> <span class="o">~</span><span class="s1">'^[0-9]{14}'</span><span class="p">)</span>
 <span class="p">);</span>
 
 <span class="k">insert</span> <span class="k">into</span> <span class="n">paciente</span> <span class="k">values</span> 
-    <span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="mi">16</span><span class="p">,</span><span class="s1">&#39;Fabiana Ana Sônia Corte Real&#39;</span><span class="p">,</span><span class="s1">&#39;267584097280006&#39;</span><span class="p">),</span>
-    <span class="p">(</span><span class="mi">13</span><span class="p">,</span><span class="mi">17</span><span class="p">,</span><span class="s1">&#39;Marcela Antônia Liz Aragão&#39;</span><span class="p">,</span><span class="s1">&#39;147243223830007&#39;</span><span class="p">),</span>
-    <span class="p">(</span><span class="mi">14</span><span class="p">,</span><span class="mi">18</span><span class="p">,</span><span class="s1">&#39;Daiane Olivia Cristiane Novaes&#39;</span><span class="p">,</span><span class="s1">&#39;223139799940002&#39;</span><span class="p">),</span>
-    <span class="p">(</span><span class="mi">15</span><span class="p">,</span><span class="mi">19</span><span class="p">,</span><span class="s1">&#39;Alana Rita Betina Brito&#39;</span><span class="p">,</span><span class="s1">&#39;816428033820008&#39;</span><span class="p">);</span>
+    <span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="mi">16</span><span class="p">,</span><span class="s1">'Fabiana Ana Sônia Corte Real'</span><span class="p">,</span><span class="s1">'267584097280006'</span><span class="p">),</span>
+    <span class="p">(</span><span class="mi">13</span><span class="p">,</span><span class="mi">17</span><span class="p">,</span><span class="s1">'Marcela Antônia Liz Aragão'</span><span class="p">,</span><span class="s1">'147243223830007'</span><span class="p">),</span>
+    <span class="p">(</span><span class="mi">14</span><span class="p">,</span><span class="mi">18</span><span class="p">,</span><span class="s1">'Daiane Olivia Cristiane Novaes'</span><span class="p">,</span><span class="s1">'223139799940002'</span><span class="p">),</span>
+    <span class="p">(</span><span class="mi">15</span><span class="p">,</span><span class="mi">19</span><span class="p">,</span><span class="s1">'Alana Rita Betina Brito'</span><span class="p">,</span><span class="s1">'816428033820008'</span><span class="p">);</span>
 
 
 <span class="k">create</span> <span class="k">table</span> <span class="n">pessoa</span> <span class="p">(</span>
     <span class="n">id</span> <span class="nb">serial</span> <span class="k">not</span> <span class="k">null</span> <span class="k">primary</span> <span class="k">key</span><span class="p">,</span>
     <span class="n">nome</span> <span class="n">t_nome</span><span class="p">,</span>
-    <span class="n">telefone</span> <span class="nb">varchar</span><span class="p">(</span><span class="mi">11</span><span class="p">)</span> <span class="k">not</span> <span class="k">null</span> <span class="k">check</span> <span class="p">(</span><span class="n">telefone</span> <span class="o">~</span> <span class="s1">&#39;^[0-9]{10,11}$&#39;</span><span class="p">),</span>
+    <span class="n">telefone</span> <span class="nb">varchar</span><span class="p">(</span><span class="mi">11</span><span class="p">)</span> <span class="k">not</span> <span class="k">null</span> <span class="k">check</span> <span class="p">(</span><span class="n">telefone</span> <span class="o">~</span> <span class="s1">'^[0-9]{10,11}$'</span><span class="p">),</span>
     <span class="n">cpf</span> <span class="n">t_cpf</span><span class="p">,</span>
     <span class="n">identidade</span> <span class="nb">varchar</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span> <span class="k">not</span> <span class="k">null</span><span class="p">,</span>
     <span class="n">rua_id</span> <span class="nb">integer</span> <span class="k">not</span> <span class="k">null</span><span class="p">,</span>
     <span class="n">numero_endereco</span> <span class="nb">integer</span><span class="p">,</span>
     <span class="n">complemento_endereco</span> <span class="nb">varchar</span><span class="p">(</span><span class="mi">100</span><span class="p">),</span>
     <span class="n">data_nascimento</span> <span class="nb">date</span> <span class="k">not</span> <span class="k">null</span><span class="p">,</span>
-    <span class="n">sexo</span> <span class="nb">char</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="k">not</span> <span class="k">null</span> <span class="k">check</span> <span class="p">(</span><span class="n">sexo</span> <span class="k">in</span> <span class="p">(</span><span class="s1">&#39;M&#39;</span><span class="p">,</span><span class="s1">&#39;F&#39;</span><span class="p">)),</span>
-    <span class="n">cep_endereco</span> <span class="nb">char</span><span class="p">(</span><span class="mi">8</span><span class="p">)</span> <span class="k">not</span> <span class="k">null</span> <span class="k">check</span> <span class="p">(</span><span class="n">cep_endereco</span> <span class="o">~</span> <span class="s1">&#39;^[0-9]{8,9}$&#39;</span><span class="p">)</span>
+    <span class="n">sexo</span> <span class="nb">char</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="k">not</span> <span class="k">null</span> <span class="k">check</span> <span class="p">(</span><span class="n">sexo</span> <span class="k">in</span> <span class="p">(</span><span class="s1">'M'</span><span class="p">,</span><span class="s1">'F'</span><span class="p">)),</span>
+    <span class="n">cep_endereco</span> <span class="nb">char</span><span class="p">(</span><span class="mi">8</span><span class="p">)</span> <span class="k">not</span> <span class="k">null</span> <span class="k">check</span> <span class="p">(</span><span class="n">cep_endereco</span> <span class="o">~</span> <span class="s1">'^[0-9]{8,9}$'</span><span class="p">)</span>
 <span class="p">);</span>
 
 
 
 <span class="k">insert</span> <span class="k">into</span> <span class="n">pessoa</span> <span class="k">values</span> 
-    <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="s1">&#39;Lorena Fátima Carolina Nunes&#39;</span><span class="p">,</span><span class="s1">&#39;5137140997&#39;</span><span class="p">,</span><span class="s1">&#39;50037489062&#39;</span><span class="p">,</span><span class="s1">&#39;265780329&#39;</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="s1">&#39;635&#39;</span><span class="p">,</span><span class="s1">&#39;&#39;</span><span class="p">,</span><span class="s1">&#39;01/11/1996&#39;</span><span class="p">,</span><span class="s1">&#39;F&#39;</span><span class="p">,</span><span class="s1">&#39;99910020&#39;</span><span class="p">),</span>
-    <span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="s1">&#39;Diogo Hugo César Silva&#39;</span><span class="p">,</span><span class="s1">&#39;5135356502&#39;</span><span class="p">,</span><span class="s1">&#39;66911317037&#39;</span><span class="p">,</span><span class="s1">&#39;238012669&#39;</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="s1">&#39;197&#39;</span><span class="p">,</span><span class="s1">&#39;&#39;</span><span class="p">,</span><span class="s1">&#39;27/02/1996&#39;</span><span class="p">,</span><span class="s1">&#39;M&#39;</span><span class="p">,</span><span class="s1">&#39;99810020&#39;</span><span class="p">),</span>
-    <span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="s1">&#39;Matheus Manoel Martin Viana&#39;</span><span class="p">,</span><span class="s1">&#39;5135703717&#39;</span><span class="p">,</span><span class="s1">&#39;53775328050&#39;</span><span class="p">,</span><span class="s1">&#39;199665953&#39;</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="s1">&#39;402&#39;</span><span class="p">,</span><span class="s1">&#39;&#39;</span><span class="p">,</span><span class="s1">&#39;12/11/1996&#39;</span><span class="p">,</span><span class="s1">&#39;M&#39;</span><span class="p">,</span><span class="s1">&#39;99710020&#39;</span><span class="p">),</span>
-    <span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="s1">&#39;Kevin Marcos Vinicius Raimundo Vieira&#39;</span><span class="p">,</span><span class="s1">&#39;5135356503&#39;</span><span class="p">,</span><span class="s1">&#39;66911317037&#39;</span><span class="p">,</span><span class="s1">&#39;238012669&#39;</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="s1">&#39;197&#39;</span><span class="p">,</span><span class="s1">&#39;&#39;</span><span class="p">,</span><span class="s1">&#39;27/02/1996&#39;</span><span class="p">,</span><span class="s1">&#39;F&#39;</span><span class="p">,</span><span class="s1">&#39;69910020&#39;</span><span class="p">),</span>
-    <span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="s1">&#39;Benício Alexandre André Rocha&#39;</span><span class="p">,</span><span class="s1">&#39;5135356504&#39;</span><span class="p">,</span><span class="s1">&#39;66911317078&#39;</span><span class="p">,</span><span class="s1">&#39;238012669&#39;</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="s1">&#39;197&#39;</span><span class="p">,</span><span class="s1">&#39;&#39;</span><span class="p">,</span><span class="s1">&#39;27/02/1995&#39;</span><span class="p">,</span><span class="s1">&#39;F&#39;</span><span class="p">,</span><span class="s1">&#39;78910030&#39;</span><span class="p">),</span>
-    <span class="p">(</span><span class="mi">6</span><span class="p">,</span><span class="s1">&#39;Lorena Vitória da Silva&#39;</span><span class="p">,</span><span class="s1">&#39;5135356505&#39;</span><span class="p">,</span><span class="s1">&#39;66911317058&#39;</span><span class="p">,</span><span class="s1">&#39;238012669&#39;</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="s1">&#39;197&#39;</span><span class="p">,</span><span class="s1">&#39;&#39;</span><span class="p">,</span><span class="s1">&#39;27/02/1994&#39;</span><span class="p">,</span><span class="s1">&#39;F&#39;</span><span class="p">,</span><span class="s1">&#39;76910029&#39;</span><span class="p">),</span>
-    <span class="p">(</span><span class="mi">7</span><span class="p">,</span><span class="s1">&#39;Andreia Mariah Rocha&#39;</span><span class="p">,</span><span class="s1">&#39;5135356506&#39;</span><span class="p">,</span><span class="s1">&#39;66911317034&#39;</span><span class="p">,</span><span class="s1">&#39;238012669&#39;</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="s1">&#39;197&#39;</span><span class="p">,</span><span class="s1">&#39;&#39;</span><span class="p">,</span><span class="s1">&#39;27/02/1993&#39;</span><span class="p">,</span><span class="s1">&#39;F&#39;</span><span class="p">,</span><span class="s1">&#39;76910028&#39;</span><span class="p">),</span>
-    <span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="s1">&#39;Elza Mariane Sophia Bernardes&#39;</span><span class="p">,</span><span class="s1">&#39;5135356507&#39;</span><span class="p">,</span><span class="s1">&#39;66911317056&#39;</span><span class="p">,</span><span class="s1">&#39;238012669&#39;</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="s1">&#39;197&#39;</span><span class="p">,</span><span class="s1">&#39;&#39;</span><span class="p">,</span><span class="s1">&#39;27/02/1994&#39;</span><span class="p">,</span><span class="s1">&#39;F&#39;</span><span class="p">,</span><span class="s1">&#39;76910027&#39;</span><span class="p">),</span>
-    <span class="p">(</span><span class="mi">9</span><span class="p">,</span><span class="s1">&#39;Débora Ester Adriana Rodrigues&#39;</span><span class="p">,</span><span class="s1">&#39;5135356508&#39;</span><span class="p">,</span><span class="s1">&#39;66911317090&#39;</span><span class="p">,</span><span class="s1">&#39;238012669&#39;</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="s1">&#39;197&#39;</span><span class="p">,</span><span class="s1">&#39;&#39;</span><span class="p">,</span><span class="s1">&#39;27/02/1993&#39;</span><span class="p">,</span><span class="s1">&#39;F&#39;</span><span class="p">,</span><span class="s1">&#39;76910026&#39;</span><span class="p">),</span>
-    <span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="s1">&#39;Joana Olivia Castro&#39;</span><span class="p">,</span><span class="s1">&#39;5135356510&#39;</span><span class="p">,</span><span class="s1">&#39;66911317067&#39;</span><span class="p">,</span><span class="s1">&#39;238012669&#39;</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="s1">&#39;197&#39;</span><span class="p">,</span><span class="s1">&#39;&#39;</span><span class="p">,</span><span class="s1">&#39;27/02/1992&#39;</span><span class="p">,</span><span class="s1">&#39;F&#39;</span><span class="p">,</span><span class="s1">&#39;76910025&#39;</span><span class="p">),</span>
-    <span class="p">(</span><span class="mi">11</span><span class="p">,</span><span class="s1">&#39;Giovana Cláudia da Silva&#39;</span><span class="p">,</span><span class="s1">&#39;5135356512&#39;</span><span class="p">,</span><span class="s1">&#39;66911317056&#39;</span><span class="p">,</span><span class="s1">&#39;238012669&#39;</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="s1">&#39;197&#39;</span><span class="p">,</span><span class="s1">&#39;&#39;</span><span class="p">,</span><span class="s1">&#39;27/02/1991&#39;</span><span class="p">,</span><span class="s1">&#39;F&#39;</span><span class="p">,</span><span class="s1">&#39;76910024&#39;</span><span class="p">),</span>
-    <span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="s1">&#39;Lorena Vitória Jesus&#39;</span><span class="p">,</span><span class="s1">&#39;5135356513&#39;</span><span class="p">,</span><span class="s1">&#39;66911317040&#39;</span><span class="p">,</span><span class="s1">&#39;238012669&#39;</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="s1">&#39;197&#39;</span><span class="p">,</span><span class="s1">&#39;&#39;</span><span class="p">,</span><span class="s1">&#39;27/02/1999&#39;</span><span class="p">,</span><span class="s1">&#39;F&#39;</span><span class="p">,</span><span class="s1">&#39;76910023&#39;</span><span class="p">),</span>
-    <span class="p">(</span><span class="mi">13</span><span class="p">,</span><span class="s1">&#39;Flávia Lívia Martins&#39;</span><span class="p">,</span><span class="s1">&#39;5135356514&#39;</span><span class="p">,</span><span class="s1">&#39;66911317039&#39;</span><span class="p">,</span><span class="s1">&#39;238012669&#39;</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="s1">&#39;197&#39;</span><span class="p">,</span><span class="s1">&#39;&#39;</span><span class="p">,</span><span class="s1">&#39;27/02/1998&#39;</span><span class="p">,</span><span class="s1">&#39;F&#39;</span><span class="p">,</span><span class="s1">&#39;76910022&#39;</span><span class="p">),</span>
-    <span class="p">(</span><span class="mi">14</span><span class="p">,</span><span class="s1">&#39;Angela da Mata&#39;</span><span class="p">,</span><span class="s1">&#39;5135356515&#39;</span><span class="p">,</span><span class="s1">&#39;66911317041&#39;</span><span class="p">,</span><span class="s1">&#39;238011669&#39;</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="s1">&#39;197&#39;</span><span class="p">,</span><span class="s1">&#39;&#39;</span><span class="p">,</span><span class="s1">&#39;27/02/1995&#39;</span><span class="p">,</span><span class="s1">&#39;F&#39;</span><span class="p">,</span><span class="s1">&#39;76910321&#39;</span><span class="p">),</span>
-    <span class="p">(</span><span class="mi">15</span><span class="p">,</span><span class="s1">&#39;Marcia Fagundes&#39;</span><span class="p">,</span><span class="s1">&#39;5135356515&#39;</span><span class="p">,</span><span class="s1">&#39;66911317051&#39;</span><span class="p">,</span><span class="s1">&#39;238112669&#39;</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="s1">&#39;197&#39;</span><span class="p">,</span><span class="s1">&#39;&#39;</span><span class="p">,</span><span class="s1">&#39;27/02/1995&#39;</span><span class="p">,</span><span class="s1">&#39;F&#39;</span><span class="p">,</span><span class="s1">&#39;76912021&#39;</span><span class="p">),</span>
-    <span class="p">(</span><span class="mi">16</span><span class="p">,</span><span class="s1">&#39;Artur da Mata&#39;</span><span class="p">,</span><span class="s1">&#39;5135356515&#39;</span><span class="p">,</span><span class="s1">&#39;66911317061&#39;</span><span class="p">,</span><span class="s1">&#39;231012669&#39;</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="s1">&#39;197&#39;</span><span class="p">,</span><span class="s1">&#39;&#39;</span><span class="p">,</span><span class="s1">&#39;27/02/1995&#39;</span><span class="p">,</span><span class="s1">&#39;F&#39;</span><span class="p">,</span><span class="s1">&#39;76911021&#39;</span><span class="p">),</span>
-    <span class="p">(</span><span class="mi">17</span><span class="p">,</span><span class="s1">&#39;Maiki Dellani&#39;</span><span class="p">,</span><span class="s1">&#39;5135756515&#39;</span><span class="p">,</span><span class="s1">&#39;66421317061&#39;</span><span class="p">,</span><span class="s1">&#39;233014669&#39;</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="s1">&#39;197&#39;</span><span class="p">,</span><span class="s1">&#39;&#39;</span><span class="p">,</span><span class="s1">&#39;28/02/1995&#39;</span><span class="p">,</span><span class="s1">&#39;F&#39;</span><span class="p">,</span><span class="s1">&#39;76611021&#39;</span><span class="p">),</span>
-    <span class="p">(</span><span class="mi">18</span><span class="p">,</span><span class="s1">&#39;Fabio Dellani&#39;</span><span class="p">,</span><span class="s1">&#39;5135656515&#39;</span><span class="p">,</span><span class="s1">&#39;66431317061&#39;</span><span class="p">,</span><span class="s1">&#39;233018669&#39;</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="s1">&#39;197&#39;</span><span class="p">,</span><span class="s1">&#39;&#39;</span><span class="p">,</span><span class="s1">&#39;28/02/1995&#39;</span><span class="p">,</span><span class="s1">&#39;F&#39;</span><span class="p">,</span><span class="s1">&#39;76611021&#39;</span><span class="p">),</span>
-    <span class="p">(</span><span class="mi">19</span><span class="p">,</span><span class="s1">&#39;Mateus Dellani&#39;</span><span class="p">,</span><span class="s1">&#39;5134356515&#39;</span><span class="p">,</span><span class="s1">&#39;66511317061&#39;</span><span class="p">,</span><span class="s1">&#39;233019669&#39;</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="s1">&#39;197&#39;</span><span class="p">,</span><span class="s1">&#39;&#39;</span><span class="p">,</span><span class="s1">&#39;28/02/1995&#39;</span><span class="p">,</span><span class="s1">&#39;F&#39;</span><span class="p">,</span><span class="s1">&#39;76611021&#39;</span><span class="p">);</span>
+    <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="s1">'Lorena Fátima Carolina Nunes'</span><span class="p">,</span><span class="s1">'5137140997'</span><span class="p">,</span><span class="s1">'50037489062'</span><span class="p">,</span><span class="s1">'265780329'</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="s1">'635'</span><span class="p">,</span><span class="s1">''</span><span class="p">,</span><span class="s1">'01/11/1996'</span><span class="p">,</span><span class="s1">'F'</span><span class="p">,</span><span class="s1">'99910020'</span><span class="p">),</span>
+    <span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="s1">'Diogo Hugo César Silva'</span><span class="p">,</span><span class="s1">'5135356502'</span><span class="p">,</span><span class="s1">'66911317037'</span><span class="p">,</span><span class="s1">'238012669'</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="s1">'197'</span><span class="p">,</span><span class="s1">''</span><span class="p">,</span><span class="s1">'27/02/1996'</span><span class="p">,</span><span class="s1">'M'</span><span class="p">,</span><span class="s1">'99810020'</span><span class="p">),</span>
+    <span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="s1">'Matheus Manoel Martin Viana'</span><span class="p">,</span><span class="s1">'5135703717'</span><span class="p">,</span><span class="s1">'53775328050'</span><span class="p">,</span><span class="s1">'199665953'</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="s1">'402'</span><span class="p">,</span><span class="s1">''</span><span class="p">,</span><span class="s1">'12/11/1996'</span><span class="p">,</span><span class="s1">'M'</span><span class="p">,</span><span class="s1">'99710020'</span><span class="p">),</span>
+    <span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="s1">'Kevin Marcos Vinicius Raimundo Vieira'</span><span class="p">,</span><span class="s1">'5135356503'</span><span class="p">,</span><span class="s1">'66911317037'</span><span class="p">,</span><span class="s1">'238012669'</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="s1">'197'</span><span class="p">,</span><span class="s1">''</span><span class="p">,</span><span class="s1">'27/02/1996'</span><span class="p">,</span><span class="s1">'F'</span><span class="p">,</span><span class="s1">'69910020'</span><span class="p">),</span>
+    <span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="s1">'Benício Alexandre André Rocha'</span><span class="p">,</span><span class="s1">'5135356504'</span><span class="p">,</span><span class="s1">'66911317078'</span><span class="p">,</span><span class="s1">'238012669'</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="s1">'197'</span><span class="p">,</span><span class="s1">''</span><span class="p">,</span><span class="s1">'27/02/1995'</span><span class="p">,</span><span class="s1">'F'</span><span class="p">,</span><span class="s1">'78910030'</span><span class="p">),</span>
+    <span class="p">(</span><span class="mi">6</span><span class="p">,</span><span class="s1">'Lorena Vitória da Silva'</span><span class="p">,</span><span class="s1">'5135356505'</span><span class="p">,</span><span class="s1">'66911317058'</span><span class="p">,</span><span class="s1">'238012669'</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="s1">'197'</span><span class="p">,</span><span class="s1">''</span><span class="p">,</span><span class="s1">'27/02/1994'</span><span class="p">,</span><span class="s1">'F'</span><span class="p">,</span><span class="s1">'76910029'</span><span class="p">),</span>
+    <span class="p">(</span><span class="mi">7</span><span class="p">,</span><span class="s1">'Andreia Mariah Rocha'</span><span class="p">,</span><span class="s1">'5135356506'</span><span class="p">,</span><span class="s1">'66911317034'</span><span class="p">,</span><span class="s1">'238012669'</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="s1">'197'</span><span class="p">,</span><span class="s1">''</span><span class="p">,</span><span class="s1">'27/02/1993'</span><span class="p">,</span><span class="s1">'F'</span><span class="p">,</span><span class="s1">'76910028'</span><span class="p">),</span>
+    <span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="s1">'Elza Mariane Sophia Bernardes'</span><span class="p">,</span><span class="s1">'5135356507'</span><span class="p">,</span><span class="s1">'66911317056'</span><span class="p">,</span><span class="s1">'238012669'</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="s1">'197'</span><span class="p">,</span><span class="s1">''</span><span class="p">,</span><span class="s1">'27/02/1994'</span><span class="p">,</span><span class="s1">'F'</span><span class="p">,</span><span class="s1">'76910027'</span><span class="p">),</span>
+    <span class="p">(</span><span class="mi">9</span><span class="p">,</span><span class="s1">'Débora Ester Adriana Rodrigues'</span><span class="p">,</span><span class="s1">'5135356508'</span><span class="p">,</span><span class="s1">'66911317090'</span><span class="p">,</span><span class="s1">'238012669'</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="s1">'197'</span><span class="p">,</span><span class="s1">''</span><span class="p">,</span><span class="s1">'27/02/1993'</span><span class="p">,</span><span class="s1">'F'</span><span class="p">,</span><span class="s1">'76910026'</span><span class="p">),</span>
+    <span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="s1">'Joana Olivia Castro'</span><span class="p">,</span><span class="s1">'5135356510'</span><span class="p">,</span><span class="s1">'66911317067'</span><span class="p">,</span><span class="s1">'238012669'</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="s1">'197'</span><span class="p">,</span><span class="s1">''</span><span class="p">,</span><span class="s1">'27/02/1992'</span><span class="p">,</span><span class="s1">'F'</span><span class="p">,</span><span class="s1">'76910025'</span><span class="p">),</span>
+    <span class="p">(</span><span class="mi">11</span><span class="p">,</span><span class="s1">'Giovana Cláudia da Silva'</span><span class="p">,</span><span class="s1">'5135356512'</span><span class="p">,</span><span class="s1">'66911317056'</span><span class="p">,</span><span class="s1">'238012669'</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="s1">'197'</span><span class="p">,</span><span class="s1">''</span><span class="p">,</span><span class="s1">'27/02/1991'</span><span class="p">,</span><span class="s1">'F'</span><span class="p">,</span><span class="s1">'76910024'</span><span class="p">),</span>
+    <span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="s1">'Lorena Vitória Jesus'</span><span class="p">,</span><span class="s1">'5135356513'</span><span class="p">,</span><span class="s1">'66911317040'</span><span class="p">,</span><span class="s1">'238012669'</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="s1">'197'</span><span class="p">,</span><span class="s1">''</span><span class="p">,</span><span class="s1">'27/02/1999'</span><span class="p">,</span><span class="s1">'F'</span><span class="p">,</span><span class="s1">'76910023'</span><span class="p">),</span>
+    <span class="p">(</span><span class="mi">13</span><span class="p">,</span><span class="s1">'Flávia Lívia Martins'</span><span class="p">,</span><span class="s1">'5135356514'</span><span class="p">,</span><span class="s1">'66911317039'</span><span class="p">,</span><span class="s1">'238012669'</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="s1">'197'</span><span class="p">,</span><span class="s1">''</span><span class="p">,</span><span class="s1">'27/02/1998'</span><span class="p">,</span><span class="s1">'F'</span><span class="p">,</span><span class="s1">'76910022'</span><span class="p">),</span>
+    <span class="p">(</span><span class="mi">14</span><span class="p">,</span><span class="s1">'Angela da Mata'</span><span class="p">,</span><span class="s1">'5135356515'</span><span class="p">,</span><span class="s1">'66911317041'</span><span class="p">,</span><span class="s1">'238011669'</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="s1">'197'</span><span class="p">,</span><span class="s1">''</span><span class="p">,</span><span class="s1">'27/02/1995'</span><span class="p">,</span><span class="s1">'F'</span><span class="p">,</span><span class="s1">'76910321'</span><span class="p">),</span>
+    <span class="p">(</span><span class="mi">15</span><span class="p">,</span><span class="s1">'Marcia Fagundes'</span><span class="p">,</span><span class="s1">'5135356515'</span><span class="p">,</span><span class="s1">'66911317051'</span><span class="p">,</span><span class="s1">'238112669'</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="s1">'197'</span><span class="p">,</span><span class="s1">''</span><span class="p">,</span><span class="s1">'27/02/1995'</span><span class="p">,</span><span class="s1">'F'</span><span class="p">,</span><span class="s1">'76912021'</span><span class="p">),</span>
+    <span class="p">(</span><span class="mi">16</span><span class="p">,</span><span class="s1">'Artur da Mata'</span><span class="p">,</span><span class="s1">'5135356515'</span><span class="p">,</span><span class="s1">'66911317061'</span><span class="p">,</span><span class="s1">'231012669'</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="s1">'197'</span><span class="p">,</span><span class="s1">''</span><span class="p">,</span><span class="s1">'27/02/1995'</span><span class="p">,</span><span class="s1">'F'</span><span class="p">,</span><span class="s1">'76911021'</span><span class="p">),</span>
+    <span class="p">(</span><span class="mi">17</span><span class="p">,</span><span class="s1">'Maiki Dellani'</span><span class="p">,</span><span class="s1">'5135756515'</span><span class="p">,</span><span class="s1">'66421317061'</span><span class="p">,</span><span class="s1">'233014669'</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="s1">'197'</span><span class="p">,</span><span class="s1">''</span><span class="p">,</span><span class="s1">'28/02/1995'</span><span class="p">,</span><span class="s1">'F'</span><span class="p">,</span><span class="s1">'76611021'</span><span class="p">),</span>
+    <span class="p">(</span><span class="mi">18</span><span class="p">,</span><span class="s1">'Fabio Dellani'</span><span class="p">,</span><span class="s1">'5135656515'</span><span class="p">,</span><span class="s1">'66431317061'</span><span class="p">,</span><span class="s1">'233018669'</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="s1">'197'</span><span class="p">,</span><span class="s1">''</span><span class="p">,</span><span class="s1">'28/02/1995'</span><span class="p">,</span><span class="s1">'F'</span><span class="p">,</span><span class="s1">'76611021'</span><span class="p">),</span>
+    <span class="p">(</span><span class="mi">19</span><span class="p">,</span><span class="s1">'Mateus Dellani'</span><span class="p">,</span><span class="s1">'5134356515'</span><span class="p">,</span><span class="s1">'66511317061'</span><span class="p">,</span><span class="s1">'233019669'</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="s1">'197'</span><span class="p">,</span><span class="s1">''</span><span class="p">,</span><span class="s1">'28/02/1995'</span><span class="p">,</span><span class="s1">'F'</span><span class="p">,</span><span class="s1">'76611021'</span><span class="p">);</span>
 
 
 <span class="k">create</span> <span class="k">table</span> <span class="n">posto</span> <span class="p">(</span>
@@ -828,7 +598,7 @@
 <span class="p">);</span>
 
 <span class="k">insert</span> <span class="k">into</span> <span class="n">posto</span> <span class="k">values</span> 
-    <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="s1">&#39;P1&#39;</span><span class="p">,</span><span class="k">null</span><span class="p">),(</span><span class="mi">2</span><span class="p">,</span><span class="s1">&#39;P2&#39;</span><span class="p">,</span><span class="k">null</span><span class="p">),(</span><span class="mi">3</span><span class="p">,</span><span class="s1">&#39;P3&#39;</span><span class="p">,</span><span class="k">null</span><span class="p">),(</span><span class="mi">4</span><span class="p">,</span><span class="s1">&#39;P4&#39;</span><span class="p">,</span><span class="k">null</span><span class="p">);</span>
+    <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="s1">'P1'</span><span class="p">,</span><span class="k">null</span><span class="p">),(</span><span class="mi">2</span><span class="p">,</span><span class="s1">'P2'</span><span class="p">,</span><span class="k">null</span><span class="p">),(</span><span class="mi">3</span><span class="p">,</span><span class="s1">'P3'</span><span class="p">,</span><span class="k">null</span><span class="p">),(</span><span class="mi">4</span><span class="p">,</span><span class="s1">'P4'</span><span class="p">,</span><span class="k">null</span><span class="p">);</span>
 
 
 <span class="k">create</span> <span class="k">table</span> <span class="n">prescricao</span><span class="p">(</span>
@@ -841,12 +611,12 @@
 <span class="p">);</span>
 
 <span class="k">insert</span> <span class="k">into</span> <span class="n">prescricao</span> <span class="k">values</span>
-    <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="k">current_date</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span><span class="k">default</span><span class="p">,</span><span class="s1">&#39;Paciente não apresentou melhora&#39;</span><span class="p">),</span>
-    <span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="k">current_date</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="k">default</span><span class="p">,</span><span class="s1">&#39;Paciente não apresentou melhora&#39;</span><span class="p">),</span>
-    <span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="k">default</span><span class="p">,</span><span class="k">default</span><span class="p">,</span><span class="s1">&#39;Paciente apresentou leve melhora com a nova medicação utilizada&#39;</span><span class="p">),</span>
-    <span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="k">default</span><span class="p">,</span><span class="k">default</span><span class="p">,</span><span class="s1">&#39;Não houve melhora clínica aparente&#39;</span><span class="p">),</span>
-    <span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="k">default</span><span class="p">,</span><span class="k">default</span><span class="p">,</span><span class="s1">&#39;O procedimento realizado demonstrou normalidade nas atividades vitais básicas&#39;</span><span class="p">),</span>
-    <span class="p">(</span><span class="mi">6</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="k">default</span><span class="p">,</span><span class="k">default</span><span class="p">,</span><span class="s1">&#39;Aguarda-se resultado de exames para orientar a escolha da melhor medicação&#39;</span><span class="p">);</span> 
+    <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="k">current_date</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span><span class="k">default</span><span class="p">,</span><span class="s1">'Paciente não apresentou melhora'</span><span class="p">),</span>
+    <span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="k">current_date</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="k">default</span><span class="p">,</span><span class="s1">'Paciente não apresentou melhora'</span><span class="p">),</span>
+    <span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="k">default</span><span class="p">,</span><span class="k">default</span><span class="p">,</span><span class="s1">'Paciente apresentou leve melhora com a nova medicação utilizada'</span><span class="p">),</span>
+    <span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="k">default</span><span class="p">,</span><span class="k">default</span><span class="p">,</span><span class="s1">'Não houve melhora clínica aparente'</span><span class="p">),</span>
+    <span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="k">default</span><span class="p">,</span><span class="k">default</span><span class="p">,</span><span class="s1">'O procedimento realizado demonstrou normalidade nas atividades vitais básicas'</span><span class="p">),</span>
+    <span class="p">(</span><span class="mi">6</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="k">default</span><span class="p">,</span><span class="k">default</span><span class="p">,</span><span class="s1">'Aguarda-se resultado de exames para orientar a escolha da melhor medicação'</span><span class="p">);</span> 
 
 
 <span class="k">create</span> <span class="k">table</span> <span class="n">procedimento</span><span class="p">(</span>
@@ -855,10 +625,10 @@
     <span class="n">descricao</span> <span class="nb">text</span>
 <span class="p">);</span>
 
-<span class="k">comment</span> <span class="k">on</span> <span class="k">table</span> <span class="n">procedimento</span> <span class="k">is</span> <span class="s1">&#39;Intervenções médicas metódicas para fins diagnósticos, cirúrgicos, etc&#39;</span><span class="p">;</span>
+<span class="k">comment</span> <span class="k">on</span> <span class="k">table</span> <span class="n">procedimento</span> <span class="k">is</span> <span class="s1">'Intervenções médicas metódicas para fins diagnósticos, cirúrgicos, etc'</span><span class="p">;</span>
 
 <span class="k">insert</span> <span class="k">into</span> <span class="n">procedimento</span> <span class="k">values</span> 
-    <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="s1">&#39;Ultrassonografia&#39;</span><span class="p">),(</span><span class="mi">2</span><span class="p">,</span><span class="s1">&#39;Eletrocardiograma&#39;</span><span class="p">),(</span><span class="mi">3</span><span class="p">,</span><span class="s1">&#39;Radiografia&#39;</span><span class="p">);</span>
+    <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="s1">'Ultrassonografia'</span><span class="p">),(</span><span class="mi">2</span><span class="p">,</span><span class="s1">'Eletrocardiograma'</span><span class="p">),(</span><span class="mi">3</span><span class="p">,</span><span class="s1">'Radiografia'</span><span class="p">);</span>
 
 
 <span class="k">create</span> <span class="k">table</span> <span class="n">procedimento_internacao</span><span class="p">(</span>
@@ -879,15 +649,15 @@
 <span class="p">);</span>
 
 <span class="k">insert</span> <span class="k">into</span> <span class="n">rua</span> <span class="k">values</span> 
-    <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="s1">&#39;Rogério Nunes&#39;</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span>
-    <span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="s1">&#39;Travessa Tiradentes&#39;</span><span class="p">,</span><span class="mi">2</span><span class="p">),</span>
-    <span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="s1">&#39;Raimunda Pereira Lima&#39;</span><span class="p">,</span><span class="mi">3</span><span class="p">),</span>
-    <span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="s1">&#39;Arenópolis&#39;</span><span class="p">,</span><span class="mi">4</span><span class="p">),</span>
-    <span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="s1">&#39;Rui Barbosa&#39;</span><span class="p">,</span><span class="mi">5</span><span class="p">),</span>
-    <span class="p">(</span><span class="mi">6</span><span class="p">,</span><span class="s1">&#39;Cristovão Colombo&#39;</span><span class="p">,</span><span class="mi">6</span><span class="p">),</span>
-    <span class="p">(</span><span class="mi">7</span><span class="p">,</span><span class="s1">&#39;Getúlio Vargas&#39;</span><span class="p">,</span><span class="mi">7</span><span class="p">),</span>
-    <span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="s1">&#39;Nelson Mandela&#39;</span><span class="p">,</span><span class="mi">8</span><span class="p">),</span>
-    <span class="p">(</span><span class="mi">9</span><span class="p">,</span><span class="s1">&#39;André Franco Montora&#39;</span><span class="p">,</span><span class="mi">9</span><span class="p">);</span>
+    <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="s1">'Rogério Nunes'</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span>
+    <span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="s1">'Travessa Tiradentes'</span><span class="p">,</span><span class="mi">2</span><span class="p">),</span>
+    <span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="s1">'Raimunda Pereira Lima'</span><span class="p">,</span><span class="mi">3</span><span class="p">),</span>
+    <span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="s1">'Arenópolis'</span><span class="p">,</span><span class="mi">4</span><span class="p">),</span>
+    <span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="s1">'Rui Barbosa'</span><span class="p">,</span><span class="mi">5</span><span class="p">),</span>
+    <span class="p">(</span><span class="mi">6</span><span class="p">,</span><span class="s1">'Cristovão Colombo'</span><span class="p">,</span><span class="mi">6</span><span class="p">),</span>
+    <span class="p">(</span><span class="mi">7</span><span class="p">,</span><span class="s1">'Getúlio Vargas'</span><span class="p">,</span><span class="mi">7</span><span class="p">),</span>
+    <span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="s1">'Nelson Mandela'</span><span class="p">,</span><span class="mi">8</span><span class="p">),</span>
+    <span class="p">(</span><span class="mi">9</span><span class="p">,</span><span class="s1">'André Franco Montora'</span><span class="p">,</span><span class="mi">9</span><span class="p">);</span>
 
 
 <span class="k">alter</span> <span class="k">table</span> <span class="n">rua</span> <span class="k">add</span> <span class="k">constraint</span> <span class="n">fk_rua_bairro</span> <span class="k">foreign</span> <span class="k">key</span><span class="p">(</span><span class="n">bairro_id</span><span class="p">)</span> <span class="k">references</span> <span class="n">bairro</span><span class="p">;</span>
@@ -949,78 +719,42 @@
 
 <span class="k">commit</span><span class="p">;</span>
 </code></pre></div>
-                
-                  
-                
-              
-              
-                
-
-
-              
-            </article>
-          </div>
-        </div>
-        
-          <a href="#" class="md-top md-icon" data-md-component="top" data-md-state="hidden">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"/></svg>
-          </a>
-        
-      </main>
-      
-        
+</article>
+</div>
+</div>
+<a class="md-top md-icon" data-md-component="top" data-md-state="hidden" href="#">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path></svg>
+</a>
+</main>
 <footer class="md-footer">
-  
-  <div class="md-footer-meta md-typeset">
-    <div class="md-footer-meta__inner md-grid">
-      <div class="md-footer-copyright">
-        
-          <div class="md-footer-copyright__highlight">
-            Copyright &copy; 2021 -  Diego A. Lusa
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-footer-copyright">
+<div class="md-footer-copyright__highlight">
+            Copyright © 2021 -  Diego A. Lusa
           </div>
         
         Made with
-        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+        <a href="https://squidfunk.github.io/mkdocs-material/" rel="noopener" target="_blank">
           Material for MkDocs
         </a>
-        
-      </div>
-      
-  <div class="md-footer-social">
-    
-      
-      
-        
-        
-      
-      <a href="https://www.linkedin.com/in/diegolusa/" target="_blank" rel="noopener" title="www.linkedin.com" class="md-footer-social__link">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/></svg>
-      </a>
-    
-      
-      
-        
-        
-      
-      <a href="http://github.com/diegolusa" target="_blank" rel="noopener" title="github.com" class="md-footer-social__link">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
-      </a>
-    
-  </div>
-
-    </div>
-  </div>
+</div>
+<div class="md-footer-social">
+<a class="md-footer-social__link" href="https://www.linkedin.com/in/diegolusa/" rel="noopener" target="_blank" title="www.linkedin.com">
+<svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"></path></svg>
+</a>
+<a class="md-footer-social__link" href="http://github.com/diegolusa" rel="noopener" target="_blank" title="github.com">
+<svg viewbox="0 0 496 512" xmlns="http://www.w3.org/2000/svg"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"></path></svg>
+</a>
+</div>
+</div>
+</div>
 </footer>
-      
-    </div>
-    <div class="md-dialog" data-md-component="dialog">
-      <div class="md-dialog__inner md-typeset"></div>
-    </div>
-    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.top", "navigation.instant", "toc.integrate", "header.autohide"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}, "search": "../../assets/javascripts/workers/search.fe42c31b.min.js", "version": null}</script>
-    
-    
-      <script src="../../assets/javascripts/bundle.7353b375.min.js"></script>
-      
-    
-  </body>
+</div>
+<div class="md-dialog" data-md-component="dialog">
+<div class="md-dialog__inner md-typeset"></div>
+</div>
+<script id="__config" type="application/json">{"base": "../..", "features": ["navigation.top", "navigation.instant", "toc.integrate", "header.autohide"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}, "search": "../../assets/javascripts/workers/search.fe42c31b.min.js", "version": null}</script>
+<script src="../../assets/javascripts/bundle.7353b375.min.js"></script>
+</body>
 </html>

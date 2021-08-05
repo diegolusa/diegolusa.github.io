@@ -1,825 +1,490 @@
 
-<!doctype html>
-<html lang="en" class="no-js">
-  <head>
-    
-      <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width,initial-scale=1">
-      
-      
-      
-      
-      <link rel="icon" href="../../../img/icon.ico">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.1.1">
-    
-    
-      
-        <title>Trabalhando com estilos - Diego A. Lusa</title>
-      
-    
-    
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.9299cb39.min.css">
-      
-        
-        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ef6f36e2.min.css">
-        
-      
-    
-    
-    
-      
-        
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7C&display=fallback">
-        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:""}</style>
-      
-    
-    
-    
-      <link rel="stylesheet" href="../../../css/custom.css">
-    
-    
-      
-    
-    
-  </head>
-  
-  
-    
-    
-      
-    
-    
-    
-    
-    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="black" data-md-color-accent="">
-  
-    
-    <script>function __prefix(e){return new URL("../../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
-    
-      <script>var palette=__get("__palette");if(null!==palette&&"object"==typeof palette.color)for(var key in palette.color)document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
-    
-    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
-    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
-    <label class="md-overlay" for="__drawer"></label>
-    <div data-md-component="skip">
-      
-        
-        <a href="#trabalhando-com-estilos" class="md-skip">
+<!DOCTYPE html>
+
+<html class="no-js" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<link href="../../../img/icon.ico" rel="icon"/>
+<meta content="mkdocs-1.1.2, mkdocs-material-7.1.1" name="generator"/>
+<title>Trabalhando com estilos - Diego A. Lusa</title>
+<link href="../../../assets/stylesheets/main.9299cb39.min.css" rel="stylesheet"/>
+<link href="../../../assets/stylesheets/palette.ef6f36e2.min.css" rel="stylesheet"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7C&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font-family:"Roboto";--md-code-font-family:""}</style>
+<link href="../../../css/custom.css" rel="stylesheet"/>
+</head>
+<body data-md-color-accent="" data-md-color-primary="black" data-md-color-scheme="default" dir="ltr">
+<script>function __prefix(e){return new URL("../../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+<script>var palette=__get("__palette");if(null!==palette&&"object"==typeof palette.color)for(var key in palette.color)document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#trabalhando-com-estilos">
           Skip to content
         </a>
-      
-    </div>
-    <div data-md-component="announce">
-      
-    </div>
-    
-      <header class="md-header" data-md-component="header">
-  <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../../.." title="Diego A. Lusa" class="md-header__button md-logo" aria-label="Diego A. Lusa" data-md-component="logo">
-      
-  <img src="../../../img/icon.png" alt="logo">
-
-    </a>
-    <label class="md-header__button md-icon" for="__drawer">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
-    </label>
-    <div class="md-header__title" data-md-component="header-title">
-      <div class="md-header__ellipsis">
-        <div class="md-header__topic">
-          <span class="md-ellipsis">
+</div>
+<div data-md-component="announce">
+</div>
+<header class="md-header" data-md-component="header">
+<nav aria-label="Header" class="md-header__inner md-grid">
+<a aria-label="Diego A. Lusa" class="md-header__button md-logo" data-md-component="logo" href="../../.." title="Diego A. Lusa">
+<img alt="logo" src="../../../img/icon.png"/>
+</a>
+<label class="md-header__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"></path></svg>
+</label>
+<div class="md-header__title" data-md-component="header-title">
+<div class="md-header__ellipsis">
+<div class="md-header__topic">
+<span class="md-ellipsis">
             Diego A. Lusa
           </span>
-        </div>
-        <div class="md-header__topic" data-md-component="header-topic">
-          <span class="md-ellipsis">
+</div>
+<div class="md-header__topic" data-md-component="header-topic">
+<span class="md-ellipsis">
             
               Trabalhando com estilos
             
           </span>
-        </div>
-      </div>
-    </div>
-    
-      <form class="md-header__option" data-md-component="palette">
-        
-          
-          
-          <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="black" data-md-color-accent="" type="radio" name="__palette" id="__palette_1">
-          <label class="md-header__button md-icon" title="Mudar para modo escuro" for="__palette_2" hidden>
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M7 10a2 2 0 0 1 2 2 2 2 0 0 1-2 2 2 2 0 0 1-2-2 2 2 0 0 1 2-2m10-3a5 5 0 0 1 5 5 5 5 0 0 1-5 5H7a5 5 0 0 1-5-5 5 5 0 0 1 5-5h10M7 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3h10a3 3 0 0 0 3-3 3 3 0 0 0-3-3H7z"/></svg>
-          </label>
-        
-          
-          
-          <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="" type="radio" name="__palette" id="__palette_2">
-          <label class="md-header__button md-icon" title="Mudar para modo claro" for="__palette_1" hidden>
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3z"/></svg>
-          </label>
-        
-      </form>
-    
-    
-    
-      <label class="md-header__button md-icon" for="__search">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
-      </label>
-      
+</div>
+</div>
+</div>
+<form class="md-header__option" data-md-component="palette">
+<input class="md-option" data-md-color-accent="" data-md-color-media="" data-md-color-primary="black" data-md-color-scheme="default" id="__palette_1" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_2" hidden="" title="Mudar para modo escuro">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10a2 2 0 0 1 2 2 2 2 0 0 1-2 2 2 2 0 0 1-2-2 2 2 0 0 1 2-2m10-3a5 5 0 0 1 5 5 5 5 0 0 1-5 5H7a5 5 0 0 1-5-5 5 5 0 0 1 5-5h10M7 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3h10a3 3 0 0 0 3-3 3 3 0 0 0-3-3H7z"></path></svg>
+</label>
+<input class="md-option" data-md-color-accent="" data-md-color-media="" data-md-color-primary="black" data-md-color-scheme="slate" id="__palette_2" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_1" hidden="" title="Mudar para modo claro">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3z"></path></svg>
+</label>
+</form>
+<label class="md-header__button md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"></path></svg>
+</label>
 <div class="md-search" data-md-component="search" role="dialog">
-  <label class="md-search__overlay" for="__search"></label>
-  <div class="md-search__inner" role="search">
-    <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
-      <label class="md-search__icon md-icon" for="__search">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
-      </label>
-      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
-      </button>
-    </form>
-    <div class="md-search__output">
-      <div class="md-search__scrollwrap" data-md-scrollfix>
-        <div class="md-search-result" data-md-component="search-result">
-          <div class="md-search-result__meta">
+<label class="md-search__overlay" for="__search"></label>
+<div class="md-search__inner" role="search">
+<form class="md-search__form" name="search">
+<input aria-label="Search" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" data-md-state="active" name="query" placeholder="Search" required="" spellcheck="false" type="text"/>
+<label class="md-search__icon md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"></path></svg>
+</label>
+<button aria-label="Clear" class="md-search__icon md-icon" tabindex="-1" type="reset">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"></path></svg>
+</button>
+</form>
+<div class="md-search__output">
+<div class="md-search__scrollwrap" data-md-scrollfix="">
+<div class="md-search-result" data-md-component="search-result">
+<div class="md-search-result__meta">
             Initializing search
           </div>
-          <ol class="md-search-result__list"></ol>
-        </div>
-      </div>
-    </div>
-  </div>
+<ol class="md-search-result__list"></ol>
 </div>
-    
-    
-  </nav>
+</div>
+</div>
+</div>
+</div>
+</nav>
 </header>
-    
-    <div class="md-container" data-md-component="container">
-      
-      
-        
-      
-      <main class="md-main" data-md-component="main">
-        <div class="md-main__inner md-grid">
-          
-            
-              
-              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
-                <div class="md-sidebar__scrollwrap">
-                  <div class="md-sidebar__inner">
-                    
-
-
-  
-
-<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navigation" data-md-level="0">
-  <label class="md-nav__title" for="__drawer">
-    <a href="../../.." title="Diego A. Lusa" class="md-nav__button md-logo" aria-label="Diego A. Lusa" data-md-component="logo">
-      
-  <img src="../../../img/icon.png" alt="logo">
-
-    </a>
+<div class="md-container" data-md-component="container">
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Navigation" class="md-nav md-nav--primary md-nav--integrated" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="Diego A. Lusa" class="md-nav__button md-logo" data-md-component="logo" href="../../.." title="Diego A. Lusa">
+<img alt="logo" src="../../../img/icon.png"/>
+</a>
     Diego A. Lusa
   </label>
-  
-  <ul class="md-nav__list" data-md-scrollfix>
-    
-      
-      
-      
-
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../.." class="md-nav__link">
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../..">
         Home
       </a>
-    </li>
-  
-
-    
-      
-      
-      
-
-  
-  
-    
-  
-  
-    
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
-      
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
-      
-      <label class="md-nav__link" for="__nav_2">
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" id="__nav_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2">
         Informática
         <span class="md-nav__icon md-icon"></span>
-      </label>
-      <nav class="md-nav" aria-label="Informática" data-md-level="1">
-        <label class="md-nav__title" for="__nav_2">
-          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="Informática" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_2">
+<span class="md-nav__icon md-icon"></span>
           Informática
         </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
-            
-  
-  
-    
-  
-  
-    
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
-      
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_1" type="checkbox" id="__nav_2_1" checked>
-      
-      <label class="md-nav__link" for="__nav_2_1">
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_1" id="__nav_2_1" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_1">
         Editores de Texto
         <span class="md-nav__icon md-icon"></span>
-      </label>
-      <nav class="md-nav" aria-label="Editores de Texto" data-md-level="2">
-        <label class="md-nav__title" for="__nav_2_1">
-          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="Editores de Texto" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_1">
+<span class="md-nav__icon md-icon"></span>
           Editores de Texto
         </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../introducao/" class="md-nav__link">
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../introducao/">
         Writer
       </a>
-    </li>
-  
-
-          
-            
-  
-  
-    
-  
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
+</li>
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
           Estilos
           <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+</label>
+<a class="md-nav__link md-nav__link--active" href="./">
         Estilos
       </a>
-      
-        
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
       Table of contents
     </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#trabalhando-com-estilos" class="md-nav__link">
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#trabalhando-com-estilos">
     Trabalhando com estilos
   </a>
-  
-    <nav class="md-nav" aria-label="Trabalhando com estilos">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#estilos-de-paragrafo" class="md-nav__link">
+<nav aria-label="Trabalhando com estilos" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#estilos-de-paragrafo">
     Estilos de Parágrafo
   </a>
-  
-    <nav class="md-nav" aria-label="Estilos de Parágrafo">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#aba-organizador" class="md-nav__link">
+<nav aria-label="Estilos de Parágrafo" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#aba-organizador">
     Aba Organizador
   </a>
-  
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#aba-recuos-e-espacamento" class="md-nav__link">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#aba-recuos-e-espacamento">
     Aba Recuos e Espaçamento
   </a>
-  
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#aba-alinhamento" class="md-nav__link">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#aba-alinhamento">
     Aba Alinhamento
   </a>
-  
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#aba-fonte" class="md-nav__link">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#aba-fonte">
     Aba Fonte
   </a>
-  
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#aba-efeitos-da-fonte" class="md-nav__link">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#aba-efeitos-da-fonte">
     Aba Efeitos da Fonte
   </a>
-  
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#aba-posicao" class="md-nav__link">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#aba-posicao">
     Aba Posição
   </a>
-  
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#aba-estruturas-de-topicos" class="md-nav__link">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#aba-estruturas-de-topicos">
     Aba Estruturas de Tópicos
   </a>
-  
 </li>
-        
-      </ul>
-    </nav>
-  
+</ul>
+</nav>
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#estilos-de-caracteres" class="md-nav__link">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#estilos-de-caracteres">
     Estilos de Caracteres
   </a>
-  
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#estilos-de-pagina" class="md-nav__link">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#estilos-de-pagina">
     Estilos de Página
   </a>
-  
-    <nav class="md-nav" aria-label="Estilos de Página">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#aba-pagina" class="md-nav__link">
+<nav aria-label="Estilos de Página" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#aba-pagina">
     Aba Página
   </a>
-  
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#aba-area" class="md-nav__link">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#aba-area">
     Aba Área
   </a>
-  
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#aba-transparencia" class="md-nav__link">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#aba-transparencia">
     Aba Transparência
   </a>
-  
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#aba-cabecalho-e-aba-rodape" class="md-nav__link">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#aba-cabecalho-e-aba-rodape">
     Aba Cabeçalho e Aba Rodapé
   </a>
-  
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#aba-bordas" class="md-nav__link">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#aba-bordas">
     Aba Bordas
   </a>
-  
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#aba-colunas" class="md-nav__link">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#aba-colunas">
     Aba Colunas
   </a>
-  
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#aba-notas-de-rodape" class="md-nav__link">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#aba-notas-de-rodape">
     Aba Notas de Rodapé
   </a>
-  
 </li>
-        
-      </ul>
-    </nav>
-  
+</ul>
+</nav>
 </li>
-        
-      </ul>
-    </nav>
-  
+</ul>
+</nav>
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#referencias" class="md-nav__link">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#referencias">
     Referências
   </a>
-  
 </li>
-      
-    </ul>
-  
+</ul>
 </nav>
-      
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../abnt/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../abnt/">
         ABNT
       </a>
-    </li>
-  
-
-          
-        </ul>
-      </nav>
-    </li>
-  
-
-          
-        </ul>
-      </nav>
-    </li>
-  
-
-    
-      
-      
-      
-
-  
-  
-  
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
-      
-      <label class="md-nav__link" for="__nav_3">
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" id="__nav_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_3">
         Programação
         <span class="md-nav__icon md-icon"></span>
-      </label>
-      <nav class="md-nav" aria-label="Programação" data-md-level="1">
-        <label class="md-nav__title" for="__nav_3">
-          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="Programação" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_3">
+<span class="md-nav__icon md-icon"></span>
           Programação
         </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../programacao/linguagens/" class="md-nav__link">
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../programacao/linguagens/">
         Linguagens de Programação
       </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../programacao/ambiente/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../programacao/ambiente/">
         Ambiente de Desenvolvimento
       </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../programacao/compilacao/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../programacao/compilacao/">
         Compilação
       </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../programacao/identificadores/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../programacao/identificadores/">
         Identificadores
       </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../programacao/io/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../programacao/io/">
         Entrada e Saída
       </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../programacao/condicionais/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../programacao/condicionais/">
         Condicionais
       </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../programacao/iteracao/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../programacao/iteracao/">
         Laços de Repetição
       </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../programacao/arranjos/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../programacao/arranjos/">
         Arranjos
       </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../programacao/ponteiros/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../programacao/ponteiros/">
         Ponteiros
       </a>
-    </li>
-  
-
-          
-        </ul>
-      </nav>
-    </li>
-  
-
-    
-      
-      
-      
-
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../about/" class="md-nav__link">
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../about/">
         Sobre
       </a>
-    </li>
-  
-
-    
-  </ul>
+</li>
+</ul>
 </nav>
-                  </div>
-                </div>
-              </div>
-            
-            
-          
-          <div class="md-content" data-md-component="content">
-            <article class="md-content__inner md-typeset">
-              
-                
-                
-                  <h1>Estilos</h1>
-                
-                <p>Certamente um dos recursos mais úteis e importantes do Writer assim como de outros editores de texto são os estilos. Os estilos são recursos básicos, que permitem a formatação do texto de forma simples e consistente. Uma vez aplicado o estilo, tudo grupo de formatações associado é aplicado  de uma única vez. Da mesma forma, alterações no estilo têm impacto direto em todos os locais em que o estilo foi aplicado no documento, tornando o processo de modificações de formato muito mais simples. Além disso, os estilos são utilizados para automatizar a geração de tabelas de conteúdo, como sumários, lista de figuras, lista de tabelas.</p>
-<h2 id="trabalhando-com-estilos">Trabalhando com estilos<a class="headerlink" href="#trabalhando-com-estilos" title="Permanent link">&para;</a></h2>
+</div>
+</div>
+</div>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<h1>Estilos</h1>
+<p>Certamente um dos recursos mais úteis e importantes do Writer assim como de outros editores de texto são os estilos. Os estilos são recursos básicos, que permitem a formatação do texto de forma simples e consistente. Uma vez aplicado o estilo, tudo grupo de formatações associado é aplicado  de uma única vez. Da mesma forma, alterações no estilo têm impacto direto em todos os locais em que o estilo foi aplicado no documento, tornando o processo de modificações de formato muito mais simples. Além disso, os estilos são utilizados para automatizar a geração de tabelas de conteúdo, como sumários, lista de figuras, lista de tabelas.</p>
+<h2 id="trabalhando-com-estilos">Trabalhando com estilos<a class="headerlink" href="#trabalhando-com-estilos" title="Permanent link">¶</a></h2>
 <p>Os estilos são particularmente úteis na escrita de documentos com muitas páginas e/ou baseados em algum modelo. Alguns usuários aplicam formatação de parágrafo para cada trecho do documento que precisa respeitar a mesma estética. Embora produza o resultado esperado, é mais demorado e propenso a erros. Imagine que você tenha formatado um documento de 200 páginas e na última percebeu que o tamanho do corpo do texto deveria ser 11 e não 12, como está. O que fazer?</p>
 <p>Sem utilizar estilos, a única opção é aplicar a formatação novamente em todos os trechos necessários. Já se utilizarmos estilos, basta editar a configuração do estilo e aplicar a alteração. Automaticamente todos os trechos associado àquele estilo será atualizados. Daí a importância de sabermos como utilizar este importante recurso.</p>
 <p>O Writer oferece estilos para <strong>caracteres</strong>, <strong>parágrafos</strong>, <strong>páginas</strong>, <strong>quadros</strong>, <strong>tabelas</strong> e <strong>listas</strong>. Para cada um deles pode-se configurar uma ampla quantidade de parâmetros de formatação associados. Na sequência, as principais destas categorias de estilo serão descritas de forma detalhada.</p>
-<h3 id="estilos-de-paragrafo">Estilos de Parágrafo<a class="headerlink" href="#estilos-de-paragrafo" title="Permanent link">&para;</a></h3>
+<h3 id="estilos-de-paragrafo">Estilos de Parágrafo<a class="headerlink" href="#estilos-de-paragrafo" title="Permanent link">¶</a></h3>
 <p>Estilos de parágrafo controlam todos os aspectos de aparência de um parágrafo de texto, como alinhamento, paradas de tabulação, espaçamento entrelinhas, bordas, espaçamento antes e após o parágrafo, recuo de primeira linha, entre outros.</p>
 <p>Para adicionar um novo estilo de parágrafo ao documento, o usuário deve acessar o <em>Gerenciador de Estilos</em>, o qual encontra-se no menu <em>Estilos</em>. Ao ativar o gerenciador, uma janela é apresentada encaixada à direita da tela de trabalho. Nela apresentam-se todas as categorias de estilo, bem como os estilos existentes para elas.</p>
-<p><img alt="Tela do gerenciador de estilos" src="../../../img/informatica/libreoffice-estilos.png" /></p>
+<p><img alt="Tela do gerenciador de estilos" src="../../../img/informatica/libreoffice-estilos.png"/></p>
 <p>Para criar um estilo de parágrafo, devemos clicar com o botão direito no <em>Gerenciador de Estilos</em>, estando selecionado a opção <em>Estilos de Parágrafo</em>, opção <em>Novo</em>. Ao concluir o procedimento, a janela de configuração do novo estilo será exibida. Você irá perceber que o número de configurações é considerável. Iremos tentar explorar as principais na sequência.</p>
-<p><img alt="Janela de edição de estilos de parágrafo do LibreOffice Writer" src="../../../img/informatica/estilos-paragrafo.png" /></p>
-<h4 id="aba-organizador">Aba Organizador<a class="headerlink" href="#aba-organizador" title="Permanent link">&para;</a></h4>
+<p><img alt="Janela de edição de estilos de parágrafo do LibreOffice Writer" src="../../../img/informatica/estilos-paragrafo.png"/></p>
+<h4 id="aba-organizador">Aba Organizador<a class="headerlink" href="#aba-organizador" title="Permanent link">¶</a></h4>
 <p>Permite configurar o nome do novo estilo, que é uma informação obrigatória. Este nome deve ser suficientemente auto-descritivo, de modo que possa indicar claramente sua aplicabilidade no documento. A configuração <em>Auto atualizar</em> deve ser utilizada se há interesse de que, quando aplicada uma formatação direta ao parágrafo, todos os demais parágrafos associados ao estilo recebam tal formatação de forma automática.</p>
 <p><em>Próximo estilo</em> refere-se ao próximo estilo de parágrafo aplicado assim que o usuário pressionar a tecla <em>Enter</em> estando em um parágrafo do estilo atual. É uma configuração muito útil para automatizar o fluxo de estilos de um documento. Há também a possibilidade de herdar propriedades de outros estilos preexistentes e de se associar o novo estilo a uma das categorias disponíveis.</p>
-<h4 id="aba-recuos-e-espacamento">Aba Recuos e Espaçamento<a class="headerlink" href="#aba-recuos-e-espacamento" title="Permanent link">&para;</a></h4>
+<h4 id="aba-recuos-e-espacamento">Aba Recuos e Espaçamento<a class="headerlink" href="#aba-recuos-e-espacamento" title="Permanent link">¶</a></h4>
 <p>Aqui configuramos o distanciamento (recuo) do parágrafo em relação às margens esquerda e direita, bem como o recuo de primeira linha que deve ser aplicado. É possível aplicar medidas utilizando unidades como pontos (pt), centímetros (cm), milímetros (mm), metros (m), entre outras. Assim que o campo perde o foco, a ferramenta automaticamente converte a medida informada para centímetros.</p>
 <p>Outro recurso é o espaçamentos antes e após o parágrafo. Caso este distanciamento deva ocorrer apenas quando o próximo parágrafo for de um estilo diferente, então deve-se marcar a opção <em>Não adicionar espaços entre os parágrafos do mesmo estilo</em>. O espaço entre as linhas do parágrafo é outra configuração disponível, que pode ser um dos valores predefinidos, como simples, 1.5 linhas, duplo, proporcional (100% equivale ao espaçamento simples), entre outros.</p>
-<p><img alt="Janela de edição de estilos de parágrafo do LibreOffice Writer: aba Recuos e Espaçamento" src="../../../img/informatica/estilos-paragrafo-rec-espacamento.png" /></p>
-<h4 id="aba-alinhamento">Aba Alinhamento<a class="headerlink" href="#aba-alinhamento" title="Permanent link">&para;</a></h4>
+<p><img alt="Janela de edição de estilos de parágrafo do LibreOffice Writer: aba Recuos e Espaçamento" src="../../../img/informatica/estilos-paragrafo-rec-espacamento.png"/></p>
+<h4 id="aba-alinhamento">Aba Alinhamento<a class="headerlink" href="#aba-alinhamento" title="Permanent link">¶</a></h4>
 <p>Especifica o alinhamento do parágrafo quando aplicado o estilo. Os alinhamentos disponíveis são <em>esquerda</em>, <em>direita</em>, <em>centralizado</em> e <em>justificar</em>. É possível definir também um alinhamento específico para a última linha do parágrafo, que pode diferir das anteriores. Pode-se também adicionar outras configurações de alinhamento relacionadas a idiomas asiáticos, caracteres subdimensionados e superdimensionados e de direção de entrada.</p>
-<p><img alt="Janela de edição de estilos de parágrafo do LibreOffice Writer: aba Alinhamento." src="../../../img/informatica/estilos-paragrafo-alinhamento.png" /></p>
-<h4 id="aba-fonte">Aba Fonte<a class="headerlink" href="#aba-fonte" title="Permanent link">&para;</a></h4>
+<p><img alt="Janela de edição de estilos de parágrafo do LibreOffice Writer: aba Alinhamento." src="../../../img/informatica/estilos-paragrafo-alinhamento.png"/></p>
+<h4 id="aba-fonte">Aba Fonte<a class="headerlink" href="#aba-fonte" title="Permanent link">¶</a></h4>
 <p>As opções de formatação de fonte compreendem a família, estilo, tamanho (em pontos) e idioma.</p>
-<p><img alt="Janela de edição de estilos de parágrafo do LibreOffice Writer: aba Fonte" src="../../../img/informatica/estilos-paragrafo-fonte.png" /></p>
-<h4 id="aba-efeitos-da-fonte">Aba Efeitos da Fonte<a class="headerlink" href="#aba-efeitos-da-fonte" title="Permanent link">&para;</a></h4>
+<p><img alt="Janela de edição de estilos de parágrafo do LibreOffice Writer: aba Fonte" src="../../../img/informatica/estilos-paragrafo-fonte.png"/></p>
+<h4 id="aba-efeitos-da-fonte">Aba Efeitos da Fonte<a class="headerlink" href="#aba-efeitos-da-fonte" title="Permanent link">¶</a></h4>
 <p>Efeitos da fonte, por sua vez, apresenta configurações relacionadas a efeitos, como cor, relevo, tachado, sublinhado, sobre linhas, sombra e contorno. É possível, por exemplo, definir que todas as letras serão convertidas para maiúsculo, minúsculo ou mesmo para título, onde a inicial de cada palavra é posta em maiúsculo e as demais letras em minúsculo. </p>
-<p><img alt="Janela de edição de estilos de parágrafo do LibreOffice Writer: aba Efeitos da Fonte." src="../../../img/informatica/estilos-paragrafo-fonte-efeitos.png" /></p>
-<h4 id="aba-posicao">Aba Posição<a class="headerlink" href="#aba-posicao" title="Permanent link">&para;</a></h4>
+<p><img alt="Janela de edição de estilos de parágrafo do LibreOffice Writer: aba Efeitos da Fonte." src="../../../img/informatica/estilos-paragrafo-fonte-efeitos.png"/></p>
+<h4 id="aba-posicao">Aba Posição<a class="headerlink" href="#aba-posicao" title="Permanent link">¶</a></h4>
 <p>Configurar a posição dos caracteres do parágrafo refere-se à mudança para sobrescrita, subscrita ou posição normal de escrita. Quando informado sobrescrito ou subscrito, pode-se informar o percentual de deslocamento para cima ou para baixo em relação a linha base. Outra configuração interessante é a possibilidade de rotacionar e/ou dimensionar caracteres de diversas formas.</p>
-<p><img alt="Janela de edição de estilos de parágrafo do LibreOffice Writer: aba Posição." src="../../../img/informatica/estilos-paragrafo-posicao.png" /></p>
-<h4 id="aba-estruturas-de-topicos">Aba Estruturas de Tópicos<a class="headerlink" href="#aba-estruturas-de-topicos" title="Permanent link">&para;</a></h4>
+<p><img alt="Janela de edição de estilos de parágrafo do LibreOffice Writer: aba Posição." src="../../../img/informatica/estilos-paragrafo-posicao.png"/></p>
+<h4 id="aba-estruturas-de-topicos">Aba Estruturas de Tópicos<a class="headerlink" href="#aba-estruturas-de-topicos" title="Permanent link">¶</a></h4>
 <p>A configuração de estrutura de tópicos é um recurso de grande valia para geração de sumário automático, por exemplo. Isso porque todo estilo de parágrafo está vinculado a um nível de estrutura específico do texto, que ao todo são 11. Dentre estes 11 níveis consta o <em>Corpo do Texto</em>, que refere-se ao conteúdo escrito e que não tem relação com a hierarquia de títulos do documento. Os demais 10 níveis, nomeados de <em>Nível 1</em> a <em>Nível 10</em>, compreendem toda hierarquia de estrutura de títulos. Deste modo, se um determinado estilo for vinculado ao <em>Nível 2</em>, ele automaticamente indicará que o conteúdo do parágrafo corresponde a um título de nível 2 no documento.</p>
 <p>Na configuração de <em>Numeração</em> especificamos qual é o estilo de lista utilizado para numerar o parágrafo. Também é possível habilitar e configurar a numeração das linhas do parágrafo, recurso muito interessante para redação de atas, por exemplo.</p>
-<p><img alt="Janela de edição de estilos de parágrafo do LibreOffice Writer: aba Estrutura de Tópicos." src="../../../img/informatica/estilos-paragrafo-estrutura-topicos.png" /></p>
+<p><img alt="Janela de edição de estilos de parágrafo do LibreOffice Writer: aba Estrutura de Tópicos." src="../../../img/informatica/estilos-paragrafo-estrutura-topicos.png"/></p>
 <p>No caso da geração de sumário automático, cria-se um estilo para cada um dos 10 níveis da estrutura de tópicos, associando-os com um estilo de lista específico. Feito isso, basta configurar o documento para fazer uso dos estilos criados para numerar os diferentes capítulos. Tal configuração é feita por meio do menu <em>Ferramentas-&gt; Numeração de Capítulos</em>, o qual dá acesso à janela de configurações.</p>
-<p><img alt="Janela de configuração de numeração de capítulos do LibreOffice Writer" src="../../../img/informatica/numeracao-capitulos.png" /></p>
-<h3 id="estilos-de-caracteres">Estilos de Caracteres<a class="headerlink" href="#estilos-de-caracteres" title="Permanent link">&para;</a></h3>
+<p><img alt="Janela de configuração de numeração de capítulos do LibreOffice Writer" src="../../../img/informatica/numeracao-capitulos.png"/></p>
+<h3 id="estilos-de-caracteres">Estilos de Caracteres<a class="headerlink" href="#estilos-de-caracteres" title="Permanent link">¶</a></h3>
 <p>Estilos de caractere permitem definir formatação específica para um único caractere ou palavra em meio a um parágrafo. Tal qual ocorre com os estilos de parágrafo, a criação de um estilo de caractere é feito clicando-se com o botão direito sobre a área branco do <em>Gerenciador de Estilos</em>, naturalmente estando agora na categoria <em>Estilos de Caractere</em>, selecionando a opção <em>Novo</em>.</p>
 <p>As principais opções de configuração de estilos de caractere são oferecidas pelas abas <em>Organizador</em>, <em>Fonte</em>, <em>Efeito de Fonte</em> e <em>Posição</em>, todas elas já abordadas em detalhes.</p>
-<p><img alt="Janela de configuração de estilos de caractere do LibreOffice Writer" src="../../../img/informatica/estilos-caracteres.png" /></p>
-<h3 id="estilos-de-pagina">Estilos de Página<a class="headerlink" href="#estilos-de-pagina" title="Permanent link">&para;</a></h3>
+<p><img alt="Janela de configuração de estilos de caractere do LibreOffice Writer" src="../../../img/informatica/estilos-caracteres.png"/></p>
+<h3 id="estilos-de-pagina">Estilos de Página<a class="headerlink" href="#estilos-de-pagina" title="Permanent link">¶</a></h3>
 <p>Assim como parágrafos e caracteres, as páginas de um documento também podem receber estilos de formatação. Normalmente os estilos de página são úteis para configurar margens, orientação, bordas e a aparência do cabeçalho, rodapé e notas de rodapé. O procedimento utilizado para criar um novo estilo de página segue o mesmo procedimento dos estilos de caractere e parágrafo. Há, contudo, alterações substanciais nas opções de formatação que podem ser configuradas, conforme podemos ver na tela a seguir.</p>
-<p><img alt="Janela de configuração de estilos de página do LibreOffice Writer." src="../../../img/informatica/estilos-pagina.png" /></p>
-<h4 id="aba-pagina">Aba Página<a class="headerlink" href="#aba-pagina" title="Permanent link">&para;</a></h4>
+<p><img alt="Janela de configuração de estilos de página do LibreOffice Writer." src="../../../img/informatica/estilos-pagina.png"/></p>
+<h4 id="aba-pagina">Aba Página<a class="headerlink" href="#aba-pagina" title="Permanent link">¶</a></h4>
 <p>As configurações de página vão desde aspectos básicos, como formato do papel, margens e orientação a configurações mais avançadas de leiaute, como estilos vinculados somente às páginas da direita ou da esquerda e o tipo de numeração a ser utilizado. Um mesmo documento pode apresentar diversos estilos de página vinculados, em primeiro momento, pela possibilidade de um estilo de página vincular-se a um próximo estilo (<em>Aba Organizador</em>) e, em segundo momento, pela possibilidade de secção do documento em diferentes partes lógicas.</p>
 <p>Este processo de seccionamento é feito pelo menu <em>Inserir -&gt; Quebra Manual</em>. Dentre as opções oferecidas (quebra de linha, coluna e página), a quebra de página permite, a partir da posição do cursor, modificar o fluxo de estilos de página aplicados. As quebras de página são necessárias pois representam o único meio de alterar os fluxos de estilo sem modificar o documento integralmente, afinal inicialmente o documento encontra-se integralmente dentro de uma única seção de conteúdo. </p>
-<p><img alt="Janela de edição de estilos de página do LibreOffice Writer: aba Página" src="../../../img/informatica/estilos-pagina-pagina.png" /></p>
-<p><img alt="Estilos de página: Aba página e janela de inserção de quebras no documento." src="../../../img/informatica/inserir-quebra.png" /></p>
-<h4 id="aba-area">Aba Área<a class="headerlink" href="#aba-area" title="Permanent link">&para;</a></h4>
+<p><img alt="Janela de edição de estilos de página do LibreOffice Writer: aba Página" src="../../../img/informatica/estilos-pagina-pagina.png"/></p>
+<p><img alt="Estilos de página: Aba página e janela de inserção de quebras no documento." src="../../../img/informatica/inserir-quebra.png"/></p>
+<h4 id="aba-area">Aba Área<a class="headerlink" href="#aba-area" title="Permanent link">¶</a></h4>
 <p>Permite configurar o preenchimento de fundo da página. Comumente nenhum preenchimento é utilizado, mas a ferramenta Writer permite utilizar preenchimentos de diferentes categorias, como <em>Cor</em>, <em>Gradiente</em>, <em>Bitmap</em>,  <em>Padronagem</em> e <em>Hachurado</em>. Para ilustrar, imagem a seguir apresenta a opção preenchimento de área por hachuras.</p>
-<p><img alt="Janela de configuração de estilos de página do LibreOffice Writer: aba Área" src="../../../img/informatica/estilos-pagina-area.png" /></p>
-<h4 id="aba-transparencia">Aba Transparência<a class="headerlink" href="#aba-transparencia" title="Permanent link">&para;</a></h4>
+<p><img alt="Janela de configuração de estilos de página do LibreOffice Writer: aba Área" src="../../../img/informatica/estilos-pagina-area.png"/></p>
+<h4 id="aba-transparencia">Aba Transparência<a class="headerlink" href="#aba-transparencia" title="Permanent link">¶</a></h4>
 <p>Sendo possível aplicar diferentes tipos de preenchimento à área da página, podemos também aplicar diferentes estratégias de transparência, como gradiente, padrão ou simplesmente nenhuma. Importante considerar que a transparência tem por efeito tornar gradualmente visível aquilo que encontra-se atrás do preenchimento e que a escala de valores inicia em 0%, indicando total opacidade até 100%, conferindo total transparência à área.</p>
-<p><img alt="Janela de configuração de estilos de página do LibreOffice Writer: aba Transparência" src="../../../img/informatica/estilos-pagina-transparencia.png" /></p>
-<h4 id="aba-cabecalho-e-aba-rodape">Aba Cabeçalho e Aba Rodapé<a class="headerlink" href="#aba-cabecalho-e-aba-rodape" title="Permanent link">&para;</a></h4>
+<p><img alt="Janela de configuração de estilos de página do LibreOffice Writer: aba Transparência" src="../../../img/informatica/estilos-pagina-transparencia.png"/></p>
+<h4 id="aba-cabecalho-e-aba-rodape">Aba Cabeçalho e Aba Rodapé<a class="headerlink" href="#aba-cabecalho-e-aba-rodape" title="Permanent link">¶</a></h4>
 <p>Cabeçalhos e rodapés são áreas nas margens superior e inferior das páginas para adicionar textos ou figuras. Os cabeçalhos e rodapés são adicionados ao estilo de página atual. Todas as páginas que usarem o mesmo estilo receberão automaticamente o cabeçalho ou rodapé adicionado. É possível inserir campos, tais como números de páginas e títulos de capítulos, nos cabeçalhos e rodapés de um documento de texto.</p>
 <p>Quando configuramos cabeçalho e rodapé no estilo de página, estamos informando a aparência e formato que tais estruturas terão nas páginas onde o estilo em questão for aplicado. Cabeçalho e rodapé são estruturas opcionais, podendo ser exibidas ou não no documento.</p>
 <p>Os principais atributos de formatação relacionados aos cabeçalhos são a repetição do conteúdo, tanto em páginas da esquerda quanto da direita e se a primeira página terá o mesmo conteúdo que as demais. Adicionalmente também é possível especificar as margens do cabeçalho (esquerda e direita). Para rodapé, os mesmos atributos de formatação de cabeçalho são aplicados.</p>
-<p><img alt="Janela de edição de estilos de página do LibreOffice Writer: Aba Cabeçalho" src="../../../img/informatica/estilos-pagina-cabecalho.png" /></p>
-<p><img alt="Janela de edição de estilos de página do LibreOffice Writer: Aba Rodapé" src="../../../img/informatica/estilos-pagina-rodape.png" /></p>
-<h4 id="aba-bordas">Aba Bordas<a class="headerlink" href="#aba-bordas" title="Permanent link">&para;</a></h4>
+<p><img alt="Janela de edição de estilos de página do LibreOffice Writer: Aba Cabeçalho" src="../../../img/informatica/estilos-pagina-cabecalho.png"/></p>
+<p><img alt="Janela de edição de estilos de página do LibreOffice Writer: Aba Rodapé" src="../../../img/informatica/estilos-pagina-rodape.png"/></p>
+<h4 id="aba-bordas">Aba Bordas<a class="headerlink" href="#aba-bordas" title="Permanent link">¶</a></h4>
 <p>Bordas são contornos aplicados a diferentes objetos, dentre eles, às páginas. Na configuração de bordas pode-se especificar quais dos lados a borda estará ativa. Quando ativa, é possível também determinar o tipo de linha, espessura, cor, distância em relação ao conteúdo e efeito de sombra. Todas as opções disponíveis são apresentadas na aba <em>Bordas</em>.</p>
-<p><img alt="Janela de configuração de estilos de página do LibreOffice Writer: aba Borda" src="../../../img/informatica/estilos-pagina-borda.png" /></p>
-<h4 id="aba-colunas">Aba Colunas<a class="headerlink" href="#aba-colunas" title="Permanent link">&para;</a></h4>
+<p><img alt="Janela de configuração de estilos de página do LibreOffice Writer: aba Borda" src="../../../img/informatica/estilos-pagina-borda.png"/></p>
+<h4 id="aba-colunas">Aba Colunas<a class="headerlink" href="#aba-colunas" title="Permanent link">¶</a></h4>
 <p>O espaço contido entre as margens, que é destinado ao conteúdo do documento, a depender do estilo da página, pode ser subdividido em colunas, na quantidade que o usuário desejar. Quando a quantidade de colunas for superior a 1 (um), torna-se possível configurar a largura de cada uma das colunas, espaçamento entre as mesmas e eventualmente as características da linha que as separa.</p>
-<p><img alt="Janela de configuração de estilos de página do LibreOffice Writer: aba Coluna" src="../../../img/informatica/estilos-pagina-coluna.png" /></p>
-<h4 id="aba-notas-de-rodape">Aba Notas de Rodapé<a class="headerlink" href="#aba-notas-de-rodape" title="Permanent link">&para;</a></h4>
+<p><img alt="Janela de configuração de estilos de página do LibreOffice Writer: aba Coluna" src="../../../img/informatica/estilos-pagina-coluna.png"/></p>
+<h4 id="aba-notas-de-rodape">Aba Notas de Rodapé<a class="headerlink" href="#aba-notas-de-rodape" title="Permanent link">¶</a></h4>
 <p>Por vezes, na construção de um documento de texto, torna-se conveniente adicionar uma anotação explicativa ao pé da página. Comumente tal anotação está diretamente vinculada a uma palavra ou trecho de parágrafo da página em que se encontra. A este recurso tipográfico chamamos de <em>nota de rodapé</em>. No Writer, as configurações de formatação das notas de rodapé são feitas por meio dos estilos de página.</p>
 <p>As opções de formatação oferecidas permitem controlar a área reservada para as notas e a configuração da linha separadora, que estabelece a divisa entre o texto e as suas respectivas notas. Com relação à linha separadora, é possível especificar a posição horizontal da mesma, sua espessura, cor, comprimento e distanciamento em relação a primeira nota. </p>
-<p><img alt="Janela de configuração de estilos de página do LibreOffice Writer: aba Notas de Rodapé" src="../../../img/informatica/estilos-pagina-nota-rodape.png" /></p>
-<h2 id="referencias">Referências<a class="headerlink" href="#referencias" title="Permanent link">&para;</a></h2>
+<p><img alt="Janela de configuração de estilos de página do LibreOffice Writer: aba Notas de Rodapé" src="../../../img/informatica/estilos-pagina-nota-rodape.png"/></p>
+<h2 id="referencias">Referências<a class="headerlink" href="#referencias" title="Permanent link">¶</a></h2>
 <p>The Document Foundation. <strong>Ajuda do LibreOffice 7.1</strong>. Disponível em <a href="https://help.libreoffice.org/latest/pt-BR/text/shared/05/new_help.html?&amp;DbPAR=WRITER">https://help.libreoffice.org/latest/pt-BR/text/shared/05/new_help.html?&amp;DbPAR=WRITER</a>. Acesso em 21 mai. 2021.</p>
-                
-                  
-                
-              
-              
-                
-
-
-              
-            </article>
-          </div>
-        </div>
-        
-          <a href="#" class="md-top md-icon" data-md-component="top" data-md-state="hidden">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"/></svg>
-          </a>
-        
-      </main>
-      
-        
+</article>
+</div>
+</div>
+<a class="md-top md-icon" data-md-component="top" data-md-state="hidden" href="#">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path></svg>
+</a>
+</main>
 <footer class="md-footer">
-  
-    <nav class="md-footer__inner md-grid" aria-label="Footer">
-      
-        <a href="../introducao/" class="md-footer__link md-footer__link--prev" rel="prev">
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
-          </div>
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
+<nav aria-label="Footer" class="md-footer__inner md-grid">
+<a class="md-footer__link md-footer__link--prev" href="../introducao/" rel="prev">
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"></path></svg>
+</div>
+<div class="md-footer__title">
+<div class="md-ellipsis">
+<span class="md-footer__direction">
                 Previous
               </span>
               Writer
             </div>
-          </div>
-        </a>
-      
-      
-        <a href="../abnt/" class="md-footer__link md-footer__link--next" rel="next">
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
+</div>
+</a>
+<a class="md-footer__link md-footer__link--next" href="../abnt/" rel="next">
+<div class="md-footer__title">
+<div class="md-ellipsis">
+<span class="md-footer__direction">
                 Next
               </span>
               ABNT
             </div>
-          </div>
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
-          </div>
-        </a>
-      
-    </nav>
-  
-  <div class="md-footer-meta md-typeset">
-    <div class="md-footer-meta__inner md-grid">
-      <div class="md-footer-copyright">
-        
-          <div class="md-footer-copyright__highlight">
-            Copyright &copy; 2021 -  Diego A. Lusa
+</div>
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"></path></svg>
+</div>
+</a>
+</nav>
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-footer-copyright">
+<div class="md-footer-copyright__highlight">
+            Copyright © 2021 -  Diego A. Lusa
           </div>
         
         Made with
-        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+        <a href="https://squidfunk.github.io/mkdocs-material/" rel="noopener" target="_blank">
           Material for MkDocs
         </a>
-        
-      </div>
-      
-  <div class="md-footer-social">
-    
-      
-      
-        
-        
-      
-      <a href="https://www.linkedin.com/in/diegolusa/" target="_blank" rel="noopener" title="www.linkedin.com" class="md-footer-social__link">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/></svg>
-      </a>
-    
-      
-      
-        
-        
-      
-      <a href="http://github.com/diegolusa" target="_blank" rel="noopener" title="github.com" class="md-footer-social__link">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
-      </a>
-    
-  </div>
-
-    </div>
-  </div>
+</div>
+<div class="md-footer-social">
+<a class="md-footer-social__link" href="https://www.linkedin.com/in/diegolusa/" rel="noopener" target="_blank" title="www.linkedin.com">
+<svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"></path></svg>
+</a>
+<a class="md-footer-social__link" href="http://github.com/diegolusa" rel="noopener" target="_blank" title="github.com">
+<svg viewbox="0 0 496 512" xmlns="http://www.w3.org/2000/svg"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"></path></svg>
+</a>
+</div>
+</div>
+</div>
 </footer>
-      
-    </div>
-    <div class="md-dialog" data-md-component="dialog">
-      <div class="md-dialog__inner md-typeset"></div>
-    </div>
-    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.top", "navigation.instant", "toc.integrate", "header.autohide"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}, "search": "../../../assets/javascripts/workers/search.fe42c31b.min.js", "version": null}</script>
-    
-    
-      <script src="../../../assets/javascripts/bundle.7353b375.min.js"></script>
-      
-    
-  </body>
+</div>
+<div class="md-dialog" data-md-component="dialog">
+<div class="md-dialog__inner md-typeset"></div>
+</div>
+<script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.top", "navigation.instant", "toc.integrate", "header.autohide"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}, "search": "../../../assets/javascripts/workers/search.fe42c31b.min.js", "version": null}</script>
+<script src="../../../assets/javascripts/bundle.7353b375.min.js"></script>
+</body>
 </html>

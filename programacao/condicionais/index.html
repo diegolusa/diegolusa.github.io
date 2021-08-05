@@ -1,573 +1,303 @@
 
-<!doctype html>
-<html lang="en" class="no-js">
-  <head>
-    
-      <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width,initial-scale=1">
-      
-      
-      
-      
-      <link rel="icon" href="../../img/icon.ico">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.1.1">
-    
-    
-      
-        <title>Desvios Condicionais - Diego A. Lusa</title>
-      
-    
-    
-      <link rel="stylesheet" href="../../assets/stylesheets/main.9299cb39.min.css">
-      
-        
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.ef6f36e2.min.css">
-        
-      
-    
-    
-    
-      
-        
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7C&display=fallback">
-        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:""}</style>
-      
-    
-    
-    
-      <link rel="stylesheet" href="../../css/custom.css">
-    
-    
-      
-    
-    
-  </head>
-  
-  
-    
-    
-      
-    
-    
-    
-    
-    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="black" data-md-color-accent="">
-  
-    
-    <script>function __prefix(e){return new URL("../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
-    
-      <script>var palette=__get("__palette");if(null!==palette&&"object"==typeof palette.color)for(var key in palette.color)document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
-    
-    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
-    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
-    <label class="md-overlay" for="__drawer"></label>
-    <div data-md-component="skip">
-      
-        
-        <a href="#logica-booleana" class="md-skip">
+<!DOCTYPE html>
+
+<html class="no-js" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<link href="../../img/icon.ico" rel="icon"/>
+<meta content="mkdocs-1.1.2, mkdocs-material-7.1.1" name="generator"/>
+<title>Desvios Condicionais - Diego A. Lusa</title>
+<link href="../../assets/stylesheets/main.9299cb39.min.css" rel="stylesheet"/>
+<link href="../../assets/stylesheets/palette.ef6f36e2.min.css" rel="stylesheet"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7C&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font-family:"Roboto";--md-code-font-family:""}</style>
+<link href="../../css/custom.css" rel="stylesheet"/>
+</head>
+<body data-md-color-accent="" data-md-color-primary="black" data-md-color-scheme="default" dir="ltr">
+<script>function __prefix(e){return new URL("../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+<script>var palette=__get("__palette");if(null!==palette&&"object"==typeof palette.color)for(var key in palette.color)document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#logica-booleana">
           Skip to content
         </a>
-      
-    </div>
-    <div data-md-component="announce">
-      
-    </div>
-    
-      <header class="md-header" data-md-component="header">
-  <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../.." title="Diego A. Lusa" class="md-header__button md-logo" aria-label="Diego A. Lusa" data-md-component="logo">
-      
-  <img src="../../img/icon.png" alt="logo">
-
-    </a>
-    <label class="md-header__button md-icon" for="__drawer">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
-    </label>
-    <div class="md-header__title" data-md-component="header-title">
-      <div class="md-header__ellipsis">
-        <div class="md-header__topic">
-          <span class="md-ellipsis">
+</div>
+<div data-md-component="announce">
+</div>
+<header class="md-header" data-md-component="header">
+<nav aria-label="Header" class="md-header__inner md-grid">
+<a aria-label="Diego A. Lusa" class="md-header__button md-logo" data-md-component="logo" href="../.." title="Diego A. Lusa">
+<img alt="logo" src="../../img/icon.png"/>
+</a>
+<label class="md-header__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"></path></svg>
+</label>
+<div class="md-header__title" data-md-component="header-title">
+<div class="md-header__ellipsis">
+<div class="md-header__topic">
+<span class="md-ellipsis">
             Diego A. Lusa
           </span>
-        </div>
-        <div class="md-header__topic" data-md-component="header-topic">
-          <span class="md-ellipsis">
+</div>
+<div class="md-header__topic" data-md-component="header-topic">
+<span class="md-ellipsis">
             
               Desvios Condicionais
             
           </span>
-        </div>
-      </div>
-    </div>
-    
-      <form class="md-header__option" data-md-component="palette">
-        
-          
-          
-          <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="black" data-md-color-accent="" type="radio" name="__palette" id="__palette_1">
-          <label class="md-header__button md-icon" title="Mudar para modo escuro" for="__palette_2" hidden>
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M7 10a2 2 0 0 1 2 2 2 2 0 0 1-2 2 2 2 0 0 1-2-2 2 2 0 0 1 2-2m10-3a5 5 0 0 1 5 5 5 5 0 0 1-5 5H7a5 5 0 0 1-5-5 5 5 0 0 1 5-5h10M7 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3h10a3 3 0 0 0 3-3 3 3 0 0 0-3-3H7z"/></svg>
-          </label>
-        
-          
-          
-          <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="" type="radio" name="__palette" id="__palette_2">
-          <label class="md-header__button md-icon" title="Mudar para modo claro" for="__palette_1" hidden>
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3z"/></svg>
-          </label>
-        
-      </form>
-    
-    
-    
-      <label class="md-header__button md-icon" for="__search">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
-      </label>
-      
+</div>
+</div>
+</div>
+<form class="md-header__option" data-md-component="palette">
+<input class="md-option" data-md-color-accent="" data-md-color-media="" data-md-color-primary="black" data-md-color-scheme="default" id="__palette_1" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_2" hidden="" title="Mudar para modo escuro">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10a2 2 0 0 1 2 2 2 2 0 0 1-2 2 2 2 0 0 1-2-2 2 2 0 0 1 2-2m10-3a5 5 0 0 1 5 5 5 5 0 0 1-5 5H7a5 5 0 0 1-5-5 5 5 0 0 1 5-5h10M7 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3h10a3 3 0 0 0 3-3 3 3 0 0 0-3-3H7z"></path></svg>
+</label>
+<input class="md-option" data-md-color-accent="" data-md-color-media="" data-md-color-primary="black" data-md-color-scheme="slate" id="__palette_2" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_1" hidden="" title="Mudar para modo claro">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3z"></path></svg>
+</label>
+</form>
+<label class="md-header__button md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"></path></svg>
+</label>
 <div class="md-search" data-md-component="search" role="dialog">
-  <label class="md-search__overlay" for="__search"></label>
-  <div class="md-search__inner" role="search">
-    <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
-      <label class="md-search__icon md-icon" for="__search">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
-      </label>
-      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
-      </button>
-    </form>
-    <div class="md-search__output">
-      <div class="md-search__scrollwrap" data-md-scrollfix>
-        <div class="md-search-result" data-md-component="search-result">
-          <div class="md-search-result__meta">
+<label class="md-search__overlay" for="__search"></label>
+<div class="md-search__inner" role="search">
+<form class="md-search__form" name="search">
+<input aria-label="Search" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" data-md-state="active" name="query" placeholder="Search" required="" spellcheck="false" type="text"/>
+<label class="md-search__icon md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"></path></svg>
+</label>
+<button aria-label="Clear" class="md-search__icon md-icon" tabindex="-1" type="reset">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"></path></svg>
+</button>
+</form>
+<div class="md-search__output">
+<div class="md-search__scrollwrap" data-md-scrollfix="">
+<div class="md-search-result" data-md-component="search-result">
+<div class="md-search-result__meta">
             Initializing search
           </div>
-          <ol class="md-search-result__list"></ol>
-        </div>
-      </div>
-    </div>
-  </div>
+<ol class="md-search-result__list"></ol>
 </div>
-    
-    
-  </nav>
+</div>
+</div>
+</div>
+</div>
+</nav>
 </header>
-    
-    <div class="md-container" data-md-component="container">
-      
-      
-        
-      
-      <main class="md-main" data-md-component="main">
-        <div class="md-main__inner md-grid">
-          
-            
-              
-              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
-                <div class="md-sidebar__scrollwrap">
-                  <div class="md-sidebar__inner">
-                    
-
-
-  
-
-<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navigation" data-md-level="0">
-  <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="Diego A. Lusa" class="md-nav__button md-logo" aria-label="Diego A. Lusa" data-md-component="logo">
-      
-  <img src="../../img/icon.png" alt="logo">
-
-    </a>
+<div class="md-container" data-md-component="container">
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Navigation" class="md-nav md-nav--primary md-nav--integrated" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="Diego A. Lusa" class="md-nav__button md-logo" data-md-component="logo" href="../.." title="Diego A. Lusa">
+<img alt="logo" src="../../img/icon.png"/>
+</a>
     Diego A. Lusa
   </label>
-  
-  <ul class="md-nav__list" data-md-scrollfix>
-    
-      
-      
-      
-
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../.." class="md-nav__link">
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../..">
         Home
       </a>
-    </li>
-  
-
-    
-      
-      
-      
-
-  
-  
-  
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
-      
-      <label class="md-nav__link" for="__nav_2">
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" id="__nav_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2">
         Informática
         <span class="md-nav__icon md-icon"></span>
-      </label>
-      <nav class="md-nav" aria-label="Informática" data-md-level="1">
-        <label class="md-nav__title" for="__nav_2">
-          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="Informática" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_2">
+<span class="md-nav__icon md-icon"></span>
           Informática
         </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
-            
-  
-  
-  
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_1" type="checkbox" id="__nav_2_1" >
-      
-      <label class="md-nav__link" for="__nav_2_1">
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_1" id="__nav_2_1" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_1">
         Editores de Texto
         <span class="md-nav__icon md-icon"></span>
-      </label>
-      <nav class="md-nav" aria-label="Editores de Texto" data-md-level="2">
-        <label class="md-nav__title" for="__nav_2_1">
-          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="Editores de Texto" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_1">
+<span class="md-nav__icon md-icon"></span>
           Editores de Texto
         </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../informatica/editores-texto/introducao/" class="md-nav__link">
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../informatica/editores-texto/introducao/">
         Writer
       </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../informatica/editores-texto/estilos/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../informatica/editores-texto/estilos/">
         Estilos
       </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../informatica/editores-texto/abnt/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../informatica/editores-texto/abnt/">
         ABNT
       </a>
-    </li>
-  
-
-          
-        </ul>
-      </nav>
-    </li>
-  
-
-          
-        </ul>
-      </nav>
-    </li>
-  
-
-    
-      
-      
-      
-
-  
-  
-    
-  
-  
-    
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
-      
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
-      
-      <label class="md-nav__link" for="__nav_3">
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" id="__nav_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_3">
         Programação
         <span class="md-nav__icon md-icon"></span>
-      </label>
-      <nav class="md-nav" aria-label="Programação" data-md-level="1">
-        <label class="md-nav__title" for="__nav_3">
-          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="Programação" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_3">
+<span class="md-nav__icon md-icon"></span>
           Programação
         </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../linguagens/" class="md-nav__link">
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../linguagens/">
         Linguagens de Programação
       </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../ambiente/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../ambiente/">
         Ambiente de Desenvolvimento
       </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../compilacao/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../compilacao/">
         Compilação
       </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../identificadores/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../identificadores/">
         Identificadores
       </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../io/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../io/">
         Entrada e Saída
       </a>
-    </li>
-  
-
-          
-            
-  
-  
-    
-  
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
+</li>
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
           Condicionais
           <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+</label>
+<a class="md-nav__link md-nav__link--active" href="./">
         Condicionais
       </a>
-      
-        
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
       Table of contents
     </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#logica-booleana" class="md-nav__link">
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#logica-booleana">
     Lógica Booleana
   </a>
-  
-    <nav class="md-nav" aria-label="Lógica Booleana">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#operador-and-conjuncao" class="md-nav__link">
+<nav aria-label="Lógica Booleana" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#operador-and-conjuncao">
     Operador AND (conjunção)
   </a>
-  
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#operador-or-disjuncao" class="md-nav__link">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#operador-or-disjuncao">
     Operador OR (disjunção)
   </a>
-  
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#operador-not" class="md-nav__link">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#operador-not">
     Operador NOT (~)
   </a>
-  
 </li>
-        
-      </ul>
-    </nav>
-  
+</ul>
+</nav>
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#logica-booleana-aplicada-a-programacao" class="md-nav__link">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#logica-booleana-aplicada-a-programacao">
     Lógica booleana aplicada à programação
   </a>
-  
-    <nav class="md-nav" aria-label="Lógica booleana aplicada à programação">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#comando-if-else" class="md-nav__link">
+<nav aria-label="Lógica booleana aplicada à programação" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#comando-if-else">
     Comando IF ELSE
   </a>
-  
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#comando-if-else-if" class="md-nav__link">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#comando-if-else-if">
     Comando IF ELSE IF
   </a>
-  
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#operador-ternario" class="md-nav__link">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#operador-ternario">
     Operador ternário
   </a>
-  
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#switch" class="md-nav__link">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#switch">
     Switch
   </a>
-  
 </li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
+</ul>
 </nav>
-      
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../iteracao/" class="md-nav__link">
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../iteracao/">
         Laços de Repetição
       </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../arranjos/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../arranjos/">
         Arranjos
       </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../ponteiros/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../ponteiros/">
         Ponteiros
       </a>
-    </li>
-  
-
-          
-        </ul>
-      </nav>
-    </li>
-  
-
-    
-      
-      
-      
-
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../about/" class="md-nav__link">
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../about/">
         Sobre
       </a>
-    </li>
-  
-
-    
-  </ul>
+</li>
+</ul>
 </nav>
-                  </div>
-                </div>
-              </div>
-            
-            
-          
-          <div class="md-content" data-md-component="content">
-            <article class="md-content__inner md-typeset">
-              
-                
-                
-                  <h1>Condicionais</h1>
-                
-                <p>Na programação, os estruturas de seleção são um dos componentes básicos na construção dos programas. Entendemos por estruturas de seleção comandos que permitem desviar o fluxo natural de execução das instruções de um programa sob determinadas condições. Tais estruturas permitem criar ramificações de fluxo e estão intimamente relacionadas com o uso da lógica booleana.</p>
+</div>
+</div>
+</div>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<h1>Condicionais</h1>
+<p>Na programação, os estruturas de seleção são um dos componentes básicos na construção dos programas. Entendemos por estruturas de seleção comandos que permitem desviar o fluxo natural de execução das instruções de um programa sob determinadas condições. Tais estruturas permitem criar ramificações de fluxo e estão intimamente relacionadas com o uso da lógica booleana.</p>
 <p>Desta forma, a compreensão de desvios condicionais requer bons fundamentos de lógica, o que tentaremos oferecer na sequência, antes de propriamente apresentarmos os comandos de seleção.</p>
-<h2 id="logica-booleana">Lógica Booleana<a class="headerlink" href="#logica-booleana" title="Permanent link">&para;</a></h2>
+<h2 id="logica-booleana">Lógica Booleana<a class="headerlink" href="#logica-booleana" title="Permanent link">¶</a></h2>
 <p>Como sabemos, computação e matemática são áreas irmãs. Uma das mais relevantes contribuições da matemática incorporadas à computação foi do matemático inglês George Boole (1815-1864), que desenvolveu um sistema algébrico binário essencial ao funcionamento dos computadores. De modo simplificado, as ideias de Boole permitem obter conclusões lógicas a partir de variáveis que representam apenas dois valores (0 e 1) e operadores que retornam apenas dois valores (0 e 1).</p>
 <div class="admonition info">
 <p class="admonition-title">Dica</p>
@@ -584,7 +314,7 @@
 <p class="admonition-title">Atenção</p>
 <p>Estamos direcionando o entendimento da lógica booleana para a programação, omitindo alguns formalismos matemáticos propositalmente.</p>
 </div>
-<h3 id="operador-and-conjuncao">Operador AND (conjunção)<a class="headerlink" href="#operador-and-conjuncao" title="Permanent link">&para;</a></h3>
+<h3 id="operador-and-conjuncao">Operador AND (conjunção)<a class="headerlink" href="#operador-and-conjuncao" title="Permanent link">¶</a></h3>
 <p>O operador lógico <strong>AND</strong> (^), também conhecido como conjunção, é definido como sendo um <code>operador lógico binário que retorna VERDADEIRO sempre que TODOS os seus operandos forem verdadeiros</code>.</p>
 <p>Para facilitar a compreensão, utilizamos uma tabela de valores lógicos, a <strong>tabela verdade</strong>, para expressar os possíveis resultados da aplicação do operador <strong>AND</strong> sobre duas proposições. Vamos supor que <em>p</em> tenha seus valores expressos na coluna e <em>q</em>, nas linhas. Deste modo, os possívels resultados de <em>p</em> ^ <em>q</em> são:</p>
 <table>
@@ -612,7 +342,7 @@
 <p class="admonition-title">Resumo</p>
 <p>A conclusão lógica do operador AND somente é verdadeira se todas as proposições forem verdadeiras.</p>
 </div>
-<h3 id="operador-or-disjuncao">Operador OR (disjunção)<a class="headerlink" href="#operador-or-disjuncao" title="Permanent link">&para;</a></h3>
+<h3 id="operador-or-disjuncao">Operador OR (disjunção)<a class="headerlink" href="#operador-or-disjuncao" title="Permanent link">¶</a></h3>
 <p>O operador lógico <strong>OR</strong> (∨), também conhecido como disjunção, é definido como sendo um <code>operador lógico binário que retorna FALSO sempre que TODOS os seus operandos forem falsos</code>.</p>
 <p>Utilizando a tabela verdade para expressar os possíveis resultados de <em>p</em> v <em>q</em> temos:</p>
 <table>
@@ -640,7 +370,7 @@
 <p class="admonition-title">Resumo</p>
 <p>A conclusão lógica do operador OR somente é falsas se todas as proposições forem falsas.</p>
 </div>
-<h3 id="operador-not">Operador NOT (~)<a class="headerlink" href="#operador-not" title="Permanent link">&para;</a></h3>
+<h3 id="operador-not">Operador NOT (~)<a class="headerlink" href="#operador-not" title="Permanent link">¶</a></h3>
 <p>O operador lógico <strong>NOT</strong> (~), também conhecido como negação, é definido como sendo um <code>operador lógico unário que retorna a negação (inverso lógico) de seu operando</code>.</p>
 <p>Utilizando a tabela verdade para expressar os possíveis resultados de <em>~p</em> temos:</p>
 <table>
@@ -666,7 +396,7 @@
 <p>A conclusão lógica do operador NOT é <em>verdadeiro</em> quando receber <em>falso</em>, e <em>falso</em> quando receber verdadeiro</p>
 </div>
 <p>Tudo bem, sabemos o que são proposições lógicas e conhecemos os três operadores lógicos básicos. Mas, de que forma utilizamos tais recursos na programação? ...É justamente isso que vou apresentar na sequência ;)</p>
-<h2 id="logica-booleana-aplicada-a-programacao">Lógica booleana aplicada à programação<a class="headerlink" href="#logica-booleana-aplicada-a-programacao" title="Permanent link">&para;</a></h2>
+<h2 id="logica-booleana-aplicada-a-programacao">Lógica booleana aplicada à programação<a class="headerlink" href="#logica-booleana-aplicada-a-programacao" title="Permanent link">¶</a></h2>
 <p>Microprocessadores possuem uma ou mais unidades lógico-aritméticas (ULA), componente que, como o próprio nome sugere, tem a capacidade de executar instruções aritméticas e instruções lógicas. Utilizando linguagens de programação de alto nível, como C++, temos acesso a estes recursos através de operadores, símbolos que a linguagem define para tais finalidades.</p>
 <p>Especificamente sobre as operações lógicas, precisamos lembrar que o C++ define um tipo de dado específico para representar valores booleanos, o tipo <a href="../identificadores/#literais-booleanos">bool</a>. Quanto aos operadores lógicos, os símbolos utilizados são: <code>&amp;&amp;</code> para AND, <code>||</code> para OR e <code>!</code> para NOT.</p>
 <p>Já os operadores de comparação principais são os seguintes:</p>
@@ -724,15 +454,15 @@
 </code></pre></div>
 <p>Observe que utilizamos o operador <code>&amp;&amp;</code>, uma vez que as três condições (proposições) devem ser atendidas. Portanto, a variável <code>is_selecionado</code> receberá <code>true</code> somente nesta situação.</p>
 <p>Mas o que faremos com a variável <code>is_selecionado</code>? Sabemos que sendo <code>true</code> precisamos indicar ao usuário de nosso programa que o candidato atende os critérios. Ou seja, precisamos <strong>condicionar</strong> a execução de determinadas instruções do programa ao resultado de avaliação da expressão lógica. Como fazer então?</p>
-<h3 id="comando-if-else">Comando IF ELSE<a class="headerlink" href="#comando-if-else" title="Permanent link">&para;</a></h3>
+<h3 id="comando-if-else">Comando IF ELSE<a class="headerlink" href="#comando-if-else" title="Permanent link">¶</a></h3>
 <p>Um dos comandos da linguagem C++ (e de boa parte das outras) é o <code>if</code>. Utilizamos ele para criar desvios condicionais na execução das instruções, que, pela ordem natural, são executadas em sequência.</p>
 <p>A estrutura do comando <code>if</code> é simples e para demostrar, vamos seguir falando do nosso programa hipotético de seleção de candidatos. Observe o código a seguir:</p>
 <div class="highlight"><pre><span></span><code><span class="kt">bool</span> <span class="n">is_selecionado</span> <span class="o">=</span> <span class="n">idade_c</span> <span class="o">&gt;=</span> <span class="mi">18</span> <span class="o">&amp;&amp;</span> <span class="n">altura_c</span> <span class="o">&gt;</span> <span class="mi">160</span> <span class="o">&amp;&amp;</span> <span class="n">peso_c</span> <span class="o">&gt;</span> <span class="mf">60.0</span><span class="p">;</span>
 
 <span class="k">if</span> <span class="p">(</span><span class="n">is_selecionado</span><span class="p">){</span>
-    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Candidato atende aos critérios de seleção&quot;</span><span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"Candidato atende aos critérios de seleção"</span><span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
 <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Candidato desclassificado&quot;</span><span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"Candidato desclassificado"</span><span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></div>
 <p>Perceba que existem três partes do comando <code>if</code> no código.</p>
@@ -744,12 +474,12 @@
 <p>Então, conforme explicamos, nosso código irá executar a instrução <code>cout &lt;&lt; "Candidato atende aos critérios de seleção"&lt;&lt; endl;</code> quando <code>is_selecionado</code> for <code>true</code> e <code>cout &lt;&lt; "Candidato desclassificado"&lt;&lt; endl;</code> quando for <code>false</code>.</p>
 <p>A expressão lógica pode ser informada diretamente no comando <code>if</code>. Inclusive, esta é a forma mais comum de encontrá-la. Assim, podemos simplificar nosso trecho de código, eliminando a variável <code>is_selecionado</code>. Teríamos então:</p>
 <div class="highlight"><pre><span></span><code><span class="k">if</span> <span class="p">(</span><span class="n">idade_c</span> <span class="o">&gt;=</span> <span class="mi">18</span> <span class="o">&amp;&amp;</span> <span class="n">altura_c</span> <span class="o">&gt;</span> <span class="mi">160</span> <span class="o">&amp;&amp;</span> <span class="n">peso_c</span> <span class="o">&gt;</span> <span class="mf">60.0</span><span class="p">){</span>
-    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Candidato atende aos critérios de seleção&quot;</span><span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"Candidato atende aos critérios de seleção"</span><span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
 <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Candidato desclassificado&quot;</span><span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"Candidato desclassificado"</span><span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></div>
-<h3 id="comando-if-else-if">Comando IF ELSE IF<a class="headerlink" href="#comando-if-else-if" title="Permanent link">&para;</a></h3>
+<h3 id="comando-if-else-if">Comando IF ELSE IF<a class="headerlink" href="#comando-if-else-if" title="Permanent link">¶</a></h3>
 <p>Uma variação do comando <code>if</code> permite especificar condições para os blocos <code>else</code>. Para demonstrar seu uso, vamos imaginar um novo programa que apresente a situação de estudantes com base na média final em determinada disciplina. A relação entre as notas e as respectivas situações estão na tabela que segue.</p>
 <table>
 <thead>
@@ -777,20 +507,20 @@
 <div class="highlight"><pre><span></span><code><span class="cm">/*definição de variáveis e leitura de dados...*/</span>
 
 <span class="k">if</span> <span class="p">(</span><span class="n">nota</span><span class="o">&gt;=</span><span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="n">nota</span> <span class="o">&lt;=</span><span class="mf">4.9</span><span class="p">){</span>
-    <span class="n">cout</span> <span class="o">&lt;&lt;</span><span class="s">&quot;Reprovado&quot;</span><span class="p">;</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span><span class="s">"Reprovado"</span><span class="p">;</span>
 <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">nota</span><span class="o">&gt;=</span><span class="mf">5.0</span> <span class="o">&amp;&amp;</span> <span class="n">nota</span> <span class="o">&lt;=</span><span class="mf">6.9</span><span class="p">){</span>
-    <span class="n">cout</span> <span class="o">&lt;&lt;</span><span class="s">&quot;Exame&quot;</span><span class="p">;</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span><span class="s">"Exame"</span><span class="p">;</span>
 <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-    <span class="n">cout</span> <span class="o">&lt;&lt;</span><span class="s">&quot;Aprovado&quot;</span><span class="p">;</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span><span class="s">"Aprovado"</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></div>
 <p>Note que o <code>else if</code> pode aparecer várias vezes na mesma instrução, tantas quantas forem necessárias. E, mais importante: assim que uma condição for avaliada como <code>true</code>, nenhuma outra da mesma instrução será avaliada. </p>
-<h3 id="operador-ternario">Operador ternário<a class="headerlink" href="#operador-ternario" title="Permanent link">&para;</a></h3>
+<h3 id="operador-ternario">Operador ternário<a class="headerlink" href="#operador-ternario" title="Permanent link">¶</a></h3>
 <p>Para algumas situações, podemos utilizar uma simplificação de sintaxe da estrutura <code>if else</code> chamada <strong>operador ternário</strong>. Seu uso é especialmente interessante para testes simples, como aquele que fizemos no programa de seleção de candidatos. Veja a diferença:</p>
-<div class="highlight"><pre><span></span><code>    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="p">(</span><span class="n">idade_c</span> <span class="o">&gt;=</span> <span class="mi">18</span> <span class="o">&amp;&amp;</span> <span class="n">altura_c</span> <span class="o">&gt;</span> <span class="mi">160</span> <span class="o">&amp;&amp;</span> <span class="n">peso_c</span> <span class="o">&gt;</span> <span class="mf">60.0</span> <span class="o">?</span> <span class="s">&quot;Candidato atende aos critérios de seleção&quot;</span><span class="o">:</span> <span class="s">&quot;Candidato desclassificado&quot;</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+<div class="highlight"><pre><span></span><code>    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="p">(</span><span class="n">idade_c</span> <span class="o">&gt;=</span> <span class="mi">18</span> <span class="o">&amp;&amp;</span> <span class="n">altura_c</span> <span class="o">&gt;</span> <span class="mi">160</span> <span class="o">&amp;&amp;</span> <span class="n">peso_c</span> <span class="o">&gt;</span> <span class="mf">60.0</span> <span class="o">?</span> <span class="s">"Candidato atende aos critérios de seleção"</span><span class="o">:</span> <span class="s">"Candidato desclassificado"</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
 </code></pre></div>
 <p>Pelo código, percebemos que a sintaxe do comando é: <code>expressão lógica ? valor quando true : valor quando false</code>. É simples de usar, mas pode prejudicar a legibilidade do código se aplicado para testes mais complexos. Vale o bom senso ;)</p>
-<h3 id="switch">Switch<a class="headerlink" href="#switch" title="Permanent link">&para;</a></h3>
+<h3 id="switch">Switch<a class="headerlink" href="#switch" title="Permanent link">¶</a></h3>
 <p>Finalizamos nosso estudo com o comando <code>switch</code>,  uma estrutura de decisão baseada em casos. Antes de conhecermos a sintaxe do comando, vamos propor um código de exemplo:</p>
 <div class="highlight"><pre><span></span><code>    <span class="kt">int</span> <span class="n">nota</span><span class="p">;</span>
     <span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">nota</span><span class="p">;</span>
@@ -800,20 +530,20 @@
         <span class="k">case</span> <span class="mi">2</span><span class="o">:</span>
         <span class="k">case</span> <span class="mi">3</span><span class="o">:</span>
         <span class="k">case</span> <span class="mi">4</span><span class="o">:</span>
-            <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Reprovado&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+            <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"Reprovado"</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
             <span class="k">break</span><span class="p">;</span>
         <span class="k">case</span> <span class="mi">5</span> <span class="o">:</span>
         <span class="k">case</span> <span class="mi">6</span> <span class="o">:</span>
-            <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Exame&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+            <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"Exame"</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
             <span class="k">break</span><span class="p">;</span>
         <span class="k">case</span> <span class="mi">7</span> <span class="o">:</span>
         <span class="k">case</span> <span class="mi">8</span> <span class="o">:</span>
         <span class="k">case</span> <span class="mi">9</span> <span class="o">:</span>
         <span class="k">case</span> <span class="mi">10</span><span class="o">:</span>
-            <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Aprovado&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+            <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"Aprovado"</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
             <span class="k">break</span><span class="p">;</span>
         <span class="k">default</span><span class="o">:</span>
-            <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Nota inválida&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+            <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"Nota inválida"</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
     <span class="p">}</span>   
 </code></pre></div>
 <p>Nosso exemplo trás importantes informações acerca da sintaxe e uso do comando <code>switch</code>. O primeiro deles é que devemos informar uma variável (ou expressão) que possa ser avaliada como inteiro ou tipo enumerável. No código, a variável <code>nota</code> entre parenteses <code>()</code> serve  a tal finalidade. Objetivamente estamos consultando o valor de <code>nota</code> e estabelecendo o que fazer para cada um dos valores de interesse. Estes valores de interesse estão expressos nos casos (<code>case</code>).</p>
@@ -822,111 +552,70 @@
 <p>Ok, mas por que o código anterior não tem break em vários <code>cases</code>? Bem, porque notas entre <code>1</code> e <code>4</code> estão associadas com a situação <code>Reprovado</code>. Para não repetir a mesma instrução várias vezes, colocamos o break somente no <code>case 4</code>. O mesmo vale para <code>5</code> e <code>6</code> e <code>7</code> a <code>10</code>.</p>
 <p>Já o comando <code>default</code> é especial, executado quando nenhum dos <code>cases</code> anteriores corresponde ao valor da expressão avaliada. A presença do  <code>default</code> é opcional no comando <code>switch</code>.</p>
 <p>Para mais informações sobre desvios condicionais, recomendo a leitura do <a href="https://www.w3schools.com/cpp/cpp_conditions.asp">tutorial da W3C</a> que trata deste assunto.</p>
-                
-                  
-                
-              
-              
-                
-
-
-              
-            </article>
-          </div>
-        </div>
-        
-          <a href="#" class="md-top md-icon" data-md-component="top" data-md-state="hidden">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"/></svg>
-          </a>
-        
-      </main>
-      
-        
+</article>
+</div>
+</div>
+<a class="md-top md-icon" data-md-component="top" data-md-state="hidden" href="#">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path></svg>
+</a>
+</main>
 <footer class="md-footer">
-  
-    <nav class="md-footer__inner md-grid" aria-label="Footer">
-      
-        <a href="../io/" class="md-footer__link md-footer__link--prev" rel="prev">
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
-          </div>
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
+<nav aria-label="Footer" class="md-footer__inner md-grid">
+<a class="md-footer__link md-footer__link--prev" href="../io/" rel="prev">
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"></path></svg>
+</div>
+<div class="md-footer__title">
+<div class="md-ellipsis">
+<span class="md-footer__direction">
                 Previous
               </span>
               Entrada e Saída
             </div>
-          </div>
-        </a>
-      
-      
-        <a href="../iteracao/" class="md-footer__link md-footer__link--next" rel="next">
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
+</div>
+</a>
+<a class="md-footer__link md-footer__link--next" href="../iteracao/" rel="next">
+<div class="md-footer__title">
+<div class="md-ellipsis">
+<span class="md-footer__direction">
                 Next
               </span>
               Laços de Repetição
             </div>
-          </div>
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
-          </div>
-        </a>
-      
-    </nav>
-  
-  <div class="md-footer-meta md-typeset">
-    <div class="md-footer-meta__inner md-grid">
-      <div class="md-footer-copyright">
-        
-          <div class="md-footer-copyright__highlight">
-            Copyright &copy; 2021 -  Diego A. Lusa
+</div>
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"></path></svg>
+</div>
+</a>
+</nav>
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-footer-copyright">
+<div class="md-footer-copyright__highlight">
+            Copyright © 2021 -  Diego A. Lusa
           </div>
         
         Made with
-        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+        <a href="https://squidfunk.github.io/mkdocs-material/" rel="noopener" target="_blank">
           Material for MkDocs
         </a>
-        
-      </div>
-      
-  <div class="md-footer-social">
-    
-      
-      
-        
-        
-      
-      <a href="https://www.linkedin.com/in/diegolusa/" target="_blank" rel="noopener" title="www.linkedin.com" class="md-footer-social__link">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/></svg>
-      </a>
-    
-      
-      
-        
-        
-      
-      <a href="http://github.com/diegolusa" target="_blank" rel="noopener" title="github.com" class="md-footer-social__link">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
-      </a>
-    
-  </div>
-
-    </div>
-  </div>
+</div>
+<div class="md-footer-social">
+<a class="md-footer-social__link" href="https://www.linkedin.com/in/diegolusa/" rel="noopener" target="_blank" title="www.linkedin.com">
+<svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"></path></svg>
+</a>
+<a class="md-footer-social__link" href="http://github.com/diegolusa" rel="noopener" target="_blank" title="github.com">
+<svg viewbox="0 0 496 512" xmlns="http://www.w3.org/2000/svg"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"></path></svg>
+</a>
+</div>
+</div>
+</div>
 </footer>
-      
-    </div>
-    <div class="md-dialog" data-md-component="dialog">
-      <div class="md-dialog__inner md-typeset"></div>
-    </div>
-    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.top", "navigation.instant", "toc.integrate", "header.autohide"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}, "search": "../../assets/javascripts/workers/search.fe42c31b.min.js", "version": null}</script>
-    
-    
-      <script src="../../assets/javascripts/bundle.7353b375.min.js"></script>
-      
-    
-  </body>
+</div>
+<div class="md-dialog" data-md-component="dialog">
+<div class="md-dialog__inner md-typeset"></div>
+</div>
+<script id="__config" type="application/json">{"base": "../..", "features": ["navigation.top", "navigation.instant", "toc.integrate", "header.autohide"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}, "search": "../../assets/javascripts/workers/search.fe42c31b.min.js", "version": null}</script>
+<script src="../../assets/javascripts/bundle.7353b375.min.js"></script>
+</body>
 </html>
