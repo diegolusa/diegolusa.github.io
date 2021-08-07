@@ -7,7 +7,7 @@
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <link href="../../img/icon.ico" rel="icon"/>
 <meta content="mkdocs-1.1.2, mkdocs-material-7.1.1" name="generator"/>
-<title>Linguagens de Programação - Diego A. Lusa</title>
+<title>Funções - Diego A. Lusa</title>
 <link href="../../assets/stylesheets/main.9299cb39.min.css" rel="stylesheet"/>
 <link href="../../assets/stylesheets/palette.ef6f36e2.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
@@ -22,7 +22,7 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
-<a class="md-skip" href="#linguagens-de-maquina">
+<a class="md-skip" href="#retornando-valores">
           Skip to content
         </a>
 </div>
@@ -46,7 +46,7 @@
 <div class="md-header__topic" data-md-component="header-topic">
 <span class="md-ellipsis">
             
-              Linguagens de Programação
+              Funções
             
           </span>
 </div>
@@ -168,58 +168,10 @@
           Programação
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item md-nav__item--active">
-<input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
-<label class="md-nav__link md-nav__link--active" for="__toc">
-          Linguagens de Programação
-          <span class="md-nav__icon md-icon"></span>
-</label>
-<a class="md-nav__link md-nav__link--active" href="./">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../linguagens/">
         Linguagens de Programação
       </a>
-<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
-<label class="md-nav__title" for="__toc">
-<span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#linguagens-de-maquina">
-    Linguagens de Máquina
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#linguagem-assembly">
-    Linguagem Assembly
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#linguagens-de-alto-nvel">
-    Linguagens de Alto Nı́vel
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#linguagens-de-sistema">
-    Linguagens de Sistema
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#linguagens-de-dominio-especifico">
-    Linguagens de Domínio Específico
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#linguagens-visuais">
-    Linguagens Visuais
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#linguagens-esotericas">
-    Linguagens Esotéricas
-  </a>
-</li>
-</ul>
-</nav>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../ambiente/">
@@ -251,10 +203,33 @@
         Laços de Repetição
       </a>
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../funcoes/">
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+          Funções
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./">
         Funções
       </a>
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#retornando-valores">
+    Retornando Valores
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#passando-argumentos">
+    Passando Argumentos
+  </a>
+</li>
+</ul>
+</nav>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../arranjos/">
@@ -281,113 +256,115 @@
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
-<h1>Linguagens de Programação</h1>
-<p>A comunicação humana é possível por meio de diferentes linguagens. No caso do computador, o mesmo se aplica, pois fazemos uso de uma linguagem de programação para elaborar rotinas de computação, ensinando o passo-a-passo para o computador.</p>
-<div class="admonition info">
-<p class="admonition-title">Importante</p>
-<p>Programar é a arte de escrever sequências de instruções (comandos) para, computacionalmente, resolver problemas do mundo real por meio de uma linguagem de programação.</p>
-</div>
-<p>O programador converte problemas do mundo real em <strong>algoritmos</strong> através do processo de abstração. O algoritmo representa a solução computacional do problema, que irá se tornar operacional a partir do momento em que for <strong>codificado</strong> por meio de uma linguagem de programação. Só então o usuário final terá condições de utilizar o <strong>programa</strong> (que é resultado da compilação ou interpretação da codificação) para atender suas necessidades.</p>
-<div class="admonition note">
-<p class="admonition-title">Do problema ao programa</p>
-<p><strong>Problema &gt; Algoritmo &gt; Código-Fonte &gt; Programa</strong></p>
-</div>
-<p>As linguagens de programação podem ser classificadas sob diferentes perspectivas. É possível agrupá-las quanto à:</p>
-<ul>
-<li><em>Geração</em></li>
-<li><em>Domínio da Aplicação</em></li>
-<li><em>Implementação</em></li>
-<li><em>Paradigma</em></li>
-</ul>
-<p>A classificação acima, contudo, não é consenso. De qualquer forma, vamos tentar explorar as linguagens de programação a partir da ótica das gerações e paradigmas.</p>
-<h2 id="linguagens-de-maquina">Linguagens de Máquina<a class="headerlink" href="#linguagens-de-maquina" title="Permanent link">¶</a></h2>
-<p>Interpretada diretamente pelo hardware. É a linguagem que o processador reconhece. Compiladores, interpretadores e montadores convertem linguagens de mais alto nível para linguagem de máquina. Representa a <strong>1º geração das linguagens de programação</strong>.</p>
-<p>Código em linguagem de máquina é normalmente representado em hexadecimal para tornar a leitura mais simples. Contudo, sua codificação original é binária. Programar neste nível é complexo e exige do profissional profundo conhecimento da arquitetura do hardware em que o programa irá executar. Este tipo de código só é portável para arquiteturas idênticas, uma vez que é altamente dependente do hardware que executa.</p>
-<div class="highlight"><pre><span></span><code>8B542408 83FA0077 06B80000 0000C383
-FA027706 B8010000 00C353BB 01000000
-B9010000 008D0419 83FA0376 078BD989
-</code></pre></div>
-<h2 id="linguagem-assembly">Linguagem Assembly<a class="headerlink" href="#linguagem-assembly" title="Permanent link">¶</a></h2>
-<p>A interpretação de código de máquina por seres humanos é extremamente difícil. Reconhecer a funcionalidade do código a partir de sequências de códigos hexadecimais é praticamente uma odisséia. Isso porque o código de máquina não se preocupa com questões de legibilidade,  afinal o processador não precisa desta <em>feature</em>. </p>
-<p>A fim de tornar a programação uma atividade mais amigável para seres humanos, desenvolveu-se uma linguagem cuja sintaxe era mais próxima da escrita em inglês, com as devidas restrições para tornar o código não ambíguo. Além de facilitar a compreensão do algoritmo, a linguagem Assembly trouxe recursos de abstração que permitiram manter a complexidade do programa sob controle (até certo ponto, é claro).</p>
-<p>A Linguagem Assembly foi a primeira tentativa de adicionar abstrações (símbolos chamado de mnemônicos) sobre a linguagem de máquina na esperança de que a programação de software não fosse equiparável a um dos 
-<a href="http://www.perseus.tufts.edu/Herakles/labors.html" target="_blank">Doze Trabalhos de Hércules</a>. Ela representa a <strong>2ª geração das linguagens de programação</strong>.</p>
+<h1>Funções</h1>
+<p>Um dos princípios do paradigma da programação estruturada é o conceito de <code>sub-rotina</code>, também conhecidas como <code>função</code> e/ou <code>procedimento</code> (algumas linguagens de programação diferenciam um do outro). </p>
+<p>Criar <code>sub-rotinas</code> é essencial para administrar a complexidade do software. Não é incomum que softwares tenham milhares, ou mesmo milhões de linhas de código. Se todo esse código não for organizado em partes administráveis e compreensíveis, os programadores terão sérias dificuldades para dar sequência ao projeto.</p>
+<p>O processo de criar sub-rotinas compreende, portanto, a divisão de um grande problema em partes menores, como se fossem blocos, por meio dos quais a solução final será construída. A esse processo chamamos de <code>modularização</code>, um conceito-chave em projetos de software.</p>
+<p>Além de tornar a complexidade administrável por seres humanos, a modularização permite <code>reutilizar</code> código. Jamais esqueça desta palavra - <code>reutilizar</code> - pois ela é o <em>Santo Graal</em> da programação. Reutilizar significa reaproveitar código funcional, testado e validado, o que implica diretamente na redução do tempo e custos de desenvolvimento do projeto.</p>
+<p>Falando especificamente da linguagem C++, podemos afirmar categoricamente que nenhum programa existe sem ter, ao menos, uma função. Se neste momento você pensou na função <code>main</code>, parabéns  😁</p>
+<p>Uma função é um conjunto de instruções agrupadas, comumente identificada por um nome, que são executadas sempre que uma operação de invocação está presente no código.</p>
 <div class="admonition note">
 <p class="admonition-title">Nota</p>
-<p>Perceba que tornou-se necessário "passar" o código-fonte para um software chamado <a href="https://en.wikipedia.org/wiki/Comparison_of_assemblers" target="_blank">Assembler</a> (montador) para gerar o código em linguagem de máquina (executável).</p>
+<p><em>Invocar</em> uma função significa chamá-la pelo nome ou por seu endereço de memória no código.</p>
 </div>
-<p><div class="highlight"><pre><span></span><code>;---------------------------------------------------------------------;
-
-START:
-;---------------------------------------------------------------------;
-;    TEST FOR PRESENCE OF CALCULATOR                      ;
-;---------------------------------------------------------------------;
-           SUB     AX,AX
-           MOV     ES,AX
-           SUB     BH,BH
-           MOV     BL,INT_NUMBER
-           SHL     BX,1
-           SHL     BX,1
-           MOV     DI,ES:[BX]
-           MOV     ES,ES:[BX+Lógica2]
-           ADD     DI,4
-           LEA     SI,TAG
-           MOV     CX,TAG_LEN
-     REPE  CMPSB
-           JE      CALL_CALC
-           MOV     BX,SCREEN_HANDLE
-           MOV     CX,MESSAGE_LEN
-           LEA     DX,MESSAGE
-           MOV     AH,40h
-           INT     21h
-           JMP     SHORT CALC_EXIT
-;---------------------------------------------------------------------;
-;    CALL CALCULATOR                              ;
-;---------------------------------------------------------------------;
-CALL_CALC:
-           MOV     AL,INT_NUMBER
-           MOV     BYTE PTR INT_CODE,AL
-           DB      0CDh      ; INT
+<p>Para criarmos funções é preciso conhecer as regras de sintaxe que a linguagem de programação aplica. Falando do C++, a sintaxe do comando envolve:</p>
+<ul>
+<li><strong>tipo de retorno</strong>: Especifica no cabeçalho da função (sua assinatura) que tipo de valor ela retorna ao chamador. Qualquer tipo disponível pode ser retornado e, para os casos onde o retorno deve ser desconsiderado, utilizamos o tipo especial <code>void</code>.</li>
+<li><strong>identificador</strong>: Assim como variáveis têm nomes, as funções também. As mesmas regras de nomenclatura se aplicam.</li>
+<li><strong>parâmetros</strong>: São variáveis alimentadas com os valores informados (argumentos) no momento em que a função é chamada. Ter parâmetros é algo opcional em uma função. </li>
+<li><strong>instruções</strong>: É o que a função executa. Compreende seu corpo, sua lógica de operação interna.</li>
+<li><strong>retorno</strong>: Comando que finaliza a execução da função e devolve ao chamador o resultado do processamento. Em C++, o retorno é feito através do comando <code>return</code>.</li>
+</ul>
+<p>Vamos utilizar como estudo de caso a própria função <code>main</code>. Observe que começamos pela tipo <code>int</code>, indicando que seu retorno é um número inteiro. Na sequência, temos <code>main</code>, o nome da função. Os parâmetros são declarados no espaço contido entre os parênteses <code>()</code>. Cada declaração de parâmetro compreende seu tipo e nome, tal qual fazemos ao declarar variáveis. Se houver necessidade de mais de um parâmetro, devemos separá-los com vírgula. Por fim, as instruções ficam contidas entre as chaves <code>{}</code>.</p>
+<div class="tabbed-set" data-tabs="1:1"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio"><label for="__tabbed_1_1">C++</label><div class="tabbed-content"></div>
+</input></div>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span> <span class="o">*</span><span class="n">argv</span><span class="p">[])</span>
+<span class="p">{</span>
+    <span class="cm">/*instruções*/</span>
+<span class="p">}</span>
 </code></pre></div>
-Código-fonte extraído de <a href="https://assembly.happycodings.com/code13.html">https://assembly.happycodings.com/code13.html</a>.</p>
-<h2 id="linguagens-de-alto-nvel">Linguagens de Alto Nı́vel<a class="headerlink" href="#linguagens-de-alto-nvel" title="Permanent link">¶</a></h2>
-<p>A escrita do algoritmo é feita utilizando-se um conjunto de comandos (palavras reservadas) em inglês que determinam as ações que o computador deve realizar. Se na linguagem Assembly, os comandos representam "apelidos" para instrução de máquina, nas linguagens de alto nível, os comandos representam ações abstratas. Tais linguagens abrangem diferentes paradigmas, como estruturado, orientado a objetos, funcional e lógico, por exemplo. </p>
-<p>Ao utilizar linguagens de alto nível, o programador aumenta significativamente a portabilidade de seu código dentre as diferentes <a href="https://www.tecmundo.com.br/historia/2157-a-historia-dos-processadores.htm" target="_blank">arquiteturas de máquina</a> existentes, diferentemente da linguagem assembly ou de máquina, que são altamente acopladas ao <a href="https://www.gta.ufrj.br/ensino/EEL580/apresentacoes/Parte2.pdf" target="_blank">conjunto de instruções da CPU</a>.</p>
-<p>Em termos de geração, as linguagens de alto nível podem enquadrar-se como sendo de <strong>3ª, 4ª ou 5ª geração</strong>.</p>
-<p>Veja abaixo um trecho de código escrito na linguagem C++.</p>
-<div class="highlight"><pre><span></span><code><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
+<p>Sabemos que a função <code>main</code> é obrigatória em qualquer programa escrito em C++. Caberá a nós, programadores, criamos as demais funções para nossos programas. Na sequência, apresento alguns exemplos de funções e comentários pertinentes.</p>
+<h3 id="retornando-valores">Retornando Valores<a class="headerlink" href="#retornando-valores" title="Permanent link">¶</a></h3>
+<p>Tipicamente criamos funções que retornam algum valor ao chamador (<code>caller</code>). Sabemos que o tipo de retorno acompanha a declaração da função e que, por meio deste tipo, o compilador poderá aceitar a chamada da função em qualquer contexto que permita presença daquele tipo de dado.</p>
+<p>No programa abaixo estamos utilizando uma função chamada <code>ler_idade()</code>. Perceba que o cabeçalho (assinatura) aparece antes da função <code>main</code>, enquanto que a implementação está posta após. Isso se faz necessário para atender um princípio básico de programação, que é: <code>somente podemos fazer uso, em uma instrução, de estruturas já disponíveis naquele momento</code>. Ou seja, precisamos orientar o compilador da existência de uma função chamada <code>ler_idade()</code>, que retorna valor inteiro, pois estamos chamando ela antes de propriamente implementá-la.</p>
+<div class="tabbed-set" data-tabs="2:1"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio"><label for="__tabbed_2_1">C++</label><div class="tabbed-content"></div>
+</input></div>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
 
 <span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
 
-<span class="kt">int</span> <span class="n">saldo</span><span class="p">;</span><span class="c1">//variável global</span>
-
+<span class="hll"><span class="kt">int</span> <span class="nf">ler_idade</span><span class="p">();</span>
+</span>
 <span class="kt">int</span> <span class="nf">main</span><span class="p">(){</span>
-    <span class="kt">int</span> <span class="n">parcela1</span><span class="p">,</span> <span class="n">parcela2</span><span class="p">;</span><span class="c1">//variáveis locais</span>
-    <span class="n">parcela1</span> <span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">parcela2</span> <span class="o">=</span> <span class="mi">12</span><span class="p">;</span>
-    <span class="n">saldo</span> <span class="o">=</span> <span class="n">parcela1</span> <span class="o">+</span> <span class="n">parcela2</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">idade1</span><span class="p">,</span> <span class="n">idade2</span><span class="p">;</span>
+<span class="hll">    <span class="n">idade1</span> <span class="o">=</span> <span class="n">ler_idade</span><span class="p">();</span>
+</span><span class="hll">    <span class="n">idade2</span> <span class="o">=</span> <span class="n">ler_idade</span><span class="p">();</span>
+</span><span class="p">}</span>
 
-    <span class="p">{</span><span class="c1">//início de bloco</span>
-        <span class="n">cout</span><span class="o">&lt;&lt;</span> <span class="n">saldo</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
-        <span class="kt">int</span> <span class="n">saldo</span> <span class="o">=</span> <span class="mi">14</span><span class="p">;</span> <span class="c1">//variavel local</span>
-        <span class="n">cout</span><span class="o">&lt;&lt;</span> <span class="n">saldo</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
-    <span class="p">}</span><span class="c1">//fim de bloco</span>
-    <span class="n">cout</span><span class="o">&lt;&lt;</span> <span class="n">saldo</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span> <span class="p">;</span>
-    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
-<span class="p">}</span>
+<span class="hll"><span class="kt">int</span> <span class="nf">ler_idade</span><span class="p">(){</span>
+</span>    <span class="kt">int</span> <span class="n">idade</span><span class="p">;</span>
+
+    <span class="k">while</span><span class="p">(</span><span class="nb">true</span><span class="p">){</span>        
+        <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"Informe a idade [13,59]: "</span><span class="p">;</span>
+        <span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">idade</span><span class="p">;</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">idade</span> <span class="o">&lt;</span><span class="mi">13</span> <span class="o">||</span> <span class="n">idade</span> <span class="o">&gt;</span> <span class="mi">59</span><span class="p">)</span>        
+            <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span> <span class="o">&lt;&lt;</span> <span class="s">"Valor inválido"</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+        <span class="k">else</span>
+            <span class="k">return</span> <span class="n">idade</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>   
 </code></pre></div>
-<h2 id="linguagens-de-sistema">Linguagens de Sistema<a class="headerlink" href="#linguagens-de-sistema" title="Permanent link">¶</a></h2>
-<p>São linguagens de alto nível utilizadas para programação de sistemas. Caracterizam-se por oferecer acesso facilitado ao hardware, ao mesmo tempo que oferecem recursos típicos de linguagens de próposito geral, como estruturas de seleção, laços de repetição e blocos, por exemplo. Uma destas linguagens chama-se <a href="https://www.rust-lang.org/pt-BR/learn">Rust</a>.</p>
-<div class="highlight"><pre><span></span><code><span class="k">fn</span> <span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">    </span>
-<span class="w">    </span><span class="fm">println!</span><span class="p">(</span><span class="s">"Hello World!"</span><span class="p">);</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+</td></tr></table>
+<p>Nas linhas <code>9</code> e <code>10</code> temos a chamada para a função <code>ler_idade()</code>. Perceba que operação de invocação compreende indicar o nome e os argumentos entre <code>()</code>, quando existirem. Assim que a execução do código alcançar essa instrução, o fluxo de execução é desviado para a primeira linha da função, executando seu código interno até que ela finalize. O valor retornado via <code>return</code> será "substituído" no espaço em que ocorreu a chamada. Logo, as variáveis <code>idade1</code> e <code>idade2</code> irão receber a idade informada pelo usuário, adequadamente compreendida no intervalo <span class="arithmatex">\(\left[13,59\right]\)</span>.</p>
+<p>Mas afinal, qual é a vantagem de se utilizar a função <code>ler_idade()</code>? </p>
+<ul>
+<li>
+<p><strong>Abstração</strong>: Abstrair significa reduzir complexidade a partir da elaboração de um conceito de alto nível sobre algo. Em nosso código, estamos deixando a carga da função estabelecer e executar todas as regras de validação e coleta de um valor de idade. Na perspectiva da instrução que chama a função, não há informação sobre como a função opera, apenas que ela irá retornar um valor inteiro que representa uma idade. É uma relação de confiança, em que delegamos a responsabilidade para a função e ficamos aguardando seu retorno. Ao fazer isso, não precisamos nos preocupar com todos os pequenos detalhes do código, permitindo ter uma visão de mais alto nível durante a codificação.</p>
+</li>
+<li>
+<p><strong>Reuso</strong>: Todos os locais do código que demandam a leitura de uma idade farão chamada à função. Logo, não precisaremos repetir todo o código para cada situação em que uma idade for demandada.</p>
+</li>
+<li>
+<p><strong>Único ponto de alteração</strong>: Mudou o critério para determinar uma idade válida? Sem problemas, basta alterar o código da função que todos os locais que fazem uso dela irão utilizar a versão atualizada. Escreva apenas uma vez, use em todo lugar! </p>
+</li>
+</ul>
+<h3 id="passando-argumentos">Passando Argumentos<a class="headerlink" href="#passando-argumentos" title="Permanent link">¶</a></h3>
+<p>Muitas vezes precisamos passar valores específicos no momento em que a função é chamada. Estes valores recebem o nome de <code>argumentos</code>. Os argumentos são utilizados para alimentar os <code>parâmetros</code> da função, que são variáveis que permitem à função receber dados do mundo externo.</p>
+<p>...continua...</p>
+<div class="tabbed-set" data-tabs="3:1"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio"><label for="__tabbed_3_1">C++</label><div class="tabbed-content"></div>
+</input></div>
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
+<span class="kt">int</span> <span class="nf">retorna_maior</span><span class="p">(</span><span class="kt">int</span> <span class="n">a</span><span class="p">,</span> <span class="kt">int</span> <span class="n">b</span><span class="p">,</span> <span class="kt">int</span> <span class="n">c</span><span class="p">){</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">a</span><span class="o">&gt;=</span><span class="n">b</span> <span class="o">&amp;&amp;</span> <span class="n">a</span><span class="o">&gt;=</span> <span class="n">c</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">a</span><span class="p">;</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">b</span> <span class="o">&gt;=</span><span class="n">a</span> <span class="o">&amp;&amp;</span> <span class="n">b</span> <span class="o">&gt;=</span> <span class="n">c</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">b</span><span class="p">;</span>       
+    <span class="k">return</span> <span class="n">c</span><span class="p">;</span>
+<span class="p">}</span>   
 </code></pre></div>
-<h2 id="linguagens-de-dominio-especifico">Linguagens de Domínio Específico<a class="headerlink" href="#linguagens-de-dominio-especifico" title="Permanent link">¶</a></h2>
-<p>De alto nı́vel, aplicada a um contexto específico, com expressividade limitada. Expressões regulares são exemplos desta categoria. <a href="http://www.dcc.ufrj.br/~fabiom/dsl/Aula02.pdf">Saiba mais sobre DSL</a>.</p>
-<h2 id="linguagens-visuais">Linguagens Visuais<a class="headerlink" href="#linguagens-visuais" title="Permanent link">¶</a></h2>
-<p>Toda linguagem que não é baseada em texto. Exemplos deste tipo de linguagem são o <a href="https://scratch.mit.edu/">Scratch</a> e o <a href="https://developers.google.com/blockly/">Blockly</a>.</p>
-<h2 id="linguagens-esotericas">Linguagens Esotéricas<a class="headerlink" href="#linguagens-esotericas" title="Permanent link">¶</a></h2>
-<p>Linguagens que não tem propósito de uso, especificamente. <a href="https://exame.abril.com.br/tecnologia/conheca-10-linguagens-bizarras-nas-quais-voce-nunca-vai-ter-que-programar/">Neste link você encontrará algumas delas</a>.</p>
-<p>Ficou curioso sobre a classificação das linguagens de programação? Que tal ler o conteúdo <a href="http://cs.lmu.edu/~ray/notes/pltypes/">deste link</a> para começar :)</p>
 </article>
 </div>
 </div>
@@ -397,7 +374,7 @@ Código-fonte extraído de <a href="https://assembly.happycodings.com/code13.htm
 </main>
 <footer class="md-footer">
 <nav aria-label="Footer" class="md-footer__inner md-grid">
-<a class="md-footer__link md-footer__link--prev" href="../../informatica/editores-texto/abnt/" rel="prev">
+<a class="md-footer__link md-footer__link--prev" href="../iteracao/" rel="prev">
 <div class="md-footer__button md-icon">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"></path></svg>
 </div>
@@ -406,17 +383,17 @@ Código-fonte extraído de <a href="https://assembly.happycodings.com/code13.htm
 <span class="md-footer__direction">
                 Previous
               </span>
-              ABNT
+              Laços de Repetição
             </div>
 </div>
 </a>
-<a class="md-footer__link md-footer__link--next" href="../ambiente/" rel="next">
+<a class="md-footer__link md-footer__link--next" href="../arranjos/" rel="next">
 <div class="md-footer__title">
 <div class="md-ellipsis">
 <span class="md-footer__direction">
                 Next
               </span>
-              Ambiente de Desenvolvimento
+              Arranjos
             </div>
 </div>
 <div class="md-footer__button md-icon">
