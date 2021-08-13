@@ -262,18 +262,18 @@
 <p>O processo de criar sub-rotinas compreende, portanto, a divisão de um grande problema em partes menores, como se fossem blocos, por meio dos quais a solução final será construída. A esse processo chamamos de <code>modularização</code>, um conceito-chave em projetos de software.</p>
 <p>Além de tornar a complexidade administrável por seres humanos, a modularização permite <code>reutilizar</code> código. Jamais esqueça desta palavra - <code>reutilizar</code> - pois ela é o <em>Santo Graal</em> da programação. Reutilizar significa reaproveitar código funcional, testado e validado, o que implica diretamente na redução do tempo e custos de desenvolvimento do projeto.</p>
 <p>Falando especificamente da linguagem C++, podemos afirmar categoricamente que nenhum programa existe sem ter, ao menos, uma função. Se neste momento você pensou na função <code>main</code>, parabéns  😁</p>
-<p>Uma função é um conjunto de instruções agrupadas, comumente identificada por um nome, que são executadas sempre que uma operação de invocação está presente no código.</p>
+<p>Uma função é um conjunto de instruções agrupadas, comumente identificada por um nome, que são executadas sempre que uma operação de invocação está presente no código. É o meio que temos para <code>representar ações e computações em um programa</code>, de modo que sempre que queremos fazer algo no código para o qual é possível atribuir um nome, aí estaremos face a uma nova função <sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup>.</p>
 <div class="admonition note">
 <p class="admonition-title">Nota</p>
 <p><em>Invocar</em> uma função significa chamá-la pelo nome ou por seu endereço de memória no código.</p>
 </div>
 <p>Para criarmos funções é preciso conhecer as regras de sintaxe que a linguagem de programação aplica. Falando do C++, a sintaxe do comando envolve:</p>
 <ul>
-<li><strong>tipo de retorno</strong>: Especifica no cabeçalho da função (sua assinatura) que tipo de valor ela retorna ao chamador. Qualquer tipo disponível pode ser retornado e, para os casos onde o retorno deve ser desconsiderado, utilizamos o tipo especial <code>void</code>.</li>
-<li><strong>identificador</strong>: Assim como variáveis têm nomes, as funções também. As mesmas regras de nomenclatura se aplicam.</li>
-<li><strong>parâmetros</strong>: São variáveis alimentadas com os valores informados (argumentos) no momento em que a função é chamada. Ter parâmetros é algo opcional em uma função. </li>
-<li><strong>instruções</strong>: É o que a função executa. Compreende seu corpo, sua lógica de operação interna.</li>
-<li><strong>retorno</strong>: Comando que finaliza a execução da função e devolve ao chamador o resultado do processamento. Em C++, o retorno é feito através do comando <code>return</code>.</li>
+<li><strong>Tipo de retorno</strong>: Especifica no cabeçalho da função (sua assinatura) que tipo de valor ela retorna ao chamador. Qualquer tipo disponível pode ser retornado e, para os casos onde o retorno deve ser desconsiderado, utilizamos o tipo especial <code>void</code>.</li>
+<li><strong>Identificador</strong>: Assim como variáveis têm nomes, as funções também. As mesmas regras de nomenclatura se aplicam.</li>
+<li><strong>Argumentos formais (parâmetros)</strong>: São variáveis definidas no cabeçalho da função por meio das quais podemos passar valores específicos a cada chamada. Ter parâmetros é algo opcional em uma função. </li>
+<li><strong>Instruções</strong>: É o que a função executa. Compreende seu corpo, sua lógica de operação interna.</li>
+<li><strong>Retorno</strong>: Comando que finaliza a execução da função e devolve ao chamador o resultado do processamento. Em C++, o retorno é feito através do comando <code>return</code>. Toda função que indicar retornar um tipo diferente de <code>void</code> deve obrigatoriamente fazê-lo para todos os caminhos possíveis de finalização (ou gerar um erro). A exceção fica com a função <code>main</code>, que ao executar com sucesso todos os comandos automaticamente irá retornar <code>0</code>.</li>
 </ul>
 <p>Vamos utilizar como estudo de caso a própria função <code>main</code>. Observe que começamos pela tipo <code>int</code>, indicando que seu retorno é um número inteiro. Na sequência, temos <code>main</code>, o nome da função. Os parâmetros são declarados no espaço contido entre os parênteses <code>()</code>. Cada declaração de parâmetro compreende seu tipo e nome, tal qual fazemos ao declarar variáveis. Se houver necessidade de mais de um parâmetro, devemos separá-los com vírgula. Por fim, as instruções ficam contidas entre as chaves <code>{}</code>.</p>
 <div class="tabbed-set" data-tabs="1:1"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio"><label for="__tabbed_1_1">C++</label><div class="tabbed-content"></div>
@@ -352,19 +352,145 @@
 </li>
 </ul>
 <h3 id="passando-argumentos">Passando Argumentos<a class="headerlink" href="#passando-argumentos" title="Permanent link">¶</a></h3>
-<p>Muitas vezes precisamos passar valores específicos no momento em que a função é chamada. Estes valores recebem o nome de <code>argumentos</code>. Os argumentos são utilizados para alimentar os <code>parâmetros</code> da função, que são variáveis que permitem à função receber dados do mundo externo.</p>
-<p>...continua...</p>
+<p>Muitas vezes precisamos passar valores específicos no momento em que a função é chamada. Estes valores recebem o nome de <code>argumentos</code>. Os argumentos são utilizados para alimentar os <code>parâmetros</code> da função, que são variáveis que permitem à função receber dados do mundo externo e utilizá-los em sua execução. </p>
+<p>Podemos passar argumentos de dois modos diferentes: <code>por valor</code> e <code>por referência</code>. Quando utilizamos a estratégia de passagem <code>por valor</code>, o parâmetro receberá uma cópia do valor informado. Lembre-se que um <code>parâmetro</code> é uma variável local da função, inicializada a cada chamada realizada<sup id="fnref2:1"><a class="footnote-ref" href="#fn:1">1</a></sup>.</p>
+<p>A passagem <code>por valor</code> de argumentos gera uma cópia, de modo que eventuais alterações realizadas pela função no parâmetro correspondente não terão impacto externo. Para ilustrar este comportamento iremos utilizar um programa muito simples, composto por duas funções: <code>main</code> e <code>substitui</code>. </p>
 <div class="tabbed-set" data-tabs="3:1"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio"><label for="__tabbed_3_1">C++</label><div class="tabbed-content"></div>
 </input></div>
-<div class="highlight"><pre><span></span><code><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
-<span class="kt">int</span> <span class="nf">retorna_maior</span><span class="p">(</span><span class="kt">int</span> <span class="n">a</span><span class="p">,</span> <span class="kt">int</span> <span class="n">b</span><span class="p">,</span> <span class="kt">int</span> <span class="n">c</span><span class="p">){</span>
-    <span class="k">if</span> <span class="p">(</span><span class="n">a</span><span class="o">&gt;=</span><span class="n">b</span> <span class="o">&amp;&amp;</span> <span class="n">a</span><span class="o">&gt;=</span> <span class="n">c</span><span class="p">)</span>
-        <span class="k">return</span> <span class="n">a</span><span class="p">;</span>
-    <span class="k">if</span> <span class="p">(</span><span class="n">b</span> <span class="o">&gt;=</span><span class="n">a</span> <span class="o">&amp;&amp;</span> <span class="n">b</span> <span class="o">&gt;=</span> <span class="n">c</span><span class="p">)</span>
-        <span class="k">return</span> <span class="n">b</span><span class="p">;</span>       
-    <span class="k">return</span> <span class="n">c</span><span class="p">;</span>
-<span class="p">}</span>   
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
+
+<span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+
+<span class="kt">void</span> <span class="nf">substitui</span><span class="p">(</span><span class="kt">int</span> <span class="n">a</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="hll">    <span class="n">a</span> <span class="o">=</span> <span class="mi">7</span><span class="p">;</span>
+</span><span class="p">}</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="kt">int</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
+<span class="hll">    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">a</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+</span><span class="hll">    <span class="n">substitui</span><span class="p">(</span><span class="n">a</span><span class="p">);</span>
+</span><span class="hll">    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">a</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+</span><span class="p">}</span>
 </code></pre></div>
+</td></tr></table>
+<p>A função <code>substitui</code> define um parâmetro, chamado de <code>a</code>, para receber um valor inteiro. Na linha <span class="arithmatex">\(14\)</span>, ela é chamada passando-se para o parâmetro <code>a</code> o argumento <code>a</code>. Mas espera aí: não é o mesmo <code>a</code> então?</p>
+<p>Não, são posições de memória diferentes. Todo parâmetro representa uma variável local à função, cujo escopo de visibilidade é o corpo desta função. O fato de estarmos enviando um argumento, que é uma variável, com o mesmo nome representa uma simples coincidência. </p>
+<p>Então, se estamos falando de posições de memória diferentes, a atribuição realizada pela função na linha <span class="arithmatex">\(7\)</span> não vai alterar o valor da variável <code>a</code> declarada na função <code>main</code>. Deste modo, ambos os comandos <code>cout</code> irão escrever o valor <span class="arithmatex">\(3\)</span>. Chamamos isso de passagem de argumento por cópia (<em>call by value</em>).</p>
+<p>Agora vamos modificar nossa função <code>substitui</code> adicionando o operador <code>&amp;</code> antes do nome do parâmetro. Nosso programa em sua versão alterada seria:</p>
+<div class="tabbed-set" data-tabs="4:1"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio"><label for="__tabbed_4_1">C++</label><div class="tabbed-content"></div>
+</input></div>
+<p><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
+
+<span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+
+<span class="kt">void</span> <span class="nf">substitui</span><span class="p">(</span><span class="kt">int</span> <span class="o">&amp;</span><span class="n">a</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="hll">    <span class="n">a</span> <span class="o">=</span> <span class="mi">7</span><span class="p">;</span>
+</span><span class="p">}</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="kt">int</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
+<span class="hll">    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">a</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+</span><span class="hll">    <span class="n">substitui</span><span class="p">(</span><span class="n">a</span><span class="p">);</span>
+</span><span class="hll">    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">a</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+</span><span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
+Estranhamente, o resultado desta versão do programa será <span class="arithmatex">\(3\)</span> para o primeiro comando <code>cout</code> e <span class="arithmatex">\(7\)</span> para o segundo. Por que isso ocorre? É que neste programa estamos utilizando passagem de argumento por referência (<em>call by reference</em>), ou seja, a função recebe <strong>o endereço de memória</strong> do argumento. Deste modo, as alterações realizadas dentro da função no valor do parâmetro serão diretamente aplicadas à variável informada como argumento.</p>
+<p>Mas isso não pode gerar efeitos colaterais indesejados? Que benefícios há em se utilizar referências?</p>
+<p>Bem, o programador deverá utilizar o recurso com prudência. Nem todo parâmetro deve ser <em>by reference</em>. O grande benefício está possibilidade de compartilhar áreas de memória, uma operação muito mais rápida se comparada a uma cópia de valores. Imagine se precisássemos informar um vetor de <span class="arithmatex">\(1000\)</span> posições para um função e todos estes valores precisassem ser copiados para o parâmetro?</p>
+<p>Logo, nesta perspectiva, qualquer <code>array</code> definido como parâmetro irá receber uma referência de memória e não uma cópia de valor. Podemos verificar isso no programa a seguir, construído para ler uma matriz <span class="arithmatex">\(M_{2 \times 2}\)</span> e apresentar a média aritmética dos valores lidos.</p>
+<div class="tabbed-set" data-tabs="5:1"><input checked="checked" id="__tabbed_5_1" name="__tabbed_5" type="radio"><label for="__tabbed_5_1">C++</label><div class="tabbed-content"></div>
+</input></div>
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;iomanip&gt;</span><span class="cp"></span>
+
+<span class="cp">#define LINHAS 2</span>
+<span class="cp">#define COLUNAS 2</span>
+
+<span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+
+<span class="kt">void</span> <span class="nf">ler_dados_matriz</span><span class="p">(</span><span class="kt">int</span> <span class="n">m</span><span class="p">[][</span><span class="n">COLUNAS</span><span class="p">]){</span>
+     <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">l</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">l</span> <span class="o">&lt;</span> <span class="n">LINHAS</span><span class="p">;</span><span class="n">l</span><span class="o">++</span><span class="p">){</span>
+         <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">c</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">c</span> <span class="o">&lt;</span> <span class="n">COLUNAS</span><span class="p">;</span><span class="n">c</span><span class="o">++</span> <span class="p">){</span>
+               <span class="n">cout</span><span class="o">&lt;&lt;</span><span class="s">"M["</span><span class="o">&lt;&lt;</span><span class="n">l</span><span class="o">&lt;&lt;</span><span class="s">","</span><span class="o">&lt;&lt;</span><span class="n">c</span><span class="o">&lt;&lt;</span><span class="s">"]: "</span><span class="p">;</span>
+               <span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">m</span><span class="p">[</span><span class="n">l</span><span class="p">][</span><span class="n">c</span><span class="p">];</span> 
+         <span class="p">}</span>
+     <span class="p">}</span>   
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="nf">imprimir_matriz</span><span class="p">(</span><span class="kt">int</span> <span class="n">m</span><span class="p">[][</span><span class="n">COLUNAS</span><span class="p">]){</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span><span class="s">"M: "</span><span class="o">&lt;&lt;</span><span class="n">endl</span><span class="p">;</span>
+    <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">l</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">l</span> <span class="o">&lt;</span> <span class="n">LINHAS</span><span class="p">;</span><span class="n">l</span><span class="o">++</span><span class="p">){</span>
+        <span class="n">cout</span> <span class="o">&lt;&lt;</span><span class="s">"| "</span><span class="p">;</span>
+        <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">c</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">c</span> <span class="o">&lt;</span> <span class="n">COLUNAS</span><span class="p">;</span><span class="n">c</span><span class="o">++</span> <span class="p">){</span>
+            <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">m</span><span class="p">[</span><span class="n">l</span><span class="p">][</span><span class="n">c</span><span class="p">]</span> <span class="o">&lt;&lt;</span><span class="s">" "</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="n">cout</span> <span class="o">&lt;&lt;</span><span class="s">"|"</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span><span class="n">endl</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">double</span> <span class="nf">calcular_media_matriz</span><span class="p">(</span><span class="kt">int</span> <span class="n">m</span><span class="p">[][</span><span class="n">COLUNAS</span><span class="p">]){</span>
+    <span class="kt">double</span> <span class="n">somatorio</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> 
+
+    <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">l</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">l</span> <span class="o">&lt;</span> <span class="n">LINHAS</span><span class="p">;</span><span class="n">l</span><span class="o">++</span><span class="p">)</span>
+         <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">c</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">c</span> <span class="o">&lt;</span> <span class="n">COLUNAS</span><span class="p">;</span><span class="n">c</span><span class="o">++</span> <span class="p">)</span>
+            <span class="n">somatorio</span> <span class="o">+=</span> <span class="n">m</span><span class="p">[</span><span class="n">l</span><span class="p">][</span><span class="n">c</span><span class="p">];</span>
+
+   <span class="k">return</span> <span class="n">somatorio</span><span class="o">/</span><span class="p">(</span><span class="n">LINHAS</span> <span class="o">*</span> <span class="n">COLUNAS</span><span class="p">);</span>     
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(){</span>
+    <span class="kt">int</span> <span class="n">dados</span><span class="p">[</span><span class="n">LINHAS</span><span class="p">][</span><span class="n">COLUNAS</span><span class="p">]</span><span class="o">=</span><span class="p">{{</span><span class="mi">0</span><span class="p">},{</span><span class="mi">0</span><span class="p">}};</span>
+    <span class="n">imprimir_matriz</span><span class="p">(</span><span class="n">dados</span><span class="p">);</span>
+    <span class="n">ler_dados_matriz</span><span class="p">(</span><span class="n">dados</span><span class="p">);</span>
+    <span class="n">imprimir_matriz</span><span class="p">(</span><span class="n">dados</span><span class="p">);</span>
+    <span class="kt">double</span> <span class="n">media</span> <span class="o">=</span> <span class="n">calcular_media_matriz</span><span class="p">(</span><span class="n">dados</span><span class="p">);</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span><span class="s">"MEDIA: "</span> <span class="o">&lt;&lt;</span><span class="n">setprecision</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="o">&lt;&lt;</span><span class="n">fixed</span> <span class="o">&lt;&lt;</span> <span class="n">media</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<div class="footnote">
+<hr/>
+<ol>
+<li id="fn:1">
+<p>Bjarne Stroustrup. <em>Programming: Principles and Practice Using C++</em>. Always learning. Addison Wesley, 2º edition, 2014. ISBN 9780321992789. URL: <a href="https://books.google.com.br/books?id=hxOpAwAAQBAJ">https://books.google.com.br/books?id=hxOpAwAAQBAJ</a>. <a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref2:1" title="Jump back to footnote 1 in the text">↩</a></p>
+</li>
+</ol>
+</div>
 </article>
 </div>
 </div>
