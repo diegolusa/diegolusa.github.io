@@ -7,7 +7,7 @@
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <link href="../../../img/icon.ico" rel="icon"/>
 <meta content="mkdocs-1.1.2, mkdocs-material-7.1.1" name="generator"/>
-<title>HTML5 - Fundamentos - Prof. Diego A. Lusa</title>
+<title>Recursos - Prof. Diego A. Lusa</title>
 <link href="../../../assets/stylesheets/main.9299cb39.min.css" rel="stylesheet"/>
 <link href="../../../assets/stylesheets/palette.ef6f36e2.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
@@ -22,6 +22,9 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
+<a class="md-skip" href="#sites-e-outros-recursos-uteis">
+          Skip to content
+        </a>
 </div>
 <div data-md-component="announce">
 </div>
@@ -43,7 +46,7 @@
 <div class="md-header__topic" data-md-component="header-topic">
 <span class="md-ellipsis">
             
-              HTML5 - Fundamentos
+              Recursos
             
           </span>
 </div>
@@ -275,8 +278,8 @@
         Como surgiu a Web?
       </a>
 </li>
-<li class="md-nav__item md-nav__item--active md-nav__item--nested">
-<input checked="" class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_2" id="__nav_4_2" type="checkbox"/>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_2" id="__nav_4_2" type="checkbox"/>
 <label class="md-nav__link" for="__nav_4_2">
         HTML5
         <span class="md-nav__icon md-icon"></span>
@@ -287,9 +290,8 @@
           HTML5
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item md-nav__item--active">
-<input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
-<a class="md-nav__link md-nav__link--active" href="./">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../estrutura-basica/">
         O que é HTML?
       </a>
 </li>
@@ -316,10 +318,28 @@
 </ul>
 </nav>
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../recursos/">
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+          Recursos
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./">
         Recursos
       </a>
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#sites-e-outros-recursos-uteis">
+    Sites e outros recursos úteis
+  </a>
+</li>
+</ul>
+</nav>
 </li>
 </ul>
 </nav>
@@ -336,27 +356,14 @@
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
-<h1>O que é HTML?</h1>
-<p><img align="left" alt="HTML5 Logo" src="../img/html5logo.png" width="25%"/></p>
-<p><code>Hypertext Markup Language</code>, ou simplesmente HTML, é uma linguagem de marcação utilizada para representar informação na Web. Nasceu junto com o conceito da Web e hoje, conjuntamente às linguagens <code>JavaScript</code> e <code>CSS</code>, compõe as bases para o desenvolvimento de soluções <em>frontend</em> neste ecossistema.</p>
-<p>Desde seu desenvolvimento, em 1989, a linguagem HTML foi passando por diversas revisões, que culminaram com o lançamento de novas versões da linguagem. Atualmente está em uso a versão 5, motivo pelo qual é comum encontrar citações à linguagem como HTML5. Caso tenha interesse na integra da linha do tempo das versões da linguagem, podes começar pela <a href="https://en.wikipedia.org/wiki/HTML#HTML_versions_timeline">Wikipédia</a>.</p>
-<p>Antes de propriamente iniciarmos nosso estudo na linguagem HTML5, precisamos entender os atores principais da Web e como eles se comunicam. Obviamente faremos uma simplificação da arquitetura, enfatizando o papel do <em>web browser</em> e do <em>web server</em>. </p>
-<p>Observe o diagrama a seguir. Nele representamos um <em>cliente</em> estabelecendo comunicação com um <em>servidor</em>. O cliente envia uma requisição - uma solicitação de recurso - que é recepcionada pelo <em>servidor</em> e devolvida ao <em>cliente</em> por meio de uma resposta. Esse modelo de arquitetura distribuída é chamada <code>client/server</code> e define em alto nível como ocorre a comunicação entre <em>web browsers</em> (clientes) e <em>web servers</em> (servidores).</p>
-<div class="mermaid">flowchart LR
-    Cliente-- Requisição --&gt;Servidor-- Resposta --&gt;Cliente    
-</div>
-<p>Nesta troca de mensagens está sendo utilizado o protocolo HTTP (Hypertext Transfer Protocol), que por sua vez transporta documentos HTML quando recursos são retornados ao cliente. Logo, grande parte da informação que trafega na Web é representada em HTML.</p>
-<div class="mermaid">flowchart LR
-    Cliente-- HTTP Request --&gt;Servidor-- HTTP Response --&gt;Cliente    
-</div>
-<p>O HTML é um dos pilares da Web, junto ao protocolo HTTP e o conceito de URI. Define-se como uma linguagem de marcação, ou seja, uma representação de documento em que adicionamos marcas de significado(semântica) e de estrutura à informação. </p>
-<p>O conceito de <code>hipertexto</code> é essencial à compreensão do HTML. De forma simples, entendemos como <code>hipertexto</code> um conjunto de nós (palavras, imagens, vídeos, áudios, documentos) que possuem ligações entre si.</p>
-<div class="mermaid">flowchart TB
-    site1 --hiperlink--&gt; site2;
-    site2 --hiperlink--&gt; site2;
-    site2 --hiperlink--&gt; site1;
-</div>
-<p>A linguagem HTML tornou-se um padrão de referência a partir de 1997, graças ao trabalho da W3C. Isso garantiu à tecnologia interoperabilidade em diferentes plataformas e meios de acesso. A especificação corrente da linguagem está disponível no <a href="https://html.spec.whatwg.org/multipage/">portal da W3C</a> de forma pública.</p>
+<h1>Recursos</h1>
+<h2 id="sites-e-outros-recursos-uteis">Sites e outros recursos úteis<a class="headerlink" href="#sites-e-outros-recursos-uteis" title="Permanent link">¶</a></h2>
+<ul>
+<li><a href="https://web.dev/learn/">Web.dev</a></li>
+<li><a href="https://www.w3.org/">W3C</a></li>
+<li><a href="https://www.w3.org/Style/CSS/learning">Cascading Style Sheets articles and tutorials</a></li>
+<li><a href="https://html.spec.whatwg.org/multipage/">HTML Living Standard</a></li>
+</ul>
 </article>
 </div>
 </div>
@@ -366,7 +373,7 @@
 </main>
 <footer class="md-footer">
 <nav aria-label="Footer" class="md-footer__inner md-grid">
-<a class="md-footer__link md-footer__link--prev" href="../../historia/" rel="prev">
+<a class="md-footer__link md-footer__link--prev" href="../tabelas/" rel="prev">
 <div class="md-footer__button md-icon">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"></path></svg>
 </div>
@@ -375,17 +382,17 @@
 <span class="md-footer__direction">
                 Previous
               </span>
-              Como surgiu a Web?
+              Tabelas
             </div>
 </div>
 </a>
-<a class="md-footer__link md-footer__link--next" href="../tags-basicas/" rel="next">
+<a class="md-footer__link md-footer__link--next" href="../../../about/" rel="next">
 <div class="md-footer__title">
 <div class="md-ellipsis">
 <span class="md-footer__direction">
                 Next
               </span>
-              Conceitos Básicos
+              Sobre
             </div>
 </div>
 <div class="md-footer__button md-icon">
@@ -425,5 +432,5 @@
 <script src="../../../javascripts/config.js"></script>
 <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
 <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-<script src="https://unpkg.com/mermaid@8.8.0/dist/mermaid.min.js"></script><script>mermaid.initialize({});</script></body>
+</body>
 </html>

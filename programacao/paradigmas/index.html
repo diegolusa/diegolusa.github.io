@@ -7,7 +7,7 @@
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <link href="../../img/icon.ico" rel="icon"/>
 <meta content="mkdocs-1.1.2, mkdocs-material-7.1.1" name="generator"/>
-<title>Editores apresentacao - Prof. Diego A. Lusa</title>
+<title>Paradigmas de Programação - Prof. Diego A. Lusa</title>
 <link href="../../assets/stylesheets/main.9299cb39.min.css" rel="stylesheet"/>
 <link href="../../assets/stylesheets/palette.ef6f36e2.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
@@ -22,6 +22,9 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
+<a class="md-skip" href="#imperativo">
+          Skip to content
+        </a>
 </div>
 <div data-md-component="announce">
 </div>
@@ -43,7 +46,7 @@
 <div class="md-header__topic" data-md-component="header-topic">
 <span class="md-ellipsis">
             
-              Editores apresentacao
+              Paradigmas de Programação
             
           </span>
 </div>
@@ -133,17 +136,17 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../editores-texto/introducao/">
+<a class="md-nav__link" href="../../informatica/editores-texto/introducao/">
         Writer
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../editores-texto/estilos/">
+<a class="md-nav__link" href="../../informatica/editores-texto/estilos/">
         Estilos
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../editores-texto/abnt/">
+<a class="md-nav__link" href="../../informatica/editores-texto/abnt/">
         ABNT
       </a>
 </li>
@@ -153,8 +156,8 @@
 </ul>
 </nav>
 </li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" id="__nav_3" type="checkbox"/>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" id="__nav_3" type="checkbox"/>
 <label class="md-nav__link" for="__nav_3">
         Programação
         <span class="md-nav__icon md-icon"></span>
@@ -166,14 +169,72 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../programacao/linguagens/">
+<a class="md-nav__link" href="../linguagens/">
         Linguagens de Programação
       </a>
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../programacao/paradigmas/">
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+          Paradigmas de Programação
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./">
         Paradigmas de Programação
       </a>
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#imperativo">
+    Imperativo
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#declarativo">
+    Declarativo
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#estruturado">
+    Estruturado
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#procedural">
+    Procedural
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#funcional">
+    Funcional
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#orientado-a-objetos">
+    Orientado a Objetos
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#orientado-a-eventos">
+    Orientado a Eventos
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#logico">
+    Lógico
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#orientado-a-aspectos">
+    Orientado a Aspectos
+  </a>
+</li>
+</ul>
+</nav>
 </li>
 <li class="md-nav__item md-nav__item--nested">
 <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_3" id="__nav_3_3" type="checkbox"/>
@@ -188,47 +249,47 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../programacao/cpp/ambiente/">
+<a class="md-nav__link" href="../cpp/ambiente/">
         Ambiente de Desenvolvimento
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../programacao/cpp/compilacao/">
+<a class="md-nav__link" href="../cpp/compilacao/">
         Compilação
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../programacao/cpp/identificadores/">
+<a class="md-nav__link" href="../cpp/identificadores/">
         Identificadores
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../programacao/cpp/io/">
+<a class="md-nav__link" href="../cpp/io/">
         Entrada e Saída
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../programacao/cpp/condicionais/">
+<a class="md-nav__link" href="../cpp/condicionais/">
         Condicionais
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../programacao/cpp/iteracao/">
+<a class="md-nav__link" href="../cpp/iteracao/">
         Laços de Repetição
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../programacao/cpp/funcoes/">
+<a class="md-nav__link" href="../cpp/funcoes/">
         Funções
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../programacao/cpp/arranjos/">
+<a class="md-nav__link" href="../cpp/arranjos/">
         Arranjos
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../programacao/cpp/ponteiros/">
+<a class="md-nav__link" href="../cpp/ponteiros/">
         Ponteiros
       </a>
 </li>
@@ -248,7 +309,7 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../programacao/oop/introducao/">
+<a class="md-nav__link" href="../oop/introducao/">
         Introdução
       </a>
 </li>
@@ -335,7 +396,131 @@
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
-<h1>Editores apresentacao</h1>
+<h1>Paradigmas de Programação</h1>
+<p>Quando desenvolvemos software, precisamos representar fatos do mundo por meio de uma linguagem formal. Neste processo criativo, de abstração, aplicamos estratégias, caminhos, formas específicas de expressar, de codificar. A isso chamados paradigma de programação.</p>
+<p>As inúmeras linguagens de programação que podem ser utilizadas na codificação facilitam o uso de um ou mais paradigmas em detrimento de outros. Contudo, não podemos imaginar que a linguagem seja a concretização do paradigma, haja vista que é algo abstrato. O que ocorre é que, pela facilidade em expressarmos o paradigma <span class="arithmatex">\(Y\)</span> por meio de um linguagem <span class="arithmatex">\(X\)</span>, a classificamos como sendo do tipo <span class="arithmatex">\(Y\)</span>. Por exemplo, sabemos que a linguagem Java facilita a codificação utilizando o paradigma da Orientação a Objetos, então costumamos dizer que Java é uma linguagem orientada a objetos.</p>
+<p>Na sequência iremos abordar os principais paradigmas de programação. Importante ressaltar que uma única linguagem de programação pode expressar vários paradigmas, embora um deles seja, por vezes, mais evidente no código do que outros.</p>
+<h2 id="imperativo">Imperativo<a class="headerlink" href="#imperativo" title="Permanent link">¶</a></h2>
+<p>...continua</p>
+<h2 id="declarativo">Declarativo<a class="headerlink" href="#declarativo" title="Permanent link">¶</a></h2>
+<p>...continua</p>
+<h2 id="estruturado">Estruturado<a class="headerlink" href="#estruturado" title="Permanent link">¶</a></h2>
+<p>...continua</p>
+<h2 id="procedural">Procedural<a class="headerlink" href="#procedural" title="Permanent link">¶</a></h2>
+<p>...continua</p>
+<h2 id="funcional">Funcional<a class="headerlink" href="#funcional" title="Permanent link">¶</a></h2>
+<p>...continua</p>
+<h2 id="orientado-a-objetos">Orientado a Objetos<a class="headerlink" href="#orientado-a-objetos" title="Permanent link">¶</a></h2>
+<p>Neste paradigma a programação é realizada por meio da definição de objetos que trocam mensagens entre si. Estes objetos têm estado e comportamento encapsulados em si. Dentro deste paradigma, temos a orientação baseada em <code>classes</code> e em <code>protótipos</code>.</p>
+<p>O comportamento do software é gerado pela interação entre os objetos que o compõem, através da troca de mensagens em que um objeto emissor dispara no receptor a execução de uma operação específica, a qual chamamos de <code>método</code>. </p>
+<p>Estes objetos têm <code>atributos</code> e <code>comportamentos</code> definidos a partir de suas <code>classes</code> ou <code>protótipos</code>. Entendemos por <code>atributos</code> as propriedades do objeto sobre as quais armazenamos dados. Já os <code>comportamentos</code> referem-se às ações que o objeto realizada. Todas as alterações de <code>estado</code> (fotografia dos valores de atributo em um dado momento) são feitas exclusivamente pelos métodos, a partir da recepção de mensagens.</p>
+<p>Vamos imaginar, por exemplo, a representação de um simples retângulo através do paradigma da orientação a objetos. Iremos considerar utilizar orientação a objetos baseada em <code>classes</code> neste momento. Observe o diagrama:</p>
+<div class="mermaid">classDiagram
+
+    class Retangulo{
+        -float altura
+        -float largura
+        +obterArea() float 
+        +definirDimensao(float altura, float largura) void
+    }
+</div>
+<p>Chamamos nossa classe de <em>Retangulo</em>, visto que ela irá representar qualquer retângulo em nossa codificação. Os atributos estabelecidos foram <code>altura</code> e <code>largura</code>, ou seja, são as propriedades que desejamos armazenar valor. Considerando uma linguagem de programação fortemente tipada, estabelecemos que ambos os atributos são do tipo <code>float</code> (real de precisão simples). Já os comportamentos são dois, representados pelos métodos <code>obterArea</code> e <code>definirDimensao</code>. Percebeu os símbolos de <span class="arithmatex">\(+\)</span> e <span class="arithmatex">\(-\)</span> em frente aos atributos e métodos? Bem, eles estabelecem a visibilidade e, de momento, basta saber que <span class="arithmatex">\(+\)</span> indica <code>acesso público</code> e <span class="arithmatex">\(-\)</span>, <code>acesso privado</code>.</p>
+<div class="tabbed-set" data-tabs="1:3"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio"><label for="__tabbed_1_1">C++</label><div class="tabbed-content">
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">Retangulo</span>
+<span class="p">{</span>
+    <span class="k">private</span><span class="o">:</span>
+        <span class="kt">float</span> <span class="n">largura</span><span class="p">,</span> <span class="n">altura</span><span class="p">;</span>
+
+    <span class="k">public</span><span class="o">:</span>
+        <span class="kt">float</span> <span class="n">obterArea</span><span class="p">()</span>
+        <span class="p">{</span>
+            <span class="k">return</span> <span class="k">this</span><span class="o">-&gt;</span><span class="n">altura</span> <span class="o">*</span> <span class="k">this</span><span class="o">-&gt;</span><span class="n">altura</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="kt">void</span> <span class="n">definirDimensao</span><span class="p">(</span><span class="kt">float</span> <span class="n">altura</span><span class="p">,</span> <span class="kt">float</span> <span class="n">largura</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="k">this</span><span class="o">-&gt;</span><span class="n">altura</span> <span class="o">=</span> <span class="n">altura</span><span class="p">;</span>
+            <span class="k">this</span><span class="o">-&gt;</span><span class="n">largura</span> <span class="o">=</span> <span class="n">largura</span><span class="p">;</span>
+        <span class="p">}</span>
+<span class="p">};</span>
+</code></pre></div>
+</td></tr></table>
+</div>
+<input id="__tabbed_1_2" name="__tabbed_1" type="radio"><label for="__tabbed_1_2">Java</label><div class="tabbed-content">
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kd">class</span> <span class="nc">Retangulo</span> <span class="p">{</span>
+    <span class="kd">private</span> <span class="kt">float</span> <span class="n">largura</span><span class="p">,</span> <span class="n">altura</span><span class="p">;</span>
+
+    <span class="kd">public</span> <span class="kt">float</span> <span class="nf">obterArea</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="na">altura</span> <span class="o">*</span> <span class="k">this</span><span class="p">.</span><span class="na">altura</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">definirDimensao</span><span class="p">(</span><span class="kt">float</span> <span class="n">altura</span><span class="p">,</span> <span class="kt">float</span> <span class="n">largura</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">altura</span> <span class="o">=</span> <span class="n">altura</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">largura</span> <span class="o">=</span> <span class="n">largura</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">};</span>
+</code></pre></div>
+</td></tr></table>
+</div>
+<input id="__tabbed_1_3" name="__tabbed_1" type="radio"><label for="__tabbed_1_3">Python</label><div class="tabbed-content">
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">Retangulo</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__largura</span><span class="o">=</span><span class="mi">0</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__altura</span><span class="o">=</span><span class="mi">0</span>
+
+    <span class="k">def</span> <span class="nf">obterArea</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__altura</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">__altura</span>
+
+    <span class="k">def</span> <span class="nf">definirDimensao</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">altura</span><span class="p">,</span> <span class="n">largura</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__altura</span> <span class="o">=</span> <span class="n">altura</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__largura</span> <span class="o">=</span> <span class="n">largura</span>
+</code></pre></div>
+</td></tr></table>
+</div>
+</input></input></input></div>
+<p>Perceba que as implementações da classe <em>Retangulo</em>, embora feitas em três linguagens de programação diferentes, apresentam semelhança na forma de codificar. Atributos são definidos tal qual o são variáveis comuns e métodos como sendo funções. A diferença é que as definições ficam restritas ao <code>escopo da classe</code>.</p>
+<p>A definição da classe implica na disponibilidade de um novo <code>tipo abstrato de dados</code> (TAD) no código. A partir dele, podemos criar variáveis e nelas, instanciar objetos. Veremos isso com mais detalhes quando tratarmos dos aspectos específicos de implementação.</p>
+<h2 id="orientado-a-eventos">Orientado a Eventos<a class="headerlink" href="#orientado-a-eventos" title="Permanent link">¶</a></h2>
+<p>...continua</p>
+<h2 id="logico">Lógico<a class="headerlink" href="#logico" title="Permanent link">¶</a></h2>
+<p>...continua</p>
+<h2 id="orientado-a-aspectos">Orientado a Aspectos<a class="headerlink" href="#orientado-a-aspectos" title="Permanent link">¶</a></h2>
+<p>...continua</p>
 </article>
 </div>
 </div>
@@ -344,6 +529,34 @@
 </a>
 </main>
 <footer class="md-footer">
+<nav aria-label="Footer" class="md-footer__inner md-grid">
+<a class="md-footer__link md-footer__link--prev" href="../linguagens/" rel="prev">
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"></path></svg>
+</div>
+<div class="md-footer__title">
+<div class="md-ellipsis">
+<span class="md-footer__direction">
+                Previous
+              </span>
+              Linguagens de Programação
+            </div>
+</div>
+</a>
+<a class="md-footer__link md-footer__link--next" href="../cpp/ambiente/" rel="next">
+<div class="md-footer__title">
+<div class="md-ellipsis">
+<span class="md-footer__direction">
+                Next
+              </span>
+              Ambiente de Desenvolvimento
+            </div>
+</div>
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"></path></svg>
+</div>
+</a>
+</nav>
 <div class="md-footer-meta md-typeset">
 <div class="md-footer-meta__inner md-grid">
 <div class="md-footer-copyright">
@@ -376,5 +589,5 @@
 <script src="../../javascripts/config.js"></script>
 <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
 <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-</body>
+<script src="https://unpkg.com/mermaid@8.8.0/dist/mermaid.min.js"></script><script>mermaid.initialize({});</script></body>
 </html>
