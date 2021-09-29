@@ -411,7 +411,7 @@
 <h2 id="funcional">Funcional<a class="headerlink" href="#funcional" title="Permanent link">¶</a></h2>
 <p>...continua</p>
 <h2 id="orientado-a-objetos">Orientado a Objetos<a class="headerlink" href="#orientado-a-objetos" title="Permanent link">¶</a></h2>
-<p>Neste paradigma a programação é realizada por meio da definição de objetos que trocam mensagens entre si. Estes objetos têm estado e comportamento encapsulados em si. Dentro deste paradigma, temos a orientação baseada em <code>classes</code> e em <code>protótipos</code>.</p>
+<p>Neste paradigma, a programação é realizada por meio da definição de objetos que trocam mensagens entre si. Estes objetos têm estado e comportamento encapsulados, ocultando do mundo exterior seus detalhes internos de operação. Para criar objetos, podemos fazer uso de <code>classes</code> ou <code>protótipos</code>, a depender do que a linguagem de programação proporciona.</p>
 <p>O comportamento do software é gerado pela interação entre os objetos que o compõem, através da troca de mensagens em que um objeto emissor dispara no receptor a execução de uma operação específica, a qual chamamos de <code>método</code>. </p>
 <p>Estes objetos têm <code>atributos</code> e <code>comportamentos</code> definidos a partir de suas <code>classes</code> ou <code>protótipos</code>. Entendemos por <code>atributos</code> as propriedades do objeto sobre as quais armazenamos dados. Já os <code>comportamentos</code> referem-se às ações que o objeto realizada. Todas as alterações de <code>estado</code> (fotografia dos valores de atributo em um dado momento) são feitas exclusivamente pelos métodos, a partir da recepção de mensagens.</p>
 <p>Vamos imaginar, por exemplo, a representação de um simples retângulo através do paradigma da orientação a objetos. Iremos considerar utilizar orientação a objetos baseada em <code>classes</code> neste momento. Observe o diagrama:</p>
@@ -513,8 +513,9 @@
 </td></tr></table>
 </div>
 </input></input></input></div>
-<p>Perceba que as implementações da classe <em>Retangulo</em>, embora feitas em três linguagens de programação diferentes, apresentam semelhança na forma de codificar. Atributos são definidos tal qual o são variáveis comuns e métodos como sendo funções. A diferença é que as definições ficam restritas ao <code>escopo da classe</code>.</p>
-<p>A definição da classe implica na disponibilidade de um novo <code>tipo abstrato de dados</code> (TAD) no código. A partir dele, podemos criar variáveis e nelas, instanciar objetos. Veremos isso com mais detalhes quando tratarmos dos aspectos específicos de implementação.</p>
+<p>Perceba que as implementações da classe <em>Retangulo</em>, embora feitas em três linguagens de programação diferentes, apresentam semelhança na forma de codificar. Atributos são definidos tal qual o são variáveis comuns e métodos como sendo funções. A diferença é que as definições ficam restritas ao <code>escopo da classe</code> e funcionam como um molde para a criação dos objetos.</p>
+<p>A definição da classe implica na disponibilidade de um novo <code>tipo abstrato de dados</code> (TAD) no código. Com este novo tipo podemos criar variáveis e nelas, instanciar objetos. Veremos isso com mais detalhes quando tratarmos dos aspectos específicos de implementação. Esses objetos criados trocam mensagens entre si durante a execução do software, produzindo o resultado almejado pelo desenvolvedor.</p>
+<p>Saiba mais sobre este paradigma na seção de <a href="../oop/introducao/">Programação Orientada a Objetos</a>.</p>
 <h2 id="orientado-a-eventos">Orientado a Eventos<a class="headerlink" href="#orientado-a-eventos" title="Permanent link">¶</a></h2>
 <p>...continua</p>
 <h2 id="logico">Lógico<a class="headerlink" href="#logico" title="Permanent link">¶</a></h2>

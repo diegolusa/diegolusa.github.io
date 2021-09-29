@@ -7,7 +7,7 @@
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <link href="../../../img/icon.ico" rel="icon"/>
 <meta content="mkdocs-1.1.2, mkdocs-material-7.1.1" name="generator"/>
-<title>Introdução à Orientação a Objetos - Programação - Linguagens de Programação - Paradigmas - Orientação a Objetos - Prof. Diego A. Lusa</title>
+<title>Introdução à Programação Orientada a Objetos - Prof. Diego A. Lusa</title>
 <link href="../../../assets/stylesheets/main.9299cb39.min.css" rel="stylesheet"/>
 <link href="../../../assets/stylesheets/palette.ef6f36e2.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
@@ -22,7 +22,7 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
-<a class="md-skip" href="#introducao-a-orientacao-a-objetos">
+<a class="md-skip" href="#abstracao">
           Skip to content
         </a>
 </div>
@@ -46,7 +46,7 @@
 <div class="md-header__topic" data-md-component="header-topic">
 <span class="md-ellipsis">
             
-              Introdução à Orientação a Objetos - Programação - Linguagens de Programação - Paradigmas - Orientação a Objetos
+              Introdução à Programação Orientada a Objetos
             
           </span>
 </div>
@@ -252,9 +252,41 @@
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item md-nav__item--active">
 <input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+          Introdução
+          <span class="md-nav__icon md-icon"></span>
+</label>
 <a class="md-nav__link md-nav__link--active" href="./">
         Introdução
       </a>
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#abstracao">
+    Abstração
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#encapsulamento">
+    Encapsulamento
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#heranca">
+    Herança
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#polimorfismo">
+    Polimorfismo
+  </a>
+</li>
+</ul>
+</nav>
 </li>
 </ul>
 </nav>
@@ -339,11 +371,11 @@
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
-<h2 id="introducao-a-orientacao-a-objetos">Introdução à Orientação a Objetos<a class="headerlink" href="#introducao-a-orientacao-a-objetos" title="Permanent link">¶</a></h2>
-<p>O paradigma da programação orientada a objetos é relativamente antigo, remontando à década de 1960. Contudo, se tornou popular tempos após, por meio de linguagens de programação que se tornaram populares no mercado de software<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup>.</p>
-<p>Basicamente podemos resumir a programação orientada a objetos como qualquer estilo de programação que se baseia no conceito de <code>objeto</code>, que é uma estrutura que agrega atributos e comportamentos de forma encapsulada. Veja, este é o grande trunfo do paradigma: relacionar dados e comportamentos em uma única estrutura.</p>
-<p>Se analisarmos a evolução das linguagens de programação iremos perceber um esforço comum em distanciar a forma de expressar algoritmos da linguagem binária. O objetivo foi e ainda é elevar o nível de abstração das linguagens de programação para a forma que nós, humanos, observamos, interpretamos e entendemos o mundo.</p>
-<p>Certamente um passo importante neste contexto foi a possibilidade de se utilizar procedimentos (rotinas) na codificação. Tal recurso trouxe aos desenvolvedores maior capacidade de reutilizar código, segmentar e reduzir complexidade, tornando a codificação uma atividade mais eficiente e, em termos gerais, menos propensa a bugs (com muitas ressalvas).</p>
+<h1>Introdução</h1>
+<p>O paradigma da programação orientada a objetos (POO) é relativamente antigo, remontando à década de 1960. Contudo, se tornou popular tempos após, por meio de linguagens de programação populares no mercado de software da época<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup>.</p>
+<p>Basicamente podemos resumir a programação orientada a objetos como qualquer estilo de programação que se baseia no conceito de <code>objeto</code>, que é uma estrutura que agrega <code>atributos</code> e <code>comportamentos</code> de forma encapsulada. Veja, este é o grande trunfo do paradigma: <strong>relacionar dados e comportamentos em uma única estrutura</strong>.</p>
+<p>Se analisarmos a evolução das linguagens de programação, iremos perceber um esforço comum em distanciar a forma de expressar algoritmos da linguagem binária. O objetivo foi e ainda é elevar o nível de abstração das linguagens de programação para a forma que nós, humanos, observamos, interpretamos e entendemos o mundo.</p>
+<p>Certamente um passo importante neste contexto foi a possibilidade de se utilizar <code>procedimentos</code> (rotinas) na codificação. Tal recurso trouxe aos desenvolvedores maior capacidade de reutilizar código, segmentar e reduzir complexidade, tornando a codificação uma atividade mais eficiente e, em termos gerais, menos propensa a bugs (com muitas ressalvas).</p>
 <p>Através do uso de rotinas, um software é segmentado em diversas pequenas unidades de propósito específico, que, ao serem executadas na ordem correta, geram ao final as funcionalidades esperadas. Já os dados necessários ao programa são processados através de variáveis locais ou globais, comumente sendo enviados de procedimento em procedimento como um <em>pipeline</em> de operações. Não há relação formal entre as rotinas e os dados por elas processados, pois são estruturas dissociadas na codificação. O resultado é algo semelhante ao diagrama abaixo.</p>
 <div class="mermaid">
 stateDiagram-v2
@@ -357,26 +389,145 @@ stateDiagram-v2
    funcao_01 --&gt; [*]
    note right of funcao_02: Dados locais e globais
    note left of funcao_03: Dados locais e globais
+   note right of funcao_04: Dados locais e globais
+   note right of funcao_01: Dados locais e globais
 </div>
-<p>Embora tenha sido um inegável avanço, a reutilização de código via procedimentos ainda era limitado e o caminho de execução do programa por vezes se tornava tão confuso como um prato de espagueti, tornando a manutenção difícil. Mas, o maior dos problemas origina-se da separação entre dados e procedimentos. Isso porque todo procedimento precisa conhecer detalhadamente a estrutura dos dados que está manipulando e, quando esta estrutura muda, torna-se necessário realizar alterações em diversos pontos do código, o que é péssimo em termos de engenharia<sup id="fnref2:1"><a class="footnote-ref" href="#fn:1">1</a></sup>.</p>
-<p>Uma solução parcial ao problema da falta de encapsulamento veio com as linguagens de programação que permitiam implementar o conceito de módulo, um componente que contém dados e procedimentos que os manipulam, cujo acesso externo se dá por meio de uma interface. Embora isso resolva a questão da alteração do estado</p>
+<p>Embora tenha sido um inegável avanço, a reutilização de código via procedimentos ainda era limitado e o caminho de execução do programa por vezes se tornava tão confuso como um prato de espaguete, tornando a manutenção difícil. Mas, o maior dos problemas origina-se da separação entre dados e procedimentos. Isso porque todo procedimento precisa conhecer detalhadamente a estrutura dos dados que está manipulando e, quando esta estrutura muda, torna-se necessário realizar alterações em diversos pontos do código, o que é péssimo em termos de engenharia<sup id="fnref2:1"><a class="footnote-ref" href="#fn:1">1</a></sup>.</p>
+<p>Vamos tentar ilustrar essa separação entre procedimentos e dados por meio de um código escrito em C++. O programa define duas estruturas, <code>ITEM_VENDA</code> e <code>VENDA</code>, as quais representam os dados que o programa deve manipular. Já as funções <code>registrarVenda</code>, <code>venderItem</code> e <code>calcularImpostos</code> são responsáveis por ações específicas sobre os dados e por tal necessidade, devem ter conhecimento sobre a estrutura dos mesmos. </p>
+<div class="tabbed-set" data-tabs="1:1"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio"><label for="__tabbed_1_1">C++</label><div class="tabbed-content"></div>
+</input></div>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;ctime&gt;</span><span class="cp"></span>
+<span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+
+<span class="k">struct</span> <span class="nc">ITEM_VENDA</span> <span class="p">{</span>
+    <span class="kt">float</span> <span class="n">valorVendaProduto</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span>
+    <span class="kt">float</span> <span class="n">quantidadeVenda</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span>
+    <span class="kt">float</span> <span class="n">desconto</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="k">struct</span> <span class="nc">VENDA</span> <span class="p">{</span>
+    <span class="n">string</span> <span class="n">cliente</span><span class="p">;</span>
+    <span class="kt">time_t</span> <span class="n">dataHora</span><span class="p">;</span>
+    <span class="n">ITEM_VENDA</span> <span class="n">itens</span><span class="p">[</span><span class="mi">10</span><span class="p">];</span>
+<span class="p">};</span>
+
+<span class="n">VENDA</span> <span class="nf">registrarVenda</span><span class="p">(){</span>
+    <span class="c1">//realiza a abertura da venda</span>
+<span class="p">}</span>
+
+<span class="n">ITEM_VENDA</span> <span class="nf">venderItem</span><span class="p">(){</span>
+    <span class="c1">//realiza o registro de um item vendido</span>
+<span class="p">}</span>
+
+<span class="kt">float</span> <span class="nf">calcularImpostos</span><span class="p">(</span><span class="n">VENDA</span> <span class="n">v</span><span class="p">){</span>
+    <span class="c1">//calcula os impostos da venda recebida como argumento</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="nf">main</span> <span class="p">(){</span>
+    <span class="n">VENDA</span> <span class="n">v1</span> <span class="o">=</span> <span class="n">registrarVenda</span><span class="p">();</span>
+    <span class="n">v1</span><span class="p">.</span><span class="n">itens</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">=</span><span class="n">venderItem</span><span class="p">();</span>
+    <span class="n">v1</span><span class="p">.</span><span class="n">itens</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">=</span><span class="n">venderItem</span><span class="p">();</span>
+    <span class="n">v1</span><span class="p">.</span><span class="n">itens</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">=</span><span class="n">venderItem</span><span class="p">();</span>
+    <span class="n">v1</span><span class="p">.</span><span class="n">itens</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="o">=</span><span class="n">venderItem</span><span class="p">();</span>
+    <span class="kt">float</span> <span class="n">tributos</span> <span class="o">=</span> <span class="n">calcularImpostos</span><span class="p">(</span><span class="n">v1</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
+<p>Perceba que a função <code>main</code> de nosso programa realiza chamada às demais funções em uma sequência específica, passando a variável que contém os dados de uma para a outra. Logo, gradativamente, a estrutura de dados em memória representada pela variável será transformada/alimentada até obtermos o resultado esperado. </p>
+<p>Os problemas dessa abordagem concentram-se em dois pontos. O primeiro deles é a exposição direta da estrutura de dados às funções, o que permite alterações sem qualquer controle. Por exemplo, nada impede que a quantidade vendida de um produto esteja negativa, o que é incorreto. O segundo ponto é a dependência da implementação das funções para com a estrutura de dados, que gera <strong>alto acoplamento</strong> entre os componentes. O efeito direto do alto acoplamento é a propagação de pontos de manutenção a mínima mudança que ocorrer na estrutura de dados, por exemplo. Todos estes problemas seriam melhor endereçados se pudessemos encapsular dados e comportamentos em um único componente.</p>
+<p>Uma solução parcial ao problema da falta de encapsulamento veio com as linguagens de programação que permitiam implementar o conceito de módulo, um componente que contém dados e procedimentos que os manipulam, cujo acesso externo se dá por meio de uma interface. Embora isso resolva a questão da alteração do estado, temos a impossibilidade de derivar um módulo a partir de outro, o que limita o reuso de código<sup id="fnref3:1"><a class="footnote-ref" href="#fn:1">1</a></sup>.</p>
 <div class="admonition info">
-<p class="admonition-title">Dica</p>
-<p>Descrever o que é estado aqui</p>
+<p class="admonition-title">Estado</p>
+<p><strong>Estado</strong>  refere-se à "fotografia" do conjunto de valores mantidos pelo componente em um determinado instante.</p>
 </div>
-<p>Antes de pensarmos em detalhes de implementação, precisamos conhecer os quatro pilares do paradigma da orientação a objetos.</p>
-<ul>
-<li><strong>Abstração</strong></li>
-<li><strong>Encapsulamento</strong></li>
-<li><strong>Herança</strong></li>
-<li><strong>Polimorfismo</strong></li>
-</ul>
-<h1 id="falar-de-abstracao">falar de abstração<a class="headerlink" href="#falar-de-abstracao" title="Permanent link">¶</a></h1>
+<p>Chegamos então à POO, uma estratégia de programação que modela o problema a partir de objetos e os faz interagir entre si para obter os resultados. Deixamos de lado a chamada de inúmeros procedimentos para orientar o fluxo do programa e passamos a ter objetos trocando mensagens, tal qual uma simulação viva da solução almejada. Além de uma forma diferente de codificar, a POO impõe uma mudança significativa na maneira de elaborar o algoritmo. Observe o exemplo:</p>
+<div class="mermaid">graph TD
+    A((obj1)) --&gt;|sacar| B((obj2))
+    B((obj2)) --&gt; |sacar| C((obj3))
+    B((obj2)) --&gt; |sacar| D((obj4))
+    D((obj4)) --&gt; |notificarSaque| D
+    C((obj3)) --&gt; |notificarSaque| C
+    C((obj3))--&gt; |reduzirSaldo| E((obj5))
+    D((obj4))--&gt; |reduzirSaldo| E((obj5))
+</div>
+<p>Mas antes de pensarmos nos detalhes de implementação, precisamos conhecer os quatro pilares do paradigma da orientação a objetos, pois são eles que orientam a concepção e implementação de softwares por meio desta estratégia. Vamos a eles então.</p>
+<h2 id="abstracao">Abstração<a class="headerlink" href="#abstracao" title="Permanent link">¶</a></h2>
+<p>A <code>abstração</code> é um processo que permite identificar de um contexto somente o que é de interesse, ignorando os demais detalhes. Logo, na POO, a abstração nos permite pensar objetos que contenham apenas atributos e comportamentos necessários à resolução do problema <sup id="fnref:2"><a class="footnote-ref" href="#fn:2">2</a></sup><sup id="fnref:3"><a class="footnote-ref" href="#fn:3">3</a></sup>. O processo de abstração pode ser entendido, portanto, como uma estratégia em que mantemos o foco em ideias, qualidades e propriedades de um assunto, deixando as minuciais de lado. É olhar para o grande cenário, mas ver apenas elementos de interesse.</p>
+<p>Podemos entender também a abstração como a estratégia de esconder detalhes de implementação dos usuários. Isso significa que a manipulação dos objetos não requer e nem deve precisar do conhecimento de operação interno. Somente a funcionalidade é exposta (<strong>o que</strong> o objeto faz), nunca a sua implementação (<strong>como faz</strong>) <sup id="fnref2:2"><a class="footnote-ref" href="#fn:2">2</a></sup><sup id="fnref2:3"><a class="footnote-ref" href="#fn:3">3</a></sup>.</p>
+<h2 id="encapsulamento">Encapsulamento<a class="headerlink" href="#encapsulamento" title="Permanent link">¶</a></h2>
+<p>A POO permite associar em um único componente dados e comportamentos que manipulam estes dados, de sorte a oferecer meios de evitar a alteração indevida de estado a partir de agentes externos. Tal recurso chama-se <code>encapsulamento</code>, uma "membrana" que isola os detalhes internos do objeto do mundo exterior.</p>
+<p>Podemos entender, portanto, que encapsular, na perspectiva da POO, compreende proteger um objeto do acesso direto às suas propriedades, sem passar por um <code>método</code>. Comumente as variáveis de instância têm sua manipulação restrita aos métodos, de sorte que qualquer mudança de estado do objeto só ocorre por meio deles.</p>
+<h2 id="heranca">Herança<a class="headerlink" href="#heranca" title="Permanent link">¶</a></h2>
+<p>Muitos elementos do mundo real podem ser organizados em uma taxionomia. Isso porque diferentes indivíduos (objetos), mesmo sendo diferentes, compartilham de características comuns em alguns contextos. Vamos imaginar um site de <em>delivery</em> que oferece <em>fast food</em>, culinária oriental, culinária tropical e itens de supermercado. Então, pelo <em>app</em>, você pode comprar sabão e um <em>hot dog</em> da mesma forma. Já no mundo real, são coisas completamente diferentes. O que pode haver de comum entre eles?</p>
+<p>A resposta é que ambos são produtos, e, na perspectiva de produto, compartilham de atributos como <em>valor de venda</em>, <em>quantidade em estoque</em>, <em>descrição</em>, <em>imagens</em>, entre outros. Além disso, ambos podem ser vendidos, o que representa uma ação. E, de forma específica, cada item pode conter atributos e métodos específicos. </p>
+<p>A relação de <code>herança</code> é o recurso da POO que permite a objetos herdar atributos e comportamentos de outro de natureza mais genérica. Em nosso exemplo, podemos pensar em três classes: <code>Produto</code>, <code>Culinario</code> e <code>Supermercado</code>. A classe <code>Produto</code> é a genérica e serve de <strong>superclasse</strong> à <code>Culinario</code> e <code>Supermercado</code>.</p>
+<div class="mermaid">    classDiagram
+        Produto &lt;|-- Culinario
+        Produto &lt;|-- Supermercado
+
+        class Produto{
+        -float valorVenda
+        -float quantidadeEstoque
+        -String descricao
+        +vender()
+        }
+        class Culinario{
+        -int calorias
+        }
+        class Supermercado{
+        -String marca
+        -String codigoBarras
+        }
+</div>
+<h2 id="polimorfismo">Polimorfismo<a class="headerlink" href="#polimorfismo" title="Permanent link">¶</a></h2>
+<p><code>Polimorfismo</code> versa sobre a possibilidade de uma mesma ação ser realizada de formas diferentes em objetos que compartilham de uma mesma interface. Tal recurso reduz significativamente a necessidade de escrita de código e favorece a criação de componentes com baixo acoplamento. É como se enviássemos a mensagem <code>correr</code> para um velocista e um ciclista. Cada qual executaria a ação associada a mensagem de forma diferente, mas ambos tem capacidade de compreender e execução a mesma ação de alto nível.</p>
 <div class="footnote">
 <hr/>
 <ol>
 <li id="fn:1">
-<p>Anthony Sintes. <em>Aprenda Programação Orientada a Objetos em 21 dias</em>. Pearson, 2002. <a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref2:1" title="Jump back to footnote 1 in the text">↩</a></p>
+<p>Anthony Sintes. <em>Aprenda Programação Orientada a Objetos em 21 dias</em>. Pearson, 2002. <a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref2:1" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref3:1" title="Jump back to footnote 1 in the text">↩</a></p>
+</li>
+<li id="fn:2">
+<p>Geeks For Geeks. Abstraction in java. 2021. URL: <a href="https://www.geeksforgeeks.org/abstraction-in-java-2/">https://www.geeksforgeeks.org/abstraction-in-java-2/</a>. <a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 2 in the text">↩</a><a class="footnote-backref" href="#fnref2:2" title="Jump back to footnote 2 in the text">↩</a></p>
+</li>
+<li id="fn:3">
+<p>Hamza Ahmed. Four pillars of object oriented programming <span class="arithmatex">\(oop\)</span>. 2021. URL: <a href="https://medium.com/@hamzzza.ahmed95/four-pillars-of-object-oriented-programming-oop-e8d7822aa219">https://medium.com/@hamzzza.ahmed95/four-pillars-of-object-oriented-programming-oop-e8d7822aa219</a>. <a class="footnote-backref" href="#fnref:3" title="Jump back to footnote 3 in the text">↩</a><a class="footnote-backref" href="#fnref2:3" title="Jump back to footnote 3 in the text">↩</a></p>
 </li>
 </ol>
 </div>
