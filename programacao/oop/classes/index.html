@@ -404,7 +404,7 @@
     - email
     }
 </div>
-<p>Na primeira seção temos o nome da classe, que escolhemos ser <strong>Estudante</strong>. A segunda seção trata dos atributos que identificamos. Falta apenas elencarmos os comportamentos, ou seja, as ações que objetos de <strong>Estudante</strong> podem expor. De início, vamos imaginar a possibilidade do estudante expor ações que permitam ler e alterar seus atributos de dados. Em linguagem que expressam POO, utilizamos <code>métodos</code> para implementar ações que um objeto pode realizar. Assim, concluímos nossa representação da classe <strong>Estudante</strong> incluíndo alguns métodos (que explicaremos mais a frente).</p>
+<p>Na primeira seção temos o nome da classe, que escolhemos ser <strong>Estudante</strong>. A segunda seção trata dos atributos que identificamos. Falta apenas elencarmos os comportamentos, ou seja, as ações que objetos de <strong>Estudante</strong> podem expor. De início, vamos imaginar a possibilidade do estudante expor ações que permitam ler e alterar seus atributos de dados. Em linguagem que expressam POO, utilizamos <code>métodos</code> para implementar ações que um objeto pode realizar. Assim, concluímos nossa representação da classe <strong>Estudante</strong> incluindo alguns métodos (que explicaremos mais a frente).</p>
 <div class="mermaid">classDiagram
 
     class Estudante{
@@ -679,11 +679,19 @@
 <h2 id="visibilidade">Visibilidade<a class="headerlink" href="#visibilidade" title="Permanent link">¶</a></h2>
 <p>A programação orientada a objetos é especialmente útil porque oferece um mecanismo de programação que une atributos à comportamentos em uma única unidade. E, ao permitir tal recurso, possibilita também a proteção contra alterações indevidas, desde que o programador utilize os princípios e boas práticas na codificação. </p>
 <p>A visibilidade de atributos é um fator muito importante. Por visibilidade devemos entender quem terá acesso direto a um atributo do objeto e de antemão devemos saber que <strong>é, no mínimo, indesejado permitir acesso direto</strong>. </p>
-<p>A técnica que utilizamos para esconder os atributos (<em>data members</em>) de um objeto chama-se <code>data hiding</code>. O objetivo é impedir o acesso direto aos atributos e assim garantir a consistência de estado por meio dos métodos que o objeto expõe ao mundo exterior[^1]. Em nossa implementação da classe <strong>Estudante</strong> aplicamos a técnica por meio dos modificadores de visibilidade do Java e C++, enquanto que no Python, utilizamos a convenção.</p>
+<p>A técnica que utilizamos para esconder os atributos (<em>data members</em>) de um objeto chama-se <code>data hiding</code>. O objetivo é impedir o acesso direto aos atributos e assim garantir a consistência de estado por meio dos métodos que o objeto expõe ao mundo exterior <sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup>. Em nossa implementação da classe <strong>Estudante</strong> aplicamos a técnica por meio dos modificadores de visibilidade do Java e C++, enquanto que no Python, utilizamos a convenção.</p>
 <p>O que declaramos como <code>private</code> (Java e C++) fica restrito ao escopo interno. Isso vale para atributos e para métodos. Logo, acesso direto externo ao atributo <em>email</em>, por exemplo, não é possível. Se for preciso ao mundo exterior ler o valor de <em>email</em>, então criamos um método <code>accessor</code>, cuja finalidade é permitir a leitura de um atributo, jamais sua alteração. Por sua vez, se há necessidade de alterar o valor de um atributo, então criamos um método <code>mutator</code> para este fim. Este é o caso dos métodos <em>get_email</em> e <em>set_email</em> que implementamos.</p>
 <h2 id="encapsulamento">Encapsulamento<a class="headerlink" href="#encapsulamento" title="Permanent link">¶</a></h2>
 <p><code>Encapsulamento</code> é um dos pilares da POO. Quando associamos atributos à métodos que os manipulam dentre de uma unidade chamada objeto, e determinamos o que será público e o que fica restrito, estamos falando de encapsulamento. </p>
 <p>Utilizando <code>data hiding</code> impedimos que objetos sofram alterações de estado sem controle. E, ao escondermos a implementação dos métodos ou mesmo restringirmos a exposição de alguns métodos, estamos garantindo o encapsulamento e gerando uma abstração de dados que expõe apenas o que necessário para o mundo exterior.</p>
+<div class="footnote">
+<hr/>
+<ol>
+<li id="fn:1">
+<p>Sonoo Jaiswal. What is data hiding? 2021. URL: <a href="https://www.javatpoint.com/what-is-data-hiding">https://www.javatpoint.com/what-is-data-hiding</a>. <a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">↩</a></p>
+</li>
+</ol>
+</div>
 </article>
 </div>
 </div>
