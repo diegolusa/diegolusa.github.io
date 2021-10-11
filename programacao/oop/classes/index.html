@@ -22,6 +22,9 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
+<a class="md-skip" href="#classes">
+          Skip to content
+        </a>
 </div>
 <div data-md-component="announce">
 </div>
@@ -153,8 +156,8 @@
 </ul>
 </nav>
 </li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" id="__nav_3" type="checkbox"/>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" id="__nav_3" type="checkbox"/>
 <label class="md-nav__link" for="__nav_3">
         Programação
         <span class="md-nav__icon md-icon"></span>
@@ -235,8 +238,8 @@
 </ul>
 </nav>
 </li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_4" id="__nav_3_4" type="checkbox"/>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_4" id="__nav_3_4" type="checkbox"/>
 <label class="md-nav__link" for="__nav_3_4">
         Programação Orientada a Objetos
         <span class="md-nav__icon md-icon"></span>
@@ -251,6 +254,34 @@
 <a class="md-nav__link" href="../introducao/">
         Introdução
       </a>
+</li>
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+          Classes
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./">
+        Classes
+      </a>
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#visibilidade">
+    Visibilidade
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#encapsulamento">
+    Encapsulamento
+  </a>
+</li>
+</ul>
+</nav>
 </li>
 </ul>
 </nav>
@@ -335,7 +366,324 @@
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
-<h1>Classes</h1>
+<h1 id="classes">Classes<a class="headerlink" href="#classes" title="Permanent link">¶</a></h1>
+<p>Em um programa desenvolvido utilizando POO, o processamento se dá pela troca de mensagens entre os objetos criados. E, para criar tais objetos, precisamos de um modelo de construção, que chamamos de <code>classe</code>. A <code>classe</code> define, portanto, características comuns (atributos e comportamentos) de um tipo de objeto. </p>
+<p>Quando estamos projetando um software utilizando POO, a primeira atividade que temos na parte de projeto é especificar quais serão as classes que devemos construir, assim como seus relacionamentos. Essa fase de <em>design</em> é essencial, pois impacta diretamente na arquitetura do software. Perceba então que não falamos inicialmente de objetos, mas sim de classes, pois não há como criá-los sem definir sua estrutura previamente.</p>
+<div class="admonition info">
+<p class="admonition-title">Classes</p>
+<p>As classes são <strong>Tipos Abstratos de Dados</strong> que o desenvolvedor define no código. A partir destes tipos criam-se variáveis que irão receber <strong>instâncias da classe</strong>, que conhecemos como <strong>objetos</strong>.</p>
+</div>
+<p>Existem diversas técnicas e recomendações voltadas ao projeto de classes. Neste momento isso não será levado em consideração, pois nosso foco será a codificação, ou seja, a expressão destes conceitos em código. Basta que entendamos por ora que as classes são obtidas a partir da análise do domínio do problema, buscando identificar as categorias de objetos que ocorrem.</p>
+<div class="admonition info">
+<p class="admonition-title">Dica</p>
+<p>Você pode achar informações introdutórias sobre análise orientada a objetos <a href="http://www.sjp.pr.gov.br/wp-content/uploads/servicos/csci/3826.pdf">neste endereço</a> ou no curso oferecido pela <a href="https://www.ev.org.br/cursos/linguagem-de-modelagem-unificada-uml">Fundação Bradesco</a>.</p>
+</div>
+<p>Imagine, por exemplo, que estamos trabalhando em sistema de gestão acadêmica para uma universidade. Através da análise do domínio, elencamos que minimamente precisaremos considerar <em>estudantes</em>, <em>professores</em>, <em>cursos</em>, <em>disciplinas</em> e <em>avaliações</em> em nossa modelagem.  Estas são nossas categorias, e, portanto, candidatas a se tornarem classes. Feito isso, precisamos identificar os atributos de interesse, comportamentos e as relações entre as classes para termos os insumos necessários à codificação.</p>
+<p>Vamos começar pela categoria <em>estudante</em>. Quais <code>atributos</code> de dados os estudantes em nosso sistema deverão ter? A resposta é: <em>dependerá dos requisitos que identificamos junto ao nosso cliente</em>. Como não temos em mãos tais requisitos, iremos pressupor que os atributos são:</p>
+<ul>
+<li>nome completo</li>
+<li>data de nascimento</li>
+<li>nome da mãe</li>
+<li>cpf</li>
+<li>número de matrícula</li>
+<li>email</li>
+</ul>
+<div class="admonition info">
+<p class="admonition-title">Atributos</p>
+<p><strong>Atributos</strong> são propriedades associadas à objetos que desejamos registrar valor.</p>
+</div>
+<p>Deste modo, a categoria (grupo) <em>estudante</em> será representada por uma <em>classe</em>. E como podemos representar este entendimento para fins de modelagem? Bem, podemos utilizar o <strong>Diagrama de Classes</strong> da <a href="https://www.uml.org/">UML</a>! Veja como ficaria:</p>
+<div class="mermaid">classDiagram
+
+    class Estudante{
+    - nomeCompleto
+    - dataNascimento
+    - nomeMae
+    - cpf
+    - numeroMatricula
+    - email
+    }
+</div>
+<p>Na primeira seção temos o nome da classe, que escolhemos ser <strong>Estudante</strong>. A segunda seção trata dos atributos que identificamos. Falta apenas elencarmos os comportamentos, ou seja, as ações que objetos de <strong>Estudante</strong> podem expor. De início, vamos imaginar a possibilidade do estudante expor ações que permitam ler e alterar seus atributos de dados. Em linguagem que expressam POO, utilizamos <code>métodos</code> para implementar ações que um objeto pode realizar. Assim, concluímos nossa representação da classe <strong>Estudante</strong> incluíndo alguns métodos (que explicaremos mais a frente).</p>
+<div class="mermaid">classDiagram
+
+    class Estudante{
+    - nomeCompleto
+    - dataNascimento
+    - nomeMae
+    - cpf
+    - numeroMatricula
+    - email
+    + Estudante(nomeComp, dataN, nomeMae, cpf, matricula)
+    + getNomeCompleto()
+    + getDataNascimento()
+    + getNomeMae()
+    + getCPF()
+    + getNumeroMatricula()
+    + getEmail()
+    + setEmail ()
+    }
+</div>
+<div class="admonition info">
+<p class="admonition-title">Métodos</p>
+<p>São rotinas associadas ao objeto que manipulam seu estado (conjunto de valores de atributos) e que expõem ao mundo exterior uma interface de comunicação. Representam a implementação do conceito de comportamento em linguagens com suporte a POO.</p>
+</div>
+<p>Na sequência apresentamos implementações muito básicas para a classe <strong>Estudante</strong> utilizando três linguagens <em>mainstream</em> para que possamos discutir e analisar alguns elementos importantes. O primeiro deles é a forma que utilizamos para definir a classe, que nas três linguagens se dá pelo uso da palavra reservada <code>class</code>. Atributos são declarados como <code>variáveis de instância</code>, ou seja, variáveis terão valores específicos para cada objeto criado (instanciado). Já os comportamentos são implementados a partir de <code>métodos</code>, cuja estrutura é praticamente igual à funções/procedimentos. A grande diferença é que tais funções operam no escopo do objeto, especificamente manipulando suas variáveis de instância.</p>
+<div class="tabbed-set" data-tabs="1:3"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio"><label for="__tabbed_1_1">C++</label><div class="tabbed-content">
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span>
+<span class="normal">38</span>
+<span class="normal">39</span>
+<span class="normal">40</span>
+<span class="normal">41</span>
+<span class="normal">42</span>
+<span class="normal">43</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="cp">#include</span> <span class="cpf">&lt;string&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;ctime&gt;</span><span class="cp"></span>
+
+<span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+
+<span class="k">class</span> <span class="nc">Estudante</span><span class="p">{</span>
+<span class="hll">    <span class="k">private</span><span class="o">:</span>
+</span>        <span class="n">string</span> <span class="n">nomeCompleto</span><span class="p">,</span> <span class="n">nomeMae</span><span class="p">,</span> <span class="n">email</span><span class="p">,</span> <span class="n">cpf</span><span class="p">;</span>
+        <span class="kt">unsigned</span> <span class="kt">long</span> <span class="n">numeroMatricula</span><span class="p">;</span>
+        <span class="kt">time_t</span> <span class="n">dataNascimento</span><span class="p">;</span>
+
+<span class="hll">    <span class="k">public</span><span class="o">:</span> 
+</span><span class="hll">        <span class="n">Estudante</span><span class="p">(</span><span class="n">string</span> <span class="n">nomeCompleto</span><span class="p">,</span><span class="n">string</span> <span class="n">nomeMae</span><span class="p">,</span> <span class="n">string</span> <span class="n">email</span><span class="p">,</span> <span class="n">string</span> <span class="n">cpf</span><span class="p">,</span> <span class="kt">unsigned</span> <span class="kt">long</span> <span class="n">numeroMatricula</span><span class="p">,</span> <span class="kt">time_t</span> <span class="n">dataNascimento</span><span class="p">){</span>
+</span>            <span class="k">this</span><span class="o">-&gt;</span><span class="n">cpf</span> <span class="o">=</span> <span class="n">cpf</span><span class="p">;</span>
+            <span class="k">this</span><span class="o">-&gt;</span><span class="n">nomeCompleto</span> <span class="o">=</span> <span class="n">nomeCompleto</span><span class="p">;</span>
+            <span class="k">this</span><span class="o">-&gt;</span><span class="n">nomeMae</span> <span class="o">=</span> <span class="n">nomeMae</span><span class="p">;</span>
+            <span class="k">this</span><span class="o">-&gt;</span><span class="n">email</span> <span class="o">=</span> <span class="n">email</span><span class="p">;</span>
+            <span class="k">this</span><span class="o">-&gt;</span><span class="n">numeroMatricula</span> <span class="o">=</span> <span class="n">numeroMatricula</span><span class="p">;</span>
+            <span class="k">this</span><span class="o">-&gt;</span><span class="n">dataNascimento</span> <span class="o">=</span> <span class="n">dataNascimento</span><span class="p">;</span>
+
+        <span class="p">}</span>
+    <span class="n">string</span> <span class="n">getNomeCompleto</span><span class="p">(){</span>
+        <span class="k">return</span> <span class="k">this</span><span class="o">-&gt;</span><span class="n">nomeCompleto</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="kt">time_t</span> <span class="n">getDataNascimento</span><span class="p">(){</span>
+        <span class="k">return</span> <span class="k">this</span><span class="o">-&gt;</span><span class="n">dataNascimento</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="n">string</span> <span class="n">getNomeMae</span><span class="p">(){</span>
+        <span class="k">return</span> <span class="k">this</span><span class="o">-&gt;</span><span class="n">nomeMae</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="n">string</span> <span class="n">getCPF</span><span class="p">(){</span>
+        <span class="k">return</span> <span class="k">this</span><span class="o">-&gt;</span><span class="n">cpf</span><span class="p">;</span> 
+    <span class="p">}</span>
+    <span class="kt">unsigned</span> <span class="kt">long</span> <span class="n">getNumeroMatricula</span><span class="p">(){</span>
+        <span class="k">return</span> <span class="k">this</span><span class="o">-&gt;</span><span class="n">numeroMatricula</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="n">string</span> <span class="n">getEmail</span><span class="p">(){</span>
+        <span class="k">return</span> <span class="k">this</span><span class="o">-&gt;</span><span class="n">email</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="kt">void</span> <span class="n">setEmail</span> <span class="p">(</span><span class="n">string</span> <span class="n">email</span><span class="p">){</span>
+        <span class="k">this</span><span class="o">-&gt;</span><span class="n">email</span> <span class="o">=</span> <span class="n">email</span><span class="p">;</span>        
+    <span class="p">}</span>       
+<span class="p">};</span>
+</code></pre></div>
+</td></tr></table>
+</div>
+<input id="__tabbed_1_2" name="__tabbed_1" type="radio"><label for="__tabbed_1_2">Java</label><div class="tabbed-content">
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span>
+<span class="normal">38</span>
+<span class="normal">39</span>
+<span class="normal">40</span>
+<span class="normal">41</span>
+<span class="normal">42</span>
+<span class="normal">43</span>
+<span class="normal">44</span>
+<span class="normal">45</span>
+<span class="normal">46</span>
+<span class="normal">47</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">java.time.LocalDate</span><span class="p">;</span>
+
+<span class="kd">class</span> <span class="nc">Estudante</span> <span class="p">{</span>
+
+    <span class="kd">private</span> <span class="n">String</span> <span class="n">nomeCompleto</span><span class="p">,</span> <span class="n">nomeMae</span><span class="p">,</span> <span class="n">email</span><span class="p">,</span> <span class="n">cpf</span><span class="p">;</span>
+    <span class="kd">private</span> <span class="kt">long</span> <span class="n">numeroMatricula</span><span class="p">;</span>
+    <span class="kd">private</span> <span class="n">LocalDate</span> <span class="n">dataNascimento</span><span class="p">;</span>
+
+<span class="hll">    <span class="kd">public</span> <span class="nf">Estudante</span><span class="p">(</span><span class="n">String</span> <span class="n">nomeCompleto</span><span class="p">,</span> <span class="n">String</span> <span class="n">nomeMae</span><span class="p">,</span> <span class="n">String</span> <span class="n">email</span><span class="p">,</span> <span class="n">String</span> <span class="n">cpf</span><span class="p">,</span> <span class="kt">long</span> <span class="n">numeroMatricula</span><span class="p">,</span>
+</span>            <span class="n">LocalDate</span> <span class="n">dataNascimento</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">cpf</span> <span class="o">=</span> <span class="n">cpf</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">dataNascimento</span> <span class="o">=</span> <span class="n">dataNascimento</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">nomeCompleto</span> <span class="o">=</span> <span class="n">nomeCompleto</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">nomeMae</span> <span class="o">=</span> <span class="n">nomeMae</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">email</span> <span class="o">=</span> <span class="n">email</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">numeroMatricula</span> <span class="o">=</span> <span class="n">numeroMatricula</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="n">String</span> <span class="nf">getNomeCompleto</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="na">nomeCompleto</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="n">LocalDate</span> <span class="nf">getDataNascimento</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="na">dataNascimento</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="n">String</span> <span class="nf">getNomeMae</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="na">nomeMae</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="n">String</span> <span class="nf">getCPF</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="na">cpf</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="kt">long</span> <span class="nf">getNumeroMatricula</span><span class="p">(){</span>
+        <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="na">numeroMatricula</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="n">String</span> <span class="nf">getEmail</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="na">email</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="kt">void</span> <span class="nf">setEmail</span><span class="p">(</span><span class="n">String</span> <span class="n">email</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">email</span> <span class="o">=</span> <span class="n">email</span><span class="p">;</span>
+    <span class="p">}</span>
+
+<span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
+</div>
+<input id="__tabbed_1_3" name="__tabbed_1" type="radio"><label for="__tabbed_1_3">Python</label><div class="tabbed-content">
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">Estudante</span><span class="p">:</span>
+<span class="hll">    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nome_completo</span><span class="p">,</span> <span class="n">data_nascimento</span><span class="p">,</span> <span class="n">nome_mae</span><span class="p">,</span> <span class="n">cpf</span><span class="p">,</span> <span class="n">matricula</span><span class="p">,</span> <span class="n">email</span><span class="p">):</span>
+</span>        <span class="bp">self</span><span class="o">.</span><span class="n">__nome_completo</span> <span class="o">=</span> <span class="n">nome_completo</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__data_nascimento</span> <span class="o">=</span> <span class="n">data_nascimento</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__nome_mae</span> <span class="o">=</span> <span class="n">nome_mae</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__cpf</span> <span class="o">=</span> <span class="n">cpf</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__email</span> <span class="o">=</span> <span class="n">email</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__numero_matricula</span> <span class="o">=</span> <span class="n">matricula</span>
+
+    <span class="k">def</span> <span class="nf">set_email</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">email</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__email</span> <span class="o">=</span> <span class="n">email</span>        
+    <span class="k">def</span> <span class="nf">get_email</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__email</span>
+    <span class="k">def</span> <span class="nf">get_numero_matricula</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__numero_matricula</span>
+    <span class="k">def</span> <span class="nf">get_cpf</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__cpf</span>
+    <span class="k">def</span> <span class="nf">get_nome_mae</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__nome_mae</span>
+    <span class="k">def</span> <span class="nf">get_data_nascimento</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__data_nascimento</span>
+    <span class="k">def</span> <span class="nf">get_nome_completo</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__nome_completo</span>
+</code></pre></div>
+</td></tr></table>
+</div>
+</input></input></input></div>
+<p>O primeiro ponto de atenção são o uso de <code>this</code> e <code>self</code> (por convenção) no código. Embora a sintaxe mude de linguagem para linguagem, o objetivo de ambos é o mesmo: <strong>referenciar uma variável de instância ou método de instância</strong>. Ainda confuso? Então vamos explicar com mais detalhes.</p>
+<p>Quando o desenvolvedor codifica a classe, sua intenção é operacionalizar as ações para cada possível objeto que venha a ser <code>instanciado</code>. Por instanciação devemos entender o processo de reserva de espaço de memória para o objeto residir, bem como sua inicialização a partir do <code>construtor</code>. Nesta área de memória em que o objeto reside há espaço para armazenar os valores de seus atributos. Disso é que surge o conceito de <em>variáveis de instância</em>, ou seja, variáveis cujo valor é particular a cada instância (objeto) criada.</p>
+<p>Já os métodos não têm seu código "carregado" junto a cada instância, pois eles não mudam sua implementação a cada novo objeto. Desconsiderando casos excepcionais, todos os objetos compartilham da mesma implementação definida na classe e é neste ponto que o uso de <em>this/self</em> tornam-se especialmente útil. Eles representam a instância que recebeu a mensagem (objeto do contexto), o que permite codificar o comportamento para todo e qualquer objeto da classe a partir de um código genérico.</p>
+<p>Analise o código a seguir. Ele apresenta dois objetos, <em>estudante01</em> e <em>estudante02</em>, devidamente inicializados com os valores informados no construtor. Nos comandos de <em>print</em>, o valor apresentado para <em>cpf</em> será àquele informado para o respectivo objeto. Isso é possível porque, quando o objeto <em>estudante01</em> recebe a mensagem <code>get_cpf</code>, ao rodar a implementação do método, o valor da referência <em>self</em> está apontando para <em>estudante01</em>. O mesmo raciocínio vale para <em>estudante02</em> e qualquer outro objeto que venha a ser instanciado.</p>
+<div class="highlight"><pre><span></span><code><span class="n">estudante01</span> <span class="o">=</span> <span class="n">Estudante</span><span class="p">(</span><span class="s2">"Fulano A. B."</span><span class="p">,</span> <span class="s2">"12/05/2003"</span><span class="p">,</span> <span class="s2">"Ciclana A. B. "</span><span class="p">,</span> <span class="s2">"12365478963"</span><span class="p">,</span> <span class="s2">"1236584"</span><span class="p">)</span>
+<span class="n">estudante02</span> <span class="o">=</span> <span class="n">Estudante</span><span class="p">(</span><span class="s2">"Beltrano F. G."</span><span class="p">,</span> <span class="s2">"30/01/2002"</span><span class="p">,</span> <span class="s2">"Ciclana F. G. "</span><span class="p">,</span> <span class="s2">"85789632541"</span><span class="p">,</span> <span class="s2">"2365841"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">estudante01</span><span class="o">.</span><span class="n">get_cpf</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">estudante02</span><span class="o">.</span><span class="n">get_cpf</span><span class="p">())</span>
+</code></pre></div>
+<p>Em nossa explicação anterior falamos de <code>método construtor</code> mas não o descrevemos e para isso, vamos tomar como estudo de caso nossa implementação em Python, linha <span class="arithmatex">\(2\)</span>. Bem, sabemos que o estado de um objeto é constituído pelo valor de seus atributos em um determinado instante. A questão é: qual será o estado inicial do objeto, obtido assim que ele for instanciado? Quem determina isso é o <code>método construtor</code>.</p>
+<p>O nome do tipo de método já deixa a dica: <code>construtor</code>, ou seja, aquele que constrói o estado inicial. Trata-se, portanto, de um método especial executado no ato da instanciação, cuja finalidade é entregar o objeto em um estado válido, consistente. Seus parâmetros constituem as dependência que o objeto precisa receber do mundo exterior. Cada linguagem especifica como criá-los: enquanto que Java e C++ expressam os construtores a partir de um método de mesmo nome da classe e sem tipo de retorno, no Python ele  obrigatoriamente deve se chamar <code>__init__</code>. E, para ficar registrado, podemos ter vários construtores em uma mesma classe.</p>
+<h2 id="visibilidade">Visibilidade<a class="headerlink" href="#visibilidade" title="Permanent link">¶</a></h2>
+<p>A programação orientada a objetos é especialmente útil porque oferece um mecanismo de programação que une atributos à comportamentos em uma única unidade. E, ao permitir tal recurso, possibilita também a proteção contra alterações indevidas, desde que o programador utilize os princípios e boas práticas na codificação. </p>
+<p>A visibilidade de atributos é um fator muito importante. Por visibilidade devemos entender quem terá acesso direto a um atributo do objeto e de antemão devemos saber que <strong>é, no mínimo, indesejado permitir acesso direto</strong>. </p>
+<p>A técnica que utilizamos para esconder os atributos (<em>data members</em>) de um objeto chama-se <code>data hiding</code>. O objetivo é impedir o acesso direto aos atributos e assim garantir a consistência de estado por meio dos métodos que o objeto expõe ao mundo exterior[^1]. Em nossa implementação da classe <strong>Estudante</strong> aplicamos a técnica por meio dos modificadores de visibilidade do Java e C++, enquanto que no Python, utilizamos a convenção.</p>
+<p>O que declaramos como <code>private</code> (Java e C++) fica restrito ao escopo interno. Isso vale para atributos e para métodos. Logo, acesso direto externo ao atributo <em>email</em>, por exemplo, não é possível. Se for preciso ao mundo exterior ler o valor de <em>email</em>, então criamos um método <code>accessor</code>, cuja finalidade é permitir a leitura de um atributo, jamais sua alteração. Por sua vez, se há necessidade de alterar o valor de um atributo, então criamos um método <code>mutator</code> para este fim. Este é o caso dos métodos <em>get_email</em> e <em>set_email</em> que implementamos.</p>
+<h2 id="encapsulamento">Encapsulamento<a class="headerlink" href="#encapsulamento" title="Permanent link">¶</a></h2>
+<p><code>Encapsulamento</code> é um dos pilares da POO. Quando associamos atributos à métodos que os manipulam dentre de uma unidade chamada objeto, e determinamos o que será público e o que fica restrito, estamos falando de encapsulamento. </p>
+<p>Utilizando <code>data hiding</code> impedimos que objetos sofram alterações de estado sem controle. E, ao escondermos a implementação dos métodos ou mesmo restringirmos a exposição de alguns métodos, estamos garantindo o encapsulamento e gerando uma abstração de dados que expõe apenas o que necessário para o mundo exterior.</p>
 </article>
 </div>
 </div>
@@ -344,6 +692,34 @@
 </a>
 </main>
 <footer class="md-footer">
+<nav aria-label="Footer" class="md-footer__inner md-grid">
+<a class="md-footer__link md-footer__link--prev" href="../introducao/" rel="prev">
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"></path></svg>
+</div>
+<div class="md-footer__title">
+<div class="md-ellipsis">
+<span class="md-footer__direction">
+                Previous
+              </span>
+              Introdução
+            </div>
+</div>
+</a>
+<a class="md-footer__link md-footer__link--next" href="../../../web/historia/" rel="next">
+<div class="md-footer__title">
+<div class="md-ellipsis">
+<span class="md-footer__direction">
+                Next
+              </span>
+              Como surgiu a Web?
+            </div>
+</div>
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"></path></svg>
+</div>
+</a>
+</nav>
 <div class="md-footer-meta md-typeset">
 <div class="md-footer-meta__inner md-grid">
 <div class="md-footer-copyright">
@@ -376,5 +752,5 @@
 <script src="../../../javascripts/config.js"></script>
 <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
 <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-</body>
+<script src="https://unpkg.com/mermaid@8.8.0/dist/mermaid.min.js"></script><script>mermaid.initialize({});</script></body>
 </html>
