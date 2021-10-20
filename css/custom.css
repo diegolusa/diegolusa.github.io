@@ -11,43 +11,39 @@ h6 {
   padding-top: 0.1em;
   padding-bottom: 0.1em;
   padding-left: 0.6em;
-
-  
-  border-top-left-radius: 3px;
-  border-bottom-left-radius: 5px;
-  border-top-right-radius: 3px;
+  text-align: center;
   font-weight: bolder !important;
   text-transform: initial !important;
 }
 h1 {
   font-size: 1.4em !important;
   color: black !important;
-  border-left: 5px solid rgb(104, 101, 101);
+  /*border-left: 5px solid rgb(104, 101, 101);*/
   border-bottom: 2px solid rgb(104, 101, 101);
 }
 
 h2 {
   font-size: 1.3em !important;
-  border-left: 5px solid orange;
+  /*border-left: 5px solid orange;*/
   border-bottom: 2px solid orange;
 }
 
 h3 {
   font-size: 1.2em !important;
-  border-left: 5px solid red;
+  /*border-left: 5px solid red;*/
   border-bottom: 2px solid red;
 }
 
 h4 {
   font-size: 1.1em !important;
-  border-left: 5px solid blue;
+  /*border-left: 5px solid blue;*/
   border-bottom: 2px solid blue;
 }
 
 h5 {
   font-size: 1em !important;
   color: black !important;
-  border-left: 5px solid green;
+  /*border-left: 5px solid green;*/
   border-bottom: 2px solid green;
 }
 
