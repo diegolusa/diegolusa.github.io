@@ -280,6 +280,11 @@
     Encapsulamento
   </a>
 </li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#metodos">
+    Métodos
+  </a>
+</li>
 </ul>
 </nav>
 </li>
@@ -334,6 +339,11 @@
       </a>
 </li>
 <li class="md-nav__item">
+<a class="md-nav__link" href="../../../web/html5/imagem/">
+        Imagens
+      </a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="../../../web/html5/tags-estruturais/">
         Estruturando Conteúdo
       </a>
@@ -346,10 +356,30 @@
 </ul>
 </nav>
 </li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_3" id="__nav_4_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4_3">
+        CSS3
+        <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="CSS3" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_4_3">
+<span class="md-nav__icon md-icon"></span>
+          CSS3
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../web/html5/recursos/">
-        Recursos
+<a class="md-nav__link" href="../../../web/css3/fundamentos/">
+        Fundamentos
       </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../web/css3/seletores/">
+        Seletores
+      </a>
+</li>
+</ul>
+</nav>
 </li>
 </ul>
 </nav>
@@ -472,20 +502,31 @@
 <span class="normal">40</span>
 <span class="normal">41</span>
 <span class="normal">42</span>
-<span class="normal">43</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="cp">#include</span> <span class="cpf">&lt;string&gt;</span><span class="cp"></span>
+<span class="normal">43</span>
+<span class="normal">44</span>
+<span class="normal">45</span>
+<span class="normal">46</span>
+<span class="normal">47</span>
+<span class="normal">48</span>
+<span class="normal">49</span>
+<span class="normal">50</span>
+<span class="normal">51</span>
+<span class="normal">52</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="cp">#include</span> <span class="cpf">&lt;string&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;ctime&gt;</span><span class="cp"></span>
 
 <span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
 
-<span class="k">class</span> <span class="nc">Estudante</span><span class="p">{</span>
-<span class="hll">    <span class="k">private</span><span class="o">:</span>
+<span class="k">class</span> <span class="nc">Estudante</span> <span class="p">{</span>
+<span class="hll">        <span class="k">private</span><span class="o">:</span>
 </span>        <span class="n">string</span> <span class="n">nomeCompleto</span><span class="p">,</span> <span class="n">nomeMae</span><span class="p">,</span> <span class="n">email</span><span class="p">,</span> <span class="n">cpf</span><span class="p">;</span>
         <span class="kt">unsigned</span> <span class="kt">long</span> <span class="n">numeroMatricula</span><span class="p">;</span>
-        <span class="kt">time_t</span> <span class="n">dataNascimento</span><span class="p">;</span>
+        <span class="n">tm</span> <span class="n">dataNascimento</span><span class="p">;</span>
 
-<span class="hll">    <span class="k">public</span><span class="o">:</span> 
-</span><span class="hll">        <span class="n">Estudante</span><span class="p">(</span><span class="n">string</span> <span class="n">nomeCompleto</span><span class="p">,</span><span class="n">string</span> <span class="n">nomeMae</span><span class="p">,</span> <span class="n">string</span> <span class="n">email</span><span class="p">,</span> <span class="n">string</span> <span class="n">cpf</span><span class="p">,</span> <span class="kt">unsigned</span> <span class="kt">long</span> <span class="n">numeroMatricula</span><span class="p">,</span> <span class="kt">time_t</span> <span class="n">dataNascimento</span><span class="p">){</span>
-</span>            <span class="k">this</span><span class="o">-&gt;</span><span class="n">cpf</span> <span class="o">=</span> <span class="n">cpf</span><span class="p">;</span>
+<span class="hll">        <span class="k">public</span><span class="o">:</span>
+</span><span class="hll">            <span class="n">Estudante</span> <span class="p">(</span><span class="n">string</span> <span class="n">nomeCompleto</span><span class="p">,</span> <span class="n">string</span> <span class="n">nomeMae</span><span class="p">,</span> <span class="n">string</span> <span class="n">email</span><span class="p">,</span> <span class="n">string</span> <span class="n">cpf</span><span class="p">,</span>
+</span>                <span class="kt">unsigned</span> <span class="kt">long</span> <span class="n">numeroMatricula</span><span class="p">,</span> <span class="n">tm</span> <span class="n">dataNascimento</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="k">this</span><span class="o">-&gt;</span><span class="n">cpf</span> <span class="o">=</span> <span class="n">cpf</span><span class="p">;</span>
             <span class="k">this</span><span class="o">-&gt;</span><span class="n">nomeCompleto</span> <span class="o">=</span> <span class="n">nomeCompleto</span><span class="p">;</span>
             <span class="k">this</span><span class="o">-&gt;</span><span class="n">nomeMae</span> <span class="o">=</span> <span class="n">nomeMae</span><span class="p">;</span>
             <span class="k">this</span><span class="o">-&gt;</span><span class="n">email</span> <span class="o">=</span> <span class="n">email</span><span class="p">;</span>
@@ -493,28 +534,35 @@
             <span class="k">this</span><span class="o">-&gt;</span><span class="n">dataNascimento</span> <span class="o">=</span> <span class="n">dataNascimento</span><span class="p">;</span>
 
         <span class="p">}</span>
-    <span class="n">string</span> <span class="n">getNomeCompleto</span><span class="p">(){</span>
-        <span class="k">return</span> <span class="k">this</span><span class="o">-&gt;</span><span class="n">nomeCompleto</span><span class="p">;</span>
-    <span class="p">}</span>
-    <span class="kt">time_t</span> <span class="n">getDataNascimento</span><span class="p">(){</span>
-        <span class="k">return</span> <span class="k">this</span><span class="o">-&gt;</span><span class="n">dataNascimento</span><span class="p">;</span>
-    <span class="p">}</span>
-    <span class="n">string</span> <span class="n">getNomeMae</span><span class="p">(){</span>
-        <span class="k">return</span> <span class="k">this</span><span class="o">-&gt;</span><span class="n">nomeMae</span><span class="p">;</span>
-    <span class="p">}</span>
-    <span class="n">string</span> <span class="n">getCPF</span><span class="p">(){</span>
-        <span class="k">return</span> <span class="k">this</span><span class="o">-&gt;</span><span class="n">cpf</span><span class="p">;</span> 
-    <span class="p">}</span>
-    <span class="kt">unsigned</span> <span class="kt">long</span> <span class="n">getNumeroMatricula</span><span class="p">(){</span>
-        <span class="k">return</span> <span class="k">this</span><span class="o">-&gt;</span><span class="n">numeroMatricula</span><span class="p">;</span>
-    <span class="p">}</span>
-    <span class="n">string</span> <span class="n">getEmail</span><span class="p">(){</span>
-        <span class="k">return</span> <span class="k">this</span><span class="o">-&gt;</span><span class="n">email</span><span class="p">;</span>
-    <span class="p">}</span>
-    <span class="kt">void</span> <span class="n">setEmail</span> <span class="p">(</span><span class="n">string</span> <span class="n">email</span><span class="p">){</span>
-        <span class="k">this</span><span class="o">-&gt;</span><span class="n">email</span> <span class="o">=</span> <span class="n">email</span><span class="p">;</span>        
-    <span class="p">}</span>       
-<span class="p">};</span>
+        <span class="n">string</span> <span class="n">getNomeCompleto</span> <span class="p">()</span>
+        <span class="p">{</span>
+            <span class="k">return</span> <span class="k">this</span><span class="o">-&gt;</span><span class="n">nomeCompleto</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="n">tm</span> <span class="n">getDataNascimento</span> <span class="p">()</span>
+        <span class="p">{</span>
+            <span class="k">return</span> <span class="k">this</span><span class="o">-&gt;</span><span class="n">dataNascimento</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="n">string</span> <span class="n">getNomeMae</span> <span class="p">()</span>
+        <span class="p">{</span>
+            <span class="k">return</span> <span class="k">this</span><span class="o">-&gt;</span><span class="n">nomeMae</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="n">string</span> <span class="n">getCPF</span> <span class="p">()</span>
+        <span class="p">{</span>
+            <span class="k">return</span> <span class="k">this</span><span class="o">-&gt;</span><span class="n">cpf</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="kt">unsigned</span> <span class="kt">long</span> <span class="n">getNumeroMatricula</span> <span class="p">()</span>
+        <span class="p">{</span>
+            <span class="k">return</span> <span class="k">this</span><span class="o">-&gt;</span><span class="n">numeroMatricula</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="n">string</span> <span class="n">getEmail</span> <span class="p">()</span>
+        <span class="p">{</span>
+            <span class="k">return</span> <span class="k">this</span><span class="o">-&gt;</span><span class="n">email</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="kt">void</span> <span class="n">setEmail</span> <span class="p">(</span><span class="n">string</span> <span class="n">email</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="k">this</span><span class="o">-&gt;</span><span class="n">email</span> <span class="o">=</span> <span class="n">email</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="p">};</span>
 </code></pre></div>
 </td></tr></table>
 </div>
@@ -684,11 +732,25 @@
 <h2 id="encapsulamento">Encapsulamento<a class="headerlink" href="#encapsulamento" title="Permanent link">¶</a></h2>
 <p><code>Encapsulamento</code> é um dos pilares da POO. Quando associamos atributos à métodos que os manipulam dentre de uma unidade chamada objeto, e determinamos o que será público e o que fica restrito, estamos falando de encapsulamento. </p>
 <p>Utilizando <code>data hiding</code> impedimos que objetos sofram alterações de estado sem controle. E, ao escondermos a implementação dos métodos ou mesmo restringirmos a exposição de alguns métodos, estamos garantindo o encapsulamento e gerando uma abstração de dados que expõe apenas o que necessário para o mundo exterior.</p>
+<p>Perceba que a <code>abstração</code> nos acompanha em todas as etapas, pois ela é o mecanismo que nós, humanos, utilizamos para simplificar a realidade. Mantemos nossa atenção naquilo que nos importa sobre a realidade, desconsiderando os demais aspectos. Importante perceber também que cada indivíduo abstrai àquilo que lhe convém, a partir de seu ponto de vista da realidade. Contudo, essas diferenças precisam ser minimizadas no projeto de software orientado a objetos através da observação atenta das regras e características do domínio do problema, que irão se materializar nos objetos <sup id="fnref:2"><a class="footnote-ref" href="#fn:2">2</a></sup>.</p>
+<h2 id="metodos">Métodos<a class="headerlink" href="#metodos" title="Permanent link">¶</a></h2>
+<p>Os comportamentos de um objeto são codificados em <code>métodos</code>. Em sua construção, métodos assemelham-se a rotinas, inclusive na sintaxe. A grande diferença está no papel desempenhado. Enquanto rotinas são executadas para transformar dados recebidos por parâmetro ou disponíveis no escopo, sendo invocadas quando necessário, os <code>métodos</code> são responsáveis por atender à mensagens recebidas de outro objeto. Quando um método executa, ele está respondendo a uma <code>mensagem</code> e sua execução irá considerar o estado do objeto, seus demais comportamentos e os dados eventualmente recebidos como argumento.</p>
+<p>Os <code>métodos</code> que o objeto torna disponível ao mundo externo compõem sua <code>interface</code> de comunicação e somente por meio deles outros objetos podem interagir enviando mensagens. Neste sentido, o objeto reage ao estímulo, executando a ação associada àquela mensagem específica. É a partir desta troca de mensagens entre objetos que se alcança as funcionalidades do sistema.</p>
+<p><img alt="Ilustração da interação entre objetos a partir da troca de mensagens" src="../img/metodos.png"/></p>
+<p>No código abaixo você irá perceber que o objeto <code>e1</code> está recebendo uma mensagem para alterar o valor de e-mail armazenado. Como argumento está sendo enviado o novo endereço. </p>
+<div class="highlight"><pre><span></span><code><span class="c1">#...</span>
+<span class="n">e1</span> <span class="o">=</span> <span class="n">Estudante</span><span class="p">(</span><span class="s2">"Fulano A. B."</span><span class="p">,</span> <span class="s2">"12/05/2003"</span><span class="p">,</span> <span class="s2">"Ciclana A. B. "</span><span class="p">,</span> <span class="s2">"12365478963"</span><span class="p">,</span> <span class="s2">"1236584"</span><span class="p">)</span>
+<span class="n">e1</span><span class="o">.</span><span class="n">set_email</span><span class="p">(</span><span class="s2">"estudante01@instituicao.edu"</span><span class="p">)</span>
+<span class="c1">#...</span>
+</code></pre></div>
 <div class="footnote">
 <hr/>
 <ol>
 <li id="fn:1">
 <p>Sonoo Jaiswal. What is data hiding? 2021. URL: <a href="https://www.javatpoint.com/what-is-data-hiding">https://www.javatpoint.com/what-is-data-hiding</a>. <a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">↩</a></p>
+</li>
+<li id="fn:2">
+<p>Carl Erickson. Object oriented programming. 2009. URL: <a href="file:///home/diego/%C3%81rea%20de%20Trabalho/ObjectOrientedProgramming.pdf">file:///home/diego/%C3%81rea%20de%20Trabalho/ObjectOrientedProgramming.pdf</a>. <a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 2 in the text">↩</a></p>
 </li>
 </ol>
 </div>

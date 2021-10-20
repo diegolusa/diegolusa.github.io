@@ -7,7 +7,7 @@
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <link href="../../../img/icon.ico" rel="icon"/>
 <meta content="mkdocs-1.1.2, mkdocs-material-7.1.1" name="generator"/>
-<title>HTML5 - Tags Estruturais - Prof. Diego A. Lusa</title>
+<title>CSS3 - Fundamentos - Prof. Diego A. Lusa</title>
 <link href="../../../assets/stylesheets/main.9299cb39.min.css" rel="stylesheet"/>
 <link href="../../../assets/stylesheets/palette.ef6f36e2.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
@@ -22,6 +22,9 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
+<a class="md-skip" href="#sintaxe">
+          Skip to content
+        </a>
 </div>
 <div data-md-component="announce">
 </div>
@@ -43,7 +46,7 @@
 <div class="md-header__topic" data-md-component="header-topic">
 <span class="md-ellipsis">
             
-              HTML5 - Tags Estruturais
+              CSS3 - Fundamentos
             
           </span>
 </div>
@@ -280,8 +283,8 @@
         Como surgiu a Web?
       </a>
 </li>
-<li class="md-nav__item md-nav__item--active md-nav__item--nested">
-<input checked="" class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_2" id="__nav_4_2" type="checkbox"/>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_2" id="__nav_4_2" type="checkbox"/>
 <label class="md-nav__link" for="__nav_4_2">
         HTML5
         <span class="md-nav__icon md-icon"></span>
@@ -293,41 +296,40 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../estrutura-basica/">
+<a class="md-nav__link" href="../../html5/estrutura-basica/">
         O que é HTML?
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../tags-basicas/">
+<a class="md-nav__link" href="../../html5/tags-basicas/">
         Conceitos Básicos
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../hiperlinks/">
+<a class="md-nav__link" href="../../html5/hiperlinks/">
         Hiperlinks
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../imagem/">
+<a class="md-nav__link" href="../../html5/imagem/">
         Imagens
       </a>
 </li>
-<li class="md-nav__item md-nav__item--active">
-<input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
-<a class="md-nav__link md-nav__link--active" href="./">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../html5/tags-estruturais/">
         Estruturando Conteúdo
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../tabelas/">
+<a class="md-nav__link" href="../../html5/tabelas/">
         Tabelas
       </a>
 </li>
 </ul>
 </nav>
 </li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_3" id="__nav_4_3" type="checkbox"/>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_3" id="__nav_4_3" type="checkbox"/>
 <label class="md-nav__link" for="__nav_4_3">
         CSS3
         <span class="md-nav__icon md-icon"></span>
@@ -338,13 +340,36 @@
           CSS3
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../css3/fundamentos/">
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+          Fundamentos
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./">
         Fundamentos
       </a>
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#sintaxe">
+    Sintaxe
+  </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../css3/seletores/">
+<a class="md-nav__link" href="#incorporacao">
+    Incorporação
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../seletores/">
         Seletores
       </a>
 </li>
@@ -366,127 +391,180 @@
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
-<h1>Estruturando Conteúdo</h1>
-<p>Um documento escrito em HTML pode ter seu conteúdo dividido em diferentes segmentos, como cabeçalho, rodapé, seções, artigos, barra de navegação e informações associadas. Antes do HTML5, a divisão destes conteúdos era feita basicamente por meio de divisões genéricas (tag <code>&lt;div&gt;</code>), o que conferia a estrutura desejada para o desenvolvedor, mas não atribuia a semântica necessária para interpretação automática da informação.</p>
-<p>Para ilustrar a situação, vamos imaginar a página inicial de um <em>web site</em> fictício. Inicialmente iremos utilizar apenas divisões para segmentar o conteúdo e, na sequência, faremos uso das tags específicas do HTML5. No primeiro caso aplicamos várias vezes a tag <code>&lt;div&gt;</code> para organizar o conteúdo e utilizamos o atributo global <code>id</code> para indicar o significado de cada segmento.</p>
-<p>Embora a estratégia de utilizar <code>&lt;div&gt;</code> atenda ao objetivo do desenvolvedor, qualquer processamento automático de conteúdo do documento fica muito difícil de ser realizado. Vamos imaginar, por exemplo, que quiséssemos obter somente os artigos do conteúdo da página. Talvez você possa pensar: ok, basta consultar o conteúdo das <code>&lt;div&gt;</code>s que contém em seu atributo <code>id</code> os valores <em>art1</em> ou <em>art2</em>. Se o documento preservar os identificadores de artigos, então o algoritmo funciona, é claro, somente para esta página específica.</p>
-<p>O tempo passa, a página é modificada e novos artigos são adicionados. É preciso vasculhar o HTML, entender quais marcas foram atribuídas pelo desenvolvedor aos novos artigos e então ajustar o algoritmo para coletá-los. Aí começam os problemas...</p>
-<div class="highlight"><pre><span></span><code><span class="cp">&lt;!DOCTYPE html&gt;</span>
-<span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
-
-<span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>IFRS News<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">"utf-8"</span><span class="p">&gt;</span>
-<span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
-
-<span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">"cabecalho"</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">"home.html"</span><span class="p">&gt;</span>Home<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">"ensino.html"</span><span class="p">&gt;</span>Ensino<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">"pesquisa.html"</span><span class="p">&gt;</span>Pesquisa<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">"extensao.html"</span><span class="p">&gt;</span>Extensão<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
-        <span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
-
-    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">"conteudo"</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">"secao_academico"</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Informações Acadêmicas<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">"art1"</span><span class="p">&gt;</span>
-                <span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span>Ensino Remoto<span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
-                <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>O ensino remoto ...<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
-
-            <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-
-        <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">"secao_processo_seletivo"</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Processo Seletivo<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">"art2"</span><span class="p">&gt;</span>
-                <span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span>Ingresso 2022/1<span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
-                <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>O processo seletivo 2022/1 ...<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
-            <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-        <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-
-    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">"rodape"</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nt">address</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">small</span><span class="p">&gt;</span>Rua General Osório, 348 – Bairro Centro – Bento Gonçalves/RS<span class="p">&lt;/</span><span class="nt">small</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">small</span><span class="p">&gt;</span>CEP: 95700-086<span class="p">&lt;/</span><span class="nt">small</span><span class="p">&gt;</span>
-        <span class="p">&lt;/</span><span class="nt">address</span><span class="p">&gt;</span>
-    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-
-
-<span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
-
-<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
-</code></pre></div>
-<p>Quando utilizamos <code>tags</code> genéricas para representar conteúdo, precisamos adicionar alguma informação em seus atributos para que possamos (nós, humanos) diferenciar seu conteúdo das demais. Ocorre que o sentido que atribuímos a partir destas informações adicionais não é explícito, pois dependente da interpretação do contexto. Esta semântica não é precisa, formal. Nada impede que o desenvolvedor atribua ao <code>id</code> de uma <code>&lt;div&gt;</code> o valor <em>xyz01</em>, com vistas a denotar um artigo. Qual software poderia facilmente deduzir o significado contextual desta informação?</p>
-<p>Em razão destas dificuldades de representação de tipos de conteúdo por meio de <code>tags</code> genéricas, o HTML5 trouxe um conjunto de novas <code>tags</code>, várias delas voltadas à semântica de conteúdo. Vejamos algumas:</p>
+<h1>Fundamentos</h1>
+<p>Sabemos que utilizamos HTML5 para estruturar e atribuir semântica ao conteúdo de documentos na Web, mas é fato que o resultado final é pouco atrativo ao usuário, pois carece de cores, posicionamento e outros elementos estéticos. Neste sentido, iniciamos nosso estudo da linguagem <code>CSS3</code> (<em>Cascading Style Sheets</em>), que, ao ser incorporada a documentos HTML, permite alterar a representação gráfica dos componentes.</p>
+<p>Embora a versão <span class="arithmatex">\(3\)</span> seja recente, o <code>CSS</code> é uma linguagem que foi apresentada em 1994. Ao longo do tempo foi sendo aperfeiçoada, gerando as <em>major versions</em> <span class="arithmatex">\(1\)</span>, <span class="arithmatex">\(2\)</span> e <span class="arithmatex">\(3\)</span>.</p>
+<p>A versão <span class="arithmatex">\(3\)</span> da linguagem CSS é uma evolução da versão <span class="arithmatex">\(2\)</span>. Podemos classificar os recursos da linguagem em diferentes módulos, cada qual com finalidade específica. Estes módulos são <sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup>:</p>
 <ul>
-<li><a href="https://developer.mozilla.org/docs/Web/HTML/Element/article"><code>&lt;article&gt;</code></a>: Representa um trecho de conteúdo independente, autocontido, que pode ser distribuído sem o restante da página.</li>
-<li><a href="https://developer.mozilla.org/docs/Web/HTML/Element/section"><code>&lt;section&gt;</code></a>: Indica uma seção genérica de conteúdo.</li>
-<li><a href="https://developer.mozilla.org/docs/Web/HTML/Element/aside"><code>&lt;aside&gt;</code></a>: Seção de conteúdo tangencialmente relacionado ao seu entorno, o qual poderia ser removido sem representar uma perda significativa para a compreensão.</li>
-<li><a href="https://developer.mozilla.org/docs/Web/HTML/Element/footer"><code>&lt;footer&gt;</code></a>: Utilizado para rodapé de seções, para registro de informações de direitos autorais, autoria e links relacionados.</li>
-<li><a href="https://developer.mozilla.org/docs/Web/HTML/Element/header"><code>&lt;header&gt;</code></a>: Conteúdo introdutório, cabeçalho, recursos iniciais de navegação.</li>
-<li><a href="https://developer.mozilla.org/docs/Web/HTML/Element/nav"><code>&lt;nav&gt;</code></a>: Segmento do documento reservado para navegação.</li>
-<li><a href="https://developer.mozilla.org/docs/Web/HTML/Element/main"><code>&lt;main&gt;</code></a>: Especifica o trecho do documento que contém o conteúdo principal.</li>
+<li><strong>Selectors</strong></li>
+<li><strong>Box Model</strong></li>
+<li><strong>Backgrounds</strong></li>
+<li><strong>Image Values and Replaced Content</strong></li>
+<li><strong>Text Effects</strong></li>
+<li><strong>2D Transformations</strong></li>
+<li><strong>3D Transformations</strong></li>
+<li><strong>Animations</strong></li>
+<li><strong>Multiple Column Layout</strong></li>
+<li><strong>User Interface</strong></li>
 </ul>
-<p>Com estas novas tags é possível interpretar o significado dos trechos de conteúdo de forma inequívoca. Vamos refazer nossa página, agora aplicando as <code>tags</code> descritas ao invés de <code>&lt;div&gt;</code>s, para demonstrar a diferença.</p>
+<p>Em nosso estudo, iremos abordar os tópicos mais básicos da linguagem, buscando explorar um pouco de cada módulo. Começaremos analisando os seletores, fundamentais dentro do escopo de uso da linguagem. Contudo, antes é necessário que conheçamos como incorporar código CSS à nossos documentos, certo?</p>
+<h2 id="sintaxe">Sintaxe<a class="headerlink" href="#sintaxe" title="Permanent link">¶</a></h2>
+<p>A linguagem CSS3 fornece, basicamente, um vasto conjunto de propriedades de estilo, funções e outras construções que podemos utilizar para modificar algum aspecto da aparencia dos elementos HTML5.</p>
+<p>Uma propriedade de estilo é definida por um nome e um valor. Por exemplo, se desejamos justificar determinado texto, podemos escrever o seguinte trecho de código:</p>
+<p><div class="highlight"><pre><span></span><code><span class="nt">text-align</span><span class="p">:</span><span class="nd">justify</span><span class="o">;</span>
+</code></pre></div>
+A propriedade chama-se <code>text-align</code> e seu valor foi configurado para <code>justify</code>, o qual indica que o texto deve ser justificado. Ao final, é necessário colocar <code>;</code>. Um mesmo elemento pode receber diversas configurações de estilo através do uso de diferentes propriedades.</p>
+<p>Podemos encontrar informações sobre cada propriedade do CSS3 no site da <a href="https://www.w3schools.com/csSref/">W3Schools</a>. </p>
+<h2 id="incorporacao">Incorporação<a class="headerlink" href="#incorporacao" title="Permanent link">¶</a></h2>
+<p>A incorporação de código CSS3 a documentos HTML5 pode ser realizada de três formas distintas: arquivo externo, elemento <code>&lt;style&gt;</code> ou atributo <code>style</code> (<em>inline</em>). Vejamos como configuramos cada opção.</p>
+<p>Estilos <code>inline</code> são aqueles que acompanham o elemento, sendo definidos no atributo <code>style</code>. Devem ser utilizados com cautela, pois são difíceis de alterar quando aparecem em grande quantidade no documento. É o caso do elemento <code>h1</code> do documento apresentado na sequência. Perceba que o estilo se aplica <em>somente</em> ao elemento.</p>
 <div class="highlight"><pre><span></span><code><span class="cp">&lt;!DOCTYPE html&gt;</span>
-<span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
-
-<span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>IFRS News<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">"utf-8"</span><span class="p">&gt;</span>
-<span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
-
-<span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">header</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nt">nav</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
-                <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">"home.html"</span><span class="p">&gt;</span>Home<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
-                <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">"ensino.html"</span><span class="p">&gt;</span>Ensino<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
-                <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">"pesquisa.html"</span><span class="p">&gt;</span>Pesquisa<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
-                <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">"extensao.html"</span><span class="p">&gt;</span>Extensão<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
-            <span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
-        <span class="p">&lt;/</span><span class="nt">nav</span><span class="p">&gt;</span>
-    <span class="p">&lt;/</span><span class="nt">header</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">main</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nt">section</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">header</span><span class="p">&gt;</span>
-                <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Informações Acadêmicas<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
-            <span class="p">&lt;/</span><span class="nt">header</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">article</span><span class="p">&gt;</span>
-                <span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span>Ensino Remoto<span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
-                <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>O ensino remoto ...<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
-
-            <span class="p">&lt;/</span><span class="nt">article</span><span class="p">&gt;</span>
-
-        <span class="p">&lt;/</span><span class="nt">section</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nt">section</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">header</span><span class="p">&gt;</span>
-                <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Processo Seletivo<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
-            <span class="p">&lt;/</span><span class="nt">header</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">article</span><span class="p">&gt;</span>
-                <span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span>Ingresso 2022/1<span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
-                <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>O processo seletivo 2022/1 ...<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
-            <span class="p">&lt;/</span><span class="nt">article</span><span class="p">&gt;</span>
-        <span class="p">&lt;/</span><span class="nt">section</span><span class="p">&gt;</span>
-
-    <span class="p">&lt;/</span><span class="nt">main</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">footer</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nt">address</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">small</span><span class="p">&gt;</span>Rua General Osório, 348 – Bairro Centro – Bento Gonçalves/RS<span class="p">&lt;/</span><span class="nt">small</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">small</span><span class="p">&gt;</span>CEP: 95700-086<span class="p">&lt;/</span><span class="nt">small</span><span class="p">&gt;</span>
-        <span class="p">&lt;/</span><span class="nt">address</span><span class="p">&gt;</span>
-    <span class="p">&lt;/</span><span class="nt">footer</span><span class="p">&gt;</span>
-
-
-<span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
-
+<span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>    
+    <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">h1</span> <span class="na">style</span><span class="o">=</span><span class="s">"color:blue;margin-left:30px;text-align:center;"</span><span class="p">&gt;</span>Titulo<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
 <span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
 </code></pre></div>
-<p>Agora é natural perceber o que significam os segmentos de conteúdo, tanto para nós, humanos, quando para softwares que interpretam o documento, como os navegadores. E tudo isso por conta da tag utilizada, que possui semântica (significado) específico.</p>
+<p>Quando utilizamos o elemento <code>&lt;style&gt;</code> temos maior flexibilidade na aplicação dos estilos pois, diferentemente do modo <code>inline</code>, podemos aplicar o mesmo estilo a vários elementos do documento por meio de <code>regras</code>. Iremos conhecer o conceito de regra de estilo mais a frente, por ora basta pensar nelas como um critério para estabelecer quem (elementos) irá receber as propriedades de estilo.</p>
+<p>Observe que o elemento <code>&lt;style&gt;</code> deve ser adicionado dentro de <code>&lt;head&gt;</code> e todas as regras de estilo devem ser escritas como conteúdo do elemento.</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span>
+<span class="normal">38</span>
+<span class="normal">39</span>
+<span class="normal">40</span>
+<span class="normal">41</span>
+<span class="normal">42</span>
+<span class="normal">43</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">"utf8"</span> <span class="p">/&gt;</span>
+    <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Minha primeira página Web<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+<span class="hll">    <span class="p">&lt;</span><span class="nt">style</span><span class="p">&gt;</span>
+</span><span class="hll">      <span class="nt">body</span> <span class="p">{</span>
+</span><span class="hll">        <span class="k">background-color</span><span class="p">:</span> <span class="nb">rgb</span><span class="p">(</span><span class="mi">159</span><span class="p">,</span> <span class="mi">169</span><span class="p">,</span> <span class="mi">170</span><span class="p">);</span>
+</span><span class="hll">      <span class="p">}</span>
+</span><span class="hll">
+</span><span class="hll">      <span class="nt">p</span> <span class="p">{</span>
+</span><span class="hll">        <span class="k">text-align</span><span class="p">:</span> <span class="kc">center</span><span class="p">;</span>
+</span><span class="hll">        <span class="k">text-decoration</span><span class="p">:</span> <span class="kc">underline</span><span class="p">;</span>
+</span><span class="hll">        <span class="k">font-weight</span><span class="p">:</span> <span class="kc">bolder</span><span class="p">;</span>
+</span><span class="hll">        <span class="k">font-style</span><span class="p">:</span> <span class="kc">italic</span><span class="p">;</span>
+</span><span class="hll">        <span class="k">color</span><span class="p">:</span> <span class="kc">yellow</span><span class="p">;</span>
+</span><span class="hll">        <span class="k">font-family</span><span class="p">:</span> <span class="s2">"Brush Script MT"</span><span class="p">,</span> <span class="kc">cursive</span><span class="p">;</span>
+</span><span class="hll">        <span class="k">font-size</span><span class="p">:</span> <span class="mi">40</span><span class="kt">px</span><span class="p">;</span>
+</span><span class="hll">      <span class="p">}</span>
+</span><span class="hll">
+</span><span class="hll">      <span class="nt">h1</span><span class="o">,</span>
+</span><span class="hll">      <span class="nt">h2</span><span class="o">,</span>
+</span><span class="hll">      <span class="nt">h3</span><span class="o">,</span>
+</span><span class="hll">      <span class="nt">h4</span><span class="o">,</span>
+</span><span class="hll">      <span class="nt">h5</span><span class="o">,</span>
+</span><span class="hll">      <span class="nt">h6</span> <span class="p">{</span>
+</span><span class="hll">        <span class="k">color</span><span class="p">:</span> <span class="kc">black</span><span class="p">;</span>
+</span><span class="hll">        <span class="k">text-transform</span><span class="p">:</span> <span class="kc">uppercase</span><span class="p">;</span>
+</span><span class="hll">        <span class="k">font-family</span><span class="p">:</span> <span class="s2">"Noto Sans"</span><span class="p">,</span> <span class="kc">sans-serif</span><span class="p">;</span>
+</span><span class="hll">      <span class="p">}</span>
+</span><span class="hll">    <span class="p">&lt;/</span><span class="nt">style</span><span class="p">&gt;</span>
+</span>  <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+
+    <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Introdução ao CSS3<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>
+     Vamos falar de CSS!
+    <span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span>Conceitos básicos<span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>O conceito...<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">p</span> <span class="p">&gt;</span>Outro conceito...<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</code></pre></div>
+</td></tr></table>
+<p>A terceira forma, em que utilizamos a vinculação de um arquivo com regras de estilo ao documento é a mais utilizada. Isso porque, quando pensamos em um site, devemos considerar a existência de muitos documentos e, todos eles compartilhamento da mesma apresentação. Logo, ao deixarmos as regras de estilo em um único local, podemos facilmente compartilhá-las em todos os documentos sem a necessidade de repetir código. </p>
+<p>Para realizar a vinculação de um arquivo CSS ao documento devemos utilizar a tag <code>&lt;link&gt;</code>, que também deve estar no <code>&lt;head&gt;</code>. Observe o exemplo:</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">"utf8"</span> <span class="p">/&gt;</span>
+    <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Minha primeira página Web<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+<span class="hll">    <span class="p">&lt;</span><span class="nt">link</span> <span class="na">href</span><span class="o">=</span><span class="s">"estilos.css"</span> <span class="na">rel</span><span class="o">=</span><span class="s">"stylesheet"</span><span class="p">/&gt;</span>
+</span>  <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+
+    <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Introdução ao CSS3<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>
+     Vamos falar de CSS!
+    <span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span>Conceitos básicos<span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>O conceito...<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Outro conceito...<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</code></pre></div>
+</td></tr></table>
+<p>Em um documento HTML, nós podemos ter simultaneamente as três formas de incorporação de CSS. Neste caso, o navegador utiliza uma escala de prioridade, afinal é possível que haja sobreposição de estilos. Nesta escala, a <strong>maior prioridade</strong> fica com as propriedades <code>inline</code>, seguidas daquelas definidas para o documento na tag <code>&lt;style&gt;</code> e, por último, as regras oriundas dos arquivos incorporados via <code>&lt;link&gt;</code> <sup id="fnref:2"><a class="footnote-ref" href="#fn:2">2</a></sup>.</p>
+<div class="footnote">
+<hr/>
+<ol>
+<li id="fn:1">
+<p>TutorialPoint. Css3 - tutorial. 2021. URL: <a href="https://www.tutorialspoint.com/css/css3_tutorial.htm">https://www.tutorialspoint.com/css/css3_tutorial.htm</a>. <a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">↩</a></p>
+</li>
+<li id="fn:2">
+<p>Tutorial Republic. Css tutorial. 2021. URL: <a href="https://www.tutorialrepublic.com/css-tutorial">https://www.tutorialrepublic.com/css-tutorial</a>. <a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 2 in the text">↩</a></p>
+</li>
+</ol>
+</div>
 </article>
 </div>
 </div>
@@ -496,7 +574,7 @@
 </main>
 <footer class="md-footer">
 <nav aria-label="Footer" class="md-footer__inner md-grid">
-<a class="md-footer__link md-footer__link--prev" href="../imagem/" rel="prev">
+<a class="md-footer__link md-footer__link--prev" href="../../html5/tabelas/" rel="prev">
 <div class="md-footer__button md-icon">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"></path></svg>
 </div>
@@ -505,17 +583,17 @@
 <span class="md-footer__direction">
                 Previous
               </span>
-              Imagens
+              Tabelas
             </div>
 </div>
 </a>
-<a class="md-footer__link md-footer__link--next" href="../tabelas/" rel="next">
+<a class="md-footer__link md-footer__link--next" href="../seletores/" rel="next">
 <div class="md-footer__title">
 <div class="md-ellipsis">
 <span class="md-footer__direction">
                 Next
               </span>
-              Tabelas
+              Seletores
             </div>
 </div>
 <div class="md-footer__button md-icon">
