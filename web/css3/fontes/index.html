@@ -22,6 +22,9 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
+<a class="md-skip" href="#font-family">
+          Skip to content
+        </a>
 </div>
 <div data-md-component="announce">
 </div>
@@ -263,8 +266,8 @@
 </ul>
 </nav>
 </li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" id="__nav_4" type="checkbox"/>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" id="__nav_4" type="checkbox"/>
 <label class="md-nav__link" for="__nav_4">
         Desenvolvimento Web
         <span class="md-nav__icon md-icon"></span>
@@ -325,8 +328,8 @@
 </ul>
 </nav>
 </li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_3" id="__nav_4_3" type="checkbox"/>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_3" id="__nav_4_3" type="checkbox"/>
 <label class="md-nav__link" for="__nav_4_3">
         CSS3
         <span class="md-nav__icon md-icon"></span>
@@ -352,6 +355,49 @@
         Cores
       </a>
 </li>
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+          Fontes
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./">
+        Fontes
+      </a>
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#font-family">
+    font-family
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#font-style">
+    font-style
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#font-size">
+    font-size
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#font-weight">
+    font-weight
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#font-variant">
+    font-variant
+  </a>
+</li>
+</ul>
+</nav>
+</li>
 </ul>
 </nav>
 </li>
@@ -370,8 +416,73 @@
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
-<h1>CSS3 - Fontes</h1>
+<h1>Fontes</h1>
 <p>A escolha de uma fonte é crucial para o sucesso de uma interface web, visto que está diretamente ligada à experiência de leitura do usuário (que deve ser agradável, naturalmente).</p>
+<p>As propriedades de estilo que o CSS3 nos fornece para manipularmos fontes são <code>font-family</code>, <code>font-style</code>, <code>font-weight</code>, <code>font-size</code>, e <code>font-variant</code>. Na sequência iremos abordar cada uma delas:</p>
+<h2 id="font-family">font-family<a class="headerlink" href="#font-family" title="Permanent link">¶</a></h2>
+<p>Especifica a família de fontes que o navegador deve utilizar para renderizar o texto. A propriedade aceita vários valores separados por vírgula, indicando opções de fontes quando não for possível utilizar a anterior. Normalmente finalizamos especificando uma das cinco famílias genérias de fonte disponíveis: <em>serif</em>, <em>sans-serif</em>, <em>monospace</em>, <em>coursive</em> e <em>fantasy</em> <sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup> <sup id="fnref:2"><a class="footnote-ref" href="#fn:2">2</a></sup> <sup id="fnref:3"><a class="footnote-ref" href="#fn:3">3</a></sup>.</p>
+<p>A família genérica deve ser utilizada para contornar a possibilidade do usuário não ter disponível em seu navegador as outras famílias listadas. Logo, nestes casos, o navegador conseguirá preservar o padrão tipográfico com outra fonte semelhante disponível <sup id="fnref2:1"><a class="footnote-ref" href="#fn:1">1</a></sup> <sup id="fnref2:2"><a class="footnote-ref" href="#fn:2">2</a></sup> <sup id="fnref2:3"><a class="footnote-ref" href="#fn:3">3</a></sup>. </p>
+<p>Cada família de fontes genérica tem características tipográficas particulares. Vejamos quais são elas.</p>
+<ul>
+<li><code>serif</code>: Cada glifo (símbolo) de caractere apresenta traços, terminações, de acabamento. </li>
+</ul>
+<p style="margin-left: 10%;margin-right: 10%;text-align: center; font-family:Garamond, serif;font-size: 0.9rem; border: black 1px solid;border-radius: 3px;">Exemplo de texto utilizando fonte serifada.</p>
+<ul>
+<li><code>sans-serif</code>: Os glifos não apresentam traços de acabamento.</li>
+</ul>
+<p style="margin-left: 10%;margin-right: 10%;text-align: center; font-family:Arial, sans-serif;font-size: 0.9rem; border: black 1px solid;border-radius: 3px;">Exemplo de texto utilizando fonte sem serifas.</p>
+<ul>
+<li><code>monospaced</code>: Cada glifo ocupa o mesmo espaço (mesmo tamanho). Assemelha-se com a forma de escrita das antigas máquinas de escrever.</li>
+</ul>
+<p style="margin-left: 10%;margin-right: 10%;text-align: center; font-family:'Courier New', monospaced;font-size: 0.9rem; border: black 1px solid;border-radius: 3px;">Exemplo de texto utilizando fonte monoespaçada.</p>
+<ul>
+<li><code>cursive</code>: Os glifos assemelham-se a escrita manual.</li>
+</ul>
+<p style="margin-left: 10%;margin-right: 10%;text-align: center; font-family:'Lucida Handwriting', cursive;font-size: 0.9rem; border: black 1px solid; border-radius: 3px;">Exemplo de texto utilizando fonte cursiva.</p>
+<ul>
+<li><code>fantasy</code>: São fontes artísticas.</li>
+</ul>
+<p style="margin-left: 10%;margin-right: 10%;text-align: center; font-family:Copperplate, fantasy;font-size: 0.9rem; border: black 1px solid;border-radius: 3px;">Exemplo de texto utilizando fonte artística.</p>
+<h2 id="font-style">font-style<a class="headerlink" href="#font-style" title="Permanent link">¶</a></h2>
+<p>Propriedade que permite especificar a apresentação da face dos glifos, se normais, em itálico ou oblíquos <sup id="fnref3:2"><a class="footnote-ref" href="#fn:2">2</a></sup> <sup id="fnref3:3"><a class="footnote-ref" href="#fn:3">3</a></sup>. Os possíveis valores são:</p>
+<ul>
+<li><code>normal</code></li>
+</ul>
+<p style="margin-left: 10%;margin-right: 10%;text-align: center; font-family:Arial, sans-serif;font-size: 0.9rem; border: black 1px solid;border-radius: 3px; ">Normal (padrão).</p>
+<ul>
+<li><code>italic</code></li>
+</ul>
+<p style="margin-left: 10%;margin-right: 10%;text-align: center; font-family:Arial, sans-serif;font-size: 0.9rem; border: black 1px solid;border-radius: 3px; font-style:italic">Em itálico.</p>
+<ul>
+<li><code>oblique</code></li>
+</ul>
+<p style="margin-left: 10%;margin-right: 10%;text-align: center; font-family:Arial, sans-serif;font-size: 0.9rem; border: black 1px solid;border-radius: 3px; font-style:oblique">Oblíquo (quase igual ao itálico).</p>
+<h2 id="font-size">font-size<a class="headerlink" href="#font-size" title="Permanent link">¶</a></h2>
+<p>Permite especificar o tamanho da fonte, a partir de medidas relativas, como percentual, <em>em</em>, <em>rem</em>, etc ou medidas absolutas como <em>pixels</em>. Para saber mais sobre unidades de medida, acesse <a href="unidades-medida.md">nosso conteúdo sobre o tema</a> <sup id="fnref4:2"><a class="footnote-ref" href="#fn:2">2</a></sup> <sup id="fnref4:3"><a class="footnote-ref" href="#fn:3">3</a></sup>.</p>
+<p style="margin-left: 10%;margin-right: 10%;text-align: center; font-family:Arial, sans-serif; border: black 1px solid;border-radius: 3px; font-style:oblique">
+<span style="font-size: 16px">16px</span> - <span style="font-size: 2rem">2rem</span> - <span style="font-size: 2em">2em</span> </p>
+<h2 id="font-weight">font-weight<a class="headerlink" href="#font-weight" title="Permanent link">¶</a></h2>
+<p>Define o peso (intensidade de negrito)  da fonte. Os valores podem ser <code>normal</code>, <code>bold</code>, <code>bolder</code>, <code>lighter</code>, <code>100</code>, <code>200</code>, <code>300</code>, <code>400</code>, <code>500</code>, <code>600</code>, <code>700</code>, <code>800</code>, <code>900</code> e <code>inherit</code>. Os valores numéricos indicam uma graduação de negrito. O valor <code>400</code> equivale a <code>normal</code> enquanto que o valor <code>700</code> é equivalente a <code>bold</code>. Os valores <code>bolder</code> e <code>lighter</code> aplicam-se em relação ao peso herdado do ancestral, enquanto que <code>normal</code> e <code>bold</code> aplicam-se em absoluto ao texto (sem relação com o valor do ancestral) <sup id="fnref5:2"><a class="footnote-ref" href="#fn:2">2</a></sup> <sup id="fnref5:3"><a class="footnote-ref" href="#fn:3">3</a></sup>.</p>
+<p style="margin-left: 10%;margin-right: 10%;text-align: center; font-family:Arial, sans-serif; border: black 1px solid;border-radius: 3px; font-style:oblique">
+<span style="font-weight: 200">Valor 200</span> - <span style="font-weight: 400">Valor 400</span> - <span style="font-weight: 600">Valor 600</span> - <span style="font-weight: 900">Valor 900</span> </p>
+<h2 id="font-variant">font-variant<a class="headerlink" href="#font-variant" title="Permanent link">¶</a></h2>
+<p>Indica se o texto deve ser exibido ou não considerando apenas caracteres maiúsculos. Os valores possíveis são <code>small-caps</code> e <code>normal</code> (padrão) <sup id="fnref6:2"><a class="footnote-ref" href="#fn:2">2</a></sup> <sup id="fnref6:3"><a class="footnote-ref" href="#fn:3">3</a></sup>.</p>
+<p style="margin-left: 10%;margin-right: 10%;text-align: center; font-family:Arial, sans-serif; border: black 1px solid;border-radius: 3px; font-style:oblique">
+<span style="font-variant: normal">Escrita normal</span> - <span style="font-variant: small-caps">Escrita em small caps</span></p>
+<div class="footnote">
+<hr/>
+<ol>
+<li id="fn:1">
+<p>MDN Web Docs. Font-family - css. 2021. URL: <a href="https://developer.mozilla.org/pt-BR/docs/Web/CSS/font-family">https://developer.mozilla.org/pt-BR/docs/Web/CSS/font-family</a>. <a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref2:1" title="Jump back to footnote 1 in the text">↩</a></p>
+</li>
+<li id="fn:2">
+<p>W3Schools. Css reference. 2021. URL: <a href="https://www.w3schools.com/csSref/default.asp">https://www.w3schools.com/csSref/default.asp</a>. <a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 2 in the text">↩</a><a class="footnote-backref" href="#fnref2:2" title="Jump back to footnote 2 in the text">↩</a><a class="footnote-backref" href="#fnref3:2" title="Jump back to footnote 2 in the text">↩</a><a class="footnote-backref" href="#fnref4:2" title="Jump back to footnote 2 in the text">↩</a><a class="footnote-backref" href="#fnref5:2" title="Jump back to footnote 2 in the text">↩</a><a class="footnote-backref" href="#fnref6:2" title="Jump back to footnote 2 in the text">↩</a></p>
+</li>
+<li id="fn:3">
+<p>Tutorial Republic. Css tutorial. 2021. URL: <a href="https://www.tutorialrepublic.com/css-tutorial">https://www.tutorialrepublic.com/css-tutorial</a>. <a class="footnote-backref" href="#fnref:3" title="Jump back to footnote 3 in the text">↩</a><a class="footnote-backref" href="#fnref2:3" title="Jump back to footnote 3 in the text">↩</a><a class="footnote-backref" href="#fnref3:3" title="Jump back to footnote 3 in the text">↩</a><a class="footnote-backref" href="#fnref4:3" title="Jump back to footnote 3 in the text">↩</a><a class="footnote-backref" href="#fnref5:3" title="Jump back to footnote 3 in the text">↩</a><a class="footnote-backref" href="#fnref6:3" title="Jump back to footnote 3 in the text">↩</a></p>
+</li>
+</ol>
+</div>
 </article>
 </div>
 </div>
@@ -380,6 +491,34 @@
 </a>
 </main>
 <footer class="md-footer">
+<nav aria-label="Footer" class="md-footer__inner md-grid">
+<a class="md-footer__link md-footer__link--prev" href="../cores/" rel="prev">
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"></path></svg>
+</div>
+<div class="md-footer__title">
+<div class="md-ellipsis">
+<span class="md-footer__direction">
+                Previous
+              </span>
+              Cores
+            </div>
+</div>
+</a>
+<a class="md-footer__link md-footer__link--next" href="../../../about/" rel="next">
+<div class="md-footer__title">
+<div class="md-ellipsis">
+<span class="md-footer__direction">
+                Next
+              </span>
+              Sobre
+            </div>
+</div>
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"></path></svg>
+</div>
+</a>
+</nav>
 <div class="md-footer-meta md-typeset">
 <div class="md-footer-meta__inner md-grid">
 <div class="md-footer-copyright">
