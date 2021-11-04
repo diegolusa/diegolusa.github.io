@@ -1,0 +1,567 @@
+
+<!DOCTYPE html>
+
+<html class="no-js" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<link href="../../../img/icon.ico" rel="icon"/>
+<meta content="mkdocs-1.1.2, mkdocs-material-7.1.1" name="generator"/>
+<title>Literais e Identificadores - Prof. Diego A. Lusa</title>
+<link href="../../../assets/stylesheets/main.9299cb39.min.css" rel="stylesheet"/>
+<link href="../../../assets/stylesheets/palette.ef6f36e2.min.css" rel="stylesheet"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7C&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font-family:"Roboto";--md-code-font-family:""}</style>
+<link href="../../../css/custom.css" rel="stylesheet"/>
+</head>
+<body data-md-color-accent="" data-md-color-primary="black" data-md-color-scheme="default" dir="ltr">
+<script>function __prefix(e){return new URL("../../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+<script>var palette=__get("__palette");if(null!==palette&&"object"==typeof palette.color)for(var key in palette.color)document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#variaveis">
+          Skip to content
+        </a>
+</div>
+<div data-md-component="announce">
+</div>
+<header class="md-header" data-md-component="header">
+<nav aria-label="Header" class="md-header__inner md-grid">
+<a aria-label="Prof. Diego A. Lusa" class="md-header__button md-logo" data-md-component="logo" href="../../.." title="Prof. Diego A. Lusa">
+<img alt="logo" src="../../../img/icon.png"/>
+</a>
+<label class="md-header__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"></path></svg>
+</label>
+<div class="md-header__title" data-md-component="header-title">
+<div class="md-header__ellipsis">
+<div class="md-header__topic">
+<span class="md-ellipsis">
+            Prof. Diego A. Lusa
+          </span>
+</div>
+<div class="md-header__topic" data-md-component="header-topic">
+<span class="md-ellipsis">
+            
+              Literais e Identificadores
+            
+          </span>
+</div>
+</div>
+</div>
+<form class="md-header__option" data-md-component="palette">
+<input class="md-option" data-md-color-accent="" data-md-color-media="" data-md-color-primary="black" data-md-color-scheme="default" id="__palette_1" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_2" hidden="" title="Mudar para modo escuro">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10a2 2 0 0 1 2 2 2 2 0 0 1-2 2 2 2 0 0 1-2-2 2 2 0 0 1 2-2m10-3a5 5 0 0 1 5 5 5 5 0 0 1-5 5H7a5 5 0 0 1-5-5 5 5 0 0 1 5-5h10M7 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3h10a3 3 0 0 0 3-3 3 3 0 0 0-3-3H7z"></path></svg>
+</label>
+<input class="md-option" data-md-color-accent="" data-md-color-media="" data-md-color-primary="black" data-md-color-scheme="slate" id="__palette_2" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_1" hidden="" title="Mudar para modo claro">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3z"></path></svg>
+</label>
+</form>
+<label class="md-header__button md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"></path></svg>
+</label>
+<div class="md-search" data-md-component="search" role="dialog">
+<label class="md-search__overlay" for="__search"></label>
+<div class="md-search__inner" role="search">
+<form class="md-search__form" name="search">
+<input aria-label="Search" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" data-md-state="active" name="query" placeholder="Search" required="" spellcheck="false" type="text"/>
+<label class="md-search__icon md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"></path></svg>
+</label>
+<button aria-label="Clear" class="md-search__icon md-icon" tabindex="-1" type="reset">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"></path></svg>
+</button>
+</form>
+<div class="md-search__output">
+<div class="md-search__scrollwrap" data-md-scrollfix="">
+<div class="md-search-result" data-md-component="search-result">
+<div class="md-search-result__meta">
+            Initializing search
+          </div>
+<ol class="md-search-result__list"></ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+</nav>
+</header>
+<div class="md-container" data-md-component="container">
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Navigation" class="md-nav md-nav--primary md-nav--integrated" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="Prof. Diego A. Lusa" class="md-nav__button md-logo" data-md-component="logo" href="../../.." title="Prof. Diego A. Lusa">
+<img alt="logo" src="../../../img/icon.png"/>
+</a>
+    Prof. Diego A. Lusa
+  </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../..">
+        Home
+      </a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" id="__nav_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2">
+        Informática
+        <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="Informática" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_2">
+<span class="md-nav__icon md-icon"></span>
+          Informática
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_1" id="__nav_2_1" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_1">
+        Editores de Texto
+        <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="Editores de Texto" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_1">
+<span class="md-nav__icon md-icon"></span>
+          Editores de Texto
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../informatica/editores-texto/introducao/">
+        Writer
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../informatica/editores-texto/estilos/">
+        Estilos
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../informatica/editores-texto/abnt/">
+        ABNT
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" id="__nav_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_3">
+        Programação
+        <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="Programação" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_3">
+<span class="md-nav__icon md-icon"></span>
+          Programação
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../linguagens/">
+        Linguagens de Programação
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../paradigmas/">
+        Paradigmas de Programação
+      </a>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_3" id="__nav_3_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_3_3">
+        C++
+        <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="C++" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_3_3">
+<span class="md-nav__icon md-icon"></span>
+          C++
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../ambiente/">
+        Ambiente de Desenvolvimento
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../compilacao/">
+        Compilação
+      </a>
+</li>
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
+<a class="md-nav__link md-nav__link--active" href="./">
+        Identificadores
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../io/">
+        Entrada e Saída
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../condicionais/">
+        Condicionais
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../iteracao/">
+        Laços de Repetição
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../funcoes/">
+        Funções
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../arranjos/">
+        Arranjos
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../ponteiros/">
+        Ponteiros
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_4" id="__nav_3_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_3_4">
+        Programação Orientada a Objetos
+        <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="Programação Orientada a Objetos" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_3_4">
+<span class="md-nav__icon md-icon"></span>
+          Programação Orientada a Objetos
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../oop/introducao/">
+        Introdução
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../oop/classes/">
+        Classes
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../oop/excecoes/">
+        Exceções
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" id="__nav_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4">
+        Desenvolvimento Web
+        <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="Desenvolvimento Web" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_4">
+<span class="md-nav__icon md-icon"></span>
+          Desenvolvimento Web
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../web/historia/">
+        Como surgiu a Web?
+      </a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_2" id="__nav_4_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4_2">
+        HTML5
+        <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="HTML5" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_4_2">
+<span class="md-nav__icon md-icon"></span>
+          HTML5
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../web/html5/estrutura-basica/">
+        O que é HTML?
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../web/html5/tags-basicas/">
+        Conceitos Básicos
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../web/html5/hiperlinks/">
+        Hiperlinks
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../web/html5/imagem/">
+        Imagens
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../web/html5/tags-estruturais/">
+        Estruturando Conteúdo
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../web/html5/tabelas/">
+        Tabelas
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_3" id="__nav_4_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4_3">
+        CSS3
+        <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="CSS3" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_4_3">
+<span class="md-nav__icon md-icon"></span>
+          CSS3
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../web/css3/fundamentos/">
+        Fundamentos
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../web/css3/seletores/">
+        Seletores
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../web/css3/cores/">
+        Cores
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../web/css3/fontes/">
+        Fontes
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../about/">
+        Sobre
+      </a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<p>Codificar um software compreende, basicamente, modificar estados conforme sequência e regras previamente definidas. Neste processo, dar nomes às estruturas e, por vezes, inicializá-las com valores é tarefa trivial. </p>
+<p>Por ser praticamente indissociável da prática de programação, toda linguagem estabelece regras para nomenclatura de identificadores (nome que o programador atribui às estruturas) e para definição de literais (valores fixos).</p>
+<p>Na sequência vamos abordar como variáveis e literais são definidos na linguagem C++.</p>
+<h1 id="variaveis">Variáveis<a class="headerlink" href="#variaveis" title="Permanent link">¶</a></h1>
+<p>Um programa é composto por <strong>instruções</strong> e <strong>dados</strong>, ambos armazenados na memória RAM do computador. Enquanto que instruções, em sua maioria, representam que tipo de manipulação o processador deve executar com os dados (somas, subtrações, multiplicações, etc.), as variáveis representam os espaços de armazenamento de dados do programa.</p>
+<p>Os dados são armazenados em <strong>variáveis</strong>, que nada mais são que espaços de memória RAM reservados para tal finalidade. Precisamos lembrar que variáveis apresentam alguma propriedades importantes:</p>
+<ul>
+<li>
+<p><strong><em>Nome</em></strong>: O nome da variável é a identificação que o programador atribui à área de memória. O nome deve ser suficientemente claro para indicar o significado dos dados nela armazenados. A nomenclatura de variáveis deve respeitar as restrições impostas a identificadores da linguagem, bem como padrões de legibilidade de código que a boa prática recomenda. Também há diferença entre caracteres maiúsculos e minúsculos.</p>
+</li>
+<li>
+<p><strong><em>Tipo</em></strong>: Variáveis, em linguagens fortemente tipadas, devem indicar qual é a natureza dos dados que o programador poderá nelas armazenar. O tipo representa uma restrição, limitando o conjunto de valores aceitos. A linguagem C++ define um conjunto de tipos básicos. Sugiro a leitura <a href="http://www.cplusplus.com/doc/tutorial/variables/">deste tutorial</a> para maiores detalhes.</p>
+</li>
+</ul>
+<p>No código apresentado ao final deste tutorial, você irá observar diversas declarações de variáveis. A título de exemplo, observe o trecho de código que segue. Nele são declaradas três variáveis, a saber, <code>contador</code>, <code>preco</code>, <code>lucro_liquido</code>. Estes são os nomes das variáveis. Já <code>int</code>, <code>float</code> e <code>double</code> representam o tipo de dado. </p>
+<p>No caso da variável <em>contador</em>, estamos fazendo a declaração e a inicialização em uma única instrução. Assim, tão logo criada, a variável receberá o valor <code>0</code>.</p>
+<div class="highlight"><pre><span></span><code>    <span class="kt">int</span> <span class="n">contador</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="kt">float</span> <span class="n">preco</span><span class="p">;</span>
+    <span class="kt">double</span> <span class="n">lucro_liquido</span><span class="p">;</span>
+</code></pre></div>
+<h1 id="literais">Literais<a class="headerlink" href="#literais" title="Permanent link">¶</a></h1>
+<p>Literal é todo valor informado de forma fixa no código. É comum utilizar a expressão <code>hard code</code> para descrever a operação. Normalmente os literais são utilizados para iniciar estruturas do programa, ou seja, definir seu valor inicial.</p>
+<p>Os literais podem representar números inteiros, números reais, valores booleanos, caracteres ou sequência de caracteres. Para cada caso existem particularidades, as quais iremos tratar a seguir.</p>
+<h2 id="literais-para-numeros-inteiros">Literais para números inteiros<a class="headerlink" href="#literais-para-numeros-inteiros" title="Permanent link">¶</a></h2>
+<p><a href="https://pt.wikipedia.org/wiki/Número_inteiro">Números inteiros</a>  são números não fracionais, ou seja, não apresentam valores após a vírgula. Sua representação se dá, normalmente, em base decimal. Contudo, o C++ aceita também números representados em <a href="https://pt.wikipedia.org/wiki/Sistema_octal">base octal</a>, <a href="https://pt.wikipedia.org/wiki/Sistema_de_numera%C3%A7%C3%A3o_hexadecimal">hexadecimal</a> e <a href="https://pt.wikipedia.org/wiki/Sistema_de_numera%C3%A7%C3%A3o_bin%C3%A1rio">binária</a>.</p>
+<p>Quando em <strong>decimal</strong>, um número pode ser expresso utilizando somente caracteres de 0 a 9. A representação decimal é a mais confortável na perspectiva do programador porque é o sistema de representação numérico do nosso dia-a-dia. Literais inteiros expressos em decimal podem utilizar aspa simples para demarcar milhares. Tal recurso conforme apenas maior legibilidade ao código-fonte. Observe o trecho de código a seguir:</p>
+<div class="highlight"><pre><span></span><code>    <span class="n">var_int</span> <span class="o">=</span> <span class="mi">24'000</span><span class="p">;</span>       <span class="c1">//base decimal    </span>
+</code></pre></div>
+<p>A presentação <strong>octal</strong>, por sua vez, considera apenas caracteres de 0 a 7. Para informar literais octais em um programa C++, o programador deve prefixar o número com 0. Observe o código abaixo:</p>
+<p><div class="highlight"><pre><span></span><code>    <span class="n">var_octal</span> <span class="o">=</span> <span class="mo">071</span><span class="p">;</span>        <span class="c1">//base octal   </span>
+</code></pre></div>
+Um método simples para conversão de octal para decimal é utilizar uma tabela de potências de base <code>8</code>. Isso porque assim como decimal, o octal é um sistema numérico posicional. Observe:</p>
+<table>
+<thead>
+<tr>
+<th>8<sup>3</sup></th>
+<th>8<sup>2</sup></th>
+<th>8<sup>1</sup></th>
+<th>8<sup>0</sup></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td></td>
+<td>7</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+<p>Considerando a tabela de conversão, o valor octal <code>71</code> equivale a <code>57</code> em decimal, resultante de <code>8*7 + 1</code>.</p>
+<p>No caso da representação <strong>hexadecimal</strong>, os caracteres aceitos são de <code>0</code> a <code>9</code> e de <code>A</code> a <code>F</code>. Todo literal hexadecimal deve ser prefixado com <code>0X</code> ou <code>0x</code>. A base hexadecimal é muito utilizada para expressar conteúdo de memória do computador, pois além de reduz a quantidade de caracteres necessários, o processo de conversão binário-hexadecimal é bastante simples. Observe o trecho de código a seguir:</p>
+<div class="highlight"><pre><span></span><code>    <span class="n">var_hex</span> <span class="o">=</span> <span class="mh">0xF2</span><span class="p">;</span>         <span class="c1">//base hexadecimal    </span>
+</code></pre></div>
+<p>Os caracteres de <code>A</code> a <code>F</code> do sistema hexadecimal equivalem a <code>10</code>, <code>11</code>, <code>12</code>, <code>13</code>,<code>14</code> e <code>15</code> no sistema decimal, respectivamente. Desta forma, para converter de hexadecimal para decimal, podemos utilizar a tabela de potências, agora com base <code>16</code>.</p>
+<table>
+<thead>
+<tr>
+<th>16<sup>3</sup></th>
+<th>16<sup>2</sup></th>
+<th>16<sup>1</sup></th>
+<th>16<sup>0</sup></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td></td>
+<td>F</td>
+<td>2</td>
+</tr>
+</tbody>
+</table>
+<p>Em nosso exemplo, <code>F2</code> equivale ao valor <code>242</code> em decimal, visto que é o resultado da expressão <code>15*16 + 2</code>.</p>
+<p>E finalmente chegamos a representação <strong>binária</strong>, natural da máquina. Literais inteiros expressos em binário são sequências de <code>0s</code> e <code>1s</code> prefixados com <code>0b</code> ou <code>0B</code>.</p>
+<h2 id="literais-para-numeros-de-ponto-flutuante">Literais para números de ponto flutuante<a class="headerlink" href="#literais-para-numeros-de-ponto-flutuante" title="Permanent link">¶</a></h2>
+<p>Ponto flutuante é o nome dado para um número real representado digitalmente no computador. Quando informamos um literal que expressa um número real na programação, devemos utilizar o caractere <code>.</code> para separar a parte decimal da inteira. Também é possível utilizar aspas simples para separar os milhares.</p>
+<p>Números de ponto flutuante podem ser armazenados com precisão simples (identificados com o tipo <code>float</code>) ou com precisão dupla (tipo <code>double</code>). Números de precisão simples utilizam 32 bits de espaço de memória, enquanto números de precisão dupla utilizam 64 bits. Outra importante diferença refere-se a quantidade de casas decimais armazenadas: enquanto um tipo <code>float</code> armazena até <code>7</code> casas decimais, um <code>double</code> armazena <code>15</code> casas.  </p>
+<div class="highlight"><pre><span></span><code>    <span class="kt">float</span> <span class="n">var_float</span><span class="p">;</span>
+    <span class="kt">double</span> <span class="n">var_double</span><span class="p">;</span>
+
+    <span class="n">var_float</span> <span class="o">=</span> <span class="mf">1'234.34</span><span class="p">;</span>
+    <span class="n">var_double</span> <span class="o">=</span> <span class="mi">345</span><span class="p">;</span>
+</code></pre></div>
+<h2 id="literais-booleanos">Literais booleanos<a class="headerlink" href="#literais-booleanos" title="Permanent link">¶</a></h2>
+<p><a href="https://www.tecmundo.com.br/programacao/1527-logica-booleana-saiba-um-pouco-mais-sobre-esta-logica-e-como-ela-funciona.htm">Álgebra booleana</a> é um formalismo matemático utilizado na computação para implementar testes lógicos. Na álgebra booleana temos dois estados possíveis para um proposição lógica: <code>verdadeiro</code> e <code>falso</code>. </p>
+<p>No C++, o estado <code>verdadeiro</code> é representado pelo literal <code>true</code> (ou pelo literal inteiro <code>1</code>). Já o estado <code>falso</code> é representado pelo literal <code>false</code> (ou pelo literal inteiro <code>0</code>). Observe o exemplo:</p>
+<div class="highlight"><pre><span></span><code>    <span class="kt">bool</span> <span class="n">var_true</span><span class="p">,</span> <span class="n">var_false</span><span class="p">;</span>
+    <span class="n">var_true</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
+    <span class="n">var_false</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
+
+    <span class="n">var_true</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="n">var_false</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</code></pre></div>
+<h2 id="literais-para-caracteres">Literais para caracteres<a class="headerlink" href="#literais-para-caracteres" title="Permanent link">¶</a></h2>
+<p>Caracteres são os símbolos do alfabeto, pontuação, entre outros. Nem todo caractere tem representação gráfica (quebra de linha e fim de arquivo, por exemplo). </p>
+<p>Para representar caracteres computacionalmente, pode-se utilizar <code>1</code> ou <code>2</code> bytes. O padrão <a href="https://www.unicode.org/standard/WhatIsUnicode.html">Unicode</a> é a norma atual para representação de caracteres de forma universal, independentemente de plataforma, programa, linguagem ou mesmo idioma.</p>
+<p>O padrão Unicode utiliza <code>2</code> bytes para representar o código numérico de cada um dos <code>137,929</code> caracteres existentes (<a href="https://www.unicode.org/versions/Unicode12.0.0/UnicodeStandard-12.0.pdf">Versão 12</a>)</p>
+<p>Em C++, os literais de caracteres são representados envolvidos por aspas simples. Observe o exemplo:</p>
+<div class="highlight"><pre><span></span><code>    <span class="kt">char</span> <span class="n">var_char</span><span class="p">;</span>
+    <span class="n">var_char</span> <span class="o">=</span> <span class="sc">'c'</span><span class="p">;</span>
+    <span class="n">var_char</span> <span class="o">=</span> <span class="sc">'B'</span><span class="p">;</span>
+</code></pre></div>
+<h2 id="literais-para-strings">Literais para strings<a class="headerlink" href="#literais-para-strings" title="Permanent link">¶</a></h2>
+<p>Strings são sequências de caracteres, ou simplesmente, a forma de expressar texto na programação. Literais são definidos no C++ por meio de aspas duplas, conforme demonstra o exemplo. </p>
+<div class="highlight"><pre><span></span><code>    <span class="n">string</span> <span class="n">var_string</span><span class="p">;</span>
+    <span class="n">var_string</span> <span class="o">=</span> <span class="s">"Olá, isso é um texto"</span><span class="p">;</span>
+</code></pre></div>
+<h2 id="um-pouco-de-codigo">Um pouco de código<a class="headerlink" href="#um-pouco-de-codigo" title="Permanent link">¶</a></h2>
+<p>Observe o código-fonte do programa a seguir. Perceba que nele são declaradas variáveis cuja inicialização faz uso dos literais que estudamos anteriormente. </p>
+<script src="https://gist.github.com/diegolusa/97572b0ca9fbfdd74ffce4003a7e7172.js"></script>
+</article>
+</div>
+</div>
+<a class="md-top md-icon" data-md-component="top" data-md-state="hidden" href="#">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path></svg>
+</a>
+</main>
+<footer class="md-footer">
+<nav aria-label="Footer" class="md-footer__inner md-grid">
+<a class="md-footer__link md-footer__link--prev" href="../compilacao/" rel="prev">
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"></path></svg>
+</div>
+<div class="md-footer__title">
+<div class="md-ellipsis">
+<span class="md-footer__direction">
+                Previous
+              </span>
+              Compilação
+            </div>
+</div>
+</a>
+<a class="md-footer__link md-footer__link--next" href="../io/" rel="next">
+<div class="md-footer__title">
+<div class="md-ellipsis">
+<span class="md-footer__direction">
+                Next
+              </span>
+              Entrada e Saída
+            </div>
+</div>
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"></path></svg>
+</div>
+</a>
+</nav>
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-footer-copyright">
+<div class="md-footer-copyright__highlight">
+            Copyright © 2021 -  Diego A. Lusa
+          </div>
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" rel="noopener" target="_blank">
+          Material for MkDocs
+        </a>
+</div>
+<div class="md-footer-social">
+<a class="md-footer-social__link" href="https://www.linkedin.com/in/diegolusa/" rel="noopener" target="_blank" title="www.linkedin.com">
+<svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"></path></svg>
+</a>
+<a class="md-footer-social__link" href="http://github.com/diegolusa" rel="noopener" target="_blank" title="github.com">
+<svg viewbox="0 0 496 512" xmlns="http://www.w3.org/2000/svg"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"></path></svg>
+</a>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<div class="md-dialog" data-md-component="dialog">
+<div class="md-dialog__inner md-typeset"></div>
+</div>
+<script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.top", "navigation.instant", "toc.integrate", "header.autohide"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}, "search": "../../../assets/javascripts/workers/search.fe42c31b.min.js", "version": null}</script>
+<script src="../../../assets/javascripts/bundle.7353b375.min.js"></script>
+<script src="../../../javascripts/config.js"></script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</body>
+</html>

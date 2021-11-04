@@ -1,0 +1,713 @@
+
+<!DOCTYPE html>
+
+<html class="no-js" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<link href="../../../img/icon.ico" rel="icon"/>
+<meta content="mkdocs-1.1.2, mkdocs-material-7.1.1" name="generator"/>
+<title>Funções - Prof. Diego A. Lusa</title>
+<link href="../../../assets/stylesheets/main.9299cb39.min.css" rel="stylesheet"/>
+<link href="../../../assets/stylesheets/palette.ef6f36e2.min.css" rel="stylesheet"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7C&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font-family:"Roboto";--md-code-font-family:""}</style>
+<link href="../../../css/custom.css" rel="stylesheet"/>
+</head>
+<body data-md-color-accent="" data-md-color-primary="black" data-md-color-scheme="default" dir="ltr">
+<script>function __prefix(e){return new URL("../../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+<script>var palette=__get("__palette");if(null!==palette&&"object"==typeof palette.color)for(var key in palette.color)document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#retornando-valores">
+          Skip to content
+        </a>
+</div>
+<div data-md-component="announce">
+</div>
+<header class="md-header" data-md-component="header">
+<nav aria-label="Header" class="md-header__inner md-grid">
+<a aria-label="Prof. Diego A. Lusa" class="md-header__button md-logo" data-md-component="logo" href="../../.." title="Prof. Diego A. Lusa">
+<img alt="logo" src="../../../img/icon.png"/>
+</a>
+<label class="md-header__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"></path></svg>
+</label>
+<div class="md-header__title" data-md-component="header-title">
+<div class="md-header__ellipsis">
+<div class="md-header__topic">
+<span class="md-ellipsis">
+            Prof. Diego A. Lusa
+          </span>
+</div>
+<div class="md-header__topic" data-md-component="header-topic">
+<span class="md-ellipsis">
+            
+              Funções
+            
+          </span>
+</div>
+</div>
+</div>
+<form class="md-header__option" data-md-component="palette">
+<input class="md-option" data-md-color-accent="" data-md-color-media="" data-md-color-primary="black" data-md-color-scheme="default" id="__palette_1" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_2" hidden="" title="Mudar para modo escuro">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10a2 2 0 0 1 2 2 2 2 0 0 1-2 2 2 2 0 0 1-2-2 2 2 0 0 1 2-2m10-3a5 5 0 0 1 5 5 5 5 0 0 1-5 5H7a5 5 0 0 1-5-5 5 5 0 0 1 5-5h10M7 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3h10a3 3 0 0 0 3-3 3 3 0 0 0-3-3H7z"></path></svg>
+</label>
+<input class="md-option" data-md-color-accent="" data-md-color-media="" data-md-color-primary="black" data-md-color-scheme="slate" id="__palette_2" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_1" hidden="" title="Mudar para modo claro">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3z"></path></svg>
+</label>
+</form>
+<label class="md-header__button md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"></path></svg>
+</label>
+<div class="md-search" data-md-component="search" role="dialog">
+<label class="md-search__overlay" for="__search"></label>
+<div class="md-search__inner" role="search">
+<form class="md-search__form" name="search">
+<input aria-label="Search" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" data-md-state="active" name="query" placeholder="Search" required="" spellcheck="false" type="text"/>
+<label class="md-search__icon md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"></path></svg>
+</label>
+<button aria-label="Clear" class="md-search__icon md-icon" tabindex="-1" type="reset">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"></path></svg>
+</button>
+</form>
+<div class="md-search__output">
+<div class="md-search__scrollwrap" data-md-scrollfix="">
+<div class="md-search-result" data-md-component="search-result">
+<div class="md-search-result__meta">
+            Initializing search
+          </div>
+<ol class="md-search-result__list"></ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+</nav>
+</header>
+<div class="md-container" data-md-component="container">
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Navigation" class="md-nav md-nav--primary md-nav--integrated" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="Prof. Diego A. Lusa" class="md-nav__button md-logo" data-md-component="logo" href="../../.." title="Prof. Diego A. Lusa">
+<img alt="logo" src="../../../img/icon.png"/>
+</a>
+    Prof. Diego A. Lusa
+  </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../..">
+        Home
+      </a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" id="__nav_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2">
+        Informática
+        <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="Informática" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_2">
+<span class="md-nav__icon md-icon"></span>
+          Informática
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_1" id="__nav_2_1" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_1">
+        Editores de Texto
+        <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="Editores de Texto" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_1">
+<span class="md-nav__icon md-icon"></span>
+          Editores de Texto
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../informatica/editores-texto/introducao/">
+        Writer
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../informatica/editores-texto/estilos/">
+        Estilos
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../informatica/editores-texto/abnt/">
+        ABNT
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" id="__nav_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_3">
+        Programação
+        <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="Programação" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_3">
+<span class="md-nav__icon md-icon"></span>
+          Programação
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../linguagens/">
+        Linguagens de Programação
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../paradigmas/">
+        Paradigmas de Programação
+      </a>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_3" id="__nav_3_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_3_3">
+        C++
+        <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="C++" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_3_3">
+<span class="md-nav__icon md-icon"></span>
+          C++
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../ambiente/">
+        Ambiente de Desenvolvimento
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../compilacao/">
+        Compilação
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../identificadores/">
+        Identificadores
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../io/">
+        Entrada e Saída
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../condicionais/">
+        Condicionais
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../iteracao/">
+        Laços de Repetição
+      </a>
+</li>
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+          Funções
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./">
+        Funções
+      </a>
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#retornando-valores">
+    Retornando Valores
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#passando-argumentos">
+    Passando Argumentos
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../arranjos/">
+        Arranjos
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../ponteiros/">
+        Ponteiros
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_4" id="__nav_3_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_3_4">
+        Programação Orientada a Objetos
+        <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="Programação Orientada a Objetos" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_3_4">
+<span class="md-nav__icon md-icon"></span>
+          Programação Orientada a Objetos
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../oop/introducao/">
+        Introdução
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../oop/classes/">
+        Classes
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../oop/excecoes/">
+        Exceções
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" id="__nav_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4">
+        Desenvolvimento Web
+        <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="Desenvolvimento Web" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_4">
+<span class="md-nav__icon md-icon"></span>
+          Desenvolvimento Web
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../web/historia/">
+        Como surgiu a Web?
+      </a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_2" id="__nav_4_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4_2">
+        HTML5
+        <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="HTML5" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_4_2">
+<span class="md-nav__icon md-icon"></span>
+          HTML5
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../web/html5/estrutura-basica/">
+        O que é HTML?
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../web/html5/tags-basicas/">
+        Conceitos Básicos
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../web/html5/hiperlinks/">
+        Hiperlinks
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../web/html5/imagem/">
+        Imagens
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../web/html5/tags-estruturais/">
+        Estruturando Conteúdo
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../web/html5/tabelas/">
+        Tabelas
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_3" id="__nav_4_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4_3">
+        CSS3
+        <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="CSS3" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_4_3">
+<span class="md-nav__icon md-icon"></span>
+          CSS3
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../web/css3/fundamentos/">
+        Fundamentos
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../web/css3/seletores/">
+        Seletores
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../web/css3/cores/">
+        Cores
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../web/css3/fontes/">
+        Fontes
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../about/">
+        Sobre
+      </a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<h1>Funções</h1>
+<p>Um dos princípios do paradigma da programação estruturada é o conceito de <code>sub-rotina</code>, também conhecidas como <code>função</code> e/ou <code>procedimento</code> (algumas linguagens de programação diferenciam um do outro). </p>
+<p>Criar <code>sub-rotinas</code> é essencial para administrar a complexidade do software. Não é incomum que softwares tenham milhares, ou mesmo milhões de linhas de código. Se todo esse código não for organizado em partes administráveis e compreensíveis, os programadores terão sérias dificuldades para dar sequência ao projeto.</p>
+<p>O processo de criar sub-rotinas compreende, portanto, a divisão de um grande problema em partes menores, como se fossem blocos, por meio dos quais a solução final será construída. A esse processo chamamos de <code>modularização</code>, um conceito-chave em projetos de software.</p>
+<p>Além de tornar a complexidade administrável por seres humanos, a modularização permite <code>reutilizar</code> código. Jamais esqueça desta palavra - <code>reutilizar</code> - pois ela é o <em>Santo Graal</em> da programação. Reutilizar significa reaproveitar código funcional, testado e validado, o que implica diretamente na redução do tempo e custos de desenvolvimento do projeto.</p>
+<p>Falando especificamente da linguagem C++, podemos afirmar categoricamente que nenhum programa existe sem ter, ao menos, uma função. Se neste momento você pensou na função <code>main</code>, parabéns  😁</p>
+<p>Uma função é um conjunto de instruções agrupadas, comumente identificada por um nome, que são executadas sempre que uma operação de invocação está presente no código. É o meio que temos para <code>representar ações e computações em um programa</code>, de modo que sempre que queremos fazer algo no código para o qual é possível atribuir um nome, aí estaremos face a uma nova função <sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup>.</p>
+<div class="admonition note">
+<p class="admonition-title">Nota</p>
+<p><em>Invocar</em> uma função significa chamá-la pelo nome ou por seu endereço de memória no código.</p>
+</div>
+<p>Para criarmos funções é preciso conhecer as regras de sintaxe que a linguagem de programação aplica. Falando do C++, a sintaxe do comando envolve:</p>
+<ul>
+<li><strong>Tipo de retorno</strong>: Especifica no cabeçalho da função (sua assinatura) que tipo de valor ela retorna ao chamador. Qualquer tipo disponível pode ser retornado e, para os casos onde o retorno deve ser desconsiderado, utilizamos o tipo especial <code>void</code>.</li>
+<li><strong>Identificador</strong>: Assim como variáveis têm nomes, as funções também. As mesmas regras de nomenclatura se aplicam.</li>
+<li><strong>Argumentos formais (parâmetros)</strong>: São variáveis definidas no cabeçalho da função por meio das quais podemos passar valores específicos a cada chamada. Ter parâmetros é algo opcional em uma função. </li>
+<li><strong>Instruções</strong>: É o que a função executa. Compreende seu corpo, sua lógica de operação interna.</li>
+<li><strong>Retorno</strong>: Comando que finaliza a execução da função e devolve ao chamador o resultado do processamento. Em C++, o retorno é feito através do comando <code>return</code>. Toda função que indicar retornar um tipo diferente de <code>void</code> deve obrigatoriamente fazê-lo para todos os caminhos possíveis de finalização (ou gerar um erro). A exceção fica com a função <code>main</code>, que ao executar com sucesso todos os comandos automaticamente irá retornar <code>0</code>.</li>
+</ul>
+<p>Vamos utilizar como estudo de caso a própria função <code>main</code>. Observe que começamos pela tipo <code>int</code>, indicando que seu retorno é um número inteiro. Na sequência, temos <code>main</code>, o nome da função. Os parâmetros são declarados no espaço contido entre os parênteses <code>()</code>. Cada declaração de parâmetro compreende seu tipo e nome, tal qual fazemos ao declarar variáveis. Se houver necessidade de mais de um parâmetro, devemos separá-los com vírgula. Por fim, as instruções ficam contidas entre as chaves <code>{}</code>.</p>
+<div class="tabbed-set" data-tabs="1:1"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio"><label for="__tabbed_1_1">C++</label><div class="tabbed-content"></div>
+</input></div>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span> <span class="o">*</span><span class="n">argv</span><span class="p">[])</span>
+<span class="p">{</span>
+    <span class="cm">/*instruções*/</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Sabemos que a função <code>main</code> é obrigatória em qualquer programa escrito em C++. Caberá a nós, programadores, criamos as demais funções para nossos programas. Na sequência, apresento alguns exemplos de funções e comentários pertinentes.</p>
+<h3 id="retornando-valores">Retornando Valores<a class="headerlink" href="#retornando-valores" title="Permanent link">¶</a></h3>
+<p>Tipicamente criamos funções que retornam algum valor ao chamador (<code>caller</code>). Sabemos que o tipo de retorno acompanha a declaração da função e que, por meio deste tipo, o compilador poderá aceitar a chamada da função em qualquer contexto que permita presença daquele tipo de dado.</p>
+<p>No programa abaixo estamos utilizando uma função chamada <code>ler_idade()</code>. Perceba que o cabeçalho (assinatura) aparece antes da função <code>main</code>, enquanto que a implementação está posta após. Isso se faz necessário para atender um princípio básico de programação, que é: <code>somente podemos fazer uso, em uma instrução, de estruturas já disponíveis naquele momento</code>. Ou seja, precisamos orientar o compilador da existência de uma função chamada <code>ler_idade()</code>, que retorna valor inteiro, pois estamos chamando ela antes de propriamente implementá-la.</p>
+<div class="tabbed-set" data-tabs="2:1"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio"><label for="__tabbed_2_1">C++</label><div class="tabbed-content"></div>
+</input></div>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
+
+<span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+
+<span class="hll"><span class="kt">int</span> <span class="nf">ler_idade</span><span class="p">();</span>
+</span>
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(){</span>
+    <span class="kt">int</span> <span class="n">idade1</span><span class="p">,</span> <span class="n">idade2</span><span class="p">;</span>
+<span class="hll">    <span class="n">idade1</span> <span class="o">=</span> <span class="n">ler_idade</span><span class="p">();</span>
+</span><span class="hll">    <span class="n">idade2</span> <span class="o">=</span> <span class="n">ler_idade</span><span class="p">();</span>
+</span><span class="p">}</span>
+
+<span class="hll"><span class="kt">int</span> <span class="nf">ler_idade</span><span class="p">(){</span>
+</span>    <span class="kt">int</span> <span class="n">idade</span><span class="p">;</span>
+
+    <span class="k">while</span><span class="p">(</span><span class="nb">true</span><span class="p">){</span>        
+        <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"Informe a idade [13,59]: "</span><span class="p">;</span>
+        <span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">idade</span><span class="p">;</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">idade</span> <span class="o">&lt;</span><span class="mi">13</span> <span class="o">||</span> <span class="n">idade</span> <span class="o">&gt;</span> <span class="mi">59</span><span class="p">)</span>        
+            <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span> <span class="o">&lt;&lt;</span> <span class="s">"Valor inválido"</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+        <span class="k">else</span>
+            <span class="k">return</span> <span class="n">idade</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>   
+</code></pre></div>
+</td></tr></table>
+<p>Nas linhas <code>9</code> e <code>10</code> temos a chamada para a função <code>ler_idade()</code>. Perceba que operação de invocação compreende indicar o nome e os argumentos entre <code>()</code>, quando existirem. Assim que a execução do código alcançar essa instrução, o fluxo de execução é desviado para a primeira linha da função, executando seu código interno até que ela finalize. O valor retornado via <code>return</code> será "substituído" no espaço em que ocorreu a chamada. Logo, as variáveis <code>idade1</code> e <code>idade2</code> irão receber a idade informada pelo usuário, adequadamente compreendida no intervalo <span class="arithmatex">\(\left[13,59\right]\)</span>.</p>
+<p>Mas afinal, qual é a vantagem de se utilizar a função <code>ler_idade()</code>? </p>
+<ul>
+<li>
+<p><strong>Abstração</strong>: Abstrair significa reduzir complexidade a partir da elaboração de um conceito de alto nível sobre algo. Em nosso código, estamos deixando a carga da função estabelecer e executar todas as regras de validação e coleta de um valor de idade. Na perspectiva da instrução que chama a função, não há informação sobre como a função opera, apenas que ela irá retornar um valor inteiro que representa uma idade. É uma relação de confiança, em que delegamos a responsabilidade para a função e ficamos aguardando seu retorno. Ao fazer isso, não precisamos nos preocupar com todos os pequenos detalhes do código, permitindo ter uma visão de mais alto nível durante a codificação.</p>
+</li>
+<li>
+<p><strong>Reuso</strong>: Todos os locais do código que demandam a leitura de uma idade farão chamada à função. Logo, não precisaremos repetir todo o código para cada situação em que uma idade for demandada.</p>
+</li>
+<li>
+<p><strong>Único ponto de alteração</strong>: Mudou o critério para determinar uma idade válida? Sem problemas, basta alterar o código da função que todos os locais que fazem uso dela irão utilizar a versão atualizada. Escreva apenas uma vez, use em todo lugar! </p>
+</li>
+</ul>
+<h3 id="passando-argumentos">Passando Argumentos<a class="headerlink" href="#passando-argumentos" title="Permanent link">¶</a></h3>
+<p>Muitas vezes precisamos passar valores específicos no momento em que a função é chamada. Estes valores recebem o nome de <code>argumentos</code>. Os argumentos são utilizados para alimentar os <code>parâmetros</code> da função, que são variáveis que permitem à função receber dados do mundo externo e utilizá-los em sua execução. </p>
+<p>Podemos passar argumentos de dois modos diferentes: <code>por valor</code> e <code>por referência</code>. Quando utilizamos a estratégia de passagem <code>por valor</code>, o parâmetro receberá uma cópia do valor informado. Lembre-se que um <code>parâmetro</code> é uma variável local da função, inicializada a cada chamada realizada<sup id="fnref2:1"><a class="footnote-ref" href="#fn:1">1</a></sup>.</p>
+<p>A passagem <code>por valor</code> de argumentos gera uma cópia, de modo que eventuais alterações realizadas pela função no parâmetro correspondente não terão impacto externo. Para ilustrar este comportamento iremos utilizar um programa muito simples, composto por duas funções: <code>main</code> e <code>substitui</code>. </p>
+<div class="tabbed-set" data-tabs="3:1"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio"><label for="__tabbed_3_1">C++</label><div class="tabbed-content"></div>
+</input></div>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
+
+<span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+
+<span class="kt">void</span> <span class="nf">substitui</span><span class="p">(</span><span class="kt">int</span> <span class="n">a</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="hll">    <span class="n">a</span> <span class="o">=</span> <span class="mi">7</span><span class="p">;</span>
+</span><span class="p">}</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="kt">int</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
+<span class="hll">    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">a</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+</span><span class="hll">    <span class="n">substitui</span><span class="p">(</span><span class="n">a</span><span class="p">);</span>
+</span><span class="hll">    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">a</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+</span><span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
+<p>A função <code>substitui</code> define um parâmetro, chamado de <code>a</code>, para receber um valor inteiro. Na linha <span class="arithmatex">\(14\)</span>, ela é chamada passando-se para o parâmetro <code>a</code> o argumento <code>a</code>. Mas espera aí: não é o mesmo <code>a</code> então?</p>
+<p>Não, são posições de memória diferentes. Todo parâmetro representa uma variável local à função, cujo escopo de visibilidade é o corpo desta função. O fato de estarmos enviando um argumento, que é uma variável, com o mesmo nome representa uma simples coincidência. </p>
+<p>Então, se estamos falando de posições de memória diferentes, a atribuição realizada pela função na linha <span class="arithmatex">\(7\)</span> não vai alterar o valor da variável <code>a</code> declarada na função <code>main</code>. Deste modo, ambos os comandos <code>cout</code> irão escrever o valor <span class="arithmatex">\(3\)</span>. Chamamos isso de passagem de argumento por cópia (<em>call by value</em>).</p>
+<p>Agora vamos modificar nossa função <code>substitui</code> adicionando o operador <code>&amp;</code> antes do nome do parâmetro. Nosso programa em sua versão alterada seria:</p>
+<div class="tabbed-set" data-tabs="4:1"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio"><label for="__tabbed_4_1">C++</label><div class="tabbed-content"></div>
+</input></div>
+<p><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
+
+<span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+
+<span class="kt">void</span> <span class="nf">substitui</span><span class="p">(</span><span class="kt">int</span> <span class="o">&amp;</span><span class="n">a</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="hll">    <span class="n">a</span> <span class="o">=</span> <span class="mi">7</span><span class="p">;</span>
+</span><span class="p">}</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="kt">int</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
+<span class="hll">    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">a</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+</span><span class="hll">    <span class="n">substitui</span><span class="p">(</span><span class="n">a</span><span class="p">);</span>
+</span><span class="hll">    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">a</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+</span><span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
+Estranhamente, o resultado desta versão do programa será <span class="arithmatex">\(3\)</span> para o primeiro comando <code>cout</code> e <span class="arithmatex">\(7\)</span> para o segundo. Por que isso ocorre? É que neste programa estamos utilizando passagem de argumento por referência (<em>call by reference</em>), ou seja, a função recebe <strong>o endereço de memória</strong> do argumento. Deste modo, as alterações realizadas dentro da função no valor do parâmetro serão diretamente aplicadas à variável informada como argumento.</p>
+<p>Mas isso não pode gerar efeitos colaterais indesejados? Que benefícios há em se utilizar referências?</p>
+<p>Bem, o programador deverá utilizar o recurso com prudência. Nem todo parâmetro deve ser <em>by reference</em>. O grande benefício está possibilidade de compartilhar áreas de memória, uma operação muito mais rápida se comparada a uma cópia de valores. Imagine se precisássemos informar um vetor de <span class="arithmatex">\(1000\)</span> posições para um função e todos estes valores precisassem ser copiados para o parâmetro?</p>
+<p>Logo, nesta perspectiva, qualquer <code>array</code> definido como parâmetro irá receber uma referência de memória e não uma cópia de valor. Podemos verificar isso no programa a seguir, construído para ler uma matriz <span class="arithmatex">\(M_{2 \times 2}\)</span> e apresentar a média aritmética dos valores lidos.</p>
+<div class="tabbed-set" data-tabs="5:1"><input checked="checked" id="__tabbed_5_1" name="__tabbed_5" type="radio"><label for="__tabbed_5_1">C++</label><div class="tabbed-content"></div>
+</input></div>
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;iomanip&gt;</span><span class="cp"></span>
+
+<span class="cp">#define LINHAS 2</span>
+<span class="cp">#define COLUNAS 2</span>
+
+<span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+
+<span class="kt">void</span> <span class="nf">ler_dados_matriz</span><span class="p">(</span><span class="kt">int</span> <span class="n">m</span><span class="p">[][</span><span class="n">COLUNAS</span><span class="p">]){</span>
+     <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">l</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">l</span> <span class="o">&lt;</span> <span class="n">LINHAS</span><span class="p">;</span><span class="n">l</span><span class="o">++</span><span class="p">){</span>
+         <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">c</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">c</span> <span class="o">&lt;</span> <span class="n">COLUNAS</span><span class="p">;</span><span class="n">c</span><span class="o">++</span> <span class="p">){</span>
+               <span class="n">cout</span><span class="o">&lt;&lt;</span><span class="s">"M["</span><span class="o">&lt;&lt;</span><span class="n">l</span><span class="o">&lt;&lt;</span><span class="s">","</span><span class="o">&lt;&lt;</span><span class="n">c</span><span class="o">&lt;&lt;</span><span class="s">"]: "</span><span class="p">;</span>
+               <span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">m</span><span class="p">[</span><span class="n">l</span><span class="p">][</span><span class="n">c</span><span class="p">];</span> 
+         <span class="p">}</span>
+     <span class="p">}</span>   
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="nf">imprimir_matriz</span><span class="p">(</span><span class="kt">int</span> <span class="n">m</span><span class="p">[][</span><span class="n">COLUNAS</span><span class="p">]){</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span><span class="s">"M: "</span><span class="o">&lt;&lt;</span><span class="n">endl</span><span class="p">;</span>
+    <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">l</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">l</span> <span class="o">&lt;</span> <span class="n">LINHAS</span><span class="p">;</span><span class="n">l</span><span class="o">++</span><span class="p">){</span>
+        <span class="n">cout</span> <span class="o">&lt;&lt;</span><span class="s">"| "</span><span class="p">;</span>
+        <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">c</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">c</span> <span class="o">&lt;</span> <span class="n">COLUNAS</span><span class="p">;</span><span class="n">c</span><span class="o">++</span> <span class="p">){</span>
+            <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">m</span><span class="p">[</span><span class="n">l</span><span class="p">][</span><span class="n">c</span><span class="p">]</span> <span class="o">&lt;&lt;</span><span class="s">" "</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="n">cout</span> <span class="o">&lt;&lt;</span><span class="s">"|"</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span><span class="n">endl</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">double</span> <span class="nf">calcular_media_matriz</span><span class="p">(</span><span class="kt">int</span> <span class="n">m</span><span class="p">[][</span><span class="n">COLUNAS</span><span class="p">]){</span>
+    <span class="kt">double</span> <span class="n">somatorio</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> 
+
+    <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">l</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">l</span> <span class="o">&lt;</span> <span class="n">LINHAS</span><span class="p">;</span><span class="n">l</span><span class="o">++</span><span class="p">)</span>
+         <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">c</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">c</span> <span class="o">&lt;</span> <span class="n">COLUNAS</span><span class="p">;</span><span class="n">c</span><span class="o">++</span> <span class="p">)</span>
+            <span class="n">somatorio</span> <span class="o">+=</span> <span class="n">m</span><span class="p">[</span><span class="n">l</span><span class="p">][</span><span class="n">c</span><span class="p">];</span>
+
+   <span class="k">return</span> <span class="n">somatorio</span><span class="o">/</span><span class="p">(</span><span class="n">LINHAS</span> <span class="o">*</span> <span class="n">COLUNAS</span><span class="p">);</span>     
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(){</span>
+    <span class="kt">int</span> <span class="n">dados</span><span class="p">[</span><span class="n">LINHAS</span><span class="p">][</span><span class="n">COLUNAS</span><span class="p">]</span><span class="o">=</span><span class="p">{{</span><span class="mi">0</span><span class="p">},{</span><span class="mi">0</span><span class="p">}};</span>
+    <span class="n">imprimir_matriz</span><span class="p">(</span><span class="n">dados</span><span class="p">);</span>
+    <span class="n">ler_dados_matriz</span><span class="p">(</span><span class="n">dados</span><span class="p">);</span>
+    <span class="n">imprimir_matriz</span><span class="p">(</span><span class="n">dados</span><span class="p">);</span>
+    <span class="kt">double</span> <span class="n">media</span> <span class="o">=</span> <span class="n">calcular_media_matriz</span><span class="p">(</span><span class="n">dados</span><span class="p">);</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span><span class="s">"MEDIA: "</span> <span class="o">&lt;&lt;</span><span class="n">setprecision</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="o">&lt;&lt;</span><span class="n">fixed</span> <span class="o">&lt;&lt;</span> <span class="n">media</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<div class="footnote">
+<hr/>
+<ol>
+<li id="fn:1">
+<p>Bjarne Stroustrup. <em>Programming: Principles and Practice Using C++</em>. Always learning. Addison Wesley, 2º edition, 2014. ISBN 9780321992789. URL: <a href="https://books.google.com.br/books?id=hxOpAwAAQBAJ">https://books.google.com.br/books?id=hxOpAwAAQBAJ</a>. <a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref2:1" title="Jump back to footnote 1 in the text">↩</a></p>
+</li>
+</ol>
+</div>
+</article>
+</div>
+</div>
+<a class="md-top md-icon" data-md-component="top" data-md-state="hidden" href="#">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path></svg>
+</a>
+</main>
+<footer class="md-footer">
+<nav aria-label="Footer" class="md-footer__inner md-grid">
+<a class="md-footer__link md-footer__link--prev" href="../iteracao/" rel="prev">
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"></path></svg>
+</div>
+<div class="md-footer__title">
+<div class="md-ellipsis">
+<span class="md-footer__direction">
+                Previous
+              </span>
+              Laços de Repetição
+            </div>
+</div>
+</a>
+<a class="md-footer__link md-footer__link--next" href="../arranjos/" rel="next">
+<div class="md-footer__title">
+<div class="md-ellipsis">
+<span class="md-footer__direction">
+                Next
+              </span>
+              Arranjos
+            </div>
+</div>
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"></path></svg>
+</div>
+</a>
+</nav>
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-footer-copyright">
+<div class="md-footer-copyright__highlight">
+            Copyright © 2021 -  Diego A. Lusa
+          </div>
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" rel="noopener" target="_blank">
+          Material for MkDocs
+        </a>
+</div>
+<div class="md-footer-social">
+<a class="md-footer-social__link" href="https://www.linkedin.com/in/diegolusa/" rel="noopener" target="_blank" title="www.linkedin.com">
+<svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"></path></svg>
+</a>
+<a class="md-footer-social__link" href="http://github.com/diegolusa" rel="noopener" target="_blank" title="github.com">
+<svg viewbox="0 0 496 512" xmlns="http://www.w3.org/2000/svg"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"></path></svg>
+</a>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<div class="md-dialog" data-md-component="dialog">
+<div class="md-dialog__inner md-typeset"></div>
+</div>
+<script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.top", "navigation.instant", "toc.integrate", "header.autohide"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}, "search": "../../../assets/javascripts/workers/search.fe42c31b.min.js", "version": null}</script>
+<script src="../../../assets/javascripts/bundle.7353b375.min.js"></script>
+<script src="../../../javascripts/config.js"></script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</body>
+</html>

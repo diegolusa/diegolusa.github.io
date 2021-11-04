@@ -1,0 +1,504 @@
+
+<!DOCTYPE html>
+
+<html class="no-js" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<link href="../../img/icon.ico" rel="icon"/>
+<meta content="mkdocs-1.1.2, mkdocs-material-7.1.1" name="generator"/>
+<title>Banco de Dados: Introdução - Prof. Diego A. Lusa</title>
+<link href="../../assets/stylesheets/main.9299cb39.min.css" rel="stylesheet"/>
+<link href="../../assets/stylesheets/palette.ef6f36e2.min.css" rel="stylesheet"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7C&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font-family:"Roboto";--md-code-font-family:""}</style>
+<link href="../../css/custom.css" rel="stylesheet"/>
+</head>
+<body data-md-color-accent="" data-md-color-primary="black" data-md-color-scheme="default" dir="ltr">
+<script>function __prefix(e){return new URL("../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+<script>var palette=__get("__palette");if(null!==palette&&"object"==typeof palette.color)for(var key in palette.color)document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#dados-metadados-e-informacao">
+          Skip to content
+        </a>
+</div>
+<div data-md-component="announce">
+</div>
+<header class="md-header" data-md-component="header">
+<nav aria-label="Header" class="md-header__inner md-grid">
+<a aria-label="Prof. Diego A. Lusa" class="md-header__button md-logo" data-md-component="logo" href="../.." title="Prof. Diego A. Lusa">
+<img alt="logo" src="../../img/icon.png"/>
+</a>
+<label class="md-header__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"></path></svg>
+</label>
+<div class="md-header__title" data-md-component="header-title">
+<div class="md-header__ellipsis">
+<div class="md-header__topic">
+<span class="md-ellipsis">
+            Prof. Diego A. Lusa
+          </span>
+</div>
+<div class="md-header__topic" data-md-component="header-topic">
+<span class="md-ellipsis">
+            
+              Banco de Dados: Introdução
+            
+          </span>
+</div>
+</div>
+</div>
+<form class="md-header__option" data-md-component="palette">
+<input class="md-option" data-md-color-accent="" data-md-color-media="" data-md-color-primary="black" data-md-color-scheme="default" id="__palette_1" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_2" hidden="" title="Mudar para modo escuro">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10a2 2 0 0 1 2 2 2 2 0 0 1-2 2 2 2 0 0 1-2-2 2 2 0 0 1 2-2m10-3a5 5 0 0 1 5 5 5 5 0 0 1-5 5H7a5 5 0 0 1-5-5 5 5 0 0 1 5-5h10M7 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3h10a3 3 0 0 0 3-3 3 3 0 0 0-3-3H7z"></path></svg>
+</label>
+<input class="md-option" data-md-color-accent="" data-md-color-media="" data-md-color-primary="black" data-md-color-scheme="slate" id="__palette_2" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_1" hidden="" title="Mudar para modo claro">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3z"></path></svg>
+</label>
+</form>
+<label class="md-header__button md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"></path></svg>
+</label>
+<div class="md-search" data-md-component="search" role="dialog">
+<label class="md-search__overlay" for="__search"></label>
+<div class="md-search__inner" role="search">
+<form class="md-search__form" name="search">
+<input aria-label="Search" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" data-md-state="active" name="query" placeholder="Search" required="" spellcheck="false" type="text"/>
+<label class="md-search__icon md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"></path></svg>
+</label>
+<button aria-label="Clear" class="md-search__icon md-icon" tabindex="-1" type="reset">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"></path></svg>
+</button>
+</form>
+<div class="md-search__output">
+<div class="md-search__scrollwrap" data-md-scrollfix="">
+<div class="md-search-result" data-md-component="search-result">
+<div class="md-search-result__meta">
+            Initializing search
+          </div>
+<ol class="md-search-result__list"></ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+</nav>
+</header>
+<div class="md-container" data-md-component="container">
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Navigation" class="md-nav md-nav--primary md-nav--integrated" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="Prof. Diego A. Lusa" class="md-nav__button md-logo" data-md-component="logo" href="../.." title="Prof. Diego A. Lusa">
+<img alt="logo" src="../../img/icon.png"/>
+</a>
+    Prof. Diego A. Lusa
+  </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../..">
+        Home
+      </a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" id="__nav_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2">
+        Informática
+        <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="Informática" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_2">
+<span class="md-nav__icon md-icon"></span>
+          Informática
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_1" id="__nav_2_1" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_1">
+        Editores de Texto
+        <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="Editores de Texto" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_1">
+<span class="md-nav__icon md-icon"></span>
+          Editores de Texto
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../informatica/editores-texto/introducao/">
+        Writer
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../informatica/editores-texto/estilos/">
+        Estilos
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../informatica/editores-texto/abnt/">
+        ABNT
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" id="__nav_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_3">
+        Programação
+        <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="Programação" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_3">
+<span class="md-nav__icon md-icon"></span>
+          Programação
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../programacao/linguagens/">
+        Linguagens de Programação
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../programacao/paradigmas/">
+        Paradigmas de Programação
+      </a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_3" id="__nav_3_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_3_3">
+        C++
+        <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="C++" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_3_3">
+<span class="md-nav__icon md-icon"></span>
+          C++
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../programacao/cpp/ambiente/">
+        Ambiente de Desenvolvimento
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../programacao/cpp/compilacao/">
+        Compilação
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../programacao/cpp/identificadores/">
+        Identificadores
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../programacao/cpp/io/">
+        Entrada e Saída
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../programacao/cpp/condicionais/">
+        Condicionais
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../programacao/cpp/iteracao/">
+        Laços de Repetição
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../programacao/cpp/funcoes/">
+        Funções
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../programacao/cpp/arranjos/">
+        Arranjos
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../programacao/cpp/ponteiros/">
+        Ponteiros
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_4" id="__nav_3_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_3_4">
+        Programação Orientada a Objetos
+        <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="Programação Orientada a Objetos" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_3_4">
+<span class="md-nav__icon md-icon"></span>
+          Programação Orientada a Objetos
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../programacao/oop/introducao/">
+        Introdução
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../programacao/oop/classes/">
+        Classes
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../programacao/oop/excecoes/">
+        Exceções
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" id="__nav_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4">
+        Desenvolvimento Web
+        <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="Desenvolvimento Web" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_4">
+<span class="md-nav__icon md-icon"></span>
+          Desenvolvimento Web
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../web/historia/">
+        Como surgiu a Web?
+      </a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_2" id="__nav_4_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4_2">
+        HTML5
+        <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="HTML5" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_4_2">
+<span class="md-nav__icon md-icon"></span>
+          HTML5
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../web/html5/estrutura-basica/">
+        O que é HTML?
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../web/html5/tags-basicas/">
+        Conceitos Básicos
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../web/html5/hiperlinks/">
+        Hiperlinks
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../web/html5/imagem/">
+        Imagens
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../web/html5/tags-estruturais/">
+        Estruturando Conteúdo
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../web/html5/tabelas/">
+        Tabelas
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_3" id="__nav_4_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4_3">
+        CSS3
+        <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="CSS3" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_4_3">
+<span class="md-nav__icon md-icon"></span>
+          CSS3
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../web/css3/fundamentos/">
+        Fundamentos
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../web/css3/seletores/">
+        Seletores
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../web/css3/cores/">
+        Cores
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../web/css3/fontes/">
+        Fontes
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../about/">
+        Sobre
+      </a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<h1>Banco de Dados: Introdução</h1>
+<p>Quando falamos em computadores e softwares, somos inevitavelmente remetidos a dados digitais. Praticamente todos os serviços que utilizamos, de alguma forma, dependem de dados para operar. Tais dados representam entradas e saídas e, boa parte do tempo, precisam estar armazenados de forma persistente. Mas afinal, você sabe como estes dados são armazenados? Será que na história da computação, o armazenamento de dados sempre foi imprescindível? E, para não esquecer, o que entendemos como dados?</p>
+<p>Para responder a estas e outras perguntas, siga comigo nos próximos capítulos desta jornada!</p>
+<h2 id="dados-metadados-e-informacao">Dados, Metadados e Informação<a class="headerlink" href="#dados-metadados-e-informacao" title="Permanent link">¶</a></h2>
+<p>Os <code>dados</code> cada vez mais os dados fazem parte da vida cotidiana. Nas diferentes atividades que realizamos, consumimos e produzimos dados de forma nunca vista antes. Enquanto sociedade, as Tecnologias da Informação e Comunicação potencializaram nossas capacidades de gerar e transferir signos.</p>
+<p>Mesmo nosso dia-a-dia estando imerso em <code>dados</code>, a definição do termo e sua relação com <code>informação</code> e <code>conhecimento</code> precisa ser bem compreendida, principalmente para profissionais da área de tecnologia. Comecemos pelos dados:</p>
+<p><code>Dados</code> (<em>data</em>, no inglês) refere-se a <strong>fatos conhecidos que podem ser registrados e que possuem significado implícito</strong> <sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup>. Já na definição do DMBOK, dados são <strong>representações de fatos sobre o mundo</strong> e, no contexto de Tecnologia da Informação, são <strong>informações armazenadas em formato digital</strong><sup id="fnref:2"><a class="footnote-ref" href="#fn:2">2</a></sup>. </p>
+<p>Dados não estão disponíveis naturalmente: eles precisam ser criados. São meios de representação e seu significado extrapola a si próprio. <strong>Compreende tanto a interpretação dos objetos que representa quanto um objeto que precisa ser interpretado</strong><sup id="fnref2:2"><a class="footnote-ref" href="#fn:2">2</a></sup>.</p>
+<p>Neste ponto é importante também diferenciarmos o termo <code>dados</code> de <code>metadados</code>. Quando você encontrar a palavra  <code>dados</code>, estamos nos referindo <strong>a um meio de representação de fatos do mundo em formato digital</strong>. E para interpretá-los precisamos de um <strong>contexto</strong>, um <strong>sistema de representação dos dados</strong>, ao que chamamos de <code>metadados</code>. Ou seja, o significado implícito dos dados torna-se evidente a partir de um contexto e este contexto é expresso pelos metadados, que atuam como convenções para interpretação dos dados <sup id="fnref3:2"><a class="footnote-ref" href="#fn:2">2</a></sup>.</p>
+<p>Isso nos permite entender que um mesmo conceito do mundo (fato) pode ser representado de diferentes formas em dados, de modo mais ou menos detalhado. A interpretação, contudo, deve manter-se alinhada ao significado real, independendo da representação.</p>
+<p>Vamos imaginar o número 14084218014. Você saberia o que ele representa? Sem um contexto, possivelmente não. Agora se eu disser que estamos falando do CPF de pacientes internados em determinado hospital? Bem, agora você reconhece o significado do número 14084218014 (nosso dado) a partir dos metadados que fornecemos.</p>
+<p>Os dados representam a base da pirâmide. Acima deles encontramos a informação, conhecimento e a sabedoria, tal qual a imagem a seguir ilustra. Contudo, tal representação desconsidera que a própria produção de dados requer conhecimento e que não existem fronteiras claras entre dados e informações, por exemplo. Informação, em determinados contextos, também pode ser entendida como dado.</p>
+<p><img alt="Pirâmide do Conhecimento" src="../img/piramide.jpg">
+<small>Autor: Luiz Roberto. Disponível em https://professorluizroberto.com/wp-content/uploads/2021/03/Piramide-DICS-7-min.jpg.</small></img></p>
+<h2 id="banco-de-dados">Banco de Dados<a class="headerlink" href="#banco-de-dados" title="Permanent link">¶</a></h2>
+<p>Sabemos que o computador é fruto da indústria de guerra e que seus primeiros usos foram para fins militares. Nesse período, em que os fundamentos da computação estavam sendo construídos, os programas desenvolvidos tinham como principal objetivo a execução de cálculos complexos. Não haviam interfaces gráficas, sequer telas, para exibir os resultados. No caso do <a href="https://pt.wikipedia.org/wiki/ENIAC">ENIAC</a>, primeiro computador digital eletrônico, a resposta era gerada a partir de uma sequência de lâmpadas.</p>
+<p>Na medida que a tecnologia evoluiu, os computadores receberam novas tarefas, passando a ser utilizados em universidades, indústrias, prestação de serviços e, é claro, em nossos lares. E, com a ampliação significativa de uso, novos softwares foram desenvolvidos, potencializando a necessidade armazenamento de dados digitais. </p>
+<p>Partimos então de um contexto onde os dados processados pelos softwares eram <em>inputados</em> a cada execução por operadores humanos e cuja resposta final servia ao momento ( não sendo armazenada digitalmente para usos posteriores), para um cenário onde os dados digitais representam ativos de imenso valor para indivíduos e organizações. É neste ponto da história que nos encontramos hoje.</p>
+<p>Os fatores que nos levaram a esta revolução digital podem ser resumidos a três: <em>demanda</em> por informação, <em>hardware de armazenamento</em> com grande capacidade e baixo custo e o desenvolvimento de <code>sistemas gerenciadores de banco de dados (SGBD)</code>, que são o tema do nosso estudo.</p>
+<p>Os <code>SGBDs</code> mantém sob sua guarda diversas bases de dados (<code>databases</code>) pelo tempo que for necessário. Cada <code>database</code> corresponde a um <strong>conjunto de dados logicamente organizado, disponível para consultas e atualizações de uma comunidade de usuários interessados</strong>.</p>
+<p>É importante ressaltar que sempre que houver a coleta organizada e sistemática de dados para um determinado propósito, teremos um <code>banco de dados</code>. Logo, um banco de dados pode ser alimentado de forma automática ou manual e os dados podem ser mantidos em qualquer formato (papel, fitas, ..., ou arquivos digitais). Seja qual for o meio, todo banco de dados representa um aspecto do mundo real, reduzido às propriedades de interesse (minimundo ou universo de discurso). Todas as mudanças que ocorrem no minimundo devem ser refletidas no banco de dados e o banco de dados deve ser um espelho da realidade<sup id="fnref2:1"><a class="footnote-ref" href="#fn:1">1</a></sup>. Contudo, para a área de estudo em Banco de Dados da Ciência da Computação e afins nos concentramos com os  bancos de dados mantidos por sistemas computadorizados, cujos dados são representados de forma digital.</p>
+<p>Sabemos que o sistema de arquivos funciona muito bem para armazenar e recuperar dados digitais. Qual seria o motivo, então, para utilizarmos <code>SGBDs</code> quando tratamos de bases de dados? Segundo <em>Garcia-Molina et al (2008)</em>, alguns elementos que justificam escolhar um <strong>SGBD</strong> seriam<sup id="fnref:3"><a class="footnote-ref" href="#fn:3">3</a></sup>:</p>
+<ul>
+<li>Permitir que usuários criem novas bases e manipulem seus <code>schemas</code> por meio de uma linguagem específica de definição de dados; </li>
+<li>Permitir que usuários consultem e modifiquem dados por meio de uma linguagem específica de manipulação de dados;</li>
+<li>Suportar o armazenamento de grandes volumes de dados por longo tempo, sempre mantendo a eficiência em seu acesso;</li>
+<li>Garantir a <em>durabilidade</em>, garantindo que falhas e eventos inesperados não comprometam os dados;</li>
+<li>Garantir o <em>isolamento</em> e a <em>atomicidade</em> na manipulação dos dados.</li>
+</ul>
+<div class="admonition info">
+<p class="admonition-title">Nota</p>
+<p><code>Schema</code> refere-se a representação da estrutura e organização de uma base de dados a partir de uma linguagem formal. São sentenças que impõem restrições de integridade aos dados. Pode associar-se ao nível lógico ou ao físico no projeto de bases de dados.</p>
+</div>
+<div class="admonition info">
+<p class="admonition-title">Nota</p>
+<p>Conceitos como  <code>linguagem de definição de dados</code>, <code>linguagem de manipulação de dados</code>, <code>durabilidade</code>,  <code>atomicidade</code> e <code>isolamento</code> serão aprofundados posteriormente.</p>
+</div>
+<p>Perceba que sistemas de arquivos não dispõem de linguagens de consulta e manipulação de dados, tampouco permitem definir o <em>schema</em> dos dados de maneira aprimorada. Questões como isolamento e atomicidade não são plenamente atendidas, bem como a durabilidade em seu sentido mais estrito. Há também a questão do acesso pouco eficiente a dados cuja localização é desconhecida.</p>
+<p>Para facilitara  compreensão das diferenças entre <strong>SGBD</strong> e sistema de arquivos, devemos ter em mente que o cenário de uso deve considerar dados compostos por pequenos fragmentos constantemente atualizados e consultados. Em tal situação, o uso do sistema de arquivos em detrimento de um <strong>SGBD</strong> pode ocasionar alguns efeitos indesejados. Vejamos os principais deles:</p>
+<h3 id="redundancia-e-inconsistencia">Redundância e Inconsistência<a class="headerlink" href="#redundancia-e-inconsistencia" title="Permanent link">¶</a></h3>
+<p><code>Redundância</code> ocorre quando uma mesma informação é representada diversas vezes na base de dados. Imagine, por exemplo, os dados de seu endereço "espalhados" em diversas cópias no site de <em>e-commerce</em> que você costuma fazer compras. Seria um caso de redundância.</p>
+<p>Ter dados redundantes não implica, necessariamente, em problemas. É só pensar na recomendação que ouvimos a todo o momento: "Faça cópias de segurança de seus arquivos!". Redundância é o fundamento do backup, e fazer backup é bom 😀.</p>
+<p>O problema com dados redundantes está na sua gestão. Se existem cópias de uma mesma informação, é preciso mantê-las sob controle, de modo que todas representem o mesmo fato do mundo. Ou seja, precisamos manter sincronizadas as diferentes cópias existentes. </p>
+<div class="admonition info">
+<p class="admonition-title">Inconsistência</p>
+<p>Dados similares encontram-se representados em diferentes formatos e locais distintos. Torna-se necessário deduzir qual representação é a correta (ou mais completa) em relação ao fato.</p>
+</div>
+<div class="admonition info">
+<p class="admonition-title">Redundância</p>
+<p>Um mesmo fato do mundo encontra-se representado múltiplas vezes no banco de dados. Divide-se em:
+<ul><li><strong>Redundância controlada</strong>: O software está ciente das diversas cópias da mesma informação e mantém a sincronia entre tais cópias.  </li>
+<li> <strong>Redundância não controlada</strong>: O software está não está ciente das diferentes cópias existentes. A sincronização fica a cargo do usuário. A redundância não  controlada predispõe a inconsistência, visto que gera anomalias na manipulação dos dados.</li></ul></p>
+</div>
+<p>Pense comigo: se no site de <em>e-commerce</em> haviam diferentes cópias de seu endereço, mas apenas uma delas está correta, quais problemas poderiam ocorrer? </p>
+<h3 id="dificuldade-de-acesso">Dificuldade de Acesso<a class="headerlink" href="#dificuldade-de-acesso" title="Permanent link">¶</a></h3>
+<p>Para um software que não utiliza SGBD, ficando restrito ao sistema de arquivos, a disponibilização de novas consultas depende de manutenção no software, o que tende aumentar custos e a possibilidade de injetar defeitos.                     </p>
+<p>Isso ocorre porque o acesso aos dados requer conhecimento detalhado da estrutura física de armazenamento dos mesmos. Além disso, compartilhar estes dados com outros softwares torna-se custoso e inseguro pois o novo usuário deverá implementar o mesmo conjunto de regras do software "dono" da base de dados para garantir consistência na manipulação.</p>
+<p>Outro fator que implica complexidade é a natureza fragmentada da base de dados. Se ela for composta de múltiplos arquivos, o software precisará "conhecer" todos eles em detalhes. Logo, não há uma camada de abstração entre software e base de dados, mas uma ligação física extremamente engessada e codependente.</p>
+<h3 id="problemas-de-integridade">Problemas de Integridade<a class="headerlink" href="#problemas-de-integridade" title="Permanent link">¶</a></h3>
+<h3 id="dificuldades-de-compartilhamento">Dificuldades de Compartilhamento<a class="headerlink" href="#dificuldades-de-compartilhamento" title="Permanent link">¶</a></h3>
+<h3 id="problemas-de-atomicidade">Problemas de Atomicidade<a class="headerlink" href="#problemas-de-atomicidade" title="Permanent link">¶</a></h3>
+<h3 id="problemas-de-isolamento">Problemas de Isolamento<a class="headerlink" href="#problemas-de-isolamento" title="Permanent link">¶</a></h3>
+<h3 id="problemas-de-seguranca">Problemas de Segurança<a class="headerlink" href="#problemas-de-seguranca" title="Permanent link">¶</a></h3>
+<div class="footnote">
+<hr/>
+<ol>
+<li id="fn:1">
+<p>R. Elmasri and S. Navathe. <em>Fundamentals of Database Systems</em>. Addison-Wesley, 2011. ISBN 9780136086208. URL: <a href="https://books.google.com.br/books?id=ZdhAQgAACAAJ">https://books.google.com.br/books?id=ZdhAQgAACAAJ</a>. <a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref2:1" title="Jump back to footnote 1 in the text">↩</a></p>
+</li>
+<li id="fn:2">
+<p>Dama International, Data Management Association, D. Henderson, and S. Earley. <em>DAMA-DMBOK: Data Management Body of Knowledge</em>. Technics Publications, 2017. ISBN 9781634622349. URL: <a href="https://books.google.com.br/books?id=YjacswEACAAJ">https://books.google.com.br/books?id=YjacswEACAAJ</a>. <a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 2 in the text">↩</a><a class="footnote-backref" href="#fnref2:2" title="Jump back to footnote 2 in the text">↩</a><a class="footnote-backref" href="#fnref3:2" title="Jump back to footnote 2 in the text">↩</a></p>
+</li>
+<li id="fn:3">
+<p>H. Garcia-Molina, J.D. Ullman, and J. Widom. <em>Database Systems: The Complete Book</em>. Pearson international edition. Pearson Prentice Hall, 2009. ISBN 9780131873254. URL: <a href="https://books.google.com.br/books?id=pk5GAQAAIAAJ">https://books.google.com.br/books?id=pk5GAQAAIAAJ</a>. <a class="footnote-backref" href="#fnref:3" title="Jump back to footnote 3 in the text">↩</a></p>
+</li>
+</ol>
+</div>
+</article>
+</div>
+</div>
+<a class="md-top md-icon" data-md-component="top" data-md-state="hidden" href="#">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path></svg>
+</a>
+</main>
+<footer class="md-footer">
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-footer-copyright">
+<div class="md-footer-copyright__highlight">
+            Copyright © 2021 -  Diego A. Lusa
+          </div>
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" rel="noopener" target="_blank">
+          Material for MkDocs
+        </a>
+</div>
+<div class="md-footer-social">
+<a class="md-footer-social__link" href="https://www.linkedin.com/in/diegolusa/" rel="noopener" target="_blank" title="www.linkedin.com">
+<svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"></path></svg>
+</a>
+<a class="md-footer-social__link" href="http://github.com/diegolusa" rel="noopener" target="_blank" title="github.com">
+<svg viewbox="0 0 496 512" xmlns="http://www.w3.org/2000/svg"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"></path></svg>
+</a>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<div class="md-dialog" data-md-component="dialog">
+<div class="md-dialog__inner md-typeset"></div>
+</div>
+<script id="__config" type="application/json">{"base": "../..", "features": ["navigation.top", "navigation.instant", "toc.integrate", "header.autohide"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}, "search": "../../assets/javascripts/workers/search.fe42c31b.min.js", "version": null}</script>
+<script src="../../assets/javascripts/bundle.7353b375.min.js"></script>
+<script src="../../javascripts/config.js"></script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</body>
+</html>
