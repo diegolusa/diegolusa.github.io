@@ -1,3 +1,6 @@
+svg[id^="mermaid-"] { margin:auto;display: block;zoom: 150%;}
+
+
 p {
   text-align: justify;
 }
