@@ -290,6 +290,11 @@
     Sobrecarga
   </a>
 </li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#metodo-abstrato">
+    Método abstrato
+  </a>
+</li>
 </ul>
 </nav>
 </li>
@@ -960,6 +965,170 @@
 </td></tr></table>
 </div>
 </input></input></input></div>
+<h2 id="metodo-abstrato">Método abstrato<a class="headerlink" href="#metodo-abstrato" title="Permanent link">¶</a></h2>
+<p>Por vezes é interessante que uma classe defina um ou mais métodos sem implementação. Estes métodos, ditos <code>abstratos</code>, são utilizados para especificar a presença de um comportamento na hierarquia de classes, garantindo que classes derivadas definam sua própria implementação. Logo, a presença de método abstrato corresponde a formalmente delegar responsabilidade de sobrescrita às classes derivadas (desde que sejam concretas).</p>
+<p>Importante ressaltar que a presença de um ou mais métodos abstratos torna a classe abstrata. <code>Classes abstratas</code> não podem produzir instâncias e servem prioritariamente como superclasse de outras. Contudo, nem toda classe abstrata contém métodos abstratos. Portanto, o inverso não é verdade!</p>
+<p>Prover classes abstratas é útil quando desejamos oferecer um conjunto básico de funcionalidades. Tal recurso é comum em arquiteturas que utilizam <em>frameworks</em>, pois nelas a aplicação, para acessar os recursos da API do <em>framework</em> precisa estender classes específicas.</p>
+<p>Para ilustrar o conceito de método e classe abstrata iremos considerar a existência de uma classe chamada <strong>FiguraGeométrica</strong>, abstrata, contendo o método abstrato <strong>calcularArea()</strong>. A partir dela, duas classes derivam, <strong>Triangulo</strong> e <strong>Quadrado</strong>, cada qual comprometendo-se em sobrescrever o método abstrato recebido da superclasse.</p>
+<p>Perceba que a justificativa para o uso do método abstrato <strong>calcularArea()</strong> é simples: qualquer figura geométrica possui área. Mas cada figura requer um cálculo específico de área, o que demanda a implementação do cálculo pela classe especializada. </p>
+<div class="mermaid">classDiagram
+direction TB     
+class  FiguraGeometrica {    
+    - ArrayList~Coordenada~ pontos
+    + calcularArea()
+}
+
+class Triangulo{
+    + calcularArea() float
+}
+
+class Quadrado {
+    + calcularArea() float
+}
+
+FiguraGeometrica &lt;|-- Triangulo
+FiguraGeometrica &lt;|-- Quadrado
+
+</div>
+<div class="tabbed-set" data-tabs="3:3"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio"><label for="__tabbed_3_1">Java</label><div class="tabbed-content">
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span>
+<span class="normal">38</span>
+<span class="normal">39</span>
+<span class="normal">40</span>
+<span class="normal">41</span>
+<span class="normal">42</span>
+<span class="normal">43</span>
+<span class="normal">44</span>
+<span class="normal">45</span>
+<span class="normal">46</span>
+<span class="normal">47</span>
+<span class="normal">48</span>
+<span class="normal">49</span>
+<span class="normal">50</span>
+<span class="normal">51</span>
+<span class="normal">52</span>
+<span class="normal">53</span>
+<span class="normal">54</span>
+<span class="normal">55</span>
+<span class="normal">56</span>
+<span class="normal">57</span>
+<span class="normal">58</span>
+<span class="normal">59</span>
+<span class="normal">60</span>
+<span class="normal">61</span>
+<span class="normal">62</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">java.util.ArrayList</span><span class="p">;</span>
+
+<span class="kd">class</span> <span class="nc">Coordenada</span><span class="p">{</span>
+    <span class="kd">private</span> <span class="kt">int</span> <span class="n">pontoX</span><span class="p">;</span>
+    <span class="kd">private</span> <span class="kt">int</span> <span class="n">pontoY</span><span class="p">;</span>
+
+    <span class="kd">public</span> <span class="nf">Coordenada</span><span class="p">(</span><span class="kt">int</span> <span class="n">x</span><span class="p">,</span> <span class="kt">int</span> <span class="n">y</span><span class="p">){</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">pontoX</span><span class="o">=</span><span class="n">x</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">pontoY</span><span class="o">=</span><span class="n">y</span>
+    <span class="p">}</span>
+    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">getPontoX</span><span class="p">(){</span>
+        <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="na">pontoX</span><span class="p">;</span>        
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">getPontoY</span><span class="p">(){</span>
+        <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="na">pontoY</span><span class="p">;</span>
+    <span class="p">}</span>
+
+<span class="p">}</span>
+
+
+<span class="kd">abstract</span> <span class="kd">class</span> <span class="nc">FiguraGeometrica</span> <span class="p">{</span>
+    <span class="kd">private</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Coordenada</span><span class="o">&gt;</span> <span class="n">pontos</span><span class="p">;</span>
+
+    <span class="kd">public</span> <span class="nf">FiguraGeometrica</span><span class="p">(</span><span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Coordenada</span><span class="o">&gt;</span> <span class="n">pontos</span><span class="p">){</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">pontos</span> <span class="o">=</span> <span class="n">pontos</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="kd">public</span> <span class="kd">abstract</span> <span class="kt">float</span> <span class="nf">calcularArea</span><span class="p">();</span>
+
+<span class="p">}</span>
+
+
+<span class="kd">public</span> <span class="n">Triangulo</span> <span class="kd">extends</span> <span class="n">FiguraGeometrica</span><span class="p">{</span>
+
+    <span class="kd">public</span> <span class="nf">Triangulo</span><span class="p">(</span><span class="n">Coordenada</span> <span class="n">p1</span><span class="p">,</span> <span class="n">Coordenada</span> <span class="n">p2</span><span class="p">,</span> <span class="n">Coordenada</span> <span class="n">p3</span><span class="p">){</span>
+        <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Coordenada</span><span class="o">&gt;</span> <span class="n">pontos</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+        <span class="n">pontos</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">p1</span><span class="p">);</span>
+        <span class="n">pontos</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">p2</span><span class="p">);</span>
+        <span class="n">pontos</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">p3</span><span class="p">);</span>
+        <span class="kd">super</span><span class="p">(</span><span class="n">pontos</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">float</span> <span class="nf">calcularArea</span><span class="p">(){</span>
+        <span class="c1">//calculo da área do tringulo</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+
+
+<span class="kd">public</span> <span class="n">Quadrado</span> <span class="kd">extends</span> <span class="n">FiguraGeometrica</span><span class="p">{</span>
+
+    <span class="kd">public</span> <span class="nf">Triangulo</span><span class="p">(</span><span class="n">Coordenada</span> <span class="n">p1</span><span class="p">,</span> <span class="n">Coordenada</span> <span class="n">p2</span><span class="p">){</span>
+        <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Coordenada</span><span class="o">&gt;</span> <span class="n">pontos</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+        <span class="n">pontos</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">p1</span><span class="p">);</span>
+        <span class="n">pontos</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">p2</span><span class="p">);</span>        
+        <span class="kd">super</span><span class="p">(</span><span class="n">pontos</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">float</span> <span class="nf">calcularArea</span><span class="p">(){</span>
+        <span class="c1">//calculo da área do tringulo</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
+</div>
+<input id="__tabbed_3_2" name="__tabbed_3" type="radio"><label for="__tabbed_3_2">Python</label><div class="tabbed-content">
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>    <span class="c1">#em breve</span>
+</code></pre></div>
+</td></tr></table>
+</div>
+<input id="__tabbed_3_3" name="__tabbed_3" type="radio"><label for="__tabbed_3_3">C++</label><div class="tabbed-content">
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>    <span class="c1">//em breve</span>
+</code></pre></div>
+</td></tr></table>
+</div>
+</input></input></input></div>
+<p>continua...</p>
 <div class="footnote">
 <hr/>
 <ol>
@@ -967,7 +1136,7 @@
 <p>Sonoo Jaiswal. What is data hiding? 2021. URL: <a href="https://www.javatpoint.com/what-is-data-hiding">https://www.javatpoint.com/what-is-data-hiding</a>. <a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">↩</a></p>
 </li>
 <li id="fn:2">
-<p>Carl Erickson. Object oriented programming. 2009. URL: <a href="file:///home/diego/%C3%81rea%20de%20Trabalho/ObjectOrientedProgramming.pdf">file:///home/diego/%C3%81rea%20de%20Trabalho/ObjectOrientedProgramming.pdf</a>. <a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 2 in the text">↩</a></p>
+<p>Carl Erickson. Object oriented programming. 2009. URL: <a href="https://atomicobject.com/uploads/archive/files/ObjectOrientedProgramming.pdf">https://atomicobject.com/uploads/archive/files/ObjectOrientedProgramming.pdf</a>. <a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 2 in the text">↩</a></p>
 </li>
 </ol>
 </div>
@@ -1039,7 +1208,7 @@
 <script src="../../../javascript/config.js"></script>
 <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
 <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-<script src="https://unpkg.com/mermaid@8.8.0/dist/mermaid.min.js"></script><script>mermaid.initialize({
+<script src="https://unpkg.com/mermaid@8.13.6/dist/mermaid.min.js"></script><script>mermaid.initialize({
     theme: "base",
     fontSize: "18px",
     fontFamily: "Roboto"
