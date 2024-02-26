@@ -1,628 +1,1272 @@
 
-<!DOCTYPE html>
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../estilos/">
+      
+      
+        <link rel="next" href="../../../programacao/linguagens/">
+      
+      <link rel="icon" href="../../../img/icon.ico">
+      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.19">
+    
+    
+      
+        <title>ABNT - Prof. Diego A. Lusa</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.eebd395e.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ecc896b0.min.css">
+      
+      
 
-<html class="no-js" lang="en">
-<head>
-<meta charset="utf-8"/>
-<meta content="width=device-width,initial-scale=1" name="viewport"/>
-<link href="../../../img/icon.ico" rel="icon"/>
-<meta content="mkdocs-1.1.2, mkdocs-material-7.1.1" name="generator"/>
-<title>ABNT - Prof. Diego A. Lusa</title>
-<link href="../../../assets/stylesheets/main.9299cb39.min.css" rel="stylesheet"/>
-<link href="../../../assets/stylesheets/palette.ef6f36e2.min.css" rel="stylesheet"/>
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7C&amp;display=fallback" rel="stylesheet"/>
-<style>:root{--md-text-font-family:"Roboto";--md-code-font-family:""}</style>
-<link href="../../../css/custom.css" rel="stylesheet"/>
-</head>
-<body data-md-color-accent="" data-md-color-primary="black" data-md-color-scheme="default" dir="ltr">
-<script>function __prefix(e){return new URL("../../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
-<script>var palette=__get("__palette");if(null!==palette&&"object"==typeof palette.color)for(var key in palette.color)document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
-<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
-<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
-<label class="md-overlay" for="__drawer"></label>
-<div data-md-component="skip">
-<a class="md-skip" href="#partes-de-documento">
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../css/custom.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="black" data-md-color-accent="indigo">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#partes-de-documento" class="md-skip">
           Skip to content
         </a>
-</div>
-<div data-md-component="announce">
-</div>
-<header class="md-header" data-md-component="header">
-<nav aria-label="Header" class="md-header__inner md-grid">
-<a aria-label="Prof. Diego A. Lusa" class="md-header__button md-logo" data-md-component="logo" href="../../.." title="Prof. Diego A. Lusa">
-<img alt="logo" src="../../../img/icon.png"/>
-</a>
-<label class="md-header__button md-icon" for="__drawer">
-<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"></path></svg>
-</label>
-<div class="md-header__title" data-md-component="header-title">
-<div class="md-header__ellipsis">
-<div class="md-header__topic">
-<span class="md-ellipsis">
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="Prof. Diego A. Lusa" class="md-header__button md-logo" aria-label="Prof. Diego A. Lusa" data-md-component="logo">
+      
+  <img src="../../../img/icon.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
             Prof. Diego A. Lusa
           </span>
-</div>
-<div class="md-header__topic" data-md-component="header-topic">
-<span class="md-ellipsis">
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
             
               ABNT
             
           </span>
-</div>
-</div>
-</div>
-<form class="md-header__option" data-md-component="palette">
-<input class="md-option" data-md-color-accent="" data-md-color-media="" data-md-color-primary="black" data-md-color-scheme="default" id="__palette_1" name="__palette" type="radio"/>
-<label class="md-header__button md-icon" for="__palette_2" hidden="" title="Mudar para modo escuro">
-<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10a2 2 0 0 1 2 2 2 2 0 0 1-2 2 2 2 0 0 1-2-2 2 2 0 0 1 2-2m10-3a5 5 0 0 1 5 5 5 5 0 0 1-5 5H7a5 5 0 0 1-5-5 5 5 0 0 1 5-5h10M7 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3h10a3 3 0 0 0 3-3 3 3 0 0 0-3-3H7z"></path></svg>
-</label>
-<input class="md-option" data-md-color-accent="" data-md-color-media="" data-md-color-primary="black" data-md-color-scheme="slate" id="__palette_2" name="__palette" type="radio"/>
-<label class="md-header__button md-icon" for="__palette_1" hidden="" title="Mudar para modo claro">
-<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3z"></path></svg>
-</label>
-</form>
-<label class="md-header__button md-icon" for="__search">
-<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"></path></svg>
-</label>
-<div class="md-search" data-md-component="search" role="dialog">
-<label class="md-search__overlay" for="__search"></label>
-<div class="md-search__inner" role="search">
-<form class="md-search__form" name="search">
-<input aria-label="Search" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" data-md-state="active" name="query" placeholder="Search" required="" spellcheck="false" type="text"/>
-<label class="md-search__icon md-icon" for="__search">
-<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"></path></svg>
-<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"></path></svg>
-</label>
-<button aria-label="Clear" class="md-search__icon md-icon" tabindex="-1" type="reset">
-<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"></path></svg>
-</button>
-</form>
-<div class="md-search__output">
-<div class="md-search__scrollwrap" data-md-scrollfix="">
-<div class="md-search-result" data-md-component="search-result">
-<div class="md-search-result__meta">
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+          
+            
+            
+            
+            <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="black" data-md-color-accent="indigo"  aria-label="Mudar para modo escuro"  type="radio" name="__palette" id="__palette_1">
+            
+              <label class="md-header__button md-icon" title="Mudar para modo escuro" for="__palette_2" hidden>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6zm0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4zM7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
+              </label>
+            
+          
+            
+            
+            
+            <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="indigo"  aria-label="Mudar para modo claro"  type="radio" name="__palette" id="__palette_2">
+            
+              <label class="md-header__button md-icon" title="Mudar para modo claro" for="__palette_1" hidden>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3Z"/></svg>
+              </label>
+            
+          
+        </form>
+      
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
             Initializing search
           </div>
-<ol class="md-search-result__list"></ol>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
-</div>
-</div>
-</div>
-</div>
-</nav>
+    
+    
+  </nav>
+  
 </header>
-<div class="md-container" data-md-component="container">
-<main class="md-main" data-md-component="main">
-<div class="md-main__inner md-grid">
-<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
-<div class="md-sidebar__scrollwrap">
-<div class="md-sidebar__inner">
-<nav aria-label="Navigation" class="md-nav md-nav--primary md-nav--integrated" data-md-level="0">
-<label class="md-nav__title" for="__drawer">
-<a aria-label="Prof. Diego A. Lusa" class="md-nav__button md-logo" data-md-component="logo" href="../../.." title="Prof. Diego A. Lusa">
-<img alt="logo" src="../../../img/icon.png"/>
-</a>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Prof. Diego A. Lusa" class="md-nav__button md-logo" aria-label="Prof. Diego A. Lusa" data-md-component="logo">
+      
+  <img src="../../../img/icon.png" alt="logo">
+
+    </a>
     Prof. Diego A. Lusa
   </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../..">
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
         Home
       </a>
-</li>
-<li class="md-nav__item md-nav__item--active md-nav__item--nested">
-<input checked="" class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" id="__nav_2" type="checkbox"/>
-<label class="md-nav__link" for="__nav_2">
-        Informática
-        <span class="md-nav__icon md-icon"></span>
-</label>
-<nav aria-label="Informática" class="md-nav" data-md-level="1">
-<label class="md-nav__title" for="__nav_2">
-<span class="md-nav__icon md-icon"></span>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+          Informática
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
           Informática
         </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item md-nav__item--active md-nav__item--nested">
-<input checked="" class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_1" id="__nav_2_1" type="checkbox"/>
-<label class="md-nav__link" for="__nav_2_1">
-        Editores de Texto
-        <span class="md-nav__icon md-icon"></span>
-</label>
-<nav aria-label="Editores de Texto" class="md-nav" data-md-level="2">
-<label class="md-nav__title" for="__nav_2_1">
-<span class="md-nav__icon md-icon"></span>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" checked>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
+          Editores de Texto
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_2_1">
+          <span class="md-nav__icon md-icon"></span>
           Editores de Texto
         </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="../introducao/">
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../introducao/" class="md-nav__link">
         Writer
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../estilos/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../estilos/" class="md-nav__link">
         Estilos
       </a>
-</li>
-<li class="md-nav__item md-nav__item--active">
-<input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
-<label class="md-nav__link md-nav__link--active" for="__toc">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
           ABNT
           <span class="md-nav__icon md-icon"></span>
-</label>
-<a class="md-nav__link md-nav__link--active" href="./">
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         ABNT
       </a>
-<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
-<label class="md-nav__title" for="__toc">
-<span class="md-nav__icon md-icon"></span>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
       Table of contents
     </label>
-<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#partes-de-documento">
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#partes-de-documento" class="md-nav__link">
     Partes de Documento
   </a>
-<nav aria-label="Partes de Documento" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#elementos-pre-textuais">
+  
+    <nav class="md-nav" aria-label="Partes de Documento">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#elementos-pre-textuais" class="md-nav__link">
     Elementos pré-textuais
   </a>
-<nav aria-label="Elementos pré-textuais" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#capa">
+  
+    <nav class="md-nav" aria-label="Elementos pré-textuais">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#capa" class="md-nav__link">
     Capa
   </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#lombada">
+        
+          <li class="md-nav__item">
+  <a href="#lombada" class="md-nav__link">
     Lombada
   </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#folha-de-rosto">
+        
+          <li class="md-nav__item">
+  <a href="#folha-de-rosto" class="md-nav__link">
     Folha de Rosto
   </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#composicao-institucional-e-ficha-catalografica">
+        
+          <li class="md-nav__item">
+  <a href="#composicao-institucional-e-ficha-catalografica" class="md-nav__link">
     Composição Institucional e Ficha Catalográfica
   </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#errata">
+        
+          <li class="md-nav__item">
+  <a href="#errata" class="md-nav__link">
     Errata
   </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#folha-de-aprovacao">
+        
+          <li class="md-nav__item">
+  <a href="#folha-de-aprovacao" class="md-nav__link">
     Folha de Aprovação
   </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#dedicatoria">
+        
+          <li class="md-nav__item">
+  <a href="#dedicatoria" class="md-nav__link">
     Dedicatória
   </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#agradecimento">
+        
+          <li class="md-nav__item">
+  <a href="#agradecimento" class="md-nav__link">
     Agradecimento
   </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#epigrafe">
+        
+          <li class="md-nav__item">
+  <a href="#epigrafe" class="md-nav__link">
     Epígrafe
   </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#resumo">
+        
+          <li class="md-nav__item">
+  <a href="#resumo" class="md-nav__link">
     Resumo
   </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#resumo-em-lingua-estrangeira">
+        
+          <li class="md-nav__item">
+  <a href="#resumo-em-lingua-estrangeira" class="md-nav__link">
     Resumo em Língua Estrangeira
   </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#lista-de-ilustracoes">
+        
+          <li class="md-nav__item">
+  <a href="#lista-de-ilustracoes" class="md-nav__link">
     Lista de Ilustrações
   </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#lista-de-tabelas">
+        
+          <li class="md-nav__item">
+  <a href="#lista-de-tabelas" class="md-nav__link">
     Lista de Tabelas
   </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#lista-de-abreviaturas-e-siglas">
+        
+          <li class="md-nav__item">
+  <a href="#lista-de-abreviaturas-e-siglas" class="md-nav__link">
     Lista de Abreviaturas e Siglas
   </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#lista-de-simbolos">
+        
+          <li class="md-nav__item">
+  <a href="#lista-de-simbolos" class="md-nav__link">
     Lista de Símbolos
   </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#sumario">
+        
+          <li class="md-nav__item">
+  <a href="#sumario" class="md-nav__link">
     Sumário
   </a>
+  
 </li>
-</ul>
-</nav>
+        
+      </ul>
+    </nav>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#elementos-textuais">
+        
+          <li class="md-nav__item">
+  <a href="#elementos-textuais" class="md-nav__link">
     Elementos textuais
   </a>
-<nav aria-label="Elementos textuais" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#capitulos">
+  
+    <nav class="md-nav" aria-label="Elementos textuais">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#capitulos" class="md-nav__link">
     Capítulos
   </a>
-<nav aria-label="Capítulos" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#alinhamento-do-texto">
+  
+    <nav class="md-nav" aria-label="Capítulos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#alinhamento-do-texto" class="md-nav__link">
     Alinhamento do texto
   </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#caracteres">
+        
+          <li class="md-nav__item">
+  <a href="#caracteres" class="md-nav__link">
     Caracteres
   </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#fonte">
+        
+          <li class="md-nav__item">
+  <a href="#fonte" class="md-nav__link">
     Fonte
   </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#fluxo-do-texto">
+        
+          <li class="md-nav__item">
+  <a href="#fluxo-do-texto" class="md-nav__link">
     Fluxo do texto
   </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#nivel-do-paragrafo">
+        
+          <li class="md-nav__item">
+  <a href="#nivel-do-paragrafo" class="md-nav__link">
     Nível do parágrafo
   </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#espacamento">
+        
+          <li class="md-nav__item">
+  <a href="#espacamento" class="md-nav__link">
     Espaçamento
   </a>
+  
 </li>
-</ul>
-</nav>
+        
+      </ul>
+    </nav>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#numeracao-dos-capitulos">
+        
+          <li class="md-nav__item">
+  <a href="#numeracao-dos-capitulos" class="md-nav__link">
     Numeração dos capítulos
   </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#sumario-automatico">
+        
+          <li class="md-nav__item">
+  <a href="#sumario-automatico" class="md-nav__link">
     Sumário automático
   </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#legendas">
+        
+          <li class="md-nav__item">
+  <a href="#legendas" class="md-nav__link">
     Legendas
   </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#entradas-bibliograficas-e-bibliografia">
+        
+          <li class="md-nav__item">
+  <a href="#entradas-bibliograficas-e-bibliografia" class="md-nav__link">
     Entradas bibliográficas e bibliografia
   </a>
+  
 </li>
-</ul>
-</nav>
+        
+      </ul>
+    </nav>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#elementos-pos-textuais">
+        
+          <li class="md-nav__item">
+  <a href="#elementos-pos-textuais" class="md-nav__link">
     Elementos pós-textuais
   </a>
+  
 </li>
-</ul>
-</nav>
+        
+      </ul>
+    </nav>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#referencias">
+      
+        <li class="md-nav__item">
+  <a href="#referencias" class="md-nav__link">
     Referências
   </a>
+  
 </li>
-</ul>
+      
+    </ul>
+  
 </nav>
-</li>
-</ul>
-</nav>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" id="__nav_3" type="checkbox"/>
-<label class="md-nav__link" for="__nav_3">
-        Programação
-        <span class="md-nav__icon md-icon"></span>
-</label>
-<nav aria-label="Programação" class="md-nav" data-md-level="1">
-<label class="md-nav__title" for="__nav_3">
-<span class="md-nav__icon md-icon"></span>
+      
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+          Programação
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
           Programação
         </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../programacao/linguagens/">
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../programacao/linguagens/" class="md-nav__link">
         Linguagens de Programação
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../programacao/paradigmas/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../programacao/paradigmas/" class="md-nav__link">
         Paradigmas de Programação
       </a>
-</li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_3" id="__nav_3_3" type="checkbox"/>
-<label class="md-nav__link" for="__nav_3_3">
-        C++
-        <span class="md-nav__icon md-icon"></span>
-</label>
-<nav aria-label="C++" class="md-nav" data-md-level="2">
-<label class="md-nav__title" for="__nav_3_3">
-<span class="md-nav__icon md-icon"></span>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
+          C++
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3_3">
+          <span class="md-nav__icon md-icon"></span>
           C++
         </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../programacao/cpp/ambiente/">
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../programacao/cpp/ambiente/" class="md-nav__link">
         Ambiente de Desenvolvimento
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../programacao/cpp/compilacao/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../programacao/cpp/compilacao/" class="md-nav__link">
         Compilação
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../programacao/cpp/identificadores/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../programacao/cpp/identificadores/" class="md-nav__link">
         Identificadores
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../programacao/cpp/io/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../programacao/cpp/io/" class="md-nav__link">
         Entrada e Saída
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../programacao/cpp/condicionais/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../programacao/cpp/condicionais/" class="md-nav__link">
         Condicionais
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../programacao/cpp/iteracao/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../programacao/cpp/iteracao/" class="md-nav__link">
         Laços de Repetição
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../programacao/cpp/funcoes/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../programacao/cpp/funcoes/" class="md-nav__link">
         Funções
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../programacao/cpp/arranjos/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../programacao/cpp/arranjos/" class="md-nav__link">
         Arranjos
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../programacao/cpp/ponteiros/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../programacao/cpp/ponteiros/" class="md-nav__link">
         Ponteiros
       </a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_4" id="__nav_3_4" type="checkbox"/>
-<label class="md-nav__link" for="__nav_3_4">
-        Programação Orientada a Objetos
-        <span class="md-nav__icon md-icon"></span>
-</label>
-<nav aria-label="Programação Orientada a Objetos" class="md-nav" data-md-level="2">
-<label class="md-nav__title" for="__nav_3_4">
-<span class="md-nav__icon md-icon"></span>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_4" id="__nav_3_4_label" tabindex="0">
+          Programação Orientada a Objetos
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3_4">
+          <span class="md-nav__icon md-icon"></span>
           Programação Orientada a Objetos
         </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../programacao/oop/introducao/">
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../programacao/oop/introducao/" class="md-nav__link">
         Introdução
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../programacao/oop/classes/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../programacao/oop/classes/" class="md-nav__link">
         Classes
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../programacao/oop/excecoes/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../programacao/oop/excecoes/" class="md-nav__link">
         Exceções
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../programacao/oop/relacoes/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../programacao/oop/relacoes/" class="md-nav__link">
         Relações entre Classes
       </a>
-</li>
-</ul>
-</nav>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" id="__nav_4" type="checkbox"/>
-<label class="md-nav__link" for="__nav_4">
-        Desenvolvimento Web
-        <span class="md-nav__icon md-icon"></span>
-</label>
-<nav aria-label="Desenvolvimento Web" class="md-nav" data-md-level="1">
-<label class="md-nav__title" for="__nav_4">
-<span class="md-nav__icon md-icon"></span>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+          Desenvolvimento Web
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
           Desenvolvimento Web
         </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../web/historia/">
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../web/historia/" class="md-nav__link">
         Como surgiu a Web?
       </a>
-</li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_2" id="__nav_4_2" type="checkbox"/>
-<label class="md-nav__link" for="__nav_4_2">
-        HTML5
-        <span class="md-nav__icon md-icon"></span>
-</label>
-<nav aria-label="HTML5" class="md-nav" data-md-level="2">
-<label class="md-nav__title" for="__nav_4_2">
-<span class="md-nav__icon md-icon"></span>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
+          HTML5
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4_2">
+          <span class="md-nav__icon md-icon"></span>
           HTML5
         </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../web/html5/estrutura-basica/">
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../web/html5/estrutura-basica/" class="md-nav__link">
         O que é HTML?
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../web/html5/tags-basicas/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../web/html5/tags-basicas/" class="md-nav__link">
         Conceitos Básicos
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../web/html5/hiperlinks/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../web/html5/hiperlinks/" class="md-nav__link">
         Hiperlinks
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../web/html5/imagem/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../web/html5/imagem/" class="md-nav__link">
         Imagens
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../web/html5/tags-estruturais/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../web/html5/tags-estruturais/" class="md-nav__link">
         Estruturando Conteúdo
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../web/html5/tabelas/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../web/html5/tabelas/" class="md-nav__link">
         Tabelas
       </a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_3" id="__nav_4_3" type="checkbox"/>
-<label class="md-nav__link" for="__nav_4_3">
-        CSS3
-        <span class="md-nav__icon md-icon"></span>
-</label>
-<nav aria-label="CSS3" class="md-nav" data-md-level="2">
-<label class="md-nav__title" for="__nav_4_3">
-<span class="md-nav__icon md-icon"></span>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
+          CSS3
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4_3">
+          <span class="md-nav__icon md-icon"></span>
           CSS3
         </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../web/css3/fundamentos/">
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../web/css3/fundamentos/" class="md-nav__link">
         Fundamentos
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../web/css3/seletores/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../web/css3/seletores/" class="md-nav__link">
         Seletores
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../web/css3/cores/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../web/css3/cores/" class="md-nav__link">
         Cores
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../web/css3/fontes/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../web/css3/fontes/" class="md-nav__link">
         Fontes
       </a>
-</li>
-</ul>
-</nav>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../about/">
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../about/" class="md-nav__link">
         Sobre
       </a>
-</li>
-</ul>
+    </li>
+  
+
+    
+  </ul>
 </nav>
-</div>
-</div>
-</div>
-<div class="md-content" data-md-component="content">
-<article class="md-content__inner md-typeset">
-<h1>ABNT</h1>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  <h1>ABNT</h1>
+
 <p>Em diversas situações, a formatação do documento não é de livre escolha do autor. Um exemplo clássico são trabalhos acadêmicos de conclusão de curso, como artigos, monografias, teses, dissertações, entre outros. Para estes, a instituição define o modelo (<code>template</code>) do documento, que deve ser seguido a rigor pelo autor.</p>
 <p>Boa parte das regras de formatação contidas nestes modelos são baseados em normas da Associação Brasileira de Normas Técnicas (ABNT). Tentaremos, neste artigo, abordar alguns elementos presentes nestas normas para a formatação de trabalhos de conclusão de curso. Contudo, aviso que o objetivo não será apresentar detalhadamente a especificação ditada pela norma, mas como configuramos no writer tais informações do modo correto.</p>
-<h2 id="partes-de-documento">Partes de Documento<a class="headerlink" href="#partes-de-documento" title="Permanent link">¶</a></h2>
+<h2 id="partes-de-documento">Partes de Documento<a class="headerlink" href="#partes-de-documento" title="Permanent link">&para;</a></h2>
 <p>Trabalhos acadêmicos tem suas partes divididas em três categorias: elementos pré-textuais, elementos textuais e pós-textuais. Vamos abordar cada um deles e apresentar dicas de como podemos configurar a formatação no LibreOffice Writer.</p>
-<p><img alt="Elementos de trabalhos acadêmicos" src="../../../img/informatica/abnt/abnt-elementos-trabalhos-academicos.png"/></p>
+<p><img alt="Elementos de trabalhos acadêmicos" src="../../../img/informatica/abnt/abnt-elementos-trabalhos-academicos.png" /></p>
 <p><small>Fonte:  Manual ABNT: Regras Gerais de Estilo e Formatação de Trabalhos Acadêmicos, pg. 13</small></p>
 <p>De antemão, devemos considerar que as páginas devem ser configuradas para <code>formato A4</code>, <code>orientação retrato</code>, e <code>margens esquerda e superior em 3cm, direita e inferior, 2 cm</code>. Quanto a fonte, devemos utilizar <code>Times New Roman</code> ou <code>Arial</code> em <code>tamanho 12</code> para corpo do texto e <code>10</code>, para citações, notas de rodapé, paginação e legendas.</p>
 <p>Para configurar as páginas, sugiro criar estilos e, considerando a existência de três segmentos no documento (pré-textuais, textuais e pós-textuais), pode ser interessante realizar a criação de três novos estilos de página. Caso esteja com dúvidas sobre como criar tais estilos, sugiro a leitura do <a href="../estilos/#estilos-de-pagina">tópico que falamos sobre o recurso</a>.</p>
 <p>Será importante também colocar todos os elementos pré-textuais obrigatório e àqueles opcionais que farão parte do trabalho, um em cada página (apenas reservar a página). Assim teremos ideia do número de páginas utilizadas e, também, do que será necessário configurar para gerar os índices de forma automática.</p>
-<h3 id="elementos-pre-textuais">Elementos pré-textuais<a class="headerlink" href="#elementos-pre-textuais" title="Permanent link">¶</a></h3>
+<h3 id="elementos-pre-textuais">Elementos pré-textuais<a class="headerlink" href="#elementos-pre-textuais" title="Permanent link">&para;</a></h3>
 <p>São as partes do documento que antecedem o conteúdo do trabalho. Nesta categoria, temos:</p>
-<h4 id="capa">Capa<a class="headerlink" href="#capa" title="Permanent link">¶</a></h4>
+<h4 id="capa">Capa<a class="headerlink" href="#capa" title="Permanent link">&para;</a></h4>
 <p>Item obrigatório de qualquer trabalho. Identifica a instituição, curso, autores, título e subtítulo do trabalho, local e ano de entrega.</p>
 <p>Importante lembrar que a capa não conta na numeração de página (página 0) e que todos os elementos pré-textuais não devem apresentar a numeração de página no rodapé.</p>
-<h4 id="lombada">Lombada<a class="headerlink" href="#lombada" title="Permanent link">¶</a></h4>
+<h4 id="lombada">Lombada<a class="headerlink" href="#lombada" title="Permanent link">&para;</a></h4>
 <p>Para trabalhos encadernados, este item se torna obrigatório. Sua estrutura é definida pela instituição.</p>
-<h4 id="folha-de-rosto">Folha de Rosto<a class="headerlink" href="#folha-de-rosto" title="Permanent link">¶</a></h4>
+<h4 id="folha-de-rosto">Folha de Rosto<a class="headerlink" href="#folha-de-rosto" title="Permanent link">&para;</a></h4>
 <p>Sua presença no documento é obrigatória. Tem por objetivo apresentar os elementos de identificação do trabalho, como nome do autor, título e subtítulo, natureza, objetivo do trabalho, nome da instituição, nome do orientador, local e ano de entrega.</p>
-<h4 id="composicao-institucional-e-ficha-catalografica">Composição Institucional e Ficha Catalográfica<a class="headerlink" href="#composicao-institucional-e-ficha-catalografica" title="Permanent link">¶</a></h4>
+<h4 id="composicao-institucional-e-ficha-catalografica">Composição Institucional e Ficha Catalográfica<a class="headerlink" href="#composicao-institucional-e-ficha-catalografica" title="Permanent link">&para;</a></h4>
 <p>Normalmente gerada por bibliotecários. Será preciso verificar o procedimento da instituição para sua obtenção.</p>
-<h4 id="errata">Errata<a class="headerlink" href="#errata" title="Permanent link">¶</a></h4>
+<h4 id="errata">Errata<a class="headerlink" href="#errata" title="Permanent link">&para;</a></h4>
 <p>Item opcional, utilizado para adicionar a lista de erros e suas respectivas correções.</p>
-<h4 id="folha-de-aprovacao">Folha de Aprovação<a class="headerlink" href="#folha-de-aprovacao" title="Permanent link">¶</a></h4>
+<h4 id="folha-de-aprovacao">Folha de Aprovação<a class="headerlink" href="#folha-de-aprovacao" title="Permanent link">&para;</a></h4>
 <p>Obrigatória. Deve conter detalhes dos autores, da instituição, título pretendido e detalhes dos componentes da banca, com espaço para assinatura.</p>
-<h4 id="dedicatoria">Dedicatória<a class="headerlink" href="#dedicatoria" title="Permanent link">¶</a></h4>
+<h4 id="dedicatoria">Dedicatória<a class="headerlink" href="#dedicatoria" title="Permanent link">&para;</a></h4>
 <p>Item opcional utilizado para prestar homenagens e/ou dedicar o trabalho para alguém.</p>
-<h4 id="agradecimento">Agradecimento<a class="headerlink" href="#agradecimento" title="Permanent link">¶</a></h4>
+<h4 id="agradecimento">Agradecimento<a class="headerlink" href="#agradecimento" title="Permanent link">&para;</a></h4>
 <p>Item opcional utilizado para agradecer pessoas e/ou instituições que colaboraram  de alguma forma para o desenvolvimento do trabalho.</p>
-<h4 id="epigrafe">Epígrafe<a class="headerlink" href="#epigrafe" title="Permanent link">¶</a></h4>
+<h4 id="epigrafe">Epígrafe<a class="headerlink" href="#epigrafe" title="Permanent link">&para;</a></h4>
 <p>Elemento opcional onde o autor pode fazer uma citação que foi significativa no contexto do trabalho. A fonte deve ser indicada.</p>
-<h4 id="resumo">Resumo<a class="headerlink" href="#resumo" title="Permanent link">¶</a></h4>
+<h4 id="resumo">Resumo<a class="headerlink" href="#resumo" title="Permanent link">&para;</a></h4>
 <p>Item obrigatório, escrito na língua vernácula (do país). Apresenta os pontos relevantes do documento. Acompanha ao final a lista de palavras-chave.</p>
-<h4 id="resumo-em-lingua-estrangeira">Resumo em Língua Estrangeira<a class="headerlink" href="#resumo-em-lingua-estrangeira" title="Permanent link">¶</a></h4>
+<h4 id="resumo-em-lingua-estrangeira">Resumo em Língua Estrangeira<a class="headerlink" href="#resumo-em-lingua-estrangeira" title="Permanent link">&para;</a></h4>
 <p>Corresponde ao <code>abstract</code>, versão do resumo escrito em inglês, acompanhado das <code>keywords</code> (palavras-chave). É obrigatório apresentá-lo.</p>
-<h4 id="lista-de-ilustracoes">Lista de Ilustrações<a class="headerlink" href="#lista-de-ilustracoes" title="Permanent link">¶</a></h4>
+<h4 id="lista-de-ilustracoes">Lista de Ilustrações<a class="headerlink" href="#lista-de-ilustracoes" title="Permanent link">&para;</a></h4>
 <p>Índice contendo as legendas das ilustrações apresentadas no texto, conforme sua ordem de aparição. É opcional.</p>
-<h4 id="lista-de-tabelas">Lista de Tabelas<a class="headerlink" href="#lista-de-tabelas" title="Permanent link">¶</a></h4>
+<h4 id="lista-de-tabelas">Lista de Tabelas<a class="headerlink" href="#lista-de-tabelas" title="Permanent link">&para;</a></h4>
 <p>Índice contendo as legendas das tabelas apresentadas no texto, conforme sua ordem de aparição. É opcional.</p>
-<h4 id="lista-de-abreviaturas-e-siglas">Lista de Abreviaturas e Siglas<a class="headerlink" href="#lista-de-abreviaturas-e-siglas" title="Permanent link">¶</a></h4>
+<h4 id="lista-de-abreviaturas-e-siglas">Lista de Abreviaturas e Siglas<a class="headerlink" href="#lista-de-abreviaturas-e-siglas" title="Permanent link">&para;</a></h4>
 <p>Relação de siglas e abreviaturas utilizadas no texto, acompanhadas dos respectivos significados. Também é um elemento opcional.</p>
-<h4 id="lista-de-simbolos">Lista de Símbolos<a class="headerlink" href="#lista-de-simbolos" title="Permanent link">¶</a></h4>
+<h4 id="lista-de-simbolos">Lista de Símbolos<a class="headerlink" href="#lista-de-simbolos" title="Permanent link">&para;</a></h4>
 <p>Relação de símbolos utilizados e seus respectivos significados. É opcional.</p>
-<h4 id="sumario">Sumário<a class="headerlink" href="#sumario" title="Permanent link">¶</a></h4>
+<h4 id="sumario">Sumário<a class="headerlink" href="#sumario" title="Permanent link">&para;</a></h4>
 <p>Último dos elementos pré-textuais. É obrigatório constar no documento. Corresponde a organização de tópicos do trabalho (capítulos, seções, etc), apresentadas na ordem em que aparecem com o respectivo número de página.</p>
-<h3 id="elementos-textuais">Elementos textuais<a class="headerlink" href="#elementos-textuais" title="Permanent link">¶</a></h3>
+<h3 id="elementos-textuais">Elementos textuais<a class="headerlink" href="#elementos-textuais" title="Permanent link">&para;</a></h3>
 <p>Os elementos textuais devem contemplar a <code>Introdução</code>, <code>Desenvolvimento</code> e <code>Conclusão</code> do trabalho e naturalmente são obrigatórios. </p>
 <p>Em termos de formatação, os pontos mais relevantes dos elementos textuais são <code>títulos</code>, <code>numeração de páginas</code>, <code>corpo do texto</code>, <code>citações</code>, <code>figuras</code>, <code>quadros</code> e <code>tabelas</code>. </p>
 <p>Vamos começar analisando a questão da numeração de páginas. Neste ponto, precisamos saber exatamente quantas páginas iremos utilizar nos elementos pré-textuais (todos os obrigatórios e os opcionais escolhidos). Também devemos nos atentar de que a capa não é contabilizada.</p>
@@ -640,70 +1284,70 @@
 </ul>
 <p>Considerando que teremos 9 páginas de elementos pré-textuais e que a capa não entra na contagem, a numeração de páginas, que será apresentada a partir da <code>Introdução</code>, deve iniciar em 9. Para conseguirmos ocultar a numeração dos elementos pré-textuais e apresentarmos a partir dos elementos textuais, devemos utilizar o recurso <code>quebra manual de página</code>, em conjunto com os estilos de página que criamos anteriormente. </p>
 <p>Antes de realizar a quebra de página, você deve reservar as páginas para os elementos pré-textuais. Utilize o atalho <code>CTRL+ENTER</code> para inserir nova página no documento. Agora, estando com o cursor na última página dos elementos pré-textuais (referente ao sumário), vá até o menu <code>Inserir -&gt; Mais quebras -&gt; Quebra Manual</code> e configure os valores conforme a imagem a seguir. Perceba que iremos utilizar o estilo de página que criamos, alterando a sequência de numeração para <code>9</code>.</p>
-<p><img alt="Inserir quebra manual de página" src="../../../img/informatica/abnt/abnt-quebra-manual-pagina.png"/></p>
+<p><img alt="Inserir quebra manual de página" src="../../../img/informatica/abnt/abnt-quebra-manual-pagina.png" /></p>
 <p>As quebras de página são extremamente úteis porque definem regiões do documento em que podemos aplicar estilos de página diferentes. Além disso, cada região terá cabeçalho e rodapé específicos, o que nos permitirá ocultar o número de página dos elementos pré-textuais de forma simples.</p>
 <p>Sabemos que o número de página deve estar no canto superior direito do documento, em fonte <code>Arial</code> ou <code>Times New Roman</code>, <code>tamanho 10</code>. O primeiro passo para adicioná-lo é exibir o cabeçalho da página, clicar no espaço correspondente e finalmente acessar o menu <code>Inserir -&gt; Número de Página</code>.</p>
-<p><img alt="Número de página adicionado ao cabeçalho da região reservada para os elementos textuais do documento" src="../../../img/informatica/abnt/abnt-inserir-numero-pagina.png"/></p>
+<p><img alt="Número de página adicionado ao cabeçalho da região reservada para os elementos textuais do documento" src="../../../img/informatica/abnt/abnt-inserir-numero-pagina.png" /></p>
 <p>Nossos próximos itens de formatação serão os títulos. Configurá-los corretamente é o segredo para a geração do sumário de forma simples. Neste procedimento estaremos alterando <code>estilos de parágrafo</code>.</p>
 <p>Por padrão, o LibreOffice Writer trás estilos específicos para títulos. Logo, é mais rápido modificar estes existentes do que criar novos. Para encontrá-los, um dos caminhos é pela aba de estilos, filtrando por  <code>Estilos de Texto</code>.</p>
-<p><img alt="Título de primeiro nível" src="../../../img/informatica/abnt/abnt-estilos-titulo.png"/></p>
-<h4 id="capitulos">Capítulos<a class="headerlink" href="#capitulos" title="Permanent link">¶</a></h4>
+<p><img alt="Título de primeiro nível" src="../../../img/informatica/abnt/abnt-estilos-titulo.png" /></p>
+<h4 id="capitulos">Capítulos<a class="headerlink" href="#capitulos" title="Permanent link">&para;</a></h4>
 <p>Começaremos a configuração pelo título de primeiro nível, que estabelece os capítulos do documento e, pela norma, deve sempre iniciar nova página. Para modificarmos o estilo <code>Título 1</code> devemos clicar com o botão direito do mouse sobre ele, escolhendo a opção <code>Modificar</code>. Lembre-se que já apresentamos as <a href="../estilos/#estilos-de-paragrafo">telas de edição de estilos de parágrafo</a>. Caso não lembre, sugiro uma nova leitura.</p>
 <p>Os demais níveis você poderá formatar utilizando como referência os exemplos aqui apresentados. Haverá variação do tamanho da fonte e efeitos aplicados. Revise a norma para detalhes. E, o mais importante: certifique-se de configurar os títulos do nível correto e de aplicar o estilo nos respectivos títulos. </p>
 <p>Na sequência apresentamos os passos de configuração para <code>Título 1</code>.</p>
-<h5 id="alinhamento-do-texto">Alinhamento do texto<a class="headerlink" href="#alinhamento-do-texto" title="Permanent link">¶</a></h5>
+<h5 id="alinhamento-do-texto">Alinhamento do texto<a class="headerlink" href="#alinhamento-do-texto" title="Permanent link">&para;</a></h5>
 <div class="admonition info">
 <p class="admonition-title">Dica</p>
 <p>Alinhar à esquerda. Aba <code>Alinhamento</code>, <code>Opções</code>. </p>
 </div>
-<p><img alt="Alinhamento do título de primeiro nível" src="../../../img/informatica/abnt/abnt-titulo-primeiro-nivel-alinhamento.png"/> </p>
-<h5 id="caracteres">Caracteres<a class="headerlink" href="#caracteres" title="Permanent link">¶</a></h5>
+<p><img alt="Alinhamento do título de primeiro nível" src="../../../img/informatica/abnt/abnt-titulo-primeiro-nivel-alinhamento.png" />  </p>
+<h5 id="caracteres">Caracteres<a class="headerlink" href="#caracteres" title="Permanent link">&para;</a></h5>
 <div class="admonition info">
 <p class="admonition-title">Dica</p>
 <p>Converter automaticamente todos os caracteres para maiúsculo. Aba <code>Efeitos da fonte</code>, <code>Efeitos</code></p>
 </div>
-<p><img alt="Converter caracteres para maiúsculo no título de primeiro nível" src="../../../img/informatica/abnt/abnt-titulo-primeiro-nivel-efeitos-fonte.png"/> </p>
-<h5 id="fonte">Fonte<a class="headerlink" href="#fonte" title="Permanent link">¶</a></h5>
+<p><img alt="Converter caracteres para maiúsculo no título de primeiro nível" src="../../../img/informatica/abnt/abnt-titulo-primeiro-nivel-efeitos-fonte.png" />  </p>
+<h5 id="fonte">Fonte<a class="headerlink" href="#fonte" title="Permanent link">&para;</a></h5>
 <div class="admonition info">
 <p class="admonition-title">Dica</p>
 <p>A norma define que a fonte seja <code>Aria</code> ou <code>Times New Roman</code>, tamanho 14 e um efeito, como negrito. Estas configurações são encontradas na 
 Aba <code>Fonte</code></p>
 </div>
-<p><img alt="Configuração de fonte para título de primeiro nível" src="../../../img/informatica/abnt/abnt-titulo-primeiro-nivel-fonte.png"/> </p>
-<h5 id="fluxo-do-texto">Fluxo do texto<a class="headerlink" href="#fluxo-do-texto" title="Permanent link">¶</a></h5>
+<p><img alt="Configuração de fonte para título de primeiro nível" src="../../../img/informatica/abnt/abnt-titulo-primeiro-nivel-fonte.png" />  </p>
+<h5 id="fluxo-do-texto">Fluxo do texto<a class="headerlink" href="#fluxo-do-texto" title="Permanent link">&para;</a></h5>
 <div class="admonition info">
 <p class="admonition-title">Dica</p>
 <p>Títulos de primeiro nível devem iniciar nova página.Aba <code>Fluxo do texto</code>, <code>Quebras</code></p>
 </div>
-<p><img alt="Fluxo do texto para título de primeiro nível" src="../../../img/informatica/abnt/abnt-titulo-primeiro-nivel-fluxo.png"/></p>
-<h5 id="nivel-do-paragrafo">Nível do parágrafo<a class="headerlink" href="#nivel-do-paragrafo" title="Permanent link">¶</a></h5>
+<p><img alt="Fluxo do texto para título de primeiro nível" src="../../../img/informatica/abnt/abnt-titulo-primeiro-nivel-fluxo.png" /></p>
+<h5 id="nivel-do-paragrafo">Nível do parágrafo<a class="headerlink" href="#nivel-do-paragrafo" title="Permanent link">&para;</a></h5>
 <div class="admonition info">
 <p class="admonition-title">Dica</p>
 <p>Verificar se o parágrafo está vinculado ao <code>nível 1</code> do texto. Esta configuração está indisponível para edição. </p>
 </div>
-<p><img alt="Verificar nível de tópico do título de primeiro nível" src="../../../img/informatica/abnt/abnt-titulo-primeiro-nivel-estrutura-topicos.png"/></p>
-<h5 id="espacamento">Espaçamento<a class="headerlink" href="#espacamento" title="Permanent link">¶</a></h5>
+<p><img alt="Verificar nível de tópico do título de primeiro nível" src="../../../img/informatica/abnt/abnt-titulo-primeiro-nivel-estrutura-topicos.png" /></p>
+<h5 id="espacamento">Espaçamento<a class="headerlink" href="#espacamento" title="Permanent link">&para;</a></h5>
 <div class="admonition info">
 <p class="admonition-title">Dica</p>
 <p>Antes ou após o parágrafo deve-se deixar a distância equivalente a duas linhas de texto. No caso do título de primeiro nível, informamos somente o espaço abaixo do parágrafo. Tal configuração é feita na Aba <code>Recuo e Espaçamento</code>. Importante observar que, para os demais níveis, deve ser configurado o espaço acima e abaixo do parágrafo. </p>
 </div>
-<p><img alt="Configurar o espaçamento após o parágrafo." src="../../../img/informatica/abnt/abnt-titulo-recuo.png"/></p>
-<h4 id="numeracao-dos-capitulos">Numeração dos capítulos<a class="headerlink" href="#numeracao-dos-capitulos" title="Permanent link">¶</a></h4>
+<p><img alt="Configurar o espaçamento após o parágrafo." src="../../../img/informatica/abnt/abnt-titulo-recuo.png" /></p>
+<h4 id="numeracao-dos-capitulos">Numeração dos capítulos<a class="headerlink" href="#numeracao-dos-capitulos" title="Permanent link">&para;</a></h4>
 <p>A numeração de títulos deve utilizar números arábicos, identificando a sequência em que aparecem no documento. Considerando que você configurou e aplicou os estilos corretamente, iremos agora configurar a numeração por meio do menu <code>Ferramentas -&gt; Numeração de Capítulos</code>.</p>
-<p><img alt="Numeração de capítulos." src="../../../img/informatica/abnt/abnt-titulo-numeracao-capitulos.png"/></p>
+<p><img alt="Numeração de capítulos." src="../../../img/informatica/abnt/abnt-titulo-numeracao-capitulos.png" /></p>
 <p>Observe na tela acima que, no lado esquerdo, temos os <code>10</code> níveis de tópicos possíveis. Clicando sobre um deles, temos a possibilidade de configurar o <code>número</code>, <code>ínicio da contagem</code>, <code>estilo de parágrafo associado ao nível</code>, <code>estilo de caractere</code>, <code>mostrar subníveis</code> e <code>separadores</code>.</p>
 <p>Em <code>número</code>, informe a sequência de número arábicos (1,2,3). Verifique se o estilo de parágrafo informado condiz com àqueles que você utilizou. Faça as alterações conforme necessário. No campo <code>mostrar subníveis</code> você deve informar os níveis que irão compor a numeração. Aumente este valor para o máximo possível (todos os níveis anteriores). Demais itens podem ficar com os valores padrão. Repita a configuração para cada nível existente no seu documento.</p>
 <p>Por fim, na aba <code>Posição</code>, campo <code>numeração seguida de</code>, informe <code>Espaço</code>.</p>
-<p><img alt="Numeração de capítulos." src="../../../img/informatica/abnt/abnt-titulo-numeracao-capitulos-posicao.png"/></p>
-<h4 id="sumario-automatico">Sumário automático<a class="headerlink" href="#sumario-automatico" title="Permanent link">¶</a></h4>
+<p><img alt="Numeração de capítulos." src="../../../img/informatica/abnt/abnt-titulo-numeracao-capitulos-posicao.png" /></p>
+<h4 id="sumario-automatico">Sumário automático<a class="headerlink" href="#sumario-automatico" title="Permanent link">&para;</a></h4>
 <p>Uma vez configurados os estilos e numeração dos capítulos, a geração do sumário de forma automática se torna possível. Para o procedimento, devemos ir até a página reservada ao sumário na seção de elementos pré-textuais.</p>
 <p>Após, acessar a aba <code>Referências</code>, botão <code>Referências</code> que está a direita, opção <code>Sumário, Índice ou Bibliografia</code>.</p>
 <p>Em <code>Título</code> deixaremos o valor padrão. No campo <code>Tipo</code> deve estar <code>Sumário</code> e em <code>Para</code>, o valor deve ser <code>Documento inteiro</code>. Ao clicar em <code>OK</code>, o índice do sumário será inserido automáticamente no local em que o cursor foi posicionando no documento.</p>
-<p><img alt="Adicionar sumário ao documento" src="../../../img/informatica/abnt/abnt-sumario.png"/></p>
+<p><img alt="Adicionar sumário ao documento" src="../../../img/informatica/abnt/abnt-sumario.png" /></p>
 <p>Quando o sumário é inserido, cada entrada gerada vincula-se com estilos pré-definidos. Logo, precisaremos ajustar a formatação destes estilos para atender os critérios da ABNT, que orienta a apresentação de cada entrada no mesmo formato em que aparece no corpo do texto. O que temos de momento é algo semelhante a imagem abaixo (irá depender dos títulos definidos em seu documento).</p>
-<p><img alt="Formato padrão do sumário inserido no documento" src="../../../img/informatica/abnt/abnt-sumario-formato-padrao.png"/></p>
+<p><img alt="Formato padrão do sumário inserido no documento" src="../../../img/informatica/abnt/abnt-sumario-formato-padrao.png" /></p>
 <p>Para ajustarmos a formatação das entradas do sumário devemos inicialmente saber quais estilos são utilizados. Para isso, será preciso clicar com o botão direito do mouse sobre qualquer parte do sumário e escolher a opção <code>Editar Índice</code>. Na tela apresentada, escolhemos a aba <code>Estilos</code>.</p>
-<p><img alt="Estilos para entradas do sumário" src="../../../img/informatica/abnt/abnt-sumario-estilos.png"/></p>
+<p><img alt="Estilos para entradas do sumário" src="../../../img/informatica/abnt/abnt-sumario-estilos.png" /></p>
 <p>Perceba que, no lado esquerdo da tela, temos cada nível e o respectivo estilo entre <code>[]</code>. Já no lado direito são listados todos os estilos de parágrafo disponíveis para que seja possível vincular o nível ao estilo desejado.</p>
 <p>Nossa opção será, novamente, editar os estilos padrão (<code>Título de sumário</code>, <code>Sumário 1</code>, <code>Sumário 2</code>, etc), adequando-os àquilo que precisamos. O passo-a-passo para realizar o ajuste é idêntico a edição de qualquer outro estilo de parágrafo.</p>
 <p>Além dos estilos, precisamos ajustar a construção das entradas, especificamente a <code>parada de tabulação</code>. Você deve ter percebido que o espaço entre o número da página e o texto do capítulo está sendo preenchido com <code>.</code>, sendo que o correto é <code>espaço</code>. Então, para este ajuste, devemos acessar a aba <code>Entradas</code>, e, para cada nível desejado, alterar o caractere da <code>parada de tabulação</code>. </p>
@@ -711,8 +1355,8 @@ Aba <code>Fonte</code></p>
 <p class="admonition-title">Dica</p>
 <p>Clicar primeiro sobre o número do nível, após no "T" e, por fim, informar o caractere de preenchimento correto. </p>
 </div>
-<p><img alt="Alterando a parada de tabulação das entradas do sumário" src="../../../img/informatica/abnt/abnt-sumario-caractere-preenchimento.png"/></p>
-<h4 id="legendas">Legendas<a class="headerlink" href="#legendas" title="Permanent link">¶</a></h4>
+<p><img alt="Alterando a parada de tabulação das entradas do sumário" src="../../../img/informatica/abnt/abnt-sumario-caractere-preenchimento.png" /></p>
+<h4 id="legendas">Legendas<a class="headerlink" href="#legendas" title="Permanent link">&para;</a></h4>
 <p>Legendas são aplicadas a tabelas, quadros e ilustrações. Compreendem a descrição do item, de forma objetiva, bem como indicam a sequência do elemento dentro do texto. Segundo a norma, devem estar em tamanho de fonte <code>10</code>, entre linhas simples, caracteres em maiúsculo.</p>
 <ul>
 <li><code>Quadros</code>:  apresentação tabular de dados, com moldura em torno (borda externa). Utilizado para apresentar conteúdo teórico e dados numéricos <em>sem tratamento estatístico</em>. </li>
@@ -725,102 +1369,124 @@ Aba <code>Fonte</code></p>
 </ul>
 <p>A inserção de legendas segue o mesma estratégia para todos os tipos citados. Por conta disso, iremos utilizar tabelas e imagens como estudo de caso. </p>
 <p>Inserir tabelas no Writer pode ser feito através do menu <code>Tabela -&gt; Inserir Tabela</code>.</p>
-<p><img alt="Adicionar tabela ao documento" src="../../../img/informatica/abnt/abnt-inserir-tabela.png"/></p>
+<p><img alt="Adicionar tabela ao documento" src="../../../img/informatica/abnt/abnt-inserir-tabela.png" /></p>
 <p>O campo <code>nome</code> é utilizado para identificar o objeto internamente  e não será apresentado no texto. Em <code>Opções</code>, é útil marcar <code>Título</code> e, após, <code>Repetir linhas de título nas novas páginas</code>. Tal configuração aplica-se quando o conteúdo da tabela excede o espaço disponível da página e gera uma quebra. Neste caso, as primeiras <code>n</code> linhas da tabela serão repetidas na próxima página. Também é possível marcar um estilo predefinido de estilo para tabelas, caso necessário.</p>
 <p>Uma vez inserida no texto, já podemos adicionar a legenda para nossa tabela, clicando com o botão direito sobre qualquer célula da mesma, opção <code>Inserir Legenda</code>. O procedimento é exatamente o mesmo para outros tipos de elementos, como quadros, imagens, etc. A tela a seguir será apresentada:</p>
-<p><img alt="Inserir legenda" src="../../../img/informatica/abnt/abnt-legendas.png"/></p>
+<p><img alt="Inserir legenda" src="../../../img/informatica/abnt/abnt-legendas.png" /></p>
 <p>Em <code>Legenda</code>, informamos o texto que irá aparecer no documento. Em <code>Categoria</code>, informamos qual é o "tipo" do objeto (se não houver na lista, é possível informar um novo). A <code>Numeração</code> corresponde a configuração de como a sequência será apresentada (segundo a norma, utilizar números arábicos). O caractere que irá separar o número do texto da legenda deve ser especificado em <code>Separador</code>. Aqui utilizamos o traço (-). Por fim, em <code>Posição</code>, informar <code>em cima</code>.</p>
 <p>Podemos repetir este procedimento para todo objeto que requer legenda no documento. Contudo, é mais prático configurar opções de inserção automática de legendas. Conseguimos isso por meio do botão <code>Automático</code>. Na tela apresentada, marcamos para quais objetos desejos que o Writer insira as legendas automaticamente, assim como a configuração esperada.</p>
-<p><img alt="Inserir legenda automática" src="../../../img/informatica/abnt/abnt-legendas-automaticas.png"/></p>
+<p><img alt="Inserir legenda automática" src="../../../img/informatica/abnt/abnt-legendas-automaticas.png" /></p>
 <p>Quanto à formatação do texto legenda, este deve ser realizado por meio do estilo correspondente. Editar o estilo a partir do texto é simples. Basta clicar sobre o texto com o botão direito do mouse, escolher a opção <code>Parágrafo -&gt; Editar Estilo</code>. A norma recomenda que a fonte seja <code>Arial</code> ou <code>Times New Roman</code>, tamanho <code>10</code>, <code>negrito</code>, caracteres em maiúsculo.</p>
 <p>Quando temos legendas inseridas em nosso documento, podemos solicitar ao writer que insira o índice automático, se assim desejarmos, na folha correspondente dos elementos pré-textuais. O processo é idêntico à inserção do sumário, com a simples diferença de que devemos alterar o tipo de índice a ser inserido. Os campos importantes são <code>Título</code>, <code>Tipo</code> e <code>Categoria</code>, que devem estar alinhados com os objetos que você deseja listar no índice. Já a formatação do índice deve ser feita pelos estilos correspondentes, tal qual explicamos com relação ao sumário.</p>
-<p><img alt="Inserir índice de tabelas" src="../../../img/informatica/abnt/abnt-indice-tabelas.png"/></p>
-<h4 id="entradas-bibliograficas-e-bibliografia">Entradas bibliográficas e bibliografia<a class="headerlink" href="#entradas-bibliograficas-e-bibliografia" title="Permanent link">¶</a></h4>
+<p><img alt="Inserir índice de tabelas" src="../../../img/informatica/abnt/abnt-indice-tabelas.png" /></p>
+<h4 id="entradas-bibliograficas-e-bibliografia">Entradas bibliográficas e bibliografia<a class="headerlink" href="#entradas-bibliograficas-e-bibliografia" title="Permanent link">&para;</a></h4>
 <p>Quando elaboramos documentos acadêmicos/científicos, consultamos diferentes fontes para endossar nossas afirmações. Livros, revistas científicas, web sites, documentos digitais são exemplos de fontes que podemos utilizar. Todos estes recursos precisam ser citados no texto e jamais podemos utilizar uma afirmação alheia como se fosse nossa. Tal prática constitui crime de plágio e é repudiada por qualquer acadêmico sério.</p>
 <p>Manter controle das citações não é tarefa simples, especialmente quando o documento faz uso de dezenas ou até centenas delas. Além disso, a norma ABNT especifica detalhadamente como devemos citar e apresentar a bibliografia que utilizamos.</p>
 <p>Para nos auxiliar neste tarefa, o LibreOffice Writer oferece ferramentas específicas, voltadas ao gerenciamento de bibliografia de documentos. Trabalhar com referências bibliográficas requer a compreensão dos conceitos de <code>banco de dados bibliográfico</code>, <code>entrada bibliográfica</code> e <code>bibliografia</code>.</p>
 <p>O <code>banco de dados bibliográfico</code> constitui o repositório de todas as referências já cadastradas no LibreOffice Writer. Cada registro contém os detalhes da obra, como autores, título, ano de publicação, entre outros campos. </p>
 <p>Logo, o primeiro do processo do processo será cadastrar a obra neste banco de dados. Para isso, devemos acessar o menu <code>Ferramentas -&gt; Banco de Dados Bibliográfico</code>.</p>
 <p>Na tela apresentada, iremos cadastrar os detalhes de todas as obras que precisamos citar no documento. O campo <code>Nome abreviado</code> merece especial atenção, pois ele será inserido nas citações. Então, é conveniente informar de acordo com a norma, a qual define como sendo o <code>SOBRENOME, ano de publicação</code>.</p>
-<p><img alt="Banco de dados bibliográficos" src="../../../img/informatica/abnt/ref/biblio_banco_dados_entrada.png"/></p>
+<p><img alt="Banco de dados bibliográficos" src="../../../img/informatica/abnt/ref/biblio_banco_dados_entrada.png" /></p>
 <p>Após incluída a bibliografia, podemos citá-la no texto a partir do menu <code>Inserir -&gt; Sumários e Índices -&gt; Entrada Bibliográfica</code>. O próximo passo será escolher qual das referências já cadastradas no banco de dados bibliográficos será utilizada na citação. Faremos isso para toda e qualquer citação existente.</p>
-<p><img alt="Entrada Bibliográfica" src="../../../img/informatica/abnt/ref/biblio_entrada_bibliografica.png"/></p>
+<p><img alt="Entrada Bibliográfica" src="../../../img/informatica/abnt/ref/biblio_entrada_bibliografica.png" /></p>
 <p>Por fim, iremos adicionar a bibliografia ao documento. Faremos tal processo por meio do menu <code>Inserir -&gt; Sumários e Índices -&gt; Sumário, índice ou bibliografia</code>. Lembre-se de deixar o cursor do mouse na posição correta do documento antes de inserir o índice.</p>
 <p>A tela de configuração é a mesma que utilizamos para inserir os demais índices, com exceção dos campos de configuração específica para bibliografia. <code>Entrada numérica</code>, por exemplo, é o local onde alteramos a forma das citações (números ou nome abreviado). Em <code>Colchetes</code>, especificamos o tipo de caractere que irá envolver a citação no texto.</p>
-<p><img alt="Índice bibliográfico" src="../../../img/informatica/abnt/ref/biblio_indice_bibliografica.png"/></p>
+<p><img alt="Índice bibliográfico" src="../../../img/informatica/abnt/ref/biblio_indice_bibliografica.png" /></p>
 <p>Outra importante configuração refere-se a definir como cada entrada de bibliografia será apresentada no texto. Perceba que, na coluna da esquerda, estão todos os tipos de obras, sendo que para cada uma delas podemos especificar o formato de construção da referência, modificando a composição e ordem dos campos em <code>Estrutura e Formatação</code>. A ABNT especifica regras para referenciar cada tipo de obra. Logo, você deverá compor a entrada com base na norma.</p>
-<p><img alt="Entradas do Índice bibliográfico" src="../../../img/informatica/abnt/ref/biblio_indice_bibliografica_entradas.png"/></p>
-<h3 id="elementos-pos-textuais">Elementos pós-textuais<a class="headerlink" href="#elementos-pos-textuais" title="Permanent link">¶</a></h3>
+<p><img alt="Entradas do Índice bibliográfico" src="../../../img/informatica/abnt/ref/biblio_indice_bibliografica_entradas.png" /></p>
+<h3 id="elementos-pos-textuais">Elementos pós-textuais<a class="headerlink" href="#elementos-pos-textuais" title="Permanent link">&para;</a></h3>
 <p>Os elementos pós-textuais compreendem as <code>referências bibliográfias</code>, <code>apêndices</code> e <code>anexos</code>. Quanto às referências, já comentamos sobre como inserí-las de forma automática no documento. Já  <code>apêndices</code> e <code>anexos</code> seguem o padrão de títulos dos elementos textuais de primeiro nível.</p>
-<h2 id="referencias">Referências<a class="headerlink" href="#referencias" title="Permanent link">¶</a></h2>
+<h2 id="referencias">Referências<a class="headerlink" href="#referencias" title="Permanent link">&para;</a></h2>
 <p>BRITO, G. F.; CHOI, V. P.; ALMEIDA, A. <strong>Manual ABNT: Regras Gerais de Estilo e Formatação de Trabalhos Acadêmicos</strong> (4ª edição revisada e ampliada).  2014. Disponível em: &lt;<a href="http://biblioteca.fecap.br/wp-content/uploads/2016/03/Manual-ABNT_-regras-gerais-de-estilo-e-formatação-de-trabalhos-acadêmicos.pdf">http://biblioteca.fecap.br/wp-content/uploads/2016/03/Manual-ABNT_-regras-gerais-de-estilo-e-formatação-de-trabalhos-acadêmicos.pdf</a>&gt;. Acesso em: 5 jun. 2021.</p>
-</article>
-</div>
-</div>
-<a class="md-top md-icon" data-md-component="top" data-md-state="hidden" href="#">
-<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path></svg>
-</a>
-</main>
-<footer class="md-footer">
-<nav aria-label="Footer" class="md-footer__inner md-grid">
-<a class="md-footer__link md-footer__link--prev" href="../estilos/" rel="prev">
-<div class="md-footer__button md-icon">
-<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"></path></svg>
-</div>
-<div class="md-footer__title">
-<div class="md-ellipsis">
-<span class="md-footer__direction">
-                Previous
-              </span>
-              Estilos
+
+
+
+
+
+                
+              </article>
             </div>
-</div>
-</a>
-<a class="md-footer__link md-footer__link--next" href="../../../programacao/linguagens/" rel="next">
-<div class="md-footer__title">
-<div class="md-ellipsis">
-<span class="md-footer__direction">
-                Next
-              </span>
-              Linguagens de Programação
-            </div>
-</div>
-<div class="md-footer__button md-icon">
-<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"></path></svg>
-</div>
-</a>
-</nav>
-<div class="md-footer-meta md-typeset">
-<div class="md-footer-meta__inner md-grid">
-<div class="md-footer-copyright">
-<div class="md-footer-copyright__highlight">
-            Copyright © 2021 -  Diego A. Lusa
-          </div>
+          
+          
+        </div>
         
-        Made with
-        <a href="https://squidfunk.github.io/mkdocs-material/" rel="noopener" target="_blank">
-          Material for MkDocs
-        </a>
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+            Back to top
+          </button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2021 -  Diego A. Lusa
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
 </div>
-<div class="md-footer-social">
-<a class="md-footer-social__link" href="https://www.linkedin.com/in/diegolusa/" rel="noopener" target="_blank" title="www.linkedin.com">
-<svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"></path></svg>
-</a>
-<a class="md-footer-social__link" href="http://github.com/diegolusa" rel="noopener" target="_blank" title="github.com">
-<svg viewbox="0 0 496 512" xmlns="http://www.w3.org/2000/svg"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"></path></svg>
-</a>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://www.linkedin.com/in/diegolusa/" target="_blank" rel="noopener" title="www.linkedin.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="http://github.com/diegolusa" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+    </a>
+  
 </div>
-</div>
-</div>
+      
+    </div>
+  </div>
 </footer>
-</div>
-<div class="md-dialog" data-md-component="dialog">
-<div class="md-dialog__inner md-typeset"></div>
-</div>
-<script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.top", "navigation.instant", "toc.integrate", "header.autohide"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}, "search": "../../../assets/javascripts/workers/search.fe42c31b.min.js", "version": null}</script>
-<script src="../../../assets/javascripts/bundle.7353b375.min.js"></script>
-<script src="../../../javascript/config.js"></script>
-<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-</body>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.top", "navigation.instant", "toc.integrate", "header.autohide"], "search": "../../../assets/javascripts/workers/search.74e28a9f.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.220ee61c.min.js"></script>
+      
+        
+          <script src="../../../javascript/config.js"></script>
+        
+      
+        
+          <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+        
+      
+        
+          <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        
+      
+    
+  </body>
 </html>
