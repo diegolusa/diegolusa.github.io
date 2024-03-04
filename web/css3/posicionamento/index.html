@@ -15,7 +15,7 @@
     
     
       
-        <title>Posicionamento - Diego A. Lusa</title>
+        <title>CSS3 - Posicionamento - Diego A. Lusa</title>
       
     
     
@@ -68,6 +68,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#position-property" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -98,7 +103,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Posicionamento
+              CSS3 - Posicionamento
             
           </span>
         </div>
@@ -512,6 +517,68 @@
       <a href="../../../programacao/python/introducao/" class="md-nav__link">
         Fundamentos
       </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../programacao/python/condicionais/" class="md-nav__link">
+        Comandos e operadores condicionais
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4_3" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_4_3" id="__nav_3_4_3_label" tabindex="0">
+          Exercícios
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_4_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3_4_3">
+          <span class="md-nav__icon md-icon"></span>
+          Exercícios
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../programacao/python/res/notebooks/aula-1/" class="md-nav__link">
+        Variáveis, entrada e saída
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -1025,15 +1092,54 @@
                   
 
 
-  <h1>Posicionamento</h1>
+  <h1>CSS3 - Posicionamento</h1>
 
-<hr />
-<p>title: "CSS3 - Posicionamento"
-tags:
- - Programação
- - Linguagens de Programação
- - Web
-date: 2021-10-13 08:00:00</p>
+<h2 id="position-property">Position Property<a class="headerlink" href="#position-property" title="Permanent link">&para;</a></h2>
+<p>A propriedade <code>position</code> é fundamental para controlar o posicionamento dos elementos em uma página da web. Os quatro valores possíveis são <code>static</code>, <code>relative</code>, <code>absolute</code> e <code>fixed</code>.</p>
+<ul>
+<li><code>static</code>: Este é o valor padrão. Elementos com <code>position: static</code> são renderizados na ordem normal do fluxo do documento. Eles não são afetados pelas propriedades de posicionamento (<code>top</code>, <code>right</code>, <code>bottom</code>, <code>left</code>).</li>
+<li><code>relative</code>: Com <code>position: relative</code>, você pode mover o elemento em relação à sua posição normal no fluxo do documento, usando as propriedades <code>top</code>, <code>right</code>, <code>bottom</code> e <code>left</code>. Ele permanece no fluxo normal do documento, apenas a posição é ajustada.</li>
+<li><code>absolute</code>: Elementos com <code>position: absolute</code> são removidos do fluxo normal do documento e posicionados em relação ao seu ancestral mais próximo que tenha uma posição definida (ou seja, que tenha <code>position: relative</code>, <code>position: absolute</code>, ou <code>position: fixed</code>). Isso permite um posicionamento preciso.</li>
+<li><code>fixed</code>: Com <code>position: fixed</code>, o elemento é posicionado em relação à janela de visualização do navegador, permanecendo fixo mesmo quando a página é rolada. É útil para cabeçalhos de páginas, barras de navegação e outros elementos que devem permanecer visíveis enquanto o usuário rola a página.</li>
+</ul>
+<p>Exemplo de <code>position: relative</code>:
+<div class="highlight"><pre><span></span><code><span class="p">#</span><span class="nn">cabecalho</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">position</span><span class="p">:</span><span class="w"> </span><span class="kc">relative</span><span class="p">;</span>
+<span class="w">  </span><span class="k">top</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="kt">px</span><span class="p">;</span>
+<span class="w">  </span><span class="k">left</span><span class="p">:</span><span class="w"> </span><span class="mi">30</span><span class="kt">px</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></p>
+<h2 id="float-property">Float Property<a class="headerlink" href="#float-property" title="Permanent link">&para;</a></h2>
+<p>A propriedade <code>float</code> é usada para alinhar elementos ao lado esquerdo ou direito de seu contêiner. Isso é frequentemente utilizado para criar layouts de várias colunas. No entanto, é importante notar que o uso excessivo de <code>float</code> pode causar problemas de layout e é geralmente evitado em favor de técnicas mais modernas, como Flexbox e Grid Layout.</p>
+<p>Exemplo:
+<div class="highlight"><pre><span></span><code><span class="p">.</span><span class="nc">coluna</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">float</span><span class="p">:</span><span class="w"> </span><span class="kc">left</span><span class="p">;</span>
+<span class="w">  </span><span class="k">width</span><span class="p">:</span><span class="w"> </span><span class="mi">50</span><span class="kt">%</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></p>
+<h2 id="flexbox">Flexbox<a class="headerlink" href="#flexbox" title="Permanent link">&para;</a></h2>
+<p>O Flexbox é um modelo de layout bidimensional que oferece mais controle e flexibilidade na disposição dos elementos em relação aos métodos tradicionais de layout. Ele permite o alinhamento e distribuição de elementos em qualquer direção, tornando-o ideal para criar layouts responsivos e complexos.</p>
+<p>Para fazer uso do flexbox precisamos definir um container em torno dos elementos que deverão ser posicionais de maneira responsiva. Para isso, é preciso utilizar a property <code>display:flex</code>. Normalmente você definirá uma classe para isso, como a exibida a seguir:</p>
+<div class="highlight"><pre><span></span><code><span class="p">.</span><span class="nc">container</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">display</span><span class="p">:</span><span class="w"> </span><span class="kc">flex</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Também é possível definir a direção com que os elementos dentro do container serão dispostos. As opções são <code>row</code> e <code>column</code> para a property <code>flex-direction</code>.</p>
+<p>Para organizar a distribuição dos elementos ao longo do espaço vertical ou horizontal utilizamos a property <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/justify-content"><code>justify-content</code></a>. Seus possíveis valores são diversos, sendo os mais comuns <code>start</code>, <code>center</code>, <code>space-between</code> e <code>space-around</code>.</p>
+<p>Muitas outras properties são utilizadas em layouts Flexbox. Recomendo a leitura do texto <a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/">A Complete Guide to Flexbox</a>, o qual oferece uma visão detalhadas da técnica, valores de properties e efetivos gerados pelo uso da mesma.</p>
+<p>Outro site interessante chama-se <a href="https://flexboxfroggy.com/">Flexbox Froggy - A game for learning CSS flexbox</a>. Nele você pode treinar seus conhecimentos de flexbox.</p>
+<h2 id="4-grid-layout">4. Grid Layout<a class="headerlink" href="#4-grid-layout" title="Permanent link">&para;</a></h2>
+<p>O Grid Layout é um sistema bidimensional que permite dividir o espaço de uma página em linhas e colunas, tornando mais fácil o posicionamento dos elementos de forma precisa. Ele fornece controle total sobre o dimensionamento e o posicionamento dos elementos em relação ao layout da página.</p>
+<p>Exemplo:
+<div class="highlight"><pre><span></span><code><span class="p">.</span><span class="nc">container</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">display</span><span class="p">:</span><span class="w"> </span><span class="k">grid</span><span class="p">;</span>
+<span class="w">  </span><span class="k">grid-template-columns</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="n">fr</span><span class="w"> </span><span class="mi">1</span><span class="n">fr</span><span class="w"> </span><span class="mi">1</span><span class="n">fr</span><span class="p">;</span>
+<span class="w">  </span><span class="n">grid-gap</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="kt">px</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></p>
+<p>Recomendo a leitura do texto <a href="https://css-tricks.com/snippets/css/complete-guide-grid/">A Complete Guide to CSS Grid</a> para conhecer de forma mais aprofundada o funcionamento da técnica.</p>
+<h2 id="outras-referencias">Outras referências<a class="headerlink" href="#outras-referencias" title="Permanent link">&para;</a></h2>
+<p>[Grid Layout - FR Unit] (https://www.digitalocean.com/community/tutorials/css-css-grid-layout-fr-unit?utm_medium=content_acq&amp;utm_source=css-tricks&amp;utm_campaign=&amp;utm_content=awareness_bestsellers)</p>
 
 
 
@@ -1060,7 +1166,7 @@ date: 2021-10-13 08:00:00</p>
       <div class="md-copyright">
   
     <div class="md-copyright__highlight">
-      Copyright &copy; 2021 -  Diego A. Lusa
+      Copyright &copy; 2024 -  Diego A. Lusa
     </div>
   
   
