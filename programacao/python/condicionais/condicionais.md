@@ -177,7 +177,7 @@ Neste exemplo, a mensagem será impressa apenas se a idade não for maior ou igu
 
 ## Match
 
-O comando `match` foi introduzido no Python a partir da versão 3.10 e oferece uma nova forma de realizar múltiplas comparações de padrões de forma mais legível e concisa do que as estruturas condicionais tradicionais.
+O comando [`match`](https://docs.python.org/3/tutorial/controlflow.html#match-statements) foi introduzido no Python a partir da versão 3.10 e oferece uma nova forma de realizar múltiplas comparações de padrões de forma mais legível e concisa do que as estruturas condicionais tradicionais.
 
 Ele é especialmente útil quando se tem múltiplas condições a serem verificadas e quando cada condição envolve uma expressão de padrão específica. O `match` funciona de maneira semelhante ao `switch` em outras linguagens de programação.
 
@@ -208,5 +208,17 @@ Neste exemplo, a função `dia_da_semana` recebe um número e utiliza o comando 
 
 O `match` permite a combinação de padrões mais complexos usando a sintaxe `case <padrão> if <condição>:`, onde `<padrão>` é um padrão a ser verificado e `<condição>` é uma expressão booleana que também deve ser verdadeira para que a correspondência seja feita.
 
+```python
 
-Saiba mais em [PEP 636] (https://peps.python.org/pep-0636/) e [Oficial Reference] (https://docs.python.org/3/reference/compound_stmts.html#the-match-statement)
+match codigo:
+    0 | -1:
+        print("Valor 0 ou -1")
+    1 | 2 | 3:
+        print("Valor 1, 2, ou 3.")
+    _:
+        print("Algum outro valor")
+
+```
+
+
+Saiba mais em [PEP 636](https://peps.python.org/pep-0636/) e [Oficial Reference](https://docs.python.org/3/reference/compound_stmts.html#the-match-statement).

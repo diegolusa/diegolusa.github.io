@@ -670,6 +670,20 @@
 
             
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../res/notebooks/aula-2/" class="md-nav__link">
+        Estruturas de decisão
+      </a>
+    </li>
+  
+
+            
+          
         </ul>
       </nav>
     </li>
@@ -1367,7 +1381,7 @@
 </table>
 </div>
 <h2 id="match">Match<a class="headerlink" href="#match" title="Permanent link">&para;</a></h2>
-<p>O comando <code>match</code> foi introduzido no Python a partir da versão 3.10 e oferece uma nova forma de realizar múltiplas comparações de padrões de forma mais legível e concisa do que as estruturas condicionais tradicionais.</p>
+<p>O comando <a href="https://docs.python.org/3/tutorial/controlflow.html#match-statements"><code>match</code></a> foi introduzido no Python a partir da versão 3.10 e oferece uma nova forma de realizar múltiplas comparações de padrões de forma mais legível e concisa do que as estruturas condicionais tradicionais.</p>
 <p>Ele é especialmente útil quando se tem múltiplas condições a serem verificadas e quando cada condição envolve uma expressão de padrão específica. O <code>match</code> funciona de maneira semelhante ao <code>switch</code> em outras linguagens de programação.</p>
 <p>Vamos ver um exemplo de como o <code>match</code> pode ser usado:</p>
 <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">dia_da_semana</span><span class="p">(</span><span class="n">numero</span><span class="p">):</span>
@@ -1391,7 +1405,15 @@
 </code></pre></div>
 <p>Neste exemplo, a função <code>dia_da_semana</code> recebe um número e utiliza o comando <code>match</code> para verificar qual dia da semana corresponde a esse número. Se o número corresponder a um dos casos especificados (de 1 a 7), o programa imprime o nome do dia correspondente. Caso contrário, imprime <code>Número inválido</code>.</p>
 <p>O <code>match</code> permite a combinação de padrões mais complexos usando a sintaxe <code>case &lt;padrão&gt; if &lt;condição&gt;:</code>, onde <code>&lt;padrão&gt;</code> é um padrão a ser verificado e <code>&lt;condição&gt;</code> é uma expressão booleana que também deve ser verdadeira para que a correspondência seja feita.</p>
-<p>Saiba mais em [PEP 636] (https://peps.python.org/pep-0636/) e [Oficial Reference] (https://docs.python.org/3/reference/compound_stmts.html#the-match-statement)</p>
+<div class="highlight"><pre><span></span><code><span class="k">match</span> <span class="n">codigo</span><span class="p">:</span>
+    <span class="mi">0</span> <span class="o">|</span> <span class="o">-</span><span class="mi">1</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Valor 0 ou -1&quot;</span><span class="p">)</span>
+    <span class="mi">1</span> <span class="o">|</span> <span class="mi">2</span> <span class="o">|</span> <span class="mi">3</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Valor 1, 2, ou 3.&quot;</span><span class="p">)</span>
+    <span class="n">_</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Algum outro valor&quot;</span><span class="p">)</span>
+</code></pre></div>
+<p>Saiba mais em <a href="https://peps.python.org/pep-0636/">PEP 636</a> e <a href="https://docs.python.org/3/reference/compound_stmts.html#the-match-statement">Oficial Reference</a>.</p>
 
 
 
