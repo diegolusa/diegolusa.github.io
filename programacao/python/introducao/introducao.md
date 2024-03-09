@@ -222,12 +222,6 @@ numero_float = 3.14
 numero_inteiro = int(numero_float)
 ```
 
-
-## Exercícios 
-
-Que tal aplicar o que aprendeu resolvendo alguns [exercícios](res/notebooks/aula-1.ipynb)? 
-
-
 ## Fonte
 
 - Documentação oficial do Python: [python.org](https://docs.python.org/)

@@ -8,7 +8,7 @@ date: 2021-09-06 08:00:00
 ---
 
 
-Um documento escrito em HTML pode ter seu conteúdo dividido em diferentes segmentos, como cabeçalho, rodapé, seções, artigos, barra de navegação e informações associadas. Antes do HTML5, a divisão destes conteúdos era feita basicamente por meio de divisões genéricas (tag `<div>`), o que conferia a estrutura desejada para o desenvolvedor, mas não atribuia a semântica necessária para interpretação automática da informação.
+Um documento escrito em HTML pode ter seu conteúdo dividido em diferentes segmentos, como cabeçalho, rodapé, seções, artigos, barra de navegação e informações associadas. Antes do HTML5, a divisão destes conteúdos era feita basicamente por meio de divisões genéricas (tag `<div>`), o que conferia a estrutura desejada para o desenvolvedor, mas não atribuia a semântica necessária para interpretação automática da informação por softwares leitores de tela e *engines* de busca, como Google e Bing [@vladopvliksemantichtml2022].
 
 
 Para ilustrar a situação, vamos imaginar a página inicial de um *web site* fictício. Inicialmente iremos utilizar apenas divisões para segmentar o conteúdo e, na sequência, faremos uso das tags específicas do HTML5. No primeiro caso aplicamos várias vezes a tag `<div>` para organizar o conteúdo e utilizamos o atributo global `id` para indicar o significado de cada segmento.
@@ -23,7 +23,7 @@ O tempo passa, a página é modificada e novos artigos são adicionados. É prec
 <html>
 
 <head>
-    <title>IFRS News</title>
+    <title>University News</title>
     <meta charset="utf-8">
 </head>
 
@@ -58,8 +58,8 @@ O tempo passa, a página é modificada e novos artigos são adicionados. É prec
     </div>
     <div id="rodape">
         <address>
-            <small>Rua General Osório, 348 – Bairro Centro – Bento Gonçalves/RS</small>
-            <small>CEP: 95700-086</small>
+            <small>Av. Brasil Leste, 124</small>
+            <small>CEP:99999-000</small>
         </address>
     </div>
 
@@ -69,7 +69,7 @@ O tempo passa, a página é modificada e novos artigos são adicionados. É prec
 </html>
 ```
 
-Quando utilizamos `tags` genéricas para representar conteúdo, precisamos adicionar alguma informação em seus atributos para que possamos (nós, humanos) diferenciar seu conteúdo das demais. Ocorre que o sentido que atribuímos a partir destas informações adicionais não é explícito, pois dependente da interpretação do contexto. Esta semântica não é precisa, formal. Nada impede que o desenvolvedor atribua ao `id` de uma `<div>` o valor *xyz01*, com vistas a denotar um artigo. Qual software poderia facilmente deduzir o significado contextual desta informação?
+Quando utilizamos `tags` genéricas para representar conteúdo, precisamos adicionar alguma informação em seus atributos para que possamos (nós, humanos) diferenciar seu conteúdo das demais. Ocorre que o sentido que atribuímos a partir destas informações adicionais não é explícito, pois dependente da interpretação do contexto. Esta semântica não é precisa, formal. Nada impede que o desenvolvedor atribua ao `id` de uma `<div>` o valor *xyz01*, com vistas a identificar um artigo. Qual software poderia facilmente deduzir o significado contextual desta informação?
 
 Em razão destas dificuldades de representação de tipos de conteúdo por meio de `tags` genéricas, o HTML5 trouxe um conjunto de novas `tags`, várias delas voltadas à semântica de conteúdo. Vejamos algumas:
 
@@ -89,7 +89,7 @@ Com estas novas tags é possível interpretar o significado dos trechos de conte
 <html>
 
 <head>
-    <title>IFRS News</title>
+    <title>University News</title>
     <meta charset="utf-8">
 </head>
 
@@ -129,8 +129,8 @@ Com estas novas tags é possível interpretar o significado dos trechos de conte
     </main>
     <footer>
         <address>
-            <small>Rua General Osório, 348 – Bairro Centro – Bento Gonçalves/RS</small>
-            <small>CEP: 95700-086</small>
+            <small>Av. Brasil Leste, 124</small>
+            <small>CEP:99999-000</small>
         </address>
     </footer>
 
@@ -141,5 +141,12 @@ Com estas novas tags é possível interpretar o significado dos trechos de conte
 ```
 
 Agora é natural perceber o que significam os segmentos de conteúdo, tanto para nós, humanos, quando para softwares que interpretam o documento, como os navegadores. E tudo isso por conta da tag utilizada, que possui semântica (significado) específico.
+
+
+Outro ponto importante refere-se à relação entre semântica e apresentação. O resultado visual de uma página não tem relação com as tags utilizadas, mas com as folhas de estilo aplicadas. Isso apenas reforça a importância de utilizar o HTML5 somente para estruturar o conteúdo, conferindo o significado correto a cada trecho por meio da aplicação da *tag* adequada. Logo, a imagem abaixo, embora exemplificando o posicionamento típico dos elementos de semântica de conteúdo, não implica em qualquer posicionamento efetivo aplicado pelo navegador.
+
+
+![Diferença entre tags não semânticas e semânticas](../../img/web/semantica_vs_nao_semantica.webp) Fonte: Vlado Pavlik [@vladopvliksemantichtml2022]
+
 
 \bibliography

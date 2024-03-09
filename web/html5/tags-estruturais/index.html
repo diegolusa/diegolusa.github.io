@@ -914,7 +914,7 @@
       
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        Estruturando Conteúdo
+        Semântica de Conteúdo
       </a>
       
     </li>
@@ -971,6 +971,20 @@
     <li class="md-nav__item">
       <a href="../exercicios/e1-tags-semantics-listas/" class="md-nav__link">
         Exercício 1: Tags semânticas e listas
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../exercicios/e2-semantica-texto-links-imagens/" class="md-nav__link">
+        Exercício 2: Semântica de texto, hiperlinks e imagens
       </a>
     </li>
   
@@ -1120,9 +1134,9 @@
                   
 
 
-  <h1>Estruturando Conteúdo</h1>
+  <h1>Semântica de Conteúdo</h1>
 
-<p>Um documento escrito em HTML pode ter seu conteúdo dividido em diferentes segmentos, como cabeçalho, rodapé, seções, artigos, barra de navegação e informações associadas. Antes do HTML5, a divisão destes conteúdos era feita basicamente por meio de divisões genéricas (tag <code>&lt;div&gt;</code>), o que conferia a estrutura desejada para o desenvolvedor, mas não atribuia a semântica necessária para interpretação automática da informação.</p>
+<p>Um documento escrito em HTML pode ter seu conteúdo dividido em diferentes segmentos, como cabeçalho, rodapé, seções, artigos, barra de navegação e informações associadas. Antes do HTML5, a divisão destes conteúdos era feita basicamente por meio de divisões genéricas (tag <code>&lt;div&gt;</code>), o que conferia a estrutura desejada para o desenvolvedor, mas não atribuia a semântica necessária para interpretação automática da informação por softwares leitores de tela e <em>engines</em> de busca, como Google e Bing <sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup>.</p>
 <p>Para ilustrar a situação, vamos imaginar a página inicial de um <em>web site</em> fictício. Inicialmente iremos utilizar apenas divisões para segmentar o conteúdo e, na sequência, faremos uso das tags específicas do HTML5. No primeiro caso aplicamos várias vezes a tag <code>&lt;div&gt;</code> para organizar o conteúdo e utilizamos o atributo global <code>id</code> para indicar o significado de cada segmento.</p>
 <p>Embora a estratégia de utilizar <code>&lt;div&gt;</code> atenda ao objetivo do desenvolvedor, qualquer processamento automático de conteúdo do documento fica muito difícil de ser realizado. Vamos imaginar, por exemplo, que quiséssemos obter somente os artigos do conteúdo da página. Talvez você possa pensar: ok, basta consultar o conteúdo das <code>&lt;div&gt;</code>s que contém em seu atributo <code>id</code> os valores <em>art1</em> ou <em>art2</em>. Se o documento preservar os identificadores de artigos, então o algoritmo funciona, é claro, somente para esta página específica.</p>
 <p>O tempo passa, a página é modificada e novos artigos são adicionados. É preciso vasculhar o HTML, entender quais marcas foram atribuídas pelo desenvolvedor aos novos artigos e então ajustar o algoritmo para coletá-los. Aí começam os problemas...</p>
@@ -1130,7 +1144,7 @@
 <span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
 
 <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>IFRS News<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>University News<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
     <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&quot;utf-8&quot;</span><span class="p">&gt;</span>
 <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
 
@@ -1165,8 +1179,8 @@
     <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
     <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;rodape&quot;</span><span class="p">&gt;</span>
         <span class="p">&lt;</span><span class="nt">address</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">small</span><span class="p">&gt;</span>Rua General Osório, 348 – Bairro Centro – Bento Gonçalves/RS<span class="p">&lt;/</span><span class="nt">small</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">small</span><span class="p">&gt;</span>CEP: 95700-086<span class="p">&lt;/</span><span class="nt">small</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">small</span><span class="p">&gt;</span>Av. Brasil Leste, 124<span class="p">&lt;/</span><span class="nt">small</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">small</span><span class="p">&gt;</span>CEP:99999-000<span class="p">&lt;/</span><span class="nt">small</span><span class="p">&gt;</span>
         <span class="p">&lt;/</span><span class="nt">address</span><span class="p">&gt;</span>
     <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
 
@@ -1175,7 +1189,7 @@
 
 <span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
 </code></pre></div>
-<p>Quando utilizamos <code>tags</code> genéricas para representar conteúdo, precisamos adicionar alguma informação em seus atributos para que possamos (nós, humanos) diferenciar seu conteúdo das demais. Ocorre que o sentido que atribuímos a partir destas informações adicionais não é explícito, pois dependente da interpretação do contexto. Esta semântica não é precisa, formal. Nada impede que o desenvolvedor atribua ao <code>id</code> de uma <code>&lt;div&gt;</code> o valor <em>xyz01</em>, com vistas a denotar um artigo. Qual software poderia facilmente deduzir o significado contextual desta informação?</p>
+<p>Quando utilizamos <code>tags</code> genéricas para representar conteúdo, precisamos adicionar alguma informação em seus atributos para que possamos (nós, humanos) diferenciar seu conteúdo das demais. Ocorre que o sentido que atribuímos a partir destas informações adicionais não é explícito, pois dependente da interpretação do contexto. Esta semântica não é precisa, formal. Nada impede que o desenvolvedor atribua ao <code>id</code> de uma <code>&lt;div&gt;</code> o valor <em>xyz01</em>, com vistas a identificar um artigo. Qual software poderia facilmente deduzir o significado contextual desta informação?</p>
 <p>Em razão destas dificuldades de representação de tipos de conteúdo por meio de <code>tags</code> genéricas, o HTML5 trouxe um conjunto de novas <code>tags</code>, várias delas voltadas à semântica de conteúdo. Vejamos algumas:</p>
 <ul>
 <li><a href="https://developer.mozilla.org/docs/Web/HTML/Element/article"><code>&lt;article&gt;</code></a>: Representa um trecho de conteúdo independente, autocontido, que pode ser distribuído sem o restante da página.</li>
@@ -1191,7 +1205,7 @@
 <span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
 
 <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>IFRS News<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>University News<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
     <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&quot;utf-8&quot;</span><span class="p">&gt;</span>
 <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
 
@@ -1231,8 +1245,8 @@
     <span class="p">&lt;/</span><span class="nt">main</span><span class="p">&gt;</span>
     <span class="p">&lt;</span><span class="nt">footer</span><span class="p">&gt;</span>
         <span class="p">&lt;</span><span class="nt">address</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">small</span><span class="p">&gt;</span>Rua General Osório, 348 – Bairro Centro – Bento Gonçalves/RS<span class="p">&lt;/</span><span class="nt">small</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">small</span><span class="p">&gt;</span>CEP: 95700-086<span class="p">&lt;/</span><span class="nt">small</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">small</span><span class="p">&gt;</span>Av. Brasil Leste, 124<span class="p">&lt;/</span><span class="nt">small</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">small</span><span class="p">&gt;</span>CEP:99999-000<span class="p">&lt;/</span><span class="nt">small</span><span class="p">&gt;</span>
         <span class="p">&lt;/</span><span class="nt">address</span><span class="p">&gt;</span>
     <span class="p">&lt;/</span><span class="nt">footer</span><span class="p">&gt;</span>
 
@@ -1242,6 +1256,16 @@
 <span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
 </code></pre></div>
 <p>Agora é natural perceber o que significam os segmentos de conteúdo, tanto para nós, humanos, quando para softwares que interpretam o documento, como os navegadores. E tudo isso por conta da tag utilizada, que possui semântica (significado) específico.</p>
+<p>Outro ponto importante refere-se à relação entre semântica e apresentação. O resultado visual de uma página não tem relação com as tags utilizadas, mas com as folhas de estilo aplicadas. Isso apenas reforça a importância de utilizar o HTML5 somente para estruturar o conteúdo, conferindo o significado correto a cada trecho por meio da aplicação da <em>tag</em> adequada. Logo, a imagem abaixo, embora exemplificando o posicionamento típico dos elementos de semântica de conteúdo, não implica em qualquer posicionamento efetivo aplicado pelo navegador.</p>
+<p><img alt="Diferença entre tags não semânticas e semânticas" src="../../../img/web/semantica_vs_nao_semantica.webp" /> Fonte: Vlado Pavlik <sup id="fnref2:1"><a class="footnote-ref" href="#fn:1">1</a></sup></p>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:1">
+<p>Vlado Pavlik. Semantic html: what it is and how to use it correctly. 2022. URL: <a href="https://www.semrush.com/blog/semantic-html5-guide/">https://www.semrush.com/blog/semantic-html5-guide/</a>.&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
 
 
 
