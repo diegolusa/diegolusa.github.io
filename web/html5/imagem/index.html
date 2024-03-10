@@ -72,6 +72,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#tag-figure" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -899,9 +904,45 @@
       
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Imagens
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         Imagens
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#tag-figure" class="md-nav__link">
+    Tag figure
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#formatos-de-graficos-suportados" class="md-nav__link">
+    Formatos de gráficos suportados
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1136,10 +1177,22 @@
 
   <h1>Imagens</h1>
 
-<p>Adicionar imagens à documentos HTML5 é algo trivial. O que mais se observa são documentos que utilizam texto, imagens, áudio e vídeo de forma combinada para passar a informação desejada ao usuário.</p>
+<p>Adicionar imagens à documentos HTML5 é algo trivial. O que mais se observa são documentos que utilizam texto, imagens, áudio e vídeo de forma combinada para passar a informação desejada ao usuário. Isso porque recursos audiovisuais conferem uma experiência mais rica, tornando o documento atrativo e, eventualmente, mais informativo.</p>
 <p>Em termos de código, utilizamos o elemento <code>&lt;img&gt;</code> para incorporar imagens ao HTML5. Os atributos obrigatórios são <code>src</code> e <code>alt</code>. O primeiro deles indica o caminho para o  arquivo, que pode ser absoluto ou relativo. Já o atributo <code>alt</code> contém uma descrição textual que será exibida pela navegador em substituição à imagem, caso ela não possa ser apresentada.</p>
-<p>Outros dois atributos importantes são <code>width</code> (largura) e <code>heigth</code> (altura). Utilizamos eles para especificar as dimensões da imagem em pixels. É conveniente utilizar valores nestas propriedades para melhorar a experiência do usuário quando da carga do recurso pelo navegador.</p>
-<p>Temos também o elemento <code>&lt;figure&gt;</code>, que é utilizado para construir um <em>container</em> para figuras, ilustrações, diagramas, etc. Torna-se necessário quando precisamos adicionar legendas às imagens, conforme iremos observar no código que segue.</p>
+<p>Outros dois atributos importantes são <code>width</code> (largura) e <code>heigth</code> (altura). Utilizamos eles para especificar as dimensões da imagem em pixels. É conveniente utilizar valores nestas propriedades para melhorar a experiência do usuário quando da carga do recurso pelo navegador. Também merece menção o atributo <code>title</code>, o qual fornece um texto de título que é exibido quando o usuário passa o mouse sobre a imagem.</p>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Figuras/Imagens<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&quot;utf-8&quot;</span><span class="p">&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;caminho/para/a/imagem.jpg&quot;</span> <span class="na">alt</span><span class="o">=</span><span class="s">&quot;Descrição da Imagem&quot;</span> <span class="na">title</span><span class="o">=</span><span class="s">&quot;Exemplo&quot;</span> <span class="na">width</span><span class="o">=</span><span class="s">&quot;20px&quot;</span> <span class="na">heigth</span><span class="o">=</span><span class="s">&quot;10px&quot;</span> <span class="p">&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</code></pre></div>
+<h2 id="tag-figure">Tag <em>figure</em><a class="headerlink" href="#tag-figure" title="Permanent link">&para;</a></h2>
+<p>A tag <code>figure</code> é uma tag semântica introduzida no HTML5 usada para encapsular elementos como imagens, ilustrações, gráficos, códigos, entre outros, que são referenciados no contexto de um documento. É frequentemente combinada com a tag <code>figcaption</code> para fornecer uma legenda ou  escrição associada ao conteúdo encapsulado. Além de servir ao propósito de atribuir semântica aos elementos de conteúdo, a tag <code>figure</code> também  contribuiu para os fundamentos de acessibilidade pois melhora a experiência de quem utilize tecnologias assistivas.</p>
 <div class="highlight"><pre><span></span><code><span class="cp">&lt;!DOCTYPE html&gt;</span>
 <span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
   <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
@@ -1151,13 +1204,21 @@
 
       <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span> Na sequência apresentamos a imagem da Galáxia de Andrômeda para que você aprecie:<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
       <span class="p">&lt;</span><span class="nt">figure</span><span class="p">&gt;</span>
-          <span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://pt.wikipedia.org/wiki/Gal%C3%A1xia_de_Andr%C3%B4meda#/media/Ficheiro:Pic_iroberts1.jpg&quot;</span> <span class="na">alt</span><span class="o">=</span><span class="s">&quot;Galáxia de Andrômeda&quot;</span>  <span class="na">width</span><span class="o">=</span><span class="s">&quot;300&quot;</span> <span class="na">height</span><span class="o">=</span><span class="s">&quot;500&quot;</span> <span class="p">/&gt;</span>
+          <span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://pt.wikipedia.org/wiki/Gal%C3%A1xia_de_Andr%C3%B4meda#/media/Ficheiro:Pic_iroberts1.jpg&quot;</span> <span class="na">alt</span><span class="o">=</span><span class="s">&quot;Galáxia de Andrômeda&quot;</span>  <span class="na">width</span><span class="o">=</span><span class="s">&quot;300&quot;</span> <span class="na">height</span><span class="o">=</span><span class="s">&quot;500&quot;</span> <span class="p">&gt;</span>
           <span class="err">&lt;</span><span class="p">&lt;</span><span class="nt">figcaption</span><span class="p">&gt;</span>Galáxia de Andrômeda: Wikipédia<span class="p">&lt;/</span><span class="nt">figcaption</span><span class="p">&gt;</span>&gt;
       <span class="p">&lt;/</span><span class="nt">figure</span><span class="p">&gt;</span>
 
   <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
 <span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
 </code></pre></div>
+<h2 id="formatos-de-graficos-suportados">Formatos de gráficos suportados<a class="headerlink" href="#formatos-de-graficos-suportados" title="Permanent link">&para;</a></h2>
+<p>Os navegadores modernos suportam vários tipos de gráficos. Os mais comuns são JPEG, PNG, GIF e SVG.</p>
+<ul>
+<li><strong>JPEG (Joint Photographic Experts Group)</strong> é amplamente utilizado para fotografias e imagens com tons contínuos de cor. Ele oferece uma boa compressão com perdas, o que resulta em arquivos menores, mas pode sacrificar um pouco da qualidade da imagem.
+-<strong> PNG (Portable Network Graphics)</strong> é frequentemente usado para imagens com áreas de cor sólida, como logotipos e gráficos. Ele suporta transparência, o que o torna ideal para imagens com fundos transparentes.</li>
+<li><strong>GIF (Graphics Interchange Format)</strong> é conhecido por suportar animações, mas também é usado para imagens estáticas, especialmente aquelas com poucas cores. O formato GIF suporta transparência e é amplamente utilizado para ícones e gráficos simples.</li>
+<li><strong>SVG (Scalable Vector Graphics)</strong> é um formato baseado em XML que descreve imagens vetoriais. Ele é ideal para gráficos escaláveis, como ícones e logotipos, pois pode ser redimensionado sem perda de qualidade.</li>
+</ul>
 
 
 
