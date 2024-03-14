@@ -210,15 +210,33 @@ O `match` permite a combinação de padrões mais complexos usando a sintaxe `ca
 
 ```python
 
+match valor:
+    case valor if valor>0 and valor%2==0:
+        print("PAR e POSITIVO")
+    case valor if valor>0 and valor%2!=0:
+        print("ÍMPAR e POSITIVO")
+    case valor if valor<0 and valor%2==0:
+        print("PAR e NEGATIVO")
+    case valor if valor<0 and valor%2!=0:
+        print("ÍMPAR e NEGATIVO")
+    case _:
+        print("ZERO")
+ 
+``` 
+Também podemos testar vários valores em cada caso utilizando o operador `|`. Veja o exemplo.
+
+```python
+
 match codigo:
-    0 | -1:
+    case 0 | -1:
         print("Valor 0 ou -1")
-    1 | 2 | 3:
+    case 1 | 2 | 3:
         print("Valor 1, 2, ou 3.")
-    _:
+    case _:
         print("Algum outro valor")
 
 ```
 
+ 
 
 Saiba mais em [PEP 636](https://peps.python.org/pep-0636/) e [Oficial Reference](https://docs.python.org/3/reference/compound_stmts.html#the-match-statement).

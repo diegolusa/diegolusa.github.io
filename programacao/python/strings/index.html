@@ -9,17 +9,17 @@
       
       
       
-        <link rel="prev" href="../../oop/relacoes/">
+        <link rel="prev" href="../condicionais/">
       
       
-        <link rel="next" href="../condicionais/">
+        <link rel="next" href="../res/notebooks/aula-1/">
       
       <link rel="icon" href="../../../img/icon.ico">
       <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.19">
     
     
       
-        <title>Python - Introdução - Diego A. Lusa</title>
+        <title>Python - Strings - Diego A. Lusa</title>
       
     
     
@@ -73,7 +73,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#variaveis-e-constantes" class="md-skip">
+        <a href="#len" class="md-skip">
           Skip to content
         </a>
       
@@ -107,7 +107,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Python - Introdução
+              Python - Strings
             
           </span>
         </div>
@@ -520,212 +520,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Fundamentos
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../introducao/" class="md-nav__link">
         Fundamentos
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#variaveis-e-constantes" class="md-nav__link">
-    Variáveis e Constantes
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#tipos-de-dados" class="md-nav__link">
-    Tipos de Dados
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#entrada-e-saida" class="md-nav__link">
-    Entrada e Saída
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#operadores-aritmeticos" class="md-nav__link">
-    Operadores Aritméticos
-  </a>
-  
-    <nav class="md-nav" aria-label="Operadores Aritméticos">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#adicao" class="md-nav__link">
-    Adição (+)
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#subtracao-" class="md-nav__link">
-    Subtração (-)
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#multiplicacao" class="md-nav__link">
-    Multiplicação (*)
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#divisao" class="md-nav__link">
-    Divisão (/)
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#divisao-inteira" class="md-nav__link">
-    Divisão Inteira (//)
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#resto-da-divisao" class="md-nav__link">
-    Resto da Divisão (%)
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#exponenciacao" class="md-nav__link">
-    Exponenciação (**)
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#comentarios" class="md-nav__link">
-    Comentários
-  </a>
-  
-    <nav class="md-nav" aria-label="Comentários">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#boas-praticas-de-uso" class="md-nav__link">
-    Boas Práticas de Uso
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#indentacao-de-codigo" class="md-nav__link">
-    Indentação de código
-  </a>
-  
-    <nav class="md-nav" aria-label="Indentação de código">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#erros-de-indentacao" class="md-nav__link">
-    Erros de Indentação
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#conversoes-de-dados" class="md-nav__link">
-    Conversões de Dados
-  </a>
-  
-    <nav class="md-nav" aria-label="Conversões de Dados">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#conversao-de-inteiro-para-string" class="md-nav__link">
-    Conversão de Inteiro para String
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#conversao-de-string-para-inteiro" class="md-nav__link">
-    Conversão de String para Inteiro
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#conversao-de-string-para-float" class="md-nav__link">
-    Conversão de String para Float
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#conversao-de-float-para-inteiro" class="md-nav__link">
-    Conversão de Float para Inteiro
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#fonte" class="md-nav__link">
-    Fonte
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -749,11 +548,104 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../strings/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Strings e seus principais métodos
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Strings e seus principais métodos
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#len" class="md-nav__link">
+    len()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#upper-e-lower" class="md-nav__link">
+    upper() e lower()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#strip-lstrip-e-rstrip" class="md-nav__link">
+    strip(), lstrip() e rstrip()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#split-e-join" class="md-nav__link">
+    split() e join()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#replace" class="md-nav__link">
+    replace()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#startswith-e-endswith" class="md-nav__link">
+    startswith() e endswith()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#find-e-index" class="md-nav__link">
+    find() e index()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#count" class="md-nav__link">
+    count()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#strtranslatetable" class="md-nav__link">
+    str.translate(table)
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1346,134 +1238,70 @@
                   
 
 
-  <h1>Fundamentos</h1>
+  <h1>Strings e seus principais métodos</h1>
 
-<p>Python é uma linguagem de programação de alto nível, interpretada, multiparadigma e de tipagem dinâmica. Desenvolvida por Guido van Rossum e lançada pela primeira vez em 1991, Python ganhou imensa popularidade devido à sua sintaxe simples e legibilidade, tornando-a uma escolha preferida para uma variedade de aplicações, desde desenvolvimento web, ciência de dados, engenharia de dados e automação de tarefas, por exemplo. Possui um ecossistema muito rico em bibliotecas e ferramentas, as quais ajudaram a tornar a linguagem tão popular no mercado de tecnologia. </p>
-<h2 id="variaveis-e-constantes">Variáveis e Constantes<a class="headerlink" href="#variaveis-e-constantes" title="Permanent link">&para;</a></h2>
-<p>Em Python, as variáveis são utilizadas para armazenar valores e são declaradas atribuindo um valor a um nome específico. Ao contrário de outras linguagens, Python não exige a declaração explícita de tipos de dados, pois opera sob o princípio da tipagem dinâmica (o tipo de dado é inferido pelo intepretador na medida que o código é analisado).</p>
-<p>No exemplo a seguir estamos declarando duas variáveis. A primeira chama-se <code>numero</code> e a segunda, <code>nome</code>. Na primeira, o tipo de dado é inteiro e sabemos disso a partir do valor atribuído. Já na segunda linha, a variável <code>nome</code> é inicializada com uma cadeia de caracteres, também conhecida como <code>string</code>.</p>
-<div class="highlight"><pre><span></span><code><span class="n">numero</span> <span class="o">=</span> <span class="mi">10</span>
-<span class="n">nome</span> <span class="o">=</span> <span class="s2">&quot;Maria&quot;</span>
+<p>As strings são usadas para representar texto e são imutáveis, o que significa que uma vez que uma string é criada, ela não pode ser alterada. Python fornece uma variedade de métodos embutidos para manipular e operar em strings de maneira eficiente. Vamos explorar alguns dos métodos mais comuns. Caso você queira conhecer em detalhes todos os métodos, acesse  <a href="https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str">a documentação oficial sobre cadeias de caracteres</a> da linguagem.</p>
+<h2 id="len"><code>len()</code><a class="headerlink" href="#len" title="Permanent link">&para;</a></h2>
+<p>Retorna o comprimento da string, ou seja, o número de caracteres presentes nela.</p>
+<div class="highlight"><pre><span></span><code><span class="n">string</span> <span class="o">=</span> <span class="s2">&quot;Olá, mundo!&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">string</span><span class="p">))</span>
 </code></pre></div>
-<p>No Python não temos palavra reservada para declarar constantes. Neste caso, utilizamos uma convenção, colocando o nome em caixa alta. Todavia, são variáveis como qualquer outra.</p>
-<div class="highlight"><pre><span></span><code><span class="n">PI</span> <span class="o">=</span> <span class="mf">3.14159</span>
-<span class="n">GRAVIDADE</span> <span class="o">=</span> <span class="mf">9.8</span>
+<h2 id="upper-e-lower"><code>upper()</code> e <code>lower()</code><a class="headerlink" href="#upper-e-lower" title="Permanent link">&para;</a></h2>
+<p><code>upper()</code> converte todos os caracteres da string para maiúsculo, enquanto <code>lower()</code> os converte para minúsculo.</p>
+<div class="highlight"><pre><span></span><code><span class="n">string</span> <span class="o">=</span> <span class="s2">&quot;Olá, Mundo!&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">string</span><span class="o">.</span><span class="n">upper</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">string</span><span class="o">.</span><span class="n">lower</span><span class="p">())</span>
 </code></pre></div>
-<h2 id="tipos-de-dados">Tipos de Dados<a class="headerlink" href="#tipos-de-dados" title="Permanent link">&para;</a></h2>
-<p>Python oferece diversos tipos de dados embutidos, incluindo:</p>
-<ul>
-<li><strong>Inteiros (int)</strong>: Números inteiros, como <code>1</code>, <code>100</code>, <code>-5</code>.</li>
-<li><strong>Float (float)</strong>: Números de ponto flutuante, como <code>3.14</code>, <code>2.0</code>, <code>-0.5</code>.</li>
-<li><strong>String (str)</strong>: Sequência de caracteres, como <code>"Olá, mundo!"</code>, <code>'Python é legal'</code>. (perceba que podemos inicializar com aspas simples ou duplas)</li>
-<li><strong>Booleano (bool)</strong>: Valores verdadeiro (<code>True</code>) ou falso (<code>False</code>).</li>
-<li><strong>Lista (list)</strong>: Coleção ordenada e <em>mutável</em> de itens.</li>
-<li><strong>Tupla (tuple)</strong>: Coleção ordenada e <em>imutável</em> de itens.</li>
-<li><strong>Dicionário (dict)</strong>: Coleção <em>não ordenada</em> de pares de chave-valor.</li>
-<li><strong>Conjunto (set)</strong>: Coleção <em>não ordenada</em> de itens únicos.</li>
-</ul>
-<h2 id="entrada-e-saida">Entrada e Saída<a class="headerlink" href="#entrada-e-saida" title="Permanent link">&para;</a></h2>
-<p>Para receber entrada do usuário, Python oferece a função <code>input()</code>. O valor retornado após executar a função foi o que o usuário digitou no terminal. Aqui estamos falando de entrada em terminal, ou seja, sem uso de interface gráfica.</p>
-<p>No trecho de código que segue, a mensagem <code>Digite seu nome:</code> é impressa na tela e o cursor fica aguardando a entrada do usuário. Após o usuário digitar os dados e pressionar ENTER, o valor é armazenado na variável <code>nome</code>.</p>
-<div class="highlight"><pre><span></span><code><span class="n">nome</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Digite seu nome: &quot;</span><span class="p">)</span>
+<h2 id="strip-lstrip-e-rstrip"><code>strip()</code>, <code>lstrip()</code> e <code>rstrip()</code><a class="headerlink" href="#strip-lstrip-e-rstrip" title="Permanent link">&para;</a></h2>
+<p>Removem espaços em branco e caracteres especiais do início e/ou final da string.</p>
+<p>Exemplo:
+<div class="highlight"><pre><span></span><code><span class="n">string</span> <span class="o">=</span> <span class="s2">&quot;   Olá, Mundo!   &quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">string</span><span class="o">.</span><span class="n">strip</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">string</span><span class="o">.</span><span class="n">lstrip</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">string</span><span class="o">.</span><span class="n">rstrip</span><span class="p">())</span>
+</code></pre></div></p>
+<h2 id="split-e-join"><code>split()</code> e <code>join()</code><a class="headerlink" href="#split-e-join" title="Permanent link">&para;</a></h2>
+<p><code>split()</code> divide a string em uma lista de substrings com base em um separador, enquanto <code>join()</code> junta uma lista de strings em uma única string.</p>
+<div class="highlight"><pre><span></span><code><span class="n">string</span> <span class="o">=</span> <span class="s2">&quot;Python é uma linguagem de programação&quot;</span>
+<span class="n">lista</span> <span class="o">=</span> <span class="n">string</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">lista</span><span class="p">)</span> 
+
+<span class="n">string_nova</span> <span class="o">=</span> <span class="s2">&quot;-&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">lista</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">string_nova</span><span class="p">)</span>
 </code></pre></div>
-<p>Já para exibir informações para o usuário, podemos usar a função <code>print()</code>, conforme o exemplo a seguir. No código em questão, será impresso na tela a mensagem <code>Olá,</code> acompanhada do valor da variável <code>nome</code>.</p>
-<div class="highlight"><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Olá,&quot;</span><span class="p">,</span> <span class="n">nome</span><span class="p">)</span>
+<h2 id="replace"><code>replace()</code><a class="headerlink" href="#replace" title="Permanent link">&para;</a></h2>
+<p>Substitui todas as ocorrências de uma substring por outra.</p>
+<div class="highlight"><pre><span></span><code><span class="n">string</span> <span class="o">=</span> <span class="s2">&quot;Python é incrível!&quot;</span>
+<span class="n">nova_string</span> <span class="o">=</span> <span class="n">string</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;incrível&quot;</span><span class="p">,</span> <span class="s2">&quot;fantástica&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">nova_string</span><span class="p">)</span>
 </code></pre></div>
-<h2 id="operadores-aritmeticos">Operadores Aritméticos<a class="headerlink" href="#operadores-aritmeticos" title="Permanent link">&para;</a></h2>
-<p>Em Python, os operadores aritméticos são utilizados para realizar operações matemáticas em valores numéricos. São operadores como o de adição, subtração, multiplicação, divisão, por exemplo. Na sequência vamos apresentar eles.</p>
-<h3 id="adicao">Adição (+)<a class="headerlink" href="#adicao" title="Permanent link">&para;</a></h3>
-<p>O operador de adição (+) é utilizado para somar dois valores. Por exemplo:</p>
-<div class="highlight"><pre><span></span><code><span class="n">resultado</span> <span class="o">=</span> <span class="mi">5</span> <span class="o">+</span> <span class="mi">3</span>
-<span class="c1"># resultado será igual a 8</span>
+<h2 id="startswith-e-endswith"><code>startswith()</code> e <code>endswith()</code><a class="headerlink" href="#startswith-e-endswith" title="Permanent link">&para;</a></h2>
+<p>Verificam se a string começa ou termina com uma determinada substring, respectivamente.</p>
+<p>Exemplo:
+<div class="highlight"><pre><span></span><code><span class="n">string</span> <span class="o">=</span> <span class="s2">&quot;Olá, Mundo!&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">string</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;Olá&quot;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">string</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s2">&quot;!&quot;</span><span class="p">))</span>     
+</code></pre></div></p>
+<h2 id="find-e-index"><code>find()</code> e <code>index()</code><a class="headerlink" href="#find-e-index" title="Permanent link">&para;</a></h2>
+<p><code>find()</code> retorna a primeira ocorrência de uma substring na string, enquanto <code>index()</code> retorna o índice da primeira ocorrência. A diferença é que <code>index()</code> gera uma exceção se a substring não for encontrada.</p>
+<div class="highlight"><pre><span></span><code><span class="n">string</span> <span class="o">=</span> <span class="s2">&quot;Python é uma linguagem de programação&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">string</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;linguagem&quot;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">string</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="s2">&quot;linguagem&quot;</span><span class="p">))</span>
 </code></pre></div>
-<h3 id="subtracao-">Subtração (-)<a class="headerlink" href="#subtracao-" title="Permanent link">&para;</a></h3>
-<p>O operador de subtração (-) é utilizado para subtrair um valor de outro. Por exemplo:</p>
-<div class="highlight"><pre><span></span><code><span class="n">resultado</span> <span class="o">=</span> <span class="mi">10</span> <span class="o">-</span> <span class="mi">7</span>
-<span class="c1"># resultado será igual a 3</span>
+<h2 id="count"><code>count()</code><a class="headerlink" href="#count" title="Permanent link">&para;</a></h2>
+<p>Conta o número de ocorrências de uma substring na string.</p>
+<p>Exemplo:
+<div class="highlight"><pre><span></span><code><span class="n">string</span> <span class="o">=</span> <span class="s2">&quot;Python é uma linguagem de programação, e Python é incrível!&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">string</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="s2">&quot;Python&quot;</span><span class="p">))</span>
+</code></pre></div></p>
+<h2 id="strtranslatetable"><code>str.translate(table)</code><a class="headerlink" href="#strtranslatetable" title="Permanent link">&para;</a></h2>
+<p>O método <code>translate()</code> retorna uma cópia da string original onde cada caractere foi traduzido usando a tabela de tradução fornecida.</p>
+<div class="highlight"><pre><span></span><code><span class="n">tabela</span> <span class="o">=</span> <span class="nb">str</span><span class="o">.</span><span class="n">maketrans</span><span class="p">(</span><span class="s2">&quot;aeiou&quot;</span><span class="p">,</span> <span class="s2">&quot;12345&quot;</span><span class="p">)</span>
+<span class="n">string_original</span> <span class="o">=</span> <span class="s2">&quot;Olá, mundo!&quot;</span>
+<span class="n">string_traduzida</span> <span class="o">=</span> <span class="n">string_original</span><span class="o">.</span><span class="n">translate</span><span class="p">(</span><span class="n">tabela</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">string_traduzida</span><span class="p">)</span>
 </code></pre></div>
-<h3 id="multiplicacao">Multiplicação (*)<a class="headerlink" href="#multiplicacao" title="Permanent link">&para;</a></h3>
-<p>O operador de multiplicação (*) é utilizado para multiplicar dois valores. Por exemplo:</p>
-<div class="highlight"><pre><span></span><code><span class="n">resultado</span> <span class="o">=</span> <span class="mi">4</span> <span class="o">*</span> <span class="mi">6</span>
-<span class="c1"># resultado será igual a 24</span>
-</code></pre></div>
-<h3 id="divisao">Divisão (/)<a class="headerlink" href="#divisao" title="Permanent link">&para;</a></h3>
-<p>O operador de divisão (/) é utilizado para dividir um valor pelo outro. Por exemplo:</p>
-<div class="highlight"><pre><span></span><code><span class="n">resultado</span> <span class="o">=</span> <span class="mi">20</span> <span class="o">/</span> <span class="mi">5</span>
-<span class="c1"># resultado será igual a 4.0 (resultado sempre será um float em Python 3.x)</span>
-</code></pre></div>
-<h3 id="divisao-inteira">Divisão Inteira (//)<a class="headerlink" href="#divisao-inteira" title="Permanent link">&para;</a></h3>
-<p>O operador de divisão inteira (//) divide um valor pelo outro e retorna apenas a parte inteira do resultado. Por exemplo:</p>
-<div class="highlight"><pre><span></span><code><span class="n">resultado</span> <span class="o">=</span> <span class="mi">20</span> <span class="o">//</span> <span class="mi">6</span>
-<span class="c1"># resultado será igual a 3</span>
-</code></pre></div>
-<h3 id="resto-da-divisao">Resto da Divisão (%)<a class="headerlink" href="#resto-da-divisao" title="Permanent link">&para;</a></h3>
-<p>O operador de resto da divisão (%) retorna o resto da divisão de um valor pelo outro. Por exemplo:</p>
-<div class="highlight"><pre><span></span><code><span class="n">resto</span> <span class="o">=</span> <span class="mi">20</span> <span class="o">%</span> <span class="mi">6</span>
-<span class="c1"># resto será igual a 2 (porque 20 dividido por 6 é igual a 3, com um resto de 2)</span>
-</code></pre></div>
-<h3 id="exponenciacao">Exponenciação (**)<a class="headerlink" href="#exponenciacao" title="Permanent link">&para;</a></h3>
-<p>O operador de exponenciação (**) é utilizado para elevar um número a uma potência. Por exemplo:</p>
-<div class="highlight"><pre><span></span><code><span class="n">resultado</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">**</span> <span class="mi">3</span>
-<span class="c1"># resultado será igual a 8 (2 elevado à potência de 3)</span>
-</code></pre></div>
-<h2 id="comentarios">Comentários<a class="headerlink" href="#comentarios" title="Permanent link">&para;</a></h2>
-<p>Comentários são trechos de texto dentro do código fonte que são ignorados pelo interpretador Python durante a execução do programa. Eles são utilizados para explicar o código, fazer anotações, fornecer documentação ou desativar temporariamente partes do código. Seu uso é altamente recomendável, pois auxilia na compreensão do código. </p>
-<p>Temos a disposição diferentes duas maneiras distintas de comentar código: comentário de linha e comentário de bloco.</p>
-<p>Comentários de linha começam com o símbolo <code>#</code> e continuam até o final da linha. Eles são úteis para adicionar breves explicações ou notas em uma única linha de código. Por exemplo:</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># Este é um comentário de linha</span>
-<span class="n">numero</span> <span class="o">=</span> <span class="mi">10</span>  <span class="c1"># Este comentário segue o código na mesma linha</span>
-</code></pre></div>
-<p>Já os comentários em bloco são utilizados para comentar várias linhas de código e são delimitados por três aspas simples (<code>'''</code>) ou três aspas duplas (<code>"""</code>). Eles são frequentemente utilizados para documentar funções, classes ou trechos de código mais extensos. Por exemplo:</p>
-<div class="highlight"><pre><span></span><code><span class="sd">&#39;&#39;&#39;</span>
-<span class="sd">Este é um comentário em bloco.</span>
-<span class="sd">Ele pode abranger várias linhas.</span>
-<span class="sd">&#39;&#39;&#39;</span>
-</code></pre></div>
-<h3 id="boas-praticas-de-uso">Boas Práticas de Uso<a class="headerlink" href="#boas-praticas-de-uso" title="Permanent link">&para;</a></h3>
-<ul>
-<li><strong>Seja descritivo</strong>: Escreva comentários que explicam o que o código faz, não o óbvio. Isso ajuda a entenderem o propósito do código.</li>
-<li><strong>Mantenha os domentários atualizados</strong>: Se o código for alterado, lembre-se de atualizar os comentários correspondentes para manter a precisão.</li>
-<li><strong>Evite comentários óbvios</strong>: Comentários que simplesmente repetem o que o código faz sem adicionar valor são desnecessários e podem poluir o código. </li>
-</ul>
-<h2 id="indentacao-de-codigo">Indentação de código<a class="headerlink" href="#indentacao-de-codigo" title="Permanent link">&para;</a></h2>
-<p>Em Python, a indentação é um conceito fundamental e parte integrante da sintaxe da linguagem. Diferentemente de muitas outras linguagens de programação, que utilizam chaves <code>{}</code> para delimitar blocos de código, Python utiliza a indentação para definir a estrutura e a organização do código.</p>
-<p>A indentação é utilizada para indicar a estrutura hierárquica do código, especialmente em construções como loops, condicionais, funções e classes. Ela define quais linhas de código estão dentro de um determinado bloco e quais estão fora.</p>
-<p>Por convenção, é recomendado utilizar <em>quatro espaços</em> para cada nível de indentação. Embora o uso de tabulações (tab) seja permitido, é uma prática comum e recomendada seguir a convenção de espaços. Isso garante consistência em todo o código e evita problemas de formatação em diferentes ambientes de desenvolvimento.</p>
-<div class="highlight"><pre><span></span><code><span class="k">if</span> <span class="n">idade</span> <span class="o">&gt;=</span> <span class="mi">18</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Você é maior de idade.&quot;</span><span class="p">)</span>
-<span class="k">else</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Você é menor de idade.&quot;</span><span class="p">)</span>
-</code></pre></div>
-<p>No exemplo acima, as linhas de código dentro do bloco <code>if</code> e <code>else</code> estão indentadas com quatro espaços, indicando que elas pertencem a esses blocos condicionais.</p>
-<h3 id="erros-de-indentacao">Erros de Indentação<a class="headerlink" href="#erros-de-indentacao" title="Permanent link">&para;</a></h3>
-<p>Erros de indentação são comuns em Python e podem levar a resultados inesperados ou a mensagens de erro. Por exemplo, se a indentação não estiver correta, o código pode não funcionar como esperado ou gerar um erro de sintaxe. Logo, é importante manter as boas práticas enquanto escrevemos código.</p>
-<p>Neste aspecto, o uso de IDEs especializadas para desenvolvimento auxilia o programador, pois a formatação do código é automaticamente ajustada pelo editor.</p>
-<h2 id="conversoes-de-dados">Conversões de Dados<a class="headerlink" href="#conversoes-de-dados" title="Permanent link">&para;</a></h2>
-<p>Mesmo sendo uma linguagem dinamicamente tipada, o Python oferece funções embutidas para converter entre diferentes tipos de dados. Essas conversões são úteis, e em certos casos necessárias, para modificar o tipo de dado de uma variável para um uso específico. Vejamos alguns casos de conversão na sequência.</p>
-<h3 id="conversao-de-inteiro-para-string">Conversão de Inteiro para String<a class="headerlink" href="#conversao-de-inteiro-para-string" title="Permanent link">&para;</a></h3>
-<p>Para converter um número inteiro em uma string, utilizamos a função <code>str()</code>.</p>
-<div class="highlight"><pre><span></span><code><span class="n">numero</span> <span class="o">=</span> <span class="mi">10</span>
-<span class="n">numero_string</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">numero</span><span class="p">)</span>
-</code></pre></div>
-<h3 id="conversao-de-string-para-inteiro">Conversão de String para Inteiro<a class="headerlink" href="#conversao-de-string-para-inteiro" title="Permanent link">&para;</a></h3>
-<p>Para converter uma string em um número inteiro, utilizamos a função <code>int()</code>.</p>
-<div class="highlight"><pre><span></span><code><span class="n">numero_string</span> <span class="o">=</span> <span class="s2">&quot;10&quot;</span>
-<span class="n">numero</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">numero_string</span><span class="p">)</span>
-</code></pre></div>
-<h3 id="conversao-de-string-para-float">Conversão de String para Float<a class="headerlink" href="#conversao-de-string-para-float" title="Permanent link">&para;</a></h3>
-<p>Para converter uma string em um número de ponto flutuante (float), utilizamos a função <code>float()</code>.</p>
-<div class="highlight"><pre><span></span><code><span class="n">numero_string</span> <span class="o">=</span> <span class="s2">&quot;3.14&quot;</span>
-<span class="n">numero_float</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">numero_string</span><span class="p">)</span>
-</code></pre></div>
-<h3 id="conversao-de-float-para-inteiro">Conversão de Float para Inteiro<a class="headerlink" href="#conversao-de-float-para-inteiro" title="Permanent link">&para;</a></h3>
-<p>Para converter um número de ponto flutuante em um número inteiro, aplicamos a função <code>int()</code>. Isso porque a função remove a parte decimal do valor.</p>
-<div class="highlight"><pre><span></span><code><span class="n">numero_float</span> <span class="o">=</span> <span class="mf">3.14</span>
-<span class="n">numero_inteiro</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">numero_float</span><span class="p">)</span>
-</code></pre></div>
-<h2 id="fonte">Fonte<a class="headerlink" href="#fonte" title="Permanent link">&para;</a></h2>
-<ul>
-<li>Documentação oficial do Python: <a href="https://docs.python.org/">python.org</a></li>
-</ul>
+<p>O método <code>translate()</code> é útil para realizar operações de tradução em strings de maneira eficiente e rápida. Ele é especialmente útil quando você precisa substituir caracteres por outros em grandes volumes de dados.</p>
 
 
 
