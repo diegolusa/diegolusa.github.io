@@ -528,6 +528,11 @@
       </a>
 </li>
 <li class="md-nav__item">
+<a class="md-nav__link" href="../../web/css3/unidades-medidas/">
+        Unidades de Medida
+      </a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="../../web/css3/cores/">
         Cores
       </a>
@@ -536,6 +541,26 @@
 <a class="md-nav__link" href="../../web/css3/fontes/">
         Fontes
       </a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_4_3_6" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4_3_6" id="__nav_4_3_6_label" tabindex="0">
+          Exercícios
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_4_3_6_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_4_3_6">
+<span class="md-nav__icon md-icon"></span>
+          Exercícios
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../web/css3/exercicios/fundamentos-seletores/">
+        Exercício 1: Regras de Estilo
+      </a>
+</li>
+</ul>
+</nav>
 </li>
 </ul>
 </nav>
@@ -584,7 +609,9 @@
     }
 </div>
 <p>Chamamos nossa classe de <em>Retangulo</em>, visto que ela irá representar qualquer retângulo em nossa codificação. Os atributos estabelecidos foram <code>altura</code> e <code>largura</code>, ou seja, são as propriedades que desejamos armazenar valor. Considerando uma linguagem de programação fortemente tipada, estabelecemos que ambos os atributos são do tipo <code>float</code> (real de precisão simples). Já os comportamentos são dois, representados pelos métodos <code>obterArea</code> e <code>definirDimensao</code>. Percebeu os símbolos de <span class="arithmatex">\(+\)</span> e <span class="arithmatex">\(-\)</span> em frente aos atributos e métodos? Bem, eles estabelecem a visibilidade e, de momento, basta saber que <span class="arithmatex">\(+\)</span> indica <code>acesso público</code> e <span class="arithmatex">\(-\)</span>, <code>acesso privado</code>.</p>
-<div class="tabbed-set" data-tabs="1:3"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio"><label for="__tabbed_1_1">C++</label><div class="tabbed-content">
+<div class="tabbed-set tabbed-alternate" data-tabs="1:3"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio"><input id="__tabbed_1_2" name="__tabbed_1" type="radio"><input id="__tabbed_1_3" name="__tabbed_1" type="radio"><div class="tabbed-labels"><label for="__tabbed_1_1">C++</label><label for="__tabbed_1_2">Java</label><label for="__tabbed_1_3">Python</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
@@ -618,7 +645,7 @@
 <span class="p">};</span>
 </code></pre></div></td></tr></table></div>
 </div>
-<input id="__tabbed_1_2" name="__tabbed_1" type="radio"><label for="__tabbed_1_2">Java</label><div class="tabbed-content">
+<div class="tabbed-block">
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
@@ -644,7 +671,7 @@
 <span class="p">};</span>
 </code></pre></div></td></tr></table></div>
 </div>
-<input id="__tabbed_1_3" name="__tabbed_1" type="radio"><label for="__tabbed_1_3">Python</label><div class="tabbed-content">
+<div class="tabbed-block">
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
@@ -668,6 +695,7 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">__largura</span> <span class="o">=</span> <span class="n">largura</span>
 </code></pre></div></td></tr></table></div>
 </div>
+</div>
 </input></input></input></div>
 <p>Perceba que as implementações da classe <em>Retangulo</em>, embora feitas em três linguagens de programação diferentes, apresentam semelhança na forma de codificar. Atributos são definidos tal qual o são variáveis comuns e métodos como sendo funções. A diferença é que as definições ficam restritas ao <code>escopo da classe</code> e funcionam como um molde para a criação dos objetos.</p>
 <p>A definição da classe implica na disponibilidade de um novo <code>tipo abstrato de dados</code> (TAD) no código. Com este novo tipo podemos criar variáveis e nelas, instanciar objetos. Veremos isso com mais detalhes quando tratarmos dos aspectos específicos de implementação. Esses objetos criados trocam mensagens entre si durante a execução do software, produzindo o resultado almejado pelo desenvolvedor.</p>
@@ -687,6 +715,34 @@
           </button>
 </main>
 <footer class="md-footer">
+<nav aria-label="Footer" class="md-footer__inner md-grid">
+<a aria-label="Previous: Linguagens de Programação" class="md-footer__link md-footer__link--prev" href="../linguagens/" rel="prev">
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
+</div>
+<div class="md-footer__title">
+<span class="md-footer__direction">
+                Previous
+              </span>
+<div class="md-ellipsis">
+                Linguagens de Programação
+              </div>
+</div>
+</a>
+<a aria-label="Next: Introdução" class="md-footer__link md-footer__link--next" href="../oop/introducao/" rel="next">
+<div class="md-footer__title">
+<span class="md-footer__direction">
+                Next
+              </span>
+<div class="md-ellipsis">
+                Introdução
+              </div>
+</div>
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"></path></svg>
+</div>
+</a>
+</nav>
 <div class="md-footer-meta md-typeset">
 <div class="md-footer-meta__inner md-grid">
 <div class="md-copyright">
@@ -715,7 +771,7 @@
 <div class="md-dialog" data-md-component="dialog">
 <div class="md-dialog__inner md-typeset"></div>
 </div>
-<script id="__config" type="application/json">{"base": "../..", "features": ["navigation.top", "navigation.instant", "toc.integrate", "header.autohide"], "search": "../../assets/javascripts/workers/search.74e28a9f.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+<script id="__config" type="application/json">{"base": "../..", "features": ["navigation.top", "navigation.instant", "toc.integrate", "header.autohide", "navigation.footer"], "search": "../../assets/javascripts/workers/search.74e28a9f.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
 <script src="../../assets/javascripts/bundle.220ee61c.min.js"></script>
 <script src="../../javascript/config.js"></script>
 <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>

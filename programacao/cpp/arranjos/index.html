@@ -1190,6 +1190,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../web/css3/unidades-medidas/" class="md-nav__link">
+        Unidades de Medida
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../web/css3/cores/" class="md-nav__link">
         Cores
       </a>
@@ -1207,6 +1221,54 @@
       <a href="../../../web/css3/fontes/" class="md-nav__link">
         Fontes
       </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3_6" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_3_6" id="__nav_4_3_6_label" tabindex="0">
+          Exercícios
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_3_6_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4_3_6">
+          <span class="md-nav__icon md-icon"></span>
+          Exercícios
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../web/css3/exercicios/fundamentos-seletores/" class="md-nav__link">
+        Exercício 1: Regras de Estilo
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -1263,7 +1325,10 @@
 <p>Os tipos primitivos de dados, como <code>int</code>, <code>double</code> e <code>char</code>, permitem armazenar um valor singular, único, na respectiva posição de memória. Há, contudo, situações em que se faz necessário armazenar a partir de uma única variável um conjunto de valores. Tais estruturas recebem o nome de <code>arrays</code> (arranjos).</p>
 <p>Os <code>arrays</code>, junto a <code>enumerations</code>, <code>strings</code>, <code>ponteiros</code>, <code>ponteiros para membros</code>, <code>referencias</code> e <code>classes</code> são conhecidos como <code>tipos compostos</code> no C++. Os tipos compostos permitem combinar tipos e outros objetos para definir estruturas de armazenamento e manipulação de dados de alto nível. </p>
 <p>Vamos ao exemplo: imagine que uma escola de programação ofereça um curso de Introdução à Linguagem C++, dividido em 10 módulos. Ao final de cada módulo, o estudante deverá realizar uma avaliação. A nota final do curso será obtida a partir da média aritmética dentre todas as 10 avaliações realizadas pelo estudante. Em uma solução utilizando apenas tipos primitivos, poderíamos pensar em algo assim:</p>
-<div class="tabbed-set" data-tabs="1:1"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><label for="__tabbed_1_1">C++</label><div class="tabbed-content"></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:1"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">C++</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block"></div>
+</div>
 </div>
 <div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
 
@@ -1281,7 +1346,10 @@
 <span class="p">}</span>
 </code></pre></div>
 <p>Observe que criamos 10 variáveis do tipo <code>float</code> para armazenar as notas. No código, a grande quantidade de variáveis prejudica a legibilidade e torna a resolução do problema mais difícil. Mas se pudéssemos utilizar apenas uma variável e, nesta, armazenar 10 notas? Aí está o benefício de se utilizar os <code>arrays</code>. Observe a solução alternativa aplicando este conceito:</p>
-<div class="tabbed-set" data-tabs="2:1"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><label for="__tabbed_2_1">C++</label><div class="tabbed-content"></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:1"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">C++</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block"></div>
+</div>
 </div>
 <div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
 
@@ -1308,7 +1376,10 @@
 <p>Quando pensamos em termos matemáticos, costumamos chamar <code>arrays</code> de única dimensão de <code>vetores</code> e de duas dimensões, <code>matrizes</code>. Aos demais, denominamos <code>arrays multidimensionais</code>. </p>
 <h2 id="inicializacao-de-arrays">Inicialização de Arrays<a class="headerlink" href="#inicializacao-de-arrays" title="Permanent link">&para;</a></h2>
 <p>Assim como variáveis escalares, <code>arrays</code> também podem ser inicializados. Observe o programa de exemplo a seguir:</p>
-<div class="tabbed-set" data-tabs="3:1"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><label for="__tabbed_3_1">C++</label><div class="tabbed-content"></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="3:1"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">C++</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block"></div>
+</div>
 </div>
 <div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
 
@@ -1345,7 +1416,10 @@
 <h2 id="arrays-de-caracteres">Arrays de Caracteres<a class="headerlink" href="#arrays-de-caracteres" title="Permanent link">&para;</a></h2>
 <p>O tipo <code>char</code> permite armazenar um caractere específico, como uma letra, símbolo ou meta-caractere. Se observamos com atenção, um texto qualquer corresponde a um vetor de caracteres, onde cada índice armazena um caractere deste texto. Este forma de manipular texto é justamente o que chamamos de <code>cstring</code> no C++, uma alusão à forma de representação de texto típica da linguagem C.</p>
 <p>Embora possamos utilizar <code>cstrings</code> no C++, devemos considerar o uso do tipo abstrato <code>string</code>, que nos oferece maior simplicidade de uso e recursos associados que um simples vetor de caracteres. Observe o exemplo a seguir:</p>
-<div class="tabbed-set" data-tabs="4:1"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><label for="__tabbed_4_1">C++</label><div class="tabbed-content"></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="4:1"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><div class="tabbed-labels"><label for="__tabbed_4_1">C++</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block"></div>
+</div>
 </div>
 <div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;limits&gt;</span>
@@ -1371,7 +1445,10 @@
 <p>A variável <code>nome</code> foi declarada como sendo um <code>array</code> de 200 posições. Isso significa que podemos armazenar, no máximo, 200 caracteres. O comando <code>cin.getline(nome, 200);</code> irá aguardar o usuário digitar um valor, para então armazená-lo no <code>array</code>, limitando a captura de 200 caracteres para não causar erro de <code>overflow</code>.</p>
 <p>Observe que logo após a leitura via <code>cin</code> estamos realizando um teste lógico, utilizando <code>cin.fail()</code>. Este teste irá retornar <code>verdadeiro</code> quando ocorrer algum problema de leitura, como exceder o número máximo de 200 caracteres estabelecido. Ocorrendo tal situação, limpamos o <em>status</em> via <code>cin.clear()</code> e, na sequencia, removemos todos os caracteres que permaneceram no <code>input stream</code> através do comando <code>cin.ignore( numeric_limits&lt;streamsize&gt;::max(), '\n')</code>. Isso deve ser feito para garantir que o próximo comando <code>cin</code> capture o valor informado, visto que mantido o status de erro, o valor seria desconsiderado.</p>
 <p>Outro ponto interessante sobre arrays de caracteres é que eles devem ser finalizados através do meta-caractere <code>\0</code>. Por exemplo, se quiséssemos inicializar um array com o texto <code>Olá, mundo!</code>, poderíamos fazê-lo da seguinte forma:</p>
-<div class="tabbed-set" data-tabs="5:1"><input checked="checked" id="__tabbed_5_1" name="__tabbed_5" type="radio" /><label for="__tabbed_5_1">C++</label><div class="tabbed-content"></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="5:1"><input checked="checked" id="__tabbed_5_1" name="__tabbed_5" type="radio" /><div class="tabbed-labels"><label for="__tabbed_5_1">C++</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block"></div>
+</div>
 </div>
 <div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
 <span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">std</span><span class="p">;</span>
@@ -1383,7 +1460,10 @@
 <span class="p">}</span>
 </code></pre></div>
 <p>O tipo <code>string</code> diferencia-se de um simples array por ser uma <code>classe</code>, ou seja, um tipo abstrato de dados associado ao paradigma da orientação a objetos. Contudo, podemos utilizar o tipo sem nos preocuparmos com estes detalhes. Veja como seria o código para solicitarmos o nome e idade de uma pessoa. Atente-se ao fato de que não estamos informando limite de caracteres, justamente porque o tipo <code>string</code> é dinamicamente expansível.</p>
-<div class="tabbed-set" data-tabs="6:1"><input checked="checked" id="__tabbed_6_1" name="__tabbed_6" type="radio" /><label for="__tabbed_6_1">C++</label><div class="tabbed-content"></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="6:1"><input checked="checked" id="__tabbed_6_1" name="__tabbed_6" type="radio" /><div class="tabbed-labels"><label for="__tabbed_6_1">C++</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block"></div>
+</div>
 </div>
 <div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
 
@@ -1403,7 +1483,10 @@
 <span class="p">}</span>
 </code></pre></div>
 <p>Além de ter tamanho dinâmico, variáveis do tipo <code>string</code> (objetos, no termo correto) permitem operações interessantes, como comparações, indexação, <em>substring</em>, entre outros. Observe o exemplo a seguir:</p>
-<div class="tabbed-set" data-tabs="7:1"><input checked="checked" id="__tabbed_7_1" name="__tabbed_7" type="radio" /><label for="__tabbed_7_1">C++</label><div class="tabbed-content"></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="7:1"><input checked="checked" id="__tabbed_7_1" name="__tabbed_7" type="radio" /><div class="tabbed-labels"><label for="__tabbed_7_1">C++</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block"></div>
+</div>
 </div>
 <div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
 <span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">std</span><span class="p">;</span>
@@ -1440,6 +1523,44 @@
       </main>
       
         <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../funcoes/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Funções" rel="prev">
+            <div class="md-footer__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Funções
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../ponteiros/" class="md-footer__link md-footer__link--next" aria-label="Next: Ponteiros" rel="next">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Ponteiros
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
@@ -1492,7 +1613,7 @@
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.top", "navigation.instant", "toc.integrate", "header.autohide"], "search": "../../../assets/javascripts/workers/search.74e28a9f.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.top", "navigation.instant", "toc.integrate", "header.autohide", "navigation.footer"], "search": "../../../assets/javascripts/workers/search.74e28a9f.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
       <script src="../../../assets/javascripts/bundle.220ee61c.min.js"></script>

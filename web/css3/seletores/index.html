@@ -12,7 +12,7 @@
         <link rel="prev" href="../fundamentos/">
       
       
-        <link rel="next" href="../cores/">
+        <link rel="next" href="../unidades-medidas/">
       
       <link rel="icon" href="../../../img/icon.ico">
       <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.19">
@@ -1142,6 +1142,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../unidades-medidas/" class="md-nav__link">
+        Unidades de Medida
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../cores/" class="md-nav__link">
         Cores
       </a>
@@ -1159,6 +1173,54 @@
       <a href="../fontes/" class="md-nav__link">
         Fontes
       </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3_6" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_3_6" id="__nav_4_3_6_label" tabindex="0">
+          Exercícios
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_3_6_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4_3_6">
+          <span class="md-nav__icon md-icon"></span>
+          Exercícios
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../exercicios/fundamentos-seletores/" class="md-nav__link">
+        Exercício 1: Regras de Estilo
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -1223,28 +1285,30 @@
 <p>A regra acima tem como seletor <code>p</code>, indicando que todos os elementos do tipo <em>parágrafo</em> do documento devem receber as propriedades de estilo definidas. Cada par de <em>propriedade:valor</em> corresponde a uma declaração. Perceba que toda declaração finaliza com um ponto-e-vírgula <code>;</code> e que as declarações ficam envolvidas entre chaves <code>{}</code>.</p>
 <div class="admonition info">
 <p class="admonition-title">Que tal conhecermos alguns tipos de seletores disponíveis 😉? <sup id="fnref2:1"><a class="footnote-ref" href="#fn:1">1</a></sup></p>
-<div class="tabbed-set" data-tabs="1:6"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><label for="__tabbed_1_1">Universal</label><div class="tabbed-content">
+<div class="tabbed-set tabbed-alternate" data-tabs="1:10"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><input id="__tabbed_1_4" name="__tabbed_1" type="radio" /><input id="__tabbed_1_5" name="__tabbed_1" type="radio" /><input id="__tabbed_1_6" name="__tabbed_1" type="radio" /><input id="__tabbed_1_7" name="__tabbed_1" type="radio" /><input id="__tabbed_1_8" name="__tabbed_1" type="radio" /><input id="__tabbed_1_9" name="__tabbed_1" type="radio" /><input id="__tabbed_1_10" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Universal</label><label for="__tabbed_1_2">Elemento</label><label for="__tabbed_1_3">Id</label><label for="__tabbed_1_4">Classe</label><label for="__tabbed_1_5">Descendentes</label><label for="__tabbed_1_6">Elementos Irmãos</label><label for="__tabbed_1_7">Atributos</label><label for="__tabbed_1_8">Pseudo-elementos</label><label for="__tabbed_1_9">Seletores por negação</label><label for="__tabbed_1_10">Seletores de Pseudo-classes</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
 <p>Todo elemento da página irá receber o estilo. Utilizamos <code>*</code> como seletor.
 <div class="highlight"><pre><span></span><code><span class="w">    </span><span class="o">*</span><span class="w"> </span><span class="p">{</span><span class="w"> </span>
 <span class="w">    </span><span class="k">margin</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="kt">px</span><span class="p">;</span><span class="w">         </span>
 <span class="w">    </span><span class="p">}</span>
 </code></pre></div></p>
 </div>
-<input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><label for="__tabbed_1_2">Elemento</label><div class="tabbed-content">
+<div class="tabbed-block">
 <p>Especificamos o nome dos elementos HTML que devem receber o estilo no seletor.
 <div class="highlight"><pre><span></span><code><span class="w">    </span><span class="nt">p</span><span class="w"> </span><span class="p">{</span><span class="w"> </span>
 <span class="w">    </span><span class="k">color</span><span class="p">:</span><span class="w"> </span><span class="kc">black</span><span class="p">;</span><span class="w">         </span>
 <span class="w">    </span><span class="p">}</span>
 </code></pre></div></p>
 </div>
-<input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><label for="__tabbed_1_3">Id</label><div class="tabbed-content">
+<div class="tabbed-block">
 <p>Todo elemento HTML possui um atributo chamado <a href="https://www.w3schools.com/tags/att_global_id.asp"><code>id</code></a>. Este atributo é utilizado para identificar de forma única um elemento no documento. Isso significa que dois elementos não podem compartilhar o mesmo valor em <code>id</code>. No CSS, podemos especificar um seletor para valores de <code>id</code> utilizando o caractere <code>#</code> acompanhado do valor de <code>id</code> correspondente.
 <div class="highlight"><pre><span></span><code><span class="p">#</span><span class="nn">cabecalho</span><span class="w"> </span><span class="p">{</span><span class="w"> </span>
 <span class="w">    </span><span class="k">background-color</span><span class="p">:</span><span class="w"> </span><span class="kc">black</span><span class="p">;</span><span class="w">         </span>
 <span class="w">    </span><span class="p">}</span>
 </code></pre></div></p>
 </div>
-<input id="__tabbed_1_4" name="__tabbed_1" type="radio" /><label for="__tabbed_1_4">Classe</label><div class="tabbed-content">
+<div class="tabbed-block">
 <p>Outro atributo global de elementos do HTML5 chama-se <a href="https://www.w3schools.com/tags/att_global_class.asp"><code>class</code></a>. Diferentemente de <code>id</code>, diferentes elementos podem compartilhar do mesmo valor em <code>class</code> e, além disso, vários valores são aceitos, deixando-se um espaço entre eles. Seletores baseados em classe são amplamente utilizados. Sua construção requer o uso do caractere ponto <code>.</code> acompanhado do nome da classe.</p>
 <p>Podemos deixar o seletor mais específico, associando com um seletor de elemento, como em <code>p.importante</code>. A interpretação, neste caso, é <em>todo parágrafo que contém a classe importante</em>.
 <div class="highlight"><pre><span></span><code><span class="w">    </span><span class="p">.</span><span class="nc">artigo</span><span class="w"> </span><span class="p">{</span><span class="w"> </span>
@@ -1255,7 +1319,7 @@
 <span class="w">    </span><span class="p">}</span>
 </code></pre></div></p>
 </div>
-<input id="__tabbed_1_5" name="__tabbed_1" type="radio" /><label for="__tabbed_1_5">Descendentes</label><div class="tabbed-content">
+<div class="tabbed-block">
 <p>Utilizamos este tipo de seletor para aplicar estilos a elementos com base em seus elementos "pai". Podemos selecionar, por exemplo, todos os parágrafos (<code>&lt;p&gt;</code>) que são descendentes de artigos (<code>&lt;article&gt;</code>), desconsiderando todos os demais. Nosso seletor seria escrito da seguinte forma:
 <div class="highlight"><pre><span></span><code><span class="w">    </span><span class="nt">article</span><span class="w"> </span><span class="nt">p</span><span class="w"> </span><span class="p">{</span><span class="w"> </span>
 <span class="w">        </span><span class="k">font-family</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;Roboto&#39;</span><span class="p">,</span><span class="w"> </span><span class="kc">sans-serif</span><span class="p">;</span>
@@ -1267,12 +1331,60 @@ Observe que este seletor considera descendentes diretos e indiretos. Para ser ma
 <span class="w">    </span><span class="p">}</span><span class="w">           </span>
 </code></pre></div></p>
 </div>
-<input id="__tabbed_1_6" name="__tabbed_1" type="radio" /><label for="__tabbed_1_6">Elementos adjacentes</label><div class="tabbed-content">
-<p>São seletores que consideram elementos de mesmo nível ("irmãos", pois são filhos do mesmo "pai"). Se quisessemos aplicar um estilo específico para o primeiro parágrafo (<code>&lt;p&gt;</code>) que segue um título de segundo nível (<code>&lt;h2&gt;</code>), poderíamos utilizar:
+<div class="tabbed-block">
+<p>São seletores que consideram elementos de mesmo nível ("irmãos", pois são filhos do mesmo "pai"). Se quisessemos aplicar um estilo específico para o primeiro parágrafo (<code>&lt;p&gt;</code>) que segue um título de segundo nível (<code>&lt;h2&gt;</code>), poderíamos utilizar o operador <code>+</code> que indica <code>adjacência</code>:
 <div class="highlight"><pre><span></span><code><span class="w">    </span><span class="nt">h2</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nt">p</span><span class="w"> </span><span class="p">{</span><span class="w"> </span>
 <span class="w">        </span><span class="k">font-family</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;Roboto&#39;</span><span class="p">,</span><span class="w"> </span><span class="kc">sans-serif</span><span class="p">;</span>
 <span class="w">    </span><span class="p">}</span><span class="w">           </span>
+</code></pre></div>
+Se a adjacência não for necessária, mas apenas a idéia de ser "irmão", utilizamos o operador <code>+</code>:
+<div class="highlight"><pre><span></span><code><span class="w">    </span><span class="nt">h2</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="nt">p</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">font-family</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;Roboto&#39;</span><span class="p">,</span><span class="w"> </span><span class="kc">sans-serif</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span><span class="w">        </span>
 </code></pre></div></p>
+</div>
+<div class="tabbed-block">
+<p>São seletores que consideram a presenta e/ouvalores de atributos das tags HTML em sua definição.
+```css
+   a[href]  { 
+        font-family: 'Roboto', sans-serif;
+    }  </p>
+<p>input[type="text"] {
+        font-family: 'Roboto', sans-serif;
+   } </p>
+</div>
+<div class="tabbed-block">
+<p>São seletores que permitem estilizar partes de um elemento e não sua integralidade. Por exemplo, podemos estilizar somente a primeira linha de um parágrafo através da regra a seguir <sup id="fnref:2"><a class="footnote-ref" href="#fn:2">2</a></sup>.   <br />
+<div class="highlight"><pre><span></span><code><span class="w">   </span><span class="nt">p</span><span class="p">::</span><span class="nd">first-line</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">font-family</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;Roboto&#39;</span><span class="p">,</span><span class="w"> </span><span class="kc">sans-serif</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+</code></pre></div>
+Observe que, para todo e qualquer pseudo-elemento, devemos utilizar a sintaxe a seguir (usar <code>::</code>):
+<div class="highlight"><pre><span></span><code><span class="nt">selector</span><span class="p">::</span><span class="nd">pseudo-element</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">property</span><span class="p">:</span><span class="w"> </span><span class="n">value</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></p>
+</div>
+<div class="tabbed-block">
+<p>Seleciona todos os elementos que não atendem a condição especificada.
+<div class="highlight"><pre><span></span><code><span class="w">    </span><span class="nt">div</span><span class="p">:</span><span class="nd">not</span><span class="o">(</span><span class="p">.</span><span class="nc">oculto</span><span class="o">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">background-color</span><span class="p">:</span><span class="kc">red</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+</code></pre></div></p>
+</div>
+<div class="tabbed-block">
+<p>Pseudo-classes são utilizadas para selecionar elementos com base em algum estado específico <sup id="fnref:3"><a class="footnote-ref" href="#fn:3">3</a></sup>
+<div class="highlight"><pre><span></span><code><span class="w">    </span><span class="nt">a</span><span class="p">:</span><span class="nd">visited</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">color</span><span class="p">:</span><span class="w"> </span><span class="kc">forestgreen</span><span class="p">;</span>
+<span class="w">        </span><span class="k">text-decoration-color</span><span class="p">:</span><span class="w"> </span><span class="kc">hotpink</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+</code></pre></div>
+ Observe que, para toda e qualquer pseudo-classe, devemos utilizar a sintaxe a seguir (usar <code>:</code>):
+<div class="highlight"><pre><span></span><code><span class="nt">selector</span><span class="p">:</span><span class="nd">pseudo-class</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">property</span><span class="p">:</span><span class="w"> </span><span class="n">value</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></p>
+</div>
 </div>
 </div>
 </div>
@@ -1281,6 +1393,12 @@ Observe que este seletor considera descendentes diretos e indiretos. Para ser ma
 <ol>
 <li id="fn:1">
 <p>Tutorial Republic. Css tutorial. 2021. URL: <a href="https://www.tutorialrepublic.com/css-tutorial">https://www.tutorialrepublic.com/css-tutorial</a>.&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn:2">
+<p>MDN Web Docs. Pseudo-elements - css: cascading style sheets | mdn. 2024. URL: <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-elements">https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-elements</a>.&#160;<a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+</li>
+<li id="fn:3">
+<p>MDN Web Docs. Pseudo-classes - css: cascading style sheets | mdn. 2024. URL: <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes">https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes</a>.&#160;<a class="footnote-backref" href="#fnref:3" title="Jump back to footnote 3 in the text">&#8617;</a></p>
 </li>
 </ol>
 </div>
@@ -1305,6 +1423,44 @@ Observe que este seletor considera descendentes diretos e indiretos. Para ser ma
       </main>
       
         <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../fundamentos/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Fundamentos" rel="prev">
+            <div class="md-footer__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Fundamentos
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../unidades-medidas/" class="md-footer__link md-footer__link--next" aria-label="Next: Unidades de Medida" rel="next">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Unidades de Medida
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
@@ -1357,7 +1513,7 @@ Observe que este seletor considera descendentes diretos e indiretos. Para ser ma
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.top", "navigation.instant", "toc.integrate", "header.autohide"], "search": "../../../assets/javascripts/workers/search.74e28a9f.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.top", "navigation.instant", "toc.integrate", "header.autohide", "navigation.footer"], "search": "../../../assets/javascripts/workers/search.74e28a9f.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
       <script src="../../../assets/javascripts/bundle.220ee61c.min.js"></script>

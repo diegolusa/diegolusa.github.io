@@ -68,11 +68,66 @@ A regra acima tem como seletor `p`, indicando que todos os elementos do tipo *pa
                 font-family: 'Roboto', sans-serif;
             }           
         ``` 
-    === "Elementos adjacentes"
-        São seletores que consideram elementos de mesmo nível ("irmãos", pois são filhos do mesmo "pai"). Se quisessemos aplicar um estilo específico para o primeiro parágrafo (`<p>`) que segue um título de segundo nível (`<h2>`), poderíamos utilizar:
+    === "Elementos Irmãos"
+        São seletores que consideram elementos de mesmo nível ("irmãos", pois são filhos do mesmo "pai"). Se quisessemos aplicar um estilo específico para o primeiro parágrafo (`<p>`) que segue um título de segundo nível (`<h2>`), poderíamos utilizar o operador `+` que indica `adjacência`:
         ```css
             h2 + p { 
                 font-family: 'Roboto', sans-serif;
             }           
         ``` 
+        Se a adjacência não for necessária, mas apenas a idéia de ser "irmão", utilizamos o operador `+`:
+        ```css
+            h2 ~ p {
+                font-family: 'Roboto', sans-serif;
+            }        
+        ```
+
+    === "Atributos"
+        São seletores que consideram a presenta e/ouvalores de atributos das tags HTML em sua definição.
+        ```css
+           a[href]  { 
+                font-family: 'Roboto', sans-serif;
+            }  
+
+           input[type="text"] {
+                font-family: 'Roboto', sans-serif;
+           } 
+
+    === "Pseudo-elementos"
+        São seletores que permitem estilizar partes de um elemento e não sua integralidade. Por exemplo, podemos estilizar somente a primeira linha de um parágrafo através da regra a seguir [@mdncss3pseudoelements].     
+        ```css
+           p::first-line {
+                font-family: 'Roboto', sans-serif;
+            }
+        ``` 
+        Observe que, para todo e qualquer pseudo-elemento, devemos utilizar a sintaxe a seguir (usar `::`):
+        ```css
+        selector::pseudo-element {
+            property: value;
+        }
+        ```
+    === "Seletores por negação"
+        Seleciona todos os elementos que não atendem a condição especificada.
+        ```css
+
+            div:not(.oculto) {
+                background-color:red;
+            }
+        ``` 
+
+    === "Seletores de Pseudo-classes"
+        Pseudo-classes são utilizadas para selecionar elementos com base em algum estado específico [@mdncss3pseudoclasses]
+        ```css
+            a:visited {
+                color: forestgreen;
+                text-decoration-color: hotpink;
+            }
+        ``` 
+         Observe que, para toda e qualquer pseudo-classe, devemos utilizar a sintaxe a seguir (usar `:`):
+        ```css
+        selector:pseudo-class {
+            property: value;
+        }
+        ```
+
 \bibliography

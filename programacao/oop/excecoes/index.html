@@ -1183,6 +1183,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../web/css3/unidades-medidas/" class="md-nav__link">
+        Unidades de Medida
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../web/css3/cores/" class="md-nav__link">
         Cores
       </a>
@@ -1200,6 +1214,54 @@
       <a href="../../../web/css3/fontes/" class="md-nav__link">
         Fontes
       </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3_6" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_3_6" id="__nav_4_3_6_label" tabindex="0">
+          Exercícios
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_3_6_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4_3_6">
+          <span class="md-nav__icon md-icon"></span>
+          Exercícios
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../web/css3/exercicios/fundamentos-seletores/" class="md-nav__link">
+        Exercício 1: Regras de Estilo
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -1259,7 +1321,9 @@
 <p>Nosso código faz a leitura de um arquivo <em>README.md</em>, imprimindo na saída padrão cada linha de conteúdo. A leitura de arquivos é suscetível a diversos problemas: falta de permissão, arquivo inexistente, arquivo corrompido, entre outros. Sabendo disso, é prudente (e mandatório no Java) construirmos o código pensando na possibilidade do erro. </p>
 <p>O primeiro passo compreende envolver as instruções do fluxo normal de execução com <code>try</code>. Após, criamos um ou mais blocos <code>catch</code> para tratar a possível ocorrência da exceção indicada pelo tipo (<em>FileNotFoundException</em> e <em>IOException</em> ).</p>
 <p>Se, ao executar uma das instruções dentro do bloco <code>try</code> ocorrer algum erro, o fluxo é desviado para o bloco de tratamento (<code>catch</code>) que melhor adere ao tipo de evento ocorrido. Tal mecanismo de <em>match</em> faz uso do relacionamento de herança para determinar o tipo mais específico compatível com a exceção gerada.</p>
-<div class="tabbed-set" data-tabs="1:1"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><label for="__tabbed_1_1">Java</label><div class="tabbed-content">
+<div class="tabbed-set tabbed-alternate" data-tabs="1:1"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Java</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
@@ -1282,8 +1346,11 @@
 </code></pre></div></td></tr></table></div>
 </div>
 </div>
+</div>
 <p>Observe como é semelhante em Python. A construção e operação são equivalentes, mudando apenas a palavra reservada de <code>catch</code> para <code>except</code>.</p>
-<div class="tabbed-set" data-tabs="2:1"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><label for="__tabbed_2_1">Python</label><div class="tabbed-content">
+<div class="tabbed-set tabbed-alternate" data-tabs="2:1"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Python</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
@@ -1300,11 +1367,14 @@
 </code></pre></div></td></tr></table></div>
 </div>
 </div>
+</div>
 <p>As linguagem de programação apresentam taxionomias de exceções no <em>core</em> de suas APIs. Elas normalmente representam situações de erro genéricos e podem ser utilizadas para mapear as exceções mais frequentes que um programa incorre <sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup> <sup id="fnref:2"><a class="footnote-ref" href="#fn:2">2</a></sup>. Outras exceções específicas podem ser criadas pelo desenvolvedor a partir da derivação das genéricas, a fim de representar erros de mais alto nível (como notificar um CPF inválido). Veja na sequência a hierarquia de exceções nativas da linguagem Java.</p>
 <p><img alt="Hierarquia de exceções no Java" src="../img/java-exceptions-hierarchy-example.png" />
 <small>Fonte: <a href="https://rollbar.com/blog/java-exceptions-hierarchy-explained/">https://rollbar.com/blog/java-exceptions-hierarchy-explained/</a></small></p>
 <p>Há uma terceira seção, opcional, que podemos agregar ao tratamento de exceções chamada <code>finally</code>. É aplicada para comandos que devem ser executadas em qualquer circunstância, tanto no fluxo normal quanto na eventual ocorrência de exceções.</p>
-<div class="tabbed-set" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><label for="__tabbed_3_1">Python</label><div class="tabbed-content">
+<div class="tabbed-set tabbed-alternate" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">Python</label><label for="__tabbed_3_2">Java</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
@@ -1324,7 +1394,7 @@
 </span>        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Processamento concluído&#39;</span><span class="p">)</span>
 </code></pre></div></td></tr></table></div>
 </div>
-<input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><label for="__tabbed_3_2">Java</label><div class="tabbed-content">
+<div class="tabbed-block">
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
@@ -1351,13 +1421,16 @@
 </code></pre></div></td></tr></table></div>
 </div>
 </div>
+</div>
 <h2 id="unchecked-exceptions-e-checked-exceptions">Unchecked exceptions e checked exceptions<a class="headerlink" href="#unchecked-exceptions-e-checked-exceptions" title="Permanent link">&para;</a></h2>
 <p>É uma subdivisão das exceções utilizada na linguagem Java. <code>Checked exception</code> é toda aquela exceção verificada em tempo de compilação. Para estas, é exigido que seja feito tratamento via  <code>try-catch</code> ou que o método seja declarado com a cláusula <code>throws</code>. <code>Checked exception</code> são classes derivadas de <code>Exception</code>.</p>
 <p><code>Unchecked exceptions</code>, por sua vez, não são verificadas em tempo de compilação. Podem ocorrer durante a execução do programa, pois dependem de situações do ambiente e do próprio estado de execução. Acesso a índices inexistentes em arrays, divisão por zero, chamada de método em referências nulas são exemplos deste tipo de exceção. <code>Unchecked exception</code> são classes derivadas de <code>RuntimeException</code>.</p>
 <h2 id="excecoes-customizadas">Exceções customizadas<a class="headerlink" href="#excecoes-customizadas" title="Permanent link">&para;</a></h2>
 <p>Quando precisamos notificar os usuários de nossos métodos acerca de uma situação considerada inválida, é boa prática criarmos uma exceção customizada para tal finalidade. A nova exceção deve ser derivada de outra existente, normalmente uma das nativas conforme determina a boa prática. </p>
 <p>No código que segue está sendo definida a classe <code>SaldoInsuficienteException</code>, que irá representar um novo tipo de exceção no programa.</p>
-<div class="tabbed-set" data-tabs="4:1"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><label for="__tabbed_4_1">Java</label><div class="tabbed-content">
+<div class="tabbed-set tabbed-alternate" data-tabs="4:1"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><div class="tabbed-labels"><label for="__tabbed_4_1">Java</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
@@ -1392,6 +1465,7 @@
 </code></pre></div></td></tr></table></div>
 </div>
 </div>
+</div>
 <div class="footnote">
 <hr />
 <ol>
@@ -1424,6 +1498,44 @@
       </main>
       
         <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../classes/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Classes" rel="prev">
+            <div class="md-footer__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Classes
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../relacoes/" class="md-footer__link md-footer__link--next" aria-label="Next: Relações entre Classes" rel="next">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Relações entre Classes
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
@@ -1476,7 +1588,7 @@
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.top", "navigation.instant", "toc.integrate", "header.autohide"], "search": "../../../assets/javascripts/workers/search.74e28a9f.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.top", "navigation.instant", "toc.integrate", "header.autohide", "navigation.footer"], "search": "../../../assets/javascripts/workers/search.74e28a9f.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
       <script src="../../../assets/javascripts/bundle.220ee61c.min.js"></script>

@@ -1183,6 +1183,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../web/css3/unidades-medidas/" class="md-nav__link">
+        Unidades de Medida
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../web/css3/cores/" class="md-nav__link">
         Cores
       </a>
@@ -1200,6 +1214,54 @@
       <a href="../../../web/css3/fontes/" class="md-nav__link">
         Fontes
       </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3_6" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_3_6" id="__nav_4_3_6_label" tabindex="0">
+          Exercícios
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_3_6_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4_3_6">
+          <span class="md-nav__icon md-icon"></span>
+          Exercícios
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../web/css3/exercicios/fundamentos-seletores/" class="md-nav__link">
+        Exercício 1: Regras de Estilo
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -1272,7 +1334,10 @@
 <li><strong>Retorno</strong>: Comando que finaliza a execução da função e devolve ao chamador o resultado do processamento. Em C++, o retorno é feito através do comando <code>return</code>. Toda função que indicar retornar um tipo diferente de <code>void</code> deve obrigatoriamente fazê-lo para todos os caminhos possíveis de finalização (ou gerar um erro). A exceção fica com a função <code>main</code>, que ao executar com sucesso todos os comandos automaticamente irá retornar <code>0</code>.</li>
 </ul>
 <p>Vamos utilizar como estudo de caso a própria função <code>main</code>. Observe que começamos pela tipo <code>int</code>, indicando que seu retorno é um número inteiro. Na sequência, temos <code>main</code>, o nome da função. Os parâmetros são declarados no espaço contido entre os parênteses <code>()</code>. Cada declaração de parâmetro compreende seu tipo e nome, tal qual fazemos ao declarar variáveis. Se houver necessidade de mais de um parâmetro, devemos separá-los com vírgula. Por fim, as instruções ficam contidas entre as chaves <code>{}</code>.</p>
-<div class="tabbed-set" data-tabs="1:1"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><label for="__tabbed_1_1">C++</label><div class="tabbed-content"></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:1"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">C++</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block"></div>
+</div>
 </div>
 <div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">argc</span><span class="p">,</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">argv</span><span class="p">[])</span>
 <span class="p">{</span>
@@ -1283,7 +1348,10 @@
 <h3 id="retornando-valores">Retornando Valores<a class="headerlink" href="#retornando-valores" title="Permanent link">&para;</a></h3>
 <p>Tipicamente criamos funções que retornam algum valor ao chamador (<code>caller</code>). Sabemos que o tipo de retorno acompanha a declaração da função e que, por meio deste tipo, o compilador poderá aceitar a chamada da função em qualquer contexto que permita presença daquele tipo de dado.</p>
 <p>No programa abaixo estamos utilizando uma função chamada <code>ler_idade()</code>. Perceba que o cabeçalho (assinatura) aparece antes da função <code>main</code>, enquanto que a implementação está posta após. Isso se faz necessário para atender um princípio básico de programação, que é: <code>somente podemos fazer uso, em uma instrução, de estruturas já disponíveis naquele momento</code>. Ou seja, precisamos orientar o compilador da existência de uma função chamada <code>ler_idade()</code>, que retorna valor inteiro, pois estamos chamando ela antes de propriamente implementá-la.</p>
-<div class="tabbed-set" data-tabs="2:1"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><label for="__tabbed_2_1">C++</label><div class="tabbed-content"></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:1"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">C++</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block"></div>
+</div>
 </div>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
@@ -1350,7 +1418,10 @@
 <p>Muitas vezes precisamos passar valores específicos no momento em que a função é chamada. Estes valores recebem o nome de <code>argumentos</code>. Os argumentos são utilizados para alimentar os <code>parâmetros</code> da função, que são variáveis que permitem à função receber dados do mundo externo e utilizá-los em sua execução. </p>
 <p>Podemos passar argumentos de dois modos diferentes: <code>por valor</code> e <code>por referência</code>. Quando utilizamos a estratégia de passagem <code>por valor</code>, o parâmetro receberá uma cópia do valor informado. Lembre-se que um <code>parâmetro</code> é uma variável local da função, inicializada a cada chamada realizada<sup id="fnref2:1"><a class="footnote-ref" href="#fn:1">1</a></sup>.</p>
 <p>A passagem <code>por valor</code> de argumentos gera uma cópia, de modo que eventuais alterações realizadas pela função no parâmetro correspondente não terão impacto externo. Para ilustrar este comportamento iremos utilizar um programa muito simples, composto por duas funções: <code>main</code> e <code>substitui</code>. </p>
-<div class="tabbed-set" data-tabs="3:1"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><label for="__tabbed_3_1">C++</label><div class="tabbed-content"></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="3:1"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">C++</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block"></div>
+</div>
 </div>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
@@ -1388,7 +1459,10 @@
 <p>Não, são posições de memória diferentes. Todo parâmetro representa uma variável local à função, cujo escopo de visibilidade é o corpo desta função. O fato de estarmos enviando um argumento, que é uma variável, com o mesmo nome representa uma simples coincidência. </p>
 <p>Então, se estamos falando de posições de memória diferentes, a atribuição realizada pela função na linha <span class="arithmatex">\(7\)</span> não vai alterar o valor da variável <code>a</code> declarada na função <code>main</code>. Deste modo, ambos os comandos <code>cout</code> irão escrever o valor <span class="arithmatex">\(3\)</span>. Chamamos isso de passagem de argumento por cópia (<em>call by value</em>).</p>
 <p>Agora vamos modificar nossa função <code>substitui</code> adicionando o operador <code>&amp;</code> antes do nome do parâmetro. Nosso programa em sua versão alterada seria:</p>
-<div class="tabbed-set" data-tabs="4:1"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><label for="__tabbed_4_1">C++</label><div class="tabbed-content"></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="4:1"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><div class="tabbed-labels"><label for="__tabbed_4_1">C++</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block"></div>
+</div>
 </div>
 <p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
@@ -1426,7 +1500,10 @@ Estranhamente, o resultado desta versão do programa será <span class="arithmat
 <p>Mas isso não pode gerar efeitos colaterais indesejados? Que benefícios há em se utilizar referências?</p>
 <p>Bem, o programador deverá utilizar o recurso com prudência. Nem todo parâmetro deve ser <em>by reference</em>. O grande benefício está possibilidade de compartilhar áreas de memória, uma operação muito mais rápida se comparada a uma cópia de valores. Imagine se precisássemos informar um vetor de <span class="arithmatex">\(1000\)</span> posições para um função e todos estes valores precisassem ser copiados para o parâmetro?</p>
 <p>Logo, nesta perspectiva, qualquer <code>array</code> definido como parâmetro irá receber uma referência de memória e não uma cópia de valor. Podemos verificar isso no programa a seguir, construído para ler uma matriz <span class="arithmatex">\(M_{2 \times 2}\)</span> e apresentar a média aritmética dos valores lidos.</p>
-<div class="tabbed-set" data-tabs="5:1"><input checked="checked" id="__tabbed_5_1" name="__tabbed_5" type="radio" /><label for="__tabbed_5_1">C++</label><div class="tabbed-content"></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="5:1"><input checked="checked" id="__tabbed_5_1" name="__tabbed_5" type="radio" /><div class="tabbed-labels"><label for="__tabbed_5_1">C++</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block"></div>
+</div>
 </div>
 <div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iomanip&gt;</span>
@@ -1506,6 +1583,44 @@ Estranhamente, o resultado desta versão do programa será <span class="arithmat
       
         <footer class="md-footer">
   
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../iteracao/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Laços de Repetição" rel="prev">
+            <div class="md-footer__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Laços de Repetição
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../arranjos/" class="md-footer__link md-footer__link--next" aria-label="Next: Arranjos" rel="next">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Arranjos
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
       <div class="md-copyright">
@@ -1557,7 +1672,7 @@ Estranhamente, o resultado desta versão do programa será <span class="arithmat
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.top", "navigation.instant", "toc.integrate", "header.autohide"], "search": "../../../assets/javascripts/workers/search.74e28a9f.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.top", "navigation.instant", "toc.integrate", "header.autohide", "navigation.footer"], "search": "../../../assets/javascripts/workers/search.74e28a9f.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
       <script src="../../../assets/javascripts/bundle.220ee61c.min.js"></script>

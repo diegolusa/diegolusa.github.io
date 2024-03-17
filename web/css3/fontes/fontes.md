@@ -11,7 +11,7 @@ A escolha de uma fonte é crucial para o sucesso de uma interface web, visto que
 
 As propriedades de estilo que o CSS3 nos fornece para manipularmos fontes são `font-family`, `font-style`, `font-weight`, `font-size`, e `font-variant`. Na sequência iremos abordar cada uma delas:
 
-## font-family
+## Propriedade `font-family`
 
 Especifica a família de fontes que o navegador deve utilizar para renderizar o texto. A propriedade aceita vários valores separados por vírgula, indicando opções de fontes quando não for possível utilizar a anterior. Normalmente finalizamos especificando uma das cinco famílias genérias de fonte disponíveis: *serif*, *sans-serif*, *monospace*, *coursive* e *fantasy* [@fontfamilymdn2021] [@cssw3s2021] [@csstutrep2021].
 
@@ -42,7 +42,7 @@ Cada família de fontes genérica tem características tipográficas particulare
 
 
 
-## font-style
+## Propriedade `font-style`
 
 Propriedade que permite especificar a apresentação da face dos glifos, se normais, em itálico ou oblíquos [@cssw3s2021] [@csstutrep2021]. Os possíveis valores são:
 
@@ -59,7 +59,7 @@ Propriedade que permite especificar a apresentação da face dos glifos, se norm
 <p style="margin-left: 10%;margin-right: 10%;text-align: center; font-family:Arial, sans-serif;font-size: 0.9rem; border: black 1px solid;border-radius: 3px; font-style:oblique">Oblíquo (quase igual ao itálico).</p>
 
 
-## font-size
+## Propriedade `font-size`
 
 Permite especificar o tamanho da fonte, a partir de medidas relativas, como percentual, *em*, *rem*, etc ou medidas absolutas como *pixels*. Para saber mais sobre unidades de medida, acesse [nosso conteúdo sobre o tema](unidades-medida.md) [@cssw3s2021] [@csstutrep2021].
 
@@ -67,7 +67,7 @@ Permite especificar o tamanho da fonte, a partir de medidas relativas, como perc
 <span style="font-size: 16px">16px</span> - <span style="font-size: 2rem">2rem</span> - <span style="font-size: 2em">2em</span> </p>
 
 
-## font-weight
+## Propriedade `font-weight`
 
 Define o peso (intensidade de negrito)  da fonte. Os valores podem ser `normal`, `bold`, `bolder`, `lighter`, `100`, `200`, `300`, `400`, `500`, `600`, `700`, `800`, `900` e `inherit`. Os valores numéricos indicam uma graduação de negrito. O valor `400` equivale a `normal` enquanto que o valor `700` é equivalente a `bold`. Os valores `bolder` e `lighter` aplicam-se em relação ao peso herdado do ancestral, enquanto que `normal` e `bold` aplicam-se em absoluto ao texto (sem relação com o valor do ancestral) [@cssw3s2021] [@csstutrep2021].
 
@@ -77,7 +77,7 @@ Define o peso (intensidade de negrito)  da fonte. Os valores podem ser `normal`,
 
 
 
-## font-variant
+## Propriedade `font-variant`
 
 Indica se o texto deve ser exibido ou não considerando apenas caracteres maiúsculos. Os valores possíveis são `small-caps` e `normal` (padrão) [@cssw3s2021] [@csstutrep2021].
 
