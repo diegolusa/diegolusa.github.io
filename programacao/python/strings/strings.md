@@ -112,3 +112,52 @@ print(string_traduzida)
 ```
 
 O método `translate()` é útil para realizar operações de tradução em strings de maneira eficiente e rápida. Ele é especialmente útil quando você precisa substituir caracteres por outros em grandes volumes de dados.
+
+
+
+## Slicing
+
+*Slicing* é uma técnica que permite extrair partes específicas de uma string, criando subtrings com base em índices específicos. O operador de slicing é de grande valia para manipulação de strings de maneira eficiente e flexível no Python.
+
+### Sintaxe:
+
+A sintaxe básica para slicing em Python é:
+
+```
+string[início:fim:passo]
+```
+
+- `início`: Índice onde o slicing começa. Se não especificado, é considerado o início da string.
+- `fim`: Índice onde o slicing termina. Este índice não é incluído na substring resultante. Se não especificado, é considerado o final da string.
+- `passo`: Opcional. Define o intervalo entre os caracteres a serem considerados durante o slicing. Se não especificado, o padrão é 1.
+
+### Exemplos de Uso:
+
+1. **Extraindo Substrings:**
+
+   ```python
+   s = "Python"
+   print(s[2:5])  # Saída: thon
+   ```
+
+2. **Invertendo uma String:**
+
+   ```python
+   s = "Python"
+   print(s[::-1])  # Saída: nohtyP
+   ```
+
+3. **Extraindo Partes com Intervalos Específicos:**
+
+   ```python
+   s = "Python Programming"
+   print(s[0:10:2])  # Saída: Pto rg
+   ```
+
+4. **Obtendo Todos os Caracteres a Partir de um Índice Específico:**
+
+   ```python
+   s = "Python"
+   print(s[3:])  # Saída: hon
+   ```
+ 
