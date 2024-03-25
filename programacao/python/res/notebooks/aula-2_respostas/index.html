@@ -423,18 +423,23 @@
       </a>
 </li>
 <li class="md-nav__item">
+<a class="md-nav__link" href="../../../../../web/html5/formularios/">
+        Formuários
+      </a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="../../../../../web/html5/tabelas/">
         Tabelas
       </a>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_4_2_7" type="checkbox"/>
-<label class="md-nav__link" for="__nav_4_2_7" id="__nav_4_2_7_label" tabindex="0">
+<input class="md-nav__toggle md-toggle" id="__nav_4_2_8" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4_2_8" id="__nav_4_2_8_label" tabindex="0">
           Exercícios
           <span class="md-nav__icon md-icon"></span>
 </label>
-<nav aria-expanded="false" aria-labelledby="__nav_4_2_7_label" class="md-nav" data-md-level="3">
-<label class="md-nav__title" for="__nav_4_2_7">
+<nav aria-expanded="false" aria-labelledby="__nav_4_2_8_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_4_2_8">
 <span class="md-nav__icon md-icon"></span>
           Exercícios
         </label>
@@ -447,6 +452,16 @@
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../../../../web/html5/exercicios/e2-semantica-texto-links-imagens/">
         Exercício 2: Semântica de texto, hiperlinks e imagens
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../../web/html5/exercicios/e3-formularios/">
+        Exercício 3: Formulários
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../../web/html5/exercicios/e4-tabelas/">
+        Exercício 4: Tabelas
       </a>
 </li>
 </ul>
@@ -979,13 +994,13 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [3]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="CodeMirror cm-s-jupyter">
 <div class="zeroclipboard-container">
 <clipboard-copy for="cell-1">
@@ -998,9 +1013,55 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 </div>
 </clipboard-copy>
 </div>
-<div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># Informe sua resposta aqui</span>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">v1</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">"Informe o primeiro valor: "</span><span class="p">))</span>
+<span class="n">v2</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">"Informe o segundo valor: "</span><span class="p">))</span>
+<span class="n">v3</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">"Informe o terceiro valor: "</span><span class="p">))</span>
+
+<span class="n">maior</span> <span class="o">=</span> <span class="n">v1</span>
+<span class="k">if</span> <span class="n">v2</span> <span class="o">&gt;</span> <span class="n">maior</span><span class="p">:</span>
+    <span class="n">maior</span> <span class="o">=</span> <span class="n">v2</span>
+<span class="k">if</span> <span class="n">v3</span> <span class="o">&gt;</span> <span class="n">maior</span><span class="p">:</span>
+    <span class="n">maior</span> <span class="o">=</span> <span class="n">v3</span>
+
+<span class="n">menor</span> <span class="o">=</span> <span class="n">v1</span>
+<span class="k">if</span> <span class="n">v2</span> <span class="o">&lt;</span> <span class="n">menor</span><span class="p">:</span>
+    <span class="n">menor</span> <span class="o">=</span> <span class="n">v2</span>
+<span class="k">if</span> <span class="n">v3</span> <span class="o">&lt;</span> <span class="n">menor</span><span class="p">:</span>
+    <span class="n">menor</span> <span class="o">=</span> <span class="n">v3</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">menor</span><span class="p">,</span> <span class="p">(</span><span class="n">v1</span><span class="o">+</span><span class="n">v2</span><span class="o">+</span><span class="n">v3</span><span class="p">)</span> <span class="o">-</span> <span class="p">(</span><span class="n">maior</span><span class="o">+</span><span class="n">menor</span><span class="p">),</span> <span class="n">maior</span><span class="p">)</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-1"># Informe sua resposta aqui</div>
+<div class="clipboard-copy-txt" id="cell-1">v1 = int(input("Informe o primeiro valor: "))
+v2 = int(input("Informe o segundo valor: "))
+v3 = int(input("Informe o terceiro valor: "))
+
+maior = v1
+if v2 &gt; maior:
+    maior = v2
+if v3 &gt; maior:
+    maior = v3
+
+menor = v1
+if v2 &lt; menor:
+    menor = v2
+if v3 &lt; menor:
+    menor = v3
+
+print(menor, (v1+v2+v3) - (maior+menor), maior)
+    </div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>3 8 8
+</pre>
 </div>
 </div>
 </div>
@@ -1017,13 +1078,13 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [5]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="CodeMirror cm-s-jupyter">
 <div class="zeroclipboard-container">
 <clipboard-copy for="cell-2">
@@ -1036,9 +1097,26 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 </div>
 </clipboard-copy>
 </div>
-<div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># Informe sua resposta aqui</span>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">v1</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">"Informe um valor"</span><span class="p">))</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">v1</span><span class="p">,</span> <span class="s2">"PAR"</span> <span class="k">if</span> <span class="n">v1</span><span class="o">%</span><span class="mi">2</span><span class="o">==</span><span class="mi">0</span> <span class="k">else</span> <span class="s2">"ÍMPAR"</span><span class="p">)</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-2"># Informe sua resposta aqui</div>
+<div class="clipboard-copy-txt" id="cell-2">v1 = int(input("Informe um valor"))
+
+print(v1, "PAR" if v1%2==0 else "ÍMPAR")</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>4 PAR
+</pre>
 </div>
 </div>
 </div>
@@ -1111,13 +1189,13 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [8]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="CodeMirror cm-s-jupyter">
 <div class="zeroclipboard-container">
 <clipboard-copy for="cell-3">
@@ -1130,9 +1208,65 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 </div>
 </clipboard-copy>
 </div>
-<div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># Informe sua resposta aqui</span>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">n1</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">"Informe a nota 1"</span><span class="p">))</span>
+<span class="n">n2</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">"Informe a nota 2"</span><span class="p">))</span>
+<span class="n">n3</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">"Informe a nota 3"</span><span class="p">))</span>
+
+<span class="k">if</span> <span class="n">n1</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="ow">or</span> <span class="n">n1</span> <span class="o">&gt;</span> <span class="mi">100</span>  <span class="ow">or</span> <span class="n">n2</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="ow">or</span> <span class="n">n2</span> <span class="o">&gt;</span> <span class="mi">100</span> <span class="ow">or</span> <span class="n">n3</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="ow">or</span> <span class="n">n3</span> <span class="o">&gt;</span> <span class="mi">100</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"NOTA INVÁLIDA"</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="n">media_final</span> <span class="o">=</span> <span class="n">n1</span> <span class="o">*</span> <span class="mf">0.2</span> <span class="o">+</span> <span class="n">n2</span> <span class="o">*</span> <span class="mf">0.3</span> <span class="o">+</span> <span class="n">n3</span> <span class="o">*</span> <span class="mf">0.5</span>
+    <span class="n">conceito_resultado</span> <span class="o">=</span> <span class="s2">""</span>
+    <span class="k">if</span> <span class="mf">0.0</span> <span class="o">&lt;=</span> <span class="n">media_final</span> <span class="ow">and</span> <span class="n">media_final</span><span class="o">&lt;</span> <span class="mf">21.0</span><span class="p">:</span>
+        <span class="n">conceito_resultado</span> <span class="o">=</span> <span class="s2">"E Reprovado"</span>
+    <span class="k">elif</span> <span class="mf">21.0</span> <span class="o">&lt;=</span> <span class="n">media_final</span> <span class="ow">and</span> <span class="n">media_final</span> <span class="o">&lt;</span> <span class="mf">41.0</span><span class="p">:</span>
+        <span class="n">conceito_resultado</span> <span class="o">=</span> <span class="s2">"D Reprovado"</span>
+    <span class="k">elif</span> <span class="mf">41.0</span> <span class="o">&lt;=</span> <span class="n">media_final</span> <span class="ow">and</span> <span class="n">media_final</span> <span class="o">&lt;</span> <span class="mf">61.0</span><span class="p">:</span>
+        <span class="n">conceito_resultado</span> <span class="o">=</span> <span class="s2">"C Exame"</span>
+    <span class="k">elif</span> <span class="mf">61.0</span> <span class="o">&lt;=</span> <span class="n">media_final</span> <span class="ow">and</span> <span class="n">media_final</span> <span class="o">&lt;</span> <span class="mf">81.0</span><span class="p">:</span>
+        <span class="n">conceito_resultado</span> <span class="o">=</span> <span class="s2">"B Aprovado"</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">conceito_resultado</span> <span class="o">=</span> <span class="s2">"A Aprovado"</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"</span><span class="si">{:.2f}</span><span class="s2"> </span><span class="si">{}</span><span class="s2">"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">media_final</span><span class="p">,</span> <span class="n">conceito_resultado</span><span class="p">))</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-3"># Informe sua resposta aqui</div>
+<div class="clipboard-copy-txt" id="cell-3">
+
+n1 = int(input("Informe a nota 1"))
+n2 = int(input("Informe a nota 2"))
+n3 = int(input("Informe a nota 3"))
+
+if n1 &lt; 0 or n1 &gt; 100  or n2 &lt; 0 or n2 &gt; 100 or n3 &lt; 0 or n3 &gt; 100:
+    print("NOTA INVÁLIDA")
+else:
+    media_final = n1 * 0.2 + n2 * 0.3 + n3 * 0.5
+    conceito_resultado = ""
+    if 0.0 &lt;= media_final and media_final&lt; 21.0:
+        conceito_resultado = "E Reprovado"
+    elif 21.0 &lt;= media_final and media_final &lt; 41.0:
+        conceito_resultado = "D Reprovado"
+    elif 41.0 &lt;= media_final and media_final &lt; 61.0:
+        conceito_resultado = "C Exame"
+    elif 61.0 &lt;= media_final and media_final &lt; 81.0:
+        conceito_resultado = "B Aprovado"
+    else:
+        conceito_resultado = "A Aprovado"
+
+    print("{:.2f} {}".format(media_final, conceito_resultado))
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>NOTA INVÁLIDA
+</pre>
 </div>
 </div>
 </div>
@@ -1158,13 +1292,13 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [10]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="CodeMirror cm-s-jupyter">
 <div class="zeroclipboard-container">
 <clipboard-copy for="cell-4">
@@ -1177,9 +1311,60 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 </div>
 </clipboard-copy>
 </div>
-<div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># Informe sua resposta aqui</span>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">escala</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">"Digite a escala de origem (C, F ou K): "</span><span class="p">)</span>
+<span class="n">t</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">"Digite a temperatura: "</span><span class="p">))</span>
+
+<span class="k">match</span> <span class="n">escala</span><span class="o">.</span><span class="n">upper</span><span class="p">():</span>
+    <span class="k">case</span> <span class="s1">'C'</span><span class="p">:</span>
+        <span class="n">temp_kelvin</span> <span class="o">=</span> <span class="n">t</span> <span class="o">+</span> <span class="mf">273.15</span>
+        <span class="n">temp_fahrenheit</span> <span class="o">=</span> <span class="n">t</span> <span class="o">*</span> <span class="mf">1.8</span> <span class="o">+</span> <span class="mi">32</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"Kelvin:"</span><span class="p">,</span> <span class="n">temp_kelvin</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"Fahrenheit:"</span><span class="p">,</span> <span class="n">temp_fahrenheit</span><span class="p">)</span>
+    <span class="k">case</span> <span class="s1">'F'</span><span class="p">:</span>
+        <span class="n">temp_celsius</span> <span class="o">=</span> <span class="p">(</span><span class="n">t</span> <span class="o">-</span> <span class="mi">32</span><span class="p">)</span> <span class="o">/</span> <span class="mf">1.8</span>
+        <span class="n">temp_kelvin</span> <span class="o">=</span> <span class="n">temp_celsius</span> <span class="o">+</span> <span class="mf">273.15</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"Celsius:"</span><span class="p">,</span> <span class="n">temp_celsius</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"Kelvin:"</span><span class="p">,</span> <span class="n">temp_kelvin</span><span class="p">)</span>
+    <span class="k">case</span> <span class="s1">'K'</span><span class="p">:</span>
+        <span class="n">temp_celsius</span> <span class="o">=</span> <span class="n">t</span> <span class="o">-</span> <span class="mf">273.15</span>
+        <span class="n">temp_fahrenheit</span> <span class="o">=</span> <span class="n">temp_celsius</span> <span class="o">*</span> <span class="mf">1.8</span> <span class="o">+</span> <span class="mi">32</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"Celsius:"</span><span class="p">,</span> <span class="n">temp_celsius</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"Fahrenheit:"</span><span class="p">,</span> <span class="n">temp_fahrenheit</span><span class="p">)</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-4"># Informe sua resposta aqui</div>
+<div class="clipboard-copy-txt" id="cell-4">escala = input("Digite a escala de origem (C, F ou K): ")
+t = float(input("Digite a temperatura: "))
+
+match escala.upper():
+    case 'C':
+        temp_kelvin = t + 273.15
+        temp_fahrenheit = t * 1.8 + 32
+        print("Kelvin:", temp_kelvin)
+        print("Fahrenheit:", temp_fahrenheit)
+    case 'F':
+        temp_celsius = (t - 32) / 1.8
+        temp_kelvin = temp_celsius + 273.15
+        print("Celsius:", temp_celsius)
+        print("Kelvin:", temp_kelvin)
+    case 'K':
+        temp_celsius = t - 273.15
+        temp_fahrenheit = temp_celsius * 1.8 + 32
+        print("Celsius:", temp_celsius)
+        print("Fahrenheit:", temp_fahrenheit)
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>Temperatura em Celsius: 14.444444444444445
+Temperatura em Kelvin: 287.59444444444443
+</pre>
 </div>
 </div>
 </div>
@@ -1223,9 +1408,41 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 </div>
 </clipboard-copy>
 </div>
-<div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># Informe sua resposta aqui</span>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">valor1</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">"Digite o primeiro valor inteiro e par: "</span><span class="p">))</span>
+<span class="n">valor2</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">"Digite o segundo valor inteiro e par, maior que o primeiro: "</span><span class="p">))</span>
+
+
+<span class="k">if</span> <span class="n">valor1</span> <span class="o">&gt;=</span> <span class="n">valor2</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"PRIMEIRO VALOR É MAIOR QUE O SEGUNDO - INVÁLIDO"</span><span class="p">)</span>
+
+<span class="k">elif</span> <span class="n">valor1</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">!=</span> <span class="mi">0</span> <span class="ow">or</span> <span class="n">valor2</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"ÍMPAR - INVÁLIDO"</span><span class="p">)</span>
+
+<span class="k">elif</span> <span class="n">valor1</span> <span class="o">&lt;=</span> <span class="mi">0</span> <span class="ow">or</span> <span class="n">valor2</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"NEGATIVO OU ZERO - INVÁLIDO"</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="n">dominio</span> <span class="o">=</span> <span class="p">(</span><span class="n">valor1</span> <span class="o">+</span> <span class="n">valor2</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span> 
+    <span class="n">resultado</span> <span class="o">=</span> <span class="p">(</span><span class="n">dominio</span> <span class="o">/</span> <span class="mi">3</span><span class="p">)</span> <span class="o">+</span> <span class="n">dominio</span> <span class="o">**</span> <span class="mi">3</span> <span class="o">-</span> <span class="p">((</span><span class="n">dominio</span> <span class="o">+</span> <span class="n">dominio</span> <span class="o">*</span> <span class="mi">4</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"RESULTADO: "</span><span class="p">,</span> <span class="n">resultado</span><span class="p">)</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-5"># Informe sua resposta aqui</div>
+<div class="clipboard-copy-txt" id="cell-5">
+valor1 = int(input("Digite o primeiro valor inteiro e par: "))
+valor2 = int(input("Digite o segundo valor inteiro e par, maior que o primeiro: "))
+
+
+if valor1 &gt;= valor2:
+    print("PRIMEIRO VALOR É MAIOR QUE O SEGUNDO - INVÁLIDO")
+
+elif valor1 % 2 != 0 or valor2 % 2 != 0:
+    print("ÍMPAR - INVÁLIDO")
+
+elif valor1 &lt;= 0 or valor2 &lt;= 0:
+    print("NEGATIVO OU ZERO - INVÁLIDO")
+else:
+    dominio = (valor1 + valor2) / 2 
+    resultado = (dominio / 3) + dominio ** 3 - ((dominio + dominio * 4) / 2)
+    print("RESULTADO: ", resultado)
+</div>
 </div>
 </div>
 </div>
@@ -1253,13 +1470,13 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [11]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="CodeMirror cm-s-jupyter">
 <div class="zeroclipboard-container">
 <clipboard-copy for="cell-6">
@@ -1272,9 +1489,39 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 </div>
 </clipboard-copy>
 </div>
-<div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># Informe sua resposta aqui</span>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">ano</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">"ANO: "</span><span class="p">))</span>
+
+<span class="k">if</span> <span class="n">ano</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"ANO INVÁLIDO"</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">ano</span> <span class="o">%</span> <span class="mi">400</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span><span class="n">ano</span> <span class="o">%</span> <span class="mi">4</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">ano</span> <span class="o">%</span> <span class="mi">100</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"BISSEXTO"</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"NÃO É BISSEXTO"</span><span class="p">)</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-6"># Informe sua resposta aqui</div>
+<div class="clipboard-copy-txt" id="cell-6">
+ano = int(input("ANO: "))
+
+if ano &lt;= 0:
+    print("ANO INVÁLIDO")
+else:
+    if (ano % 400 == 0) or (ano % 4 == 0 and ano % 100 != 0):
+        print("BISSEXTO")
+    else:
+        print("NÃO É BISSEXTO")</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>NÃO É BISSEXTO
+</pre>
 </div>
 </div>
 </div>
@@ -1315,13 +1562,13 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [12]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="CodeMirror cm-s-jupyter">
 <div class="zeroclipboard-container">
 <clipboard-copy for="cell-7">
@@ -1334,9 +1581,52 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 </div>
 </clipboard-copy>
 </div>
-<div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># Informe sua resposta aqui</span>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">idade</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">"Digite a idade do nadador: "</span><span class="p">))</span>
+
+
+<span class="k">if</span> <span class="mi">5</span> <span class="o">&lt;=</span> <span class="n">idade</span> <span class="ow">and</span> <span class="n">idade</span> <span class="o">&lt;=</span> <span class="mi">7</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Infantil A"</span><span class="p">)</span>
+<span class="k">elif</span> <span class="mi">8</span> <span class="o">&lt;=</span> <span class="n">idade</span> <span class="ow">and</span> <span class="n">idade</span> <span class="o">&lt;=</span> <span class="mi">10</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Infantil B"</span><span class="p">)</span>
+<span class="k">elif</span> <span class="mi">11</span> <span class="o">&lt;=</span> <span class="n">idade</span> <span class="ow">and</span> <span class="n">idade</span> <span class="o">&lt;=</span> <span class="mi">13</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Juvenil A"</span><span class="p">)</span>
+<span class="k">elif</span> <span class="mi">14</span> <span class="o">&lt;=</span> <span class="n">idade</span> <span class="ow">and</span> <span class="n">idade</span> <span class="o">&lt;=</span> <span class="mi">17</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Juvenil B"</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">idade</span> <span class="o">&gt;=</span> <span class="mi">18</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Adulto"</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Idade inválida"</span><span class="p">)</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-7"># Informe sua resposta aqui</div>
+<div class="clipboard-copy-txt" id="cell-7">
+idade = int(input("Digite a idade do nadador: "))
+
+
+if 5 &lt;= idade and idade &lt;= 7:
+    print("Infantil A")
+elif 8 &lt;= idade and idade &lt;= 10:
+    print("Infantil B")
+elif 11 &lt;= idade and idade &lt;= 13:
+    print("Juvenil A")
+elif 14 &lt;= idade and idade &lt;= 17:
+    print("Juvenil B")
+elif idade &gt;= 18:
+    print("Adulto")
+else:
+    print("Idade inválida")
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>Infantil B
+</pre>
 </div>
 </div>
 </div>
