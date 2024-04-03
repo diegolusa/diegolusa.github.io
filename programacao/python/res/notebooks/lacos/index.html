@@ -5,16 +5,18 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
-<link href="../../../../img/icon.ico" rel="icon"/>
+<link href="../aula-3/" rel="prev"/>
+<link href="../../../../cpp/ambiente/" rel="next"/>
+<link href="../../../../../img/icon.ico" rel="icon"/>
 <meta content="mkdocs-1.4.3, mkdocs-material-9.1.19" name="generator"/>
-<title>I need a SQS consumer - Diego A. Lusa</title>
-<link href="../../../../assets/stylesheets/main.eebd395e.min.css" rel="stylesheet"/>
-<link href="../../../../assets/stylesheets/palette.ecc896b0.min.css" rel="stylesheet"/>
+<title>Laços de repetição - Diego A. Lusa</title>
+<link href="../../../../../assets/stylesheets/main.eebd395e.min.css" rel="stylesheet"/>
+<link href="../../../../../assets/stylesheets/palette.ecc896b0.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
 <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
-<link href="../../../../css/custom.css" rel="stylesheet"/>
-<script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+<link href="../../../../../css/custom.css" rel="stylesheet"/>
+<script>__md_scope=new URL("../../../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
 </head>
 <body data-md-color-accent="indigo" data-md-color-primary="black" data-md-color-scheme="default" dir="ltr">
 <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
@@ -27,8 +29,8 @@
 </div>
 <header class="md-header md-header--shadow" data-md-component="header">
 <nav aria-label="Header" class="md-header__inner md-grid">
-<a aria-label="Diego A. Lusa" class="md-header__button md-logo" data-md-component="logo" href="../../../.." title="Diego A. Lusa">
-<img alt="logo" src="../../../../img/icon.png"/>
+<a aria-label="Diego A. Lusa" class="md-header__button md-logo" data-md-component="logo" href="../../../../.." title="Diego A. Lusa">
+<img alt="logo" src="../../../../../img/icon.png"/>
 </a>
 <label class="md-header__button md-icon" for="__drawer">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"></path></svg>
@@ -43,7 +45,7 @@
 <div class="md-header__topic" data-md-component="header-topic">
 <span class="md-ellipsis">
             
-              I need a SQS consumer
+              Laços de repetição
             
           </span>
 </div>
@@ -99,14 +101,14 @@
 <div class="md-sidebar__inner">
 <nav aria-label="Navigation" class="md-nav md-nav--primary md-nav--integrated" data-md-level="0">
 <label class="md-nav__title" for="__drawer">
-<a aria-label="Diego A. Lusa" class="md-nav__button md-logo" data-md-component="logo" href="../../../.." title="Diego A. Lusa">
-<img alt="logo" src="../../../../img/icon.png"/>
+<a aria-label="Diego A. Lusa" class="md-nav__button md-logo" data-md-component="logo" href="../../../../.." title="Diego A. Lusa">
+<img alt="logo" src="../../../../../img/icon.png"/>
 </a>
     Diego A. Lusa
   </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../..">
+<a class="md-nav__link" href="../../../../..">
         Home
       </a>
 </li>
@@ -135,17 +137,17 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../informatica/editores-texto/introducao/">
+<a class="md-nav__link" href="../../../../../informatica/editores-texto/introducao/">
         Writer
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../informatica/editores-texto/estilos/">
+<a class="md-nav__link" href="../../../../../informatica/editores-texto/estilos/">
         Estilos
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../informatica/editores-texto/abnt/">
+<a class="md-nav__link" href="../../../../../informatica/editores-texto/abnt/">
         ABNT
       </a>
 </li>
@@ -155,25 +157,25 @@
 </ul>
 </nav>
 </li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_3" type="checkbox"/>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_3" type="checkbox"/>
 <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
           Programação
           <span class="md-nav__icon md-icon"></span>
 </label>
-<nav aria-expanded="false" aria-labelledby="__nav_3_label" class="md-nav" data-md-level="1">
+<nav aria-expanded="true" aria-labelledby="__nav_3_label" class="md-nav" data-md-level="1">
 <label class="md-nav__title" for="__nav_3">
 <span class="md-nav__icon md-icon"></span>
           Programação
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../programacao/linguagens/">
+<a class="md-nav__link" href="../../../../linguagens/">
         Linguagens de Programação
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../programacao/paradigmas/">
+<a class="md-nav__link" href="../../../../paradigmas/">
         Paradigmas de Programação
       </a>
 </li>
@@ -190,22 +192,22 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../programacao/oop/introducao/">
+<a class="md-nav__link" href="../../../../oop/introducao/">
         Introdução
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../programacao/oop/classes/">
+<a class="md-nav__link" href="../../../../oop/classes/">
         Classes
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../programacao/oop/excecoes/">
+<a class="md-nav__link" href="../../../../oop/excecoes/">
         Exceções
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../programacao/oop/relacoes/">
+<a class="md-nav__link" href="../../../../oop/relacoes/">
         Relações entre Classes
       </a>
 </li>
@@ -225,84 +227,85 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../programacao/android/activities/">
+<a class="md-nav__link" href="../../../../android/activities/">
         Activities
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../programacao/android/intents/">
+<a class="md-nav__link" href="../../../../android/intents/">
         Intents
       </a>
 </li>
 </ul>
 </nav>
 </li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_3_5" type="checkbox"/>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_3_5" type="checkbox"/>
 <label class="md-nav__link" for="__nav_3_5" id="__nav_3_5_label" tabindex="0">
           Linguagem Python
           <span class="md-nav__icon md-icon"></span>
 </label>
-<nav aria-expanded="false" aria-labelledby="__nav_3_5_label" class="md-nav" data-md-level="2">
+<nav aria-expanded="true" aria-labelledby="__nav_3_5_label" class="md-nav" data-md-level="2">
 <label class="md-nav__title" for="__nav_3_5">
 <span class="md-nav__icon md-icon"></span>
           Linguagem Python
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../programacao/python/introducao/">
+<a class="md-nav__link" href="../../../introducao/">
         Fundamentos
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../programacao/python/condicionais/">
+<a class="md-nav__link" href="../../../condicionais/">
         Comandos e operadores condicionais
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../programacao/python/strings/">
+<a class="md-nav__link" href="../../../strings/">
         Strings e seus principais métodos
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../programacao/python/excecoes/">
+<a class="md-nav__link" href="../../../excecoes/">
         Tratamento de exceções
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../programacao/python/lacos/">
+<a class="md-nav__link" href="../../../lacos/">
         Laços de repetição
       </a>
 </li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_3_5_6" type="checkbox"/>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_3_5_6" type="checkbox"/>
 <label class="md-nav__link" for="__nav_3_5_6" id="__nav_3_5_6_label" tabindex="0">
           Exercícios
           <span class="md-nav__icon md-icon"></span>
 </label>
-<nav aria-expanded="false" aria-labelledby="__nav_3_5_6_label" class="md-nav" data-md-level="3">
+<nav aria-expanded="true" aria-labelledby="__nav_3_5_6_label" class="md-nav" data-md-level="3">
 <label class="md-nav__title" for="__nav_3_5_6">
 <span class="md-nav__icon md-icon"></span>
           Exercícios
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../programacao/python/res/notebooks/aula-1/">
+<a class="md-nav__link" href="../aula-1/">
         Variáveis, entrada e saída
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../programacao/python/res/notebooks/aula-2/">
+<a class="md-nav__link" href="../aula-2/">
         Estruturas de decisão
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../programacao/python/res/notebooks/aula-3/">
+<a class="md-nav__link" href="../aula-3/">
         Strings e tratamento de exceções
       </a>
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../../programacao/python/res/notebooks/lacos/">
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
+<a class="md-nav__link md-nav__link--active" href="./">
         Laços de repetição
       </a>
 </li>
@@ -325,47 +328,47 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../programacao/cpp/ambiente/">
+<a class="md-nav__link" href="../../../../cpp/ambiente/">
         Ambiente de Desenvolvimento
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../programacao/cpp/compilacao/">
+<a class="md-nav__link" href="../../../../cpp/compilacao/">
         Compilação
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../programacao/cpp/identificadores/">
+<a class="md-nav__link" href="../../../../cpp/identificadores/">
         Identificadores
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../programacao/cpp/io/">
+<a class="md-nav__link" href="../../../../cpp/io/">
         Entrada e Saída
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../programacao/cpp/condicionais/">
+<a class="md-nav__link" href="../../../../cpp/condicionais/">
         Condicionais
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../programacao/cpp/iteracao/">
+<a class="md-nav__link" href="../../../../cpp/iteracao/">
         Laços de Repetição
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../programacao/cpp/funcoes/">
+<a class="md-nav__link" href="../../../../cpp/funcoes/">
         Funções
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../programacao/cpp/arranjos/">
+<a class="md-nav__link" href="../../../../cpp/arranjos/">
         Arranjos
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../programacao/cpp/ponteiros/">
+<a class="md-nav__link" href="../../../../cpp/ponteiros/">
         Ponteiros
       </a>
 </li>
@@ -388,7 +391,7 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../web/historia/">
+<a class="md-nav__link" href="../../../../../web/historia/">
         Como surgiu a Web?
       </a>
 </li>
@@ -405,37 +408,37 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../web/html5/estrutura-basica/">
+<a class="md-nav__link" href="../../../../../web/html5/estrutura-basica/">
         O que é HTML?
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../web/html5/tags-basicas/">
+<a class="md-nav__link" href="../../../../../web/html5/tags-basicas/">
         Conceitos Básicos
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../web/html5/hiperlinks/">
+<a class="md-nav__link" href="../../../../../web/html5/hiperlinks/">
         Hiperlinks
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../web/html5/imagem/">
+<a class="md-nav__link" href="../../../../../web/html5/imagem/">
         Imagens
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../web/html5/tags-estruturais/">
+<a class="md-nav__link" href="../../../../../web/html5/tags-estruturais/">
         Semântica de Conteúdo
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../web/html5/formularios/">
+<a class="md-nav__link" href="../../../../../web/html5/formularios/">
         Formuários
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../web/html5/tabelas/">
+<a class="md-nav__link" href="../../../../../web/html5/tabelas/">
         Tabelas
       </a>
 </li>
@@ -452,22 +455,22 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../web/html5/exercicios/e1-tags-semantics-listas/">
+<a class="md-nav__link" href="../../../../../web/html5/exercicios/e1-tags-semantics-listas/">
         Exercício 1: Tags semânticas e listas
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../web/html5/exercicios/e2-semantica-texto-links-imagens/">
+<a class="md-nav__link" href="../../../../../web/html5/exercicios/e2-semantica-texto-links-imagens/">
         Exercício 2: Semântica de texto, hiperlinks e imagens
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../web/html5/exercicios/e3-formularios/">
+<a class="md-nav__link" href="../../../../../web/html5/exercicios/e3-formularios/">
         Exercício 3: Formulários
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../web/html5/exercicios/e4-tabelas/">
+<a class="md-nav__link" href="../../../../../web/html5/exercicios/e4-tabelas/">
         Exercício 4: Tabelas
       </a>
 </li>
@@ -490,32 +493,32 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../web/css3/fundamentos/">
+<a class="md-nav__link" href="../../../../../web/css3/fundamentos/">
         Fundamentos
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../web/css3/seletores/">
+<a class="md-nav__link" href="../../../../../web/css3/seletores/">
         Seletores
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../web/css3/unidades-medidas/">
+<a class="md-nav__link" href="../../../../../web/css3/unidades-medidas/">
         Unidades de Medida
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../web/css3/cores/">
+<a class="md-nav__link" href="../../../../../web/css3/cores/">
         Cores
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../web/css3/fontes/">
+<a class="md-nav__link" href="../../../../../web/css3/fontes/">
         Fontes
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../web/css3/box-model/">
+<a class="md-nav__link" href="../../../../../web/css3/box-model/">
         Box Model
       </a>
 </li>
@@ -532,7 +535,7 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../web/css3/exercicios/fundamentos-seletores/">
+<a class="md-nav__link" href="../../../../../web/css3/exercicios/fundamentos-seletores/">
         Exercício 1: Regras de Estilo
       </a>
 </li>
@@ -546,7 +549,7 @@
 </nav>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../about/">
+<a class="md-nav__link" href="../../../../../about/">
         Sobre
       </a>
 </li>
@@ -557,10 +560,10 @@
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
-<a class="md-content__button md-icon" href="consumer.py" title="Download Notebook">
+<a class="md-content__button md-icon" href="lacos.ipynb" title="Download Notebook">
         Download <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M5 20h14v-2H5m14-9h-4V3H9v6H5l7 7 7-7Z"></path></svg>
 </a>
-<h1>I need a SQS consumer</h1>
+<h1>Laços de repetição</h1>
 <script>
 (function (global, factory) {
     typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory() :
@@ -996,8 +999,18 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 </style>
 <!-- End of mermaid configuration --><div class="jupyter-wrapper">
 <div class="jp-Notebook" data-jp-theme-light="true" data-jp-theme-name="JupyterLab Light">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>Escreva um programa que solicite ao usuário um número e imprima a soma de todos os digitos que o compõem.</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
 <div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=c9069993">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -1015,27 +1028,27 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 </div>
 </clipboard-copy>
 </div>
-<div class="highlight-ipynb hl-python"><pre><span></span>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># sua resposta aqui</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-1"></div>
+<div class="clipboard-copy-txt" id="cell-1"># sua resposta aqui</div>
 </div>
 </div>
 </div>
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=f22d9279">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>I need a SQS consumer</p>
+<p>Escreva um programa que solicite ao usuário um número e imprima se é primo ou não</p>
 </div>
 </div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=08cf14d5">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -1053,18 +1066,27 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 </div>
 </clipboard-copy>
 </div>
-<div class="highlight-ipynb hl-python"><pre><span></span><span class="kn">import</span> <span class="nn">boto3</span>
-<span class="kn">from</span> <span class="nn">time</span> <span class="kn">import</span> <span class="n">sleep</span>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># sua resposta aqui</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-2">import boto3
-from time import sleep</div>
+<div class="clipboard-copy-txt" id="cell-2"># sua resposta aqui</div>
 </div>
 </div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>Escreva um programa que imprima os números pares de 1 a 100 usando um loop <strong>for</strong> de 3 em 3 unidades.</p>
 </div>
 </div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=33d11a91">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -1082,18 +1104,27 @@ from time import sleep</div>
 </div>
 </clipboard-copy>
 </div>
-<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">session</span> <span class="o">=</span> <span class="n">boto3</span><span class="o">.</span><span class="n">Session</span><span class="p">(</span><span class="n">profile_name</span><span class="o">=</span><span class="s1">'141684974138_AdministratorAccess'</span><span class="p">,</span> <span class="n">region_name</span><span class="o">=</span><span class="s1">'us-east-1'</span><span class="p">)</span>
-<span class="n">sqs</span> <span class="o">=</span> <span class="n">session</span><span class="o">.</span><span class="n">resource</span><span class="p">(</span><span class="s1">'sqs'</span><span class="p">)</span>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># sua resposta aqui</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-3">session = boto3.Session(profile_name='141684974138_AdministratorAccess', region_name='us-east-1')
-sqs = session.resource('sqs')</div>
+<div class="clipboard-copy-txt" id="cell-3"># sua resposta aqui</div>
 </div>
 </div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>Escreva um programa que solicite ao usuário um número e imprima a tabuada desse número.</p>
 </div>
 </div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=36db8065">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -1111,16 +1142,27 @@ sqs = session.resource('sqs')</div>
 </div>
 </clipboard-copy>
 </div>
-<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">queue</span> <span class="o">=</span> <span class="n">sqs</span><span class="o">.</span><span class="n">get_queue_by_name</span><span class="p">(</span><span class="n">QueueName</span><span class="o">=</span><span class="s1">'sqs-demo-queue'</span><span class="p">)</span>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># sua resposta aqui</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-4">queue = sqs.get_queue_by_name(QueueName='sqs-demo-queue')</div>
+<div class="clipboard-copy-txt" id="cell-4"># sua resposta aqui</div>
 </div>
 </div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>Escreva um programa que imprima os números de 1 a 30 usando um loop <strong>while</strong>.</p>
 </div>
 </div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=36d18b0a">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -1138,19 +1180,285 @@ sqs = session.resource('sqs')</div>
 </div>
 </clipboard-copy>
 </div>
-<div class="highlight-ipynb hl-python"><pre><span></span><span class="k">while</span> <span class="mi">1</span><span class="p">:</span>
-    <span class="k">for</span> <span class="n">message</span> <span class="ow">in</span> <span class="n">queue</span><span class="o">.</span><span class="n">receive_messages</span><span class="p">(</span><span class="n">MaxNumberOfMessages</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span><span class="n">AttributeNames</span><span class="o">=</span><span class="p">[</span><span class="s1">'All'</span><span class="p">],</span><span class="n">MessageAttributeNames</span><span class="o">=</span><span class="p">[</span><span class="s1">'age'</span><span class="p">]):</span>
-        <span class="nb">print</span><span class="p">(</span><span class="n">message</span><span class="o">.</span><span class="n">body</span><span class="p">)</span>
-        <span class="nb">print</span><span class="p">(</span><span class="n">message</span><span class="o">.</span><span class="n">message_attributes</span><span class="p">)</span>
-        <span class="n">message</span><span class="o">.</span><span class="n">delete</span><span class="p">()</span>
-    <span class="n">sleep</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># sua resposta aqui</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-5">while 1:
-    for message in queue.receive_messages(MaxNumberOfMessages=2,AttributeNames=['All'],MessageAttributeNames=['age']):
-        print(message.body)
-        print(message.message_attributes)
-        message.delete()
-    sleep(10)</div>
+<div class="clipboard-copy-txt" id="cell-5"># sua resposta aqui</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>Precisamos desenvolver um programa que calcule a média aritmética dos números pares e dos números ímpares de sequências numéricas de tamanhos variáveis. Sobre a entrada de dados ao programa, devemos considerar que será uma quantidade x de valores inteiros. A finalização da sequência será estabelecida pelo valor −1 ou −2. Observe a diferença:</p>
+<ul>
+<li>Ao receber −1, o programa deve apresentar a média aritmética dos valores pares e dos valores ímpares da sequência (desconsiderando o  −1 ) e então <strong>aguardar a entrada de uma nova sequência</strong>.</li>
+<li>Ao receber −2, o programa deve apresentar a média dos valores pares e dos valores ímpares da sequência  (desconsiderando o  −2) e <strong>finalizar o programa</strong>.</li>
+</ul>
+<p>Exemplo de entrada:</p>
+<table>
+<thead>
+<tr>
+<th>ENTRADA</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>177  278  117  263  196  295  167  12  -1</td>
+</tr>
+<tr>
+<td>206  201  193  276  215  171  -2</td>
+</tr>
+</tbody>
+</table>
+<p>Exemplo de saída:</p>
+<table>
+<thead>
+<tr>
+<th>SAÍDA</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MP = 162 MI = 203.8</td>
+</tr>
+<tr>
+<td>MP = 241 MI = 195</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="CodeMirror cm-s-jupyter">
+<div class="zeroclipboard-container">
+<clipboard-copy for="cell-6">
+<div>
+<span class="notice" hidden="">Copied!</span>
+<svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
+<path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+<path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+</clipboard-copy>
+</div>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="c1">#Sua resposta aqui</span>
+</pre></div>
+<div class="clipboard-copy-txt" id="cell-6">#Sua resposta aqui</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>Caixas eletrônicos precisam ter a capacidade de estipular a combinação correta de cédulas necessárias para chegar a um determinado valor solicitado pelo correntista em operações de saque. De forma semelhante, alguns sistemas de venda ao consumidor apresentam tal informação para auxiliar o operador na elaboração do troco.</p>
+<p>Vamos considerar nossa moeda, o Real, como contexto para elaboração do programa. Sabemos que estão disponíveis cédulas com valores de <em>R$ 200</em>, <em>R$ 100</em>, <em>R$ 50</em>, <em>R$ 20</em>,<em>R$ 10</em>, <em>R$ 5</em> e <em>R$ 2</em>  e moedas de <em>R$ 1.00</em>, <em>R$ 0.50</em>, <em>R$ 0.25</em>, <em>R$ 0.10</em>,  <em>R$ 0.05</em> e <em>R$ 0.01</em>.</p>
+<p>A entrada do programa será um valor real arbitrário, positivo, com duas casas decimais. A saída, por sua vez, será a lista de cédulas e moedas, com as respectivas quantidades, necessárias para chegar ao valor informado.</p>
+<p>Por exemplo, se informado <em>9.69</em>, o resultado esperado é:</p>
+<table>
+<thead>
+<tr>
+<th>SAÍDA</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1 NOTAS DE R$ 5</td>
+</tr>
+<tr>
+<td>2 NOTAS DE R$ 2</td>
+</tr>
+<tr>
+<td>1 MOEDAS DE R$ 0.50</td>
+</tr>
+<tr>
+<td>1 MOEDAS DE R$ 0.10</td>
+</tr>
+<tr>
+<td>1 MOEDAS DE R$ 0.05</td>
+</tr>
+<tr>
+<td>4 MOEDAS DE R$ 0.01</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="CodeMirror cm-s-jupyter">
+<div class="zeroclipboard-container">
+<clipboard-copy for="cell-7">
+<div>
+<span class="notice" hidden="">Copied!</span>
+<svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
+<path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+<path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+</clipboard-copy>
+</div>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># Sua resposta aqui</span>
+</pre></div>
+<div class="clipboard-copy-txt" id="cell-7"># Sua resposta aqui</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>Será realizado um concurso público para preencher vagas no poder executivo de uma prefeitura qualquer. As regras de aprovação que o edital especifica são:</p>
+<ul>
+<li>Nota nas disciplinas de Matemática, Direito Constitucional e Direito Público iguais ou superiores a 70 pontos;</li>
+<li>Nota na Redação superior a 600 pontos.</li>
+</ul>
+<p>Para agilizar a apresentação dos resultados, a prefeitura nos solicitou o desenvolvimento de um programa para apresentar a lista de aprovados. Nesta lista, além de constar o nome do candidato, deverá estar presente:</p>
+<ul>
+<li>Pontuação total do candidato (soma dos pontos obtidos nas disciplinas e redação);</li>
+<li>Após o último candidato, apresentar a contagem de aprovados e média das notas finais deste grupo.</li>
+</ul>
+<p>Como entradas, o programa deverá receber um número ilimitado de candidatos e suas respectivas notas, somente finalizando ao encontrar como valor para nome a palavra FIM. As informações de candidato devem ser lidas na seguinte sequência: <strong>nome</strong>, <strong>nota em matemática</strong>, <strong>nota em direito constitucional</strong>,** nota em direito público** e <strong>nota na redação</strong>. Veja o exemplo que segue:</p>
+<p>Exemplo de entrada</p>
+<table>
+<thead>
+<tr>
+<th><strong>ENTRADA</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CANDIDATO1 94 91 93 800</td>
+</tr>
+<tr>
+<td>CANDIDATO2 81 62 68 601</td>
+</tr>
+<tr>
+<td>CANDIDATO3 88 96 84 600</td>
+</tr>
+<tr>
+<td>CANDIDATO4 76 100 78 500</td>
+</tr>
+<tr>
+<td>CANDIDATO5 85 82 80 650</td>
+</tr>
+<tr>
+<td>CANDIDATO6 79 75 71 895</td>
+</tr>
+<tr>
+<td>CANDIDATO7 95 64 97 425</td>
+</tr>
+<tr>
+<td>CANDIDATO8 63 69 65 900</td>
+</tr>
+<tr>
+<td>CANDIDATO9 67 74 89 658</td>
+</tr>
+<tr>
+<td>CANDIDATO10 83 86 99 758</td>
+</tr>
+<tr>
+<td>CANDIDATO11 73 66 77 864</td>
+</tr>
+<tr>
+<td>CANDIDATO12 87 98 61 560</td>
+</tr>
+<tr>
+<td>CANDIDATO13 60 72 70 500</td>
+</tr>
+<tr>
+<td>CANDIDATO14 92 90 85 868</td>
+</tr>
+<tr>
+<td>FIM</td>
+</tr>
+</tbody>
+</table>
+<p>Resultado da entrada anterior:</p>
+<table>
+<thead>
+<tr>
+<th><strong>SAÍDA</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CANDIDATO1 - 1078 PONTOS</td>
+</tr>
+<tr>
+<td>CANDIDATO5 - 897 PONTOS</td>
+</tr>
+<tr>
+<td>CANDIDATO6 - 1120 PONTOS</td>
+</tr>
+<tr>
+<td>CANDIDATO10 - 1026 PONTOS</td>
+</tr>
+<tr>
+<td>CANDIDATO14 - 1135 PONTOS</td>
+</tr>
+<tr>
+<td>APROVADOS: 5</td>
+</tr>
+<tr>
+<td>MÉDIA: 1051.20</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="CodeMirror cm-s-jupyter">
+<div class="zeroclipboard-container">
+<clipboard-copy for="cell-8">
+<div>
+<span class="notice" hidden="">Copied!</span>
+<svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
+<path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+<path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+</clipboard-copy>
+</div>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># Sua resposta aqui</span>
+</pre></div>
+<div class="clipboard-copy-txt" id="cell-8"># Sua resposta aqui</div>
 </div>
 </div>
 </div>
@@ -1159,6 +1467,9 @@ sqs = session.resource('sqs')</div>
 </div>
 </div> <!-- jp-Notebook -->
 </div> <!-- jupyter-wrapper -->
+<style>
+        ['pre { line-height: 125%; }\ntd.linenos .normal { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }\nspan.linenos { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }\ntd.linenos .special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }\nspan.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }\n.highlight-ipynb .hll { background-color: var(--jp-cell-editor-active-background) }\n.highlight-ipynb { background: var(--jp-cell-editor-background); color: var(--jp-mirror-editor-variable-color) }\n.highlight-ipynb .c { color: var(--jp-mirror-editor-comment-color); font-style: italic } /* Comment */\n.highlight-ipynb .err { color: var(--jp-mirror-editor-error-color) } /* Error */\n.highlight-ipynb .k { color: var(--jp-mirror-editor-keyword-color); font-weight: bold } /* Keyword */\n.highlight-ipynb .o { color: var(--jp-mirror-editor-operator-color); font-weight: bold } /* Operator */\n.highlight-ipynb .p { color: var(--jp-mirror-editor-punctuation-color) } /* Punctuation */\n.highlight-ipynb .ch { color: var(--jp-mirror-editor-comment-color); font-style: italic } /* Comment.Hashbang */\n.highlight-ipynb .cm { color: var(--jp-mirror-editor-comment-color); font-style: italic } /* Comment.Multiline */\n.highlight-ipynb .cp { color: var(--jp-mirror-editor-comment-color); font-style: italic } /* Comment.Preproc */\n.highlight-ipynb .cpf { color: var(--jp-mirror-editor-comment-color); font-style: italic } /* Comment.PreprocFile */\n.highlight-ipynb .c1 { color: var(--jp-mirror-editor-comment-color); font-style: italic } /* Comment.Single */\n.highlight-ipynb .cs { color: var(--jp-mirror-editor-comment-color); font-style: italic } /* Comment.Special */\n.highlight-ipynb .kc { color: var(--jp-mirror-editor-keyword-color); font-weight: bold } /* Keyword.Constant */\n.highlight-ipynb .kd { color: var(--jp-mirror-editor-keyword-color); font-weight: bold } /* Keyword.Declaration */\n.highlight-ipynb .kn { color: var(--jp-mirror-editor-keyword-color); font-weight: bold } /* Keyword.Namespace */\n.highlight-ipynb .kp { color: var(--jp-mirror-editor-keyword-color); font-weight: bold } /* Keyword.Pseudo */\n.highlight-ipynb .kr { color: var(--jp-mirror-editor-keyword-color); font-weight: bold } /* Keyword.Reserved */\n.highlight-ipynb .kt { color: var(--jp-mirror-editor-keyword-color); font-weight: bold } /* Keyword.Type */\n.highlight-ipynb .m { color: var(--jp-mirror-editor-number-color) } /* Literal.Number */\n.highlight-ipynb .s { color: var(--jp-mirror-editor-string-color) } /* Literal.String */\n.highlight-ipynb .ow { color: var(--jp-mirror-editor-operator-color); font-weight: bold } /* Operator.Word */\n.highlight-ipynb .pm { color: var(--jp-mirror-editor-punctuation-color) } /* Punctuation.Marker */\n.highlight-ipynb .w { color: var(--jp-mirror-editor-variable-color) } /* Text.Whitespace */\n.highlight-ipynb .mb { color: var(--jp-mirror-editor-number-color) } /* Literal.Number.Bin */\n.highlight-ipynb .mf { color: var(--jp-mirror-editor-number-color) } /* Literal.Number.Float */\n.highlight-ipynb .mh { color: var(--jp-mirror-editor-number-color) } /* Literal.Number.Hex */\n.highlight-ipynb .mi { color: var(--jp-mirror-editor-number-color) } /* Literal.Number.Integer */\n.highlight-ipynb .mo { color: var(--jp-mirror-editor-number-color) } /* Literal.Number.Oct */\n.highlight-ipynb .sa { color: var(--jp-mirror-editor-string-color) } /* Literal.String.Affix */\n.highlight-ipynb .sb { color: var(--jp-mirror-editor-string-color) } /* Literal.String.Backtick */\n.highlight-ipynb .sc { color: var(--jp-mirror-editor-string-color) } /* Literal.String.Char */\n.highlight-ipynb .dl { color: var(--jp-mirror-editor-string-color) } /* Literal.String.Delimiter */\n.highlight-ipynb .sd { color: var(--jp-mirror-editor-string-color) } /* Literal.String.Doc */\n.highlight-ipynb .s2 { color: var(--jp-mirror-editor-string-color) } /* Literal.String.Double */\n.highlight-ipynb .se { color: var(--jp-mirror-editor-string-color) } /* Literal.String.Escape */\n.highlight-ipynb .sh { color: var(--jp-mirror-editor-string-color) } /* Literal.String.Heredoc */\n.highlight-ipynb .si { color: var(--jp-mirror-editor-string-color) } /* Literal.String.Interpol */\n.highlight-ipynb .sx { color: var(--jp-mirror-editor-string-color) } /* Literal.String.Other */\n.highlight-ipynb .sr { color: var(--jp-mirror-editor-string-color) } /* Literal.String.Regex */\n.highlight-ipynb .s1 { color: var(--jp-mirror-editor-string-color) } /* Literal.String.Single */\n.highlight-ipynb .ss { color: var(--jp-mirror-editor-string-color) } /* Literal.String.Symbol */\n.highlight-ipynb .il { color: var(--jp-mirror-editor-number-color) } /* Literal.Number.Integer.Long */']
+        </style>
 </article>
 </div>
 </div>
@@ -1168,6 +1479,34 @@ sqs = session.resource('sqs')</div>
           </button>
 </main>
 <footer class="md-footer">
+<nav aria-label="Footer" class="md-footer__inner md-grid">
+<a aria-label="Previous: Strings e tratamento de exceções" class="md-footer__link md-footer__link--prev" href="../aula-3/" rel="prev">
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
+</div>
+<div class="md-footer__title">
+<span class="md-footer__direction">
+                Previous
+              </span>
+<div class="md-ellipsis">
+                Strings e tratamento de exceções
+              </div>
+</div>
+</a>
+<a aria-label="Next: Ambiente de Desenvolvimento" class="md-footer__link md-footer__link--next" href="../../../../cpp/ambiente/" rel="next">
+<div class="md-footer__title">
+<span class="md-footer__direction">
+                Next
+              </span>
+<div class="md-ellipsis">
+                Ambiente de Desenvolvimento
+              </div>
+</div>
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"></path></svg>
+</div>
+</a>
+</nav>
 <div class="md-footer-meta md-typeset">
 <div class="md-footer-meta__inner md-grid">
 <div class="md-copyright">
@@ -1196,9 +1535,9 @@ sqs = session.resource('sqs')</div>
 <div class="md-dialog" data-md-component="dialog">
 <div class="md-dialog__inner md-typeset"></div>
 </div>
-<script id="__config" type="application/json">{"base": "../../../..", "features": ["navigation.top", "navigation.instant", "toc.integrate", "header.autohide", "navigation.footer"], "search": "../../../../assets/javascripts/workers/search.74e28a9f.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
-<script src="../../../../assets/javascripts/bundle.220ee61c.min.js"></script>
-<script src="../../../../javascript/config.js"></script>
+<script id="__config" type="application/json">{"base": "../../../../..", "features": ["navigation.top", "navigation.instant", "toc.integrate", "header.autohide", "navigation.footer"], "search": "../../../../../assets/javascripts/workers/search.74e28a9f.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+<script src="../../../../../assets/javascripts/bundle.220ee61c.min.js"></script>
+<script src="../../../../../javascript/config.js"></script>
 <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
 <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </body>
