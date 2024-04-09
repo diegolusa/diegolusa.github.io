@@ -8,7 +8,6 @@ date: 2021-10-13 08:00:00
 ---
 
 
-## Position Property
 
 A propriedade `position` é fundamental para controlar o posicionamento dos elementos em uma página da web. Os quatro valores possíveis são `static`, `relative`, `absolute` e `fixed`.
 
@@ -71,6 +70,8 @@ Outro site interessante chama-se [Flexbox Froggy - A game for learning CSS flexb
 
 O Grid Layout é um sistema bidimensional que permite dividir o espaço de uma página em linhas e colunas, tornando mais fácil o posicionamento dos elementos de forma precisa. Ele fornece controle total sobre o dimensionamento e o posicionamento dos elementos em relação ao layout da página.
 
+O posicionamento dos elementos, tal qual ocorre em  uma tabela, é feito em linhas e colunas.
+
 Exemplo:
 ```css
 .container {
@@ -88,4 +89,6 @@ Recomendo a leitura do texto [A Complete Guide to CSS Grid](https://css-tricks.c
 
 ## Outras referências
 
-[Grid Layout - FR Unit] (https://www.digitalocean.com/community/tutorials/css-css-grid-layout-fr-unit?utm_medium=content_acq&utm_source=css-tricks&utm_campaign=&utm_content=awareness_bestsellers)
+- [Grid Layout - FR Unit](https://www.digitalocean.com/community/tutorials/css-css-grid-layout-fr-unit?utm_medium=content_acq&utm_source=css-tricks&utm_campaign=&utm_content=awareness_bestsellers)
+- [CSS grid layout - MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout)
+- [CSS Grid](https://web.dev/learn/css/grid)
