@@ -5,11 +5,11 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
-<link href="../aula-2/" rel="prev"/>
-<link href="../lacos/" rel="next"/>
+<link href="../lacos/" rel="prev"/>
+<link href="../../../../cpp/ambiente/" rel="next"/>
 <link href="../../../../../img/icon.ico" rel="icon"/>
 <meta content="mkdocs-1.4.3, mkdocs-material-9.1.19" name="generator"/>
-<title>Strings e tratamento de exceções - Diego A. Lusa</title>
+<title>Coleções de dados - Diego A. Lusa</title>
 <link href="../../../../../assets/stylesheets/main.eebd395e.min.css" rel="stylesheet"/>
 <link href="../../../../../assets/stylesheets/palette.ecc896b0.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
@@ -24,7 +24,7 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
-<a class="md-skip" href="#exercicio-1">
+<a class="md-skip" href="#exercicios-sobre-colecoes-de-dados">
           Skip to content
         </a>
 </div>
@@ -48,7 +48,7 @@
 <div class="md-header__topic" data-md-component="header-topic">
 <span class="md-ellipsis">
             
-              Strings e tratamento de exceções
+              Coleções de dados
             
           </span>
 </div>
@@ -306,14 +306,24 @@
         Estruturas de decisão
       </a>
 </li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../aula-3/">
+        Strings e tratamento de exceções
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../lacos/">
+        Laços de repetição
+      </a>
+</li>
 <li class="md-nav__item md-nav__item--active">
 <input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
 <label class="md-nav__link md-nav__link--active" for="__toc">
-          Strings e tratamento de exceções
+          Coleções de dados
           <span class="md-nav__icon md-icon"></span>
 </label>
 <a class="md-nav__link md-nav__link--active" href="./">
-        Strings e tratamento de exceções
+        Coleções de dados
       </a>
 <nav aria-label="Table of contents" class="md-nav md-nav--secondary">
 <label class="md-nav__title" for="__toc">
@@ -321,6 +331,12 @@
       Table of contents
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#exercicios-sobre-colecoes-de-dados">
+    Exercícios sobre coleções de dados
+  </a>
+<nav aria-label="Exercícios sobre coleções de dados" class="md-nav">
+<ul class="md-nav__list">
 <li class="md-nav__item">
 <a class="md-nav__link" href="#exercicio-1">
     Exercício 1
@@ -336,18 +352,26 @@
     Exercício 3
   </a>
 </li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#exercicio-4">
+    Exercício 4
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#exercicio-5">
+    Exercício 5
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#exercicio-6">
+    Exercício 6
+  </a>
+</li>
 </ul>
 </nav>
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../lacos/">
-        Laços de repetição
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../colecoes/">
-        Coleções de dados
-      </a>
+</ul>
+</nav>
 </li>
 </ul>
 </nav>
@@ -650,10 +674,10 @@
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
-<a class="md-content__button md-icon" href="aula-3.ipynb" title="Download Notebook">
+<a class="md-content__button md-icon" href="colecoes.ipynb" title="Download Notebook">
         Download <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M5 20h14v-2H5m14-9h-4V3H9v6H5l7 7 7-7Z"></path></svg>
 </a>
-<h1>Strings e tratamento de exceções</h1>
+<h1>Coleções de dados</h1>
 <script>
 (function (global, factory) {
     typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory() :
@@ -1095,20 +1119,18 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="exercicio-1">Exercício 1<a class="anchor-link" href="#exercicio-1">¶</a></h3><p>Elabore um programa que recebe uma string do usuário com, no mínimo, 10 caracteres. A partir deste texto recebido, apresente na saída padrão o que se pede na sequência:</p>
-<ol>
-<li>Contagem de caracteres</li>
-<li>A primeiro e o último caractere</li>
-<li>O caracter na posição 5</li>
-<li>O caractere na posição 5, considerando a string do final para o início</li>
-<li>Apresentar a string com todos os caracteres em maiúsculo</li>
-<li>Apresentar a string com todos os caracteres em minúsculo</li>
-<li>Apresentar a contagem de palavras</li>
-<li>Substitua todos os caracteres <code>a</code> por <code>*</code></li>
-<li>Verificar se há números na strings, informando <code>Sim</code> ou <code>Não</code></li>
-<li>Inverter a string</li>
-<li>Verificar se a string é um <a href="https://www.normaculta.com.br/palindromo-exemplos-de-palavras-e-frases/">palíndromo</a></li>
-</ol>
+<h2 id="exercicios-sobre-colecoes-de-dados">Exercícios sobre coleções de dados<a class="anchor-link" href="#exercicios-sobre-colecoes-de-dados">¶</a></h2>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="exercicio-1">Exercício 1<a class="anchor-link" href="#exercicio-1">¶</a></h3><p>Leia uma quantidade indeterminada de palavras, até encontrar <code>STOP</code> como valor. Armazene o resultado em uma lista. Imprima em tela a lista de palavras em maiúsculo.</p>
 </div>
 </div>
 </div>
@@ -1131,9 +1153,9 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 </div>
 </clipboard-copy>
 </div>
-<div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># Sua resposta aqui</span>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="c1">#sua resposta aqui</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-1"># Sua resposta aqui</div>
+<div class="clipboard-copy-txt" id="cell-1">#sua resposta aqui</div>
 </div>
 </div>
 </div>
@@ -1146,8 +1168,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="exercicio-2">Exercício 2<a class="anchor-link" href="#exercicio-2">¶</a></h3><p>Crie um programa que leia dois números reais. Apresente o valor da divisão do primeiro pelo segundo.
-Certifique-se de tratar com a exceção  que corresponde a divisão por zero.</p>
+<h3 id="exercicio-2">Exercício 2<a class="anchor-link" href="#exercicio-2">¶</a></h3><p>Leia uma quantidade indeterminada de palavras, até encontrar <code>STOP</code> como valor. Imprima como saída cada palavra lida e a quantidade de vezes que ela foi informada pelo usuário.</p>
 </div>
 </div>
 </div>
@@ -1170,9 +1191,9 @@ Certifique-se de tratar com a exceção  que corresponde a divisão por zero.</p
 </div>
 </clipboard-copy>
 </div>
-<div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># Sua resposta aqui</span>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="c1">#sua resposta aqui</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-2"># Sua resposta aqui</div>
+<div class="clipboard-copy-txt" id="cell-2">#sua resposta aqui</div>
 </div>
 </div>
 </div>
@@ -1185,7 +1206,7 @@ Certifique-se de tratar com a exceção  que corresponde a divisão por zero.</p
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="exercicio-3">Exercício 3<a class="anchor-link" href="#exercicio-3">¶</a></h3><p>Desenvolva um programa que leia o <code>raio</code> de um círculo (número de ponto flutuante). Apresente como saída a área e o perímetro elemento geométrico. Trate as exceções que podem ocorrer durante a execução.</p>
+<h3 id="exercicio-3">Exercício 3<a class="anchor-link" href="#exercicio-3">¶</a></h3><p>Leia três conjuntos de números de CPF separados por vírgula. Apresente em tela quais CPFs estão presentes em todas elas.</p>
 </div>
 </div>
 </div>
@@ -1208,9 +1229,124 @@ Certifique-se de tratar com a exceção  que corresponde a divisão por zero.</p
 </div>
 </clipboard-copy>
 </div>
-<div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># Resposta aqui</span>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># sua resposta aqui</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-3"># Resposta aqui</div>
+<div class="clipboard-copy-txt" id="cell-3"># sua resposta aqui</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="exercicio-4">Exercício 4<a class="anchor-link" href="#exercicio-4">¶</a></h3><p>Leia o nome de 10 países e os armazene em uma tupla. Mostre em tela em que posição cada país foi armazenado.</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="CodeMirror cm-s-jupyter">
+<div class="zeroclipboard-container">
+<clipboard-copy for="cell-4">
+<div>
+<span class="notice" hidden="">Copied!</span>
+<svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
+<path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+<path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+</clipboard-copy>
+</div>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># sua resposta aqui</span>
+</pre></div>
+<div class="clipboard-copy-txt" id="cell-4"># sua resposta aqui</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="exercicio-5">Exercício 5<a class="anchor-link" href="#exercicio-5">¶</a></h3><p>Escreva um programa que recebe uma lista de números de tamanho indeterminado. Você deverá receber todos os valores em uma única entrada, separados por vírgula. Após, escreva em tela a lista de valores, ordenada do menor para o maior, sem valores repetidos.</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="CodeMirror cm-s-jupyter">
+<div class="zeroclipboard-container">
+<clipboard-copy for="cell-5">
+<div>
+<span class="notice" hidden="">Copied!</span>
+<svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
+<path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+<path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+</clipboard-copy>
+</div>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># sua resposta aqui</span>
+</pre></div>
+<div class="clipboard-copy-txt" id="cell-5"># sua resposta aqui</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="exercicio-6">Exercício 6<a class="anchor-link" href="#exercicio-6">¶</a></h3><p>Você tem um supermercado e precisa calcular o total de vendas por categoria de produto (higiene, limpeza, bazar, etc.) diariamente. Você recebe uma quantidade indeterminada de valores com 3 informações cada (separadas por ;): <code>produto;categoria;valor total vendas</code>. A última entrada sempre será o valor <code>;;</code>.</p>
+<p>Como saída, o programa deverá imprimir o total em vendas de cada categoria, do maior valor para o menor.</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="CodeMirror cm-s-jupyter">
+<div class="zeroclipboard-container">
+<clipboard-copy for="cell-6">
+<div>
+<span class="notice" hidden="">Copied!</span>
+<svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
+<path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+<path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+</clipboard-copy>
+</div>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># sua resposta aqui</span>
+</pre></div>
+<div class="clipboard-copy-txt" id="cell-6"># sua resposta aqui</div>
 </div>
 </div>
 </div>
@@ -1232,7 +1368,7 @@ Certifique-se de tratar com a exceção  que corresponde a divisão por zero.</p
 </main>
 <footer class="md-footer">
 <nav aria-label="Footer" class="md-footer__inner md-grid">
-<a aria-label="Previous: Estruturas de decisão" class="md-footer__link md-footer__link--prev" href="../aula-2/" rel="prev">
+<a aria-label="Previous: Laços de repetição" class="md-footer__link md-footer__link--prev" href="../lacos/" rel="prev">
 <div class="md-footer__button md-icon">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
 </div>
@@ -1241,17 +1377,17 @@ Certifique-se de tratar com a exceção  que corresponde a divisão por zero.</p
                 Previous
               </span>
 <div class="md-ellipsis">
-                Estruturas de decisão
+                Laços de repetição
               </div>
 </div>
 </a>
-<a aria-label="Next: Laços de repetição" class="md-footer__link md-footer__link--next" href="../lacos/" rel="next">
+<a aria-label="Next: Ambiente de Desenvolvimento" class="md-footer__link md-footer__link--next" href="../../../../cpp/ambiente/" rel="next">
 <div class="md-footer__title">
 <span class="md-footer__direction">
                 Next
               </span>
 <div class="md-ellipsis">
-                Laços de repetição
+                Ambiente de Desenvolvimento
               </div>
 </div>
 <div class="md-footer__button md-icon">

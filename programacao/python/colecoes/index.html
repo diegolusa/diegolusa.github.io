@@ -9,17 +9,17 @@
       
       
       
-        <link rel="prev" href="../condicionais/">
+        <link rel="prev" href="../lacos/">
       
       
-        <link rel="next" href="../funcoes/">
+        <link rel="next" href="../res/notebooks/aula-1/">
       
       <link rel="icon" href="../../../img/icon.ico">
       <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.19">
     
     
       
-        <title>Laços de Repetição - Diego A. Lusa</title>
+        <title>Coleções de Dados - Listas, Tuplas, Conjuntos e Dicionários - Diego A. Lusa</title>
       
     
     
@@ -73,7 +73,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#for" class="md-skip">
+        <a href="#listas" class="md-skip">
           Skip to content
         </a>
       
@@ -107,7 +107,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Laços de Repetição
+              Coleções de Dados - Listas, Tuplas, Conjuntos e Dicionários
             
           </span>
         </div>
@@ -553,14 +553,16 @@
               
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_5" >
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_5" checked>
       
       
       
@@ -569,7 +571,7 @@
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_5_label" aria-expanded="false">
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_5_label" aria-expanded="true">
         <label class="md-nav__title" for="__nav_3_5">
           <span class="md-nav__icon md-icon"></span>
           Linguagem Python
@@ -582,7 +584,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../python/introducao/" class="md-nav__link">
+      <a href="../introducao/" class="md-nav__link">
         Fundamentos
       </a>
     </li>
@@ -596,7 +598,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../python/condicionais/" class="md-nav__link">
+      <a href="../condicionais/" class="md-nav__link">
         Comandos e operadores condicionais
       </a>
     </li>
@@ -610,7 +612,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../python/strings/" class="md-nav__link">
+      <a href="../strings/" class="md-nav__link">
         Strings e seus principais métodos
       </a>
     </li>
@@ -624,7 +626,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../python/excecoes/" class="md-nav__link">
+      <a href="../excecoes/" class="md-nav__link">
         Tratamento de exceções
       </a>
     </li>
@@ -638,7 +640,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../python/lacos/" class="md-nav__link">
+      <a href="../lacos/" class="md-nav__link">
         Laços de repetição
       </a>
     </li>
@@ -650,11 +652,156 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../../python/colecoes/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Coleções de Dados
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Coleções de Dados
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#listas" class="md-nav__link">
+    Listas
+  </a>
+  
+    <nav class="md-nav" aria-label="Listas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#principais-operacoes-e-funcoes" class="md-nav__link">
+    Principais operações e funções
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#iteracao-de-elementos" class="md-nav__link">
+    Iteração de elementos
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#list-comprehension" class="md-nav__link">
+    List Comprehension
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tuplas" class="md-nav__link">
+    Tuplas
+  </a>
+  
+    <nav class="md-nav" aria-label="Tuplas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#acessando-elementos" class="md-nav__link">
+    Acessando Elementos
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dicionarios" class="md-nav__link">
+    Dicionários
+  </a>
+  
+    <nav class="md-nav" aria-label="Dicionários">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#metodos-uteis" class="md-nav__link">
+    Métodos Úteis
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conjuntos" class="md-nav__link">
+    Conjuntos
+  </a>
+  
+    <nav class="md-nav" aria-label="Conjuntos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#criando-um-conjunto" class="md-nav__link">
+    Criando um Conjunto
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#adicionar-e-remover-elementos" class="md-nav__link">
+    Adicionar e Remover Elementos
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#operacoes-de-conjunto" class="md-nav__link">
+    Operações de Conjunto
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#iterando-sobre-um-conjunto" class="md-nav__link">
+    Iterando sobre um Conjunto
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -693,7 +840,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../python/res/notebooks/aula-1/" class="md-nav__link">
+      <a href="../res/notebooks/aula-1/" class="md-nav__link">
         Variáveis, entrada e saída
       </a>
     </li>
@@ -707,7 +854,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../python/res/notebooks/aula-2/" class="md-nav__link">
+      <a href="../res/notebooks/aula-2/" class="md-nav__link">
         Estruturas de decisão
       </a>
     </li>
@@ -721,7 +868,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../python/res/notebooks/aula-3/" class="md-nav__link">
+      <a href="../res/notebooks/aula-3/" class="md-nav__link">
         Strings e tratamento de exceções
       </a>
     </li>
@@ -735,7 +882,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../python/res/notebooks/lacos/" class="md-nav__link">
+      <a href="../res/notebooks/lacos/" class="md-nav__link">
         Laços de repetição
       </a>
     </li>
@@ -749,7 +896,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../python/res/notebooks/colecoes/" class="md-nav__link">
+      <a href="../res/notebooks/colecoes/" class="md-nav__link">
         Coleções de dados
       </a>
     </li>
@@ -775,16 +922,14 @@
               
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_6" checked>
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_6" >
       
       
       
@@ -793,7 +938,7 @@
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_6_label" aria-expanded="true">
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_6_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_3_6">
           <span class="md-nav__icon md-icon"></span>
           Linguagem C++
@@ -806,7 +951,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../ambiente/" class="md-nav__link">
+      <a href="../../cpp/ambiente/" class="md-nav__link">
         Ambiente de Desenvolvimento
       </a>
     </li>
@@ -820,7 +965,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../compilacao/" class="md-nav__link">
+      <a href="../../cpp/compilacao/" class="md-nav__link">
         Compilação
       </a>
     </li>
@@ -834,7 +979,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../identificadores/" class="md-nav__link">
+      <a href="../../cpp/identificadores/" class="md-nav__link">
         Identificadores
       </a>
     </li>
@@ -848,7 +993,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../io/" class="md-nav__link">
+      <a href="../../cpp/io/" class="md-nav__link">
         Entrada e Saída
       </a>
     </li>
@@ -862,7 +1007,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../condicionais/" class="md-nav__link">
+      <a href="../../cpp/condicionais/" class="md-nav__link">
         Condicionais
       </a>
     </li>
@@ -874,83 +1019,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Laços de Repetição
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../cpp/iteracao/" class="md-nav__link">
         Laços de Repetição
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#for" class="md-nav__link">
-    For
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#while" class="md-nav__link">
-    While
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#do-while" class="md-nav__link">
-    Do While
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#break" class="md-nav__link">
-    Break
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#continue" class="md-nav__link">
-    Continue
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#goto" class="md-nav__link">
-    Goto
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -962,7 +1035,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../funcoes/" class="md-nav__link">
+      <a href="../../cpp/funcoes/" class="md-nav__link">
         Funções
       </a>
     </li>
@@ -976,7 +1049,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../arranjos/" class="md-nav__link">
+      <a href="../../cpp/arranjos/" class="md-nav__link">
         Arranjos
       </a>
     </li>
@@ -990,7 +1063,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../ponteiros/" class="md-nav__link">
+      <a href="../../cpp/ponteiros/" class="md-nav__link">
         Ponteiros
       </a>
     </li>
@@ -1613,157 +1686,151 @@
                   
 
 
-<p>Os <code>laços de repetição</code> são comandos que permitem <strong>iterar (repetir)</strong> um conjunto de instruções sob determinadas condições. Junto com os comandos de desvio condicional, integram os comandos de controle de fluxo e são imprescindíveis na programação estruturada (e em outros paradigmas também).</p>
-<p>Temos três laços de repetição na linguagem C++: <code>for</code>, <code>while</code> e <code>do while</code>. Todos eles servem ao mesmo propósito, apresentando sutis diferenças entre si. </p>
-<h2 id="for">For<a class="headerlink" href="#for" title="Permanent link">&para;</a></h2>
-<p>Começaremos nossa análise pelo laço <code>for</code>. Podemos dividir sua estrutura em um <em>cabeçalho</em> e um <em>corpo</em>. No <em>cabeçalho</em> temos três segmentos separados por ponto-e-vírgula. Vamos chamá-los de  <code>s1</code>, <code>s2</code> e <code>s3</code>, que irão compor o cabeçalho da seguinte forma: <code>for(s1;s2;s3)</code>.</p>
-<p>O segmento <code>s1</code> representa o espaço para inicialização/declaração das variáveis de controle. Executa somente uma vez, no início da execução do laço. Pode ser omitido, caso o programador assim deseje. </p>
-<p>O segmento <code>s2</code> representa a condição de parada do laço, avaliada antes de cada iteração iniciar. Caso o retorno da expressão lógica seja <code>false</code>, as instruções do corpo do laço não serão executas e o controle de execução avança para o comando imediatamente posterior o fechamento do laço. O segmento pode ser omitido, indicando que o laço irá repetir indefinidamente (<em>looping</em>). <strong>Se a condição especificada for falsa na primeira avaliação, então o laço não irá executar nenhuma vez as instruções contidas no corpo.</strong></p>
-<p>O terceiro segmento, <code>s3</code>, corresponde ao espaço para incremento/decremento das variáveis de controle. A execução das instruções nele contidas se dá ao final de cada iteração. Assim como os demais,  o segmento <code>s3</code> pode ser omitido.</p>
-<p>O <code>corpo</code> do laço é composto por uma ou mais instruções delimitadas por <code>{ }</code>. Assim como comandos de seleção, podemos aninhar um laço dentro do corpo de outro laço de repetição. Logo, qualquer instrução é aceita.</p>
-<p>Vejamos um programa exemplo que imprime no console números inteiros de 1 a 10, construído com auxílio do laço <code>for</code>. No segmento <code>s1</code> temos a instrução <code>int i=1</code>, que corresponde à declaração e inicialização de uma variável chamada <code>i</code> com valor <code>1</code>. Esta variável tem escopo restrito ao laço, não sendo "visível" fora dele. A condição <code>i&lt;=10</code> indica que o laço irá repetir as instruções do corpo enquanto o valor da variável <code>i</code> for inferior ou igual a <code>10</code>. Já a instrução <code>i++</code> indica que a variável <code>i</code> aumentará em uma unidade a cada iteração.</p>
-<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
+  <h1>Coleções de Dados</h1>
 
-<span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">std</span><span class="p">;</span>
-
-<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span>
-<span class="p">{</span>
-<span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">&lt;=</span><span class="mi">10</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">){</span>
-<span class="w">        </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span>
-<span class="w">    </span><span class="p">}</span>
-<span class="p">}</span>
+<h2 id="listas">Listas<a class="headerlink" href="#listas" title="Permanent link">&para;</a></h2>
+<p>As listas são uma estrutura de dados versátil que permite armazenar coleções de itens em uma <strong>ordem específica</strong>. São <strong>mutáveis</strong>, o que significa que você pode adicionar, remover e modificar itens conforme necessário sem gerar uma cópia do objeto. Normalmente, as listas são utilizadas para armazenar dados de forma homogenea, ou seja, com todos os items apresentando mesmo tipo, embora não haja restrição quanto a isso.</p>
+<p>Para criar uma lista em Python, utilizamos colchetes <code>[]</code> e separamos os itens com vírgulas. Por exemplo:</p>
+<p><div class="highlight"><pre><span></span><code><span class="n">minha_lista</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
 </code></pre></div>
-<div class="admonition info">
-<p class="admonition-title">Info</p>
-<p>O operador <code>++</code> é chamado de <strong>incremento</strong>. Aplica-se a variáveis inteiras, aumentando seu valor em 1. Pode ser utilizado pré-fixado (antes da variável) ou pós-fixado (após a variável). <a href="">link para diferença</a>
-A instrução <code>i++</code> é equivalente a <code>i=i+1</code>. </p>
-</div>
-<p>Este mesmo programa, com poucas alterações, poderia contar de 10 a 1. Todas as adequações seriam realizadas no cabeçalho, modificando as instruções dos três segmentos. Observe o resultado:</p>
-<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
-
-<span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">std</span><span class="p">;</span>
-
-<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span>
-<span class="p">{</span>
-<span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="o">=</span><span class="mi">10</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">&gt;=</span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">--</span><span class="p">){</span>
-<span class="w">        </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span>
-<span class="w">    </span><span class="p">}</span>
-<span class="p">}</span>
+Outra possibilidade é criar uma lista vazia e ir adicionando itens a mesma através do método <code>append</code>.</p>
+<div class="highlight"><pre><span></span><code><span class="n">outra_lista</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">outra_lista</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">outra_lista</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span>
 </code></pre></div>
-<div class="admonition info">
-<p class="admonition-title">Info</p>
-<p>O operador <code>--</code> é chamado de <strong>decremento</strong>. Aplica-se a variáveis inteiras, diminuindo seu valor em 1. Pode ser utilizado pré-fixado (antes da variável) ou pós-fixado (após a variável). <a href="">link para diferença</a>
-A instrução <code>i--</code> é equivalente a <code>i=i-1</code>. </p>
-</div>
-<p>O laço <code>for</code> permite compor instruções de cabeçalho mais complexas. Podemos ter múltiplas inicializações e múltiplos controles de incremento/decremento de variáveis de controle. Ainda sobre a questão do "pulo" da variável de controle, podemos utilizar qualquer quantidade; não estamos limitados a <code>+1</code> ou  <code>-1</code>.</p>
-<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
-
-<span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">std</span><span class="p">;</span>
-
-<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span>
-<span class="p">{</span>
-<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">f</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
-<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">-2</span><span class="p">,</span><span class="w"> </span><span class="n">l</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">6</span><span class="p">;</span><span class="w"> </span><span class="n">l</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">l</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="n">l</span><span class="o">++</span><span class="p">,</span><span class="w"> </span><span class="n">j</span><span class="o">--</span><span class="p">)</span>
-<span class="w">        </span><span class="n">f</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">l</span><span class="p">;</span>
-<span class="w">    </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">f</span><span class="p">;</span>
-<span class="p">}</span>
+<p>Para acessarmos os elementos, utilizandos colchetes <code>[]</code>, com o índice do elemento desejado. Lembre-se de que os índices em Python começam em 0. Lembre-se também que podemos utilizar aqui as operações de slicing já vistas. Por exemplo:</p>
+<div class="highlight"><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="n">minha_lista</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> 
+<span class="nb">print</span><span class="p">(</span><span class="n">minha_lista</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
 </code></pre></div>
-<h2 id="while">While<a class="headerlink" href="#while" title="Permanent link">&para;</a></h2>
-<p>O laço <code>while</code> difere do <code>for</code> por apresentar apenas a condição de parada em seu cabeçalho. Neste aspecto, sua sintaxe é mais simples. Contudo, os demais controles devem ser realizados pelo programador no corpo do laço (ou fora dele), de modo evitar estados de <em>looping</em> não planejados.</p>
-<p>Para demonstrar seu funcionamento, reutilizaremos o programa que exibe números de 10 a 1 no console. Comparando com a versão utilizando <code>for</code> percebemos que a declaração da variável de controle ocorreu antes da instrução <code>while</code> para garantir que a variável exista na interpretação da condição lógica <code>i&lt;=10</code>. Já o decremento <code>i--</code> precisou ser adicionado após a última instrução, para garantir que toda iteração irá reduzir o valor da variável em 1 unidade.</p>
-<p>Assim como o laço <code>for</code>, o <code>while</code> pode vir a não executar nenhuma vez caso a condição seja falsa na primeira avaliação.</p>
-<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
-
-<span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">std</span><span class="p">;</span>
-
-<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span>
-<span class="p">{</span>
-<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="o">=</span><span class="mi">10</span><span class="p">;</span>
-<span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="o">&gt;=</span><span class="mi">1</span><span class="p">){</span>
-<span class="w">      </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span>
-<span class="w">      </span><span class="n">i</span><span class="o">--</span><span class="p">;</span>
-<span class="w">    </span><span class="p">}</span>
-<span class="p">}</span>
+<p>Para modificar um elemento, atribuímos um novo valor ao respectivo índice:</p>
+<div class="highlight"><pre><span></span><code><span class="n">minha_lista</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">100</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">minha_lista</span><span class="p">)</span>  
 </code></pre></div>
-<h2 id="do-while">Do While<a class="headerlink" href="#do-while" title="Permanent link">&para;</a></h2>
-<p>A construção do <code>do while</code> difere do <code>while</code> unicamente pela avaliação da condição de parada ser realizada ao final da iteração. <strong>Portanto, este laço irá garantir, no mínimo, uma execução das instruções em seu corpo</strong>. É justamente esta peculiaridade que utilizamos como critério para sua escolha no código. </p>
-<p>Aplicaremos o laço <code>do while</code> em nosso já conhecido programa para contar números entre 10 e 1. Faça a comparação com as versões utilizando <code>while</code> e <code>for</code> para fins de estudo.</p>
-<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
-
-<span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">std</span><span class="p">;</span>
-
-<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span>
-<span class="p">{</span>
-<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="o">=</span><span class="mi">10</span><span class="p">;</span>
-
-<span class="w">    </span><span class="k">do</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span>
-<span class="w">        </span><span class="n">i</span><span class="o">--</span><span class="p">;</span>
-<span class="w">    </span><span class="p">}</span>
-<span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="o">&gt;=</span><span class="mi">1</span><span class="p">);</span>
-<span class="p">}</span>
+<h3 id="principais-operacoes-e-funcoes">Principais operações e funções<a class="headerlink" href="#principais-operacoes-e-funcoes" title="Permanent link">&para;</a></h3>
+<p>As principais operações que podem ser realizadas com listas são:</p>
+<ul>
+<li>Adição de elementos: <code>append()</code>, <code>insert()</code></li>
+<li>Remoção de elementos: <code>remove()</code>, <code>pop()</code></li>
+<li>Ordenação: <code>sort()</code></li>
+<li>Reversão: <code>reverse()</code></li>
+<li>Concatenação: <code>+</code></li>
+</ul>
+<p>Já em termos de funções,  relacionam-se às listas as funções:</p>
+<ul>
+<li><code>len()</code>: Retorna o número de elementos em uma lista.</li>
+<li><code>sum()</code>: Retorna a soma de todos os elementos em uma lista.</li>
+<li><code>max()</code>: Retorna o elemento máximo em uma lista.</li>
+<li><code>min()</code>: Retorna o elemento mínimo em uma lista.</li>
+</ul>
+<h3 id="iteracao-de-elementos">Iteração de elementos<a class="headerlink" href="#iteracao-de-elementos" title="Permanent link">&para;</a></h3>
+<p>Para iterar sobre os elementos de uma lista, podemos utilizar o laço <code>for</code>. Por exemplo:</p>
+<div class="highlight"><pre><span></span><code><span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">minha_lista</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
 </code></pre></div>
-<h2 id="break">Break<a class="headerlink" href="#break" title="Permanent link">&para;</a></h2>
-<p>O comando <code>break</code> é utilizado para interromper a execução de laços de repetição e o comando <code>switch</code>. Sempre que, em um destes comandos, houver um <code>break</code>, a execução finaliza naquele ponto e a próxima instrução será aquela imediatamente posterior ao final do bloco.</p>
-<p>Utilizamos <code>break</code> quando  temos intenção de finalizar o laço mesmo que a condição especificada em sua construção ainda permita novas iterações.</p>
-<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
-
-<span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">std</span><span class="p">;</span>
-
-<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span>
-<span class="p">{</span>
-<span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">20</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">){</span>
-<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="o">&gt;</span><span class="mi">14</span><span class="p">){</span>
-<span class="w">            </span><span class="k">break</span><span class="p">;</span>
-
-<span class="w">        </span><span class="p">}</span>
-<span class="w">        </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="n">endl</span><span class="p">;</span>
-<span class="w">    </span><span class="p">}</span>
-
-<span class="w">    </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="s">&quot;FIM&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="n">endl</span><span class="p">;</span>
-<span class="p">}</span>
+<h3 id="list-comprehension">List Comprehension<a class="headerlink" href="#list-comprehension" title="Permanent link">&para;</a></h3>
+<p>List Comprehension é uma maneira concisa e elegante de criar listas em Python. Ela permite criar listas de forma mais eficiente e legível, muitas vezes em uma única linha de código.</p>
+<p>A sintaxe utilizada é apresentada na sequência. Observe que <code>expressão</code> define cada elemento da nova lista, enquanto <code>item</code> corresponde ao elemento presente em <code>iterável</code> do atual ciclo de iteração.</p>
+<div class="highlight"><pre><span></span><code><span class="p">[</span><span class="n">expressão</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">iterável</span><span class="p">]</span>
 </code></pre></div>
-<h2 id="continue">Continue<a class="headerlink" href="#continue" title="Permanent link">&para;</a></h2>
-<p>O comando <code>continue</code> diferencia-se do <code>break</code> porque seu efeito é ignorar as demais instruções que sucedem o comando no corpo do laço. Sempre que executado, uma nova iteração inicia, como é o caso do programa abaixo.</p>
-<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
-
-<span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">std</span><span class="p">;</span>
-
-<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span>
-<span class="p">{</span>
-<span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">20</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">){</span>
-<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="o">%</span><span class="mi">2</span><span class="o">==</span><span class="mi">0</span><span class="p">){</span>
-<span class="w">            </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot; PAR&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="n">endl</span><span class="p">;</span>
-<span class="w">            </span><span class="k">continue</span><span class="p">;</span>
-<span class="w">        </span><span class="p">}</span>
-<span class="w">        </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot; ÍMPAR&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="n">endl</span><span class="p">;</span>
-<span class="w">    </span><span class="p">}</span>
-<span class="p">}</span>
+<p>Vejamos alguns exemplos concretos:</p>
+<ol>
+<li>Criando uma lista de números ao quadrado:</li>
+</ol>
+<div class="highlight"><pre><span></span><code><span class="n">quadrados</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span> <span class="o">**</span> <span class="mi">2</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">)]</span>
 </code></pre></div>
-<h1 id="goto">Goto<a class="headerlink" href="#goto" title="Permanent link">&para;</a></h1>
-<p>O comando <code>goto</code> permite realizar um desvio incondicional no fluxo de execução das instruções. Seu uso deve restrito àquelas situações em que nenhum outro comando pode ser utilizado,  sendo, portanto, excepcional.</p>
-<p>Para utilizar o comando <code>goto</code> é preciso marcar instruções com rótulos (<em>labels</em>). Com isso é possível "saltar" para qualquer linha rotulada. No programa abaixo definimos o rótulo <code>fim</code> para a instrução <code>cout &lt;&lt;"FIM" &lt;&lt;endl;</code>, de modo que a linha <code>goto fim;</code> levará a execução do programa imediatamente a este ponto.</p>
-<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
+<ol>
+<li>Filtrando uma lista para conter apenas números pares:</li>
+</ol>
+<div class="highlight"><pre><span></span><code><span class="n">numeros</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">]</span>
+<span class="n">pares</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">numeros</span> <span class="k">if</span> <span class="n">x</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">]</span>
+</code></pre></div>
+<ol>
+<li>Criando uma lista de tuplas com valores invertidos:</li>
+</ol>
+<div class="highlight"><pre><span></span><code><span class="n">tuplas</span> <span class="o">=</span> <span class="p">[(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span> <span class="k">for</span> <span class="n">y</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">)]</span>
+</code></pre></div>
+<h2 id="tuplas">Tuplas<a class="headerlink" href="#tuplas" title="Permanent link">&para;</a></h2>
+<p>Uma tupla é uma estrutura de dados semelhante a uma lista, mas com a diferença crucial de que ela é imutável, o que significa que uma vez que uma tupla é criada, seus elementos não podem ser alterados. As tuplas são definidas utilizando parênteses <code>()</code>.</p>
+<div class="highlight"><pre><span></span><code><span class="n">minha_tupla</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<span class="n">tupla_vazia</span> <span class="o">=</span> <span class="p">()</span>
+</code></pre></div>
+<p>Se houver apenas um elemento na tupla, é necessário incluir uma vírgula após o elemento para diferenciá-lo de uma expressão entre parênteses. Por exemplo:</p>
+<div class="highlight"><pre><span></span><code><span class="n">tupla_com_um_elemento</span> <span class="o">=</span> <span class="p">(</span><span class="mi">10</span><span class="p">,)</span>
+</code></pre></div>
+<h3 id="acessando-elementos">Acessando Elementos<a class="headerlink" href="#acessando-elementos" title="Permanent link">&para;</a></h3>
+<p>Para acessar os elementos de uma tupla utilizando índices, da mesma forma que faria com uma lista:</p>
+<div class="highlight"><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="n">minha_tupla</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>  <span class="c1"># Saída: 1</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">minha_tupla</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>  <span class="c1"># Saída: 3</span>
+</code></pre></div>
+<p>Lembre-se que as tuplas são imutáveis. Isso significa que uma vez que uma tupla é criada, você não pode adicionar, remover ou modificar elementos.  </p>
+<p>Claro! Aqui está uma documentação detalhada sobre dicionários em Python:</p>
+<hr />
+<h2 id="dicionarios">Dicionários<a class="headerlink" href="#dicionarios" title="Permanent link">&para;</a></h2>
+<p>Um dicionário em Python é uma estrutura de dados que armazena pares chave-valor. Ele é uma das estruturas de dados mais utilizadas devido à sua eficiência e flexibilidade. Os dicionários são mutáveis, o que significa que você pode adicionar, modificar e remover itens conforme necessário. Cada chave em um dicionário deve ser única e associada a um único valor. As chaves podem ser de qualquer tipo imutável, como strings, números e tuplas.</p>
+<p>Para criar um dicionário, devemos utilizar a sintaxe de chaves <code>{}</code> e especificar os pares chave-valor separados por vírgulas. Por exemplo:</p>
+<div class="highlight"><pre><span></span><code><span class="n">meu_dicionario</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;nome&quot;</span><span class="p">:</span> <span class="s2">&quot;Alice&quot;</span><span class="p">,</span> <span class="s2">&quot;idade&quot;</span><span class="p">:</span> <span class="mi">30</span><span class="p">,</span> <span class="s2">&quot;cidade&quot;</span><span class="p">:</span> <span class="s2">&quot;Nova York&quot;</span><span class="p">}</span>
+</code></pre></div>
+<p>Também é possível criar um dicionário vazio e adicionar itens posteriormente:</p>
+<div class="highlight"><pre><span></span><code><span class="n">outro_dicionario</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="n">outro_dicionario</span><span class="p">[</span><span class="s2">&quot;marca&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;Toyota&quot;</span>
+<span class="n">outro_dicionario</span><span class="p">[</span><span class="s2">&quot;modelo&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;Corolla&quot;</span>
+</code></pre></div>
+<p>O acesso aos valores de um dicionário se dá por meio das chaves correspondentes. Por exemplo:</p>
+<div class="highlight"><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="n">meu_dicionario</span><span class="p">[</span><span class="s2">&quot;nome&quot;</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">meu_dicionario</span><span class="p">[</span><span class="s2">&quot;idade&quot;</span><span class="p">])</span>
+</code></pre></div>
+<p>Se a chave não existir no dicionário, será lançada uma exceção <code>KeyError</code>. Para evitar isso, podemos utilizar usar o método <code>get()</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="n">meu_dicionario</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;cidade&quot;</span><span class="p">,</span> <span class="s2">&quot;Não encontrado&quot;</span><span class="p">))</span>  <span class="c1"># Saída: Nova York</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">meu_dicionario</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;profissão&quot;</span><span class="p">,</span> <span class="s2">&quot;Não encontrado&quot;</span><span class="p">))</span>  <span class="c1"># Saída: Não encontrado</span>
+</code></pre></div>
+<p>Para remover um par chave-valor, utilizamos o comando <code>del</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="k">del</span> <span class="n">meu_dicionario</span><span class="p">[</span><span class="s2">&quot;idade&quot;</span><span class="p">]</span>
+</code></pre></div>
+<h3 id="metodos-uteis">Métodos Úteis<a class="headerlink" href="#metodos-uteis" title="Permanent link">&para;</a></h3>
+<ul>
+<li><code>keys()</code>: Retorna uma lista contendo todas as chaves do dicionário.</li>
+<li><code>values()</code>: Retorna uma lista contendo todos os valores do dicionário.</li>
+<li><code>items()</code>: Retorna uma lista de tuplas contendo todos os pares chave-valor do dicionário.</li>
+<li><code>update()</code>: Atualiza o dicionário com os pares chave-valor de outro dicionário ou de uma sequência de pares chave-valor.</li>
+</ul>
+<h2 id="conjuntos">Conjuntos<a class="headerlink" href="#conjuntos" title="Permanent link">&para;</a></h2>
+<p>Um conjunto é uma estrutura de dados que armazena elementos únicos e não ordenados. Os conjuntos são muito úteis para realizar operações de conjunto oriundos da Matemática, como união, interseção, diferença e teste de pertencimento. Os conjuntos são mutáveis, assim como listas e dicionários.</p>
+<h3 id="criando-um-conjunto">Criando um Conjunto<a class="headerlink" href="#criando-um-conjunto" title="Permanent link">&para;</a></h3>
+<p>Para criar um conjunto utilizamos a função <code>set()</code> ou a sintaxe de chaves <code>{}</code>. Por exemplo:</p>
+<p><div class="highlight"><pre><span></span><code><span class="n">meu_conjunto</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">}</span>
+</code></pre></div>
+Já para criar um conjunto vazio, a única opção é usar <code>set()</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="n">conjunto_vazio</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+</code></pre></div>
+<h3 id="adicionar-e-remover-elementos">Adicionar e Remover Elementos<a class="headerlink" href="#adicionar-e-remover-elementos" title="Permanent link">&para;</a></h3>
+<p>Para adicionar elementos, utilizamos o método <code>add()</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="n">meu_conjunto</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span>
+</code></pre></div>
+<p>Para remover um elemento, temos os métodos <code>remove()</code> ou <code>discard()</code>. A diferença é que <code>remove()</code> gera um erro se o elemento não estiver presente no conjunto, enquanto <code>discard()</code> não gera nenhum erro:</p>
+<div class="highlight"><pre><span></span><code><span class="n">meu_conjunto</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<span class="n">meu_conjunto</span><span class="o">.</span><span class="n">discard</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+</code></pre></div>
+<h3 id="operacoes-de-conjunto">Operações de Conjunto<a class="headerlink" href="#operacoes-de-conjunto" title="Permanent link">&para;</a></h3>
+<p>As operaçãos de conjunto são representadas por:</p>
+<ul>
+<li><strong>União</strong>: <code>union()</code>, <code>|</code></li>
+<li><strong>Interseção</strong>: <code>intersection()</code>, <code>&amp;</code></li>
+<li><strong>Diferença</strong>: <code>difference()</code>, <code>-</code></li>
+<li><strong>Diferença Simétrica</strong>: <code>symmetric_difference()</code>, <code>^</code></li>
+<li><strong>Subconjunto</strong>: <code>issubset()</code></li>
+<li><strong>Superconjunto</strong>: <code>issuperset()</code></li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="n">conjunto1</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">}</span>
+<span class="n">conjunto2</span> <span class="o">=</span> <span class="p">{</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">}</span>
 
-<span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">std</span><span class="p">;</span>
-
-<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span>
-<span class="p">{</span>
-<span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">20</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">){</span>
-
-<span class="w">        </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">x</span><span class="o">&lt;</span><span class="w"> </span><span class="mi">15</span><span class="p">;</span><span class="n">x</span><span class="o">++</span><span class="p">){</span>
-
-<span class="w">            </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">y</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">100</span><span class="p">;</span><span class="w"> </span><span class="n">y</span><span class="o">++</span><span class="p">){</span>
-<span class="w">                </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="s">&quot; - &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="s">&quot; - &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span>
-<span class="w">                </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">y</span><span class="w"> </span><span class="o">==</span><span class="mi">10</span><span class="p">)</span>
-<span class="w">                    </span><span class="k">goto</span><span class="w"> </span><span class="n">fim</span><span class="p">;</span>
-<span class="w">            </span><span class="p">}</span>
-<span class="w">        </span><span class="p">}</span>
-<span class="w">        </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="n">endl</span><span class="p">;</span>
-<span class="w">    </span><span class="p">}</span>
-
-<span class="w">    </span><span class="nl">fim</span><span class="p">:</span><span class="w"> </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="s">&quot;FIM&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="n">endl</span><span class="p">;</span>
-<span class="p">}</span>
+<span class="n">uniao</span> <span class="o">=</span> <span class="n">conjunto1</span><span class="o">.</span><span class="n">union</span><span class="p">(</span><span class="n">conjunto2</span><span class="p">)</span>
+<span class="n">intersecao</span> <span class="o">=</span> <span class="n">conjunto1</span><span class="o">.</span><span class="n">intersection</span><span class="p">(</span><span class="n">conjunto2</span><span class="p">)</span>
+<span class="n">diferenca</span> <span class="o">=</span> <span class="n">conjunto1</span><span class="o">.</span><span class="n">difference</span><span class="p">(</span><span class="n">conjunto2</span><span class="p">)</span>
+</code></pre></div>
+<h3 id="iterando-sobre-um-conjunto">Iterando sobre um Conjunto<a class="headerlink" href="#iterando-sobre-um-conjunto" title="Permanent link">&para;</a></h3>
+<p>Assim como listas, podemos iterar conjuntos utilizando um loop <code>for</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="k">for</span> <span class="n">elemento</span> <span class="ow">in</span> <span class="n">meu_conjunto</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">elemento</span><span class="p">)</span>
 </code></pre></div>
 
 
@@ -1792,7 +1859,7 @@ A instrução <code>i--</code> é equivalente a <code>i=i-1</code>. </p>
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../condicionais/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Condicionais" rel="prev">
+          <a href="../lacos/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Laços de repetição" rel="prev">
             <div class="md-footer__button md-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
             </div>
@@ -1801,20 +1868,20 @@ A instrução <code>i--</code> é equivalente a <code>i=i-1</code>. </p>
                 Previous
               </span>
               <div class="md-ellipsis">
-                Condicionais
+                Laços de repetição
               </div>
             </div>
           </a>
         
         
           
-          <a href="../funcoes/" class="md-footer__link md-footer__link--next" aria-label="Next: Funções" rel="next">
+          <a href="../res/notebooks/aula-1/" class="md-footer__link md-footer__link--next" aria-label="Next: Variáveis, entrada e saída" rel="next">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Funções
+                Variáveis, entrada e saída
               </div>
             </div>
             <div class="md-footer__button md-icon">
