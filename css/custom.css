@@ -27,12 +27,16 @@ h1 {
 
 h2 {
   font-size: 1.3em !important;
+  text-align: left;
   /*border-left: 5px solid orange;*/
   border-bottom: 2px solid orange;
 }
 
+
+
 h3 {
   font-size: 1.2em !important;
+  text-align: left;
   /*border-left: 5px solid red;*/
   border-bottom: 2px solid red;
 }
@@ -66,3 +70,4 @@ code {
   border: 1px solid black;
   font-weight: bold;
 }
+

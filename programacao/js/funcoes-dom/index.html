@@ -9,13 +9,17 @@
       
       
       
+        <link rel="prev" href="../excecoes/">
+      
+      
+        <link rel="next" href="../promises/">
       
       <link rel="icon" href="../../../img/icon.ico">
       <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.19">
     
     
       
-        <title>Objeto Document - Diego A. Lusa</title>
+        <title>Interagindo com o Navegador e DOM - Diego A. Lusa</title>
       
     
     
@@ -103,7 +107,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Objeto Document
+              Interagindo com o Navegador e DOM
             
           </span>
         </div>
@@ -340,14 +344,16 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
       
       
       
@@ -356,7 +362,7 @@
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
         <label class="md-nav__title" for="__nav_3">
           <span class="md-nav__icon md-icon"></span>
           Programação
@@ -929,14 +935,16 @@
               
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_7" >
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_7" checked>
       
       
       
@@ -945,7 +953,7 @@
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_7_label" aria-expanded="false">
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_7_label" aria-expanded="true">
         <label class="md-nav__title" for="__nav_3_7">
           <span class="md-nav__icon md-icon"></span>
           Linguagem JavaScript
@@ -1016,6 +1024,132 @@
     <li class="md-nav__item">
       <a href="../excecoes/" class="md-nav__link">
         Exceções
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Interagindo com navegador e DOM
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Interagindo com navegador e DOM
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#objeto-document" class="md-nav__link">
+    Objeto document
+  </a>
+  
+    <nav class="md-nav" aria-label="Objeto document">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#propriedades" class="md-nav__link">
+    Propriedades
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#metodos" class="md-nav__link">
+    Métodos
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tipos-de-eventos" class="md-nav__link">
+    Tipos de eventos
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#objeto-window" class="md-nav__link">
+    Objeto Window
+  </a>
+  
+    <nav class="md-nav" aria-label="Objeto Window">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#propriedades_1" class="md-nav__link">
+    Propriedades:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#metodos_1" class="md-nav__link">
+    Métodos:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#eventos" class="md-nav__link">
+    Eventos:
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../promises/" class="md-nav__link">
+        Promises
       </a>
     </li>
   
@@ -1533,9 +1667,11 @@
                   
 
 
-<h1 id="objeto-document">Objeto Document<a class="headerlink" href="#objeto-document" title="Permanent link">&para;</a></h1>
-<p>O objeto <code>document</code> representa o modelo de objeto do documento HTML, que é a representação de seu conteúdo HTML carregado pelo navegador.</p>
-<p>Algumas propriedades úteis deste objeto são:</p>
+<h2 id="objeto-document">Objeto <code>document</code><a class="headerlink" href="#objeto-document" title="Permanent link">&para;</a></h2>
+<p><code>document</code> representa o modelo de objeto do documento HTML, que é a própria representação do conteúdo HTML em objetos JavaScript.</p>
+<p>Ao interagir com este objeto, podemos modificar a estrutura e apresentação do documento em resposta a eventos e interações do usuário com a página.</p>
+<h3 id="propriedades">Propriedades<a class="headerlink" href="#propriedades" title="Permanent link">&para;</a></h3>
+<p>Vejamos algumas das propriedades que o objeto <code>document</code> fornece:</p>
 <ul>
 <li><code>document.URL</code>: retorna a URL do documento.</li>
 <li><code>document.title</code>: permite obter ou definir o título do documento.</li>
@@ -1549,303 +1685,152 @@
 <li><code>document.links</code>: retorna uma coleção de todos os elementos <code>&lt;a&gt;</code> que têm um atributo <code>href</code> no documento.</li>
 <li><code>document.scripts</code>: retorna uma coleção de todos os elementos <code>&lt;script&gt;</code> no documento.</li>
 </ul>
-<p>Outros atributos estão a disposição além destes citados. Você pode encontrar mais detalhes no site <a href="https://developer.mozilla.org/en-US/docs/Web/API/Document">Developers Mozilla</a>.</p>
-<h2 id="metodos">Métodos:<a class="headerlink" href="#metodos" title="Permanent link">&para;</a></h2>
-<h3 id="1-documentgetelementbyidid">1. <code>document.getElementById(id)</code><a class="headerlink" href="#1-documentgetelementbyidid" title="Permanent link">&para;</a></h3>
+<p>Outras propriedades estão a disposição além destes. Você pode encontrar o detalhamento de cada um no site <a href="https://developer.mozilla.org/en-US/docs/Web/API/Document">Developers Mozilla</a>.</p>
+<h3 id="metodos">Métodos<a class="headerlink" href="#metodos" title="Permanent link">&para;</a></h3>
 <ul>
-<li>Retorna uma referência ao elemento que possui o atributo <code>id</code> especificado.</li>
+<li>
+<p><code>document.getElementById(id)</code></p>
+<p>Retorna uma referência ao elemento que possui o atributo <code>id</code> com o valor especificado.</p>
+<div class="highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">elemento</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;logotipo&quot;</span><span class="p">);</span>
+</code></pre></div>
+</li>
+<li>
+<p><code>document.getElementsByClassName(className)</code>: </p>
+<p>Retorna uma coleção de elementos que têm, no atributo <code>class</code>, o nome da classe informada como parâmetro. Observe o exemplo.</p>
+<div class="highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">elementos</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementsByClassName</span><span class="p">(</span><span class="s2">&quot;cm-line&quot;</span><span class="p">)</span>
+
+<span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">const</span><span class="w"> </span><span class="nx">e</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="nx">elementos</span><span class="p">){</span>
+<span class="w">   </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div>
+</li>
+<li>
+<p><code>document.getElementsByName(name)</code>: </p>
+<p>Retorna uma coleção de elementos cujo atributo <code>name</code> contém o valor informado como parâmetro.</p>
+<div class="highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">elementos</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementsByName</span><span class="p">(</span><span class="s2">&quot;viewport&quot;</span><span class="p">)</span>
+</code></pre></div>
+</li>
+<li>
+<p><code>document.getElementsByTagName(tagName)</code>: </p>
+<p>Retorna uma coleção de todos os elementos da tag indicada por parâmetro.</p>
+<div class="highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">elementos</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementsByTagName</span><span class="p">(</span><span class="s2">&quot;div&quot;</span><span class="p">)</span>
+</code></pre></div>
+</li>
+<li>
+<p><code>document.querySelector(selector)</code></p>
+<p>É uma função que permite selecionar um elemento HTML em uma página usando um seletor CSS válido. O primeiro elemento encontrado, que condiz com o seletor, será retornado pelo método.  </p>
+<p>O método <code>querySelector()</code> aceita um parâmetro, que é uma string que representa o seletor CSS. Este seletor pode ser um ID, uma classe, um tipo de elemento, um seletor de atributo ou uma combinação deles. </p>
+<p>No exemplo abaixo, estamos buscando a primeira ocorrência de elemento da classe <code>importante</code> no documento.</p>
+<div class="highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">elemento</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s2">&quot;.importante&quot;</span><span class="p">);</span>
+</code></pre></div>
+<p>Se houver interesse em retornar todos os elementos que atendem ao seletor, devemos utilizar o método <code>document.querySelectorAll()</code>, iterando sobre o retorno.</p>
+</li>
+<li>
+<p><code>document.createElement(tagName)</code>: </p>
+<p>Cria um novo elemento HTML especificado pelo nome da tag informado como parâmetro.</p>
+<div class="highlight"><pre><span></span><code><span class="w">   </span><span class="kd">let</span><span class="w"> </span><span class="nx">parag</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s2">&quot;p&quot;</span><span class="p">)</span>
+<span class="w">   </span><span class="nx">parag</span><span class="p">.</span><span class="nx">textContent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">texto</span>
+<span class="w">   </span><span class="nb">document</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">parag</span><span class="p">)</span>
+</code></pre></div>
+</li>
+<li>
+<p><code>document.write(text)</code>: 
+      Escreve conteúdo HTML diretamente no documento.</p>
+<div class="highlight"><pre><span></span><code><span class="w">   </span><span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="s2">&quot;&lt;h2&gt;Teste&lt;/h2&gt;&quot;</span><span class="p">)</span>
+</code></pre></div>
+</li>
+<li>
+<p><code>document.addEventListener(event, function)</code>: </p>
+<p>Adiciona um ouvinte (<em>listener</em>) de evento a um elemento do documento. Isso permite executar ações em resposta a eventos disparados.</p>
+<div class="highlight"><pre><span></span><code><span class="w">   </span><span class="kd">let</span><span class="w"> </span><span class="nx">botao</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;btn_calcular&quot;</span><span class="p">)</span>
+<span class="w">   </span><span class="nx">botao</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">&quot;click&quot;</span><span class="p">,()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="nb">document</span><span class="p">.</span><span class="nx">alert</span><span class="p">(</span><span class="s2">&quot;Ouvi seu evento de click&quot;</span><span class="p">)})</span>
+</code></pre></div>
+</li>
+<li>
+<p><code>document.removeEventListener(event, function)</code>: </p>
+</li>
 </ul>
-<h3 id="2-documentgetelementsbyclassnameclassname">2. <code>document.getElementsByClassName(className)</code><a class="headerlink" href="#2-documentgetelementsbyclassnameclassname" title="Permanent link">&para;</a></h3>
-<ul>
-<li>Retorna uma coleção de elementos que têm a classe CSS especificada.</li>
-</ul>
-<h3 id="3-documentgetelementsbynamename">3. <code>document.getElementsByName(name)</code><a class="headerlink" href="#3-documentgetelementsbynamename" title="Permanent link">&para;</a></h3>
-<ul>
-<li>Retorna uma coleção de elementos com o atributo <code>name</code> especificado.</li>
-</ul>
-<h3 id="4-documentgetelementsbytagnametagname">4. <code>document.getElementsByTagName(tagName)</code><a class="headerlink" href="#4-documentgetelementsbytagnametagname" title="Permanent link">&para;</a></h3>
-<ul>
-<li>Retorna uma coleção de todos os elementos com o nome da tag especificada.</li>
-</ul>
-<h3 id="5-documentqueryselectorselector">5. <code>document.querySelector(selector)</code><a class="headerlink" href="#5-documentqueryselectorselector" title="Permanent link">&para;</a></h3>
-<ul>
-<li>Retorna o primeiro elemento que corresponde ao seletor CSS especificado.</li>
-</ul>
-<h3 id="6-documentqueryselectorallselector">6. <code>document.querySelectorAll(selector)</code><a class="headerlink" href="#6-documentqueryselectorallselector" title="Permanent link">&para;</a></h3>
-<ul>
-<li>Retorna todos os elementos que correspondem ao seletor CSS especificado, em uma NodeList.</li>
-</ul>
-<h3 id="7-documentcreateelementtagname">7. <code>document.createElement(tagName)</code><a class="headerlink" href="#7-documentcreateelementtagname" title="Permanent link">&para;</a></h3>
-<ul>
-<li>Cria um novo elemento HTML especificado pelo nome da tag.</li>
-</ul>
-<h3 id="8-documentcreatetextnodetext">8. <code>document.createTextNode(text)</code><a class="headerlink" href="#8-documentcreatetextnodetext" title="Permanent link">&para;</a></h3>
-<ul>
-<li>Cria um novo nó de texto com o texto especificado.</li>
-</ul>
-<h3 id="9-documentcreatedocumentfragment">9. <code>document.createDocumentFragment()</code><a class="headerlink" href="#9-documentcreatedocumentfragment" title="Permanent link">&para;</a></h3>
-<ul>
-<li>Cria um novo DocumentFragment vazio.</li>
-</ul>
-<h3 id="10-documentwritetext">10. <code>document.write(text)</code><a class="headerlink" href="#10-documentwritetext" title="Permanent link">&para;</a></h3>
-<ul>
-<li>Escreve texto HTML no documento.</li>
-</ul>
-<h3 id="11-documentwritelntext">11. <code>document.writeln(text)</code><a class="headerlink" href="#11-documentwritelntext" title="Permanent link">&para;</a></h3>
-<ul>
-<li>Escreve texto HTML no documento, seguido de uma nova linha.</li>
-</ul>
-<h3 id="12-documentaddeventlistenerevent-function-usecapture">12. <code>document.addEventListener(event, function, useCapture)</code><a class="headerlink" href="#12-documentaddeventlistenerevent-function-usecapture" title="Permanent link">&para;</a></h3>
-<ul>
-<li>Adiciona um ouvinte de evento a um elemento do documento.</li>
-</ul>
-<h3 id="13-documentremoveeventlistenerevent-function-usecapture">13. <code>document.removeEventListener(event, function, useCapture)</code><a class="headerlink" href="#13-documentremoveeventlistenerevent-function-usecapture" title="Permanent link">&para;</a></h3>
-<ul>
-<li>Remove um ouvinte de evento de um elemento do documento.</li>
-</ul>
-<h2 id="eventos">Eventos:<a class="headerlink" href="#eventos" title="Permanent link">&para;</a></h2>
-<p>Alguns dos eventos mais comuns associados ao objeto <code>document</code> incluem:</p>
+<p>Remove um ouvinte (<em>listener</em>) de evento de um elemento do documento previamente configurado.</p>
+<h2 id="tipos-de-eventos">Tipos de eventos<a class="headerlink" href="#tipos-de-eventos" title="Permanent link">&para;</a></h2>
+<p>Eventos são o resultado de ações de ações do usuário sobre os elementos da página ou mesmo estados do próprio sistema e navegador, por exemplo.</p>
+<p>Os eventos oriundos de tais condições são emitidos e podem ser processados por funções específicas, escritas pelo desenvolvedor.</p>
+<p>Os eventos mais comuns associados ao objeto <code>document</code> incluem:</p>
 <ul>
 <li><code>DOMContentLoaded</code>: É acionado quando o HTML do documento foi completamente carregado e analisado, sem aguardar por folhas de estilo, imagens e subframes para concluir o carregamento.</li>
 <li><code>load</code>: É acionado quando todo o conteúdo do documento, incluindo imagens e folhas de estilo, foi completamente carregado.</li>
 <li><code>click</code>: É acionado quando um elemento é clicado pelo usuário.</li>
 <li><code>keydown</code>, <code>keyup</code>, <code>keypress</code>: São acionados quando uma tecla é pressionada e liberada.</li>
 </ul>
-<h2 id="observacoes">Observações:<a class="headerlink" href="#observacoes" title="Permanent link">&para;</a></h2>
-<ul>
-<li>O objeto <code>document</code> fornece uma interface para interagir com o conteúdo HTML de uma página da web.</li>
-<li>Ele permite acessar e manipular elementos HTML, criar novos elementos, adicionar ou remover eventos, entre outras funcionalidades.</li>
-<li>As propriedades e métodos do objeto <code>document</code> são amplamente utilizadas no desenvolvimento de scripts JavaScript para manipular o conteúdo e o comportamento de páginas da web em tempo de execução.</li>
-</ul>
-<p>Esta documentação abrange as propriedades, métodos e eventos mais comuns associados ao objeto <code>document</code> em JavaScript.</p>
-<h2 id="funcao-documentqueryselector">Função <code>document.querySelector()</code><a class="headerlink" href="#funcao-documentqueryselector" title="Permanent link">&para;</a></h2>
-<p>É uma função que permite selecionar um elemento HTML em uma página usando um seletor CSS válido. O primeiro elemento encontrado, que condiz com o seletor será retornado pelo método.  </p>
-<p>O método <code>querySelector()</code> aceita um parâmetro, que é uma string que representa o seletor CSS. Este seletor pode ser um ID, uma classe, um tipo de elemento, um seletor de atributo ou uma combinação deles. </p>
-<p>No exemplo abaixo, estamos buscando a primeira ocorrência de elemento da classe <code>importante</code> no documento.</p>
-<div class="highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">elemento</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s2">&quot;.importante&quot;</span><span class="p">);</span>
-</code></pre></div>
-<p>Se houver interesse em retornar todos os elementos que atendem ao seletor, devemos utilizar o método <code>document.querySelectorAll()</code>, iterando sobre o retorno.</p>
 <p>=====================</p>
 <h1 id="objeto-window">Objeto Window<a class="headerlink" href="#objeto-window" title="Permanent link">&para;</a></h1>
 <p>O objeto <code>window</code> é um dos principais objetos do navegador da web e representa a janela do navegador que contém o documento HTML.</p>
-<h2 id="propriedades">Propriedades:<a class="headerlink" href="#propriedades" title="Permanent link">&para;</a></h2>
-<h3 id="1-windowdocument">1. <code>window.document</code><a class="headerlink" href="#1-windowdocument" title="Permanent link">&para;</a></h3>
+<h2 id="propriedades_1">Propriedades:<a class="headerlink" href="#propriedades_1" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Retorna o documento HTML carregado na janela.</li>
-</ul>
-<h3 id="2-windowlocation">2. <code>window.location</code><a class="headerlink" href="#2-windowlocation" title="Permanent link">&para;</a></h3>
-<ul>
-<li>Retorna um objeto contendo informações sobre a URL da página.</li>
-</ul>
-<h3 id="3-windownavigator">3. <code>window.navigator</code><a class="headerlink" href="#3-windownavigator" title="Permanent link">&para;</a></h3>
-<ul>
-<li>Retorna um objeto contendo informações sobre o navegador.</li>
-</ul>
-<h3 id="4-windowinnerwidth-e-windowinnerheight">4. <code>window.innerWidth</code> e <code>window.innerHeight</code><a class="headerlink" href="#4-windowinnerwidth-e-windowinnerheight" title="Permanent link">&para;</a></h3>
-<ul>
-<li>Retornam a largura e a altura internas (em pixels) da janela do navegador, incluindo barras de rolagem, mas excluindo a moldura do navegador.</li>
-</ul>
-<h3 id="5-windowouterwidth-e-windowouterheight">5. <code>window.outerWidth</code> e <code>window.outerHeight</code><a class="headerlink" href="#5-windowouterwidth-e-windowouterheight" title="Permanent link">&para;</a></h3>
-<ul>
-<li>Retornam a largura e a altura externas (em pixels) da janela do navegador, incluindo barras de rolagem e a moldura do navegador.</li>
-</ul>
-<h3 id="6-windowscreen">6. <code>window.screen</code><a class="headerlink" href="#6-windowscreen" title="Permanent link">&para;</a></h3>
-<ul>
-<li>Retorna um objeto contendo informações sobre a tela do dispositivo.</li>
-</ul>
-<h3 id="7-windowhistory">7. <code>window.history</code><a class="headerlink" href="#7-windowhistory" title="Permanent link">&para;</a></h3>
-<ul>
-<li>Retorna o objeto de histórico do navegador, permitindo navegação entre as páginas visitadas.</li>
-</ul>
-<h3 id="8-windowlocalstorage-e-windowsessionstorage">8. <code>window.localStorage</code> e <code>window.sessionStorage</code><a class="headerlink" href="#8-windowlocalstorage-e-windowsessionstorage" title="Permanent link">&para;</a></h3>
-<ul>
-<li>Oferecem acesso aos mecanismos de armazenamento local e de sessão do navegador, respectivamente, permitindo armazenar dados localmente no navegador do usuário.</li>
-</ul>
-<h3 id="9-windowframes">9. <code>window.frames</code><a class="headerlink" href="#9-windowframes" title="Permanent link">&para;</a></h3>
-<ul>
-<li>Retorna uma coleção de objetos representando todas as frames contidas na janela.</li>
-</ul>
-<h3 id="10-windowparent">10. <code>window.parent</code><a class="headerlink" href="#10-windowparent" title="Permanent link">&para;</a></h3>
-<ul>
-<li>Retorna a janela pai da janela atual, útil quando uma janela abre outra.</li>
+<li>
+<p><code>window.document</code>: Retorna o documento HTML carregado na janela.</p>
+</li>
+<li>
+<p><code>window.location</code>: Retorna um objeto contendo informações sobre a URL da página.</p>
+</li>
+<li>
+<p><code>window.navigator</code>: Retorna um objeto contendo informações sobre o navegador.</p>
+</li>
+<li>
+<p><code>window.innerWidth</code> e <code>window.innerHeight</code>: Retornam a largura e a altura internas (em pixels) da janela do navegador, incluindo barras de rolagem, mas excluindo a moldura do navegador.</p>
+</li>
+<li>
+<p><code>window.outerWidth</code> e <code>window.outerHeight</code>: Retornam a largura e a altura externas (em pixels) da janela do navegador, incluindo barras de rolagem e a moldura do navegador.</p>
+</li>
+<li>
+<p><code>window.screen</code>: Retorna um objeto contendo informações sobre a tela do dispositivo.</p>
+</li>
+<li>
+<p><code>window.history</code>: Retorna o objeto de histórico do navegador, permitindo navegação entre as páginas visitadas.</p>
+</li>
+<li>
+<p><code>window.localStorage</code> e <code>window.sessionStorage</code>: Oferecem acesso aos mecanismos de armazenamento local e de sessão do navegador, respectivamente, permitindo armazenar dados localmente no navegador do usuário.</p>
+</li>
+<li>
+<p><code>window.frames</code>: Retorna uma coleção de objetos representando todas as frames contidas na janela.</p>
+</li>
+<li>
+<p><code>window.parent</code>: Retorna a janela pai da janela atual, útil quando uma janela abre outra.</p>
+</li>
 </ul>
 <h2 id="metodos_1">Métodos:<a class="headerlink" href="#metodos_1" title="Permanent link">&para;</a></h2>
-<h3 id="1-windowalertmessage">1. <code>window.alert(message)</code><a class="headerlink" href="#1-windowalertmessage" title="Permanent link">&para;</a></h3>
 <ul>
-<li>Exibe um diálogo de alerta com o texto especificado.</li>
+<li>
+<p><code>window.alert(message)</code>: Exibe um diálogo de alerta com o texto especificado.</p>
+</li>
+<li>
+<p><code>window.confirm(message)</code>: Exibe um diálogo de confirmação com o texto especificado, retornando <code>true</code> se o usuário clicar em "OK" e <code>false</code> se clicar em "Cancelar".</p>
+</li>
+<li>
+<p><code>window.prompt(message, default)</code>: Exibe um diálogo solicitando que o usuário insira um texto, com uma mensagem opcional e um valor padrão opcional.</p>
+</li>
+<li>
+<p><code>window.open(url, name, features)</code>:  Abre uma nova janela do navegador com o URL especificado.</p>
+</li>
+<li>
+<p><code>window.close()</code>: Fecha a janela do navegador atual.</p>
+</li>
+<li>
+<p><code>window.setTimeout(function, milliseconds)</code>: Executa uma função depois de um certo número de milissegundos.</p>
+</li>
+<li>
+<p><code>window.setInterval(function, milliseconds)</code>: Executa uma função repetidamente, com um intervalo de tempo especificado entre cada execução.</p>
+</li>
+<li>
+<p><code>window.clearTimeout(timeoutID)</code> e <code>window.clearInterval(intervalID)</code>: Cancelam a execução de uma função agendada com <code>setTimeout()</code> ou <code>setInterval()</code>.</p>
+</li>
 </ul>
-<h3 id="2-windowconfirmmessage">2. <code>window.confirm(message)</code><a class="headerlink" href="#2-windowconfirmmessage" title="Permanent link">&para;</a></h3>
-<ul>
-<li>Exibe um diálogo de confirmação com o texto especificado, retornando <code>true</code> se o usuário clicar em "OK" e <code>false</code> se clicar em "Cancelar".</li>
-</ul>
-<h3 id="3-windowpromptmessage-default">3. <code>window.prompt(message, default)</code><a class="headerlink" href="#3-windowpromptmessage-default" title="Permanent link">&para;</a></h3>
-<ul>
-<li>Exibe um diálogo solicitando que o usuário insira um texto, com uma mensagem opcional e um valor padrão opcional.</li>
-</ul>
-<h3 id="4-windowopenurl-name-features">4. <code>window.open(url, name, features)</code><a class="headerlink" href="#4-windowopenurl-name-features" title="Permanent link">&para;</a></h3>
-<ul>
-<li>Abre uma nova janela do navegador com o URL especificado.</li>
-</ul>
-<h3 id="5-windowclose">5. <code>window.close()</code><a class="headerlink" href="#5-windowclose" title="Permanent link">&para;</a></h3>
-<ul>
-<li>Fecha a janela do navegador atual.</li>
-</ul>
-<h3 id="6-windowsettimeoutfunction-milliseconds">6. <code>window.setTimeout(function, milliseconds)</code><a class="headerlink" href="#6-windowsettimeoutfunction-milliseconds" title="Permanent link">&para;</a></h3>
-<ul>
-<li>Executa uma função depois de um certo número de milissegundos.</li>
-</ul>
-<h3 id="7-windowsetintervalfunction-milliseconds">7. <code>window.setInterval(function, milliseconds)</code><a class="headerlink" href="#7-windowsetintervalfunction-milliseconds" title="Permanent link">&para;</a></h3>
-<ul>
-<li>Executa uma função repetidamente, com um intervalo de tempo especificado entre cada execução.</li>
-</ul>
-<h3 id="8-windowcleartimeouttimeoutid-e-windowclearintervalintervalid">8. <code>window.clearTimeout(timeoutID)</code> e <code>window.clearInterval(intervalID)</code><a class="headerlink" href="#8-windowcleartimeouttimeoutid-e-windowclearintervalintervalid" title="Permanent link">&para;</a></h3>
-<ul>
-<li>Cancelam a execução de uma função agendada com <code>setTimeout()</code> ou <code>setInterval()</code>.</li>
-</ul>
-<h2 id="eventos_1">Eventos:<a class="headerlink" href="#eventos_1" title="Permanent link">&para;</a></h2>
+<h2 id="eventos">Eventos:<a class="headerlink" href="#eventos" title="Permanent link">&para;</a></h2>
 <p>Alguns dos eventos mais comuns associados ao objeto <code>window</code> incluem:</p>
 <ul>
 <li><code>load</code>: É acionado quando o documento e todos os recursos associados foram completamente carregados.</li>
 <li><code>resize</code>: É acionado quando a janela do navegador é redimensionada.</li>
 <li><code>scroll</code>: É acionado quando o usuário rola a página.</li>
 <li><code>beforeunload</code> e <code>unload</code>: São acionados quando o documento está prestes a ser descarregado ou completamente descarregado, respectivamente.</li>
-</ul>
-<h2 id="observacoes_1">Observações:<a class="headerlink" href="#observacoes_1" title="Permanent link">&para;</a></h2>
-<ul>
-<li>O objeto <code>window</code> é a raiz do modelo de objeto do navegador e fornece acesso a várias funcionalidades do navegador e do ambiente de execução JavaScript.</li>
-<li>Ele representa a janela do navegador e oferece acesso ao documento carregado, à localização, ao histórico de navegação, aos mecanismos de armazenamento local, entre outras funcionalidades.</li>
-<li>As propriedades, métodos e eventos do objeto <code>window</code> são fundamentais para o desenvolvimento de aplicativos web dinâmicos e interativos.</li>
-</ul>
-<p>Esta documentação abrange as propriedades, métodos e eventos mais comuns associados ao objeto <code>window</code> em JavaScript.</p>
-<p>================</p>
-<p>O objeto <code>navigator</code> é um dos principais objetos fornecidos pelo navegador da web em JavaScript. Ele fornece informações detalhadas sobre o navegador e o ambiente em que o código JavaScript está sendo executado. Aqui está uma descrição detalhada deste objeto:</p>
-<h3 id="propriedades-principais">Propriedades Principais:<a class="headerlink" href="#propriedades-principais" title="Permanent link">&para;</a></h3>
-<ol>
-<li><strong><code>navigator.userAgent</code></strong>:</li>
-<li>
-<p>Retorna a string do agente do usuário, que contém informações sobre o navegador, versão e sistema operacional.</p>
-</li>
-<li>
-<p><strong><code>navigator.appName</code></strong>:</p>
-</li>
-<li>
-<p>Retorna o nome do navegador.</p>
-</li>
-<li>
-<p><strong><code>navigator.appVersion</code></strong>:</p>
-</li>
-<li>
-<p>Retorna a versão completa do navegador.</p>
-</li>
-<li>
-<p><strong><code>navigator.platform</code></strong>:</p>
-</li>
-<li>
-<p>Retorna a plataforma do sistema operacional em que o navegador está sendo executado.</p>
-</li>
-<li>
-<p><strong><code>navigator.language</code></strong>:</p>
-</li>
-<li>
-<p>Retorna o idioma preferido do usuário, normalmente definido nas configurações do navegador.</p>
-</li>
-<li>
-<p><strong><code>navigator.cookieEnabled</code></strong>:</p>
-</li>
-<li>
-<p>Retorna um booleano indicando se os cookies estão habilitados no navegador.</p>
-</li>
-<li>
-<p><strong><code>navigator.onLine</code></strong>:</p>
-</li>
-<li>
-<p>Retorna um booleano indicando se o navegador está online ou offline.</p>
-</li>
-<li>
-<p><strong><code>navigator.plugins</code></strong>:</p>
-</li>
-<li>Retorna uma lista de plugins instalados no navegador.</li>
-</ol>
-<h3 id="metodos-principais">Métodos Principais:<a class="headerlink" href="#metodos-principais" title="Permanent link">&para;</a></h3>
-<ol>
-<li><strong><code>navigator.geolocation.getCurrentPosition()</code></strong>:</li>
-<li>
-<p>Retorna a localização atual do usuário.</p>
-</li>
-<li>
-<p><strong><code>navigator.getBattery()</code></strong>:</p>
-</li>
-<li>
-<p>Retorna uma promessa que resolve com informações sobre o estado da bateria do dispositivo.</p>
-</li>
-<li>
-<p><strong><code>navigator.mediaDevices.getUserMedia()</code></strong>:</p>
-</li>
-<li>
-<p>Permite acessar a câmera e o microfone do dispositivo.</p>
-</li>
-<li>
-<p><strong><code>navigator.vibrate()</code></strong>:</p>
-</li>
-<li>Ativa a vibração do dispositivo.</li>
-</ol>
-<h3 id="exemplo-de-uso">Exemplo de Uso:<a class="headerlink" href="#exemplo-de-uso" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Nome do navegador: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">navigator</span><span class="p">.</span><span class="nx">appName</span><span class="p">);</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Versão do navegador: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">navigator</span><span class="p">.</span><span class="nx">appVersion</span><span class="p">);</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Plataforma: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">navigator</span><span class="p">.</span><span class="nx">platform</span><span class="p">);</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Idioma: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">navigator</span><span class="p">.</span><span class="nx">language</span><span class="p">);</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Cookies habilitados: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">navigator</span><span class="p">.</span><span class="nx">cookieEnabled</span><span class="p">);</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Online: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">navigator</span><span class="p">.</span><span class="nx">onLine</span><span class="p">);</span>
-</code></pre></div>
-<h3 id="observacoes_2">Observações:<a class="headerlink" href="#observacoes_2" title="Permanent link">&para;</a></h3>
-<ul>
-<li>O objeto <code>navigator</code> é uma parte essencial do desenvolvimento de aplicativos web, pois fornece informações sobre o ambiente do usuário, como o navegador e o sistema operacional.</li>
-<li>Ele pode ser usado para personalizar a experiência do usuário com base em suas preferências e configurações de navegador.</li>
-<li>Além disso, o objeto <code>navigator</code> oferece acesso a recursos do dispositivo, como geolocalização, câmera e microfone, permitindo a criação de aplicativos web mais interativos e sofisticados.</li>
-</ul>
-<p>===========</p>
-<p>O objeto <code>screen</code> é uma propriedade do objeto <code>window</code> em navegadores da web, fornecendo informações sobre a tela do dispositivo em que a janela do navegador está sendo exibida. Aqui está uma descrição detalhada deste objeto:</p>
-<h3 id="propriedades-principais_1">Propriedades Principais:<a class="headerlink" href="#propriedades-principais_1" title="Permanent link">&para;</a></h3>
-<ol>
-<li><strong><code>screen.width</code></strong>:</li>
-<li>
-<p>Retorna a largura da tela em pixels.</p>
-</li>
-<li>
-<p><strong><code>screen.height</code></strong>:</p>
-</li>
-<li>
-<p>Retorna a altura da tela em pixels.</p>
-</li>
-<li>
-<p><strong><code>screen.availWidth</code></strong>:</p>
-</li>
-<li>
-<p>Retorna a largura disponível da tela em pixels, excluindo barras de ferramentas do sistema, como a barra de tarefas do Windows.</p>
-</li>
-<li>
-<p><strong><code>screen.availHeight</code></strong>:</p>
-</li>
-<li>
-<p>Retorna a altura disponível da tela em pixels, excluindo barras de ferramentas do sistema.</p>
-</li>
-<li>
-<p><strong><code>screen.orientation</code></strong> (propriedade somente leitura):</p>
-</li>
-<li>Retorna um objeto <code>ScreenOrientation</code> que descreve a orientação da tela.</li>
-</ol>
-<h3 id="exemplo-de-uso_1">Exemplo de Uso:<a class="headerlink" href="#exemplo-de-uso_1" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Largura da tela: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">screen</span><span class="p">.</span><span class="nx">width</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s2">&quot; pixels&quot;</span><span class="p">);</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Altura da tela: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">screen</span><span class="p">.</span><span class="nx">height</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s2">&quot; pixels&quot;</span><span class="p">);</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Largura disponível da tela: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">screen</span><span class="p">.</span><span class="nx">availWidth</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s2">&quot; pixels&quot;</span><span class="p">);</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Altura disponível da tela: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">screen</span><span class="p">.</span><span class="nx">availHeight</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s2">&quot; pixels&quot;</span><span class="p">);</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Orientação da tela: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">screen</span><span class="p">.</span><span class="nx">orientation</span><span class="p">.</span><span class="nx">type</span><span class="p">);</span>
-</code></pre></div>
-<h3 id="observacoes_3">Observações:<a class="headerlink" href="#observacoes_3" title="Permanent link">&para;</a></h3>
-<ul>
-<li>O objeto <code>screen</code> fornece informações úteis sobre as características físicas da tela do dispositivo, como largura, altura e disponibilidade de espaço.</li>
-<li>Essas informações podem ser usadas para criar layouts responsivos e adaptar o conteúdo da página com base nas dimensões da tela do usuário.</li>
-<li>A propriedade <code>screen.orientation</code> fornece informações sobre a orientação atual da tela, permitindo ajustar o layout e o conteúdo da página de acordo com a orientação do dispositivo.</li>
 </ul>
 
 
@@ -1869,6 +1854,42 @@
       
         <footer class="md-footer">
   
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../excecoes/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Exceções" rel="prev">
+            <div class="md-footer__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Exceções
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../promises/" class="md-footer__link md-footer__link--next" aria-label="Next: Promises" rel="next">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Promises
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
     
   
   <div class="md-footer-meta md-typeset">

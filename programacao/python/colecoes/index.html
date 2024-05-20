@@ -1175,6 +1175,34 @@
 
             
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../js/funcoes-dom/" class="md-nav__link">
+        Interagindo com navegador e DOM
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../js/promises/" class="md-nav__link">
+        Promises
+      </a>
+    </li>
+  
+
+            
+          
         </ul>
       </nav>
     </li>
@@ -1751,6 +1779,7 @@ Outra possibilidade é criar uma lista vazia e ir adicionando itens a mesma atra
 </code></pre></div>
 <h2 id="tuplas">Tuplas<a class="headerlink" href="#tuplas" title="Permanent link">&para;</a></h2>
 <p>Uma tupla é uma estrutura de dados semelhante a uma lista, mas com a diferença crucial de que ela é imutável, o que significa que uma vez que uma tupla é criada, seus elementos não podem ser alterados. As tuplas são definidas utilizando parênteses <code>()</code>.</p>
+<p>Tuplas são utilizadas para agregar dados diversos, mantendo-os imutáveis e dispostos de uma determinada ordem.</p>
 <div class="highlight"><pre><span></span><code><span class="n">minha_tupla</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
 <span class="n">tupla_vazia</span> <span class="o">=</span> <span class="p">()</span>
 </code></pre></div>
@@ -1811,21 +1840,47 @@ Já para criar um conjunto vazio, a única opção é usar <code>set()</code>:</
 <span class="n">meu_conjunto</span><span class="o">.</span><span class="n">discard</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
 </code></pre></div>
 <h3 id="operacoes-de-conjunto">Operações de Conjunto<a class="headerlink" href="#operacoes-de-conjunto" title="Permanent link">&para;</a></h3>
-<p>As operaçãos de conjunto são representadas por:</p>
-<ul>
-<li><strong>União</strong>: <code>union()</code>, <code>|</code></li>
-<li><strong>Interseção</strong>: <code>intersection()</code>, <code>&amp;</code></li>
-<li><strong>Diferença</strong>: <code>difference()</code>, <code>-</code></li>
-<li><strong>Diferença Simétrica</strong>: <code>symmetric_difference()</code>, <code>^</code></li>
-<li><strong>Subconjunto</strong>: <code>issubset()</code></li>
-<li><strong>Superconjunto</strong>: <code>issuperset()</code></li>
-</ul>
-<div class="highlight"><pre><span></span><code><span class="n">conjunto1</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">}</span>
-<span class="n">conjunto2</span> <span class="o">=</span> <span class="p">{</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">}</span>
+<p>Tal qual ocorre na Matemática, o uso de conjuntos no Python oferece suporte às mesmas operações. Para fins didáticos, vamos utilizar como exemplo dois conjuntos de números inteiros, identificados pelas variáveis <code>conjunto_a</code> e <code>conjunto_b</code>. Tais conjuntos contém os seguintes valores:</p>
+<div class="highlight"><pre><span></span><code><span class="n">conjunto_a</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">9</span><span class="p">}</span>
+<span class="n">conjunto_b</span> <span class="o">=</span> <span class="p">{</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">10</span><span class="p">}</span>
 
-<span class="n">uniao</span> <span class="o">=</span> <span class="n">conjunto1</span><span class="o">.</span><span class="n">union</span><span class="p">(</span><span class="n">conjunto2</span><span class="p">)</span>
-<span class="n">intersecao</span> <span class="o">=</span> <span class="n">conjunto1</span><span class="o">.</span><span class="n">intersection</span><span class="p">(</span><span class="n">conjunto2</span><span class="p">)</span>
-<span class="n">diferenca</span> <span class="o">=</span> <span class="n">conjunto1</span><span class="o">.</span><span class="n">difference</span><span class="p">(</span><span class="n">conjunto2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Conjunto A:&quot;</span><span class="p">,</span> <span class="n">conjunto_a</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Conjunto B:&quot;</span><span class="p">,</span> <span class="n">conjunto_b</span><span class="p">)</span>
+</code></pre></div>
+<p>Agora, vamos às operações:</p>
+<ul>
+<li><code>union()</code>, <code>|</code>: Retorna um novo conjunto com todos os elementos de ambos os conjuntos.</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="n">conjunto_uniao</span> <span class="o">=</span> <span class="n">conjunto_a</span> <span class="o">|</span> <span class="n">conjunto_b</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Conjunto União:&quot;</span><span class="p">,</span> <span class="n">conjunto_uniao</span><span class="p">)</span>
+</code></pre></div>
+<ul>
+<li><code>intersection()</code>, <code>&amp;</code>: Retorna o que há de comum entre ambos os conjuntos.</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="n">conjunto_inserseccao</span> <span class="o">=</span> <span class="n">conjunto_a</span> <span class="o">&amp;</span> <span class="n">conjunto_b</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Conjunto Intersecção:&quot;</span><span class="p">,</span> <span class="n">conjunto_inserseccao</span><span class="p">)</span>
+</code></pre></div>
+<ul>
+<li><code>difference()</code>, <code>-</code>: Retorna um novo conjunto com os elementos presentes no primeiro conjunto que não estão no segundo.</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="n">conjunto_diferenca</span> <span class="o">=</span> <span class="n">conjunto_a</span> <span class="o">-</span> <span class="n">conjunto_b</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Conjunto Diferença:&quot;</span><span class="p">,</span> <span class="n">conjunto_diferenca</span><span class="p">)</span>
+</code></pre></div>
+<ul>
+<li><code>symmetric_difference()</code>, <code>^</code>: Retorna um novo conjunto contendo os elementos que estão em apenas um dos conjuntos, nunca em ambos.</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="n">conjunto_diferenca</span> <span class="o">=</span> <span class="n">conjunto_a</span> <span class="o">^</span> <span class="n">conjunto_b</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Conjunto Diferença:&quot;</span><span class="p">,</span> <span class="n">conjunto_diferenca</span><span class="p">)</span>
+</code></pre></div>
+<ul>
+<li><code>issuperset()</code>, <code>&gt;=</code>: Verifica se um conjunto é <strong>superconjunto</strong> de outro. Para ser superconjunto, é necessário ter todos os elementos do outro conjunto avaliado, sendo possível ter elementos adicionais.</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="n">conjunto_a</span> <span class="o">&gt;=</span> <span class="n">conjunto_b</span>
+</code></pre></div>
+<ul>
+<li><code>issubset()</code>, <code>&lt;=</code>: Verifica se um conjunto é <strong>subconjunto</strong> de outro. Para ser subconjunto é preciso que todos os elementos do conjunto estejam contidos no outro avaliado.</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="n">conjunto_a</span> <span class="o">&lt;=</span> <span class="n">conjunto_b</span>
 </code></pre></div>
 <h3 id="iterando-sobre-um-conjunto">Iterando sobre um Conjunto<a class="headerlink" href="#iterando-sobre-um-conjunto" title="Permanent link">&para;</a></h3>
 <p>Assim como listas, podemos iterar conjuntos utilizando um loop <code>for</code>:</p>

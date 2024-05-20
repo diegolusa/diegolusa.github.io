@@ -106,6 +106,8 @@ tuplas = [(x, y) for x in range(1, 4) for y in range(1, 4)]
 
 Uma tupla é uma estrutura de dados semelhante a uma lista, mas com a diferença crucial de que ela é imutável, o que significa que uma vez que uma tupla é criada, seus elementos não podem ser alterados. As tuplas são definidas utilizando parênteses `()`.
 
+Tuplas são utilizadas para agregar dados diversos, mantendo-os imutáveis e dispostos de uma determinada ordem.
+
 
 ```python
 minha_tupla = (1, 2, 3, 4, 5)
@@ -219,23 +221,58 @@ meu_conjunto.discard(2)
 
 ### Operações de Conjunto
 
-As operaçãos de conjunto são representadas por:
-
-- **União**: `union()`, `|`
-- **Interseção**: `intersection()`, `&`
-- **Diferença**: `difference()`, `-`
-- **Diferença Simétrica**: `symmetric_difference()`, `^`
-- **Subconjunto**: `issubset()`
-- **Superconjunto**: `issuperset()`
+Tal qual ocorre na Matemática, o uso de conjuntos no Python oferece suporte às mesmas operações. Para fins didáticos, vamos utilizar como exemplo dois conjuntos de números inteiros, identificados pelas variáveis `conjunto_a` e `conjunto_b`. Tais conjuntos contém os seguintes valores:
 
 ```python
-conjunto1 = {1, 2, 3}
-conjunto2 = {3, 4, 5}
+conjunto_a = {1, 3, 5, 7, 9}
+conjunto_b = {2, 4, 6, 8, 10}
 
-uniao = conjunto1.union(conjunto2)
-intersecao = conjunto1.intersection(conjunto2)
-diferenca = conjunto1.difference(conjunto2)
+print("Conjunto A:", conjunto_a)
+print("Conjunto B:", conjunto_b)
 ```
+
+Agora, vamos às operações:
+
+- `union()`, `|`: Retorna um novo conjunto com todos os elementos de ambos os conjuntos.
+
+```python
+conjunto_uniao = conjunto_a | conjunto_b
+print("Conjunto União:", conjunto_uniao)
+```
+
+- `intersection()`, `&`: Retorna o que há de comum entre ambos os conjuntos.
+
+```python
+conjunto_inserseccao = conjunto_a & conjunto_b
+print("Conjunto Intersecção:", conjunto_inserseccao)
+```
+
+- `difference()`, `-`: Retorna um novo conjunto com os elementos presentes no primeiro conjunto que não estão no segundo.
+
+```python
+conjunto_diferenca = conjunto_a - conjunto_b
+print("Conjunto Diferença:", conjunto_diferenca)
+```
+
+- `symmetric_difference()`, `^`: Retorna um novo conjunto contendo os elementos que estão em apenas um dos conjuntos, nunca em ambos.
+  
+```python
+conjunto_diferenca = conjunto_a ^ conjunto_b
+print("Conjunto Diferença:", conjunto_diferenca)
+```
+
+- `issuperset()`, `>=`: Verifica se um conjunto é **superconjunto** de outro. Para ser superconjunto, é necessário ter todos os elementos do outro conjunto avaliado, sendo possível ter elementos adicionais.
+
+```python
+conjunto_a >= conjunto_b
+```
+
+- `issubset()`, `<=`: Verifica se um conjunto é **subconjunto** de outro. Para ser subconjunto é preciso que todos os elementos do conjunto estejam contidos no outro avaliado.
+
+```python
+conjunto_a <= conjunto_b
+```
+
 
 ### Iterando sobre um Conjunto
 
