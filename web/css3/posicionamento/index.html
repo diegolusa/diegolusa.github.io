@@ -12,7 +12,7 @@
         <link rel="prev" href="../box-model/">
       
       
-        <link rel="next" href="../exercicios/fundamentos-seletores/">
+        <link rel="next" href="../responsividade/">
       
       <link rel="icon" href="../../../img/icon.ico">
       <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.19">
@@ -73,7 +73,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#float-property" class="md-skip">
+        <a href="#position" class="md-skip">
           Skip to content
         </a>
       
@@ -1511,23 +1511,50 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#float-property" class="md-nav__link">
-    Float Property
+  <a href="#position" class="md-nav__link">
+    Position
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#flexbox" class="md-nav__link">
-    Flexbox
+  <a href="#float" class="md-nav__link">
+    Float
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#4-grid-layout" class="md-nav__link">
-    4. Grid Layout
+  <a href="#flexbox-layout" class="md-nav__link">
+    Flexbox Layout
   </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#grid-layout" class="md-nav__link">
+    Grid Layout
+  </a>
+  
+    <nav class="md-nav" aria-label="Grid Layout">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#definir-areas-nomeadas" class="md-nav__link">
+    Definir áreas nomeadas
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#posicionar-items-em-areas-nomeadas" class="md-nav__link">
+    Posicionar items em áreas nomeadas
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1552,23 +1579,51 @@
   
   
   
+    <li class="md-nav__item">
+      <a href="../responsividade/" class="md-nav__link">
+        Responsividade
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../media-queries/" class="md-nav__link">
+        Media Queries
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
     
     <li class="md-nav__item md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3_8" >
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3_10" >
       
       
       
-        <label class="md-nav__link" for="__nav_4_3_8" id="__nav_4_3_8_label" tabindex="0">
+        <label class="md-nav__link" for="__nav_4_3_10" id="__nav_4_3_10_label" tabindex="0">
           Exercícios
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_3_8_label" aria-expanded="false">
-        <label class="md-nav__title" for="__nav_4_3_8">
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_3_10_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4_3_10">
           <span class="md-nav__icon md-icon"></span>
           Exercícios
         </label>
@@ -1596,6 +1651,20 @@
     <li class="md-nav__item">
       <a href="../exercicios/layout/" class="md-nav__link">
         Exercício 2: Layouts
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../exercicios/media-queries/" class="md-nav__link">
+        Exercício 3: Media queries e Grid Layout
       </a>
     </li>
   
@@ -1657,6 +1726,8 @@
 
   <h1>Posicionamento</h1>
 
+<p>O CSS3 oferece diferentes maneiras de posicionar elementos em tela. Na sequência iremos abordar com detalhes cada um deles.</p>
+<h2 id="position">Position<a class="headerlink" href="#position" title="Permanent link">&para;</a></h2>
 <p>A propriedade <code>position</code> é fundamental para controlar o posicionamento dos elementos em uma página da web. Os quatro valores possíveis são <code>static</code>, <code>relative</code>, <code>absolute</code> e <code>fixed</code>.</p>
 <ul>
 <li><code>static</code>: Este é o valor padrão. Elementos com <code>position: static</code> são renderizados na ordem normal do fluxo do documento. Eles não são afetados pelas propriedades de posicionamento (<code>top</code>, <code>right</code>, <code>bottom</code>, <code>left</code>).</li>
@@ -1671,7 +1742,7 @@
 <span class="w">  </span><span class="k">left</span><span class="p">:</span><span class="w"> </span><span class="mi">30</span><span class="kt">px</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></div></p>
-<h2 id="float-property">Float Property<a class="headerlink" href="#float-property" title="Permanent link">&para;</a></h2>
+<h2 id="float">Float<a class="headerlink" href="#float" title="Permanent link">&para;</a></h2>
 <p>A propriedade <code>float</code> é usada para alinhar elementos ao lado esquerdo ou direito de seu contêiner. Isso é frequentemente utilizado para criar layouts de várias colunas. No entanto, é importante notar que o uso excessivo de <code>float</code> pode causar problemas de layout e é geralmente evitado em favor de técnicas mais modernas, como Flexbox e Grid Layout.</p>
 <p>Exemplo:
 <div class="highlight"><pre><span></span><code><span class="p">.</span><span class="nc">coluna</span><span class="w"> </span><span class="p">{</span>
@@ -1679,20 +1750,27 @@
 <span class="w">  </span><span class="k">width</span><span class="p">:</span><span class="w"> </span><span class="mi">50</span><span class="kt">%</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></div></p>
-<h2 id="flexbox">Flexbox<a class="headerlink" href="#flexbox" title="Permanent link">&para;</a></h2>
-<p>O Flexbox é um modelo de layout bidimensional que oferece mais controle e flexibilidade na disposição dos elementos em relação aos métodos tradicionais de layout. Ele permite o alinhamento e distribuição de elementos em qualquer direção, tornando-o ideal para criar layouts responsivos e complexos.</p>
+<h2 id="flexbox-layout">Flexbox Layout<a class="headerlink" href="#flexbox-layout" title="Permanent link">&para;</a></h2>
+<p>O Flexbox é um modelo de layout bidimensional que oferece controle e flexibilidade na disposição dos elementos em relação aos métodos tradicionais de layout. Ele permite o alinhamento e distribuição de elementos em qualquer direção, tornando-o ideal para criar layouts responsivos e complexos.</p>
 <p>Para fazer uso do flexbox precisamos definir um container em torno dos elementos que deverão ser posicionais de maneira responsiva. Para isso, é preciso utilizar a property <code>display:flex</code>. Normalmente você definirá uma classe para isso, como a exibida a seguir:</p>
 <div class="highlight"><pre><span></span><code><span class="p">.</span><span class="nc">container</span><span class="w"> </span><span class="p">{</span>
 <span class="w">  </span><span class="k">display</span><span class="p">:</span><span class="w"> </span><span class="kc">flex</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></div>
-<p>Também é possível definir a direção com que os elementos dentro do container serão dispostos. As opções são <code>row</code> e <code>column</code> para a property <code>flex-direction</code>.</p>
-<p>Para organizar a distribuição dos elementos ao longo do espaço vertical ou horizontal utilizamos a property <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/justify-content"><code>justify-content</code></a>. Seus possíveis valores são diversos, sendo os mais comuns <code>start</code>, <code>center</code>, <code>space-between</code> e <code>space-around</code>.</p>
-<p>Muitas outras properties são utilizadas em layouts Flexbox. Recomendo a leitura do texto <a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/">A Complete Guide to Flexbox</a>, o qual oferece uma visão detalhadas da técnica, valores de properties e efetivos gerados pelo uso da mesma.</p>
-<p>Outro site interessante chama-se <a href="https://flexboxfroggy.com/">Flexbox Froggy - A game for learning CSS flexbox</a>. Nele você pode treinar seus conhecimentos de flexbox.</p>
-<h2 id="4-grid-layout">4. Grid Layout<a class="headerlink" href="#4-grid-layout" title="Permanent link">&para;</a></h2>
+<p>O Flexbox organiza os itens ao longo de um eixo principal (<code>main axis</code>) e um eixo transversal (<code>cross axis</code>). A direção dos eixos pode ser definida com a propriedade <code>flex-direction</code>, cujas opções podem ser <code>row</code> e <code>column</code>. Já para controlar a distribuição de espaço e a ordenação dos itens no eixo principal e transversal usamos as propriedades <code>justify-content</code> e <code>align-items</code></p>
+<p>Existem várias outras propriedades aplicáveis no contexto de layouts flex. As principais são:</p>
+<ul>
+<li><code>flex-direction</code>: Define a direção do eixo principal (<code>row</code>, <code>row-reverse</code>, <code>column</code>, <code>column-reverse</code>).</li>
+<li><code>justify-content</code>: Distribui espaço ao longo do eixo principal (<code>flex-start</code>, <code>flex-end</code>, <code>center</code>, <code>space-between</code>, <code>space-around</code>).</li>
+<li><code>align-items</code>: Alinha os itens ao longo do eixo transversal (<code>flex-start</code>, <code>flex-end</code>, <code>center</code>, <code>baseline</code>, <code>stretch</code>).</li>
+<li><code>flex-wrap</code>: Define se os itens devem quebrar para uma nova linha (<code>nowrap</code>, <code>wrap</code>, <code>wrap-reverse</code>).</li>
+<li><code>align-content</code>: Alinha as linhas do container flexível quando há espaço extra (<code>flex-start</code>, <code>flex-end</code>, <code>center</code>, <code>space-between</code>, <code>space-around</code>, <code>stretch</code>).</li>
+</ul>
+<p>Recomendo a leitura do texto <a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/">A Complete Guide to Flexbox</a>, o qual oferece uma visão detalhadas da técnica, valores de properties e resultados gerados pelo uso das mesmas. Outro site interessante chama-se <a href="https://flexboxfroggy.com/">Flexbox Froggy - A game for learning CSS flexbox</a>. Nele você pode treinar seus conhecimentos de FlexBox.</p>
+<h2 id="grid-layout">Grid Layout<a class="headerlink" href="#grid-layout" title="Permanent link">&para;</a></h2>
 <p>O Grid Layout é um sistema bidimensional que permite dividir o espaço de uma página em linhas e colunas, tornando mais fácil o posicionamento dos elementos de forma precisa. Ele fornece controle total sobre o dimensionamento e o posicionamento dos elementos em relação ao layout da página.</p>
-<p>O posicionamento dos elementos, tal qual ocorre em  uma tabela, é feito em linhas e colunas.</p>
+<p>O posicionamento dos elementos, tal qual ocorre em  uma tabela, é feito em linhas e colunas. Para usar o Grid Layout, é necessário definir um container que usa a propriedade <code>display: grid;</code>.</p>
+<p>Para definir o número e o tamanho das linhas e colunas do layout utilizamos as propriedades <code>grid-template-columns</code> e <code>grid-template-rows</code>. Observe que há uma unidade de medida chamada <em>fr</em>, a qual representa uma fração do viewport, cujo tamanho é calculado automaticamente pelo navegador. Ao multiplicar <em>fr</em> por um valor diferente de <em>1</em>, estamos indicando que a coluna ou linha terá <em>x</em> vezes o tamanho original. Ou seja, <em>3fr</em> corresponde a <em>3x</em> o tamanho de uma fração.</p>
 <p>Exemplo:
 <div class="highlight"><pre><span></span><code><span class="p">.</span><span class="nc">container</span><span class="w"> </span><span class="p">{</span>
 <span class="w">  </span><span class="k">display</span><span class="p">:</span><span class="w"> </span><span class="k">grid</span><span class="p">;</span>
@@ -1700,12 +1778,50 @@
 <span class="w">  </span><span class="n">grid-gap</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="kt">px</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></div></p>
+<p>Outra propriedade interessante chama-se <code>grid-area</code>. Ela pode ser usada de duas maneiras principais: <em>nomear áreas de grade em um contêiner de grade</em> e <em>posicionar itens de grade dentro dessas áreas nomeadas ou definir explicitamente a posição e a abrangência de um item de grade</em>. Vamos descrever cada uma delas:</p>
+<h3 id="definir-areas-nomeadas">Definir áreas nomeadas<a class="headerlink" href="#definir-areas-nomeadas" title="Permanent link">&para;</a></h3>
+<p>No contêiner de grade, usando a propriedade <code>grid-template-areas</code>, atribuímos a cada célula da grade um nome, os quais serão posteriormente utilizados para posicionar os itens.</p>
+<div class="highlight"><pre><span></span><code><span class="p">.</span><span class="nc">container</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">display</span><span class="p">:</span><span class="w"> </span><span class="k">grid</span><span class="p">;</span>
+<span class="w">    </span><span class="k">grid-template-columns</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="n">fr</span><span class="w"> </span><span class="mi">1</span><span class="n">fr</span><span class="w"> </span><span class="mi">1</span><span class="n">fr</span><span class="p">;</span><span class="w"> </span><span class="c">/* Três colunas */</span>
+<span class="w">    </span><span class="k">grid-template-rows</span><span class="p">:</span><span class="w"> </span><span class="kc">auto</span><span class="w"> </span><span class="kc">auto</span><span class="w"> </span><span class="kc">auto</span><span class="p">;</span><span class="w"> </span><span class="c">/* Três linhas */</span>
+<span class="w">    </span><span class="k">grid-template-areas</span><span class="p">:</span><span class="w"> </span>
+<span class="w">        </span><span class="s2">&quot;header header header&quot;</span>
+<span class="w">        </span><span class="s2">&quot;sidebar main main&quot;</span>
+<span class="w">        </span><span class="s2">&quot;footer footer footer&quot;</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Neste exemplo, três áreas nomeadas são criadas: <code>header</code>, <code>sidebar</code>, <code>main</code> e <code>footer</code>. A área <code>header</code> abrange todas as três colunas na primeira linha, <code>sidebar</code> ocupa a primeira coluna na segunda linha, <code>main</code> ocupa as duas últimas colunas na segunda linha, e <code>footer</code> abrange todas as três colunas na terceira linha.</p>
+<h3 id="posicionar-items-em-areas-nomeadas">Posicionar items em áreas nomeadas<a class="headerlink" href="#posicionar-items-em-areas-nomeadas" title="Permanent link">&para;</a></h3>
+<p>Após definir áreas nomeadas, posicionamos os itens dentro dessas áreas usando a propriedade <code>grid-area</code>. Veja o exemplo:</p>
+<div class="highlight"><pre><span></span><code><span class="p">.</span><span class="nc">header</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">grid-area</span><span class="p">:</span><span class="w"> </span><span class="n">header</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="p">.</span><span class="nc">sidebar</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">grid-area</span><span class="p">:</span><span class="w"> </span><span class="n">sidebar</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="p">.</span><span class="nc">main</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">grid-area</span><span class="p">:</span><span class="w"> </span><span class="n">main</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="p">.</span><span class="nc">footer</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">grid-area</span><span class="p">:</span><span class="w"> </span><span class="n">footer</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>A propriedade <code>grid-area</code> também pode ser usada para definir explicitamente a posição de um item de grade baseado em índices de linha e coluna. Os valores necessários são quatro, a saber: linha inicial, coluna inicial, linha final e coluna final.</p>
+<div class="highlight"><pre><span></span><code><span class="p">.</span><span class="nc">item</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">grid-area</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">4</span><span class="p">;</span><span class="w"> </span><span class="c">/* Da linha 1 à linha 3 e da coluna 2 à coluna 4 */</span>
+<span class="p">}</span>
+</code></pre></div>
 <p>Recomendo a leitura do texto <a href="https://css-tricks.com/snippets/css/complete-guide-grid/">A Complete Guide to CSS Grid</a> para conhecer de forma mais aprofundada o funcionamento da técnica.</p>
 <h2 id="outras-referencias">Outras referências<a class="headerlink" href="#outras-referencias" title="Permanent link">&para;</a></h2>
 <ul>
 <li><a href="https://www.digitalocean.com/community/tutorials/css-css-grid-layout-fr-unit?utm_medium=content_acq&amp;utm_source=css-tricks&amp;utm_campaign=&amp;utm_content=awareness_bestsellers">Grid Layout - FR Unit</a></li>
 <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout">CSS grid layout - MDN</a></li>
 <li><a href="https://web.dev/learn/css/grid">CSS Grid</a></li>
+<li><a href="https://www.paradigmadigital.com/assets/cms/cheat_sheet_flexbox_6fb013edd1.pdf">Grid e Flex Layout Cheat Sheet</a></li>
 </ul>
 
 
@@ -1750,13 +1866,13 @@
         
         
           
-          <a href="../exercicios/fundamentos-seletores/" class="md-footer__link md-footer__link--next" aria-label="Next: Exercício 1: Regras de Estilo" rel="next">
+          <a href="../responsividade/" class="md-footer__link md-footer__link--next" aria-label="Next: Responsividade" rel="next">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Exercício 1: Regras de Estilo
+                Responsividade
               </div>
             </div>
             <div class="md-footer__button md-icon">
