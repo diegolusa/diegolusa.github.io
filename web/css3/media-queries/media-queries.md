@@ -89,15 +89,15 @@ No exemplo que segue temos um documento HTML5 com barra de navegação responsiv
 
 
 ```html title="index.html"
---8<-- "docs/web/css3/samples/media-queries/index.html"
+--8<-- "samples/media-queries/index.html"
 ```
 
 
 ```css title="style.css"
---8<-- "docs/web/css3/samples/media-queries/style.css"
+--8<-- "samples/media-queries/style.css"
 ```
 
 
 ```javascript title="scripts.js"
---8<-- "docs/web/css3/samples/media-queries/scripts.js"
+--8<-- "samples/media-queries/scripts.js"
 ```
