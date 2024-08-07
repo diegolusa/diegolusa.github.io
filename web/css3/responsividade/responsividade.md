@@ -49,6 +49,7 @@ Embora media queries possam ser utilizadas no JavaScript e no HTML5, o uso no CS
        }
    }
    ```
+
 - **Design Mobile First:** Adotar uma abordagem de design que prioriza a experiência em dispositivos móveis, expandindo gradualmente para telas maiores. Isso geralmente resulta em um site mais eficiente e focado nas funcionalidades essenciais. O movimente inverso, que consiste em desenvolver o layout para telas maiores e ir reduzindo para telas menores não é a abordagem mais efetiva.
 
 - **Componentes Responsivos:** Criar componentes de interface que possam se adaptar a diferentes tamanhos de tela, mantendo a funcionalidade e a usabilidade.

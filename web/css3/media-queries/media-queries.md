@@ -38,7 +38,7 @@ Na expressão acima, temos:
   - `monochrome`: Número de bits por pixel em dispositivos monocromáticos.
 
 
-A lista de mídias e propriedades é vasta. Acesse a especificação [Media Queries Level 4] (https://www.w3.org/TR/2021/CRD-mediaqueries-4-20211225/#intro) para encontrar todo detalhamento do recurso.
+A lista de mídias e propriedades é vasta. Acesse a especificação [Media Queries Level 4](https://www.w3.org/TR/2021/CRD-mediaqueries-4-20211225/#intro) para encontrar todo detalhamento do recurso.
 
 
 As propriedades tipicamente avaliadas são largura máxima e mínima da tela, expressas por `max-width` e `min-width`, respectivamente. No exemplo que segue, a media query aplica estilos específicos para dispositivos com largura de tela de até 600px. Veja:
@@ -89,15 +89,17 @@ No exemplo que segue temos um documento HTML5 com barra de navegação responsiv
 
 
 ```html title="index.html"
---8<-- "samples/media-queries/index.html"
+    --8<-- "css3/media-queries/index.html"
 ```
 
 
 ```css title="style.css"
---8<-- "samples/media-queries/style.css"
+    --8<-- "css3/media-queries/style.css"
+
 ```
 
 
 ```javascript title="scripts.js"
---8<-- "samples/media-queries/scripts.js"
+    --8<-- "css3/media-queries/scripts.js"
+
 ```
