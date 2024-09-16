@@ -61,7 +61,7 @@ Propriedade que permite especificar a apresentação da face dos glifos, se norm
 
 ## Propriedade `font-size`
 
-Permite especificar o tamanho da fonte, a partir de medidas relativas, como percentual, *em*, *rem*, etc ou medidas absolutas como *pixels*. Para saber mais sobre unidades de medida, acesse [nosso conteúdo sobre o tema](unidades-medida.md) [@cssw3s2021] [@csstutrep2021].
+Permite especificar o tamanho da fonte, a partir de medidas relativas, como percentual, *em*, *rem*, etc ou medidas absolutas como *pixels*. Para saber mais sobre unidades de medida, acesse [nosso conteúdo sobre o tema](unidades-medidas.md) [@cssw3s2021] [@csstutrep2021].
 
 <p style="margin-left: 10%;margin-right: 10%;text-align: center; font-family:Arial, sans-serif; border: black 1px solid;border-radius: 3px; font-style:oblique">
 <span style="font-size: 16px">16px</span> - <span style="font-size: 2rem">2rem</span> - <span style="font-size: 2em">2em</span> </p>
