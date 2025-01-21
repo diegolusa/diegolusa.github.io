@@ -22,9 +22,6 @@
     
       <link rel="stylesheet" href="../assets/stylesheets/main.35f28582.min.css">
       
-        
-        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
-      
       
 
 
@@ -54,14 +51,7 @@
   </head>
   
   
-    
-    
-      
-    
-    
-    
-    
-    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="black" data-md-color-accent="indigo">
+    <body dir="ltr">
   
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
@@ -82,9 +72,7 @@
     
       
 
-  
-
-<header class="md-header md-header--shadow" data-md-component="header">
+<header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
     <a href=".." title="Diego A. Lusa" class="md-header__button md-logo" aria-label="Diego A. Lusa" data-md-component="logo">
       
@@ -111,32 +99,6 @@
         </div>
       </div>
     </div>
-    
-      
-        <form class="md-header__option" data-md-component="palette">
-  
-    
-    
-    
-    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="black" data-md-color-accent="indigo"  aria-label="Mudar para modo escuro"  type="radio" name="__palette" id="__palette_0">
-    
-      <label class="md-header__button md-icon" title="Mudar para modo escuro" for="__palette_1" hidden>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6m0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4M7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3"/></svg>
-      </label>
-    
-  
-    
-    
-    
-    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="indigo"  aria-label="Mudar para modo claro"  type="radio" name="__palette" id="__palette_1">
-    
-      <label class="md-header__button md-icon" title="Mudar para modo claro" for="__palette_0" hidden>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3"/></svg>
-      </label>
-    
-  
-</form>
-      
     
     
       <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
@@ -190,6 +152,101 @@
       
         
           
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+    
+      
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../informatica/editores-texto/introducao/" class="md-tabs__link">
+          
+  
+    
+  
+  Informática Básica
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../programacao/linguagens/" class="md-tabs__link">
+          
+  
+    
+  
+  Linguagens de Programação
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../disciplinas/upf/ads-153/" class="md-tabs__link">
+          
+  
+    
+  
+  Desenvolvimento para Web (ADS153)
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
         
       
       <main class="md-main" data-md-component="main">
@@ -203,10 +260,12 @@
                     
 
 
+  
+
 
   
 
-<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navigation" data-md-level="0">
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
     <a href=".." title="Diego A. Lusa" class="md-nav__button md-logo" aria-label="Diego A. Lusa" data-md-component="logo">
       
@@ -246,6 +305,13 @@
   
     
     
+      
+        
+      
+    
+    
+      
+      
     
     
     <li class="md-nav__item md-nav__item--nested">
@@ -259,7 +325,7 @@
             
   
   <span class="md-ellipsis">
-    Informática
+    Informática Básica
   </span>
   
 
@@ -269,7 +335,7 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
-            Informática
+            Informática Básica
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -281,6 +347,17 @@
   
     
     
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
     
     
     <li class="md-nav__item md-nav__item--nested">
@@ -394,6 +471,23 @@
   
     
     
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
     
     
     <li class="md-nav__item md-nav__item--nested">
@@ -407,7 +501,7 @@
             
   
   <span class="md-ellipsis">
-    Programação
+    Linguagens de Programação
   </span>
   
 
@@ -417,7 +511,7 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
-            Programação
+            Linguagens de Programação
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -471,6 +565,19 @@
   
     
     
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
     
     
     <li class="md-nav__item md-nav__item--nested">
@@ -598,6 +705,15 @@
   
     
     
+      
+        
+      
+        
+      
+    
+    
+      
+      
     
     
     <li class="md-nav__item md-nav__item--nested">
@@ -683,6 +799,27 @@
   
     
     
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
     
     
     <li class="md-nav__item md-nav__item--nested">
@@ -865,6 +1002,23 @@
   
     
     
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
     
     
     <li class="md-nav__item md-nav__item--nested">
@@ -1042,6 +1196,29 @@
   
     
     
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
     
     
     <li class="md-nav__item md-nav__item--nested">
@@ -1266,296 +1443,36 @@
 
               
             
-              
-                
-  
-  
-  
-  
-    
-    
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
+          </ul>
+        </nav>
       
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_7" >
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
         
           
-          <label class="md-nav__link" for="__nav_3_7" id="__nav_3_7_label" tabindex="0">
-            
-  
-  <span class="md-ellipsis">
-    Linguagem JavaScript
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_7_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3_7">
-            <span class="md-nav__icon md-icon"></span>
-            Linguagem JavaScript
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../programacao/js/operadores/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Operadores
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../programacao/js/variaveis/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Variáveis
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../programacao/js/condicionais/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Condicionais
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../programacao/js/lacos/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Laços de Repetição
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../programacao/js/excecoes/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Exceções
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../programacao/js/funcoes-dom/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Interagindo com navegador e DOM
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../programacao/js/promises/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Promises
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../programacao/js/jquery/introducao/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    JQuery
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    
-    
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_7_9" >
-        
-          
-          <label class="md-nav__link" for="__nav_3_7_9" id="__nav_3_7_9_label" tabindex="0">
-            
-  
-  <span class="md-ellipsis">
-    Exercícios
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_7_9_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3_7_9">
-            <span class="md-nav__icon md-icon"></span>
-            Exercícios
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../programacao/js/exercicios/exercicios-1/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Revisão
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
       
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
+        
       
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
+        
       
-    </li>
-  
-
+    
     
       
       
-  
-  
-  
-  
-    
-    
     
     
     <li class="md-nav__item md-nav__item--nested">
@@ -1565,79 +1482,33 @@
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
         
           
-          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
-            
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../disciplinas/upf/ads-153/" class="md-nav__link ">
+              
   
   <span class="md-ellipsis">
-    Desenvolvimento Web
+    Desenvolvimento para Web (ADS153)
   </span>
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
         
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
-            Desenvolvimento Web
+            Desenvolvimento para Web (ADS153)
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
               
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../web/historia/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Como surgiu a Web?
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    
-    
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" >
-        
-          
-          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
-            
-  
-  <span class="md-ellipsis">
-    HTML5
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_2">
-            <span class="md-nav__icon md-icon"></span>
-            HTML5
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
             
               
                 
@@ -1646,11 +1517,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../web/html5/estrutura-basica/" class="md-nav__link">
+      <a href="../disciplinas/upf/ads-153/m-1/m-1/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    O que é HTML?
+    Módulo I - Fundamentos e Linguagem HTML5
   </span>
   
 
@@ -1667,11 +1538,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../web/html5/tags-basicas/" class="md-nav__link">
+      <a href="../disciplinas/upf/ads-153/m-2/m-2/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Conceitos Básicos
+    Módulo II - Cascading Style Sheets
   </span>
   
 
@@ -1688,214 +1559,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../web/html5/hiperlinks/" class="md-nav__link">
+      <a href="../disciplinas/upf/ads-153/m-3/m-3/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Hiperlinks
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../web/html5/imagem/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Imagens
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../web/html5/tags-estruturais/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Semântica de Conteúdo
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../web/html5/formularios/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Formulários
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../web/html5/tabelas/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Tabelas
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    
-    
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2_8" >
-        
-          
-          <label class="md-nav__link" for="__nav_4_2_8" id="__nav_4_2_8_label" tabindex="0">
-            
-  
-  <span class="md-ellipsis">
-    Exercícios
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_2_8_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_2_8">
-            <span class="md-nav__icon md-icon"></span>
-            Exercícios
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../web/html5/exercicios/e1-tags-semantics-listas/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Exercício 1: Tags semânticas e listas
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../web/html5/exercicios/e2-semantica-texto-links-imagens/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Exercício 2: Semântica de texto, hiperlinks e imagens
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../web/html5/exercicios/e3-formularios/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Exercício 3: Formulários
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../web/html5/exercicios/e4-tabelas/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Exercício 4: Tabelas
+    Módulo III - Linguagem JavaScript
   </span>
   
 
@@ -1908,444 +1576,6 @@
           </ul>
         </nav>
       
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    
-    
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3" >
-        
-          
-          <label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
-            
-  
-  <span class="md-ellipsis">
-    CSS3
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_3">
-            <span class="md-nav__icon md-icon"></span>
-            CSS3
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../web/css3/fundamentos/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Fundamentos
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../web/css3/seletores/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Seletores
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../web/css3/unidades-medidas/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Unidades de Medida
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../web/css3/cores/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Cores
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../web/css3/fontes/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Fontes
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../web/css3/box-model/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Box Model
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../web/css3/posicionamento/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Posicionamento
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../web/css3/responsividade/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Responsividade
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../web/css3/media-queries/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Media Queries
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    
-    
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3_10" >
-        
-          
-          <label class="md-nav__link" for="__nav_4_3_10" id="__nav_4_3_10_label" tabindex="0">
-            
-  
-  <span class="md-ellipsis">
-    Exercícios
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_3_10_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_3_10">
-            <span class="md-nav__icon md-icon"></span>
-            Exercícios
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../web/css3/exercicios/fundamentos-seletores/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Exercício 1: Regras de Estilo
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../web/css3/exercicios/layout/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Exercício 2: Layouts
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../web/css3/exercicios/media-queries/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Exercício 3: Media queries e Grid Layout
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    
-    
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_4" >
-        
-          
-          <label class="md-nav__link" for="__nav_4_4" id="__nav_4_4_label" tabindex="0">
-            
-  
-  <span class="md-ellipsis">
-    Exercícios
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_4_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_4">
-            <span class="md-nav__icon md-icon"></span>
-            Exercícios
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../web/exercicios/1/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Restaurante
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../about/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Sobre
-  </span>
-  
-
-      </a>
     </li>
   
 
@@ -2370,22 +1600,22 @@
 
 <p>Spark é uma biblioteca de processamento paralelo de dados. Escrita em Scala. Pode ser utilizada em Python, Scala e Java.</p>
 <p>Resilient Distributed DataSets são um dos conceitos chave. Core object que permite distribuir dados em um cluster. Trata falhas automaticamente. É criado pelo programa Driver por meio do objeto SparkContext.</p>
-<div class="highlight"><pre><span></span><code><span class="c1">#sc means SparkContext</span>
-
-<span class="n">nums</span> <span class="o">=</span> <span class="n">parallelize</span> <span class="p">([</span><span class="mi">5</span><span class="p">,</span><span class="mi">52</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">6</span><span class="p">])</span>
-
-<span class="n">rddLines</span> <span class="o">=</span> <span class="n">sc</span><span class="o">.</span><span class="n">textFile</span><span class="p">(</span><span class="s2">&quot;file:///c:/dados.txt&quot;</span><span class="p">)</span>
-<span class="n">hiveCtx</span> <span class="o">=</span> <span class="n">HiveContext</span><span class="p">(</span><span class="n">sc</span><span class="p">)</span>
-
-<span class="c1">#could be use JDBC, CSV, JSON, ElasticSearch, etc.</span>
-</code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1">#sc means SparkContext</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="n">nums</span> <span class="o">=</span> <span class="n">parallelize</span> <span class="p">([</span><span class="mi">5</span><span class="p">,</span><span class="mi">52</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">6</span><span class="p">])</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="n">rddLines</span> <span class="o">=</span> <span class="n">sc</span><span class="o">.</span><span class="n">textFile</span><span class="p">(</span><span class="s2">&quot;file:///c:/dados.txt&quot;</span><span class="p">)</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="n">hiveCtx</span> <span class="o">=</span> <span class="n">HiveContext</span><span class="p">(</span><span class="n">sc</span><span class="p">)</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="c1">#could be use JDBC, CSV, JSON, ElasticSearch, etc.</span>
+</span></code></pre></div>
 <p>Para transformar em RDDs:</p>
 <ul>
 <li><strong>map</strong>: Transforma de um tipo de RDD para outro por meio de uma função. A mesma quantidade de dados do RDD original terá no RDD resultante do map</li>
 </ul>
-<div class="highlight"><pre><span></span><code><span class="n">rdd</span> <span class="o">=</span> <span class="n">sc</span><span class="o">.</span><span class="n">parallelize</span><span class="p">([</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">])</span>
-<span class="n">rdd</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">y</span><span class="p">:</span> <span class="n">y</span><span class="o">*</span><span class="n">y</span><span class="p">)</span>
-</code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">rdd</span> <span class="o">=</span> <span class="n">sc</span><span class="o">.</span><span class="n">parallelize</span><span class="p">([</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">])</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="n">rdd</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">y</span><span class="p">:</span> <span class="n">y</span><span class="o">*</span><span class="n">y</span><span class="p">)</span>
+</span></code></pre></div>
 <ul>
 <li><strong>flatmap</strong>: É similar ao map, mas pode gerar n valores a partir de um único de entrada.</li>
 <li>filter</li>
@@ -2404,12 +1634,12 @@
 </ul>
 <p>Nada acontece no <em>driver program</em> até que uma <em>action</em> seja solicitada.</p>
 <p>Para iniciar um <em>driver program</em> precisamos importar:</p>
-<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">pyspark</span> <span class="kn">import</span> <span class="n">SparkConf</span><span class="p">,</span> <span class="n">SparkContext</span>
-<span class="kn">import</span> <span class="nn">collections</span>
-</code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kn">from</span> <span class="nn">pyspark</span> <span class="kn">import</span> <span class="n">SparkConf</span><span class="p">,</span> <span class="n">SparkContext</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="kn">import</span> <span class="nn">collections</span>
+</span></code></pre></div>
 <p>Na linha a seguir criamos o objeto de configuração</p>
-<div class="highlight"><pre><span></span><code><span class="n">conf</span> <span class="o">=</span> <span class="n">SparkConf</span><span class="p">()</span><span class="o">.</span><span class="n">setMaster</span><span class="p">(</span><span class="s2">&quot;local&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">setAppName</span><span class="p">(</span><span class="s2">&quot;myApp&quot;</span><span class="p">)</span>
-</code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="n">conf</span> <span class="o">=</span> <span class="n">SparkConf</span><span class="p">()</span><span class="o">.</span><span class="n">setMaster</span><span class="p">(</span><span class="s2">&quot;local&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">setAppName</span><span class="p">(</span><span class="s2">&quot;myApp&quot;</span><span class="p">)</span>
+</span></code></pre></div>
 <p>O método <code>setMaster</code> informa o endereço master para se conectar. Pode ser <code>local</code> ou um endereço do cluster. Já o <code>setAppName</code> permite localizar as aplicações no Spark Web UI</p>
 <p>Verificar:</p>
 <h1 id="httpsdocspythonorg3librarycollectionshtml">https://docs.python.org/3/library/collections.html<a class="headerlink" href="#httpsdocspythonorg3librarycollectionshtml" title="Permanent link">&para;</a></h1>
@@ -2417,8 +1647,8 @@
 <p>Key-Value RDD</p>
 <p>RDD somente podem armazenar pares de chave-valor</p>
 <p>Para construir podemos utilizar a transformação map:</p>
-<div class="highlight"><pre><span></span><code><span class="n">totalByAge</span> <span class="o">=</span> <span class="n">rdd</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span>
-</code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="n">totalByAge</span> <span class="o">=</span> <span class="n">rdd</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span>
+</span></code></pre></div>
 <p>O que podemos fazer (transformations):</p>
 <ul>
 <li>mapValues</li>
@@ -2520,7 +1750,7 @@
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.top", "navigation.instant", "toc.integrate", "header.autohide", "navigation.footer", "content.code.copy"], "search": "../assets/javascripts/workers/search.07f07601.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.top", "navigation.tabs", "navigation.instant", "toc.integrate", "toc.follow", "header.autohide", "navigation.footer", "navigation.top", "content.code.copy", "navigation.indexes"], "search": "../assets/javascripts/workers/search.07f07601.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
       <script src="../assets/javascripts/bundle.56dfad97.min.js"></script>

@@ -26,9 +26,6 @@
     
       <link rel="stylesheet" href="../../../assets/stylesheets/main.35f28582.min.css">
       
-        
-        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
-      
       
 
 
@@ -58,14 +55,7 @@
   </head>
   
   
-    
-    
-      
-    
-    
-    
-    
-    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="black" data-md-color-accent="indigo">
+    <body dir="ltr">
   
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
@@ -86,9 +76,7 @@
     
       
 
-  
-
-<header class="md-header md-header--shadow" data-md-component="header">
+<header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
     <a href="../../.." title="Diego A. Lusa" class="md-header__button md-logo" aria-label="Diego A. Lusa" data-md-component="logo">
       
@@ -115,32 +103,6 @@
         </div>
       </div>
     </div>
-    
-      
-        <form class="md-header__option" data-md-component="palette">
-  
-    
-    
-    
-    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="black" data-md-color-accent="indigo"  aria-label="Mudar para modo escuro"  type="radio" name="__palette" id="__palette_0">
-    
-      <label class="md-header__button md-icon" title="Mudar para modo escuro" for="__palette_1" hidden>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6m0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4M7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3"/></svg>
-      </label>
-    
-  
-    
-    
-    
-    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="indigo"  aria-label="Mudar para modo claro"  type="radio" name="__palette" id="__palette_1">
-    
-      <label class="md-header__button md-icon" title="Mudar para modo claro" for="__palette_0" hidden>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3"/></svg>
-      </label>
-    
-  
-</form>
-      
     
     
       <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
@@ -194,6 +156,103 @@
       
         
           
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+    
+      
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../informatica/editores-texto/introducao/" class="md-tabs__link">
+          
+  
+    
+  
+  Informática Básica
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../linguagens/" class="md-tabs__link">
+          
+  
+    
+  
+  Linguagens de Programação
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../disciplinas/upf/ads-153/" class="md-tabs__link">
+          
+  
+    
+  
+  Desenvolvimento para Web (ADS153)
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
         
       
       <main class="md-main" data-md-component="main">
@@ -207,10 +266,12 @@
                     
 
 
+  
+
 
   
 
-<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navigation" data-md-level="0">
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
     <a href="../../.." title="Diego A. Lusa" class="md-nav__button md-logo" aria-label="Diego A. Lusa" data-md-component="logo">
       
@@ -250,6 +311,13 @@
   
     
     
+      
+        
+      
+    
+    
+      
+      
     
     
     <li class="md-nav__item md-nav__item--nested">
@@ -263,7 +331,7 @@
             
   
   <span class="md-ellipsis">
-    Informática
+    Informática Básica
   </span>
   
 
@@ -273,7 +341,7 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
-            Informática
+            Informática Básica
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -285,6 +353,17 @@
   
     
     
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
     
     
     <li class="md-nav__item md-nav__item--nested">
@@ -400,20 +479,40 @@
   
     
     
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
         
           
-          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
             
   
   <span class="md-ellipsis">
-    Programação
+    Linguagens de Programação
   </span>
   
 
@@ -423,7 +522,7 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
-            Programação
+            Linguagens de Programação
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -477,6 +576,19 @@
   
     
     
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
     
     
     <li class="md-nav__item md-nav__item--nested">
@@ -604,6 +716,15 @@
   
     
     
+      
+        
+      
+        
+      
+    
+    
+      
+      
     
     
     <li class="md-nav__item md-nav__item--nested">
@@ -691,6 +812,27 @@
   
     
     
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
     
     
     <li class="md-nav__item md-nav__item--active md-nav__item--nested">
@@ -978,6 +1120,23 @@
   
     
     
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
     
     
     <li class="md-nav__item md-nav__item--nested">
@@ -1155,6 +1314,29 @@
   
     
     
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
     
     
     <li class="md-nav__item md-nav__item--nested">
@@ -1379,296 +1561,36 @@
 
               
             
-              
-                
-  
-  
-  
-  
-    
-    
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
+          </ul>
+        </nav>
       
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_7" >
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
         
           
-          <label class="md-nav__link" for="__nav_3_7" id="__nav_3_7_label" tabindex="0">
-            
-  
-  <span class="md-ellipsis">
-    Linguagem JavaScript
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_7_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3_7">
-            <span class="md-nav__icon md-icon"></span>
-            Linguagem JavaScript
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../js/operadores/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Operadores
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../js/variaveis/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Variáveis
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../js/condicionais/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Condicionais
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../js/lacos/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Laços de Repetição
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../js/excecoes/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Exceções
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../js/funcoes-dom/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Interagindo com navegador e DOM
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../js/promises/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Promises
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../js/jquery/introducao/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    JQuery
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    
-    
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_7_9" >
-        
-          
-          <label class="md-nav__link" for="__nav_3_7_9" id="__nav_3_7_9_label" tabindex="0">
-            
-  
-  <span class="md-ellipsis">
-    Exercícios
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_7_9_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3_7_9">
-            <span class="md-nav__icon md-icon"></span>
-            Exercícios
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../js/exercicios/exercicios-1/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Revisão
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
       
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
+        
       
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
+        
       
-    </li>
-  
-
+    
     
       
       
-  
-  
-  
-  
-    
-    
     
     
     <li class="md-nav__item md-nav__item--nested">
@@ -1678,79 +1600,33 @@
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
         
           
-          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
-            
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../disciplinas/upf/ads-153/" class="md-nav__link ">
+              
   
   <span class="md-ellipsis">
-    Desenvolvimento Web
+    Desenvolvimento para Web (ADS153)
   </span>
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
         
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
-            Desenvolvimento Web
+            Desenvolvimento para Web (ADS153)
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
               
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../web/historia/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Como surgiu a Web?
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    
-    
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" >
-        
-          
-          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
-            
-  
-  <span class="md-ellipsis">
-    HTML5
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_2">
-            <span class="md-nav__icon md-icon"></span>
-            HTML5
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
             
               
                 
@@ -1759,11 +1635,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../web/html5/estrutura-basica/" class="md-nav__link">
+      <a href="../../../disciplinas/upf/ads-153/m-1/m-1/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    O que é HTML?
+    Módulo I - Fundamentos e Linguagem HTML5
   </span>
   
 
@@ -1780,11 +1656,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../web/html5/tags-basicas/" class="md-nav__link">
+      <a href="../../../disciplinas/upf/ads-153/m-2/m-2/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Conceitos Básicos
+    Módulo II - Cascading Style Sheets
   </span>
   
 
@@ -1801,214 +1677,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../web/html5/hiperlinks/" class="md-nav__link">
+      <a href="../../../disciplinas/upf/ads-153/m-3/m-3/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Hiperlinks
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../web/html5/imagem/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Imagens
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../web/html5/tags-estruturais/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Semântica de Conteúdo
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../web/html5/formularios/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Formulários
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../web/html5/tabelas/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Tabelas
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    
-    
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2_8" >
-        
-          
-          <label class="md-nav__link" for="__nav_4_2_8" id="__nav_4_2_8_label" tabindex="0">
-            
-  
-  <span class="md-ellipsis">
-    Exercícios
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_2_8_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_2_8">
-            <span class="md-nav__icon md-icon"></span>
-            Exercícios
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../web/html5/exercicios/e1-tags-semantics-listas/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Exercício 1: Tags semânticas e listas
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../web/html5/exercicios/e2-semantica-texto-links-imagens/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Exercício 2: Semântica de texto, hiperlinks e imagens
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../web/html5/exercicios/e3-formularios/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Exercício 3: Formulários
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../web/html5/exercicios/e4-tabelas/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Exercício 4: Tabelas
+    Módulo III - Linguagem JavaScript
   </span>
   
 
@@ -2021,444 +1694,6 @@
           </ul>
         </nav>
       
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    
-    
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3" >
-        
-          
-          <label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
-            
-  
-  <span class="md-ellipsis">
-    CSS3
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_3">
-            <span class="md-nav__icon md-icon"></span>
-            CSS3
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../web/css3/fundamentos/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Fundamentos
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../web/css3/seletores/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Seletores
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../web/css3/unidades-medidas/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Unidades de Medida
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../web/css3/cores/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Cores
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../web/css3/fontes/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Fontes
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../web/css3/box-model/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Box Model
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../web/css3/posicionamento/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Posicionamento
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../web/css3/responsividade/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Responsividade
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../web/css3/media-queries/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Media Queries
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    
-    
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3_10" >
-        
-          
-          <label class="md-nav__link" for="__nav_4_3_10" id="__nav_4_3_10_label" tabindex="0">
-            
-  
-  <span class="md-ellipsis">
-    Exercícios
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_3_10_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_3_10">
-            <span class="md-nav__icon md-icon"></span>
-            Exercícios
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../web/css3/exercicios/fundamentos-seletores/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Exercício 1: Regras de Estilo
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../web/css3/exercicios/layout/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Exercício 2: Layouts
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../web/css3/exercicios/media-queries/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Exercício 3: Media queries e Grid Layout
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    
-    
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_4" >
-        
-          
-          <label class="md-nav__link" for="__nav_4_4" id="__nav_4_4_label" tabindex="0">
-            
-  
-  <span class="md-ellipsis">
-    Exercícios
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_4_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_4">
-            <span class="md-nav__icon md-icon"></span>
-            Exercícios
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../web/exercicios/1/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Restaurante
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../about/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Sobre
-  </span>
-  
-
-      </a>
     </li>
   
 
@@ -2486,31 +1721,31 @@
 <p>Em Python, assim como em praticamente todas as linguagens de programação, os comandos condicionais desempenham um papel fundamental na execução de um código de forma controlada e adaptável. Eles permitem que um programa tome decisões com base em condições específicas, direcionando o fluxo de execução do código de acordo com o resultado dessas condições.</p>
 <h2 id="comando-if">Comando IF<a class="headerlink" href="#comando-if" title="Permanent link">&para;</a></h2>
 <p>O comando condicional mais básico em Python é o <strong>IF</strong>, que permite verificar se uma condição é verdadeira e executar um bloco de código associado a ela. </p>
-<div class="highlight"><pre><span></span><code><span class="n">idade</span> <span class="o">=</span> <span class="mi">18</span>
-
-<span class="k">if</span> <span class="n">idade</span> <span class="o">&gt;=</span> <span class="mi">18</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Idade igual ou superior a 18 anos.&quot;</span><span class="p">)</span>
-</code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">idade</span> <span class="o">=</span> <span class="mi">18</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="k">if</span> <span class="n">idade</span> <span class="o">&gt;=</span> <span class="mi">18</span><span class="p">:</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Idade igual ou superior a 18 anos.&quot;</span><span class="p">)</span>
+</span></code></pre></div>
 <p>Neste exemplo, o código verifica se a variável <code>idade</code> é maior ou igual a 18. Se for, ele imprime a mensagem <code>Idade igual ou superior a 18 anos.</code></p>
 <p>Além do <code>if</code>, Python também oferece o comando <code>else</code>, que pode ser utilizado em conjunto com o <code>if</code> para executar um bloco de código quando a condição especificada não é verdadeira:</p>
-<div class="highlight"><pre><span></span><code><span class="n">idade</span> <span class="o">=</span> <span class="mi">16</span>
-
-<span class="k">if</span> <span class="n">idade</span> <span class="o">&gt;=</span> <span class="mi">18</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Você é maior de idade.&quot;</span><span class="p">)</span>
-<span class="k">else</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Você é menor de idade.&quot;</span><span class="p">)</span>
-</code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">idade</span> <span class="o">=</span> <span class="mi">16</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="k">if</span> <span class="n">idade</span> <span class="o">&gt;=</span> <span class="mi">18</span><span class="p">:</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Você é maior de idade.&quot;</span><span class="p">)</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="k">else</span><span class="p">:</span>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Você é menor de idade.&quot;</span><span class="p">)</span>
+</span></code></pre></div>
 <p>Neste caso, se a idade for menor que 18, o programa imprime <code>Você é menor de idade.</code></p>
 <p>Por vezes, queremos avaliar múltiplas condições. Para isso, utilizamos o comando <code>elif</code> (abreviação de <code>else if</code>), que permite verificar condições adicionais após a condição inicial <code>if</code>. Por exemplo:</p>
-<div class="highlight"><pre><span></span><code><span class="n">idade</span> <span class="o">=</span> <span class="mi">20</span>
-
-<span class="k">if</span> <span class="n">idade</span> <span class="o">&lt;</span> <span class="mi">18</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Você é menor de idade.&quot;</span><span class="p">)</span>
-<span class="k">elif</span> <span class="n">idade</span> <span class="o">==</span> <span class="mi">18</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Você acabou de atingir a maioridade.&quot;</span><span class="p">)</span>
-<span class="k">else</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Você é maior de idade.&quot;</span><span class="p">)</span>
-</code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">idade</span> <span class="o">=</span> <span class="mi">20</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="k">if</span> <span class="n">idade</span> <span class="o">&lt;</span> <span class="mi">18</span><span class="p">:</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Você é menor de idade.&quot;</span><span class="p">)</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="k">elif</span> <span class="n">idade</span> <span class="o">==</span> <span class="mi">18</span><span class="p">:</span>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Você acabou de atingir a maioridade.&quot;</span><span class="p">)</span>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="k">else</span><span class="p">:</span>
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Você é maior de idade.&quot;</span><span class="p">)</span>
+</span></code></pre></div>
 <p>Neste caso, se a idade for igual a 18, o programa imprime <code>Você acabou de atingir a maioridade.</code> Se a idade for maior que 18, ele imprime <code>Você é maior de idade.</code> Se nenhuma das condições anteriores for verdadeira, o programa imprime <code>Você é menor de idade.</code></p>
 <p>Os comandos condicionais em Python também podem ser aninhados, ou seja, podem conter outros comandos condicionais dentro deles. Isso permite uma lógica mais complexa de decisão em um programa.</p>
 <p>Conforme você deve ter observado, o comando <code>if</code> avalia uma expressão lógica, cujos únicos valores possíveis são <code>VERDADEIRO</code> ou <code>FALSO</code>. Expressões nem sempre são tão simples, contendo apenas uma premissa. Tipicamente, temos duas ou mais premissas lógicas compondo as expressões. Neste caso, precisamos dos operadores lógicos para compor a expressão.</p>
@@ -2526,27 +1761,27 @@
 <li><strong>&gt;= (maior ou igual a)</strong>: Verifica se o valor à esquerda é maior ou igual ao valor à direita.</li>
 </ol>
 <p>Exemplos:</p>
-<div class="highlight"><pre><span></span><code><span class="n">a</span> <span class="o">=</span> <span class="mi">5</span>
-<span class="n">b</span> <span class="o">=</span> <span class="mi">10</span>
-
-<span class="c1"># Igual a</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">a</span> <span class="o">==</span> <span class="n">b</span><span class="p">)</span>  <span class="c1"># False</span>
-
-<span class="c1"># Diferente de</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">a</span> <span class="o">!=</span> <span class="n">b</span><span class="p">)</span>  <span class="c1"># True</span>
-
-<span class="c1"># Menor que</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">a</span> <span class="o">&lt;</span> <span class="n">b</span><span class="p">)</span>   <span class="c1"># True</span>
-
-<span class="c1"># Maior que</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">a</span> <span class="o">&gt;</span> <span class="n">b</span><span class="p">)</span>   <span class="c1"># False</span>
-
-<span class="c1"># Menor ou igual a</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">a</span> <span class="o">&lt;=</span> <span class="n">b</span><span class="p">)</span>  <span class="c1"># True</span>
-
-<span class="c1"># Maior ou igual a</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">a</span> <span class="o">&gt;=</span> <span class="n">b</span><span class="p">)</span>  <span class="c1"># False</span>
-</code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="n">a</span> <span class="o">=</span> <span class="mi">5</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="n">b</span> <span class="o">=</span> <span class="mi">10</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="c1"># Igual a</span>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="nb">print</span><span class="p">(</span><span class="n">a</span> <span class="o">==</span> <span class="n">b</span><span class="p">)</span>  <span class="c1"># False</span>
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="c1"># Diferente de</span>
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="nb">print</span><span class="p">(</span><span class="n">a</span> <span class="o">!=</span> <span class="n">b</span><span class="p">)</span>  <span class="c1"># True</span>
+</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>
+</span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="c1"># Menor que</span>
+</span><span id="__span-3-11"><a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="nb">print</span><span class="p">(</span><span class="n">a</span> <span class="o">&lt;</span> <span class="n">b</span><span class="p">)</span>   <span class="c1"># True</span>
+</span><span id="__span-3-12"><a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>
+</span><span id="__span-3-13"><a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a><span class="c1"># Maior que</span>
+</span><span id="__span-3-14"><a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a><span class="nb">print</span><span class="p">(</span><span class="n">a</span> <span class="o">&gt;</span> <span class="n">b</span><span class="p">)</span>   <span class="c1"># False</span>
+</span><span id="__span-3-15"><a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a>
+</span><span id="__span-3-16"><a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a><span class="c1"># Menor ou igual a</span>
+</span><span id="__span-3-17"><a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a><span class="nb">print</span><span class="p">(</span><span class="n">a</span> <span class="o">&lt;=</span> <span class="n">b</span><span class="p">)</span>  <span class="c1"># True</span>
+</span><span id="__span-3-18"><a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a>
+</span><span id="__span-3-19"><a id="__codelineno-3-19" name="__codelineno-3-19" href="#__codelineno-3-19"></a><span class="c1"># Maior ou igual a</span>
+</span><span id="__span-3-20"><a id="__codelineno-3-20" name="__codelineno-3-20" href="#__codelineno-3-20"></a><span class="nb">print</span><span class="p">(</span><span class="n">a</span> <span class="o">&gt;=</span> <span class="n">b</span><span class="p">)</span>  <span class="c1"># False</span>
+</span></code></pre></div>
 <p>Esses operadores são frequentemente usados em instruções condicionais (como <code>if</code>, <code>elif</code>, <code>else</code>), onde o fluxo do programa depende do resultado das comparações.</p>
 <p>Também é importante mencionar que os operadores de comparação podem ser combinados com operadores lógicos (<code>and</code>, <code>or</code>, <code>not</code>) para criar condições mais complexas. Isso permite construir lógicas de decisão mais elaboradas em um programa.</p>
 <h2 id="operadores-logicos">Operadores lógicos<a class="headerlink" href="#operadores-logicos" title="Permanent link">&para;</a></h2>
@@ -2554,44 +1789,44 @@
 <p>Em Python, existem três operadores lógicos principais: <code>and</code>, <code>or</code> e <code>not</code>. Cada um deles desempenha um papel específico na avaliação e combinação de expressões booleanas.</p>
 <h3 id="operador-and"><strong>Operador <code>and</code></strong>:<a class="headerlink" href="#operador-and" title="Permanent link">&para;</a></h3>
 <p>Este operador retorna <code>True</code> se ambas as expressões que ele conecta forem verdadeiras e <code>False</code> caso contrário. Ele é frequentemente utilizado para verificar se múltiplas condições devem ser atendidas para que uma determinada ação seja tomada. Por exemplo:</p>
-<div class="highlight"><pre><span></span><code><span class="n">idade</span> <span class="o">=</span> <span class="mi">25</span>
-<span class="k">if</span> <span class="n">idade</span> <span class="o">&gt;=</span> <span class="mi">18</span> <span class="ow">and</span> <span class="n">idade</span> <span class="o">&lt;=</span> <span class="mi">30</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Você é um adulto jovem.&quot;</span><span class="p">)</span>
-</code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="n">idade</span> <span class="o">=</span> <span class="mi">25</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="k">if</span> <span class="n">idade</span> <span class="o">&gt;=</span> <span class="mi">18</span> <span class="ow">and</span> <span class="n">idade</span> <span class="o">&lt;=</span> <span class="mi">30</span><span class="p">:</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Você é um adulto jovem.&quot;</span><span class="p">)</span>
+</span></code></pre></div>
 <p>Neste exemplo, a mensagem será impressa apenas se a idade estiver entre 18 e 30 anos.</p>
 <div class="admonition info">
 <p class="admonition-title">Tabela Verdade para o Operador <code>and</code> (e)</p>
-<pre><code>| A     | B     | A and B |
+<div class="language-text highlight"><pre><span></span><code>| A     | B     | A and B |
 |-------|-------|---------|
 | True  | True  | True    |
 | True  | False | False   |
 | False | True  | False   |
 | False | False | False   |
-</code></pre>
+</code></pre></div>
 </div>
 <h3 id="operador-or"><strong>Operador <code>or</code></strong>:<a class="headerlink" href="#operador-or" title="Permanent link">&para;</a></h3>
 <p>Este operador retorna <code>True</code> se pelo menos uma das expressões que ele conecta for verdadeira e <code>False</code> apenas se ambas as expressões forem falsas. Ele é útil quando pelo menos uma de várias condições precisa ser verdadeira para que uma ação seja executada. Por exemplo:</p>
-<div class="highlight"><pre><span></span><code><span class="n">sexo</span> <span class="o">=</span> <span class="s2">&quot;feminino&quot;</span>
-<span class="k">if</span> <span class="n">sexo</span> <span class="o">==</span> <span class="s2">&quot;feminino&quot;</span> <span class="ow">or</span> <span class="n">sexo</span> <span class="o">==</span> <span class="s2">&quot;masculino&quot;</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Sexo válido.&quot;</span><span class="p">)</span>
-</code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="n">sexo</span> <span class="o">=</span> <span class="s2">&quot;feminino&quot;</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="k">if</span> <span class="n">sexo</span> <span class="o">==</span> <span class="s2">&quot;feminino&quot;</span> <span class="ow">or</span> <span class="n">sexo</span> <span class="o">==</span> <span class="s2">&quot;masculino&quot;</span><span class="p">:</span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Sexo válido.&quot;</span><span class="p">)</span>
+</span></code></pre></div>
 <div class="admonition info">
 <p class="admonition-title">Tabela Verdade para o Operador <code>or</code> (ou)</p>
-<pre><code>| A     | B     | A or B  |
+<div class="language-text highlight"><pre><span></span><code>| A     | B     | A or B  |
 |-------|-------|---------|
 | True  | True  | True    |
 | True  | False | True    |
 | False | True  | True    |
 | False | False | False   |
-</code></pre>
+</code></pre></div>
 </div>
 <p>Neste caso, a mensagem será impressa se o valor da variável <code>sexo</code> for <code>feminino</code> ou <code>masculino</code>.</p>
 <h3 id="operador-not"><strong>Operador <code>not</code></strong>:<a class="headerlink" href="#operador-not" title="Permanent link">&para;</a></h3>
 <p>Este operador é utilizado para inverter o valor de uma expressão booleana. Se a expressão original for True, o <code>not</code> a transformará em False, e vice-versa. Ele é frequentemente utilizado para verificar se uma condição não é verdadeira. Por exemplo:</p>
-<div class="highlight"><pre><span></span><code><span class="n">idade</span> <span class="o">=</span> <span class="mi">15</span>
-<span class="k">if</span> <span class="ow">not</span> <span class="n">idade</span> <span class="o">&gt;=</span> <span class="mi">18</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Você é menor de idade.&quot;</span><span class="p">)</span>
-</code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="n">idade</span> <span class="o">=</span> <span class="mi">15</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="k">if</span> <span class="ow">not</span> <span class="n">idade</span> <span class="o">&gt;=</span> <span class="mi">18</span><span class="p">:</span>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Você é menor de idade.&quot;</span><span class="p">)</span>
+</span></code></pre></div>
 <p>Neste exemplo, a mensagem será impressa apenas se a idade não for maior ou igual a 18.</p>
 <div class="admonition info">
 <p class="admonition-title">Tabela Verdade para o Operador <code>not</code> (negação)</p>
@@ -2618,48 +1853,48 @@
 <p>O comando <a href="https://docs.python.org/3/tutorial/controlflow.html#match-statements"><code>match</code></a> foi introduzido no Python a partir da versão 3.10 e oferece uma nova forma de realizar múltiplas comparações de padrões de forma mais legível e concisa do que as estruturas condicionais tradicionais.</p>
 <p>Ele é especialmente útil quando se tem múltiplas condições a serem verificadas e quando cada condição envolve uma expressão de padrão específica. O <code>match</code> funciona de maneira semelhante ao <code>switch</code> em outras linguagens de programação.</p>
 <p>Vamos ver um exemplo de como o <code>match</code> pode ser usado:</p>
-<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">dia_da_semana</span><span class="p">(</span><span class="n">numero</span><span class="p">):</span>
-    <span class="k">match</span> <span class="n">numero</span><span class="p">:</span>
-        <span class="k">case</span> <span class="mi">1</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Domingo&quot;</span><span class="p">)</span>
-        <span class="k">case</span> <span class="mi">2</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Segunda-feira&quot;</span><span class="p">)</span>
-        <span class="k">case</span> <span class="mi">3</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Terça-feira&quot;</span><span class="p">)</span>
-        <span class="k">case</span> <span class="mi">4</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Quarta-feira&quot;</span><span class="p">)</span>
-        <span class="k">case</span> <span class="mi">5</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Quinta-feira&quot;</span><span class="p">)</span>
-        <span class="k">case</span> <span class="mi">6</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Sexta-feira&quot;</span><span class="p">)</span>
-        <span class="k">case</span> <span class="mi">7</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Sábado&quot;</span><span class="p">)</span>
-        <span class="k">case</span><span class="w"> </span><span class="k">_</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Número inválido&quot;</span><span class="p">)</span>
-</code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="k">def</span> <span class="nf">dia_da_semana</span><span class="p">(</span><span class="n">numero</span><span class="p">):</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>    <span class="k">match</span> <span class="n">numero</span><span class="p">:</span>
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>        <span class="k">case</span> <span class="mi">1</span><span class="p">:</span>
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Domingo&quot;</span><span class="p">)</span>
+</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>        <span class="k">case</span> <span class="mi">2</span><span class="p">:</span>
+</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Segunda-feira&quot;</span><span class="p">)</span>
+</span><span id="__span-7-7"><a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a>        <span class="k">case</span> <span class="mi">3</span><span class="p">:</span>
+</span><span id="__span-7-8"><a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a>            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Terça-feira&quot;</span><span class="p">)</span>
+</span><span id="__span-7-9"><a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a>        <span class="k">case</span> <span class="mi">4</span><span class="p">:</span>
+</span><span id="__span-7-10"><a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a>            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Quarta-feira&quot;</span><span class="p">)</span>
+</span><span id="__span-7-11"><a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a>        <span class="k">case</span> <span class="mi">5</span><span class="p">:</span>
+</span><span id="__span-7-12"><a id="__codelineno-7-12" name="__codelineno-7-12" href="#__codelineno-7-12"></a>            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Quinta-feira&quot;</span><span class="p">)</span>
+</span><span id="__span-7-13"><a id="__codelineno-7-13" name="__codelineno-7-13" href="#__codelineno-7-13"></a>        <span class="k">case</span> <span class="mi">6</span><span class="p">:</span>
+</span><span id="__span-7-14"><a id="__codelineno-7-14" name="__codelineno-7-14" href="#__codelineno-7-14"></a>            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Sexta-feira&quot;</span><span class="p">)</span>
+</span><span id="__span-7-15"><a id="__codelineno-7-15" name="__codelineno-7-15" href="#__codelineno-7-15"></a>        <span class="k">case</span> <span class="mi">7</span><span class="p">:</span>
+</span><span id="__span-7-16"><a id="__codelineno-7-16" name="__codelineno-7-16" href="#__codelineno-7-16"></a>            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Sábado&quot;</span><span class="p">)</span>
+</span><span id="__span-7-17"><a id="__codelineno-7-17" name="__codelineno-7-17" href="#__codelineno-7-17"></a>        <span class="k">case</span><span class="w"> </span><span class="k">_</span><span class="p">:</span>
+</span><span id="__span-7-18"><a id="__codelineno-7-18" name="__codelineno-7-18" href="#__codelineno-7-18"></a>            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Número inválido&quot;</span><span class="p">)</span>
+</span></code></pre></div>
 <p>Neste exemplo, a função <code>dia_da_semana</code> recebe um número e utiliza o comando <code>match</code> para verificar qual dia da semana corresponde a esse número. Se o número corresponder a um dos casos especificados (de 1 a 7), o programa imprime o nome do dia correspondente. Caso contrário, imprime <code>Número inválido</code>.</p>
 <p>O <code>match</code> permite a combinação de padrões mais complexos usando a sintaxe <code>case &lt;padrão&gt; if &lt;condição&gt;:</code>, onde <code>&lt;padrão&gt;</code> é um padrão a ser verificado e <code>&lt;condição&gt;</code> é uma expressão booleana que também deve ser verdadeira para que a correspondência seja feita.</p>
-<p><div class="highlight"><pre><span></span><code><span class="k">match</span> <span class="n">valor</span><span class="p">:</span>
-    <span class="k">case</span> <span class="n">valor</span> <span class="k">if</span> <span class="n">valor</span><span class="o">&gt;</span><span class="mi">0</span> <span class="ow">and</span> <span class="n">valor</span><span class="o">%</span><span class="mi">2</span><span class="o">==</span><span class="mi">0</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;PAR e POSITIVO&quot;</span><span class="p">)</span>
-    <span class="k">case</span> <span class="n">valor</span> <span class="k">if</span> <span class="n">valor</span><span class="o">&gt;</span><span class="mi">0</span> <span class="ow">and</span> <span class="n">valor</span><span class="o">%</span><span class="mi">2</span><span class="o">!=</span><span class="mi">0</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;ÍMPAR e POSITIVO&quot;</span><span class="p">)</span>
-    <span class="k">case</span> <span class="n">valor</span> <span class="k">if</span> <span class="n">valor</span><span class="o">&lt;</span><span class="mi">0</span> <span class="ow">and</span> <span class="n">valor</span><span class="o">%</span><span class="mi">2</span><span class="o">==</span><span class="mi">0</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;PAR e NEGATIVO&quot;</span><span class="p">)</span>
-    <span class="k">case</span> <span class="n">valor</span> <span class="k">if</span> <span class="n">valor</span><span class="o">&lt;</span><span class="mi">0</span> <span class="ow">and</span> <span class="n">valor</span><span class="o">%</span><span class="mi">2</span><span class="o">!=</span><span class="mi">0</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;ÍMPAR e NEGATIVO&quot;</span><span class="p">)</span>
-    <span class="k">case</span><span class="w"> </span><span class="k">_</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;ZERO&quot;</span><span class="p">)</span>
-</code></pre></div>
+<p><div class="language-python highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="k">match</span> <span class="n">valor</span><span class="p">:</span>
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>    <span class="k">case</span> <span class="n">valor</span> <span class="k">if</span> <span class="n">valor</span><span class="o">&gt;</span><span class="mi">0</span> <span class="ow">and</span> <span class="n">valor</span><span class="o">%</span><span class="mi">2</span><span class="o">==</span><span class="mi">0</span><span class="p">:</span>
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;PAR e POSITIVO&quot;</span><span class="p">)</span>
+</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>    <span class="k">case</span> <span class="n">valor</span> <span class="k">if</span> <span class="n">valor</span><span class="o">&gt;</span><span class="mi">0</span> <span class="ow">and</span> <span class="n">valor</span><span class="o">%</span><span class="mi">2</span><span class="o">!=</span><span class="mi">0</span><span class="p">:</span>
+</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;ÍMPAR e POSITIVO&quot;</span><span class="p">)</span>
+</span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>    <span class="k">case</span> <span class="n">valor</span> <span class="k">if</span> <span class="n">valor</span><span class="o">&lt;</span><span class="mi">0</span> <span class="ow">and</span> <span class="n">valor</span><span class="o">%</span><span class="mi">2</span><span class="o">==</span><span class="mi">0</span><span class="p">:</span>
+</span><span id="__span-8-7"><a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;PAR e NEGATIVO&quot;</span><span class="p">)</span>
+</span><span id="__span-8-8"><a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a>    <span class="k">case</span> <span class="n">valor</span> <span class="k">if</span> <span class="n">valor</span><span class="o">&lt;</span><span class="mi">0</span> <span class="ow">and</span> <span class="n">valor</span><span class="o">%</span><span class="mi">2</span><span class="o">!=</span><span class="mi">0</span><span class="p">:</span>
+</span><span id="__span-8-9"><a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;ÍMPAR e NEGATIVO&quot;</span><span class="p">)</span>
+</span><span id="__span-8-10"><a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a>    <span class="k">case</span><span class="w"> </span><span class="k">_</span><span class="p">:</span>
+</span><span id="__span-8-11"><a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;ZERO&quot;</span><span class="p">)</span>
+</span></code></pre></div>
 Também podemos testar vários valores em cada caso utilizando o operador <code>|</code>. Veja o exemplo.</p>
-<div class="highlight"><pre><span></span><code><span class="k">match</span> <span class="n">codigo</span><span class="p">:</span>
-    <span class="k">case</span> <span class="mi">0</span> <span class="o">|</span> <span class="o">-</span><span class="mi">1</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Valor 0 ou -1&quot;</span><span class="p">)</span>
-    <span class="k">case</span> <span class="mi">1</span> <span class="o">|</span> <span class="mi">2</span> <span class="o">|</span> <span class="mi">3</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Valor 1, 2, ou 3.&quot;</span><span class="p">)</span>
-    <span class="k">case</span><span class="w"> </span><span class="k">_</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Algum outro valor&quot;</span><span class="p">)</span>
-</code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="k">match</span> <span class="n">codigo</span><span class="p">:</span>
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>    <span class="k">case</span> <span class="mi">0</span> <span class="o">|</span> <span class="o">-</span><span class="mi">1</span><span class="p">:</span>
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Valor 0 ou -1&quot;</span><span class="p">)</span>
+</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>    <span class="k">case</span> <span class="mi">1</span> <span class="o">|</span> <span class="mi">2</span> <span class="o">|</span> <span class="mi">3</span><span class="p">:</span>
+</span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Valor 1, 2, ou 3.&quot;</span><span class="p">)</span>
+</span><span id="__span-9-6"><a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>    <span class="k">case</span><span class="w"> </span><span class="k">_</span><span class="p">:</span>
+</span><span id="__span-9-7"><a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Algum outro valor&quot;</span><span class="p">)</span>
+</span></code></pre></div>
 <p>Saiba mais em <a href="https://peps.python.org/pep-0636/">PEP 636</a> e <a href="https://docs.python.org/3/reference/compound_stmts.html#the-match-statement">Oficial Reference</a>.</p>
 
 
@@ -2787,7 +2022,7 @@ Também podemos testar vários valores em cada caso utilizando o operador <code>
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.top", "navigation.instant", "toc.integrate", "header.autohide", "navigation.footer", "content.code.copy"], "search": "../../../assets/javascripts/workers/search.07f07601.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.top", "navigation.tabs", "navigation.instant", "toc.integrate", "toc.follow", "header.autohide", "navigation.footer", "navigation.top", "content.code.copy", "navigation.indexes"], "search": "../../../assets/javascripts/workers/search.07f07601.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
       <script src="../../../assets/javascripts/bundle.56dfad97.min.js"></script>

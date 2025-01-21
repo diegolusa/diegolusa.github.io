@@ -26,9 +26,6 @@
     
       <link rel="stylesheet" href="../../../assets/stylesheets/main.35f28582.min.css">
       
-        
-        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
-      
       
 
 
@@ -58,14 +55,7 @@
   </head>
   
   
-    
-    
-      
-    
-    
-    
-    
-    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="black" data-md-color-accent="indigo">
+    <body dir="ltr">
   
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
@@ -86,9 +76,7 @@
     
       
 
-  
-
-<header class="md-header md-header--shadow" data-md-component="header">
+<header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
     <a href="../../.." title="Diego A. Lusa" class="md-header__button md-logo" aria-label="Diego A. Lusa" data-md-component="logo">
       
@@ -115,32 +103,6 @@
         </div>
       </div>
     </div>
-    
-      
-        <form class="md-header__option" data-md-component="palette">
-  
-    
-    
-    
-    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="black" data-md-color-accent="indigo"  aria-label="Mudar para modo escuro"  type="radio" name="__palette" id="__palette_0">
-    
-      <label class="md-header__button md-icon" title="Mudar para modo escuro" for="__palette_1" hidden>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6m0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4M7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3"/></svg>
-      </label>
-    
-  
-    
-    
-    
-    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="indigo"  aria-label="Mudar para modo claro"  type="radio" name="__palette" id="__palette_1">
-    
-      <label class="md-header__button md-icon" title="Mudar para modo claro" for="__palette_0" hidden>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3"/></svg>
-      </label>
-    
-  
-</form>
-      
     
     
       <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
@@ -194,6 +156,103 @@
       
         
           
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+    
+      
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../informatica/editores-texto/introducao/" class="md-tabs__link">
+          
+  
+    
+  
+  Informática Básica
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../linguagens/" class="md-tabs__link">
+          
+  
+    
+  
+  Linguagens de Programação
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../disciplinas/upf/ads-153/" class="md-tabs__link">
+          
+  
+    
+  
+  Desenvolvimento para Web (ADS153)
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
         
       
       <main class="md-main" data-md-component="main">
@@ -207,10 +266,12 @@
                     
 
 
+  
+
 
   
 
-<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navigation" data-md-level="0">
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
     <a href="../../.." title="Diego A. Lusa" class="md-nav__button md-logo" aria-label="Diego A. Lusa" data-md-component="logo">
       
@@ -250,6 +311,13 @@
   
     
     
+      
+        
+      
+    
+    
+      
+      
     
     
     <li class="md-nav__item md-nav__item--nested">
@@ -263,7 +331,7 @@
             
   
   <span class="md-ellipsis">
-    Informática
+    Informática Básica
   </span>
   
 
@@ -273,7 +341,7 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
-            Informática
+            Informática Básica
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -285,6 +353,17 @@
   
     
     
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
     
     
     <li class="md-nav__item md-nav__item--nested">
@@ -400,20 +479,40 @@
   
     
     
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
         
           
-          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
             
   
   <span class="md-ellipsis">
-    Programação
+    Linguagens de Programação
   </span>
   
 
@@ -423,7 +522,7 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
-            Programação
+            Linguagens de Programação
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -477,6 +576,19 @@
   
     
     
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
     
     
     <li class="md-nav__item md-nav__item--nested">
@@ -604,6 +716,15 @@
   
     
     
+      
+        
+      
+        
+      
+    
+    
+      
+      
     
     
     <li class="md-nav__item md-nav__item--nested">
@@ -689,6 +810,27 @@
   
     
     
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
     
     
     <li class="md-nav__item md-nav__item--nested">
@@ -871,6 +1013,23 @@
   
     
     
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
     
     
     <li class="md-nav__item md-nav__item--nested">
@@ -1050,6 +1209,29 @@
   
     
     
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
     
     
     <li class="md-nav__item md-nav__item--active md-nav__item--nested">
@@ -1403,296 +1585,36 @@
 
               
             
-              
-                
-  
-  
-  
-  
-    
-    
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
+          </ul>
+        </nav>
       
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_7" >
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
         
           
-          <label class="md-nav__link" for="__nav_3_7" id="__nav_3_7_label" tabindex="0">
-            
-  
-  <span class="md-ellipsis">
-    Linguagem JavaScript
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_7_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3_7">
-            <span class="md-nav__icon md-icon"></span>
-            Linguagem JavaScript
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../js/operadores/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Operadores
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../js/variaveis/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Variáveis
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../js/condicionais/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Condicionais
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../js/lacos/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Laços de Repetição
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../js/excecoes/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Exceções
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../js/funcoes-dom/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Interagindo com navegador e DOM
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../js/promises/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Promises
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../js/jquery/introducao/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    JQuery
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    
-    
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_7_9" >
-        
-          
-          <label class="md-nav__link" for="__nav_3_7_9" id="__nav_3_7_9_label" tabindex="0">
-            
-  
-  <span class="md-ellipsis">
-    Exercícios
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_7_9_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3_7_9">
-            <span class="md-nav__icon md-icon"></span>
-            Exercícios
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../js/exercicios/exercicios-1/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Revisão
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
       
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
+        
       
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
+        
       
-    </li>
-  
-
+    
     
       
       
-  
-  
-  
-  
-    
-    
     
     
     <li class="md-nav__item md-nav__item--nested">
@@ -1702,79 +1624,33 @@
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
         
           
-          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
-            
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../disciplinas/upf/ads-153/" class="md-nav__link ">
+              
   
   <span class="md-ellipsis">
-    Desenvolvimento Web
+    Desenvolvimento para Web (ADS153)
   </span>
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
         
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
-            Desenvolvimento Web
+            Desenvolvimento para Web (ADS153)
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
               
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../web/historia/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Como surgiu a Web?
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    
-    
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" >
-        
-          
-          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
-            
-  
-  <span class="md-ellipsis">
-    HTML5
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_2">
-            <span class="md-nav__icon md-icon"></span>
-            HTML5
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
             
               
                 
@@ -1783,11 +1659,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../web/html5/estrutura-basica/" class="md-nav__link">
+      <a href="../../../disciplinas/upf/ads-153/m-1/m-1/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    O que é HTML?
+    Módulo I - Fundamentos e Linguagem HTML5
   </span>
   
 
@@ -1804,11 +1680,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../web/html5/tags-basicas/" class="md-nav__link">
+      <a href="../../../disciplinas/upf/ads-153/m-2/m-2/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Conceitos Básicos
+    Módulo II - Cascading Style Sheets
   </span>
   
 
@@ -1825,214 +1701,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../web/html5/hiperlinks/" class="md-nav__link">
+      <a href="../../../disciplinas/upf/ads-153/m-3/m-3/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Hiperlinks
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../web/html5/imagem/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Imagens
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../web/html5/tags-estruturais/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Semântica de Conteúdo
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../web/html5/formularios/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Formulários
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../web/html5/tabelas/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Tabelas
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    
-    
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2_8" >
-        
-          
-          <label class="md-nav__link" for="__nav_4_2_8" id="__nav_4_2_8_label" tabindex="0">
-            
-  
-  <span class="md-ellipsis">
-    Exercícios
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_2_8_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_2_8">
-            <span class="md-nav__icon md-icon"></span>
-            Exercícios
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../web/html5/exercicios/e1-tags-semantics-listas/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Exercício 1: Tags semânticas e listas
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../web/html5/exercicios/e2-semantica-texto-links-imagens/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Exercício 2: Semântica de texto, hiperlinks e imagens
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../web/html5/exercicios/e3-formularios/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Exercício 3: Formulários
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../web/html5/exercicios/e4-tabelas/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Exercício 4: Tabelas
+    Módulo III - Linguagem JavaScript
   </span>
   
 
@@ -2045,444 +1718,6 @@
           </ul>
         </nav>
       
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    
-    
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3" >
-        
-          
-          <label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
-            
-  
-  <span class="md-ellipsis">
-    CSS3
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_3">
-            <span class="md-nav__icon md-icon"></span>
-            CSS3
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../web/css3/fundamentos/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Fundamentos
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../web/css3/seletores/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Seletores
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../web/css3/unidades-medidas/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Unidades de Medida
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../web/css3/cores/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Cores
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../web/css3/fontes/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Fontes
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../web/css3/box-model/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Box Model
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../web/css3/posicionamento/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Posicionamento
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../web/css3/responsividade/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Responsividade
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../web/css3/media-queries/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Media Queries
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    
-    
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3_10" >
-        
-          
-          <label class="md-nav__link" for="__nav_4_3_10" id="__nav_4_3_10_label" tabindex="0">
-            
-  
-  <span class="md-ellipsis">
-    Exercícios
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_3_10_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_3_10">
-            <span class="md-nav__icon md-icon"></span>
-            Exercícios
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../web/css3/exercicios/fundamentos-seletores/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Exercício 1: Regras de Estilo
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../web/css3/exercicios/layout/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Exercício 2: Layouts
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../web/css3/exercicios/media-queries/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Exercício 3: Media queries e Grid Layout
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    
-    
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_4" >
-        
-          
-          <label class="md-nav__link" for="__nav_4_4" id="__nav_4_4_label" tabindex="0">
-            
-  
-  <span class="md-ellipsis">
-    Exercícios
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_4_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_4">
-            <span class="md-nav__icon md-icon"></span>
-            Exercícios
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../web/exercicios/1/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Restaurante
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../about/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Sobre
-  </span>
-  
-
-      </a>
     </li>
   
 
@@ -2662,21 +1897,21 @@
 </table>
 <p>Utilizando os operadores lógicos e os operadores de comparação temos como escrever expressões lógicas em nossos programas. Imaginemos por um instante que estamos trabalhando em código para seleção de candidatos. Nossos critérios de seleção serão <em>idade igual ou superior a 18 anos, altura superior a 160cm e peso superior a 60kg</em>. Em nosso código, armazenamos a idade do candidato em uma variável inteira chamava <code>idade_c</code>, altura em uma variável inteira <code>altura_c</code> e peso, em uma variável de ponto flutuante <code>peso_c</code>.</p>
 <p>Após atribuir os dados às respectivas variáveis, poderíamos codificar a expressão abaixo para determinar se o candidato será selecionado ou não:</p>
-<div class="highlight"><pre><span></span><code><span class="kt">bool</span><span class="w"> </span><span class="n">is_selecionado</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">idade_c</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">18</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">altura_c</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">160</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">peso_c</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mf">60.0</span><span class="p">;</span>
-</code></pre></div>
+<div class="language-c++ highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kt">bool</span><span class="w"> </span><span class="n">is_selecionado</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">idade_c</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">18</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">altura_c</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">160</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">peso_c</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mf">60.0</span><span class="p">;</span>
+</span></code></pre></div>
 <p>Observe que utilizamos o operador <code>&amp;&amp;</code>, uma vez que as três condições (proposições) devem ser atendidas. Portanto, a variável <code>is_selecionado</code> receberá <code>true</code> somente nesta situação.</p>
 <p>Mas o que faremos com a variável <code>is_selecionado</code>? Sabemos que sendo <code>true</code> precisamos indicar ao usuário de nosso programa que o candidato atende os critérios. Ou seja, precisamos <strong>condicionar</strong> a execução de determinadas instruções do programa ao resultado de avaliação da expressão lógica. Como fazer então?</p>
 <h3 id="comando-if-else">Comando IF ELSE<a class="headerlink" href="#comando-if-else" title="Permanent link">&para;</a></h3>
 <p>Um dos comandos da linguagem C++ (e de boa parte das outras) é o <code>if</code>. Utilizamos ele para criar desvios condicionais na execução das instruções, que, pela ordem natural, são executadas em sequência.</p>
 <p>A estrutura do comando <code>if</code> é simples e para demostrar, vamos seguir falando do nosso programa hipotético de seleção de candidatos. Observe o código a seguir:</p>
-<div class="highlight"><pre><span></span><code><span class="kt">bool</span><span class="w"> </span><span class="n">is_selecionado</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">idade_c</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">18</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">altura_c</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">160</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">peso_c</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mf">60.0</span><span class="p">;</span>
-
-<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">is_selecionado</span><span class="p">){</span>
-<span class="w">    </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Candidato atende aos critérios de seleção&quot;</span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span>
-<span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Candidato desclassificado&quot;</span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div>
+<div class="language-c++ highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kt">bool</span><span class="w"> </span><span class="n">is_selecionado</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">idade_c</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">18</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">altura_c</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">160</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">peso_c</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mf">60.0</span><span class="p">;</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">is_selecionado</span><span class="p">){</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">    </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Candidato atende aos critérios de seleção&quot;</span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">    </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Candidato desclassificado&quot;</span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="p">}</span>
+</span></code></pre></div>
 <p>Perceba que existem três partes do comando <code>if</code> no código.</p>
 <ul>
 <li><strong>expressão lógica</strong>: sempre fica entre os parênteses <code>()</code>. É parte obrigatória do comando e requer qualquer expressão lógica válida, que possa ser reduzida a <code>true</code> ou <code>false</code>. Em nosso exemplo, estamos avaliando o valor contido na variável <code>is_selecionado</code>, que é do tipo  <code>bool</code>. </li>
@@ -2685,12 +1920,12 @@
 </ul>
 <p>Então, conforme explicamos, nosso código irá executar a instrução <code>cout &lt;&lt; "Candidato atende aos critérios de seleção"&lt;&lt; endl;</code> quando <code>is_selecionado</code> for <code>true</code> e <code>cout &lt;&lt; "Candidato desclassificado"&lt;&lt; endl;</code> quando for <code>false</code>.</p>
 <p>A expressão lógica pode ser informada diretamente no comando <code>if</code>. Inclusive, esta é a forma mais comum de encontrá-la. Assim, podemos simplificar nosso trecho de código, eliminando a variável <code>is_selecionado</code>. Teríamos então:</p>
-<div class="highlight"><pre><span></span><code><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">idade_c</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">18</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">altura_c</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">160</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">peso_c</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mf">60.0</span><span class="p">){</span>
-<span class="w">    </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Candidato atende aos critérios de seleção&quot;</span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span>
-<span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Candidato desclassificado&quot;</span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div>
+<div class="language-c++ highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">idade_c</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">18</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">altura_c</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">160</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">peso_c</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mf">60.0</span><span class="p">){</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">    </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Candidato atende aos critérios de seleção&quot;</span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">    </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Candidato desclassificado&quot;</span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="p">}</span>
+</span></code></pre></div>
 <h3 id="comando-if-else-if">Comando IF ELSE IF<a class="headerlink" href="#comando-if-else-if" title="Permanent link">&para;</a></h3>
 <p>Uma variação do comando <code>if</code> permite especificar condições para os blocos <code>else</code>. Para demonstrar seu uso, vamos imaginar um novo programa que apresente a situação de estudantes com base na média final em determinada disciplina. A relação entre as notas e as respectivas situações estão na tabela que segue.</p>
 <table>
@@ -2716,48 +1951,48 @@
 </tbody>
 </table>
 <p>Uma possível codificação para o programa em questão seria:</p>
-<div class="highlight"><pre><span></span><code><span class="cm">/*definição de variáveis e leitura de dados...*/</span>
-
-<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">nota</span><span class="o">&gt;=</span><span class="mi">0</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">nota</span><span class="w"> </span><span class="o">&lt;=</span><span class="mf">4.9</span><span class="p">){</span>
-<span class="w">    </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="s">&quot;Reprovado&quot;</span><span class="p">;</span>
-<span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">nota</span><span class="o">&gt;=</span><span class="mf">5.0</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">nota</span><span class="w"> </span><span class="o">&lt;=</span><span class="mf">6.9</span><span class="p">){</span>
-<span class="w">    </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="s">&quot;Exame&quot;</span><span class="p">;</span>
-<span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="s">&quot;Aprovado&quot;</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div>
+<div class="language-c++ highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="cm">/*definição de variáveis e leitura de dados...*/</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">nota</span><span class="o">&gt;=</span><span class="mi">0</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">nota</span><span class="w"> </span><span class="o">&lt;=</span><span class="mf">4.9</span><span class="p">){</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">    </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="s">&quot;Reprovado&quot;</span><span class="p">;</span>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">nota</span><span class="o">&gt;=</span><span class="mf">5.0</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">nota</span><span class="w"> </span><span class="o">&lt;=</span><span class="mf">6.9</span><span class="p">){</span>
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="w">    </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="s">&quot;Exame&quot;</span><span class="p">;</span>
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="w">    </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="s">&quot;Aprovado&quot;</span><span class="p">;</span>
+</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="p">}</span>
+</span></code></pre></div>
 <p>Note que o <code>else if</code> pode aparecer várias vezes na mesma instrução, tantas quantas forem necessárias. E, mais importante: assim que uma condição for avaliada como <code>true</code>, nenhuma outra da mesma instrução será avaliada. </p>
 <h3 id="operador-ternario">Operador ternário<a class="headerlink" href="#operador-ternario" title="Permanent link">&para;</a></h3>
 <p>Para algumas situações, podemos utilizar uma simplificação de sintaxe da estrutura <code>if else</code> chamada <strong>operador ternário</strong>. Seu uso é especialmente interessante para testes simples, como aquele que fizemos no programa de seleção de candidatos. Veja a diferença:</p>
-<div class="highlight"><pre><span></span><code><span class="w">    </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="p">(</span><span class="n">idade_c</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">18</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">altura_c</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">160</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">peso_c</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mf">60.0</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="s">&quot;Candidato atende aos critérios de seleção&quot;</span><span class="o">:</span><span class="w"> </span><span class="s">&quot;Candidato desclassificado&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span>
-</code></pre></div>
+<div class="language-c++ highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="w">    </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="p">(</span><span class="n">idade_c</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">18</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">altura_c</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">160</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">peso_c</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mf">60.0</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="s">&quot;Candidato atende aos critérios de seleção&quot;</span><span class="o">:</span><span class="w"> </span><span class="s">&quot;Candidato desclassificado&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span>
+</span></code></pre></div>
 <p>Pelo código, percebemos que a sintaxe do comando é: <code>expressão lógica ? valor quando true : valor quando false</code>. É simples de usar, mas pode prejudicar a legibilidade do código se aplicado para testes mais complexos. Vale o bom senso ;)</p>
 <h3 id="switch">Switch<a class="headerlink" href="#switch" title="Permanent link">&para;</a></h3>
 <p>Finalizamos nosso estudo com o comando <code>switch</code>,  uma estrutura de decisão baseada em casos. Antes de conhecermos a sintaxe do comando, vamos propor um código de exemplo:</p>
-<div class="highlight"><pre><span></span><code><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">nota</span><span class="p">;</span>
-<span class="w">    </span><span class="n">cin</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">nota</span><span class="p">;</span>
-
-<span class="w">    </span><span class="k">switch</span><span class="p">(</span><span class="n">nota</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="k">case</span><span class="w"> </span><span class="mi">1</span><span class="p">:</span>
-<span class="w">        </span><span class="k">case</span><span class="w"> </span><span class="mi">2</span><span class="p">:</span>
-<span class="w">        </span><span class="k">case</span><span class="w"> </span><span class="mi">3</span><span class="p">:</span>
-<span class="w">        </span><span class="k">case</span><span class="w"> </span><span class="mi">4</span><span class="p">:</span>
-<span class="w">            </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Reprovado&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span>
-<span class="w">            </span><span class="k">break</span><span class="p">;</span>
-<span class="w">        </span><span class="k">case</span><span class="w"> </span><span class="mi">5</span><span class="w"> </span><span class="p">:</span>
-<span class="w">        </span><span class="k">case</span><span class="w"> </span><span class="mi">6</span><span class="w"> </span><span class="p">:</span>
-<span class="w">            </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Exame&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span>
-<span class="w">            </span><span class="k">break</span><span class="p">;</span>
-<span class="w">        </span><span class="k">case</span><span class="w"> </span><span class="mi">7</span><span class="w"> </span><span class="p">:</span>
-<span class="w">        </span><span class="k">case</span><span class="w"> </span><span class="mi">8</span><span class="w"> </span><span class="p">:</span>
-<span class="w">        </span><span class="k">case</span><span class="w"> </span><span class="mi">9</span><span class="w"> </span><span class="p">:</span>
-<span class="w">        </span><span class="k">case</span><span class="w"> </span><span class="mi">10</span><span class="p">:</span>
-<span class="w">            </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Aprovado&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span>
-<span class="w">            </span><span class="k">break</span><span class="p">;</span>
-<span class="w">        </span><span class="k">default</span><span class="o">:</span>
-<span class="w">            </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Nota inválida&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span>
-<span class="w">    </span><span class="p">}</span><span class="w">   </span>
-</code></pre></div>
+<div class="language-c++ highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">nota</span><span class="p">;</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">    </span><span class="n">cin</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">nota</span><span class="p">;</span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="w">    </span><span class="k">switch</span><span class="p">(</span><span class="n">nota</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="w">        </span><span class="k">case</span><span class="w"> </span><span class="mi">1</span><span class="p">:</span>
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="w">        </span><span class="k">case</span><span class="w"> </span><span class="mi">2</span><span class="p">:</span>
+</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="w">        </span><span class="k">case</span><span class="w"> </span><span class="mi">3</span><span class="p">:</span>
+</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="w">        </span><span class="k">case</span><span class="w"> </span><span class="mi">4</span><span class="p">:</span>
+</span><span id="__span-5-9"><a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span class="w">            </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Reprovado&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span>
+</span><span id="__span-5-10"><a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a><span class="w">            </span><span class="k">break</span><span class="p">;</span>
+</span><span id="__span-5-11"><a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a><span class="w">        </span><span class="k">case</span><span class="w"> </span><span class="mi">5</span><span class="w"> </span><span class="p">:</span>
+</span><span id="__span-5-12"><a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a><span class="w">        </span><span class="k">case</span><span class="w"> </span><span class="mi">6</span><span class="w"> </span><span class="p">:</span>
+</span><span id="__span-5-13"><a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a><span class="w">            </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Exame&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span>
+</span><span id="__span-5-14"><a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a><span class="w">            </span><span class="k">break</span><span class="p">;</span>
+</span><span id="__span-5-15"><a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a><span class="w">        </span><span class="k">case</span><span class="w"> </span><span class="mi">7</span><span class="w"> </span><span class="p">:</span>
+</span><span id="__span-5-16"><a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a><span class="w">        </span><span class="k">case</span><span class="w"> </span><span class="mi">8</span><span class="w"> </span><span class="p">:</span>
+</span><span id="__span-5-17"><a id="__codelineno-5-17" name="__codelineno-5-17" href="#__codelineno-5-17"></a><span class="w">        </span><span class="k">case</span><span class="w"> </span><span class="mi">9</span><span class="w"> </span><span class="p">:</span>
+</span><span id="__span-5-18"><a id="__codelineno-5-18" name="__codelineno-5-18" href="#__codelineno-5-18"></a><span class="w">        </span><span class="k">case</span><span class="w"> </span><span class="mi">10</span><span class="p">:</span>
+</span><span id="__span-5-19"><a id="__codelineno-5-19" name="__codelineno-5-19" href="#__codelineno-5-19"></a><span class="w">            </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Aprovado&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span>
+</span><span id="__span-5-20"><a id="__codelineno-5-20" name="__codelineno-5-20" href="#__codelineno-5-20"></a><span class="w">            </span><span class="k">break</span><span class="p">;</span>
+</span><span id="__span-5-21"><a id="__codelineno-5-21" name="__codelineno-5-21" href="#__codelineno-5-21"></a><span class="w">        </span><span class="k">default</span><span class="o">:</span>
+</span><span id="__span-5-22"><a id="__codelineno-5-22" name="__codelineno-5-22" href="#__codelineno-5-22"></a><span class="w">            </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Nota inválida&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span>
+</span><span id="__span-5-23"><a id="__codelineno-5-23" name="__codelineno-5-23" href="#__codelineno-5-23"></a><span class="w">    </span><span class="p">}</span><span class="w">   </span>
+</span></code></pre></div>
 <p>Nosso exemplo trás importantes informações acerca da sintaxe e uso do comando <code>switch</code>. O primeiro deles é que devemos informar uma variável (ou expressão) que possa ser avaliada como inteiro ou tipo enumerável. No código, a variável <code>nota</code> entre parenteses <code>()</code> serve  a tal finalidade. Objetivamente estamos consultando o valor de <code>nota</code> e estabelecendo o que fazer para cada um dos valores de interesse. Estes valores de interesse estão expressos nos casos (<code>case</code>).</p>
 <p>Então, se a leitura da variável <code>nota</code> indicar que seu valor é <code>4</code>, o programa vai executar as instruções <code>cout &lt;&lt; "Exame" &lt;&lt; endl;</code> e <code>break</code>. E se o valor for <code>1</code>, vai executar todas as instruções que seguem nos próximos <code>cases</code> até encontrar o <code>break</code>. </p>
 <p>Opa, como assim executar os "outros cases"? Exatamente isso: o comando <code>break</code> indica a interrupção do processamento do <code>switch</code>. Se ele não estiver presente, a execução irá iniciar pelo <code>case</code> pertinente ao valor da expressão, continuando até o final, passando pelas instruções de outros casos. Então, se você quer finalizar a execução naquele <code>case</code> específico, deve colocar o comando <code>break</code>.</p>
@@ -2890,7 +2125,7 @@
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.top", "navigation.instant", "toc.integrate", "header.autohide", "navigation.footer", "content.code.copy"], "search": "../../../assets/javascripts/workers/search.07f07601.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.top", "navigation.tabs", "navigation.instant", "toc.integrate", "toc.follow", "header.autohide", "navigation.footer", "navigation.top", "content.code.copy", "navigation.indexes"], "search": "../../../assets/javascripts/workers/search.07f07601.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
       <script src="../../../assets/javascripts/bundle.56dfad97.min.js"></script>

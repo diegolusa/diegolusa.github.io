@@ -16,47 +16,45 @@ Os `arrays`, junto a `enumerations`, `strings`, `ponteiros`, `ponteiros para mem
 Vamos ao exemplo: imagine que uma escola de programação ofereça um curso de Introdução à Linguagem C++, dividido em 10 módulos. Ao final de cada módulo, o estudante deverá realizar uma avaliação. A nota final do curso será obtida a partir da média aritmética dentre todas as 10 avaliações realizadas pelo estudante. Em uma solução utilizando apenas tipos primitivos, poderíamos pensar em algo assim:
 
 === "C++"
+    ```c++
+    #include <iostream>
 
-```c++
-#include <iostream>
+    using namespace std;
 
-using namespace std;
+    int main()
+    {
+        float nt1, nt2, nt3, nt4, nt5, nt6, nt7, nt8, nt9, nt10;
 
-int main()
-{
-    float nt1, nt2, nt3, nt4, nt5, nt6, nt7, nt8, nt9, nt10;
+        cin >> nt1 >> nt2 >> nt3 >> nt4 >> nt5 >> nt6 >> nt7 >> nt8 >> nt9 >> nt10;
 
-    cin >> nt1 >> nt2 >> nt3 >> nt4 >> nt5 >> nt6 >> nt7 >> nt8 >> nt9 >> nt10;
+        float nota_final = (nt1 + nt2 + nt3 + nt4 + nt5 + nt6 + nt7 + nt8 + nt9 + nt10) / 10;
 
-    float nota_final = (nt1 + nt2 + nt3 + nt4 + nt5 + nt6 + nt7 + nt8 + nt9 + nt10) / 10;
-
-    cout << "NF: " << nota_final << endl;
-}
-```
+        cout << "NF: " << nota_final << endl;
+    }
+    ```
 
 Observe que criamos 10 variáveis do tipo `float` para armazenar as notas. No código, a grande quantidade de variáveis prejudica a legibilidade e torna a resolução do problema mais difícil. Mas se pudéssemos utilizar apenas uma variável e, nesta, armazenar 10 notas? Aí está o benefício de se utilizar os `arrays`. Observe a solução alternativa aplicando este conceito:
 
 === "C++"
+    ```c++
+    #include <iostream>
 
-```c++
-#include <iostream>
-
-using namespace std;
-
+    using namespace std;
 
 
-int main(){
-    float notas[10], nota_final=0;
-    for(int i=0;i<10;i++){
-        cin >> notas[i];
-        nota_final+=notas[i];
+
+    int main(){
+        float notas[10], nota_final=0;
+        for(int i=0;i<10;i++){
+            cin >> notas[i];
+            nota_final+=notas[i];
+        }
+
+        nota_final/=10;
+        cout << "NF: "<<nota_final <<endl;
+
     }
-
-    nota_final/=10;
-    cout << "NF: "<<nota_final <<endl;
-
-}
-```
+    ```
 
 É nítida  diferença: nosso código ficou mais enxuto e legível. Além disso, adequá-lo para receber 100 notas distintas seria algo muito simples, bem diferente do primeiro exemplo.
 
@@ -76,32 +74,31 @@ Assim como variáveis escalares, `arrays` também podem ser inicializados. Obser
 
 === "C++"
 
-```c++
-#include <iostream>
+    ```c++
+        #include <iostream>
 
-using namespace std;
+        using namespace std;
 
-int main()
-{
-    float   notas[2][4] = {{0}, {0}}, 
-            pesos[4] = {3.0, 2.0, 4.0, 1.0}, 
-            media = 0;
-
-    for (int a = 0; a < 2; a++)
-    {
-        cout << "ALUNO " << a + 1 << endl;
-        media=0;
-        for (int n = 0; n < 4; n++)
+        int main()
         {
-            cout << "...NOTA " << n + 1 << ": ";
-            cin >> notas[a][n];
-            media += notas[a][n]*pesos[n];
-        }
-        cout <<"MEDIA: "<< (media/10.0) <<endl;
-    }
-}
+            float   notas[2][4] = {{0}, {0}}, 
+                    pesos[4] = {3.0, 2.0, 4.0, 1.0}, 
+                    media = 0;
 
-```
+            for (int a = 0; a < 2; a++)
+            {
+                cout << "ALUNO " << a + 1 << endl;
+                media=0;
+                for (int n = 0; n < 4; n++)
+                {
+                    cout << "...NOTA " << n + 1 << ": ";
+                    cin >> notas[a][n];
+                    media += notas[a][n]*pesos[n];
+                }
+                cout <<"MEDIA: "<< (media/10.0) <<endl;
+            }
+        }
+        ```             
 
 Perceba que a variável `notas` é uma `matriz`, uma vez que contém duas dimensões. Inicializamos todas as posições com zero. Perceba que, para cada dimensão, devemos utilizar um par de `{}`. Já o vetor `notas` foi inicializado com valores correspondentes aos pesos das avaliações. Observe também que a instrução `cin >> notas[a][n];` utiliza dois índices, uma para cada dimensão. 
 
@@ -135,29 +132,29 @@ Embora possamos utilizar `cstrings` no C++, devemos considerar o uso do tipo abs
 
 === "C++"
 
-```c++
-#include <iostream>
-#include <limits>
-using namespace std;
+    ```c++
+    #include <iostream>
+    #include <limits>
+    using namespace std;
 
-int main()
-{
-    int idade;
-    char nome[200];
-    cout << "Nome: ";
-    cin.getline(nome, 200);
-    if (cin.fail()){
-        cin.clear();
-        cin.ignore( numeric_limits<streamsize>::max(), '\n');
+    int main()
+    {
+        int idade;
+        char nome[200];
+        cout << "Nome: ";
+        cin.getline(nome, 200);
+        if (cin.fail()){
+            cin.clear();
+            cin.ignore( numeric_limits<streamsize>::max(), '\n');
+        }
+        cout << endl
+            << "Idade: ";
+        cin >> idade;
+        cout << endl
+            << nome << " tem " << idade << " anos.  ";
     }
-    cout << endl
-         << "Idade: ";
-    cin >> idade;
-    cout << endl
-         << nome << " tem " << idade << " anos.  ";
-}
 
-```
+    ```
 
 A variável `nome` foi declarada como sendo um `array` de 200 posições. Isso significa que podemos armazenar, no máximo, 200 caracteres. O comando `cin.getline(nome, 200);` irá aguardar o usuário digitar um valor, para então armazená-lo no `array`, limitando a captura de 200 caracteres para não causar erro de `overflow`.
 
@@ -168,60 +165,60 @@ Outro ponto interessante sobre arrays de caracteres é que eles devem ser finali
 
 === "C++"
 
-```c++
-#include <iostream>
-using namespace std;
+    ```c++
+    #include <iostream>
+    using namespace std;
 
-int main()
-{
-    char mensagem[] = {'O','l','a',' ', 'm','u','n','d','o','!','\0'};
-    cout << mensagem ;
-}
+    int main()
+    {
+        char mensagem[] = {'O','l','a',' ', 'm','u','n','d','o','!','\0'};
+        cout << mensagem ;
+    }
 
-```
+    ```
 
 O tipo `string` diferencia-se de um simples array por ser uma `classe`, ou seja, um tipo abstrato de dados associado ao paradigma da orientação a objetos. Contudo, podemos utilizar o tipo sem nos preocuparmos com estes detalhes. Veja como seria o código para solicitarmos o nome e idade de uma pessoa. Atente-se ao fato de que não estamos informando limite de caracteres, justamente porque o tipo `string` é dinamicamente expansível.
 
 === "C++"
 
-```c++
-#include <iostream>
+    ```c++
+    #include <iostream>
 
-using namespace std;
+    using namespace std;
 
-int main()
-{
-    int idade;
-    string nome;
-    cout << "Nome: ";
-    getline(cin,nome);    
-    cout << endl
-         << "Idade: ";
-    cin >> idade;
-    cout << endl
-         << nome << " tem " << idade << " anos.  ";
-}
+    int main()
+    {
+        int idade;
+        string nome;
+        cout << "Nome: ";
+        getline(cin,nome);    
+        cout << endl
+            << "Idade: ";
+        cin >> idade;
+        cout << endl
+            << nome << " tem " << idade << " anos.  ";
+    }
 
-```
+    ```
 
 Além de ter tamanho dinâmico, variáveis do tipo `string` (objetos, no termo correto) permitem operações interessantes, como comparações, indexação, *substring*, entre outros. Observe o exemplo a seguir:
 
 
 === "C++"
 
-```c++
-#include <iostream>
-using namespace std;
+    ```c++
+    #include <iostream>
+    using namespace std;
 
-int main()
-{
-    string mensagem="Consideramos estas verdades como evidentes por si mesmas, que todos os homens são criados iguais, dotados pelo Criador de certos direitos inalienáveis, que entre estes estão a vida, a liberdade e a procura da felicidade.";
+    int main()
+    {
+        string mensagem="Consideramos estas verdades como evidentes por si mesmas, que todos os homens são criados iguais, dotados pelo Criador de certos direitos inalienáveis, que entre estes estão a vida, a liberdade e a procura da felicidade.";
 
-    cout <<"Primeiro caractere: " << mensagem[0] << endl;
-    cout <<"Total de caracteres: " << mensagem.length() <<endl;
-    cout <<"Índice em que se encontra 'inalienáveis': " << mensagem.find("inalienáveis") <<endl;
-    cout <<"A partir da posição 123, 4 caracteres: " << mensagem.substr(123,4) <<endl;
+        cout <<"Primeiro caractere: " << mensagem[0] << endl;
+        cout <<"Total de caracteres: " << mensagem.length() <<endl;
+        cout <<"Índice em que se encontra 'inalienáveis': " << mensagem.find("inalienáveis") <<endl;
+        cout <<"A partir da posição 123, 4 caracteres: " << mensagem.substr(123,4) <<endl;
 
-}
+    }
 
-```
+    ```

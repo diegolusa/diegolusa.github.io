@@ -1,4 +1,12 @@
-
+---
+title: "Funções"
+excerpt: "Reutilizar código é parte fundamental do desenvolvimento de software. Uma das estruturas do C++ que favorecem o reuso são as funções."
+tags:
+ - Programação
+ - Linguagens de Programação
+date: 2020-01-14 15:37:00
+toc: true
+---
 
 Um dos princípios do paradigma da programação estruturada é o conceito de `sub-rotina`, também conhecidas como `função` e/ou `procedimento` (algumas linguagens de programação diferenciam um do outro). 
 
@@ -29,12 +37,12 @@ Vamos utilizar como estudo de caso a própria função `main`. Observe que come�
 
 === "C++"
 
-```c++
-int main(int argc, char *argv[])
-{
-    /*instruções*/
-}
-```
+    ```c++
+    int main(int argc, char *argv[])
+    {
+        /*instruções*/
+    }
+    ```
 
 Sabemos que a função `main` é obrigatória em qualquer programa escrito em C++. Caberá a nós, programadores, criamos as demais funções para nossos programas. Na sequência, apresento alguns exemplos de funções e comentários pertinentes.
 
@@ -95,25 +103,25 @@ A passagem `por valor` de argumentos gera uma cópia, de modo que eventuais alte
 
 === "C++"
 
-```c++  linenums="1" hl_lines="7 13 14 15"
+    ```c++  linenums="1" hl_lines="7 13 14 15"
 
-#include <iostream>
+    #include <iostream>
 
-using namespace std;
+    using namespace std;
 
-void substitui(int a)
-{
-    a = 7;
-}
+    void substitui(int a)
+    {
+        a = 7;
+    }
 
-int main()
-{
-    int a = 3;
-    cout << a << endl;
-    substitui(a);
-    cout << a << endl;
-}
-```
+    int main()
+    {
+        int a = 3;
+        cout << a << endl;
+        substitui(a);
+        cout << a << endl;
+    }
+    ```
 
 A função `substitui` define um parâmetro, chamado de `a`, para receber um valor inteiro. Na linha \(14\), ela é chamada passando-se para o parâmetro `a` o argumento `a`. Mas espera aí: não é o mesmo `a` então?
 
@@ -125,25 +133,25 @@ Agora vamos modificar nossa função `substitui` adicionando o operador `&` ante
 
 === "C++"
 
-```c++  linenums="1" hl_lines="7 13 14 15"
+    ```c++  linenums="1" hl_lines="7 13 14 15"
 
-#include <iostream>
+    #include <iostream>
 
-using namespace std;
+    using namespace std;
 
-void substitui(int &a)
-{
-    a = 7;
-}
+    void substitui(int &a)
+    {
+        a = 7;
+    }
 
-int main()
-{
-    int a = 3;
-    cout << a << endl;
-    substitui(a);
-    cout << a << endl;
-}
-```
+    int main()
+    {
+        int a = 3;
+        cout << a << endl;
+        substitui(a);
+        cout << a << endl;
+    }
+    ```
 Estranhamente, o resultado desta versão do programa será \(3\) para o primeiro comando `cout` e \(7\) para o segundo. Por que isso ocorre? É que neste programa estamos utilizando passagem de argumento por referência (*call by reference*), ou seja, a função recebe **o endereço de memória** do argumento. Deste modo, as alterações realizadas dentro da função no valor do parâmetro serão diretamente aplicadas à variável informada como argumento.
 
 Mas isso não pode gerar efeitos colaterais indesejados? Que benefícios há em se utilizar referências?
@@ -154,56 +162,55 @@ Logo, nesta perspectiva, qualquer `array` definido como parâmetro irá receber 
 
 === "C++"
 
-```c++  
-#include <iostream>
-#include <iomanip>
+    ```c++  
+    #include <iostream>
+    #include <iomanip>
 
-#define LINHAS 2
-#define COLUNAS 2
+    #define LINHAS 2
+    #define COLUNAS 2
 
-using namespace std;
+    using namespace std;
 
-void ler_dados_matriz(int m[][COLUNAS]){
-     for(int l=0;l < LINHAS;l++){
-         for(int c=0;c < COLUNAS;c++ ){
-               cout<<"M["<<l<<","<<c<<"]: ";
-               cin >> m[l][c]; 
-         }
-     }   
-}
-
-void imprimir_matriz(int m[][COLUNAS]){
-    cout <<"M: "<<endl;
-    for(int l=0;l < LINHAS;l++){
-        cout <<"| ";
-        for(int c=0;c < COLUNAS;c++ ){
-            cout << m[l][c] <<" ";
-        }
-        cout <<"|" << endl;
+    void ler_dados_matriz(int m[][COLUNAS]){
+        for(int l=0;l < LINHAS;l++){
+            for(int c=0;c < COLUNAS;c++ ){
+                cout<<"M["<<l<<","<<c<<"]: ";
+                cin >> m[l][c]; 
+            }
+        }   
     }
-    cout <<endl;
-}
 
-double calcular_media_matriz(int m[][COLUNAS]){
-    double somatorio=0; 
+    void imprimir_matriz(int m[][COLUNAS]){
+        cout <<"M: "<<endl;
+        for(int l=0;l < LINHAS;l++){
+            cout <<"| ";
+            for(int c=0;c < COLUNAS;c++ ){
+                cout << m[l][c] <<" ";
+            }
+            cout <<"|" << endl;
+        }
+        cout <<endl;
+    }
 
-    for(int l=0;l < LINHAS;l++)
-         for(int c=0;c < COLUNAS;c++ )
-            somatorio += m[l][c];
+    double calcular_media_matriz(int m[][COLUNAS]){
+        double somatorio=0; 
 
-   return somatorio/(LINHAS * COLUNAS);     
-}
+        for(int l=0;l < LINHAS;l++)
+            for(int c=0;c < COLUNAS;c++ )
+                somatorio += m[l][c];
 
-int main(){
-    int dados[LINHAS][COLUNAS]={{0},{0}};
-    imprimir_matriz(dados);
-    ler_dados_matriz(dados);
-    imprimir_matriz(dados);
-    double media = calcular_media_matriz(dados);
-    cout <<"MEDIA: " <<setprecision(3)<<fixed << media << endl;
-}
+    return somatorio/(LINHAS * COLUNAS);     
+    }
 
-```
+    int main(){
+        int dados[LINHAS][COLUNAS]={{0},{0}};
+        imprimir_matriz(dados);
+        ler_dados_matriz(dados);
+        imprimir_matriz(dados);
+        double media = calcular_media_matriz(dados);
+        cout <<"MEDIA: " <<setprecision(3)<<fixed << media << endl;
+    }
+    ```
 
 
 
