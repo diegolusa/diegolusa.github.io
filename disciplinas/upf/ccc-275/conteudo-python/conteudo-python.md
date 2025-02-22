@@ -377,17 +377,13 @@ idade = 18
 if idade >= 18:
     print("Idade igual ou superior a 18 anos.")
 ```
+No exemplo, o código verifica se a variável `idade` é maior ou igual a `18`. Se for, imprime a mensagem `Idade igual ou superior a 18 anos.`
 
 !!! note "Condição lógica"
-    Uma condição lógica é uma expressão cujo resultado de sua avaliação será verdadeiro (*True*) ou falso (*False*)
+    Uma condição lógica é uma expressão cujo resultado de sua avaliação será verdadeiro (*True*) ou falso (*False*). Utilizam-se operadores de comparação e operadores lógicos na composição das expressões.
 
 
-## Todo: parei aqui
-
-
-Neste exemplo, o código verifica se a variável `idade` é maior ou igual a 18. Se for, ele imprime a mensagem `Idade igual ou superior a 18 anos.`
-
-Além do `if`, Python também oferece o comando `else`, que pode ser utilizado em conjunto com o `if` para executar um bloco de código quando a condição especificada não é verdadeira:
+Ao utilizar o comando o `if`, temos a disposição o `else`, utilizado para executar um bloco de código quando a condição especificada NÃO é verdadeira. Observe no caso abaixo que a saída `Você é menor de idade.` deve ser apresentada caso o teste lógico resulte em falso.
 
 ```python
 idade = 16
@@ -398,9 +394,8 @@ else:
     print("Você é menor de idade.")
 ```
 
-Neste caso, se a idade for menor que 18, o programa imprime `Você é menor de idade.`
 
-Por vezes, queremos avaliar múltiplas condições. Para isso, utilizamos o comando `elif` (abreviação de `else if`), que permite verificar condições adicionais após a condição inicial `if`. Por exemplo:
+Há casos em que temos a necessidade de múltiplas condições. Para isso, utilizamos o comando `elif` (abreviação de `else if`), que permite verificar condições adicionais após a condição inicial `if`. Tal construção permite a criação de uma cadeia de testes para avaliar várias condições em uma única instrução.
 
 ```python
 idade = 20
@@ -415,23 +410,36 @@ else:
 
 Neste caso, se a idade for igual a 18, o programa imprime `Você acabou de atingir a maioridade.` Se a idade for maior que 18, ele imprime `Você é maior de idade.` Se nenhuma das condições anteriores for verdadeira, o programa imprime `Você é menor de idade.`
 
-Os comandos condicionais em Python também podem ser aninhados, ou seja, podem conter outros comandos condicionais dentro deles. Isso permite uma lógica mais complexa de decisão em um programa.
+Os comandos condicionais em Python também podem ser aninhados, ou seja, podem conter outros comandos condicionais dentro deles. Isso permite uma lógica mais complexa de decisão. Contudo, não é boa prática aplicar vários níveis de aninhamento, pois isso aumenta a complexidade e reduz a legibilidade do código.
 
 
-Conforme você deve ter observado, o comando `if` avalia uma expressão lógica, cujos únicos valores possíveis são `VERDADEIRO` ou `FALSO`. Expressões nem sempre são tão simples, contendo apenas uma premissa. Tipicamente, temos duas ou mais premissas lógicas compondo as expressões. Neste caso, precisamos dos operadores lógicos para compor a expressão.
+Conforme você deve ter observado, o comando `if` avalia uma expressão lógica, cujos únicos valores possíveis são `VERDADEIRO` ou `FALSO`. Expressões nem sempre são simples, contendo apenas uma premissa. Tipicamente, temos duas ou mais premissas lógicas compondo as expressões. Neste caso, precisamos dos operadores lógicos para unir as partes.
 
-## Operadores de comparação
+### Operadores de comparação
 
-Operadores de comparação são usados para comparar valores e expressões, resultando em valores booleanos (True ou False) que indicam se a comparação é verdadeira ou falsa. Eles são usados para construir condições lógicas em instruções condicionais, loops e em muitas outras partes do código onde a lógica de decisão é necessária.
+Operadores de comparação são usados para comparar valores e expressões, resultando em valores *booleanos* (True ou False) que indicam se a comparação é verdadeira ou falsa. Eles são usados para construir condições lógicas em instruções condicionais, loops e em muitas outras partes do código onde a lógica de decisão é necessária.
 
-Python oferece os seguintes operadores de comparação:
+!!! info "Operadores de Comparação"
+    === "Igualdade" 
+        O operador **== (igual a)** verifica se dois valores são iguais. Não confunda com `=`, que indica atribuição.
+        ```python
+            a = 5
+            b = 10
 
-1. **== (igual a)**: Verifica se dois valores são iguais. Não confunda com `=`, que indica atribuição.
-2. **!= (diferente de)**: Verifica se dois valores são diferentes.
-3. **< (menor que)**: Verifica se o valor à esquerda é menor que o valor à direita.
-4. **> (maior que)**: Verifica se o valor à esquerda é maior que o valor à direita.
-5. **<= (menor ou igual a)**: Verifica se o valor à esquerda é menor ou igual ao valor à direita.
-6. **>= (maior ou igual a)**: Verifica se o valor à esquerda é maior ou igual ao valor à direita.
+            # Igual a
+            print(a == b)
+        ```
+
+    === "Diferença"
+        O operador **!= (diferente de)** verifica se dois valores são diferentes.
+    === "Menor que" 
+        O operador **< (menor que)** verifica se o valor à esquerda é menor que o valor à direita.
+    === "Maior que"
+        O operador **> (maior que)** verifica se o valor à esquerda é maior que o valor à direita.
+    === "Menor ou igual a"
+        O operador **<= (menor ou igual a)** verifica se o valor à esquerda é menor ou igual ao valor à direita.
+    === "Maior ou igual a"
+        O operador **>= (maior ou igual a)** verifica se o valor à esquerda é maior ou igual ao valor à direita.
 
 Exemplos:
 
