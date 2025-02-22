@@ -63,11 +63,6 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
-        
-        <a href="#laco-for" class="md-skip">
-          Skip to content
-        </a>
-      
     </div>
     <div data-md-component="announce">
       
@@ -256,12 +251,12 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../disciplinas/upf/ads-164/" class="md-tabs__link">
+        <a href="../../../disciplinas/upf/ccc-275/" class="md-tabs__link">
           
   
     
   
-  Desenvolvimento Mobile II (ADS164/HADS009)
+  Algoritmos e Programação (CCC275)
 
         </a>
       </li>
@@ -1000,18 +995,6 @@
       
       
       
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    Laços de repetição
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -1022,59 +1005,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#laco-for" class="md-nav__link">
-    <span class="md-ellipsis">
-      Laço for:
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#laco-while" class="md-nav__link">
-    <span class="md-ellipsis">
-      Laço while:
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#comandos-break-continue-e-else" class="md-nav__link">
-    <span class="md-ellipsis">
-      Comandos break, continue e else
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#funcao-range" class="md-nav__link">
-    <span class="md-ellipsis">
-      Função range
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
       
     </li>
   
@@ -1762,11 +1692,11 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../disciplinas/upf/ads-164/" class="md-nav__link ">
+            <a href="../../../disciplinas/upf/ccc-275/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
-    Desenvolvimento Mobile II (ADS164/HADS009)
+    Algoritmos e Programação (CCC275)
     
   </span>
   
@@ -1783,7 +1713,7 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
-            Desenvolvimento Mobile II (ADS164/HADS009)
+            Algoritmos e Programação (CCC275)
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -1796,11 +1726,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../disciplinas/upf/ads-164/kotlin/" class="md-nav__link">
+      <a href="../../../disciplinas/upf/ccc-275/conteudo-python/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Módulo I - Linguagem Kotlin
+    Algoritmos e Programação com Python
     
   </span>
   
@@ -1839,80 +1769,7 @@
 
   <h1>Laços de repetição</h1>
 
-<p>Laços de repetição são estruturas de controle que permitem criar iterações, ou seja, repetição de instruções. No Python, as principais estruturas são o <code>for</code> e o <code>while</code>. Abaixo, seguem detalhes e exemplos destes dois laços de repetição</p>
-<h3 id="laco-for">Laço <code>for</code>:<a class="headerlink" href="#laco-for" title="Permanent link">&para;</a></h3>
-<p>O laço <code>for</code> em Python é usado para iterar sobre uma sequência (como uma lista, tupla, dicionário, conjunto ou string) ou outro objeto iterável. Ele executa um bloco de código para cada item da sequência, logo seu uso é destinado justamente para situações em que conhecemos de antemão a quantidade de ciclos (iterações) necessárias.</p>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1"># Lista de valores</span>
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="n">lista</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="k">for</span> <span class="n">numero</span> <span class="ow">in</span> <span class="n">lista</span><span class="p">:</span>
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>    <span class="nb">print</span><span class="p">(</span><span class="n">numero</span><span class="p">)</span>
-</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>
-</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="c1"># Caracteres de uma string</span>
-</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="n">palavra</span> <span class="o">=</span> <span class="s2">&quot;Python&quot;</span>
-</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="k">for</span> <span class="n">letra</span> <span class="ow">in</span> <span class="n">palavra</span><span class="p">:</span>
-</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>    <span class="nb">print</span><span class="p">(</span><span class="n">letra</span><span class="p">)</span>
-</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>
-</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="c1"># Dicionários</span>
-</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="n">dicionario</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;a&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">:</span> <span class="mi">3</span><span class="p">}</span>
-</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="k">for</span> <span class="n">chave</span><span class="p">,</span> <span class="n">valor</span> <span class="ow">in</span> <span class="n">dicionario</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
-</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>    <span class="nb">print</span><span class="p">(</span><span class="n">chave</span><span class="p">,</span> <span class="n">valor</span><span class="p">)</span>
-</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>
-</span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="c1"># Intervalo de valores</span>
-</span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">):</span>  
-</span><span id="__span-0-18"><a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a>    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
-</span></code></pre></div>
-<h3 id="laco-while">Laço <code>while</code>:<a class="headerlink" href="#laco-while" title="Permanent link">&para;</a></h3>
-<p>Já o laço <code>while</code>, por sua vez, é usado para repetir um bloco de código enquanto uma condição especificada for verdadeira.</p>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># Imprimindo números de 1 a 5 usando while</span>
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="n">contador</span> <span class="o">=</span> <span class="mi">1</span>
-</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="k">while</span> <span class="n">contador</span> <span class="o">&lt;=</span> <span class="mi">5</span><span class="p">:</span>
-</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>    <span class="nb">print</span><span class="p">(</span><span class="n">contador</span><span class="p">)</span>
-</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>    <span class="n">contador</span> <span class="o">+=</span> <span class="mi">1</span>
-</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>
-</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="c1"># Pedindo entrada ao usuário até que ele insira &quot;sair&quot;</span>
-</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
-</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>    <span class="n">entrada</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Digite algo (ou &#39;sair&#39; para sair): &quot;</span><span class="p">)</span>
-</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>    <span class="k">if</span> <span class="n">entrada</span> <span class="o">==</span> <span class="s1">&#39;sair&#39;</span><span class="p">:</span>
-</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>        <span class="k">break</span>  <span class="c1"># Sai do laço</span>
-</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Você digitou:&quot;</span><span class="p">,</span> <span class="n">entrada</span><span class="p">)</span>
-</span></code></pre></div>
-<p>Utilizamos <code>while</code> comumente em situações onde o número de iterações não é conhecido de antemão. </p>
-<h3 id="comandos-break-continue-e-else">Comandos <code>break</code>, <code>continue</code> e <code>else</code><a class="headerlink" href="#comandos-break-continue-e-else" title="Permanent link">&para;</a></h3>
-<p>O comando <code>continue</code> é utilizado para interromper a iteração atual de um loop e passar para a próxima iteração, ignorando o restante do código que segue.  No código que segue, quando <code>i</code> tiver valor igual a <code>3</code>, o comando <code>print(i)</code> não será executado. Isso porque, executar a instrução <code>continue</code>, o interpretador irá retornar para o início do laço, iniciando a próxima iteração.</p>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">):</span>
-</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>    <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">3</span><span class="p">:</span>
-</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>        <span class="k">continue</span>
-</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
-</span></code></pre></div>
-<p>Já o comando <code>break</code> é utilizado para interromper completamente a execução de um loop. Quando o break é encontrado dentro de um loop, o controle do programa é transferido para a instrução imediatamente após o bloco de loop. Em nosso exemplo, quando <code>i</code> tiver o valor <code>3</code>, o laço é interrompido e o interpretador segue com o próximo comando após o <code>for</code>, que no caso é <code>x = 10</code>.</p>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">):</span>
-</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>    <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">3</span><span class="p">:</span>
-</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>        <span class="k">break</span>
-</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
-</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="n">x</span> <span class="o">=</span> <span class="mi">10</span>
-</span></code></pre></div>
-<p>Tanto <code>for</code> quanto <code>while</code> podem conter um bloco <code>else</code> em sua definição. O uso assemelha-se ao <code>else</code> da construção <code>try except</code>. No caso dos laços, o bloco <code>else</code> será executado sempre que o laço concluir suas iterações normalmente, ou seja, sem o uso de <code>break</code>.</p>
-<h3 id="funcao-range">Função <code>range</code><a class="headerlink" href="#funcao-range" title="Permanent link">&para;</a></h3>
-<p>A função <code>range()</code> gera uma sequência de números inteiros em um intervalo especificado. Esta função é comumente utilizada em laços (loops), como <code>for</code>, para iterar sobre uma sequência de números.</p>
-<p>A sintaxe básica da função <code>range()</code> é a seguinte:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>range(start, stop, step)
-</span></code></pre></div>
-<p>Onde:</p>
-<ul>
-<li>
-<p><code>start</code>: O valor inicial da sequência (opcional). Se não especificado, o padrão é 0.</p>
-</li>
-<li>
-<p><code>stop</code>: O valor final da sequência (obrigatório). A sequência gerada não inclui este valor.</p>
-</li>
-<li>
-<p><code>step</code>: O incremento entre os números na sequência (opcional). Se não especificado, o padrão é 1.</p>
-</li>
-</ul>
-<p>Veja um exemplo que utiliza a função <code>range()</code> com seus três argumentos (<code>start</code>, <code>stop</code>, e <code>step</code>) preenchidos.</p>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">2</span><span class="p">):</span>
-</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
-</span></code></pre></div>
+
 
 
 
