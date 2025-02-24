@@ -24,13 +24,13 @@ val name = "John"          // Inferência de tipo, feita automaticamente com bas
 
 Em termos de operadores matemáticos nada foge dos conhecidos símbolos. E, além destes, temos operadores de incremento e decremento pré e pós-fixados (`++` e `--`).
 
-| **Operador** | **Descrição**           | **Exemplo**        | **Resultado** |
-|--------------|-------------------------|--------------------|---------------|
-| `+`          | Adição                  | `5 + 3`            | `8`           |
-| `-`          | Subtração               | `5 - 3`            | `2`           |
-| `*`          | Multiplicação           | `5 * 3`            | `15`          |
-| `/`          | Divisão                 | `5 / 2`            | `2` (Inteiro) |
-| `%`          | Módulo (resto da divisão) | `5 % 2`          | `1`           |
+| **Operador** | **Descrição**             | **Exemplo** | **Resultado** |
+| ------------ | ------------------------- | ----------- | ------------- |
+| `+`          | Adição                    | `5 + 3`     | `8`           |
+| `-`          | Subtração                 | `5 - 3`     | `2`           |
+| `*`          | Multiplicação             | `5 * 3`     | `15`          |
+| `/`          | Divisão                   | `5 / 2`     | `2` (Inteiro) |
+| `%`          | Módulo (resto da divisão) | `5 % 2`     | `1`           |
 
 
 Certamente uma característica importante da linguagem chama-se `null safety`. Trata-se de um recurso que permite ao interpretador antecipar e evitar problemas relacionados ao acesso de valores e métodos em variáveis nulas (comuns no Java, por exemplo). 
@@ -80,32 +80,74 @@ Os operadores especificamente associados com `null safety`são:
 
 ```
 
+### Tipos de Dados Comuns
+
+| **Tipo**      | **Descrição**                                            | **Tamanho**       | **Exemplo**                                                        |
+| ------------- | -------------------------------------------------------- | ----------------- | ------------------------------------------------------------------ |
+| `Int`         | Número inteiro                                           | 32 bits           | `val number: Int = 42`                                             |
+| `Long`        | Número inteiro longo                                     | 64 bits           | `val bigNumber: Long = 123456789L`                                 |
+| `Short`       | Número inteiro curto                                     | 16 bits           | `val smallNumber: Short = 32000`                                   |
+| `Byte`        | Número inteiro pequeno (byte)                            | 8 bits            | `val byteValue: Byte = 127`                                        |
+| `Float`       | Número de ponto flutuante (precisão simples)             | 32 bits           | `val floatValue: Float = 3.14F`                                    |
+| `Double`      | Número de ponto flutuante (precisão dupla)               | 64 bits           | `val doubleValue: Double = 3.141592653589793`                      |
+| `Char`        | Um único caractere                                       | 16 bits (Unicode) | `val charValue: Char = 'A'`                                        |
+| `String`      | Sequência de caracteres                                  | Tamanho variável  | `val text: String = "Hello, Kotlin!"`                              |
+| `Boolean`     | Representa valores lógicos                               | 1 bit             | `val isKotlinFun: Boolean = true`                                  |
+| `Array`       | Coleção ordenada de elementos                            | Tamanho variável  | `val numbers: Array<Int> = arrayOf(1, 2, 3)`                       |
+| `List`        | Lista imutável de elementos                              | Tamanho variável  | `val items: List<String> = listOf("Apple", "Banana")`              |
+| `MutableList` | Lista mutável de elementos                               | Tamanho variável  | `val items: MutableList<String> = mutableListOf("Apple")`          |
+| `Set`         | Conjunto imutável sem elementos duplicados               | Tamanho variável  | `val uniqueItems: Set<Int> = setOf(1, 2, 3)`                       |
+| `MutableSet`  | Conjunto mutável sem elementos duplicados                | Tamanho variável  | `val uniqueItems: MutableSet<Int> = mutableSetOf(1, 2)`            |
+| `Map`         | Coleção de pares chave-valor                             | Tamanho variável  | `val map: Map<String, Int> = mapOf("A" to 1, "B" to 2)`            |
+| `MutableMap`  | Coleção mutável de pares chave-valor                     | Tamanho variável  | `val mutableMap: MutableMap<String, Int> = mutableMapOf("A" to 1)` |
+| `Any`         | Tipo raiz de todos os objetos                            | -                 | `val anyValue: Any = "Kotlin"`                                     |
+| `Unit`        | Representa a ausência de valor em funções                | -                 | Funções sem retorno explícito retornam `Unit`                      |
+| `Nothing`     | Representa a ausência de um valor ou código inalcançável | -                 | `fun fail(): Nothing = throw Exception("Erro")`                    |
+
+---
 
 
 
 
-## Estruturas Condicionais
+## Controle de Fluxo
 
-O Kotlin utiliza if e when para controle de fluxo.
+No que diz respeito a estruturas condicionais, o Kotlin utiliza `if` e `when`. A sintaxe do  `if` é semelhante a muitas outras linguagens, mas se destaca pela possibilidade de retornar valores, tal qual ocorre com o `when`. Este último, por sua vez, é um comando mais sofisticado, apresentando diversas variações.
 
-val number = 10
+```kotlin
+    val numero = 10
 
-// Usando if-else
-val result = if (number % 2 == 0) "Par" else "Ímpar"
+    // Usando if-else
+    val resultado = if (numero % 2 == 0) "Par" else "Ímpar"
 
-// Usando when (substituto do switch)
-val grade = "A"
-val feedback = when (grade) {
-    "A" -> "Excelente"
-    "B" -> "Bom"
-    "C" -> "Satisfatório"
-    else -> "Nota inválida"
-}
+    // Usando when (substituto do switch)
+    val nota = "A"
+    val feedback = when(x) {
+        0 -> "Zero" // quando exatamente zero
+        in 1..4 -> "Four or less" // quando entre 1 e 4
+        5, 6, 7 -> "Five to seven" // se 5, 6 ou 7
+        is Byte -> "Byte" // se o tipo for byte
+        else -> "Some number" // caso nenhuma das opções
+    }
+```
+
+Os operadores lógicos da linguagem estão descritos na tabela abaixo.
+
+| **Operador** | **Descrição**                                                                           | **Exemplo**           | **Resultado**                                                                 |
+| ------------ | --------------------------------------------------------------------------------------- | --------------------- | ----------------------------------------------------------------------------- |
+| `&&`         | **E lógico**: Retorna `true` se ambas as condições forem verdadeiras.                   | `(x > 0) && (y > 0)`  | `true` se `x > 0` e `y > 0`                                                   |
+| `            |                                                                                         | `                     | **OU lógico**: Retorna `true` se pelo menos uma das condições for verdadeira. | `(x > 0) |  | (y < 0)` | `true` se uma das condições for verdadeira |
+| `!`          | **Não lógico**: Inverte o valor lógico de uma condição.                                 | `!(x > 0)`            | `true` se `x <= 0`                                                            |
+| `xor`        | **OU exclusivo lógico**: Retorna `true` se exatamente uma das condições for verdadeira. | `(x > 0) xor (y > 0)` | `true` se apenas uma condição for verdadeira                                  |
+
+---
+
 
 ## Laços de Repetição
 
-Kotlin oferece laços como for, while e do-while.
+Os laços de repetição disponíveis são `for`, `while`e `do-while`, assim como outras em linguagens de programação. O laço `for` também permite percorrer coleções de dados de forma simplifica, tornando o código mais sucinto.
 
+
+```kotlin
 // Iterando sobre uma lista
 val items = listOf("Apple", "Banana", "Cherry")
 for (item in items) {
@@ -119,9 +161,14 @@ while (count > 0) {
     count--
 }
 
+```
+
 ## Funções
 
-Funções em Kotlin podem ser declaradas de forma simples e suportam valores de retorno.
+Funções em Kotlin podem ser declaradas de vários formas. Suportam parâmetros e valores de retorno.
+
+
+```kotlin
 
 fun add(a: Int, b: Int): Int {
     return a + b
@@ -133,102 +180,6 @@ fun multiply(a: Int, b: Int) = a * b
 println(add(3, 5))       // 8
 println(multiply(4, 7))  // 28
 
-Classes e Objetos
 
-A orientação a objetos no Kotlin é simples e eficiente.
-
-class Person(val name: String, var age: Int) {
-    fun greet() = "Olá, meu nome é $name e tenho $age anos."
-}
-
-val person = Person("Alice", 30)
-println(person.greet()) // Olá, meu nome é Alice e tenho 30 anos.
-
-1. Principais Características do Kotlin
-
-2. Null Safety
-
-Evita erros de ponteiro nulo com tipos seguros.
-
-var name: String? = null // Variável pode ser nula
-println(name?.length)    // Safe call operator (?.)
-
-2. Interoperabilidade com Java
-
-Kotlin permite o uso de bibliotecas Java sem complicações.
-
-val list = ArrayList<String>()
-list.add("Kotlin")
-
-3. Funções de Extensão
-
-Adicione funcionalidades a classes existentes.
-
-fun String.isPalindrome(): Boolean {
-    return this == this.reversed()
-}
-
-println("level".isPalindrome()) // true
-
-4. Data Classes
-
-Simplifique a criação de classes para armazenar dados.
-
-data class User(val name: String, val age: Int)
-
-val user = User("Alice", 25)
-println(user.name) // Alice
-
-5. Expressões Lambda
-
-Simplifique o uso de funções de ordem superior.
-
-val numbers = listOf(1, 2, 3, 4)
-val doubled = numbers.map { it * 2 }
-println(doubled) // [2, 4, 6, 8]
-
-6. Corrotinas
-
-Gerencie operações assíncronas de forma eficiente.
-
-import kotlinx.coroutines.*
-
-fun main() = runBlocking {
-    launch {
-        delay(1000L)
-        println("Corrotinas são incríveis!")
-    }
-    println("Olá,")
-}
-
-7. Delegação de Propriedades
-
-Use delegados para simplificar a lógica de propriedades.
-
-import kotlin.properties.Delegates
-
-var observableValue: Int by Delegates.observable(0) { _, old, new ->
-    println("Mudança de $old para $new")
-}
-observableValue = 10
-
-8. Programação Funcional
-
-Combine paradigmas orientados a objetos e funcionais.
-
-val list = listOf(1, 2, 3, 4)
-val evenNumbers = list.filter { it % 2 == 0 }
-println(evenNumbers) // [2, 4]
-
-3. Vantagens de Usar Kotlin no Android
-	•	Menos Erros: Null safety reduz crashes.
-	•	Alta Produtividade: Código mais conciso.
-	•	Interoperabilidade: Suporte total a bibliotecas Java.
-	•	Adotado pelo Google: Totalmente integrado ao Android Studio.
-
-Referências
-	•	Documentação Oficial do Kotlin
-	•	Guia de Desenvolvimento Android
-
-Este material cobre tanto a sintaxe básica quanto os recursos avançados do Kotlin, ajudando no aprendizado e na consulta durante o desenvolvimento mobile.
+```
 
