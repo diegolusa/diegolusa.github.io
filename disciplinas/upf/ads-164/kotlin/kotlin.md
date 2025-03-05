@@ -183,3 +183,114 @@ println(multiply(4, 7))  // 28
 
 ```
 
+### Funções lambdas
+
+Funções lambda são funções anônimas (sem nome) que podem ser armazenadas em variáveis e passadas como argumento para outras funções. Elas são muito utilizadas para programação funcional e manipulação de coleções. Para criar uma variável que armazena uma função lambda, precisamos de uma declaração nos moldes de `val nomeDaLambda: (TipoDoParametro) -> TipoDeRetorno = { parametro -> expressão }`. O mesmo vale para declarar parâmetros que aceitam tais funções (neste caso, a implementação da função depois do `=` é opcional).
+
+Quando uma lambda tem apenas um parâmetro, podemos usar `it` para referenciá-lo implicitamente no código. Trata-se de uma convenção da linguagem.
+
+```kotlin
+val saudacao: (String) -> String = { "Olá, $it!" }
+println(saudacao("Kotlin"))
+```
+
+Outro recurso interessante aplica-se quando uma função recebe uma lambda como seu último argumento. Nesta situação podemos colocá-la fora dos parênteses da chamada da função utilizando uma sintaxe alternativa conhecida como `Trailing Lambda Syntax (Sintaxe de Lambda no Final)`.
+
+
+```kotlin
+
+fun calcular(a: Int, b: Int, operacao: (Int, Int) -> Int): Int {
+    return operacao(a, b)
+}
+
+fun main() {
+    // forma convencional
+    val resultado = calcular(5, 3, { x, y -> x + y })
+    println(resultado) 
+
+    // trailing lambda sintax
+    val resultado = calcular(5, 3) { x, y -> x + y }
+    println(resultado) 
+
+}
+
+```
+
+
+
+
+
+
+## Orientação a Objetos
+
+A **Programação Orientada a Objetos (POO)** é um paradigma de programação baseado no conceito de objetos, que encapsulam **dados (atributos)** e **comportamentos (métodos)**. Kotlin é uma linguagem moderna que suporta POO e oferece recursos interessantes para facilitar o desenvolvimento de software.
+
+
+### Classes e Objetos
+
+Uma **classe** é um modelo que define um conjunto de atributos e métodos que um objeto pode ter. Em Kotlin, utilizamos a palavra-chave `class` para definir uma classe.
+
+```kotlin
+class Pessoa {
+    var nome: String = ""
+    var idade: Int = 0
+
+    fun apresentar() {
+        println("Olá, meu nome é $nome e tenho $idade anos.")
+    }
+}
+
+fun main() {
+    val pessoa1 = Pessoa()
+    pessoa1.nome = "João"
+    pessoa1.idade = 25
+    pessoa1.apresentar()
+}
+```
+
+### Construtures
+
+Construtores são métodos especiais de uma classe, cuja finalidade é definir o estado inicial dos objetos. No Kotlin, temos a possibilidade de definir construtores primários e secundários. 
+
+O construtor primário é definido na declaração da classe e permite inicializar as propriedades de forma direta. Para executar alguma lógica de inicialização adicional, é possível utilizar o bloco `init`. Já o secundário é definido dentro da classe através da palavra reservada `constructor`. Os construtores secundários representam formas alternativas de inicializar um novo objeto da classe em questão.
+
+```kotlin
+class Pessoa(val nome: String, val idade: Int) {
+    init {
+        println("objeto inicializado")
+    }
+    fun apresentar() {
+        println("Olá, meu nome é $nome e tenho $idade anos.")
+    }
+}
+
+class Aluno(val nome: String) {
+    var idade: Int = 0
+
+    constructor(nome: String, idade: Int) : this(nome) {
+        this.idade = idade
+    }
+}
+
+```
+
+
+
+### Data Class
+
+*Data classes* são usadas para representar modelos de dados de forma simples. Isso porque o próprio compilador fica responsável por gerar algums métodos importantes, como `equals`, `hashcode`, `tostring`, `componentN` e `copy`. Assim, a forma mais simples de declaração de um `data class` compreende definir seu nome e a lista de seus atributos através do construtor principal.
+
+
+```kotlin
+
+data class Usuario(val nome: String, val idade: Int)
+
+fun main() {
+    val usuario1 = Usuario("Carlos", 28)
+    val usuario2 = usuario1.copy(idade = 30)
+    
+    println(usuario1)
+    println(usuario2)
+}
+
+```

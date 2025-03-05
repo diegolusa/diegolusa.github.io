@@ -1,0 +1,1754 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../kotlin/">
+      
+      
+        <link rel="next" href="../../ccc-275/">
+      
+      
+      <link rel="icon" href="../../../../img/icon.ico">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.4">
+    
+    
+      
+        <title>Desenvolvimento de aplicativos para Android - Diego A. Lusa</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.8608ea7d.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../css/custom.css">
+    
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#jetpack-compose" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../../.." title="Diego A. Lusa" class="md-header__button md-logo" aria-label="Diego A. Lusa" data-md-component="logo">
+      
+  <img src="../../../../img/icon.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Diego A. Lusa
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Desenvolvimento de aplicativos para Android
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../.." class="md-tabs__link">
+        
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+    
+      
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../informatica/editores-texto/introducao/" class="md-tabs__link">
+          
+  
+    
+  
+  Informática Básica
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../ads-153/" class="md-tabs__link">
+          
+  
+    
+  
+  Desenvolvimento para Web (ADS153)
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../" class="md-tabs__link">
+          
+  
+    
+  
+  Desenvolvimento Mobile II (ADS164/HADS009)
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../ccc-275/" class="md-tabs__link">
+          
+  
+    
+  
+  Algoritmos e Programação (CCC275)
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../.." title="Diego A. Lusa" class="md-nav__button md-logo" aria-label="Diego A. Lusa" data-md-component="logo">
+      
+  <img src="../../../../img/icon.png" alt="logo">
+
+    </a>
+    Diego A. Lusa
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Informática Básica
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Informática Básica
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Editores de Texto
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            Editores de Texto
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../informatica/editores-texto/introducao/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Writer
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../informatica/editores-texto/estilos/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Estilos
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../informatica/editores-texto/abnt/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ABNT
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../ads-153/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Desenvolvimento para Web (ADS153)
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Desenvolvimento para Web (ADS153)
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ads-153/m-1/m-1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Módulo I - Fundamentos e Linguagem HTML5
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ads-153/m-2/m-2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Módulo II - Cascading Style Sheets
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ads-153/m-3/m-3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Módulo III - Linguagem JavaScript
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Desenvolvimento Mobile II (ADS164/HADS009)
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Desenvolvimento Mobile II (ADS164/HADS009)
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kotlin/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Módulo I - Linguagem Kotlin
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Módulo II - Desenvolvimento de Aplicações Android
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Módulo II - Desenvolvimento de Aplicações Android
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#jetpack-compose" class="md-nav__link">
+    <span class="md-ellipsis">
+      Jetpack Compose
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Jetpack Compose">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#criando-telas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Criando Telas
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#context" class="md-nav__link">
+    <span class="md-ellipsis">
+      Context
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#unidades-de-medida" class="md-nav__link">
+    <span class="md-ellipsis">
+      Unidades de Medida
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gerenciamento-de-estados" class="md-nav__link">
+    <span class="md-ellipsis">
+      Gerenciamento de Estados
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#navegacao" class="md-nav__link">
+    <span class="md-ellipsis">
+      Navegação
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#activities" class="md-nav__link">
+    <span class="md-ellipsis">
+      Activities
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Activities">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ciclo-de-vida" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ciclo de Vida
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#intents" class="md-nav__link">
+    <span class="md-ellipsis">
+      Intents
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Intents">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#componentes-de-uma-intent" class="md-nav__link">
+    <span class="md-ellipsis">
+      Componentes de uma Intent
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exemplos-de-uso" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exemplos de Uso
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enviar-dados-de-uma-activity-para-outra-via-intent" class="md-nav__link">
+    <span class="md-ellipsis">
+      Enviar dados de uma Activity para outra via Intent
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#referencias" class="md-nav__link">
+    <span class="md-ellipsis">
+      Referências
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../ccc-275/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Algoritmos e Programação (CCC275)
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_5" id="__nav_5_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Algoritmos e Programação (CCC275)
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ccc-275/conteudo-python/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Fundamentos de algoritmos e programação com Python
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+
+
+
+                  
+
+
+
+  <h1>Módulo II - Desenvolvimento de Aplicações Android</h1>
+
+<hr />
+<h2 id="jetpack-compose">Jetpack Compose<a class="headerlink" href="#jetpack-compose" title="Permanent link">&para;</a></h2>
+<p>O <strong>Jetpack Compose</strong> é o <strong>kit de ferramentas para a criação de interfaces de usuário (UI)</strong> no Android. Ele substitui o XML tradicional por uma abordagem declarativa, onde a interface é criada por meio de funções Kotlin anotadas com <code>@Composable</code>.</p>
+<p>Os objetivos principais de aplicação do <strong>Compose</strong> podem ser resumidos a:</p>
+<ul>
+<li>Criar interfaces de forma mais concisa e intuitiva.</li>
+<li>Reutilizar componentes facilmente.</li>
+<li>Tornar a interface reativa, atualizando automaticamente conforme os estados mudam.</li>
+<li>Integrar padrões modernos como <strong>Material Design 3</strong>.</li>
+</ul>
+<p>O uso de Jetpack Compose no desenvolvimento requer configurações específicas no projeto. Contudo, nas versões mais recentes do Android Studio tais configurações acabam sendo transparentes. </p>
+<p>De qualquer modo, é importante saber o que é necessário para utilizar os recursos de composição no projeto. Além de ter a versão do Android Studio mais atualizada, precisamos verificar se as dependências <code>androidx.compose.ui</code> e <code>androidx.compose.material3</code> estão presentes no arquivo <code>build.gradle.kts</code> na seção <code>dependencies</code>:</p>
+<div class="language-kotlin highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">plugins</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">    </span><span class="n">id</span><span class="p">(</span><span class="s">&quot;com.android.application&quot;</span><span class="p">)</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">    </span><span class="n">id</span><span class="p">(</span><span class="s">&quot;org.jetbrains.kotlin.android&quot;</span><span class="p">)</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="p">}</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="n">android</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">    </span><span class="n">compileSdk</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">34</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">    </span><span class="n">defaultConfig</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">        </span><span class="n">applicationId</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;com.exemplo.composeapp&quot;</span>
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="w">        </span><span class="n">minSdk</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">21</span>
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="w">        </span><span class="n">targetSdk</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">34</span>
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="w">        </span><span class="n">versionCode</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1</span>
+</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="w">        </span><span class="n">versionName</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;1.0&quot;</span>
+</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>
+</span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="w">    </span><span class="n">buildFeatures</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-18"><a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a><span class="w">        </span><span class="n">compose</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span>
+</span><span id="__span-0-19"><a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-0-20"><a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a>
+</span><span id="__span-0-21"><a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a><span class="w">    </span><span class="n">composeOptions</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-22"><a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a><span class="w">        </span><span class="n">kotlinCompilerExtensionVersion</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;1.6.0&quot;</span>
+</span><span id="__span-0-23"><a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-0-24"><a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a><span class="p">}</span>
+</span><span id="__span-0-25"><a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a>
+</span><span id="__span-0-26"><a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a><span class="n">dependencies</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-27"><a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a><span class="w">    </span><span class="n">implementation</span><span class="p">(</span><span class="s">&quot;androidx.core:core-ktx:1.12.0&quot;</span><span class="p">)</span>
+</span><span id="__span-0-28"><a id="__codelineno-0-28" name="__codelineno-0-28" href="#__codelineno-0-28"></a><span class="w">    </span><span class="n">implementation</span><span class="p">(</span><span class="s">&quot;androidx.lifecycle:lifecycle-runtime-ktx:2.7.0&quot;</span><span class="p">)</span>
+</span><span id="__span-0-29"><a id="__codelineno-0-29" name="__codelineno-0-29" href="#__codelineno-0-29"></a><span class="w">    </span><span class="n">implementation</span><span class="p">(</span><span class="s">&quot;androidx.activity:activity-compose:1.8.2&quot;</span><span class="p">)</span>
+</span><span id="__span-0-30"><a id="__codelineno-0-30" name="__codelineno-0-30" href="#__codelineno-0-30"></a><span class="w">    </span><span class="n">implementation</span><span class="p">(</span><span class="s">&quot;androidx.compose.ui:ui:1.6.0&quot;</span><span class="p">)</span>
+</span><span id="__span-0-31"><a id="__codelineno-0-31" name="__codelineno-0-31" href="#__codelineno-0-31"></a><span class="w">    </span><span class="n">implementation</span><span class="p">(</span><span class="s">&quot;androidx.compose.material3:material3:1.2.0&quot;</span><span class="p">)</span>
+</span><span id="__span-0-32"><a id="__codelineno-0-32" name="__codelineno-0-32" href="#__codelineno-0-32"></a><span class="p">}</span>
+</span></code></pre></div>
+<p>Feito isso, já é possível criar nossas activities aplicando funções de composição para criação das interfaces. É o que abordaremos a seguir.</p>
+<h3 id="criando-telas">Criando Telas<a class="headerlink" href="#criando-telas" title="Permanent link">&para;</a></h3>
+<p>No <strong>Jetpack Compose</strong>, a interface é definida por funções <code>@Composable</code>, as quais definem e integram as partes da interface gráfica. É o que demonstra o trecho de código a seguir, que apresentam uma <code>activity</code> simples utilizando <code>Composable</code> para criar a estrutura da tela.</p>
+<div class="language-kotlin highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="k">package</span><span class="w"> </span><span class="nn">com.exemplo.composeapp</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="k">import</span><span class="w"> </span><span class="nn">android.os.Bundle</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="k">import</span><span class="w"> </span><span class="nn">android.widget.Toast</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="k">import</span><span class="w"> </span><span class="nn">androidx.activity.ComponentActivity</span>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="k">import</span><span class="w"> </span><span class="nn">androidx.activity.compose.setContent</span>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="k">import</span><span class="w"> </span><span class="nn">androidx.compose.foundation.layout.*</span>
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="k">import</span><span class="w"> </span><span class="nn">androidx.compose.material3.*</span>
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="k">import</span><span class="w"> </span><span class="nn">androidx.compose.runtime.*</span>
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="k">import</span><span class="w"> </span><span class="nn">androidx.compose.ui.Alignment</span>
+</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="k">import</span><span class="w"> </span><span class="nn">androidx.compose.ui.Modifier</span>
+</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="k">import</span><span class="w"> </span><span class="nn">androidx.compose.ui.platform.LocalContext</span>
+</span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="k">import</span><span class="w"> </span><span class="nn">androidx.compose.ui.unit.dp</span>
+</span><span id="__span-1-14"><a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a>
+</span><span id="__span-1-15"><a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a><span class="kd">class</span><span class="w"> </span><span class="nc">MainActivity</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">ComponentActivity</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-1-16"><a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a><span class="w">    </span><span class="kd">override</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="nf">onCreate</span><span class="p">(</span><span class="n">savedInstanceState</span><span class="p">:</span><span class="w"> </span><span class="n">Bundle?)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-1-17"><a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a><span class="w">        </span><span class="k">super</span><span class="p">.</span><span class="na">onCreate</span><span class="p">(</span><span class="n">savedInstanceState</span><span class="p">)</span>
+</span><span id="__span-1-18"><a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a><span class="w">        </span><span class="n">setContent</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-1-19"><a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a><span class="w">            </span><span class="n">MeuApp</span><span class="p">()</span>
+</span><span id="__span-1-20"><a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a><span class="w">        </span><span class="p">}</span>
+</span><span id="__span-1-21"><a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-1-22"><a id="__codelineno-1-22" name="__codelineno-1-22" href="#__codelineno-1-22"></a><span class="p">}</span>
+</span><span id="__span-1-23"><a id="__codelineno-1-23" name="__codelineno-1-23" href="#__codelineno-1-23"></a>
+</span><span id="__span-1-24"><a id="__codelineno-1-24" name="__codelineno-1-24" href="#__codelineno-1-24"></a><span class="nd">@Composable</span>
+</span><span id="__span-1-25"><a id="__codelineno-1-25" name="__codelineno-1-25" href="#__codelineno-1-25"></a><span class="kd">fun</span><span class="w"> </span><span class="nf">MeuApp</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-1-26"><a id="__codelineno-1-26" name="__codelineno-1-26" href="#__codelineno-1-26"></a><span class="w">    </span><span class="n">MaterialTheme</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-1-27"><a id="__codelineno-1-27" name="__codelineno-1-27" href="#__codelineno-1-27"></a><span class="w">        </span><span class="n">TelaInicial</span><span class="p">()</span>
+</span><span id="__span-1-28"><a id="__codelineno-1-28" name="__codelineno-1-28" href="#__codelineno-1-28"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-1-29"><a id="__codelineno-1-29" name="__codelineno-1-29" href="#__codelineno-1-29"></a><span class="p">}</span>
+</span><span id="__span-1-30"><a id="__codelineno-1-30" name="__codelineno-1-30" href="#__codelineno-1-30"></a>
+</span><span id="__span-1-31"><a id="__codelineno-1-31" name="__codelineno-1-31" href="#__codelineno-1-31"></a><span class="nd">@Composable</span>
+</span><span id="__span-1-32"><a id="__codelineno-1-32" name="__codelineno-1-32" href="#__codelineno-1-32"></a><span class="kd">fun</span><span class="w"> </span><span class="nf">TelaInicial</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-1-33"><a id="__codelineno-1-33" name="__codelineno-1-33" href="#__codelineno-1-33"></a><span class="w">    </span><span class="kd">val</span><span class="w"> </span><span class="nv">contexto</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">LocalContext</span><span class="p">.</span><span class="na">current</span>
+</span><span id="__span-1-34"><a id="__codelineno-1-34" name="__codelineno-1-34" href="#__codelineno-1-34"></a>
+</span><span id="__span-1-35"><a id="__codelineno-1-35" name="__codelineno-1-35" href="#__codelineno-1-35"></a><span class="w">    </span><span class="n">Column</span><span class="p">(</span>
+</span><span id="__span-1-36"><a id="__codelineno-1-36" name="__codelineno-1-36" href="#__codelineno-1-36"></a><span class="w">        </span><span class="n">modifier</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Modifier</span><span class="p">.</span><span class="na">fillMaxSize</span><span class="p">().</span><span class="na">padding</span><span class="p">(</span><span class="m">16.</span><span class="n">dp</span><span class="p">),</span>
+</span><span id="__span-1-37"><a id="__codelineno-1-37" name="__codelineno-1-37" href="#__codelineno-1-37"></a><span class="w">        </span><span class="n">horizontalAlignment</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Alignment</span><span class="p">.</span><span class="na">CenterHorizontally</span>
+</span><span id="__span-1-38"><a id="__codelineno-1-38" name="__codelineno-1-38" href="#__codelineno-1-38"></a><span class="w">    </span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-1-39"><a id="__codelineno-1-39" name="__codelineno-1-39" href="#__codelineno-1-39"></a><span class="w">        </span><span class="n">Text</span><span class="p">(</span><span class="n">text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Olá, Jetpack Compose!&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">style</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">MaterialTheme</span><span class="p">.</span><span class="na">typography</span><span class="p">.</span><span class="na">headlineMedium</span><span class="p">)</span>
+</span><span id="__span-1-40"><a id="__codelineno-1-40" name="__codelineno-1-40" href="#__codelineno-1-40"></a><span class="w">        </span><span class="n">Spacer</span><span class="p">(</span><span class="n">modifier</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Modifier</span><span class="p">.</span><span class="na">height</span><span class="p">(</span><span class="m">8.</span><span class="n">dp</span><span class="p">))</span>
+</span><span id="__span-1-41"><a id="__codelineno-1-41" name="__codelineno-1-41" href="#__codelineno-1-41"></a><span class="w">        </span><span class="n">Button</span><span class="p">(</span><span class="n">onClick</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-1-42"><a id="__codelineno-1-42" name="__codelineno-1-42" href="#__codelineno-1-42"></a><span class="w">            </span><span class="n">Toast</span><span class="p">.</span><span class="na">makeText</span><span class="p">(</span><span class="n">contexto</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Botão clicado!&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">Toast</span><span class="p">.</span><span class="na">LENGTH_SHORT</span><span class="p">).</span><span class="na">show</span><span class="p">()</span>
+</span><span id="__span-1-43"><a id="__codelineno-1-43" name="__codelineno-1-43" href="#__codelineno-1-43"></a><span class="w">        </span><span class="p">})</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-1-44"><a id="__codelineno-1-44" name="__codelineno-1-44" href="#__codelineno-1-44"></a><span class="w">            </span><span class="n">Text</span><span class="p">(</span><span class="s">&quot;Clique Aqui&quot;</span><span class="p">)</span>
+</span><span id="__span-1-45"><a id="__codelineno-1-45" name="__codelineno-1-45" href="#__codelineno-1-45"></a><span class="w">        </span><span class="p">}</span>
+</span><span id="__span-1-46"><a id="__codelineno-1-46" name="__codelineno-1-46" href="#__codelineno-1-46"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-1-47"><a id="__codelineno-1-47" name="__codelineno-1-47" href="#__codelineno-1-47"></a><span class="p">}</span>
+</span></code></pre></div>
+<p>No código acima, a construção da tela inicia a partir da função <code>setContent</code>. Observe que é realizado chamada para a função <code>MeuApp</code>, que possui anotação <code>@Composable</code>. Esta, por sua vez, utiliza a função <code>TelaInicial</code> para adicionar um texto e um botão à tela.</p>
+<p>Quanto trabalhamos com Jetpack Compose, utilizamos as funções oferecidas pelo pacote para adicionar elementos básicos na tela (texto, campos de entrada, listas). E, para realizar a construção da tela, utilizamos funções anotadas com <code>@Compose</code> customizadas.</p>
+<h3 id="context">Context<a class="headerlink" href="#context" title="Permanent link">&para;</a></h3>
+<p>No Android, o <strong>Context</strong> é uma classe essencial que fornece acesso a recursos globais da aplicação, como arquivos, bancos de dados, serviços do sistema, preferências compartilhadas e a interface gráfica. Ele é fundamental para muitas operações no desenvolvimento de aplicativos.</p>
+<p>Normalmente o <em>context</em> é usado para:</p>
+<ul>
+<li>Acessar recursos (strings, cores, dimensões, imagens, etc.).</li>
+<li>Gerenciar arquivos e banco de dados internos.</li>
+<li>Criar e iniciar Intents para abrir telas ou serviços.</li>
+<li>Exibir Toasts e Dialogs.</li>
+<li>Obter serviços do sistema (como ClipboardManager, Vibrator, WifiManager, etc.).</li>
+</ul>
+<p>Existem diferentes formas de obter um Context, dependendo do escopo onde ele será usado. Na tabela a seguir colocamos um resumo de tais opções.</p>
+<table>
+<thead>
+<tr>
+<th>Tipo de Context</th>
+<th>Descrição</th>
+<th>Como obter</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Activity Context</td>
+<td>Contexto específico da Activity. Ele é destruído junto com a Activity.</td>
+<td><code>this</code> dentro de uma Activity</td>
+</tr>
+<tr>
+<td>Application Context</td>
+<td>Contexto global da aplicação. Vive enquanto o app estiver rodando.</td>
+<td><code>applicationContext</code></td>
+</tr>
+<tr>
+<td>Service Context</td>
+<td>Contexto dentro de um Service, usado para tarefas em background.</td>
+<td><code>this</code> dentro de um Service</td>
+</tr>
+<tr>
+<td>Base Context</td>
+<td>Contexto que pode ser reutilizado ou modificado.</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Para manter operações além do escopo de activities precisamos utilizar o <code>applicationContext</code>.</p>
+<div class="admonition note">
+<p class="admonition-title">Exemplos de Uso</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:4"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><input id="__tabbed_1_4" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Exibição de Toasts</label><label for="__tabbed_1_2">Acesso à resources</label><label for="__tabbed_1_3">Iniciar Activity</label><label for="__tabbed_1_4">SharedPreferences</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-kotlin highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="w">        </span><span class="kd">val</span><span class="w"> </span><span class="nv">contexto</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">LocalContext</span><span class="p">.</span><span class="na">current</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">        </span><span class="n">Toast</span><span class="p">.</span><span class="na">makeText</span><span class="p">(</span><span class="n">contexto</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Olá, Jetpack Compose!&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">Toast</span><span class="p">.</span><span class="na">LENGTH_SHORT</span><span class="p">).</span><span class="na">show</span><span class="p">()</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-kotlin highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="w">        </span><span class="kd">val</span><span class="w"> </span><span class="nv">corPrimaria</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ContextCompat</span><span class="p">.</span><span class="na">getColor</span><span class="p">(</span><span class="k">this</span><span class="p">,</span><span class="w"> </span><span class="n">R</span><span class="p">.</span><span class="na">color</span><span class="p">.</span><span class="na">primary</span><span class="p">)</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">        </span><span class="kd">val</span><span class="w"> </span><span class="nv">texto</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">getString</span><span class="p">(</span><span class="n">R</span><span class="p">.</span><span class="na">string</span><span class="p">.</span><span class="na">app_name</span><span class="p">)</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-kotlin highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="w">    </span><span class="kd">val</span><span class="w"> </span><span class="nv">contexto</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">LocalContext</span><span class="p">.</span><span class="na">current</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">    </span><span class="kd">val</span><span class="w"> </span><span class="nv">intent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Intent</span><span class="p">(</span><span class="n">contexto</span><span class="p">,</span><span class="w"> </span><span class="n">NovaActivity</span><span class="o">::</span><span class="n">class</span><span class="p">.</span><span class="na">java</span><span class="p">)</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">    </span><span class="n">contexto</span><span class="p">.</span><span class="na">startActivity</span><span class="p">(</span><span class="n">intent</span><span class="p">)</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-kotlin highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="w">    </span><span class="kd">val</span><span class="w"> </span><span class="nv">sharedPref</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">getSharedPreferences</span><span class="p">(</span><span class="s">&quot;config&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">Context</span><span class="p">.</span><span class="na">MODE_PRIVATE</span><span class="p">)</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">    </span><span class="n">sharedPref</span><span class="p">.</span><span class="na">edit</span><span class="p">().</span><span class="na">putString</span><span class="p">(</span><span class="s">&quot;user&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;João&quot;</span><span class="p">).</span><span class="na">apply</span><span class="p">()</span>
+</span></code></pre></div>
+</div>
+</div>
+</div>
+</div>
+<h3 id="unidades-de-medida">Unidades de Medida<a class="headerlink" href="#unidades-de-medida" title="Permanent link">&para;</a></h3>
+<p>No Jetpack Compose, usamos diferentes unidades para definir tamanhos, espaçamentos e dimensões da UI. As principais unidades são <code>dp</code>, <code>sp</code>, <code>em</code> e <code>%</code>. Vamos as detalhes de cada uma:</p>
+<div class="admonition info">
+<p class="admonition-title">Unidades de Medida</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:4"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><input id="__tabbed_2_3" name="__tabbed_2" type="radio" /><input id="__tabbed_2_4" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">dp (Density-independent Pixels)</label><label for="__tabbed_2_2">sp (Scale-independent Pixels)</label><label for="__tabbed_2_3">em e ex (Relativos ao Texto)</label><label for="__tabbed_2_4">percentual (%)</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>O dp (dip - density-independent pixel) é a unidade principal para dimensões de layouts, garantindo que a interface seja escalável em diferentes tamanhos de tela e densidades de pixel.</p>
+<p><div class="language-kotlin highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="n">Modifier</span><span class="p">.</span><span class="na">padding</span><span class="p">(</span><span class="m">16.</span><span class="n">dp</span><span class="p">)</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="n">Modifier</span><span class="p">.</span><span class="na">width</span><span class="p">(</span><span class="m">200.</span><span class="n">dp</span><span class="p">)</span><span class="w"> </span>
+</span></code></pre></div>
+O dp é recomendado para largura, altura, margens e espaçamentos.</p>
+</div>
+<div class="tabbed-block">
+<p>O sp (scale-independent pixel) é usado para tamanho de texto, garantindo que ele respeite as preferências do usuário em relação ao tamanho da fonte.</p>
+<div class="language-kotlin highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="n">Text</span><span class="p">(</span><span class="s">&quot;Texto em 20sp&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">fontSize</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">20.</span><span class="n">sp</span><span class="p">)</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<p>Essas unidades são usadas para dimensionar elementos com base no tamanho da fonte.</p>
+<ul>
+<li><strong>1em</strong> = tamanho atual da fonte.</li>
+<li><strong>1ex</strong> = metade da altura da fonte.</li>
+</ul>
+<div class="language-kotlin highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="n">Text</span><span class="p">(</span><span class="s">&quot;Texto&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">letterSpacing</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0.1</span><span class="p">.</span><span class="na">em</span><span class="p">)</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<p>O Modifier.fillMaxWidth() e Modifier.fillMaxHeight() são usados para definir dimensões relativas ao tamanho da tela. Nestes métodos podemos atribuir valores percentuais, de modo a indicar uma porção do espaço relativo da tela.</p>
+<div class="language-kotlin highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="w">    </span><span class="n">Modifier</span><span class="p">.</span><span class="na">fillMaxWidth</span><span class="p">(</span><span class="m">0.5f</span><span class="p">)</span><span class="w"> </span><span class="c1">// Ocupa 50% da largura</span>
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="w">    </span><span class="n">Modifier</span><span class="p">.</span><span class="na">fillMaxHeight</span><span class="p">(</span><span class="m">0.75f</span><span class="p">)</span><span class="w"> </span><span class="c1">// Ocupa 75% da altura</span>
+</span></code></pre></div>
+</div>
+</div>
+</div>
+</div>
+<h3 id="gerenciamento-de-estados">Gerenciamento de Estados<a class="headerlink" href="#gerenciamento-de-estados" title="Permanent link">&para;</a></h3>
+<p>A UI (User Interface) no Compose é <strong>reativa</strong>, ou seja, ela muda automaticamente quando um <strong>estado</strong> muda. Por <strong>estado</strong> entendemos qualquer valor que muda ao longo do tempo. Sempre que um estado muda, os componentes que o utilizam são automaticamente atualizados.</p>
+<p>Vamos utilizar um exemplo de um contador para ilustrar o conceito de estado. Observe o código:</p>
+<div class="language-kotlin highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="nd">@Composable</span>
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="kd">fun</span><span class="w"> </span><span class="nf">Contador</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="w">    </span><span class="kd">var</span><span class="w"> </span><span class="nv">contador</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="n">remember</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">mutableStateOf</span><span class="p">(</span><span class="m">0</span><span class="p">)</span><span class="w"> </span><span class="p">}</span>
+</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>
+</span><span id="__span-10-5"><a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a><span class="w">    </span><span class="n">Column</span><span class="p">(</span>
+</span><span id="__span-10-6"><a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a><span class="w">        </span><span class="n">modifier</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Modifier</span><span class="p">.</span><span class="na">fillMaxSize</span><span class="p">().</span><span class="na">padding</span><span class="p">(</span><span class="m">16.</span><span class="n">dp</span><span class="p">),</span>
+</span><span id="__span-10-7"><a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a><span class="w">        </span><span class="n">horizontalAlignment</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Alignment</span><span class="p">.</span><span class="na">CenterHorizontally</span>
+</span><span id="__span-10-8"><a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a><span class="w">    </span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-10-9"><a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a><span class="w">        </span><span class="n">Text</span><span class="p">(</span><span class="s">&quot;Contador: </span><span class="si">$</span><span class="n">contador</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">style</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">MaterialTheme</span><span class="p">.</span><span class="na">typography</span><span class="p">.</span><span class="na">headlineMedium</span><span class="p">)</span>
+</span><span id="__span-10-10"><a id="__codelineno-10-10" name="__codelineno-10-10" href="#__codelineno-10-10"></a><span class="w">        </span><span class="n">Spacer</span><span class="p">(</span><span class="n">modifier</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Modifier</span><span class="p">.</span><span class="na">height</span><span class="p">(</span><span class="m">8.</span><span class="n">dp</span><span class="p">))</span>
+</span><span id="__span-10-11"><a id="__codelineno-10-11" name="__codelineno-10-11" href="#__codelineno-10-11"></a><span class="w">        </span><span class="n">Button</span><span class="p">(</span><span class="n">onClick</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">contador</span><span class="o">++</span><span class="w"> </span><span class="p">})</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-10-12"><a id="__codelineno-10-12" name="__codelineno-10-12" href="#__codelineno-10-12"></a><span class="w">            </span><span class="n">Text</span><span class="p">(</span><span class="s">&quot;Incrementar&quot;</span><span class="p">)</span>
+</span><span id="__span-10-13"><a id="__codelineno-10-13" name="__codelineno-10-13" href="#__codelineno-10-13"></a><span class="w">        </span><span class="p">}</span>
+</span><span id="__span-10-14"><a id="__codelineno-10-14" name="__codelineno-10-14" href="#__codelineno-10-14"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-10-15"><a id="__codelineno-10-15" name="__codelineno-10-15" href="#__codelineno-10-15"></a><span class="p">}</span>
+</span></code></pre></div>
+<p>A manutenção de estado é realizada de forma conjunta pelas funcões <code>mutableStateOf</code> e <code>remember</code>.  O uso de <code>remember</code> garante que o valor seja armazenado na memória durante a composição da interface e retornado durante a recomposição. Já <code>mutableStateOf</code> cria um objeto observável, cuja alteração é acompanhada pelos objetos da interface que o utilizam (ou seja, atualizam a tela quando o valor muda). Além do <code>remember</code>, temos o <code>rememberSaveable</code>, que persiste o estado mesmo após mudanças de configuração (girar a tela, por exemplo).</p>
+<p>A função <code>mutableStateOf</code> não é a única do seu tipo. Veja a lista completa na tabela abaixo.</p>
+<table>
+<thead>
+<tr>
+<th>Função</th>
+<th>O que faz?</th>
+<th>Quando usar?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>mutableStateOf</code></td>
+<td>Cria um estado simples reativo.</td>
+<td>Para variáveis comuns que mudam na UI.</td>
+</tr>
+<tr>
+<td><code>mutableStateListOf</code></td>
+<td>Estado reativo para listas.</td>
+<td>Quando a UI precisa reagir a mudanças em listas.</td>
+</tr>
+<tr>
+<td><code>mutableStateMapOf</code></td>
+<td>Estado reativo para mapas.</td>
+<td>Quando a UI precisa reagir a mudanças em mapas.</td>
+</tr>
+<tr>
+<td><code>produceState</code></td>
+<td>Estado baseado em operações assíncronas.</td>
+<td>Para chamadas de API e carregamento de dados.</td>
+</tr>
+<tr>
+<td><code>derivedStateOf</code></td>
+<td>Cria um estado derivado de outro.</td>
+<td>Para evitar recomposições desnecessárias.</td>
+</tr>
+</tbody>
+</table>
+<p>Outra forma de gerenciar estados é através de <strong>ViewModel</strong>, um componente da arquitetura do Android Jetpack que ajuda a gerenciar estados e preservar dados através do ciclo de vida de uma Activity ou Fragment. Ele evita a perda de dados ao longo de mudanças de configuração, como rotação da tela, por exemplo. No Jetpack Compose, o ViewModel é essencial para armazenar estados que precisam ser mantidos mesmo após recomposições.</p>
+<p>A criação de um ViewModel é feita através da criação de uma classe derivada de <code>androidx.lifecycle.ViewModel</code>. </p>
+<div class="language-kotlin highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="k">import</span><span class="w"> </span><span class="nn">androidx.lifecycle.ViewModel</span>
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="k">import</span><span class="w"> </span><span class="nn">androidx.compose.runtime.getValue</span>
+</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="k">import</span><span class="w"> </span><span class="nn">androidx.compose.runtime.mutableStateOf</span>
+</span><span id="__span-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="k">import</span><span class="w"> </span><span class="nn">androidx.compose.runtime.setValue</span>
+</span><span id="__span-11-5"><a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a><span class="k">import</span><span class="w"> </span><span class="nn">androidx.lifecycle.viewModelScope</span>
+</span><span id="__span-11-6"><a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a><span class="k">import</span><span class="w"> </span><span class="nn">kotlinx.coroutines.launch</span>
+</span><span id="__span-11-7"><a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a>
+</span><span id="__span-11-8"><a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a><span class="kd">class</span><span class="w"> </span><span class="nc">ContadorViewModel</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">ViewModel</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-11-9"><a id="__codelineno-11-9" name="__codelineno-11-9" href="#__codelineno-11-9"></a><span class="w">    </span><span class="kd">var</span><span class="w"> </span><span class="nv">contador</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="n">mutableStateOf</span><span class="p">(</span><span class="m">0</span><span class="p">)</span>
+</span><span id="__span-11-10"><a id="__codelineno-11-10" name="__codelineno-11-10" href="#__codelineno-11-10"></a><span class="w">        </span><span class="n">private</span><span class="w"> </span><span class="k">set</span>
+</span><span id="__span-11-11"><a id="__codelineno-11-11" name="__codelineno-11-11" href="#__codelineno-11-11"></a>
+</span><span id="__span-11-12"><a id="__codelineno-11-12" name="__codelineno-11-12" href="#__codelineno-11-12"></a><span class="w">    </span><span class="kd">fun</span><span class="w"> </span><span class="nf">incrementar</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-11-13"><a id="__codelineno-11-13" name="__codelineno-11-13" href="#__codelineno-11-13"></a><span class="w">        </span><span class="n">contador</span><span class="o">++</span>
+</span><span id="__span-11-14"><a id="__codelineno-11-14" name="__codelineno-11-14" href="#__codelineno-11-14"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-11-15"><a id="__codelineno-11-15" name="__codelineno-11-15" href="#__codelineno-11-15"></a><span class="p">}</span>
+</span></code></pre></div>
+<h3 id="navegacao">Navegação<a class="headerlink" href="#navegacao" title="Permanent link">&para;</a></h3>
+<p>Navegação é o recurso que permite alternar entre diferentes telas de um aplicativo. Quando desenvolvemos um app com Jetpack Compose, a navegação pode crescer rapidamente à medida que adicionamos novas telas. Para manter o código organizado, reutilizável e modular, é recomendado separar a navegação da definição das telas.</p>
+<p>A estrutura do código é muito importante para manter a organização do projeto, que o permita evoluir ao longo do tempo mantendo a complexidade sob controle. Uma sugestão pode ser a estrutura abaixo, onde as telas ficam em um pacote chamado <code>ui.screens</code>, separadas da navegação e do código das activities.</p>
+<pre>
+📂 app/src/main/java/com/exemplo/app
+ ┣ 📂 ui
+ ┃ ┣ 📂 screens
+ ┃ ┃ ┣ 📜 HomeScreen.kt
+ ┃ ┃ ┣ 📜 ProfileScreen.kt
+ ┃ ┃ ┣ 📜 SettingsScreen.kt
+ ┃ ┃ ┣ 📜 DetailScreen.kt
+ ┃ ┣ 📜 Navigation.kt   
+ ┃ ┣ 📜 App.kt
+ ┣ 📂 data
+ ┃ ┣ 📜 Repository.kt
+ ┣ 📜 MainActivity.kt
+</pre>
+
+<p>Outro ponto importante é configurar a navegação de modo a deixá-la contida em um componente específico, a ser utilizado por todos os demais para determinar as rotas. No que se refere a operação, as rotas são <code>strings</code> que se associam a uma determinada função de composição. Assemelha-se com o funcionamento das URLs no protocolo HTTP. Observe a sequência de objetos  apresentados e observe como o sistema de rotas funciona.</p>
+<ul>
+<li><strong>Definição das strings de roteamento</strong></li>
+</ul>
+<p>As strings de roteamento são paths cuja função é identificar a tela a ser carregada com a rota for solicitada. Aqui estamos criando uma <code>sealed class</code> para abstrair as rotas. Cada rota é representada por um objeto que deriva da classe <code>AppScreens</code>. Deste modo, evitamos erros de digitação e facilitamos a criação de rotas com parâmetros, como é o caso de <code>detalhe/{itemId}</code> no exemplo que segue.</p>
+<div class="language-kotlin highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="kd">sealed</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nc">AppScreens</span><span class="p">(</span><span class="kd">val</span><span class="w"> </span><span class="nv">route</span><span class="p">:</span><span class="w"> </span><span class="kt">String</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="w">    </span><span class="kd">object</span><span class="w"> </span><span class="nc">Home</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">AppScreens</span><span class="p">(</span><span class="s">&quot;home&quot;</span><span class="p">)</span>
+</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="w">    </span><span class="kd">object</span><span class="w"> </span><span class="nc">Profile</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">AppScreens</span><span class="p">(</span><span class="s">&quot;perfil&quot;</span><span class="p">)</span>
+</span><span id="__span-12-4"><a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a><span class="w">    </span><span class="kd">object</span><span class="w"> </span><span class="nc">Settings</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">AppScreens</span><span class="p">(</span><span class="s">&quot;configuracao&quot;</span><span class="p">)</span>
+</span><span id="__span-12-5"><a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a><span class="w">    </span><span class="kd">object</span><span class="w"> </span><span class="nc">Detail</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">AppScreens</span><span class="p">(</span><span class="s">&quot;detalhe/{itemId}&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-12-6"><a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a><span class="w">        </span><span class="kd">fun</span><span class="w"> </span><span class="nf">createRoute</span><span class="p">(</span><span class="n">itemId</span><span class="p">:</span><span class="w"> </span><span class="kt">Int</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;detalhe/</span><span class="si">$</span><span class="n">itemId</span><span class="s">&quot;</span>
+</span><span id="__span-12-7"><a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-12-8"><a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a><span class="p">}</span>
+</span></code></pre></div>
+<div class="admonition info">
+<p class="admonition-title">Sealed Class</p>
+<p>Sealed classes possuem todas as extensões conhecidas em tempo de compilação. Além disso, suas extensões precisam se manter no pacote em que a <code>sealed class</code> foi criada. Por definição, uma <code>sealed class</code> é abstrata, o que impede criar instâncias diretamente dela. Uma das grandes vantagens de tais classes é a possibilidade de utilizar objetos das mesmas no comando <code>when</code> sem a necessidade de utilizar <code>else</code>. Ainda, é preciso considerar a segurança de que não haverão classes derivadas desconhecidas, o que pode ser interessante em alguns cenários.</p>
+</div>
+<p>Agora que criamos as representações de nossas rotas, o passo seguinte é definir a associação das rotas com as respectivas funções que geram as telas. Iremos utilizar os recursos <code>NavControler</code> e <code>NavHost</code>. Acompanhe o código.</p>
+<div class="language-kotlin highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="k">import</span><span class="w"> </span><span class="nn">androidx.compose.runtime.Composable</span>
+</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="k">import</span><span class="w"> </span><span class="nn">androidx.navigation.NavHost</span>
+</span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="k">import</span><span class="w"> </span><span class="nn">androidx.navigation.compose.composable</span>
+</span><span id="__span-13-4"><a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a><span class="k">import</span><span class="w"> </span><span class="nn">androidx.navigation.compose.NavHost</span>
+</span><span id="__span-13-5"><a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a><span class="k">import</span><span class="w"> </span><span class="nn">androidx.navigation.compose.rememberNavController</span>
+</span><span id="__span-13-6"><a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a><span class="k">import</span><span class="w"> </span><span class="nn">androidx.navigation.navArgument</span>
+</span><span id="__span-13-7"><a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a>
+</span><span id="__span-13-8"><a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a><span class="nd">@Composable</span>
+</span><span id="__span-13-9"><a id="__codelineno-13-9" name="__codelineno-13-9" href="#__codelineno-13-9"></a><span class="kd">fun</span><span class="w"> </span><span class="nf">AppNavigation</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-13-10"><a id="__codelineno-13-10" name="__codelineno-13-10" href="#__codelineno-13-10"></a><span class="w">    </span><span class="kd">val</span><span class="w"> </span><span class="nv">navController</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">rememberNavController</span><span class="p">()</span>
+</span><span id="__span-13-11"><a id="__codelineno-13-11" name="__codelineno-13-11" href="#__codelineno-13-11"></a>
+</span><span id="__span-13-12"><a id="__codelineno-13-12" name="__codelineno-13-12" href="#__codelineno-13-12"></a><span class="w">    </span><span class="n">NavHost</span><span class="p">(</span><span class="n">navController</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">navController</span><span class="p">,</span><span class="w"> </span><span class="n">startDestination</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">AppScreens</span><span class="p">.</span><span class="na">Home</span><span class="p">.</span><span class="na">route</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-13-13"><a id="__codelineno-13-13" name="__codelineno-13-13" href="#__codelineno-13-13"></a><span class="w">        </span><span class="n">composable</span><span class="p">(</span><span class="n">AppScreens</span><span class="p">.</span><span class="na">Home</span><span class="p">.</span><span class="na">route</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">HomeScreen</span><span class="p">(</span><span class="n">navController</span><span class="p">)</span><span class="w"> </span><span class="p">}</span>
+</span><span id="__span-13-14"><a id="__codelineno-13-14" name="__codelineno-13-14" href="#__codelineno-13-14"></a><span class="w">        </span><span class="n">composable</span><span class="p">(</span><span class="n">AppScreens</span><span class="p">.</span><span class="na">Profile</span><span class="p">.</span><span class="na">route</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">ProfileScreen</span><span class="p">(</span><span class="n">navController</span><span class="p">)</span><span class="w"> </span><span class="p">}</span>
+</span><span id="__span-13-15"><a id="__codelineno-13-15" name="__codelineno-13-15" href="#__codelineno-13-15"></a><span class="w">        </span><span class="n">composable</span><span class="p">(</span><span class="n">AppScreens</span><span class="p">.</span><span class="na">Settings</span><span class="p">.</span><span class="na">route</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">SettingsScreen</span><span class="p">(</span><span class="n">navController</span><span class="p">)</span><span class="w"> </span><span class="p">}</span>
+</span><span id="__span-13-16"><a id="__codelineno-13-16" name="__codelineno-13-16" href="#__codelineno-13-16"></a><span class="w">        </span><span class="n">composable</span><span class="p">(</span><span class="n">AppScreens</span><span class="p">.</span><span class="na">Detail</span><span class="p">.</span><span class="na">route</span><span class="p">,</span><span class="w"> </span><span class="n">arguments</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">listOf</span><span class="p">(</span><span class="n">navArgument</span><span class="p">(</span><span class="s">&quot;itemId&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">NavType</span><span class="p">.</span><span class="na">IntType</span><span class="w"> </span><span class="p">}))</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-13-17"><a id="__codelineno-13-17" name="__codelineno-13-17" href="#__codelineno-13-17"></a><span class="w">            </span><span class="kd">val</span><span class="w"> </span><span class="nv">itemId</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">it</span><span class="p">.</span><span class="na">arguments</span><span class="o">?.</span><span class="na">getString</span><span class="p">(</span><span class="s">&quot;itemId&quot;</span><span class="p">)</span><span class="o">?.</span><span class="na">toIntOrNull</span><span class="p">()</span>
+</span><span id="__span-13-18"><a id="__codelineno-13-18" name="__codelineno-13-18" href="#__codelineno-13-18"></a><span class="w">            </span><span class="n">itemId</span><span class="o">?.</span><span class="na">let</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">DetailScreen</span><span class="p">(</span><span class="n">navController</span><span class="p">,</span><span class="w"> </span><span class="nb">it</span><span class="p">)</span><span class="w"> </span><span class="p">}</span>
+</span><span id="__span-13-19"><a id="__codelineno-13-19" name="__codelineno-13-19" href="#__codelineno-13-19"></a><span class="w">        </span><span class="p">}</span>
+</span><span id="__span-13-20"><a id="__codelineno-13-20" name="__codelineno-13-20" href="#__codelineno-13-20"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-13-21"><a id="__codelineno-13-21" name="__codelineno-13-21" href="#__codelineno-13-21"></a><span class="p">}</span>
+</span></code></pre></div>
+<p>Perceba  que a função <code>composable</code> recebe a string que representa a rota. Contudo, não informamos um valor literal, mas utilizamos objetos criados a partir da <code>sealed class</code> criada anteriormente.</p>
+<div class="admonition note">
+<p class="admonition-title">Scope Functions</p>
+<p>No código apresentando, você deve ter observado o comando <code>let</code> na instrução <code>itemId?.let { DetailScreen(navController, it) }</code>. Trata-se de uma scoped function, como <code>apply</code>, <code>run</code>, <code>also</code> e <code>with</code>. Acesse a <a href="https://kotlinlang.org/docs/scope-functions.html">documentação oficial do Kotlin</a> para entender melhor o funcionamento das mesmas </p>
+</div>
+<p>Cada rota chama uma função de composição específica, responsável por construir a tela para o usuário. Observe que estamos passando um objeto <code>NavController</code> para as mesmas, a fim de habilitar o roteamento a partir de eventos internos (como click de um botão, por exemplo).</p>
+<div class="language-kotlin highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="k">import</span><span class="w"> </span><span class="nn">androidx.compose.runtime.Composable</span>
+</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="k">import</span><span class="w"> </span><span class="nn">androidx.navigation.NavController</span>
+</span><span id="__span-14-3"><a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a><span class="k">import</span><span class="w"> </span><span class="nn">androidx.compose.foundation.layout.*</span>
+</span><span id="__span-14-4"><a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a><span class="k">import</span><span class="w"> </span><span class="nn">androidx.compose.material3.*</span>
+</span><span id="__span-14-5"><a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a>
+</span><span id="__span-14-6"><a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a><span class="nd">@Composable</span>
+</span><span id="__span-14-7"><a id="__codelineno-14-7" name="__codelineno-14-7" href="#__codelineno-14-7"></a><span class="kd">fun</span><span class="w"> </span><span class="nf">HomeScreen</span><span class="p">(</span><span class="n">navController</span><span class="p">:</span><span class="w"> </span><span class="n">NavController</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-14-8"><a id="__codelineno-14-8" name="__codelineno-14-8" href="#__codelineno-14-8"></a><span class="w">    </span><span class="n">Column</span><span class="p">(</span><span class="n">modifier</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Modifier</span><span class="p">.</span><span class="na">fillMaxSize</span><span class="p">().</span><span class="na">padding</span><span class="p">(</span><span class="m">16.</span><span class="n">dp</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-14-9"><a id="__codelineno-14-9" name="__codelineno-14-9" href="#__codelineno-14-9"></a><span class="w">        </span><span class="n">Text</span><span class="p">(</span><span class="n">text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Tela Inicial&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">style</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">MaterialTheme</span><span class="p">.</span><span class="na">typography</span><span class="p">.</span><span class="na">headlineMedium</span><span class="p">)</span>
+</span><span id="__span-14-10"><a id="__codelineno-14-10" name="__codelineno-14-10" href="#__codelineno-14-10"></a><span class="w">        </span><span class="n">Button</span><span class="p">(</span><span class="n">onClick</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">navController</span><span class="p">.</span><span class="na">navigate</span><span class="p">(</span><span class="n">AppScreens</span><span class="p">.</span><span class="na">Profile</span><span class="p">.</span><span class="na">route</span><span class="p">)</span><span class="w"> </span><span class="p">})</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-14-11"><a id="__codelineno-14-11" name="__codelineno-14-11" href="#__codelineno-14-11"></a><span class="w">            </span><span class="n">Text</span><span class="p">(</span><span class="s">&quot;Ir para Perfil&quot;</span><span class="p">)</span>
+</span><span id="__span-14-12"><a id="__codelineno-14-12" name="__codelineno-14-12" href="#__codelineno-14-12"></a><span class="w">        </span><span class="p">}</span>
+</span><span id="__span-14-13"><a id="__codelineno-14-13" name="__codelineno-14-13" href="#__codelineno-14-13"></a><span class="w">        </span><span class="n">Button</span><span class="p">(</span><span class="n">onClick</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">navController</span><span class="p">.</span><span class="na">navigate</span><span class="p">(</span><span class="n">AppScreens</span><span class="p">.</span><span class="na">Settings</span><span class="p">.</span><span class="na">route</span><span class="p">)</span><span class="w"> </span><span class="p">})</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-14-14"><a id="__codelineno-14-14" name="__codelineno-14-14" href="#__codelineno-14-14"></a><span class="w">            </span><span class="n">Text</span><span class="p">(</span><span class="s">&quot;Ir para Configurações&quot;</span><span class="p">)</span>
+</span><span id="__span-14-15"><a id="__codelineno-14-15" name="__codelineno-14-15" href="#__codelineno-14-15"></a><span class="w">        </span><span class="p">}</span>
+</span><span id="__span-14-16"><a id="__codelineno-14-16" name="__codelineno-14-16" href="#__codelineno-14-16"></a><span class="w">        </span><span class="n">Button</span><span class="p">(</span><span class="n">onClick</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">navController</span><span class="p">.</span><span class="na">navigate</span><span class="p">(</span><span class="n">AppScreens</span><span class="p">.</span><span class="na">Detail</span><span class="p">.</span><span class="na">createRoute</span><span class="p">(</span><span class="m">42</span><span class="p">))</span><span class="w"> </span><span class="p">})</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-14-17"><a id="__codelineno-14-17" name="__codelineno-14-17" href="#__codelineno-14-17"></a><span class="w">            </span><span class="n">Text</span><span class="p">(</span><span class="s">&quot;Ver Detalhes do Item 42&quot;</span><span class="p">)</span>
+</span><span id="__span-14-18"><a id="__codelineno-14-18" name="__codelineno-14-18" href="#__codelineno-14-18"></a><span class="w">        </span><span class="p">}</span>
+</span><span id="__span-14-19"><a id="__codelineno-14-19" name="__codelineno-14-19" href="#__codelineno-14-19"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-14-20"><a id="__codelineno-14-20" name="__codelineno-14-20" href="#__codelineno-14-20"></a><span class="p">}</span>
+</span><span id="__span-14-21"><a id="__codelineno-14-21" name="__codelineno-14-21" href="#__codelineno-14-21"></a>
+</span><span id="__span-14-22"><a id="__codelineno-14-22" name="__codelineno-14-22" href="#__codelineno-14-22"></a><span class="nd">@Composable</span>
+</span><span id="__span-14-23"><a id="__codelineno-14-23" name="__codelineno-14-23" href="#__codelineno-14-23"></a><span class="kd">fun</span><span class="w"> </span><span class="nf">DetailScreen</span><span class="p">(</span><span class="n">navController</span><span class="p">:</span><span class="w"> </span><span class="n">NavController</span><span class="p">,</span><span class="w"> </span><span class="n">itemId</span><span class="p">:</span><span class="w"> </span><span class="kt">Int</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-14-24"><a id="__codelineno-14-24" name="__codelineno-14-24" href="#__codelineno-14-24"></a><span class="w">    </span><span class="n">Column</span><span class="p">(</span><span class="n">modifier</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Modifier</span><span class="p">.</span><span class="na">fillMaxSize</span><span class="p">().</span><span class="na">padding</span><span class="p">(</span><span class="m">16.</span><span class="n">dp</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-14-25"><a id="__codelineno-14-25" name="__codelineno-14-25" href="#__codelineno-14-25"></a><span class="w">        </span><span class="n">Text</span><span class="p">(</span><span class="n">text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Detalhes do Item </span><span class="si">$</span><span class="n">itemId</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">style</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">MaterialTheme</span><span class="p">.</span><span class="na">typography</span><span class="p">.</span><span class="na">headlineMedium</span><span class="p">)</span>
+</span><span id="__span-14-26"><a id="__codelineno-14-26" name="__codelineno-14-26" href="#__codelineno-14-26"></a><span class="w">        </span><span class="n">Button</span><span class="p">(</span><span class="n">onClick</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">navController</span><span class="p">.</span><span class="na">popBackStack</span><span class="p">()</span><span class="w"> </span><span class="p">})</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-14-27"><a id="__codelineno-14-27" name="__codelineno-14-27" href="#__codelineno-14-27"></a><span class="w">            </span><span class="n">Text</span><span class="p">(</span><span class="s">&quot;Voltar&quot;</span><span class="p">)</span>
+</span><span id="__span-14-28"><a id="__codelineno-14-28" name="__codelineno-14-28" href="#__codelineno-14-28"></a><span class="w">        </span><span class="p">}</span>
+</span><span id="__span-14-29"><a id="__codelineno-14-29" name="__codelineno-14-29" href="#__codelineno-14-29"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-14-30"><a id="__codelineno-14-30" name="__codelineno-14-30" href="#__codelineno-14-30"></a><span class="p">}</span>
+</span></code></pre></div>
+<p>E, por fim, precisamos inicializar nossa interface a partir de uma activity. Neste caso, na activity marcada como <code>launcher</code> adicionamos uma <code>lambda</code> à funcão <code>setContent</code> chamando a função de composição principal. Na função <code>App</code> chamamos <code>AppNavigation</code>, que por sua vez irá inicializar a rota inicial e sua respectiva tela.</p>
+<div class="language-kotlin highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="nd">@Composable</span>
+</span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="kd">fun</span><span class="w"> </span><span class="nf">App</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-15-3"><a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a><span class="w">    </span><span class="n">MaterialTheme</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-15-4"><a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a><span class="w">        </span><span class="n">AppNavigation</span><span class="p">()</span>
+</span><span id="__span-15-5"><a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-15-6"><a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a><span class="p">}</span>
+</span><span id="__span-15-7"><a id="__codelineno-15-7" name="__codelineno-15-7" href="#__codelineno-15-7"></a>
+</span><span id="__span-15-8"><a id="__codelineno-15-8" name="__codelineno-15-8" href="#__codelineno-15-8"></a><span class="kd">class</span><span class="w"> </span><span class="nc">MainActivity</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">ComponentActivity</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-15-9"><a id="__codelineno-15-9" name="__codelineno-15-9" href="#__codelineno-15-9"></a><span class="w">    </span><span class="kd">override</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="nf">onCreate</span><span class="p">(</span><span class="n">savedInstanceState</span><span class="p">:</span><span class="w"> </span><span class="n">Bundle?)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-15-10"><a id="__codelineno-15-10" name="__codelineno-15-10" href="#__codelineno-15-10"></a><span class="w">        </span><span class="k">super</span><span class="p">.</span><span class="na">onCreate</span><span class="p">(</span><span class="n">savedInstanceState</span><span class="p">)</span>
+</span><span id="__span-15-11"><a id="__codelineno-15-11" name="__codelineno-15-11" href="#__codelineno-15-11"></a><span class="w">        </span><span class="n">setContent</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">App</span><span class="p">()</span><span class="w"> </span><span class="p">}</span>
+</span><span id="__span-15-12"><a id="__codelineno-15-12" name="__codelineno-15-12" href="#__codelineno-15-12"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-15-13"><a id="__codelineno-15-13" name="__codelineno-15-13" href="#__codelineno-15-13"></a><span class="p">}</span>
+</span></code></pre></div>
+<h2 id="activities">Activities<a class="headerlink" href="#activities" title="Permanent link">&para;</a></h2>
+<p>Uma <strong>Activity</strong> é um componente fundamental do desenvolvimento de aplicativos Android, representando uma única tela com uma interface de usuário. Elas são os blocos de construção principais com os quais os usuários interagem em um aplicativo Android. O ciclo de vida de uma Activity descreve como ela passa por diferentes estados, desde sua criação até sua destruição.</p>
+<h3 id="ciclo-de-vida">Ciclo de Vida<a class="headerlink" href="#ciclo-de-vida" title="Permanent link">&para;</a></h3>
+<p>O ciclo de vida de uma Activity é gerenciado pelo sistema operacional Android e é composto por uma série de estados, que são eventos que ocorrem durante a execução da Activity. Aqui estão os principais estados do ciclo de vida de uma Activity:</p>
+<ul>
+<li><strong>Created (Criado):</strong> A Activity é criada, mas ainda não é visível ao usuário.</li>
+<li><strong>Started (Iniciado):</strong> A Activity se torna visível ao usuário, mas ainda não está interagindo ativamente com ele.</li>
+<li><strong>Resumed (Resumido):</strong> A Activity está em primeiro plano e está interagindo ativamente com o usuário.</li>
+<li><strong>Paused (Pausado):</strong> A Activity perde o foco, mas ainda é visível ao usuário. Nesse estado, ela ainda está visível, mas não está interagindo ativamente com o usuário.</li>
+<li><strong>Stopped (Parado):</strong> A Activity não está mais visível ao usuário e pode ser destruída pelo sistema se a memória estiver baixa.</li>
+<li><strong>Destroyed (Destruído):</strong> A Activity é destruída e removida da memória.</li>
+</ul>
+<p><img alt="Ciclo de Vida de uma Activity" src="https://developer.android.com/guide/components/images/activity_lifecycle.png" /></p>
+<p>Cada estado do ciclo de vida é associado a métodos específicos que são chamados automaticamente pelo sistema operacional Android. Desta forma, o desenvolvedor pode executar instruções específicas para cada estado. Ao menos o estado <code>onCreate</code> apresenta implementação em todas as activities.</p>
+<ul>
+<li><code>onCreate()</code>: Chamado quando a Activity está sendo criada.</li>
+<li><code>onStart()</code>: Chamado quando a Activity está prestes a se tornar visível.</li>
+<li><code>onResume()</code>: Chamado quando a Activity está em primeiro plano e interagindo com o usuário.</li>
+<li><code>onPause()</code>: Chamado quando a Activity está prestes a perder o foco, geralmente quando outra Activity é iniciada.</li>
+<li><code>onStop()</code>: Chamado quando a Activity não é mais visível ao usuário.</li>
+<li><code>onDestroy()</code>: Chamado antes da Activity ser destruída.</li>
+</ul>
+<div class="language-kotlin highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="k">import</span><span class="w"> </span><span class="nn">android.os.Bundle</span>
+</span><span id="__span-16-2"><a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a><span class="k">import</span><span class="w"> </span><span class="nn">androidx.appcompat.app.AppCompatActivity</span>
+</span><span id="__span-16-3"><a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a>
+</span><span id="__span-16-4"><a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a><span class="kd">class</span><span class="w"> </span><span class="nc">MinhaActivity</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">AppCompatActivity</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-16-5"><a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a>
+</span><span id="__span-16-6"><a id="__codelineno-16-6" name="__codelineno-16-6" href="#__codelineno-16-6"></a><span class="w">    </span><span class="kd">override</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="nf">onCreate</span><span class="p">(</span><span class="n">savedInstanceState</span><span class="p">:</span><span class="w"> </span><span class="n">Bundle?)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-16-7"><a id="__codelineno-16-7" name="__codelineno-16-7" href="#__codelineno-16-7"></a><span class="w">        </span><span class="k">super</span><span class="p">.</span><span class="na">onCreate</span><span class="p">(</span><span class="n">savedInstanceState</span><span class="p">)</span>
+</span><span id="__span-16-8"><a id="__codelineno-16-8" name="__codelineno-16-8" href="#__codelineno-16-8"></a><span class="w">        </span><span class="n">setContentView</span><span class="p">(</span><span class="n">R</span><span class="p">.</span><span class="na">layout</span><span class="p">.</span><span class="na">activity_minha</span><span class="p">)</span>
+</span><span id="__span-16-9"><a id="__codelineno-16-9" name="__codelineno-16-9" href="#__codelineno-16-9"></a>
+</span><span id="__span-16-10"><a id="__codelineno-16-10" name="__codelineno-16-10" href="#__codelineno-16-10"></a><span class="w">        </span><span class="c1">// Seu código de inicialização aqui</span>
+</span><span id="__span-16-11"><a id="__codelineno-16-11" name="__codelineno-16-11" href="#__codelineno-16-11"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-16-12"><a id="__codelineno-16-12" name="__codelineno-16-12" href="#__codelineno-16-12"></a>
+</span><span id="__span-16-13"><a id="__codelineno-16-13" name="__codelineno-16-13" href="#__codelineno-16-13"></a><span class="w">    </span><span class="kd">override</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="nf">onStart</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-16-14"><a id="__codelineno-16-14" name="__codelineno-16-14" href="#__codelineno-16-14"></a><span class="w">        </span><span class="k">super</span><span class="p">.</span><span class="na">onStart</span><span class="p">()</span>
+</span><span id="__span-16-15"><a id="__codelineno-16-15" name="__codelineno-16-15" href="#__codelineno-16-15"></a><span class="w">        </span><span class="c1">// A Activity está prestes a se tornar visível</span>
+</span><span id="__span-16-16"><a id="__codelineno-16-16" name="__codelineno-16-16" href="#__codelineno-16-16"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-16-17"><a id="__codelineno-16-17" name="__codelineno-16-17" href="#__codelineno-16-17"></a>
+</span><span id="__span-16-18"><a id="__codelineno-16-18" name="__codelineno-16-18" href="#__codelineno-16-18"></a><span class="w">    </span><span class="kd">override</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="nf">onResume</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-16-19"><a id="__codelineno-16-19" name="__codelineno-16-19" href="#__codelineno-16-19"></a><span class="w">        </span><span class="k">super</span><span class="p">.</span><span class="na">onResume</span><span class="p">()</span>
+</span><span id="__span-16-20"><a id="__codelineno-16-20" name="__codelineno-16-20" href="#__codelineno-16-20"></a><span class="w">        </span><span class="c1">//Está plano e interagindo com o usuário</span>
+</span><span id="__span-16-21"><a id="__codelineno-16-21" name="__codelineno-16-21" href="#__codelineno-16-21"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-16-22"><a id="__codelineno-16-22" name="__codelineno-16-22" href="#__codelineno-16-22"></a>
+</span><span id="__span-16-23"><a id="__codelineno-16-23" name="__codelineno-16-23" href="#__codelineno-16-23"></a><span class="w">    </span><span class="kd">override</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="nf">onPause</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-16-24"><a id="__codelineno-16-24" name="__codelineno-16-24" href="#__codelineno-16-24"></a><span class="w">        </span><span class="k">super</span><span class="p">.</span><span class="na">onPause</span><span class="p">()</span>
+</span><span id="__span-16-25"><a id="__codelineno-16-25" name="__codelineno-16-25" href="#__codelineno-16-25"></a><span class="w">        </span><span class="c1">// Está prestes a perder o foco</span>
+</span><span id="__span-16-26"><a id="__codelineno-16-26" name="__codelineno-16-26" href="#__codelineno-16-26"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-16-27"><a id="__codelineno-16-27" name="__codelineno-16-27" href="#__codelineno-16-27"></a>
+</span><span id="__span-16-28"><a id="__codelineno-16-28" name="__codelineno-16-28" href="#__codelineno-16-28"></a><span class="w">    </span><span class="kd">override</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="nf">onStop</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-16-29"><a id="__codelineno-16-29" name="__codelineno-16-29" href="#__codelineno-16-29"></a><span class="w">        </span><span class="k">super</span><span class="p">.</span><span class="na">onStop</span><span class="p">()</span>
+</span><span id="__span-16-30"><a id="__codelineno-16-30" name="__codelineno-16-30" href="#__codelineno-16-30"></a><span class="w">        </span><span class="c1">// Não é mais visível ao usuário</span>
+</span><span id="__span-16-31"><a id="__codelineno-16-31" name="__codelineno-16-31" href="#__codelineno-16-31"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-16-32"><a id="__codelineno-16-32" name="__codelineno-16-32" href="#__codelineno-16-32"></a>
+</span><span id="__span-16-33"><a id="__codelineno-16-33" name="__codelineno-16-33" href="#__codelineno-16-33"></a><span class="w">    </span><span class="kd">override</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="nf">onDestroy</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-16-34"><a id="__codelineno-16-34" name="__codelineno-16-34" href="#__codelineno-16-34"></a><span class="w">        </span><span class="k">super</span><span class="p">.</span><span class="na">onDestroy</span><span class="p">()</span>
+</span><span id="__span-16-35"><a id="__codelineno-16-35" name="__codelineno-16-35" href="#__codelineno-16-35"></a><span class="w">        </span><span class="c1">// Está prestes a ser destruída</span>
+</span><span id="__span-16-36"><a id="__codelineno-16-36" name="__codelineno-16-36" href="#__codelineno-16-36"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-16-37"><a id="__codelineno-16-37" name="__codelineno-16-37" href="#__codelineno-16-37"></a><span class="p">}</span>
+</span></code></pre></div>
+<h2 id="intents">Intents<a class="headerlink" href="#intents" title="Permanent link">&para;</a></h2>
+<p>Intents são uma parte essencial do desenvolvimento de aplicativos Android, assim como as activites. Permitem que os desenvolvedores criem interações entre diferentes componentes do sistema, como Activities, Services, Broadcast Receivers e Content Providers. Elas são uma forma flexível de realizar operações em um aplicativo Android, incluindo navegação entre telas, compartilhamento de dados, execução de ações específicas e muito mais.</p>
+<p>Dentre as funcionalidades principais podemos citar:</p>
+<ul>
+<li>
+<p><strong>Iniciar Componentes:</strong> Uma das principais funcionalidades das <em>intents</em> é iniciar componentes do Android, como Activities, Services, Broadcast Receivers e Content Providers. </p>
+</li>
+<li>
+<p><strong>Comunicar Dados:</strong> As <em>intents</em> podem ser usadas para transmitir dados entre componentes do Android. Os desenvolvedores podem enviar dados, como strings, números, objetos Parcelable ou Serializable, e até mesmo arquivos, entre diferentes partes do aplicativo ou mesmo entre aplicativos diferentes.</p>
+</li>
+<li>
+<p><strong>Realizar Ações Explícitas e Implícitas:</strong> As <em>intents</em> podem ser explícitas ou implícitas. Uma <em>intent</em> explícita especifica um componente de destino específico dentro do aplicativo usando o nome da classe. Por outro lado, uma <em>intent</em> implícita especifica uma ação geral e permite que o sistema Android escolha o componente apropriado para manipular a ação.</p>
+</li>
+<li>
+<p><strong>Responder a Intenções Externas:</strong> Os aplicativos Android podem se registrar para responder a intenções externas, como abrir um tipo específico de arquivo ou lidar com solicitações de compartilhamento de conteúdo de outros aplicativos. Isso permite uma integração eficaz entre diferentes aplicativos no dispositivo.</p>
+</li>
+</ul>
+<h3 id="componentes-de-uma-intent">Componentes de uma Intent<a class="headerlink" href="#componentes-de-uma-intent" title="Permanent link">&para;</a></h3>
+<p>Uma Intent no Android é composta por várias partes:</p>
+<ul>
+<li><strong>Ação (Action):</strong> Define a ação a ser executada, como "ACTION_VIEW" para visualizar dados, "ACTION_SEND" para enviar dados ou "ACTION_DIAL" para fazer uma chamada telefônica.</li>
+<li><strong>Categoria (Category):</strong> Define a categoria da Intent, como "CATEGORY_LAUNCHER" para uma Activity de lançamento ou "CATEGORY_DEFAULT" para uma ação padrão.</li>
+<li><strong>Componente (Component):</strong> Especifica o componente de destino para a Intent, como uma Activity, Service ou Broadcast Receiver.</li>
+<li><strong>Dados (Data):</strong> Representa os dados associados à Intent, como um URI para visualizar uma página da web ou um arquivo para enviar.</li>
+</ul>
+<h3 id="exemplos-de-uso">Exemplos de Uso<a class="headerlink" href="#exemplos-de-uso" title="Permanent link">&para;</a></h3>
+<p>As Intents são amplamente utilizadas em aplicativos Android para uma variedade de propósitos. Aqui estão alguns exemplos comuns de como as Intents podem ser usadas:</p>
+<ul>
+<li><strong>Navegação entre telas:</strong> Abrir uma nova Activity para apresentar uma nova tela ao usuário.</li>
+<li><strong>Compartilhamento de conteúdo:</strong> Enviar texto, imagens ou arquivos para outros aplicativos.</li>
+<li><strong>Iniciar serviços em segundo plano:</strong> Iniciar um Service para executar operações em segundo plano, como baixar arquivos ou processar dados.</li>
+<li><strong>Receber transmissões:</strong> Registrar Broadcast Receivers para responder a eventos do sistema ou de outros aplicativos.</li>
+</ul>
+<div class="language-kotlin highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="k">package</span><span class="w"> </span><span class="nn">com.example.projetoupf</span>
+</span><span id="__span-17-2"><a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a>
+</span><span id="__span-17-3"><a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a><span class="k">import</span><span class="w"> </span><span class="nn">android.app.Activity</span>
+</span><span id="__span-17-4"><a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a><span class="k">import</span><span class="w"> </span><span class="nn">android.content.Intent</span>
+</span><span id="__span-17-5"><a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a><span class="k">import</span><span class="w"> </span><span class="nn">android.graphics.Bitmap</span>
+</span><span id="__span-17-6"><a id="__codelineno-17-6" name="__codelineno-17-6" href="#__codelineno-17-6"></a><span class="k">import</span><span class="w"> </span><span class="nn">android.net.Uri</span>
+</span><span id="__span-17-7"><a id="__codelineno-17-7" name="__codelineno-17-7" href="#__codelineno-17-7"></a><span class="k">import</span><span class="w"> </span><span class="nn">androidx.appcompat.app.AppCompatActivity</span>
+</span><span id="__span-17-8"><a id="__codelineno-17-8" name="__codelineno-17-8" href="#__codelineno-17-8"></a><span class="k">import</span><span class="w"> </span><span class="nn">android.os.Bundle</span>
+</span><span id="__span-17-9"><a id="__codelineno-17-9" name="__codelineno-17-9" href="#__codelineno-17-9"></a><span class="k">import</span><span class="w"> </span><span class="nn">android.provider.AlarmClock</span>
+</span><span id="__span-17-10"><a id="__codelineno-17-10" name="__codelineno-17-10" href="#__codelineno-17-10"></a><span class="k">import</span><span class="w"> </span><span class="nn">android.provider.MediaStore</span>
+</span><span id="__span-17-11"><a id="__codelineno-17-11" name="__codelineno-17-11" href="#__codelineno-17-11"></a><span class="k">import</span><span class="w"> </span><span class="nn">android.widget.ImageView</span>
+</span><span id="__span-17-12"><a id="__codelineno-17-12" name="__codelineno-17-12" href="#__codelineno-17-12"></a><span class="k">import</span><span class="w"> </span><span class="nn">android.widget.RadioGroup</span>
+</span><span id="__span-17-13"><a id="__codelineno-17-13" name="__codelineno-17-13" href="#__codelineno-17-13"></a><span class="k">import</span><span class="w"> </span><span class="nn">androidx.appcompat.app.AlertDialog</span>
+</span><span id="__span-17-14"><a id="__codelineno-17-14" name="__codelineno-17-14" href="#__codelineno-17-14"></a>
+</span><span id="__span-17-15"><a id="__codelineno-17-15" name="__codelineno-17-15" href="#__codelineno-17-15"></a><span class="kd">class</span><span class="w"> </span><span class="nc">Intents</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">AppCompatActivity</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-17-16"><a id="__codelineno-17-16" name="__codelineno-17-16" href="#__codelineno-17-16"></a>
+</span><span id="__span-17-17"><a id="__codelineno-17-17" name="__codelineno-17-17" href="#__codelineno-17-17"></a><span class="w">    </span><span class="kd">override</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="nf">onCreate</span><span class="p">(</span><span class="n">savedInstanceState</span><span class="p">:</span><span class="w"> </span><span class="n">Bundle?)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-17-18"><a id="__codelineno-17-18" name="__codelineno-17-18" href="#__codelineno-17-18"></a><span class="w">        </span><span class="k">super</span><span class="p">.</span><span class="na">onCreate</span><span class="p">(</span><span class="n">savedInstanceState</span><span class="p">)</span>
+</span><span id="__span-17-19"><a id="__codelineno-17-19" name="__codelineno-17-19" href="#__codelineno-17-19"></a><span class="w">            </span><span class="cm">/* algum código que cria a tela via Compose*/</span>
+</span><span id="__span-17-20"><a id="__codelineno-17-20" name="__codelineno-17-20" href="#__codelineno-17-20"></a><span class="w">        </span><span class="p">}</span>
+</span><span id="__span-17-21"><a id="__codelineno-17-21" name="__codelineno-17-21" href="#__codelineno-17-21"></a>
+</span><span id="__span-17-22"><a id="__codelineno-17-22" name="__codelineno-17-22" href="#__codelineno-17-22"></a>
+</span><span id="__span-17-23"><a id="__codelineno-17-23" name="__codelineno-17-23" href="#__codelineno-17-23"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-17-24"><a id="__codelineno-17-24" name="__codelineno-17-24" href="#__codelineno-17-24"></a>
+</span><span id="__span-17-25"><a id="__codelineno-17-25" name="__codelineno-17-25" href="#__codelineno-17-25"></a><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="nf">shareText</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-17-26"><a id="__codelineno-17-26" name="__codelineno-17-26" href="#__codelineno-17-26"></a><span class="w">        </span><span class="kd">val</span><span class="w"> </span><span class="nv">context</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">LocalContext</span><span class="p">.</span><span class="na">current</span>
+</span><span id="__span-17-27"><a id="__codelineno-17-27" name="__codelineno-17-27" href="#__codelineno-17-27"></a><span class="w">        </span><span class="kd">val</span><span class="w"> </span><span class="nv">intent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Intent</span><span class="p">(</span><span class="n">Intent</span><span class="p">.</span><span class="na">ACTION_SEND</span><span class="p">).</span><span class="na">apply</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-17-28"><a id="__codelineno-17-28" name="__codelineno-17-28" href="#__codelineno-17-28"></a><span class="w">            </span><span class="n">type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;text/plain&quot;</span>
+</span><span id="__span-17-29"><a id="__codelineno-17-29" name="__codelineno-17-29" href="#__codelineno-17-29"></a><span class="w">            </span><span class="n">putExtra</span><span class="p">(</span><span class="n">Intent</span><span class="p">.</span><span class="na">EXTRA_TEXT</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Confira este link: https://developer.android.com&quot;</span><span class="p">)</span>
+</span><span id="__span-17-30"><a id="__codelineno-17-30" name="__codelineno-17-30" href="#__codelineno-17-30"></a><span class="w">        </span><span class="p">}</span>
+</span><span id="__span-17-31"><a id="__codelineno-17-31" name="__codelineno-17-31" href="#__codelineno-17-31"></a><span class="w">        </span><span class="n">context</span><span class="p">.</span><span class="na">startActivity</span><span class="p">(</span><span class="n">Intent</span><span class="p">.</span><span class="na">createChooser</span><span class="p">(</span><span class="n">intent</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Compartilhar via&quot;</span><span class="p">))</span>
+</span><span id="__span-17-32"><a id="__codelineno-17-32" name="__codelineno-17-32" href="#__codelineno-17-32"></a>
+</span><span id="__span-17-33"><a id="__codelineno-17-33" name="__codelineno-17-33" href="#__codelineno-17-33"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-17-34"><a id="__codelineno-17-34" name="__codelineno-17-34" href="#__codelineno-17-34"></a>
+</span><span id="__span-17-35"><a id="__codelineno-17-35" name="__codelineno-17-35" href="#__codelineno-17-35"></a><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="nf">startEmail</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-17-36"><a id="__codelineno-17-36" name="__codelineno-17-36" href="#__codelineno-17-36"></a><span class="w">        </span><span class="kd">val</span><span class="w"> </span><span class="nv">context</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">LocalContext</span><span class="p">.</span><span class="na">current</span>
+</span><span id="__span-17-37"><a id="__codelineno-17-37" name="__codelineno-17-37" href="#__codelineno-17-37"></a><span class="w">        </span><span class="kd">val</span><span class="w"> </span><span class="nv">intent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Intent</span><span class="p">(</span><span class="n">Intent</span><span class="p">.</span><span class="na">ACTION_SENDTO</span><span class="p">).</span><span class="na">apply</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-17-38"><a id="__codelineno-17-38" name="__codelineno-17-38" href="#__codelineno-17-38"></a><span class="w">            </span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Uri</span><span class="p">.</span><span class="na">parse</span><span class="p">(</span><span class="s">&quot;mailto:&quot;</span><span class="p">)</span>
+</span><span id="__span-17-39"><a id="__codelineno-17-39" name="__codelineno-17-39" href="#__codelineno-17-39"></a><span class="w">            </span><span class="n">putExtra</span><span class="p">(</span><span class="n">Intent</span><span class="p">.</span><span class="na">EXTRA_EMAIL</span><span class="p">,</span><span class="w"> </span><span class="n">arrayOf</span><span class="p">(</span><span class="s">&quot;suporte@exemplo.com&quot;</span><span class="p">))</span>
+</span><span id="__span-17-40"><a id="__codelineno-17-40" name="__codelineno-17-40" href="#__codelineno-17-40"></a><span class="w">            </span><span class="n">putExtra</span><span class="p">(</span><span class="n">Intent</span><span class="p">.</span><span class="na">EXTRA_SUBJECT</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Suporte Técnico&quot;</span><span class="p">)</span>
+</span><span id="__span-17-41"><a id="__codelineno-17-41" name="__codelineno-17-41" href="#__codelineno-17-41"></a><span class="w">            </span><span class="n">putExtra</span><span class="p">(</span><span class="n">Intent</span><span class="p">.</span><span class="na">EXTRA_TEXT</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Olá, preciso de ajuda com...&quot;</span><span class="p">)</span>
+</span><span id="__span-17-42"><a id="__codelineno-17-42" name="__codelineno-17-42" href="#__codelineno-17-42"></a><span class="w">        </span><span class="p">}</span>
+</span><span id="__span-17-43"><a id="__codelineno-17-43" name="__codelineno-17-43" href="#__codelineno-17-43"></a><span class="w">        </span><span class="n">context</span><span class="p">.</span><span class="na">startActivity</span><span class="p">(</span><span class="n">intent</span><span class="p">)</span>
+</span><span id="__span-17-44"><a id="__codelineno-17-44" name="__codelineno-17-44" href="#__codelineno-17-44"></a>
+</span><span id="__span-17-45"><a id="__codelineno-17-45" name="__codelineno-17-45" href="#__codelineno-17-45"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-17-46"><a id="__codelineno-17-46" name="__codelineno-17-46" href="#__codelineno-17-46"></a>
+</span><span id="__span-17-47"><a id="__codelineno-17-47" name="__codelineno-17-47" href="#__codelineno-17-47"></a><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="nf">startDial</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-17-48"><a id="__codelineno-17-48" name="__codelineno-17-48" href="#__codelineno-17-48"></a><span class="w">        </span><span class="kd">val</span><span class="w"> </span><span class="nv">context</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">LocalContext</span><span class="p">.</span><span class="na">current</span>
+</span><span id="__span-17-49"><a id="__codelineno-17-49" name="__codelineno-17-49" href="#__codelineno-17-49"></a><span class="w">        </span><span class="kd">val</span><span class="w"> </span><span class="nv">intent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Intent</span><span class="p">(</span><span class="n">Intent</span><span class="p">.</span><span class="na">ACTION_DIAL</span><span class="p">).</span><span class="na">apply</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-17-50"><a id="__codelineno-17-50" name="__codelineno-17-50" href="#__codelineno-17-50"></a><span class="w">            </span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Uri</span><span class="p">.</span><span class="na">parse</span><span class="p">(</span><span class="s">&quot;tel:123456789&quot;</span><span class="p">)</span>
+</span><span id="__span-17-51"><a id="__codelineno-17-51" name="__codelineno-17-51" href="#__codelineno-17-51"></a><span class="w">        </span><span class="p">}</span>
+</span><span id="__span-17-52"><a id="__codelineno-17-52" name="__codelineno-17-52" href="#__codelineno-17-52"></a><span class="w">        </span><span class="n">context</span><span class="p">.</span><span class="na">startActivity</span><span class="p">(</span><span class="n">intent</span><span class="p">)</span>
+</span><span id="__span-17-53"><a id="__codelineno-17-53" name="__codelineno-17-53" href="#__codelineno-17-53"></a>
+</span><span id="__span-17-54"><a id="__codelineno-17-54" name="__codelineno-17-54" href="#__codelineno-17-54"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-17-55"><a id="__codelineno-17-55" name="__codelineno-17-55" href="#__codelineno-17-55"></a>
+</span><span id="__span-17-56"><a id="__codelineno-17-56" name="__codelineno-17-56" href="#__codelineno-17-56"></a><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="nf">startNavigator</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-17-57"><a id="__codelineno-17-57" name="__codelineno-17-57" href="#__codelineno-17-57"></a><span class="w">        </span><span class="kd">val</span><span class="w"> </span><span class="nv">context</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">LocalContext</span><span class="p">.</span><span class="na">current</span>
+</span><span id="__span-17-58"><a id="__codelineno-17-58" name="__codelineno-17-58" href="#__codelineno-17-58"></a><span class="w">        </span><span class="kd">val</span><span class="w"> </span><span class="nv">intent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Intent</span><span class="p">(</span><span class="n">Intent</span><span class="p">.</span><span class="na">ACTION_VIEW</span><span class="p">,</span><span class="w"> </span><span class="n">Uri</span><span class="p">.</span><span class="na">parse</span><span class="p">(</span><span class="s">&quot;https://developer.android.com&quot;</span><span class="p">))</span>
+</span><span id="__span-17-59"><a id="__codelineno-17-59" name="__codelineno-17-59" href="#__codelineno-17-59"></a><span class="w">        </span><span class="n">context</span><span class="p">.</span><span class="na">startActivity</span><span class="p">(</span><span class="n">intent</span><span class="p">)</span>
+</span><span id="__span-17-60"><a id="__codelineno-17-60" name="__codelineno-17-60" href="#__codelineno-17-60"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-17-61"><a id="__codelineno-17-61" name="__codelineno-17-61" href="#__codelineno-17-61"></a>
+</span><span id="__span-17-62"><a id="__codelineno-17-62" name="__codelineno-17-62" href="#__codelineno-17-62"></a>
+</span><span id="__span-17-63"><a id="__codelineno-17-63" name="__codelineno-17-63" href="#__codelineno-17-63"></a><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="nf">startMaps</span><span class="p">(){</span>
+</span><span id="__span-17-64"><a id="__codelineno-17-64" name="__codelineno-17-64" href="#__codelineno-17-64"></a><span class="w">        </span><span class="kd">val</span><span class="w"> </span><span class="nv">context</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">LocalContext</span><span class="p">.</span><span class="na">current</span>
+</span><span id="__span-17-65"><a id="__codelineno-17-65" name="__codelineno-17-65" href="#__codelineno-17-65"></a><span class="w">        </span><span class="kd">val</span><span class="w"> </span><span class="nv">intent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Intent</span><span class="p">(</span>
+</span><span id="__span-17-66"><a id="__codelineno-17-66" name="__codelineno-17-66" href="#__codelineno-17-66"></a><span class="w">            </span><span class="n">Intent</span><span class="p">.</span><span class="na">ACTION_VIEW</span><span class="p">,</span>
+</span><span id="__span-17-67"><a id="__codelineno-17-67" name="__codelineno-17-67" href="#__codelineno-17-67"></a><span class="w">            </span><span class="n">Uri</span><span class="p">.</span><span class="na">parse</span><span class="p">(</span><span class="s">&quot;geo:0,0?q=Avenida+Paulista,+São+Paulo&quot;</span><span class="p">)</span>
+</span><span id="__span-17-68"><a id="__codelineno-17-68" name="__codelineno-17-68" href="#__codelineno-17-68"></a><span class="w">        </span><span class="p">)</span>
+</span><span id="__span-17-69"><a id="__codelineno-17-69" name="__codelineno-17-69" href="#__codelineno-17-69"></a><span class="w">        </span><span class="n">contexto</span><span class="p">.</span><span class="na">startActivity</span><span class="p">(</span><span class="n">intent</span><span class="p">)</span>
+</span><span id="__span-17-70"><a id="__codelineno-17-70" name="__codelineno-17-70" href="#__codelineno-17-70"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-17-71"><a id="__codelineno-17-71" name="__codelineno-17-71" href="#__codelineno-17-71"></a>
+</span><span id="__span-17-72"><a id="__codelineno-17-72" name="__codelineno-17-72" href="#__codelineno-17-72"></a><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="nf">startClock</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-17-73"><a id="__codelineno-17-73" name="__codelineno-17-73" href="#__codelineno-17-73"></a><span class="w">        </span><span class="kd">val</span><span class="w"> </span><span class="nv">context</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">LocalContext</span><span class="p">.</span><span class="na">current</span>
+</span><span id="__span-17-74"><a id="__codelineno-17-74" name="__codelineno-17-74" href="#__codelineno-17-74"></a><span class="w">        </span><span class="kd">val</span><span class="w"> </span><span class="nv">intent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Intent</span><span class="p">(</span><span class="n">AlarmClock</span><span class="p">.</span><span class="na">ACTION_SET_ALARM</span><span class="p">).</span><span class="na">apply</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-17-75"><a id="__codelineno-17-75" name="__codelineno-17-75" href="#__codelineno-17-75"></a><span class="w">            </span><span class="n">putExtra</span><span class="p">(</span><span class="n">AlarmClock</span><span class="p">.</span><span class="na">EXTRA_MESSAGE</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Hora de Acordar&quot;</span><span class="p">)</span>
+</span><span id="__span-17-76"><a id="__codelineno-17-76" name="__codelineno-17-76" href="#__codelineno-17-76"></a><span class="w">            </span><span class="n">putExtra</span><span class="p">(</span><span class="n">AlarmClock</span><span class="p">.</span><span class="na">EXTRA_HOUR</span><span class="p">,</span><span class="w"> </span><span class="m">8</span><span class="p">)</span>
+</span><span id="__span-17-77"><a id="__codelineno-17-77" name="__codelineno-17-77" href="#__codelineno-17-77"></a><span class="w">            </span><span class="n">putExtra</span><span class="p">(</span><span class="n">AlarmClock</span><span class="p">.</span><span class="na">EXTRA_MINUTES</span><span class="p">,</span><span class="w"> </span><span class="m">30</span><span class="p">)</span>
+</span><span id="__span-17-78"><a id="__codelineno-17-78" name="__codelineno-17-78" href="#__codelineno-17-78"></a><span class="w">        </span><span class="p">}</span>
+</span><span id="__span-17-79"><a id="__codelineno-17-79" name="__codelineno-17-79" href="#__codelineno-17-79"></a><span class="w">        </span><span class="n">contexto</span><span class="p">.</span><span class="na">startActivity</span><span class="p">(</span><span class="n">intent</span><span class="p">)</span>
+</span><span id="__span-17-80"><a id="__codelineno-17-80" name="__codelineno-17-80" href="#__codelineno-17-80"></a>
+</span><span id="__span-17-81"><a id="__codelineno-17-81" name="__codelineno-17-81" href="#__codelineno-17-81"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-17-82"><a id="__codelineno-17-82" name="__codelineno-17-82" href="#__codelineno-17-82"></a>
+</span><span id="__span-17-83"><a id="__codelineno-17-83" name="__codelineno-17-83" href="#__codelineno-17-83"></a>
+</span><span id="__span-17-84"><a id="__codelineno-17-84" name="__codelineno-17-84" href="#__codelineno-17-84"></a><span class="p">}</span>
+</span></code></pre></div>
+<h3 id="enviar-dados-de-uma-activity-para-outra-via-intent">Enviar dados de uma Activity para outra via Intent<a class="headerlink" href="#enviar-dados-de-uma-activity-para-outra-via-intent" title="Permanent link">&para;</a></h3>
+<p>Para enviar dados a outra Activity é necessário criar a <em>intent</em> e adicionar os dados para serem enviados através do método  <code>putExtra()</code>. É possível enviar tipos primitivos e objetos, desde que sejam serializáveis. Após, basta iniciar a <em>intent</em> por meio do método <code>startActivity</code>.</p>
+<div class="language-kotlin highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="kd">val</span><span class="w"> </span><span class="nv">context</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">LocalContext</span><span class="p">.</span><span class="na">current</span>
+</span><span id="__span-18-2"><a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a><span class="kd">val</span><span class="w"> </span><span class="nv">intent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Intent</span><span class="p">(</span><span class="n">context</span><span class="p">,</span><span class="w"> </span><span class="n">OutraActivity</span><span class="o">::</span><span class="n">class</span><span class="p">.</span><span class="na">java</span><span class="p">)</span>
+</span><span id="__span-18-3"><a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a><span class="n">intent</span><span class="p">.</span><span class="na">putExtra</span><span class="p">(</span><span class="s">&quot;nome&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;John&quot;</span><span class="p">)</span>
+</span><span id="__span-18-4"><a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a><span class="n">intent</span><span class="p">.</span><span class="na">putExtra</span><span class="p">(</span><span class="s">&quot;idade&quot;</span><span class="p">,</span><span class="w"> </span><span class="m">30</span><span class="p">)</span>
+</span><span id="__span-18-5"><a id="__codelineno-18-5" name="__codelineno-18-5" href="#__codelineno-18-5"></a><span class="n">context</span><span class="p">.</span><span class="na">startActivity</span><span class="p">(</span><span class="n">intent</span><span class="p">)</span>
+</span></code></pre></div>
+<p>Na <em>activity</em> destino, você precisa obter o Intent que iniciou a Activity. Isso geralmente é feito no método <code>onCreate()</code> usando o atributo <code>intent</code>.</p>
+<p>A partir do objeto <em>intent</em>, utilizamos os métodos <code>getStringExtra()</code>, <code>getIntExtra()</code>, etc., para extrair os dados, com base nas chaves que fornecemos no momento do envio.</p>
+<div class="language-kotlin highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="kd">val</span><span class="w"> </span><span class="nv">nome</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">intent</span><span class="p">.</span><span class="na">getStringExtra</span><span class="p">(</span><span class="s">&quot;nome&quot;</span><span class="p">)</span>
+</span><span id="__span-19-2"><a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a><span class="kd">val</span><span class="w"> </span><span class="nv">idade</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">intent</span><span class="p">.</span><span class="na">getIntExtra</span><span class="p">(</span><span class="s">&quot;idade&quot;</span><span class="p">,</span><span class="w"> </span><span class="m">0</span><span class="p">)</span>
+</span></code></pre></div>
+<h2 id="referencias">Referências<a class="headerlink" href="#referencias" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Documentação oficial do Android: <a href="https://developer.android.com/guide/components/activities">Activities</a></li>
+<li>Documentação oficial do Android: <a href="https://developer.android.com/guide/components/activities/activity-lifecycle">Ciclo de Vida de uma Activity</a></li>
+<li>Documentação oficial do Android: <a href="https://developer.android.com/guide/components/intents-filters">Intents and Intent Filters</a></li>
+<li>Android Developers Blog: <a href="https://android-developers.googleblog.com/2009/11/intents-are-not-just-for-starting.html">Understanding Android Intents</a></li>
+</ul>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../kotlin/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Módulo I - Linguagem Kotlin">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Módulo I - Linguagem Kotlin
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../../ccc-275/" class="md-footer__link md-footer__link--next" aria-label="Next: Algoritmos, programação e a sua relação com o mundo contemporâneo">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Algoritmos, programação e a sua relação com o mundo contemporâneo
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2024 -  Diego A. Lusa
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://www.linkedin.com/in/diegolusa/" target="_blank" rel="noopener" title="www.linkedin.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3M135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5m282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="http://github.com/diegolusa" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../../..", "features": ["navigation.top", "navigation.tabs", "navigation.instant", "toc.integrate", "toc.follow", "header.autohide", "navigation.footer", "navigation.top", "content.code.copy", "navigation.indexes"], "search": "../../../../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../../assets/javascripts/bundle.f1b6f286.min.js"></script>
+      
+        <script src="../../../../javascript/config.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>
