@@ -1,0 +1,134 @@
+:root {
+  --md-primary-fg-color:        rgb(15, 91, 33);
+}
+
+svg[id^="mermaid-"] { margin:auto;display: block;zoom: 150%;}
+
+
+p {
+  text-align: justify;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  padding-top: 0.1em;
+  padding-bottom: 0.1em;
+  text-align: left;
+  font-weight: bolder !important;
+  text-transform: initial !important;
+}
+h1 {
+  font-size: 1.5em !important;
+ 
+}
+
+h2 {
+  font-size: 1.4em !important;
+ 
+}
+
+
+
+h3 {
+  font-size: 1.3em !important;
+  
+}
+
+h4 {
+  font-size: 1.2em !important;
+ 
+}
+
+h5 {
+  font-size: 1.1em !important;
+  color: black !important;
+
+}
+
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+p img {
+  /*border: 1px solid black;*/
+  box-shadow: 1px 1px 5px rgb(141, 136, 136);
+  padding: 5px;
+}
+
+code {
+  border: 1px solid black;
+  font-weight: bold;
+  text-wrap: wrap;
+  border-radius: 30%;
+}
+
+
+
+/* Reseta o contador principal */
+body {
+  counter-reset: h1-counter 1;
+ 
+}
+
+/* Estilo para H1 */
+h1 {
+  counter-reset: h2-counter;
+  counter-increment: h1-counter;
+}
+
+
+
+/* Estilo para H2 */
+h2 {
+  counter-reset: h3-counter;
+  counter-increment: h2-counter;
+}
+
+h2::before {
+  content:  counter(h2-counter) ". ";
+}
+
+/* Estilo para H3 */
+h3 {
+  counter-reset: h4-counter;
+  counter-increment: h3-counter;
+}
+
+h3::before {
+  content: counter(h2-counter) "." counter(h3-counter) ". ";
+}
+
+/* Estilo para H4 */
+h4 {
+  counter-reset: h5-counter;
+  counter-increment: h4-counter;
+}
+
+h4::before {
+  content: counter(h2-counter) "." counter(h3-counter) "." counter(h4-counter) ". ";
+}
+
+/* Estilo para H5 */
+h5 {
+  counter-reset: h6-counter;
+  counter-increment: h5-counter;
+}
+
+h5::before {
+  content: counter(h2-counter) "." counter(h3-counter) "." counter(h4-counter) "." counter(h5-counter) ". ";
+}
+
+/* Estilo para H6 */
+h6 {
+  counter-increment: h6-counter;
+}
+
+h6::before {
+  content: counter(h2-counter) "." counter(h3-counter) "." counter(h4-counter) "." counter(h5-counter) "." counter(h6-counter) ". ";
+} 

@@ -1,0 +1,640 @@
+
+<!DOCTYPE html>
+
+<html class="no-js" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<link href="../" rel="prev"/>
+<link href="../rna/" rel="next"/>
+<link href="../../../../img/icon.ico" rel="icon"/>
+<meta content="mkdocs-1.6.1, mkdocs-material-9.6.4" name="generator"/>
+<title>Algoritmos Genéticos - Diego A. Lusa</title>
+<link href="../../../../assets/stylesheets/main.8608ea7d.min.css" rel="stylesheet"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+<link href="../../../../css/custom.css" rel="stylesheet"/>
+<script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+</head>
+<body dir="ltr">
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#etapas-de-um-ag">
+          Skip to content
+        </a>
+</div>
+<div data-md-component="announce">
+</div>
+<header class="md-header" data-md-component="header">
+<nav aria-label="Header" class="md-header__inner md-grid">
+<a aria-label="Diego A. Lusa" class="md-header__button md-logo" data-md-component="logo" href="../../../.." title="Diego A. Lusa">
+<img alt="logo" src="../../../../img/icon.png"/>
+</a>
+<label class="md-header__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+</label>
+<div class="md-header__title" data-md-component="header-title">
+<div class="md-header__ellipsis">
+<div class="md-header__topic">
+<span class="md-ellipsis">
+            Diego A. Lusa
+          </span>
+</div>
+<div class="md-header__topic" data-md-component="header-topic">
+<span class="md-ellipsis">
+            
+              Algoritmos Genéticos
+            
+          </span>
+</div>
+</div>
+</div>
+<script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+<label class="md-header__button md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+</label>
+<div class="md-search" data-md-component="search" role="dialog">
+<label class="md-search__overlay" for="__search"></label>
+<div class="md-search__inner" role="search">
+<form class="md-search__form" name="search">
+<input aria-label="Search" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" name="query" placeholder="Search" required="" spellcheck="false" type="text"/>
+<label class="md-search__icon md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+</label>
+<nav aria-label="Search" class="md-search__options">
+<button aria-label="Clear" class="md-search__icon md-icon" tabindex="-1" title="Clear" type="reset">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+</button>
+</nav>
+</form>
+<div class="md-search__output">
+<div class="md-search__scrollwrap" data-md-scrollfix="" tabindex="0">
+<div class="md-search-result" data-md-component="search-result">
+<div class="md-search-result__meta">
+            Initializing search
+          </div>
+<ol class="md-search-result__list" role="presentation"></ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+</nav>
+</header>
+<div class="md-container" data-md-component="container">
+<nav aria-label="Tabs" class="md-tabs" data-md-component="tabs">
+<div class="md-grid">
+<ul class="md-tabs__list">
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../../..">
+        
+  
+    
+  
+  Home
+
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../../../informatica/editores-texto/introducao/">
+          
+  
+    
+  
+  Informática Básica
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../ads-153/">
+          
+  
+    
+  
+  Desenvolvimento para Web (ADS153)
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../ads-164/">
+          
+  
+    
+  
+  Desenvolvimento Mobile II (ADS164/HADS009)
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../ccc-275/">
+          
+  
+    
+  
+  Algoritmos e Programação (CCC275)
+
+        </a>
+</li>
+<li class="md-tabs__item md-tabs__item--active">
+<a class="md-tabs__link" href="../">
+          
+  
+    
+  
+  Inteligência Artificial (CCC296)
+
+        </a>
+</li>
+</ul>
+</div>
+</nav>
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Navigation" class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="Diego A. Lusa" class="md-nav__button md-logo" data-md-component="logo" href="../../../.." title="Diego A. Lusa">
+<img alt="logo" src="../../../../img/icon.png"/>
+</a>
+    Diego A. Lusa
+  </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../..">
+<span class="md-ellipsis">
+    Home
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+<span class="md-ellipsis">
+    Informática Básica
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_2">
+<span class="md-nav__icon md-icon"></span>
+            Informática Básica
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_1" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
+<span class="md-ellipsis">
+    Editores de Texto
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_1_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_1">
+<span class="md-nav__icon md-icon"></span>
+            Editores de Texto
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../informatica/editores-texto/introducao/">
+<span class="md-ellipsis">
+    Writer
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../informatica/editores-texto/estilos/">
+<span class="md-ellipsis">
+    Estilos
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../informatica/editores-texto/abnt/">
+<span class="md-ellipsis">
+    ABNT
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_3" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../ads-153/">
+<span class="md-ellipsis">
+    Desenvolvimento para Web (ADS153)
+    
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_3_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_3">
+<span class="md-nav__icon md-icon"></span>
+            Desenvolvimento para Web (ADS153)
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../ads-153/m-1/m-1/">
+<span class="md-ellipsis">
+    Módulo I - Fundamentos e Linguagem HTML5
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../ads-153/m-2/m-2/">
+<span class="md-ellipsis">
+    Módulo II - Cascading Style Sheets
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../ads-153/m-3/m-3/">
+<span class="md-ellipsis">
+    Módulo III - Linguagem JavaScript
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_4" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../ads-164/">
+<span class="md-ellipsis">
+    Desenvolvimento Mobile II (ADS164/HADS009)
+    
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_4_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_4">
+<span class="md-nav__icon md-icon"></span>
+            Desenvolvimento Mobile II (ADS164/HADS009)
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../ads-164/kotlin/">
+<span class="md-ellipsis">
+    Módulo I - Linguagem Kotlin
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../ads-164/android/">
+<span class="md-ellipsis">
+    Módulo II - Desenvolvimento de Aplicações Android
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_5" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../ccc-275/">
+<span class="md-ellipsis">
+    Algoritmos e Programação (CCC275)
+    
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_5_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_5">
+<span class="md-nav__icon md-icon"></span>
+            Algoritmos e Programação (CCC275)
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../ccc-275/conteudo-python/">
+<span class="md-ellipsis">
+    Fundamentos de algoritmos e programação com Python
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_6" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../">
+<span class="md-ellipsis">
+    Inteligência Artificial (CCC296)
+    
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="true" aria-labelledby="__nav_6_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_6">
+<span class="md-nav__icon md-icon"></span>
+            Inteligência Artificial (CCC296)
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+<span class="md-ellipsis">
+    Algoritmos Genéticos
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./">
+<span class="md-ellipsis">
+    Algoritmos Genéticos
+    
+  </span>
+</a>
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#etapas-de-um-ag">
+<span class="md-ellipsis">
+      Etapas de um AG
+    </span>
+</a>
+<nav aria-label="Etapas de um AG" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#inicializacao-da-populacao">
+<span class="md-ellipsis">
+      Inicialização da População
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#avaliacao-funcao-de-aptidao">
+<span class="md-ellipsis">
+      Avaliação (Função de Aptidão)
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#selecao">
+<span class="md-ellipsis">
+      Seleção
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#crossover-recombinacao">
+<span class="md-ellipsis">
+      Crossover (Recombinação)
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#mutacao">
+<span class="md-ellipsis">
+      Mutação
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#substituicao">
+<span class="md-ellipsis">
+      Substituição
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#algoritmo-completo-simplificado">
+<span class="md-ellipsis">
+      Algoritmo Completo (Simplificado)
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../rna/">
+<span class="md-ellipsis">
+    Redes Neurais Artificiais
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<h1>Algoritmos Genéticos</h1>
+<p>Algoritmos Genéticos (AGs) são métodos estocásticos de busca e otimização, inspirados nos processos evolutivos da biologia natural. Eles fazem parte do conjunto de técnicas conhecidas como metaheurísticas, e são particularmente úteis quando o espaço de soluções é muito grande, descontínuo ou de difícil modelagem matemática.</p>
+<p>Os algoritmos genéticos são métodos diretamente na teoria da evolução das espécies proposta por Charles Darwin. Essa teoria, baseada na seleção natural, sugere que os organismos mais bem adaptados ao ambiente têm maior probabilidade de sobreviver e transmitir suas características às gerações seguintes. Da mesma forma, em um algoritmo genético, cada solução para um problema é tratada como um “indivíduo” dentro de uma população. Essas soluções competem entre si com base em uma medida de desempenho, chamada de função de aptidão. As soluções com melhor desempenho têm mais chances de serem selecionadas para gerar novas soluções por meio de operadores que simulam processos biológicos, como o cruzamento e a mutação.</p>
+<p>Durante o cruzamento, partes das soluções selecionadas são combinadas para formar descendentes, assim como ocorre com o material genético em organismos vivos. Já a mutação introduz pequenas alterações aleatórias nas soluções, promovendo diversidade na população e permitindo a exploração de novas regiões do espaço de busca. Com o passar das gerações, a população evolui, e espera-se que as soluções se tornem progressivamente melhores, aproximando-se de uma resposta ótima ou satisfatória para o problema.</p>
+<p>Portanto, os algoritmos genéticos não apenas se inspiram na teoria darwiniana, mas a aplicam de forma prática no campo da computação, utilizando os princípios de evolução, adaptação e sobrevivência dos mais aptos como base para resolver problemas complexos. </p>
+<div class="admonition info">
+<p class="admonition-title">Método Estocástico</p>
+<p>É um procedimento ou técnica que envolve aleatoriedade ou incerteza em sua execução. Em outras palavras, é um método que utiliza variáveis aleatórias ou processos probabilísticos para resolver problemas, fazer previsões ou modelar fenômenos.</p>
+</div>
+<div class="admonition info">
+<p class="admonition-title">Metaheurísticas</p>
+<p>São estratégias de alto nível projetadas para resolver problemas complexos de otimização de forma eficiente, mesmo que não garantam a melhor solução possível (ótimo global).
+ Combinam regras determinísticas e estocásticas para explorar o espaço de soluções e encontrar boas respostas em tempo razoável, especialmente quando métodos exatos são inviáveis por serem muito lentos ou complexos.</p>
+</div>
+<h2 id="etapas-de-um-ag">Etapas de um AG<a class="headerlink" href="#etapas-de-um-ag" title="Permanent link">¶</a></h2>
+<p>Um AG realiza iterações sobre populações de possíveis soluções. A cada ciclo (geração), indivíduos melhores são selecionados, recombinados e modificados, simulando o processo evolutivo natural.</p>
+<div class="mermaid">graph TD
+    A[Início] --&gt; B[Inicialização da população]
+    B --&gt; C[Avaliação dos indivíduos]
+    C --&gt; D[Seleção dos pais]
+    D --&gt; E[Crossover]
+    E --&gt; F[Mutação]
+    F --&gt; G[Avaliação dos descendentes]
+    G --&gt; H[Substituição]
+    H --&gt; I{Critério de parada?}
+    I -- Não --&gt; C
+    I -- Sim --&gt; J[Fim: Melhor solução encontrada]
+</div>
+<p>Na sequência vamos conhecer um pouco mais sobre cada um destes passos.</p>
+<h3 id="inicializacao-da-populacao">Inicialização da População<a class="headerlink" href="#inicializacao-da-populacao" title="Permanent link">¶</a></h3>
+<p>A etapa de inicialização da população em um algoritmo genético é responsável por criar a primeira geração de soluções candidatas ao problema a ser resolvido. Essa população inicial é composta por diversos indivíduos, onde cada um representa uma <strong>possível solução codificada de forma adequada ao problema</strong> (por exemplo, como uma string binária, um vetor de números reais, ou uma permutação de itens).</p>
+<p>Essa geração inicial é geralmente criada de forma aleatória, para garantir diversidade genética e permitir uma ampla exploração do espaço de soluções desde o início. A diversidade é crucial, pois evita que o algoritmo fique preso prematuramente em soluções locais, dando mais chance de encontrar o ótimo global ao longo da evolução.</p>
+<p>Em alguns casos, a inicialização pode ser parcialmente dirigida ou heurística, incluindo soluções conhecidas ou estimativas boas para acelerar a convergência, mas ainda assim mantendo certa aleatoriedade para garantir variedade.</p>
+<p>Cada indivíduo é representado por um cromossomo, composto de genes. Os genes são responsáveis por codificar a possível solução. Durante esta etapa, uma quantidade específica de indivíduos é criada, cada uma apresentando cromossomos construídos de forma estocástica.</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-0-1"><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">random</span>
+</span><span id="__span-0-2"><a href="#__codelineno-0-2" id="__codelineno-0-2" name="__codelineno-0-2"></a>
+</span><span id="__span-0-3"><a href="#__codelineno-0-3" id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="k">def</span><span class="w"> </span><span class="nf">gerar_cromossomo</span><span class="p">(</span><span class="n">tamanho</span><span class="p">):</span>
+</span><span id="__span-0-4"><a href="#__codelineno-0-4" id="__codelineno-0-4" name="__codelineno-0-4"></a>    <span class="k">return</span> <span class="p">[</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">tamanho</span><span class="p">)]</span>
+</span><span id="__span-0-5"><a href="#__codelineno-0-5" id="__codelineno-0-5" name="__codelineno-0-5"></a>
+</span><span id="__span-0-6"><a href="#__codelineno-0-6" id="__codelineno-0-6" name="__codelineno-0-6"></a><span class="n">populacao</span> <span class="o">=</span> <span class="p">[</span><span class="n">gerar_cromossomo</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">6</span><span class="p">)]</span>
+</span></code></pre></div>
+<h3 id="avaliacao-funcao-de-aptidao">Avaliação (Função de Aptidão)<a class="headerlink" href="#avaliacao-funcao-de-aptidao" title="Permanent link">¶</a></h3>
+<p>É o momento em que cada indivíduo (ou solução candidata) da população é avaliado quanto à sua qualidade ou desempenho em resolver o problema proposto. Essa qualidade é medida por uma função chamada função de aptidão (ou <em>fitness function</em>), que atribui um valor numérico a cada indivíduo com base em quão bem ele resolve o problema.</p>
+<p>Durante essa etapa, o algoritmo percorre toda a população e calcula a aptidão de cada indivíduo. O valor da aptidão pode representar, por exemplo, o lucro total em um problema de maximização, ou o custo total em um problema de minimização (como a distância total em uma rota). Quanto maior a aptidão (em problemas de maximização), melhor a solução.</p>
+<p>O objetivo da avaliação é fornecer uma base para a seleção, que ocorre nas etapas seguintes do algoritmo. Indivíduos com melhor desempenho têm mais chance de serem escolhidos para reprodução, ou seja, para gerar novos indivíduos que vão compor as próximas gerações. Portanto, a avaliação da população é essencial para guiar a evolução da população em direção a soluções cada vez melhores ao longo das gerações.</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-1-1"><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="k">def</span><span class="w"> </span><span class="nf">aptidao</span><span class="p">(</span><span class="n">cromossomo</span><span class="p">):</span>
+</span><span id="__span-1-2"><a href="#__codelineno-1-2" id="__codelineno-1-2" name="__codelineno-1-2"></a>    <span class="k">return</span> <span class="nb">sum</span><span class="p">(</span><span class="n">cromossomo</span><span class="p">)</span>
+</span></code></pre></div>
+<h3 id="selecao">Seleção<a class="headerlink" href="#selecao" title="Permanent link">¶</a></h3>
+<p>Nesta etapa são escolhidos os indivíduos da população atual que terão a oportunidade de reproduzir-se e gerar novos indivíduos para a próxima geração. Essa escolha é baseada nos valores de aptidão calculados na etapa anterior — quanto maior a aptidão de um indivíduo, maiores são suas chances de ser selecionado.</p>
+<p>O objetivo da seleção é favorecer as melhores soluções, mas também manter alguma diversidade genética, permitindo que até mesmo indivíduos menos aptos tenham uma pequena chance de serem escolhidos, o que ajuda a evitar a convergência prematura em ótimos locais.</p>
+<p>Existem diferentes estratégias de seleção, entre as mais comuns estão:
+- <strong>Roleta (roulette wheel selection)</strong>: a chance de um indivíduo ser escolhido é proporcional à sua aptidão.
+- <strong>Torneio (tournament selection)</strong>: grupos aleatórios de indivíduos competem entre si, e o melhor de cada grupo é selecionado.
+- <strong>Seleção por classificação (rank selection)</strong>: os indivíduos são ordenados por aptidão, e a chance de seleção depende da posição no ranking, não do valor absoluto da aptidão.</p>
+<p>Durante essa etapa, normalmente são selecionados pares de indivíduos para cruzamento, formando a base da próxima geração. Assim, a seleção atua como um filtro evolutivo: favorece boas soluções, mas também mantém variabilidade para que o algoritmo continue explorando novas possibilidades.</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-2-1"><a href="#__codelineno-2-1" id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="k">def</span><span class="w"> </span><span class="nf">selecao_torneio</span><span class="p">(</span><span class="n">populacao</span><span class="p">,</span> <span class="n">k</span><span class="o">=</span><span class="mi">3</span><span class="p">):</span>
+</span><span id="__span-2-2"><a href="#__codelineno-2-2" id="__codelineno-2-2" name="__codelineno-2-2"></a>    <span class="n">competidores</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="n">populacao</span><span class="p">,</span> <span class="n">k</span><span class="p">)</span>
+</span><span id="__span-2-3"><a href="#__codelineno-2-3" id="__codelineno-2-3" name="__codelineno-2-3"></a>    <span class="k">return</span> <span class="nb">max</span><span class="p">(</span><span class="n">competidores</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="n">aptidao</span><span class="p">)</span>
+</span></code></pre></div>
+<h3 id="crossover-recombinacao">Crossover (Recombinação)<a class="headerlink" href="#crossover-recombinacao" title="Permanent link">¶</a></h3>
+<p>Crossover (ou cruzamento) é uma das principais operações utilizadas para gerar novos indivíduos a partir de dois pais selecionados da população atual. Inspirado no processo de reprodução sexual presente na natureza, o crossover tem como objetivo combinar as características dos pais para formar descendentes que possuam potencialmente melhores soluções para o problema sendo resolvido. Durante o processo, partes dos cromossomos dos pais são trocadas em pontos específicos, formando assim novos cromossomos. Existem diversas estratégias de crossover, como o de ponto único, de dois pontos, uniforme, entre outros, e a escolha da técnica mais adequada depende do tipo de codificação dos indivíduos e da natureza do problema. O crossover é essencial para promover a diversidade genética na população e para explorar novas regiões do espaço de busca, contribuindo significativamente para a convergência do algoritmo a uma solução ótima ou satisfatória.</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-3-1"><a href="#__codelineno-3-1" id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="k">def</span><span class="w"> </span><span class="nf">crossover</span><span class="p">(</span><span class="n">pai1</span><span class="p">,</span> <span class="n">pai2</span><span class="p">):</span>
+</span><span id="__span-3-2"><a href="#__codelineno-3-2" id="__codelineno-3-2" name="__codelineno-3-2"></a>    <span class="n">ponto</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">pai1</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+</span><span id="__span-3-3"><a href="#__codelineno-3-3" id="__codelineno-3-3" name="__codelineno-3-3"></a>    <span class="n">filho1</span> <span class="o">=</span> <span class="n">pai1</span><span class="p">[:</span><span class="n">ponto</span><span class="p">]</span> <span class="o">+</span> <span class="n">pai2</span><span class="p">[</span><span class="n">ponto</span><span class="p">:]</span>
+</span><span id="__span-3-4"><a href="#__codelineno-3-4" id="__codelineno-3-4" name="__codelineno-3-4"></a>    <span class="n">filho2</span> <span class="o">=</span> <span class="n">pai2</span><span class="p">[:</span><span class="n">ponto</span><span class="p">]</span> <span class="o">+</span> <span class="n">pai1</span><span class="p">[</span><span class="n">ponto</span><span class="p">:]</span>
+</span><span id="__span-3-5"><a href="#__codelineno-3-5" id="__codelineno-3-5" name="__codelineno-3-5"></a>    <span class="k">return</span> <span class="n">filho1</span><span class="p">,</span> <span class="n">filho2</span>
+</span></code></pre></div>
+<h3 id="mutacao">Mutação<a class="headerlink" href="#mutacao" title="Permanent link">¶</a></h3>
+<p>é uma operação que introduz pequenas alterações aleatórias nos cromossomos dos indivíduos, com o objetivo de manter a diversidade genética da população e evitar que o algoritmo convirja prematuramente para soluções locais. A mutação ocorre geralmente com baixa probabilidade e afeta apenas alguns genes de um indivíduo, modificando seus valores de forma aleatória ou dentro de um intervalo definido. Esse processo simula mutações genéticas naturais e permite que novas soluções potencialmente melhores sejam exploradas, mesmo que não estejam diretamente presentes na combinação dos pais. A mutação é, portanto, uma ferramenta fundamental para garantir a exploração do espaço de busca e complementar a ação do crossover, que tende a intensificar a busca em torno das soluções já encontradas.</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-4-1"><a href="#__codelineno-4-1" id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="k">def</span><span class="w"> </span><span class="nf">mutacao</span><span class="p">(</span><span class="n">cromossomo</span><span class="p">,</span> <span class="n">taxa</span><span class="o">=</span><span class="mf">0.1</span><span class="p">):</span>
+</span><span id="__span-4-2"><a href="#__codelineno-4-2" id="__codelineno-4-2" name="__codelineno-4-2"></a>    <span class="k">return</span> <span class="p">[</span><span class="n">gene</span> <span class="k">if</span> <span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">()</span> <span class="o">&gt;</span> <span class="n">taxa</span> <span class="k">else</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">gene</span> <span class="k">for</span> <span class="n">gene</span> <span class="ow">in</span> <span class="n">cromossomo</span><span class="p">]</span>
+</span></code></pre></div>
+<h3 id="substituicao">Substituição<a class="headerlink" href="#substituicao" title="Permanent link">¶</a></h3>
+<p>É a etapa responsável por atualizar a população atual com novos indivíduos gerados durante o processo evolutivo. Após aplicar as operações de seleção, crossover e mutação, o algoritmo precisa decidir quais indivíduos farão parte da próxima geração. A substituição pode ser feita de diferentes maneiras, como substituição completa (em que toda a população é renovada pelos descendentes) ou parcial (onde apenas parte da população é trocada). Uma estratégia comum é a substituição elitista, que garante que os melhores indivíduos da geração atual sejam preservados, mesmo após a introdução dos novos. Essa etapa é crucial para o equilíbrio entre a conservação de boas soluções (exploração) e a busca por novas soluções (exploração), influenciando diretamente a convergência e a eficiência do algoritmo genético.</p>
+<h3 id="algoritmo-completo-simplificado">Algoritmo Completo (Simplificado)<a class="headerlink" href="#algoritmo-completo-simplificado" title="Permanent link">¶</a></h3>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-5-1"><a href="#__codelineno-5-1" id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="k">def</span><span class="w"> </span><span class="nf">algoritmo_genetico</span><span class="p">(</span><span class="n">tamanho_pop</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">tamanho_crom</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">geracoes</span><span class="o">=</span><span class="mi">20</span><span class="p">):</span>
+</span><span id="__span-5-2"><a href="#__codelineno-5-2" id="__codelineno-5-2" name="__codelineno-5-2"></a>    <span class="n">populacao</span> <span class="o">=</span> <span class="p">[</span><span class="n">gerar_cromossomo</span><span class="p">(</span><span class="n">tamanho_crom</span><span class="p">)</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">tamanho_pop</span><span class="p">)]</span>
+</span><span id="__span-5-3"><a href="#__codelineno-5-3" id="__codelineno-5-3" name="__codelineno-5-3"></a>
+</span><span id="__span-5-4"><a href="#__codelineno-5-4" id="__codelineno-5-4" name="__codelineno-5-4"></a>    <span class="k">for</span> <span class="n">geracao</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">geracoes</span><span class="p">):</span>
+</span><span id="__span-5-5"><a href="#__codelineno-5-5" id="__codelineno-5-5" name="__codelineno-5-5"></a>        <span class="n">nova_populacao</span> <span class="o">=</span> <span class="p">[]</span>
+</span><span id="__span-5-6"><a href="#__codelineno-5-6" id="__codelineno-5-6" name="__codelineno-5-6"></a>        <span class="k">while</span> <span class="nb">len</span><span class="p">(</span><span class="n">nova_populacao</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">tamanho_pop</span><span class="p">:</span>
+</span><span id="__span-5-7"><a href="#__codelineno-5-7" id="__codelineno-5-7" name="__codelineno-5-7"></a>            <span class="n">pai1</span> <span class="o">=</span> <span class="n">selecao_torneio</span><span class="p">(</span><span class="n">populacao</span><span class="p">)</span>
+</span><span id="__span-5-8"><a href="#__codelineno-5-8" id="__codelineno-5-8" name="__codelineno-5-8"></a>            <span class="n">pai2</span> <span class="o">=</span> <span class="n">selecao_torneio</span><span class="p">(</span><span class="n">populacao</span><span class="p">)</span>
+</span><span id="__span-5-9"><a href="#__codelineno-5-9" id="__codelineno-5-9" name="__codelineno-5-9"></a>            <span class="n">filho1</span><span class="p">,</span> <span class="n">filho2</span> <span class="o">=</span> <span class="n">crossover</span><span class="p">(</span><span class="n">pai1</span><span class="p">,</span> <span class="n">pai2</span><span class="p">)</span>
+</span><span id="__span-5-10"><a href="#__codelineno-5-10" id="__codelineno-5-10" name="__codelineno-5-10"></a>            <span class="n">filho1</span> <span class="o">=</span> <span class="n">mutacao</span><span class="p">(</span><span class="n">filho1</span><span class="p">)</span>
+</span><span id="__span-5-11"><a href="#__codelineno-5-11" id="__codelineno-5-11" name="__codelineno-5-11"></a>            <span class="n">filho2</span> <span class="o">=</span> <span class="n">mutacao</span><span class="p">(</span><span class="n">filho2</span><span class="p">)</span>
+</span><span id="__span-5-12"><a href="#__codelineno-5-12" id="__codelineno-5-12" name="__codelineno-5-12"></a>            <span class="n">nova_populacao</span><span class="o">.</span><span class="n">extend</span><span class="p">([</span><span class="n">filho1</span><span class="p">,</span> <span class="n">filho2</span><span class="p">])</span>
+</span><span id="__span-5-13"><a href="#__codelineno-5-13" id="__codelineno-5-13" name="__codelineno-5-13"></a>
+</span><span id="__span-5-14"><a href="#__codelineno-5-14" id="__codelineno-5-14" name="__codelineno-5-14"></a>        <span class="n">populacao</span> <span class="o">=</span> <span class="n">nova_populacao</span><span class="p">[:</span><span class="n">tamanho_pop</span><span class="p">]</span>
+</span><span id="__span-5-15"><a href="#__codelineno-5-15" id="__codelineno-5-15" name="__codelineno-5-15"></a>        <span class="n">melhor</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">populacao</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="n">aptidao</span><span class="p">)</span>
+</span><span id="__span-5-16"><a href="#__codelineno-5-16" id="__codelineno-5-16" name="__codelineno-5-16"></a>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Geração </span><span class="si">{</span><span class="n">geracao</span><span class="o">+</span><span class="mi">1</span><span class="si">}</span><span class="s2">: Melhor aptidão = </span><span class="si">{</span><span class="n">aptidao</span><span class="p">(</span><span class="n">melhor</span><span class="p">)</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+</span></code></pre></div>
+</article>
+</div>
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+</div>
+<button class="md-top md-icon" data-md-component="top" hidden="" type="button">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"></path></svg>
+  Back to top
+</button>
+</main>
+<footer class="md-footer">
+<nav aria-label="Footer" class="md-footer__inner md-grid">
+<a aria-label="Previous: Inteligência Artificial" class="md-footer__link md-footer__link--prev" href="../">
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+</div>
+<div class="md-footer__title">
+<span class="md-footer__direction">
+                Previous
+              </span>
+<div class="md-ellipsis">
+                Inteligência Artificial
+              </div>
+</div>
+</a>
+<a aria-label="Next: Redes Neurais Artificiais" class="md-footer__link md-footer__link--next" href="../rna/">
+<div class="md-footer__title">
+<span class="md-footer__direction">
+                Next
+              </span>
+<div class="md-ellipsis">
+                Redes Neurais Artificiais
+              </div>
+</div>
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"></path></svg>
+</div>
+</a>
+</nav>
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-copyright">
+<div class="md-copyright__highlight">
+      Copyright © 2024 -  Diego A. Lusa
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" rel="noopener" target="_blank">
+      Material for MkDocs
+    </a>
+</div>
+<div class="md-social">
+<a class="md-social__link" href="https://www.linkedin.com/in/diegolusa/" rel="noopener" target="_blank" title="www.linkedin.com">
+<svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3M135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5m282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9z"></path></svg>
+</a>
+<a class="md-social__link" href="http://github.com/diegolusa" rel="noopener" target="_blank" title="github.com">
+<svg viewbox="0 0 496 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"></path></svg>
+</a>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<div class="md-dialog" data-md-component="dialog">
+<div class="md-dialog__inner md-typeset"></div>
+</div>
+<script id="__config" type="application/json">{"base": "../../../..", "features": ["navigation.top", "navigation.tabs", "navigation.instant", "toc.integrate", "toc.follow", "header.autohide", "navigation.footer", "navigation.top", "content.code.copy", "navigation.indexes"], "search": "../../../../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+<script src="../../../../assets/javascripts/bundle.f1b6f286.min.js"></script>
+<script src="../../../../javascript/config.js"></script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<script src="https://unpkg.com/mermaid@8.13.6/dist/mermaid.min.js"></script><script>mermaid.initialize({
+    theme: "base",
+    fontSize: "18px",
+    fontFamily: "Roboto"
+});</script></body>
+</html>

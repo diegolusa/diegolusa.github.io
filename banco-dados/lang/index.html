@@ -1,0 +1,1229 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      
+      <link rel="icon" href="../../img/icon.ico">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.4">
+    
+    
+      
+        <title>Structured Query Language - SQL - Diego A. Lusa</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.8608ea7d.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/custom.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#data-definition-language" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Diego A. Lusa" class="md-header__button md-logo" aria-label="Diego A. Lusa" data-md-component="logo">
+      
+  <img src="../../img/icon.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Diego A. Lusa
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Structured Query Language - SQL
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+    
+      
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../informatica/editores-texto/introducao/" class="md-tabs__link">
+          
+  
+    
+  
+  Informática Básica
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../disciplinas/upf/ads-153/" class="md-tabs__link">
+          
+  
+    
+  
+  Desenvolvimento para Web (ADS153)
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../disciplinas/upf/ads-164/" class="md-tabs__link">
+          
+  
+    
+  
+  Desenvolvimento Mobile II (ADS164/HADS009)
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../disciplinas/upf/ccc-275/" class="md-tabs__link">
+          
+  
+    
+  
+  Algoritmos e Programação (CCC275)
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../disciplinas/upf/ccc-296/" class="md-tabs__link">
+          
+  
+    
+  
+  Inteligência Artificial (CCC296)
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Diego A. Lusa" class="md-nav__button md-logo" aria-label="Diego A. Lusa" data-md-component="logo">
+      
+  <img src="../../img/icon.png" alt="logo">
+
+    </a>
+    Diego A. Lusa
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Informática Básica
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Informática Básica
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Editores de Texto
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            Editores de Texto
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../informatica/editores-texto/introducao/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Writer
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../informatica/editores-texto/estilos/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Estilos
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../informatica/editores-texto/abnt/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ABNT
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../disciplinas/upf/ads-153/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Desenvolvimento para Web (ADS153)
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Desenvolvimento para Web (ADS153)
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../disciplinas/upf/ads-153/m-1/m-1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Módulo I - Fundamentos e Linguagem HTML5
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../disciplinas/upf/ads-153/m-2/m-2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Módulo II - Cascading Style Sheets
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../disciplinas/upf/ads-153/m-3/m-3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Módulo III - Linguagem JavaScript
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../disciplinas/upf/ads-164/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Desenvolvimento Mobile II (ADS164/HADS009)
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Desenvolvimento Mobile II (ADS164/HADS009)
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../disciplinas/upf/ads-164/kotlin/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Módulo I - Linguagem Kotlin
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../disciplinas/upf/ads-164/android/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Módulo II - Desenvolvimento de Aplicações Android
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../disciplinas/upf/ccc-275/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Algoritmos e Programação (CCC275)
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_5" id="__nav_5_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Algoritmos e Programação (CCC275)
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../disciplinas/upf/ccc-275/conteudo-python/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Fundamentos de algoritmos e programação com Python
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../disciplinas/upf/ccc-296/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Inteligência Artificial (CCC296)
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_6" id="__nav_6_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Inteligência Artificial (CCC296)
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../disciplinas/upf/ccc-296/ag/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Algoritmos Genéticos
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../disciplinas/upf/ccc-296/rna/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Redes Neurais Artificiais
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+
+
+
+                  
+
+
+
+  <h1>Structured Query Language - SQL</h1>
+
+<h2 id="data-definition-language">Data Definition Language<a class="headerlink" href="#data-definition-language" title="Permanent link">&para;</a></h2>
+<h2 id="data-manipulation-language">Data Manipulation Language<a class="headerlink" href="#data-manipulation-language" title="Permanent link">&para;</a></h2>
+<h3 id="comando-insert">Comando INSERT<a class="headerlink" href="#comando-insert" title="Permanent link">&para;</a></h3>
+<p>{: .notice--info}</p>
+<p>Responsável por adicionar novas linhas a uma tabela, o comando INSERT apresenta sintaxe muito simples, embora com algumas variações. A forma trivial de escrevê-lo é especificando todas as colunas da tabela e os seus respectivos valores. Observe o trecho de código a seguir:</p>
+<p><div class="language-sql highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">quote</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">            </span><span class="p">(</span><span class="n">id</span><span class="p">,</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">             </span><span class="n">entrance_exam_id</span><span class="p">,</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">             </span><span class="n">NAME</span><span class="p">,</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">             </span><span class="n">reference_code</span><span class="p">,</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">             </span><span class="n">description</span><span class="p">,</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">             </span><span class="k">comment</span><span class="p">,</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">             </span><span class="n">is_universal_access</span><span class="p">)</span>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="k">VALUES</span><span class="w">      </span><span class="p">(</span><span class="mi">1</span><span class="p">,</span>
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">             </span><span class="mi">1</span><span class="p">,</span>
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="w">             </span><span class="s1">&#39;ACESSO UNIVERSAL&#39;</span><span class="p">,</span>
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="w">             </span><span class="s1">&#39;1&#39;</span><span class="p">,</span>
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="w">             </span><span class="s1">&#39;Vagas de acesso universal&#39;</span><span class="p">,</span>
+</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="w">             </span><span class="s1">&#39;&#39;</span><span class="p">,</span>
+</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="w">             </span><span class="k">true</span><span class="p">);</span><span class="w"> </span>
+</span></code></pre></div>
+Para ter sucesso na execução, o comando <code>insert</code> deve respeitar a sintaxe e as <code>constraints</code> definidas para as colunas da tabela. <strong>Todas</strong> as colunas obrigatórias (<code>not null</code>) devem aparecer no comando, com exceção daquelas que possuem valor <code>default</code>, que podem ser omitidas. </p>
+<p>Ainda, quando a(s) coluna(s) representam chaves estrangeiras, os valores informados devem respeitar a <em>integridade referencial</em>, ou seja, devem estar presentes como valores de chave primária na tabela referenciada. E, para não esquecer, os valores informados devem respeitar o <em>domínio</em> de dados da coluna.</p>
+<p>Quando há necessidade de adicionar múltiplas linhas em uma tabela não precisamos repetir diversas vezes o comando <code>insert</code>. Nestes casos, é possível informar vários valores de tupla (linha) na cláusula <strong>VALUES</strong>. No exemplo abaixo, o resultado da execução será a inserção de duas linhas na tabela <code>produto</code>.</p>
+<div class="language-sql highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">produto</span><span class="w"> </span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">        </span><span class="p">(</span><span class="n">id</span><span class="p">,</span><span class="w"> </span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">        </span><span class="n">nome</span><span class="w">                    </span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">        </span><span class="p">)</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="k">VALUES</span>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">        </span><span class="p">(</span><span class="k">default</span><span class="p">,</span><span class="s1">&#39;Lápis&#39;</span><span class="p">),</span><span class="w"> </span>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">        </span><span class="p">(</span><span class="k">default</span><span class="p">,</span><span class="s1">&#39;Caneta&#39;</span><span class="p">);</span>
+</span></code></pre></div>
+<p>Outra variação de grande utilidade é a possibilidade de substituir <strong>VALUES</strong> por um comando de <strong>SELECT</strong>. Observe:</p>
+<div class="language-sql highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">produto</span><span class="w"> </span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">        </span><span class="p">(</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">        </span><span class="n">nome</span><span class="w">                    </span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">        </span><span class="p">)</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="k">SELECT</span><span class="w"> </span>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="w">    </span><span class="n">item_nome</span><span class="w"> </span>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="k">FROM</span>
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="w">    </span><span class="n">item_nota_fiscal</span>
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="k">WHERE</span><span class="w"> </span>
+</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="w">    </span><span class="n">tipo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;P&#39;</span><span class="p">;</span>
+</span></code></pre></div>
+<p>Por fim, o PostgreSQL possibilita o retorno de valores em comandos de <code>insert</code> através da cláusula <code>returning</code>. Esse recurso é especialmente útil para obter valores de colunas configuradas como <code>default</code>, incluíndo tipos seriais utilizados em chaves primárias, bem como para comandos de PL/SQL que envolvem a atribuição de variáveis (<a href="https://www.postgresql.org/docs/current/sql-insert.html">Vide Documentação</a>).</p>
+<p>No exemplo abaixo, o comando <code>insert</code> irá retornar o valor gerado para a coluna <code>id</code>, tal qual faria um comando <code>select</code> análogo.
+<div class="language-sql highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">produto</span><span class="w"> </span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">        </span><span class="p">(</span><span class="n">id</span><span class="p">,</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">        </span><span class="n">nome</span><span class="w">                    </span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">        </span><span class="p">)</span><span class="w"> </span>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="k">VALUES</span>
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="w">      </span><span class="p">(</span><span class="k">default</span><span class="p">,</span>
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="w">      </span><span class="s1">&#39;Pão&#39;</span><span class="p">)</span>
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="n">RETURNING</span><span class="w"> </span><span class="n">id</span><span class="p">;</span>
+</span></code></pre></div></p>
+<h3 id="comando-delete">Comando DELETE<a class="headerlink" href="#comando-delete" title="Permanent link">&para;</a></h3>
+<p>{: .notice--info}</p>
+<p>A exclusão de linhas de uma tabela é realizada pelo comando <code>delete</code>. Não confunda, portanto com o comando <code>drop</code>, cuja finalidade é remover do dicionário (schema) a definição e dados (se houver) de um objeto existente na base de dados.</p>
+<p>O comando <code>delete</code> não requer a especificação de filtros. Neste caso, <strong>todas</strong> as linhas da tabela serão removidas, o que pode ser imprudente. Normalmente todo comando <code>delete</code> acompanha condições que determinam quais linhas devem ser excluídas dentre todas as existentes. Tais condições são expressas na cláusula <strong>WHERE</strong>, na forma de condições lógicas.</p>
+<div class="language-sql highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c1">--irá excluir todas as linhas da tabela estudante</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="k">DELETE</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">estudante</span><span class="p">;</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="cm">/*irá excluir somente as linhas </span>
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="cm">cujas condições forem satisfeitas*/</span>
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>
+</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="k">DELETE</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">estudante</span><span class="w"> </span>
+</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="w">  </span><span class="k">WHERE</span>
+</span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="w">      </span><span class="n">cpf</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;012365478963&#39;</span><span class="w"> </span><span class="k">or</span>
+</span><span id="__span-4-10"><a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a><span class="w">      </span><span class="n">status</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;C&#39;</span><span class="p">;</span>
+</span></code></pre></div>
+<p>A exclusão das linhas somente ocorre quando nenhuma <code>constraint</code> for violada. Casos típicos são linhas referenciadas em chaves estrangeiras, as quais não podem ser excluídas pois implicaria na violação da <strong>restrição de integridade referencial</strong>. </p>
+<p>Um meio de contornar a restrição e permitir a exclusão da linha com dependência é valer-se da cláusula <strong>ON DELETE CASCADE</strong> no momento de criar a chave estrangeira. Isso, contudo, irá depender das regras do negócio, que por vezes tornam inviável o uso de tal recurso. Pense, por exemplo, se ao excluir o registro de uma cidade, todos os dados de habitantes a ela associados fossem excluídos automaticamente. Certamente não parece ser a melhor estratégia.</p>
+<p>Da mesma forma que ocorre com o comando <strong>INSERT</strong>, o PostgreSQL possibilita o retorno de valores em comandos de <code>delete</code> através da cláusula <code>returning</code>. Observe o comando abaixo (<a href="https://www.postgresql.org/docs/current/sql-delete.html">Vide Documentação</a>):</p>
+<div class="language-sql highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="k">DELETE</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">produto</span><span class="w"> </span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="k">WHERE</span><span class="w"> </span><span class="n">data_validade</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="k">current_date</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="nb">interval</span><span class="w"> </span><span class="s1">&#39;10 days&#39;</span><span class="w"> </span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="n">returning</span><span class="w"> </span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="n">nome</span><span class="p">;</span>
+</span></code></pre></div>
+<h3 id="comando-update">Comando UPDATE<a class="headerlink" href="#comando-update" title="Permanent link">&para;</a></h3>
+<p>{: .notice--info}</p>
+<p>Para realizar modificações em dados armazenados, utilizamos o comando <strong>UPDATE</strong>. Por meio dele é possível alterar valores de uma ou mais colunas da linha (ou linhas) de uma tabela.</p>
+<p>Se definido sem filtros, a alteração solicitada será efetivada em todas as linhas, contudo nos cenários triviais de uso, este não é o objetivo pretendido. Normalmente utilizamos condições que restringem o efeito da atualização para uma quantia menor de linhas.</p>
+<div class="language-sql highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="c1">--Todas as linhas de produto terão o valor da coluna nome alterado para Feijão</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="k">UPDATE</span><span class="w"> </span><span class="n">produto</span><span class="w"> </span><span class="k">SET</span><span class="w"> </span><span class="n">nome</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Feijão&#39;</span><span class="p">;</span>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="c1">--O mesmo comando, agora com filtro</span>
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="k">UPDATE</span><span class="w"> </span><span class="n">produto</span><span class="w"> </span><span class="k">SET</span><span class="w"> </span><span class="n">nome</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Feijão&#39;</span><span class="w"> </span>
+</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="w">        </span><span class="k">WHERE</span><span class="w"> </span><span class="n">codigo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">25</span><span class="p">;</span>
+</span></code></pre></div>
+<p>No comando <code>update</code> podemos especificar apenas uma tabela. A partir da cláusula <code>set</code> informamos qual será o novo valor das colunas que desejamos modificar. É possível informar uma ou mais colunas na mesma instrução, assim como utilizar o valor atual de colunas para compor novos. Observe:</p>
+<div class="language-sql highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="c1">--Modificando várias colunas em uma única instrução</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="k">UPDATE</span><span class="w"> </span><span class="n">produto</span><span class="w"> </span>
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="k">SET</span><span class="w"> </span><span class="n">nome</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Feijão&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">preco</span><span class="o">=</span><span class="mi">4</span><span class="p">.</span><span class="mi">86</span><span class="p">,</span><span class="w"> </span><span class="n">peso</span><span class="o">=</span><span class="mi">2000</span><span class="w"> </span>
+</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="k">WHERE</span><span class="w"> </span><span class="n">codigo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">25</span><span class="p">;</span>
+</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>
+</span><span id="__span-7-7"><a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a><span class="c1">--Novos valores de coluna com base nos atuais</span>
+</span><span id="__span-7-8"><a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a>
+</span><span id="__span-7-9"><a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a><span class="k">UPDATE</span><span class="w"> </span><span class="n">produto</span><span class="w"> </span>
+</span><span id="__span-7-10"><a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a><span class="k">SET</span><span class="w"> </span><span class="n">preco</span><span class="o">=</span><span class="w"> </span><span class="n">preco</span><span class="o">+</span><span class="w"> </span><span class="n">preco</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">0</span><span class="p">.</span><span class="mi">05</span><span class="w"> </span>
+</span><span id="__span-7-11"><a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a><span class="k">WHERE</span><span class="w"> </span><span class="n">codigo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">25</span><span class="p">;</span>
+</span></code></pre></div>
+<p>Você deve ter observado que a cláusula <code>set</code> é uma sequência de pares de coluna/valor separados por vírgula. Utilizando o trecho <code>preco= preco + preco * 0.05</code> como exemplo, percebemos que à esquerda da igualdade temos o nome da coluna que terá o valor modificado, enquanto que na direita encontramos o novo valor. Quando o nome de uma coluna aparece na direita (nosso exemplo), estamos lendo o valor atual para utilizá-lo de alguma forma na composição do novo. Assim, supondo que a coluna <code>preco</code> tenha por valor atual <code>2.40</code>, o novo valor será o resultado da expressão <code>2.40 + 2.40 * 0.05</code>, ou seja, <code>2.52</code>.</p>
+<p>O PostgreSQL possibilita o retorno de valores em comandos <code>update</code> através da cláusula <code>returning</code>. Observe o comando abaixo (<a href="https://www.postgresql.org/docs/current/sql-update.html">Vide Documentação</a>):</p>
+<div class="language-sql highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="k">UPDATE</span><span class="w"> </span><span class="n">produto</span><span class="w"> </span>
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="k">SET</span><span class="w"> </span><span class="n">nome</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Feijão&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">preco</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">preco</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">0</span><span class="p">.</span><span class="mi">15</span><span class="w"> </span>
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="k">WHERE</span><span class="w"> </span><span class="n">codigo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">25</span><span class="w"> </span><span class="n">RETURNING</span><span class="w"> </span><span class="n">preco</span><span class="p">;</span>
+</span></code></pre></div>
+<h3 id="comando-select">Comando SELECT<a class="headerlink" href="#comando-select" title="Permanent link">&para;</a></h3>
+<p>{: .notice--info}</p>
+<p>Certamente podemos afirmar que o comando <a href="https://www.postgresql.org/docs/current/sql-select.html"><strong>select</strong></a> é um dos mais importantes da linguagem SQL. Isso porque através dele temos condições de recompor as informações do mundo fragmentados nas diferentes tabelas da base, respondendo às consultas dos usuários. A informação é, portanto, o que se busca apresentar nos diferentes softwares que construímos para interagir com bases de dados. </p>
+<p>Proporcional a importância do comando <strong>select</strong> é a sua complexidade e variação de sintaxe. Logo, extrair todo potencial do comando pode levar certo tempo de estudo e dedicação.</p>
+<p>Em termos gerais, o comando <strong>select</strong> representa o meio que temos, em bases relacionais, para recuperar dados. O seu retorno representa uma <strong>relação</strong> (nome formal dado às tabelas), uma vez que falamos em um retorno estruturado em linhas e colunas.</p>
+<p>Vamos começar nosso estudo entendendo as principais seções que compõem o comando <strong>select</strong>. Para tal, considere o código SQL abaixo:</p>
+<div class="language-sql highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="k">select</span><span class="w"> </span><span class="n">medico_id</span><span class="p">,</span>
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="w">       </span><span class="n">paciente_id</span><span class="p">,</span>
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="w">       </span><span class="n">anamnese</span><span class="p">,</span>
+</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="w">       </span><span class="n">data_hora_alta</span>
+</span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="k">from</span>
+</span><span id="__span-9-6"><a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a><span class="w">        </span><span class="n">internacao</span>
+</span></code></pre></div>
+<p>Observe a cláusula <strong>from</strong>. Nela especificamos a(s) relação(ões) que iremos consultar. A tabela <code>internacao</code> é nossa relação e estamos interessados em recuperar as linhas que ela contém. </p>
+<p>Sabemos que relações são segmentadas em colunas e, na consulta, podemos limitar a quais delas gostaríamos de receber no retorno. Portanto, somente as colunas <code>medico_id</code>, <code>paciente_id</code>, <code>anamnese</code> e <code>data_hora_alta</code> de todas as linhas armazenadas em <code>internacao</code> serão retornadas. Perceba que a lista de colunas deve ser expressa entre as cláusulas <strong>select</strong> e <strong>from</strong>, utilizando vírgula como caractere separador e respeitando a nomenclatura utilizada no momento da criação da tabela. Para os casos onde todas as colunas devem estar presentes na saída, utilizamos um asterisco para simplificar a escrita da consulta. Neste caso, teríamos:</p>
+<div class="language-sql highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="k">select</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">internacao</span>
+</span></code></pre></div>
+<p>Bem, e se você preferir mudar o nome de saída da coluna...como faria? Neste caso, basta utilizar o recurso de troca de nomes (<em>rename</em>). Veja:</p>
+<div class="language-sql highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="k">select</span><span class="w"> </span><span class="n">medico_id</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="ss">&quot;codigo do médico&quot;</span><span class="p">,</span>
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="w">       </span><span class="n">paciente_id</span><span class="w"> </span><span class="n">paciente</span><span class="p">,</span>
+</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="w">       </span><span class="n">anamnese</span><span class="p">,</span>
+</span><span id="__span-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="w">       </span><span class="n">data_hora_alta</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">saida_paciente</span>
+</span><span id="__span-11-5"><a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a><span class="k">from</span>
+</span><span id="__span-11-6"><a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a><span class="w">        </span><span class="n">internacao</span>
+</span></code></pre></div>
+<p>Ao optar por renomear colunas, quando utilizamos nomes compostos com espaços entre as palavras, será preciso envolver com aspas duplas (<code>medico_id as "codigo do médico"</code>). O operador <strong>as</strong> é opcional, logo fica a seu critério utilizá-lo ou não. Apenas mantenha um padrão de escrita, aderindo a uma das formas apenas.</p>
+<p class="notice--warning"><strong>Atenção:</strong> A operação <em>rename</em> não realiza alterações de schema. Seu efeito vale apenas no contexto da query.</p>
+<p>Além de nomes de colunas, podemos solicitar saída de expressões. É possível, por exemplo, realizar chamadas de funções, cálculos matemáticos e até fazer uso de <em>subqueries</em> no espaço reservado às colunas. Contudo, precisamos utilizar tais liberdades com moderação, pois em alguns casos podemos comprometer o desempenho da consulta (veremos estas situações em outro post). </p>
+<div class="language-sql highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="k">select</span><span class="w"> </span>
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="w">       </span><span class="k">upper</span><span class="p">(</span><span class="n">anamnese</span><span class="p">),</span>
+</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="w">       </span><span class="n">age</span><span class="p">(</span><span class="n">data_hora_alta</span><span class="p">)</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">tempo_de_saida</span><span class="p">,</span>
+</span><span id="__span-12-4"><a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a><span class="w">       </span><span class="mi">3</span><span class="o">*</span><span class="mi">9</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">calculo</span><span class="w">   </span>
+</span><span id="__span-12-5"><a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a><span class="k">from</span>
+</span><span id="__span-12-6"><a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a><span class="w">        </span><span class="n">internacao</span>
+</span></code></pre></div>
+<p>Até o momento sabemos como especificar as colunas (ou expressões) e a relação para nossas consultas via <strong>select</strong>. Da forma que apresentamos até então, <strong>todas</strong> as linhas da relação serão retornadas, uma vez que não definimos <strong>filtros</strong> para os dados. É pouco provável que suas <em>queries</em> considerem a integralidade de linhas de uma tabela, logo saber restringir o retorno apenas as linhas de interesse é de fundamental importância. </p>
+<p>A cláusula que nos permite condicionar linhas ao retorno chama-se <strong>where</strong>. Nela, expressamos as restrições na forma de condições lógicas, elaboradas por meio de operadores de comparação (<code>&lt; &gt; = &lt;= &gt;= &lt;&gt;</code>) e conectores lógicos (<code>NOT AND OR</code>) envolvendo colunas e/ou expressões.</p>
+<div class="language-sql highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="k">select</span><span class="w"> </span>
+</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="w">        </span><span class="o">*</span><span class="w"> </span>
+</span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="k">from</span>
+</span><span id="__span-13-4"><a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a><span class="w">   </span><span class="n">internacao</span>
+</span><span id="__span-13-5"><a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a><span class="k">where</span>
+</span><span id="__span-13-6"><a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a><span class="w">   </span><span class="n">data_hora_internacao</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span>
+</span><span id="__span-13-7"><a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a><span class="w">        </span><span class="k">current_timestamp</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="nb">interval</span><span class="w"> </span><span class="s1">&#39;3 days&#39;</span>
+</span><span id="__span-13-8"><a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a><span class="w">   </span><span class="k">and</span><span class="w"> </span><span class="n">tipo_clinica</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;M&#39;</span>
+</span></code></pre></div>
+<p>Na query acima, condicionamos ao retorno linhas da tabela <code>internacao</code> que possuem valor igual a <code>M</code> na coluna <code>tipo_clinica</code> e cuja <code>data_hora_internacao</code> registra uma estampa de tempo de até 3 dias. </p>
+<h2 id="juncoes-internas">Junções Internas<a class="headerlink" href="#juncoes-internas" title="Permanent link">&para;</a></h2>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2024 -  Diego A. Lusa
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://www.linkedin.com/in/diegolusa/" target="_blank" rel="noopener" title="www.linkedin.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3M135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5m282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="http://github.com/diegolusa" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.top", "navigation.tabs", "navigation.instant", "toc.integrate", "toc.follow", "header.autohide", "navigation.footer", "navigation.top", "content.code.copy", "navigation.indexes"], "search": "../../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.f1b6f286.min.js"></script>
+      
+        <script src="../../javascript/config.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

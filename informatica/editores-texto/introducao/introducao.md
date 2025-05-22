@@ -1,0 +1,24 @@
+Afirmar que a tecnologia transformou drasticamente o mundo nas últimas décadas certamente não trás espanto a ninguém, afinal todos são testemunhas oculares das transformações que dia após dia ocorrem na sociedade em função dela. Dentre as diversas áreas que popularmente chama-se “tecnologia”, a Informática certamente ocupa lugar de destaque, haja vista que soluções de hardware e software têm contribuído significativamente para revoluções em diversas áreas, como comunicação, relações de consumo, educação, medicina, entre outros.
+
+
+Um dos usos mais típicos do computador compreende a edição e produção de documentos escritos e planilhas eletrônicas. Estes recursos, hoje tão comuns, foram importantes alicerces na popularização do uso da arquitetura PC (*Personal Computer*) em empresas e, tempos após, nos ambientes domésticos. Logo, ter domínio na manipulação de tais softwares representa uma das muitas habilidades exigidas pelo mercado de trabalho atual.
+
+Vamos começar falando de editores de texto, softwares especializados na produção de documentos textuais com amplos recursos para edição e diagramação. Estão presentes no dia-a-dia de boa parte dos usuários de computador, seja para escrever aquele relatório da faculdade, fazer um currículo caprichado ou mesmo um cartão de Dia das Mães. No mundo do trabalho, é ferramenta essencial para produção dos mais variados tipos de documentos que transmitem informações e formalizam etapas de processos.
+
+É comum encontrar editores de texto como sendo parte de pacotes para escritório. Um dos mais populares é o *Microsoft Office*, software proprietário da Microsoft, cujo editor de texto chama-se *Microsoft Word*. Para fazer uso deste pacote de softwares o usuário deve ter em mãos uma licença.
+
+Para aqueles que não dispõem de recursos ou mesmo preferem soluções livres, temos disponível a suite [*LibreOffice*](https://pt-br.libreoffice.org/), mantida por uma comunidade de desenvolvedores e distribuída livremente, sem custos, a qualquer interessado.
+
+Outra alternativa interessante são as soluções em nuvem, como Google Docs. Para finalidades triviais de edição, atendem perfeitamente as necessidades. E, quando associadas a recursos de colaboração e compartilhamento, tornam-se ferramentas extremamente poderosas.
+
+Para nossos estudos, utilizaremos o LibreOffice Writer, editor de texto disponível no pacote *LibreOffice*, versão 7.1, bem como o Google Docs, buscando realizar um contraponto dos recursos disponíveis.
+
+A Suite LibreOffice, da qual o software Writer faz parte, compreende um projeto iniciado em setembro de 2010, época em que um grupo de desenvolvedores voluntários da comunidade anunciou a criação do *The Document Foundation* com vistas a dar continuidade ao desenvolvimento da suite de escritório OpenOffice. Com o evento da aquisição da Sun Microsystems pela empresa Oracle, o projeto OpenOffice foi entregue à [Fundação Apache](https://apache.org/), visto que até então a Sun era responsável por manter o desenvolvimento ativo.
+
+O Writer apresenta uma grande quantidade de recursos para manipulação de texto e de objetos em documentos por meio da tecnologia WYSIWYG. A tecnologia WYSIWYG é acrônimo de *What You See Is What You Get*, ou seja, tecnologias de software onde o usuário tem feedback imediado do resultado final da formatação do documento, de tal modo que o visto na tela será o resultado final quando impresso.
+
+
+Apresentamos tela inicial de trabalho do Writer na sequência. Na parte superior consta a barra de menus, com as opções *Arquivo*, *Editar*, *Exibir*, *Inserir*, *Formatar*, *Estilos*, *Tabela*, *Formulário*, *Ferramentas*, *Janela* e *Ajuda*. Logo abaixo à barra de menus, encontram-se as abas para acesso rápido às ferramentas de edição. Na aba *Arquivo* são oferecidos recursos de abertura de documentos locais e remotos, opções de salvamento e de exportação em PDF.  Na aba *Início* encontram-se ferramentas de formatação de fonte (cor, tipo, tamanho), tipos de listas, alinhamento de texto, entre outros. A aba *Inserir*, por sua vez, contém opções para adição de objetos como figuras, tabelas, galeria, gráficos, símbolos e referências cruzadas no documento. Na aba *Página* são oferecidas as opções que permitem configurar margens, tamanho do papel, divisão em colunas e orientação do documento. Na aba *Referências* encontram-se as opções para gestão de bibliografia, notas de rodapé, notas de fim e geração de sumário. A aba *Revisar* contém ferramentas de correção ortográfica, dicionário de sinônimos, contagem de palavras, anotações e gestão de mudanças. Por fim, na aba *Exibir*, estão as opções relacionadas  à exibição de réguas, zoom e visualização de impressão.
+
+![Tela inicial do LibreOffice Writer, exibição em Abas](../../img/informatica/libreoffice-tela-inicial.png)
+

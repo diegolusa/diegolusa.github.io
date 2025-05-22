@@ -1,0 +1,1955 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../../m-2/m-2/">
+      
+      
+        <link rel="next" href="../../../ads-164/">
+      
+      
+      <link rel="icon" href="../../../../../img/icon.ico">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.4">
+    
+    
+      
+        <title>Módulo III - Linguagem JavaScript - Diego A. Lusa</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../../assets/stylesheets/main.8608ea7d.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../../css/custom.css">
+    
+    <script>__md_scope=new URL("../../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#sintaxe" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../../../.." title="Diego A. Lusa" class="md-header__button md-logo" aria-label="Diego A. Lusa" data-md-component="logo">
+      
+  <img src="../../../../../img/icon.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Diego A. Lusa
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Módulo III - Linguagem JavaScript
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../.." class="md-tabs__link">
+        
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+    
+      
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../../informatica/editores-texto/introducao/" class="md-tabs__link">
+          
+  
+    
+  
+  Informática Básica
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../" class="md-tabs__link">
+          
+  
+    
+  
+  Desenvolvimento para Web (ADS153)
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../ads-164/" class="md-tabs__link">
+          
+  
+    
+  
+  Desenvolvimento Mobile II (ADS164/HADS009)
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../ccc-275/" class="md-tabs__link">
+          
+  
+    
+  
+  Algoritmos e Programação (CCC275)
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../ccc-296/" class="md-tabs__link">
+          
+  
+    
+  
+  Inteligência Artificial (CCC296)
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../../.." title="Diego A. Lusa" class="md-nav__button md-logo" aria-label="Diego A. Lusa" data-md-component="logo">
+      
+  <img src="../../../../../img/icon.png" alt="logo">
+
+    </a>
+    Diego A. Lusa
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Informática Básica
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Informática Básica
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Editores de Texto
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            Editores de Texto
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../informatica/editores-texto/introducao/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Writer
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../informatica/editores-texto/estilos/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Estilos
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../informatica/editores-texto/abnt/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ABNT
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Desenvolvimento para Web (ADS153)
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Desenvolvimento para Web (ADS153)
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../m-1/m-1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Módulo I - Fundamentos e Linguagem HTML5
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../m-2/m-2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Módulo II - Cascading Style Sheets
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Módulo III - Linguagem JavaScript
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Módulo III - Linguagem JavaScript
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#sintaxe" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sintaxe
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#variaveis" class="md-nav__link">
+    <span class="md-ellipsis">
+      Variáveis
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Variáveis">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#escopos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Escopos
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#operadores" class="md-nav__link">
+    <span class="md-ellipsis">
+      Operadores
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#controle-de-fluxo" class="md-nav__link">
+    <span class="md-ellipsis">
+      Controle de Fluxo
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Controle de Fluxo">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#comando-if" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comando if
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comando-switchcase" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comando switch...case
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#operador-ternario" class="md-nav__link">
+    <span class="md-ellipsis">
+      Operador ternário
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#laco-for" class="md-nav__link">
+    <span class="md-ellipsis">
+      Laço for
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#laco-while" class="md-nav__link">
+    <span class="md-ellipsis">
+      Laço while
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#laco-dowhile" class="md-nav__link">
+    <span class="md-ellipsis">
+      Laço do...while
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comandos-break-e-continue" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comandos break e continue
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tratamento-de-excecoes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tratamento de Exceções
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#promises" class="md-nav__link">
+    <span class="md-ellipsis">
+      Promises
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Promises">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#estados-e-callbacks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Estados e callbacks
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#funcao-fetch" class="md-nav__link">
+    <span class="md-ellipsis">
+      Função fetch
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#documento-object-model-dom" class="md-nav__link">
+    <span class="md-ellipsis">
+      Documento Object Model (DOM)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Documento Object Model (DOM)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#objeto-window" class="md-nav__link">
+    <span class="md-ellipsis">
+      Objeto window
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#propriedade-document" class="md-nav__link">
+    <span class="md-ellipsis">
+      Propriedade document
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#propriedade-navigator" class="md-nav__link">
+    <span class="md-ellipsis">
+      Propriedade navigator
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#biblioteca-jquery" class="md-nav__link">
+    <span class="md-ellipsis">
+      Biblioteca jQuery
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../ads-164/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Desenvolvimento Mobile II (ADS164/HADS009)
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Desenvolvimento Mobile II (ADS164/HADS009)
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ads-164/kotlin/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Módulo I - Linguagem Kotlin
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ads-164/android/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Módulo II - Desenvolvimento de Aplicações Android
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../ccc-275/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Algoritmos e Programação (CCC275)
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_5" id="__nav_5_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Algoritmos e Programação (CCC275)
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ccc-275/conteudo-python/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Fundamentos de algoritmos e programação com Python
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../ccc-296/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Inteligência Artificial (CCC296)
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_6" id="__nav_6_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Inteligência Artificial (CCC296)
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ccc-296/ag/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Algoritmos Genéticos
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ccc-296/rna/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Redes Neurais Artificiais
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+
+
+
+                  
+
+
+
+  <h1>Módulo III - Linguagem JavaScript</h1>
+
+<p>O JavaScript é uma das linguagens de programação mais amplamente utilizadas no mundo, especialmente no desenvolvimento de aplicações web. Criada em 1995 por Brendan Eich, ela foi inicialmente projetada para adicionar interatividade a páginas web. Hoje, o JavaScript evoluiu para uma linguagem extremamente versátil, usada tanto no <em>front-end </em>quanto no <em>back-end</em>, sendo um dos pilares fundamentais da web moderna. É uma linguagem interpretada, o que significa que pode ser executada diretamente pelos navegadores ou por motores como o V8, sem a necessidade de compilação prévia.</p>
+<p>Atualmente o JavaScript desempenha um papel central na construção de interfaces de usuário interativas, permitindo que desenvolvedores criem experiências dinâmicas e responsivas. Ele funciona em conjunto com HTML e CSS para formar a base do desenvolvimento web. Com a introdução de bibliotecas e frameworks como React, Angular e Vue.js, o JavaScript se tornou ainda mais poderoso no <em>front-end</em>, possibilitando a criação de aplicações complexas e escaláveis. No <em>back-end</em>, com a chegada do <a href="https://nodejs.org/en">Node.js</a>, o JavaScript ampliou seu alcance, permitindo a construção de APIs e servidores eficientes. Além disso, é utilizado em outras áreas, como desenvolvimento de aplicativos móveis através de frameworks como React Native, criação de jogos e até automação de tarefas.</p>
+<p>A popularidade do JavaScript é impulsionada pela sua comunidade, que fornece uma vasta coleção de bibliotecas e ferramentas, além de suporte contínuo. Seu uso é quase onipresente na indústria de tecnologia, e aprender JavaScript é essencial para qualquer pessoa interessada em desenvolvimento de software moderno. Ele oferece uma curva de aprendizado que equilibra simplicidade para iniciantes e profundidade para profissionais avançados, consolidando-se como uma habilidade indispensável no cenário tecnológico atual.</p>
+<p>Em nosso estudo, apresentaremos os conceitos básicos da linguagem e gradativamente vamos adicionando novos recursos e potencialidades da linguagem JavaScript e ferramentas associadas.</p>
+<h2 id="sintaxe">Sintaxe<a class="headerlink" href="#sintaxe" title="Permanent link">&para;</a></h2>
+<p>A sintaxe do JavaScript é projetada para ser simples e flexível, permitindo que desenvolvedores iniciantes e experientes escrevam código de maneira eficiente. Ela é inspirada em linguagens como <strong>Java</strong> e <strong>C</strong>, mas com características próprias que a tornam única no desenvolvimento de aplicações web. JavaScript é uma linguagem case-sensitive, ou seja, distingue maiúsculas de minúsculas, e seu código é organizado em declarações que terminam, opcionalmente, com ponto e vírgula (;).</p>
+<p>JavaScript é dinamicamente tipada, o que significa que não é necessário declarar explicitamente o tipo das variáveis; elas podem mudar de tipo em tempo de execução. As variáveis são declaradas com as palavras-chave <code>var</code>, <code>let</code> ou <code>const</code>, como veremos na sequência. A linguagem suporta operadores aritméticos, lógicos e de comparação, permitindo a criação de condições e estruturas de controle como <code>if</code>, <code>for</code> e <code>while</code>. Além disso, o JavaScript é orientado a objetos, mas utiliza um modelo baseado em protótipos, o que o diferencia de linguagens com orientação a objetos clássica.</p>
+<p>Outro aspecto fundamental é a sua capacidade de manipular o <strong>DOM (Document Object Model)</strong>, permitindo alterar dinamicamente o conteúdo e o estilo das páginas web. JavaScript também suporta funções anônimas e de alta ordem, tornando-se poderoso para a programação funcional. A linguagem oferece suporte a programação assíncrona, permitindo lidar com operações que ocorrem ao longo do tempo, como requisições HTTP ou interações com APIs, através de promises e async/await.</p>
+<div class="language-javascript highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kd">let</span><span class="w"> </span><span class="nx">nome</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Maria&quot;</span><span class="p">;</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="kd">function</span><span class="w"> </span><span class="nx">cumprimentar</span><span class="p">(</span><span class="nx">nome</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="sb">`Olá, </span><span class="si">${</span><span class="nx">nome</span><span class="si">}</span><span class="sb">! Seja bem-vinda.`</span><span class="p">;</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="p">}</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="nb">document</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">innerHTML</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">cumprimentar</span><span class="p">(</span><span class="nx">nome</span><span class="p">);</span>
+</span></code></pre></div>
+<p>Nesse exemplo, o script utiliza uma função simples para gerar uma mensagem de boas-vindas e a exibe no corpo da página. Esse código demonstra a clareza da sintaxe do JavaScript e sua capacidade de interagir com o HTML, destacando sua importância no desenvolvimento web. Observe que a delimitação do corpo da função se dá pelo uso de <code>{}</code>, definindo o início e o término do bloco.</p>
+<h2 id="variaveis">Variáveis<a class="headerlink" href="#variaveis" title="Permanent link">&para;</a></h2>
+<p>Para declarar variáveis, temos a disposição três formas distintas: <code>var</code>, <code>let</code>, e <code>const</code>.</p>
+<ul>
+<li>
+<p><strong><code>var</code></strong>:  As variáveis declaradas com <code>var</code> têm escopo de função ou escopo global. Se declaradas em uma função, ficam disponíveis no corpo da função, em qualquer parte dele. Já se declarada fora de uma função tornam-se globais, o que significa dizer que podem ser acessadas em qualquer parte do script.  Outra característica chama-se <em>hoisting</em> (elevação), que nada mais é do que trazer automaticamente a declaração da variável para o início do escopo ao qual pertence.</p>
+</li>
+<li>
+<p><strong><code>let</code></strong>: As variáveis declaradas com <code>let</code> têm escopo de bloco, o que significa que são acessíveis apenas dentro do bloco em que foram declaradas. Não podem ser redeclaradas e não tem opção de <em>hoisting</em>.</p>
+</li>
+<li>
+<p><strong><code>const</code></strong>: Variáveis declaradas com <code>const</code> também têm escopo de bloco e são imutáveis após a inicialização. Uma vez informado uma referência para a variável, não poderá mais modificar.</p>
+</li>
+</ul>
+<div class="language-javascript highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kd">var</span><span class="w"> </span><span class="nx">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">10</span><span class="p">;</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">x</span><span class="p">);</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="kd">let</span><span class="w"> </span><span class="nx">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">20</span><span class="p">;</span>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">y</span><span class="p">);</span><span class="w"> </span>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="kd">const</span><span class="w"> </span><span class="nx">z</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">30</span><span class="p">;</span>
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">z</span><span class="p">);</span><span class="w"> </span>
+</span></code></pre></div>
+<h3 id="escopos">Escopos<a class="headerlink" href="#escopos" title="Permanent link">&para;</a></h3>
+<p>O escopo define onde as variáveis estão acessíveis. Existem dois tipos principais de escopos: <strong>escopo global</strong> e <strong>escopo local</strong>.</p>
+<ul>
+<li>
+<p><strong>Escopo Global</strong>: As variáveis globais são acessíveis em qualquer lugar do script.</p>
+</li>
+<li>
+<p><strong>Escopo Local</strong>: As variáveis locais são acessíveis apenas dentro da função ou bloco em que foram declaradas. Fora deste espaço elas não existem,</p>
+</li>
+</ul>
+<div class="language-javascript highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kd">var</span><span class="w"> </span><span class="nx">valor_global</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">100</span><span class="p">;</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="kd">function</span><span class="w"> </span><span class="nx">funcaoExemplo</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">  </span><span class="kd">var</span><span class="w"> </span><span class="nx">valor_local</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">200</span><span class="p">;</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">valor_global</span><span class="p">);</span><span class="w"> </span>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">valor_local</span><span class="p">);</span><span class="w"> </span>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="p">}</span>
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">valor_local</span><span class="p">)</span>
+</span></code></pre></div>
+<p>Perceba no exemplo que <code>valor_global</code> está sendo acessado no corpo da função <code>funcaoExemplo</code>. Isso é possível pois trata-se de uma variável global. Internamente a função declara outra variável chamada <code>valor_local</code>, que está sendo lida no último comando. Neste caso, o resultado será um erro, pois <code>valor_local</code> é uma variável local e, portanto, não existe fora do escopo a qual pertence.</p>
+<h2 id="operadores">Operadores<a class="headerlink" href="#operadores" title="Permanent link">&para;</a></h2>
+<p>Operadores sãos símbolos utilizados na linguagem JavaScript para representar operações aritméticas, de comparação, atribuição , concatenação e lógicas. Com algumas exceções, são os mesmos encontrados nas ns <em>Java</em> e <em>C</em> <sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup>.</p>
+<div class="admonition info">
+<p class="admonition-title">Quais são os operadores?</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:5"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><input id="__tabbed_1_4" name="__tabbed_1" type="radio" /><input id="__tabbed_1_5" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Aritméticos</label><label for="__tabbed_1_2">Atribuição</label><label for="__tabbed_1_3">Comparação</label><label for="__tabbed_1_4">Lógico</label><label for="__tabbed_1_5">Concatenação</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<ul>
+<li><strong>Adição (+)</strong>: Soma dois valores.</li>
+<li><strong>Subtração (-)</strong>: Subtrai o segundo valor do primeiro.</li>
+<li><strong>Multiplicação (*)</strong>: Multiplica dois valores.</li>
+<li><strong>Divisão (/)</strong>: Divide o primeiro valor pelo segundo.</li>
+<li><strong>Resto da Divisão (%)</strong>: Retorna o resto da divisão inteira do primeiro valor pelo segundo.</li>
+<li><strong>Incremento (++)</strong>: Incrementa o valor de uma variável em 1.</li>
+<li><strong>Decremento (--)</strong>: Decrementa o valor de uma variável em 1.</li>
+</ul>
+</div>
+<div class="tabbed-block">
+<ul>
+<li><strong>Atribuição Simples (=)</strong>: Atribui um valor à variável.</li>
+<li><strong>Atribuição com Adição (+=)</strong>: Adiciona o valor à variável e atribui o resultado.</li>
+<li><strong>Atribuição com Subtração (-=)</strong>: Subtrai o valor da variável e atribui o resultado.</li>
+<li><strong>Atribuição com Multiplicação (*=)</strong>: Multiplica o valor da variável e atribui o resultado.</li>
+<li><strong>Atribuição com Divisão (/=)</strong>: Divide o valor da variável e atribui o resultado.</li>
+<li><strong>Atribuição com Resto da Divisão (%=)</strong>: Calcula o resto da divisão e atribui o resultado.</li>
+</ul>
+</div>
+<div class="tabbed-block">
+<ul>
+<li><strong>Igual (==)</strong>: Verifica se dois valores são iguais.</li>
+<li><strong>Estritamente Igual (===)</strong>: Verifica se dois valores são iguais em valor e tipo.</li>
+<li><strong>Diferente (!=)</strong>: Verifica se dois valores não são iguais.</li>
+<li><strong>Estritamente Diferente (!==)</strong>: Verifica se dois valores não são iguais em valor ou tipo.</li>
+<li><strong>Maior que (&gt;)</strong>: Verifica se o primeiro valor é maior que o segundo.</li>
+<li><strong>Maior ou Igual (&gt;=)</strong>: Verifica se o primeiro valor é maior ou igual ao segundo.</li>
+<li><strong>Menor que (&lt;)</strong>: Verifica se o primeiro valor é menor que o segundo.</li>
+<li><strong>Menor ou Igual (&lt;=)</strong>: Verifica se o primeiro valor é menor ou igual ao segundo.</li>
+</ul>
+</div>
+<div class="tabbed-block">
+<ul>
+<li><strong>AND lógico (&amp;&amp;)</strong>: Retorna verdadeiro se ambas as expressões forem verdadeiras.</li>
+<li><strong>OR lógico (||)</strong>: Retorna verdadeiro se pelo menos uma das expressões for verdadeira.</li>
+<li><strong>NOT lógico (!)</strong>: Inverte o valor da expressão, se era verdadeira torna-se falsa e vice-versa.</li>
+</ul>
+</div>
+<div class="tabbed-block">
+<ul>
+<li><strong>Concatenação (+)</strong>: Concatena duas strings.</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<h2 id="controle-de-fluxo">Controle de Fluxo<a class="headerlink" href="#controle-de-fluxo" title="Permanent link">&para;</a></h2>
+<p>Assim como outras linguagens, em JavaScript, os comandos de desvio de fluxo permitem controlar a execução do código, permitindo a tomada de decisões com base em condições específicas ou executando iterações sobre coleções de dados. Vamos começar analisando o comando <code>if</code>.</p>
+<h3 id="comando-if">Comando <code>if</code><a class="headerlink" href="#comando-if" title="Permanent link">&para;</a></h3>
+<p>O comando <code>if...else</code> permite executar um bloco de código se o resultado da expressão lógica (condição) for <strong>verdadeira</strong> e outro bloco de código se o resultado for <strong>falso</strong>.</p>
+<p>A sintaxe do comando compreende a palavra reservada <code>if</code>, a condição lógica entre <code>()</code>, acompanhado do bloco verdade delimitado por <code>{}</code>. Ter um bloco para executar quando a condição é falsa é opcional, mas quando informado, deve ser após a palavra reservada <code>else</code>.</p>
+<div class="language-javascript highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kd">let</span><span class="w"> </span><span class="nx">idade</span><span class="w"> </span><span class="o">=</span><span class="mf">10</span><span class="p">;</span><span class="w"> </span><span class="c1">// Solicita a idade do usuário</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">idade</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mf">18</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">    </span><span class="nx">alert</span><span class="p">(</span><span class="s2">&quot;Você é maior de idade.&quot;</span><span class="p">);</span>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="w">    </span><span class="nx">alert</span><span class="p">(</span><span class="s2">&quot;Você é menor de idade.&quot;</span><span class="p">);</span>
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="p">}</span>
+</span></code></pre></div>
+<h3 id="comando-switchcase">Comando <code>switch...case</code><a class="headerlink" href="#comando-switchcase" title="Permanent link">&para;</a></h3>
+<p>O comando <code>switch...case</code> permite avaliar o conteúdo de uma variável e executar blocos específicos de código com base em valores discretos. É particulamente útil para avaliar um pequeno conjunto de opções cuja ação resultante de cada valor é distinta. Cada caso é inicia com a palavra reservada <code>case</code>, acompanhada do valor e dois pontos. Na sequência, seguem as instruções que devem ser executadas na ocorrência de tal valor, até encontrar o comando <code>break</code>, cuja função é encerrar o comando <code>switch</code>.</p>
+<div class="language-javascript highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="kd">let</span><span class="w"> </span><span class="nx">valor</span><span class="o">=</span><span class="nb">parseInt</span><span class="p">(</span><span class="nx">prompt</span><span class="p">(</span><span class="s2">&quot;Informe um valor inteiro&quot;</span><span class="p">))</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="k">switch</span><span class="w"> </span><span class="p">(</span><span class="nx">valor</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="w">  </span><span class="k">case</span><span class="w"> </span><span class="mf">1</span><span class="o">:</span>
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="w">    </span><span class="c1">// Bloco de código a ser executado se a variável valor for igual a 1</span>
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="w">    </span><span class="k">break</span><span class="p">;</span>
+</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="w">  </span><span class="k">case</span><span class="w"> </span><span class="mf">2</span><span class="o">:</span>
+</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="w">    </span><span class="c1">// Bloco de código a ser executado se a variável valor for igual a 2</span>
+</span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="w">    </span><span class="k">break</span><span class="p">;</span>
+</span><span id="__span-4-10"><a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a><span class="w">  </span><span class="k">default</span><span class="o">:</span>
+</span><span id="__span-4-11"><a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a><span class="w">    </span><span class="c1">// Não sendo nenhum dos anteriores, executa este caso padrão</span>
+</span><span id="__span-4-12"><a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a><span class="p">}</span>
+</span></code></pre></div>
+<h3 id="operador-ternario">Operador ternário<a class="headerlink" href="#operador-ternario" title="Permanent link">&para;</a></h3>
+<p>O operador ternário é uma forma simplificada de realizar testes condicionais que retornam um valor quando verdadeiro e outro, quando falso.</p>
+<p>No exemplo a seguir, a variável <code>resultado</code> vai receber <code>Aprovado</code> ou <code>Tente novamente</code>, a depender do resultado de <code>nota &gt; 6</code>.</p>
+<div class="language-javascript highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">resultado</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">nota</span><span class="o">&gt;</span><span class="w"> </span><span class="mf">6</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="s2">&quot;Aprovado&quot;</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Tente novamente&quot;</span><span class="p">;</span>
+</span></code></pre></div>
+<h3 id="laco-for">Laço <code>for</code><a class="headerlink" href="#laco-for" title="Permanent link">&para;</a></h3>
+<p>O comando <code>for</code> é usado para iterar sobre uma lista de itens por um número específico de vezes (conhecido a priori). Na estrutura do comando, temos <code>inicialização</code>, que especifica os valores iniciais das variáveis de controle, <code>condição</code>, onde colocamos um teste condicional para determinar a condição de parada do laço e, finalmente, <code>incremento</code>, para determinar a alteração das variáveis de controle ao fim de cada iteração. Cada segmento deve ser separado por ponto-e-vírgula, resultando em um comando com o padrão <code>for (inicialização; condição; incremento)</code>.</p>
+<p>Observe como faríamos para apresentar os números de 1 a 10 usando o laço <em>for</em></p>
+<div class="language-javascript highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">let</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mf">10</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Número:&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">i</span><span class="p">);</span>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="p">}</span>
+</span></code></pre></div>
+<h3 id="laco-while">Laço <code>while</code><a class="headerlink" href="#laco-while" title="Permanent link">&para;</a></h3>
+<p>O comando <code>while</code> executa um bloco de código enquanto uma condição especificada for verdadeira. Normalmente utilizando ele quando desconhecemos quantas iterações serão necessárias para alcançar a condição de parada.</p>
+<div class="language-javascript highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="nx">condição</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="w">  </span><span class="c1">// Bloco de código a ser repetido enquanto a condição for verdadeira</span>
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="p">}</span>
+</span></code></pre></div>
+<h3 id="laco-dowhile">Laço <code>do...while</code><a class="headerlink" href="#laco-dowhile" title="Permanent link">&para;</a></h3>
+<p>O comando <code>do...while</code> é semelhante em sintaxe e objetivo ao <code>while</code>. O que o torna diferente é o fato de que <strong>sempre</strong> irá executar o bloco de comando, no mínimo, uma vez.</p>
+<div class="language-javascript highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="k">do</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="w">  </span><span class="c1">// Bloco de código a ser executado pelo menos uma vez</span>
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="p">}</span><span class="w"> </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="nx">condição</span><span class="p">);</span>
+</span></code></pre></div>
+<h3 id="comandos-break-e-continue">Comandos <code>break</code> e <code>continue</code><a class="headerlink" href="#comandos-break-e-continue" title="Permanent link">&para;</a></h3>
+<p>Sabemos que os laços de repetição iteram enquanto as condições de parada não foram satisfeitas. Por vezes, a condição de parada não é o único critério para determinar se um laço deve finalizar. Neste caso, podemos encerrar prematuramente um laço de repetição utilizando o comando <code>break</code>. Em outras situações é preciso ignorar um conjunto de instruções que seguem a partir de determinado ponto e, para esta finalidade temos a disposição o comando <code>continue</code>.</p>
+<div class="language-javascript highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">var</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mf">10</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">i</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="mf">5</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="w">    </span><span class="k">break</span><span class="p">;</span><span class="w"> </span><span class="c1">// Interrompe o loop quando i é igual a 5</span>
+</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="w">  </span><span class="p">}</span>
+</span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">i</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="mf">3</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-9-6"><a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a><span class="w">    </span><span class="k">continue</span><span class="p">;</span><span class="w"> </span><span class="c1">// Pula para a próxima iteração quando i é igual a 3</span>
+</span><span id="__span-9-7"><a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a><span class="w">  </span><span class="p">}</span>
+</span><span id="__span-9-8"><a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a><span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">i</span><span class="p">);</span>
+</span><span id="__span-9-9"><a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a><span class="p">}</span>
+</span></code></pre></div>
+<h2 id="tratamento-de-excecoes">Tratamento de Exceções<a class="headerlink" href="#tratamento-de-excecoes" title="Permanent link">&para;</a></h2>
+<p>O tratamento de exceções é feito usando blocos <code>try...catch</code>. O bloco <code>try</code> corresponde ao conjunto de instruções do fluxo normal do código que podem lançar exceções. Os blocos <code>catch</code>, por sua vez, permitem adicionar instruções a ser executadas caso alguma exceção seja lançada. Opcionalmente podemos colocar o bloco <code>finally</code> na estrutura, o qual executará em todos os cenários (com ou sem lançamento da exceção).</p>
+<div class="language-javascript highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="k">try</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="w">   </span><span class="kd">var</span><span class="w"> </span><span class="nx">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">y</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span>
+</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="nx">erro</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Ocorreu um erro: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">erro</span><span class="p">.</span><span class="nx">message</span><span class="p">);</span>
+</span><span id="__span-10-5"><a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a><span class="p">}</span><span class="w"> </span><span class="k">finally</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-10-6"><a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a><span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Este bloco sempre será executado.&quot;</span><span class="p">);</span>
+</span><span id="__span-10-7"><a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a><span class="p">}</span>
+</span></code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">O que são exceções?</p>
+<p>Em programação, uma exceção é um evento ou condição que ocorre durante a execução de um programa e interrompe seu fluxo normal. Geralmente, as exceções representam erros ou situações inesperadas que o programa não consegue processar automaticamente, como tentativa de acessar um arquivo inexistente, divisão por zero, entrada inválida do usuário, ou problemas de conexão com a internet. Embora as exceções frequentemente estejam associadas a erros, elas são usadas para sinalizar condições especiais que exigem tratamento específico pelo desenvolvedor, como alguma condição inválida do contexto do problema. Todas as exceções genéricas são disponibilizadas na biblioteca base da própria linguagem. No caso do JavaScript, você encontra a lista procurando pelos objetos globais de <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error">erro</a>.</p>
+</div>
+<h2 id="promises">Promises<a class="headerlink" href="#promises" title="Permanent link">&para;</a></h2>
+<p>As Promises são uma funcionalidade introduzida no ECMAScript 6 (ES6) para lidar com operações assíncronas de forma mais clara e organizada. Elas representam um valor que pode estar disponível agora, no futuro ou nunca, permitindo a execução de código que depende de resultados de operações como requisições de rede, leitura de arquivos ou temporizadores. Antes do advento das Promises, o uso de callbacks era a principal forma de tratar operações assíncronas, mas isso frequentemente resultava no que é chamado de “callback hell” — código aninhado e difícil de manter.</p>
+<p>Uma Promise pode estar em um dos três estados: pendente (<em>pending</em>), resolvida (<em>fulfilled</em>) ou rejeitada (<em>rejected</em>). Quando uma operação assíncrona começa, a Promise está no estado pendente. Caso a operação seja concluída com sucesso, a Promise passa para o estado resolvido, disparando a execução do método then. Por outro lado, se a operação falhar, a Promise entra no estado rejeitado, e o método catch é chamado para tratar o erro. Isso cria uma cadeia de eventos que melhora a legibilidade e a organização do código.</p>
+<p>Promises são criadas usando o construtor <em>Promise</em>, que recebe uma função de callback com dois parâmetros: resolve e reject. O resolve é chamado para indicar sucesso, enquanto o reject é chamado para indicar uma falha. Métodos como <em>Promise.all</em> e <em>Promise.race</em> permitem lidar com múltiplas Promises de maneira simultânea, seja esperando todas serem resolvidas ou tratando o resultado da primeira que completar.</p>
+<p>Um exemplo prático seria uma função que faz uma requisição a uma API. Com Promises, é possível definir o que deve acontecer quando os dados forem recebidos ou caso ocorra um erro. Isso elimina a necessidade de aninhar múltiplos callbacks, tornando o código mais limpo e fácil de entender.</p>
+<p>As Promises também servem de base para a implementação do <code>async/await</code>, introduzido no ECMAScript 2017, que simplifica ainda mais o tratamento de operações assíncronas, permitindo escrever código assíncrono que parece síncrono. Assim, Promises revolucionaram a forma como o JavaScript lida com assincronicidade, melhorando significativamente a legibilidade, a manutenção e o controle de erros em aplicações modernas.</p>
+<h3 id="estados-e-callbacks">Estados e callbacks<a class="headerlink" href="#estados-e-callbacks" title="Permanent link">&para;</a></h3>
+<p>Uma promise é um objeto que representa a eventual conclusão (ou falha) de uma operação assíncrona e seu valor resultante. Uma promise pode estar em um dos três estados:</p>
+<ul>
+<li><strong>Pending (Pendente)</strong>: Estado inicial, que não foi realizada nem rejeitada.</li>
+<li><strong>Fulfilled (Realizada)</strong>: A operação foi concluída com sucesso.</li>
+<li><strong>Rejected (Rejeitada)</strong>: A operação falhou.</li>
+</ul>
+<p>Para criar uma promise, utilizamos o construtor <code>Promise</code> que aceita uma função de dois parâmetros: <code>resolve</code> e <code>reject</code>.</p>
+<div class="language-javascript highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">minhaPromise</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nb">Promise</span><span class="p">((</span><span class="nx">resolve</span><span class="p">,</span><span class="w"> </span><span class="nx">reject</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>
+</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="w">  </span><span class="c1">//executando alguma operação que leva tempo para concluir</span>
+</span><span id="__span-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="w">  </span><span class="kd">let</span><span class="w"> </span><span class="nx">sucesso</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="p">;</span>
+</span><span id="__span-11-5"><a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a>
+</span><span id="__span-11-6"><a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a><span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">sucesso</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-11-7"><a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a><span class="w">    </span><span class="nx">resolve</span><span class="p">(</span><span class="s2">&quot;Operação realizada com sucesso!&quot;</span><span class="p">);</span>
+</span><span id="__span-11-8"><a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a><span class="w">  </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-11-9"><a id="__codelineno-11-9" name="__codelineno-11-9" href="#__codelineno-11-9"></a><span class="w">    </span><span class="nx">reject</span><span class="p">(</span><span class="s2">&quot;Operação falhou.&quot;</span><span class="p">);</span>
+</span><span id="__span-11-10"><a id="__codelineno-11-10" name="__codelineno-11-10" href="#__codelineno-11-10"></a><span class="w">  </span><span class="p">}</span>
+</span><span id="__span-11-11"><a id="__codelineno-11-11" name="__codelineno-11-11" href="#__codelineno-11-11"></a><span class="p">});</span>
+</span></code></pre></div>
+<p>Para tratar do resultado de uma promise, usamos os métodos <code>then</code>, <code>catch</code> e <code>finally</code>.</p>
+<p>O método <code>then</code> é utilizado para tratar o sucesso da promise, ou seja, a função assíncrona executou com sucesso e precisamos realizar alguma ação como efeito de tal resultado.</p>
+<div class="language-javascript highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="nx">minhaPromise</span><span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">valor</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">valor</span><span class="p">);</span><span class="w"> </span><span class="c1">// &quot;Operação realizada com sucesso!&quot;</span>
+</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="p">});</span>
+</span></code></pre></div>
+<p>O método <code>catch</code> é usado para lidar com a falha da promise, ou seja, executar alguma ação em função da falha na execução.</p>
+<div class="language-javascript highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="nx">minhaPromise</span><span class="p">.</span><span class="k">catch</span><span class="p">((</span><span class="nx">erro</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">erro</span><span class="p">);</span><span class="w"> </span><span class="c1">// &quot;Operação falhou.&quot;</span>
+</span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="p">});</span>
+</span></code></pre></div>
+<p>O método <code>finally</code>, por sua vez, é chamado quando a promise é concluída, independente do resultado. É um método que sempre será executado.</p>
+<div class="language-javascript highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="nx">minhaPromise</span><span class="p">.</span><span class="k">finally</span><span class="p">(()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Operação concluída.&quot;</span><span class="p">);</span><span class="w"> </span><span class="c1">// Será executado sempre</span>
+</span><span id="__span-14-3"><a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a><span class="p">});</span>
+</span></code></pre></div>
+<h3 id="funcao-fetch">Função <code>fetch</code><a class="headerlink" href="#funcao-fetch" title="Permanent link">&para;</a></h3>
+<p>A função <code>fetch</code> é nativa do JavaScript. Ela permite fazer requisições HTTP assíncronas para acessar e manipular recursos pela rede. Por ser assíncrona, retorna uma <code>Promise</code> que resolve com a resposta da requisição, facilitando o consumo de recursos remotos <sup id="fnref:2"><a class="footnote-ref" href="#fn:2">2</a></sup>.</p>
+<p>Sua assinatura (<code>fetch(url, [options])</code>) compreende um parâmetro obrigatório chamado <code>url</code>, o qual deve receber o endereço do recurso. O outro parâmetro, de nome <code>options</code>, é opcional e deve ser informado como um objeto contendo um ou mais dos atributos a seguir.</p>
+<ul>
+<li><strong>method</strong>: O método HTTP a ser usado (e.g., <code>GET</code>, <code>POST</code>, <code>PUT</code>, <code>DELETE</code>). O padrão é <code>GET</code>.</li>
+<li><strong>headers</strong>: Um objeto contendo cabeçalhos HTTP a serem enviados com a requisição.</li>
+<li><strong>body</strong>: O corpo da requisição. Pode ser uma string, um objeto, um <code>FormData</code>, etc.</li>
+<li><strong>mode</strong>: O modo da requisição (e.g., <code>cors</code>, <code>no-cors</code>, <code>same-origin</code>).</li>
+<li><strong>credentials</strong>: Indica se os cookies devem ser enviados com a requisição (<code>omit</code>, <code>same-origin</code>, <code>include</code>).</li>
+<li><strong>cache</strong>: O modo de cache (e.g., <code>default</code>, <code>no-store</code>, <code>reload</code>, <code>no-cache</code>, <code>force-cache</code>, <code>only-if-cached</code>).</li>
+<li><strong>redirect</strong>: O modo de redirecionamento (<code>follow</code>, <code>error</code>, <code>manual</code>).</li>
+<li><strong>referrer</strong>: Referrer da requisição (<code>client</code>, URL, ou vazio).</li>
+</ul>
+<div class="admonition info">
+<p class="admonition-title">Exemplos de Uso</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:3"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><input id="__tabbed_2_3" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Requisição Simples (GET)</label><label for="__tabbed_2_2">Requisição com Parâmetros (POST)</label><label for="__tabbed_2_3">Tratamento da Resposta</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-javascript highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="nx">fetch</span><span class="p">(</span><span class="s1">&#39;https://api.exemplo.com/dados&#39;</span><span class="p">)</span>
+</span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">response</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">response</span><span class="p">.</span><span class="nx">json</span><span class="p">())</span>
+</span><span id="__span-15-3"><a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a><span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">data</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">data</span><span class="p">))</span>
+</span><span id="__span-15-4"><a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a><span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="nx">error</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="s1">&#39;Erro:&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">error</span><span class="p">));</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-javascript highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="nx">fetch</span><span class="p">(</span><span class="s1">&#39;https://api.exemplo.com/dados&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-16-2"><a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a><span class="nx">method</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;POST&#39;</span><span class="p">,</span>
+</span><span id="__span-16-3"><a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a><span class="nx">headers</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-16-4"><a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a><span class="w">    </span><span class="s1">&#39;Content-Type&#39;</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;application/json&#39;</span>
+</span><span id="__span-16-5"><a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a><span class="p">},</span>
+</span><span id="__span-16-6"><a id="__codelineno-16-6" name="__codelineno-16-6" href="#__codelineno-16-6"></a><span class="nx">body</span><span class="o">:</span><span class="w"> </span><span class="nb">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">({</span>
+</span><span id="__span-16-7"><a id="__codelineno-16-7" name="__codelineno-16-7" href="#__codelineno-16-7"></a><span class="w">    </span><span class="nx">chave</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;valor&#39;</span>
+</span><span id="__span-16-8"><a id="__codelineno-16-8" name="__codelineno-16-8" href="#__codelineno-16-8"></a><span class="p">})</span>
+</span><span id="__span-16-9"><a id="__codelineno-16-9" name="__codelineno-16-9" href="#__codelineno-16-9"></a><span class="p">})</span>
+</span><span id="__span-16-10"><a id="__codelineno-16-10" name="__codelineno-16-10" href="#__codelineno-16-10"></a><span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">response</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">response</span><span class="p">.</span><span class="nx">json</span><span class="p">())</span>
+</span><span id="__span-16-11"><a id="__codelineno-16-11" name="__codelineno-16-11" href="#__codelineno-16-11"></a><span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">data</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">data</span><span class="p">))</span>
+</span><span id="__span-16-12"><a id="__codelineno-16-12" name="__codelineno-16-12" href="#__codelineno-16-12"></a><span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="nx">error</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="s1">&#39;Erro:&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">error</span><span class="p">));</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<p>O objeto <code>Response</code> retornado pela função <code>fetch</code> possui diversos métodos para processar os dados da resposta:</p>
+<ul>
+<li><strong>text()</strong>: Retorna uma <code>Promise</code> que resolve com o corpo da resposta como uma string.</li>
+<li><strong>json()</strong>: Retorna uma <code>Promise</code> que resolve com o corpo da resposta como um objeto JSON.</li>
+<li><strong>blob()</strong>: Retorna uma <code>Promise</code> que resolve com o corpo da resposta como um Blob.</li>
+<li><strong>formData()</strong>: Retorna uma <code>Promise</code> que resolve com o corpo da resposta como um FormData.</li>
+<li><strong>arrayBuffer()</strong>: Retorna uma <code>Promise</code> que resolve com o corpo da resposta como um ArrayBuffer.</li>
+</ul>
+<p><div class="language-javascript highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="nx">fetch</span><span class="p">(</span><span class="s1">&#39;https://api.exemplo.com/dados&#39;</span><span class="p">)</span>
+</span><span id="__span-17-2"><a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a><span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">response</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-17-3"><a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="nx">response</span><span class="p">.</span><span class="nx">ok</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-17-4"><a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a><span class="w">    </span><span class="k">throw</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="ne">Error</span><span class="p">(</span><span class="s1">&#39;Erro na rede: &#39;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">response</span><span class="p">.</span><span class="nx">statusText</span><span class="p">);</span>
+</span><span id="__span-17-5"><a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-17-6"><a id="__codelineno-17-6" name="__codelineno-17-6" href="#__codelineno-17-6"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">response</span><span class="p">.</span><span class="nx">json</span><span class="p">();</span>
+</span><span id="__span-17-7"><a id="__codelineno-17-7" name="__codelineno-17-7" href="#__codelineno-17-7"></a><span class="p">})</span>
+</span><span id="__span-17-8"><a id="__codelineno-17-8" name="__codelineno-17-8" href="#__codelineno-17-8"></a><span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">data</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">data</span><span class="p">))</span>
+</span><span id="__span-17-9"><a id="__codelineno-17-9" name="__codelineno-17-9" href="#__codelineno-17-9"></a><span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="nx">error</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="s1">&#39;Erro:&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">error</span><span class="p">));</span>
+</span></code></pre></div>
+Podemos utilizar o serviço <a href="https://jsonplaceholder.typicode.com">https://jsonplaceholder.typicode.com</a> para consumir uma API e testar nossos códigos que utilizam a função <code>fetch</code>.</p>
+</div>
+</div>
+</div>
+</div>
+<h2 id="documento-object-model-dom">Documento Object Model (DOM)<a class="headerlink" href="#documento-object-model-dom" title="Permanent link">&para;</a></h2>
+<p>O Document Object Model (DOM) é uma interface de programação que representa a estrutura de documentos HTML e XML como uma árvore hierárquica. Ele permite que linguagens de programação, como JavaScript, acessem e manipulem dinamicamente o conteúdo, a estrutura e o estilo de uma página web enquanto ela está sendo exibida no navegador. No DOM, cada parte do documento, como elementos, atributos e textos, é representada como um nó, que pode ser modificado, adicionado ou removido.</p>
+<p>O DOM transforma um documento estático em um ambiente interativo, possibilitando criar experiências dinâmicas para os usuários. Por exemplo, ao clicar em um botão, é possível adicionar novos elementos à página, alterar estilos ou até atualizar dados sem recarregar o documento. Essa capacidade é essencial para o funcionamento de aplicações web modernas.</p>
+<p>O DOM é independente de linguagem, mas é amplamente utilizado com JavaScript devido à sua integração nativa nos navegadores. Ele organiza os elementos do HTML em uma estrutura hierárquica, onde o nó raiz é o objeto document, que contém outros nós representando elementos como <html>, <body>, e seus filhos. Por meio de métodos e propriedades fornecidos pelo DOM, é possível navegar nessa árvore e interagir com os elementos.</p>
+<p>Essa interface é uma parte fundamental do desenvolvimento web, pois permite a criação de aplicações dinâmicas e interativas, onde o conteúdo e a aparência de uma página podem ser alterados em tempo real, sem necessidade de recarregar o navegador. O DOM, portanto, é a ponte que conecta a estrutura do HTML com o poder da programação, transformando páginas web simples em experiências ricas e responsivas.</p>
+<h3 id="objeto-window">Objeto <code>window</code><a class="headerlink" href="#objeto-window" title="Permanent link">&para;</a></h3>
+<p>O objeto global <code>window</code> representa uma janela ou aba aberta no navegador. Ele é a raiz da hierarquia de objetos do navegador e fornece acesso a uma ampla variedade de funcionalidades, incluindo a manipulação da janela, controle de eventos, navegação e interação com o <em>Document Object Model (DOM)</em>. Todas as variáveis globais, funções e objetos declarados em um script são automaticamente associados ao objeto <code>window</code>.</p>
+<p>Em sua estrutura, o objeto contém diversas propriedades e métodos importantes. Por exemplo, a propriedade <code>document</code> dá acesso ao DOM do documento, permitindo manipular elementos e estilos da página. Outra propriedade chama-se <code>location</code>, que fornece informações sobre a URL atual e permite redirecionar o navegador. A propriedade <code>history</code>, por sua vez, permite manipular o histórico de navegação. </p>
+<p>Além de propriedades, existem métodos para exibir caixas de diálogo, como <code>alert()</code>, <code>confirm()</code> e <code>prompt()</code>, além de funções para executar ações após um intervalo ou repetidamente, como <code>setTimeout()</code> e <code>setInterval()</code>. Propriedades como <code>innerWidth</code> e <code>innerHeight</code> permitem acessar as dimensões da janela, enquanto eventos como <code>onload</code>, <code>onresize</code> e <code>onscroll</code> permitem reagir a interações do usuário ou mudanças na janela.</p>
+<p>Além disso, o <code>window</code> também encapsula APIs avançadas, como <code>localStorage</code> e <code>sessionStorage</code>, usadas para armazenamento local, <code>fetch</code> para fazer requisições HTTP, e console para depuração. No contexto do navegador, ele também inclui subobjetos como <code>navigator</code>, que fornece informações sobre o ambiente do usuário, e <code>screen</code>, que detalha as dimensões e configurações da tela.</p>
+<p>Por ser objeto global, não é necessário referenciar explicitamente <code>window</code> para acessar seus métodos ou propriedades. Por exemplo, chamar <code>alert('Oi')</code> é equivalente a <code>window.alert('Oi')</code>. </p>
+<div class="tabbed-set tabbed-alternate" data-tabs="3:3"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><input id="__tabbed_3_3" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">Propriedades</label><label for="__tabbed_3_2">Métodos</label><label for="__tabbed_3_3">Eventos</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<ul>
+<li><code>window.document</code> : Retorna o documento HTML carregado na janela.</li>
+<li><code>window.location</code>:  Retorna um objeto contendo informações sobre a URL da página.</li>
+<li><code>window.navigator</code>: Retorna um objeto contendo informações sobre o navegador.</li>
+<li><code>window.innerWidth</code> e <code>window.innerHeight</code>: Retornam a largura e a altura internas (em pixels) da janela do navegador, incluindo barras de rolagem, mas excluindo a moldura do navegador.</li>
+<li><code>window.outerWidth</code> e <code>window.outerHeight</code>: Retornam a largura e a altura externas (em pixels) da janela do navegador, incluindo barras de rolagem e a moldura do navegador.</li>
+<li><code>window.screen</code>: Retorna um objeto contendo informações sobre a tela do dispositivo.</li>
+<li><code>window.history</code>: Retorna o objeto de histórico do navegador, permitindo navegação entre as páginas visitadas.</li>
+<li><code>window.localStorage</code> e <code>window.sessionStorage</code>: Oferecem acesso aos mecanismos de armazenamento local e de sessão do navegador, respectivamente, permitindo armazenar dados localmente no navegador do usuário.</li>
+<li><code>window.frames</code>: Retorna uma coleção de objetos representando todas as frames contidas na janela.</li>
+<li><code>window.parent</code>: Retorna a janela pai da janela atual, útil quando uma janela abre outra.</li>
+</ul>
+</div>
+<div class="tabbed-block">
+<ul>
+<li><code>window.alert(message)</code>: Exibe um diálogo de alerta com o texto especificado.</li>
+<li><code>window.confirm(message)</code>: Exibe um diálogo de confirmação com o texto especificado, retornando <code>true</code> se o usuário clicar em "OK" e <code>false</code> se clicar em "Cancelar".</li>
+<li><code>window.prompt(message, default)</code>: Exibe um diálogo solicitando que o usuário insira um texto, com uma mensagem opcional e um valor padrão opcional.</li>
+<li><code>window.open(url, name, features)</code>: Abre uma nova janela do navegador com o URL especificado.</li>
+<li><code>window.close()</code>": Fecha a janela do navegador atual.</li>
+<li><code>window.setTimeout(function, milliseconds)</code>: Executa uma função depois de um certo número de milissegundos.</li>
+<li><code>window.setInterval(function, milliseconds)</code>: Executa uma função repetidamente, com um intervalo de tempo especificado entre cada execução.</li>
+<li><code>window.clearTimeout(timeoutID)</code> e <code>window.clearInterval(intervalID)</code>: Cancelam a execução de uma função agendada com <code>setTimeout()</code> ou <code>setInterval()</code>.</li>
+</ul>
+</div>
+<div class="tabbed-block">
+<p>Alguns dos eventos mais comuns associados ao objeto <code>window</code> incluem:</p>
+<ul>
+<li><code>load</code>: É acionado quando o documento e todos os recursos associados foram completamente carregados.</li>
+<li><code>resize</code>: É acionado quando a janela do navegador é redimensionada.</li>
+<li><code>scroll</code>: É acionado quando o usuário rola a página.</li>
+<li><code>beforeunload</code> e <code>unload</code>: São acionados quando o documento está prestes a ser descarregado ou completamente descarregado, respectivamente.</li>
+</ul>
+</div>
+</div>
+</div>
+<h3 id="propriedade-document">Propriedade <code>document</code><a class="headerlink" href="#propriedade-document" title="Permanent link">&para;</a></h3>
+<p>A propriedade <code>document</code> está disponível no contexto de execução do JavaScript no navegador. Trata-se de um propriedade do objeto global <code>window</code>, cuja função é representar o DOM da página. Embora trata-se de uma propriedade, trata-se de um objeto, com diversas propriedades e métodos a disposição do desenvolvedor. Vejamos alguns exemplos na sequência.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="4:3"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><input id="__tabbed_4_2" name="__tabbed_4" type="radio" /><input id="__tabbed_4_3" name="__tabbed_4" type="radio" /><div class="tabbed-labels"><label for="__tabbed_4_1">Propriedades</label><label for="__tabbed_4_2">Métodos</label><label for="__tabbed_4_3">Eventos</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>Propriedades são atributos do objeto (como se fossem variáveis), através das quais podemos ler ou escrever valores. Algumas propriedades importantes do objeto <code>document</code> são:</p>
+<ul>
+<li><code>document.URL</code>: retorna a URL do documento.</li>
+<li><code>document.title</code>: permite obter ou definir o título do documento.</li>
+<li><code>document.body</code>: retorna a referência ao elemento <code>&lt;body&gt;</code> do documento.</li>
+<li><code>document.head</code>: retorna a referência ao elemento <code>&lt;head&gt;</code> do documento.</li>
+<li><code>document.documentElement</code>: retorna o elemento <code>&lt;html&gt;</code> do documento.</li>
+<li><code>document.domain</code>: Retorna o domínio do servidor que serve o documento.</li>
+<li><code>document.referrer</code>: retorna a URL do documento que levou o usuário a este documento.</li>
+<li><code>document.forms</code>: retorna uma coleção de todos os elementos <code>&lt;form&gt;</code> no documento.</li>
+<li><code>document.images</code>: retorna uma coleção de todos os elementos <code>&lt;img&gt;</code> no documento.</li>
+<li><code>document.links</code>: retorna uma coleção de todos os elementos <code>&lt;a&gt;</code> que têm um atributo <code>href</code> no documento.</li>
+<li><code>document.scripts</code>: retorna uma coleção de todos os elementos <code>&lt;script&gt;</code> no documento.</li>
+</ul>
+<p>Outras propriedades podem ser consultadas no site <a href="https://developer.mozilla.org/en-US/docs/Web/API/Document">Developers Mozilla</a>.</p>
+</div>
+<div class="tabbed-block">
+<p>Métodos são funções que permitem solicitar ao objeto determinadas ações. Tal qual ocorrem com as propriedades, muitos métodos estão disponíveis, mas ficaremos restritos aos mais relevantes neste momento.</p>
+<div class="admonition note">
+<p class="admonition-title">Principais Métodos</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="5:9"><input checked="checked" id="__tabbed_5_1" name="__tabbed_5" type="radio" /><input id="__tabbed_5_2" name="__tabbed_5" type="radio" /><input id="__tabbed_5_3" name="__tabbed_5" type="radio" /><input id="__tabbed_5_4" name="__tabbed_5" type="radio" /><input id="__tabbed_5_5" name="__tabbed_5" type="radio" /><input id="__tabbed_5_6" name="__tabbed_5" type="radio" /><input id="__tabbed_5_7" name="__tabbed_5" type="radio" /><input id="__tabbed_5_8" name="__tabbed_5" type="radio" /><input id="__tabbed_5_9" name="__tabbed_5" type="radio" /><div class="tabbed-labels"><label for="__tabbed_5_1"><code>document.getElementById(id)</code></label><label for="__tabbed_5_2"><code>document.getElementsByClassName(className)</code></label><label for="__tabbed_5_3"><code>document.getElementsByName(name)</code></label><label for="__tabbed_5_4"><code>document.getElementsByTagName(tagName)</code></label><label for="__tabbed_5_5"><code>document.querySelector(selector)</code></label><label for="__tabbed_5_6"><code>document.createElement(tagName)</code></label><label for="__tabbed_5_7"><code>document.write(text)</code></label><label for="__tabbed_5_8"><code>document.addEventListener(event, function)</code></label><label for="__tabbed_5_9"><code>document.removeEventListener(event, function)</code></label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>Retorna uma referência ao elemento que possui o atributo <code>id</code> com o valor especificado.</p>
+<div class="language-javascript highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="kd">var</span><span class="w"> </span><span class="nx">elemento</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;logotipo&quot;</span><span class="p">);</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<p>Retorna uma coleção de elementos que têm, no atributo <code>class</code>, o nome da classe informada como parâmetro. Observe o exemplo.</p>
+<div class="language-javascript highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="kd">var</span><span class="w"> </span><span class="nx">elementos</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementsByClassName</span><span class="p">(</span><span class="s2">&quot;cm-line&quot;</span><span class="p">)</span>
+</span><span id="__span-19-2"><a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a>
+</span><span id="__span-19-3"><a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">const</span><span class="w"> </span><span class="nx">e</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="nx">elementos</span><span class="p">){</span>
+</span><span id="__span-19-4"><a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a><span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span>
+</span><span id="__span-19-5"><a id="__codelineno-19-5" name="__codelineno-19-5" href="#__codelineno-19-5"></a><span class="p">}</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<p>Retorna uma coleção de elementos cujo atributo <code>name</code> contém o valor informado como parâmetro.</p>
+<div class="language-javascript highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="kd">var</span><span class="w"> </span><span class="nx">elementos</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementsByName</span><span class="p">(</span><span class="s2">&quot;viewport&quot;</span><span class="p">)</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<p>Retorna uma coleção de todos os elementos da tag indicada por parâmetro.</p>
+<div class="language-javascript highlight"><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="kd">var</span><span class="w"> </span><span class="nx">elementos</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementsByTagName</span><span class="p">(</span><span class="s2">&quot;div&quot;</span><span class="p">)</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<p>É uma função que permite selecionar um elemento HTML em uma página usando um seletor CSS válido. O primeiro elemento encontrado, que condiz com o seletor, será retornado pelo método.  </p>
+<p>O método <code>querySelector()</code> aceita um parâmetro, que é uma string que representa o seletor CSS. Este seletor pode ser um ID, uma classe, um tipo de elemento, um seletor de atributo ou uma combinação deles. </p>
+<p>No exemplo abaixo, estamos buscando a primeira ocorrência de elemento da classe <code>importante</code> no documento.</p>
+<div class="language-javascript highlight"><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="kd">var</span><span class="w"> </span><span class="nx">elemento</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s2">&quot;.importante&quot;</span><span class="p">);</span>
+</span></code></pre></div>
+<p>Se houver interesse em retornar todos os elementos que atendem ao seletor, devemos utilizar o método <code>document.querySelectorAll()</code>, iterando sobre o retorno.</p>
+</div>
+<div class="tabbed-block">
+<p>Cria um novo elemento HTML especificado pelo nome da tag informado como parâmetro.</p>
+<div class="language-javascript highlight"><pre><span></span><code><span id="__span-23-1"><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="nx">parag</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s2">&quot;p&quot;</span><span class="p">)</span>
+</span><span id="__span-23-2"><a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a><span class="w">    </span><span class="nx">parag</span><span class="p">.</span><span class="nx">textContent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">texto</span>
+</span><span id="__span-23-3"><a id="__codelineno-23-3" name="__codelineno-23-3" href="#__codelineno-23-3"></a><span class="w">    </span><span class="nb">document</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">parag</span><span class="p">)</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<p>Escreve conteúdo HTML diretamente no documento.</p>
+<div class="language-javascript highlight"><pre><span></span><code><span id="__span-24-1"><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a><span class="w">    </span><span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="s2">&quot;&lt;h2&gt;Teste&lt;/h2&gt;&quot;</span><span class="p">)</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<p>Adiciona um ouvinte (<em>listener</em>) de evento a um elemento do documento. Isso permite executar ações em resposta a eventos disparados.</p>
+<div class="language-javascript highlight"><pre><span></span><code><span id="__span-25-1"><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="nx">botao</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;btn_calcular&quot;</span><span class="p">)</span>
+</span><span id="__span-25-2"><a id="__codelineno-25-2" name="__codelineno-25-2" href="#__codelineno-25-2"></a><span class="w">    </span><span class="nx">botao</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">&quot;click&quot;</span><span class="p">,()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="nb">document</span><span class="p">.</span><span class="nx">alert</span><span class="p">(</span><span class="s2">&quot;Ouvi seu evento de click&quot;</span><span class="p">)})</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<p>Remove um ouvinte (<em>listener</em>) de evento de um elemento do documento previamente configurado.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="tabbed-block">
+<p>Eventos são o resultado de ações de ações do usuário sobre os elementos da página ou mesmo estados do próprio sistema e navegador, por exemplo. Os eventos são emitidos e podem ser processados por funções específicas, escritas pelo desenvolvedor, para dar um efeito à ocorrência do evento (se você clica em um botão espera que alguma ação seja executada).</p>
+<p>Os eventos mais comuns associados ao objeto <code>document</code> incluem:</p>
+<ul>
+<li><code>DOMContentLoaded</code>: É acionado quando o HTML do documento foi completamente carregado e analisado, sem aguardar por folhas de estilo, imagens e subframes para concluir o carregamento.</li>
+<li><code>load</code>: É acionado quando todo o conteúdo do documento, incluindo imagens e folhas de estilo, foi completamente carregado.</li>
+<li><code>click</code>: É acionado quando um elemento é clicado pelo usuário.</li>
+<li><code>keydown</code>, <code>keyup</code>, <code>keypress</code>: São acionados quando uma tecla é pressionada e liberada.</li>
+</ul>
+</div>
+</div>
+</div>
+<h3 id="propriedade-navigator">Propriedade <code>navigator</code><a class="headerlink" href="#propriedade-navigator" title="Permanent link">&para;</a></h3>
+<p>A propriedade <code>navigator</code> está disponível no objeto <code>window</code>. Sua função é fornecer informações detalhadas sobre o navegador e o ambiente em que o código JavaScript está sendo executado. Na sequência estão algumas propriedades, métodos e eventos importantes disponíveis através da propriedade <code>navigator</code>.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="6:2"><input checked="checked" id="__tabbed_6_1" name="__tabbed_6" type="radio" /><input id="__tabbed_6_2" name="__tabbed_6" type="radio" /><div class="tabbed-labels"><label for="__tabbed_6_1">Propriedades</label><label for="__tabbed_6_2">Métodos</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="tabbed-set tabbed-alternate" data-tabs="7:8"><input checked="checked" id="__tabbed_7_1" name="__tabbed_7" type="radio" /><input id="__tabbed_7_2" name="__tabbed_7" type="radio" /><input id="__tabbed_7_3" name="__tabbed_7" type="radio" /><input id="__tabbed_7_4" name="__tabbed_7" type="radio" /><input id="__tabbed_7_5" name="__tabbed_7" type="radio" /><input id="__tabbed_7_6" name="__tabbed_7" type="radio" /><input id="__tabbed_7_7" name="__tabbed_7" type="radio" /><input id="__tabbed_7_8" name="__tabbed_7" type="radio" /><div class="tabbed-labels"><label for="__tabbed_7_1"><code>navigator.userAgent</code></label><label for="__tabbed_7_2"><code>navigator.appName</code></label><label for="__tabbed_7_3"><code>navigator.appVersion</code></label><label for="__tabbed_7_4"><code>navigator.platform</code></label><label for="__tabbed_7_5"><code>navigator.language</code></label><label for="__tabbed_7_6"><code>navigator.cookieEnabled</code></label><label for="__tabbed_7_7"><code>navigator.onLine</code></label><label for="__tabbed_7_8"><code>navigator.plugins</code></label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>Retorna a string do agente do usuário, que contém informações sobre o navegador, versão e sistema operacional.</p>
+</div>
+<div class="tabbed-block">
+<p>Retorna o nome do navegador.</p>
+</div>
+<div class="tabbed-block">
+<p>Retorna a versão completa do navegador.</p>
+</div>
+<div class="tabbed-block">
+<p>Retorna a plataforma do sistema operacional em que o navegador está sendo executado.</p>
+</div>
+<div class="tabbed-block">
+<p>Retorna o idioma preferido do usuário, normalmente definido nas configurações do navegador.</p>
+</div>
+<div class="tabbed-block">
+<p>Retorna um booleano indicando se os cookies estão habilitados no navegador.</p>
+</div>
+<div class="tabbed-block">
+<p>Retorna um booleano indicando se o navegador está online ou offline.</p>
+</div>
+<div class="tabbed-block">
+<p>Retorna uma lista de plugins instalados no navegador.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="tabbed-block">
+<div class="tabbed-set tabbed-alternate" data-tabs="8:4"><input checked="checked" id="__tabbed_8_1" name="__tabbed_8" type="radio" /><input id="__tabbed_8_2" name="__tabbed_8" type="radio" /><input id="__tabbed_8_3" name="__tabbed_8" type="radio" /><input id="__tabbed_8_4" name="__tabbed_8" type="radio" /><div class="tabbed-labels"><label for="__tabbed_8_1"><code>navigator.geolocation.getCurrentPosition()</code></label><label for="__tabbed_8_2"><code>navigator.getBattery()</code></label><label for="__tabbed_8_3"><code>navigator.mediaDevices.getUserMedia()</code></label><label for="__tabbed_8_4"><code>navigator.vibrate()</code></label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>Retorna a localização atual do usuário.</p>
+</div>
+<div class="tabbed-block">
+<p>Retorna uma promessa que resolve com informações sobre o estado da bateria do dispositivo.</p>
+</div>
+<div class="tabbed-block">
+<p>Permite acessar a câmera e o microfone do dispositivo.</p>
+</div>
+<div class="tabbed-block">
+<p>Ativa a vibração do dispositivo.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<h2 id="biblioteca-jquery">Biblioteca jQuery<a class="headerlink" href="#biblioteca-jquery" title="Permanent link">&para;</a></h2>
+<p>jQuery é uma biblioteca JavaScript muito popular por ser rápida, pequena e rica em recursos. Basicamente seu uso torna a varredura e manipulação de documentos HTML, manipulação de eventos, animação e Ajax muito mais simples do que utilizar código JavaScript <em>vanilla</em>.</p>
+<div class="admonition info">
+<p class="admonition-title">Nota</p>
+<p><em>Vanilla</em> é um termo utilizado para indicar o uso de uma tecnologia de forma pura, básica. Nenhuma biblioteca ou framework não nativo é aplicado.</p>
+</div>
+<p>Para incluir a última versão do jQuery em um projeto, podemos utilizar um CDN (<em>Content Delivery Network</em>) ou baixar a biblioteca e incluí-la localmente. Quando utilizamos CDN, adicionamos à tag  <code>&lt;head&gt;</code> do documento uma tag <code>&lt;script&gt;</code>, informando no atributo <em>src</em> da mesma o endereço de <a href="https://releases.jquery.com/jquery/">CDN da versão desejada</a>. Caso a opção seja baixar a biblioteca localmente, o atributo <code>src</code> deve receber o caminho local para o arquivo JavaScript. No exemplo está sendo utilizado o endereço de CDN.</p>
+<div class="language-html highlight"><pre><span></span><code><span id="__span-26-1"><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a><span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://code.jquery.com/jquery-3.7.1.min.js&quot;</span> <span class="na">integrity</span><span class="o">=</span><span class="s">&quot;sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=&quot;</span> <span class="na">crossorigin</span><span class="o">=</span><span class="s">&quot;anonymous&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</span><span id="__span-26-2"><a id="__codelineno-26-2" name="__codelineno-26-2" href="#__codelineno-26-2"></a>````
+</span><span id="__span-26-3"><a id="__codelineno-26-3" name="__codelineno-26-3" href="#__codelineno-26-3"></a>
+</span><span id="__span-26-4"><a id="__codelineno-26-4" name="__codelineno-26-4" href="#__codelineno-26-4"></a>
+</span><span id="__span-26-5"><a id="__codelineno-26-5" name="__codelineno-26-5" href="#__codelineno-26-5"></a>Ao adicionar o JQuery ao documento, temos a disposição um vasto conjunto de métodos utilitários para manipulação do DOM da página. No exemplo a seguir, o código está adicionando um *listener* de evento de click ao botão, de modo que, quando o botão receber o click, o texto de todos os parágrafos do documento irão ser atualizados com a informação *Você clicou no botão*.
+</span><span id="__span-26-6"><a id="__codelineno-26-6" name="__codelineno-26-6" href="#__codelineno-26-6"></a>
+</span><span id="__span-26-7"><a id="__codelineno-26-7" name="__codelineno-26-7" href="#__codelineno-26-7"></a>```html
+</span><span id="__span-26-8"><a id="__codelineno-26-8" name="__codelineno-26-8" href="#__codelineno-26-8"></a><span class="cp">&lt;!DOCTYPE html&gt;</span>
+</span><span id="__span-26-9"><a id="__codelineno-26-9" name="__codelineno-26-9" href="#__codelineno-26-9"></a><span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">&quot;pt-BR&quot;</span><span class="p">&gt;</span>
+</span><span id="__span-26-10"><a id="__codelineno-26-10" name="__codelineno-26-10" href="#__codelineno-26-10"></a><span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+</span><span id="__span-26-11"><a id="__codelineno-26-11" name="__codelineno-26-11" href="#__codelineno-26-11"></a>    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&quot;UTF-8&quot;</span><span class="p">&gt;</span>
+</span><span id="__span-26-12"><a id="__codelineno-26-12" name="__codelineno-26-12" href="#__codelineno-26-12"></a>    <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Exemplo jQuery<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+</span><span id="__span-26-13"><a id="__codelineno-26-13" name="__codelineno-26-13" href="#__codelineno-26-13"></a>    <span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://code.jquery.com/jquery-3.6.0.min.js&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</span><span id="__span-26-14"><a id="__codelineno-26-14" name="__codelineno-26-14" href="#__codelineno-26-14"></a>    <span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span>
+</span><span id="__span-26-15"><a id="__codelineno-26-15" name="__codelineno-26-15" href="#__codelineno-26-15"></a><span class="w">        </span><span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">(){</span>
+</span><span id="__span-26-16"><a id="__codelineno-26-16" name="__codelineno-26-16" href="#__codelineno-26-16"></a><span class="w">            </span><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;button&quot;</span><span class="p">).</span><span class="nx">click</span><span class="p">(</span><span class="kd">function</span><span class="p">(){</span>
+</span><span id="__span-26-17"><a id="__codelineno-26-17" name="__codelineno-26-17" href="#__codelineno-26-17"></a><span class="w">                </span><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;p&quot;</span><span class="p">).</span><span class="nx">text</span><span class="p">(</span><span class="s2">&quot;Você clicou no botão!&quot;</span><span class="p">);</span>
+</span><span id="__span-26-18"><a id="__codelineno-26-18" name="__codelineno-26-18" href="#__codelineno-26-18"></a><span class="w">            </span><span class="p">});</span>
+</span><span id="__span-26-19"><a id="__codelineno-26-19" name="__codelineno-26-19" href="#__codelineno-26-19"></a><span class="w">        </span><span class="p">});</span>
+</span><span id="__span-26-20"><a id="__codelineno-26-20" name="__codelineno-26-20" href="#__codelineno-26-20"></a><span class="w">    </span><span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</span><span id="__span-26-21"><a id="__codelineno-26-21" name="__codelineno-26-21" href="#__codelineno-26-21"></a><span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+</span><span id="__span-26-22"><a id="__codelineno-26-22" name="__codelineno-26-22" href="#__codelineno-26-22"></a><span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+</span><span id="__span-26-23"><a id="__codelineno-26-23" name="__codelineno-26-23" href="#__codelineno-26-23"></a>    <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Texto original<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</span><span id="__span-26-24"><a id="__codelineno-26-24" name="__codelineno-26-24" href="#__codelineno-26-24"></a>    <span class="p">&lt;</span><span class="nt">button</span><span class="p">&gt;</span>Clique aqui<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+</span><span id="__span-26-25"><a id="__codelineno-26-25" name="__codelineno-26-25" href="#__codelineno-26-25"></a><span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+</span><span id="__span-26-26"><a id="__codelineno-26-26" name="__codelineno-26-26" href="#__codelineno-26-26"></a><span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</span></code></pre></div>
+<p>Perceba que a sintaxe do JQuery sempre considera o uso da função <code>$()</code>, conhecida como <em>função JQuery</em>. O parâmetro da função deve ser um seletor válido, cuja sintaxe e funcionamento é idêntico aos seletores do CSS. Tal característica torna o uso da biblioteca mais familiar para profissionais que atuam na camada de <em>front-end</em>.</p>
+<p>Conforme já comentamos, um dos benefícios do uso do JQuery é a manipulação do DOM em relação ao JavaScript <em>vanilla</em> devido à sua capacidade de simplificar significativamente a manipulação do DOM e garantir maior consistência entre navegadores. Antes do advento de padrões modernos, como o ECMAScript 6, e da padronização mais ampla das APIs do DOM nos navegadores, havia muitas inconsistências no suporte a métodos e propriedades, dificultando o desenvolvimento de aplicações web que funcionassem de forma uniforme em diferentes ambientes. O jQuery resolveu esse problema ao fornecer uma interface unificada e confiável para manipulação de elementos, garantindo que o mesmo código funcionasse da mesma maneira, independentemente do navegador ou da versão utilizada.</p>
+<p>Além disso, o jQuery oferecia uma sintaxe muito mais curta e expressiva para realizar tarefas comuns, como selecionar elementos, adicionar eventos ou alterar propriedades de estilo. Com seus seletores baseados em CSS, ele tornava operações complexas no DOM mais acessíveis, eliminando a necessidade de código extenso e repetitivo. A manipulação de eventos também era simplificada, permitindo um gerenciamento mais eficiente de ações do usuário. Outra grande vantagem era o suporte integrado a animações e requisições AJAX, que eram difíceis de implementar de forma consistente utilizando apenas JavaScript <em>vanilla</em>. Vejamos alguns exemplos de uso:</p>
+<div class="admonition info">
+<p class="admonition-title">Ainda utiliza-se JQuery?</p>
+<p>Muitos projetos legados utilizam a biblioteca em sua base de código. Já para novos desenvolvimentos, se forem projetos mais simples, faz sentido pensar em utilizar JQuery. Já para aplicações de maior porte e/ou complexidade, existem opções significativamente melhores, como os frameworks de front-end  React, Angular ou Vue.js, por exemplo.   </p>
+</div>
+<div class="language-javascript highlight"><pre><span></span><code><span id="__span-27-1"><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a><span class="c1">// Adicionar um novo elemento como filho de outro</span>
+</span><span id="__span-27-2"><a id="__codelineno-27-2" name="__codelineno-27-2" href="#__codelineno-27-2"></a><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;body&quot;</span><span class="p">).</span><span class="nx">append</span><span class="p">(</span><span class="s2">&quot;&lt;p&gt;Novo parágrafo&lt;/p&gt;&quot;</span><span class="p">);</span>
+</span><span id="__span-27-3"><a id="__codelineno-27-3" name="__codelineno-27-3" href="#__codelineno-27-3"></a><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;body&quot;</span><span class="p">).</span><span class="nx">prepend</span><span class="p">(</span><span class="s2">&quot;&lt;p&gt;Novo parágrafo no início&lt;/p&gt;&quot;</span><span class="p">);</span>
+</span><span id="__span-27-4"><a id="__codelineno-27-4" name="__codelineno-27-4" href="#__codelineno-27-4"></a>
+</span><span id="__span-27-5"><a id="__codelineno-27-5" name="__codelineno-27-5" href="#__codelineno-27-5"></a><span class="c1">// Remover um elemento</span>
+</span><span id="__span-27-6"><a id="__codelineno-27-6" name="__codelineno-27-6" href="#__codelineno-27-6"></a><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#meuId&quot;</span><span class="p">).</span><span class="nx">remove</span><span class="p">();</span>
+</span><span id="__span-27-7"><a id="__codelineno-27-7" name="__codelineno-27-7" href="#__codelineno-27-7"></a>
+</span><span id="__span-27-8"><a id="__codelineno-27-8" name="__codelineno-27-8" href="#__codelineno-27-8"></a><span class="c1">//lterar valor de atributos</span>
+</span><span id="__span-27-9"><a id="__codelineno-27-9" name="__codelineno-27-9" href="#__codelineno-27-9"></a><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;img&quot;</span><span class="p">).</span><span class="nx">attr</span><span class="p">(</span><span class="s2">&quot;src&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;nova-imagem.jpg&quot;</span><span class="p">);</span>
+</span><span id="__span-27-10"><a id="__codelineno-27-10" name="__codelineno-27-10" href="#__codelineno-27-10"></a>
+</span><span id="__span-27-11"><a id="__codelineno-27-11" name="__codelineno-27-11" href="#__codelineno-27-11"></a>
+</span><span id="__span-27-12"><a id="__codelineno-27-12" name="__codelineno-27-12" href="#__codelineno-27-12"></a><span class="c1">//Adicionar *listener* de evento de clique</span>
+</span><span id="__span-27-13"><a id="__codelineno-27-13" name="__codelineno-27-13" href="#__codelineno-27-13"></a><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;button&quot;</span><span class="p">).</span><span class="nx">click</span><span class="p">(</span><span class="kd">function</span><span class="p">(){</span>
+</span><span id="__span-27-14"><a id="__codelineno-27-14" name="__codelineno-27-14" href="#__codelineno-27-14"></a><span class="w">    </span><span class="nx">alert</span><span class="p">(</span><span class="s2">&quot;Botão clicado!&quot;</span><span class="p">);</span>
+</span><span id="__span-27-15"><a id="__codelineno-27-15" name="__codelineno-27-15" href="#__codelineno-27-15"></a><span class="p">});</span>
+</span><span id="__span-27-16"><a id="__codelineno-27-16" name="__codelineno-27-16" href="#__codelineno-27-16"></a>
+</span><span id="__span-27-17"><a id="__codelineno-27-17" name="__codelineno-27-17" href="#__codelineno-27-17"></a><span class="c1">//Adicionar *listener* de evento de &quot;mouse sobre&quot;</span>
+</span><span id="__span-27-18"><a id="__codelineno-27-18" name="__codelineno-27-18" href="#__codelineno-27-18"></a><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;p&quot;</span><span class="p">).</span><span class="nx">mouseover</span><span class="p">(</span><span class="kd">function</span><span class="p">(){</span>
+</span><span id="__span-27-19"><a id="__codelineno-27-19" name="__codelineno-27-19" href="#__codelineno-27-19"></a><span class="w">    </span><span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">css</span><span class="p">(</span><span class="s2">&quot;color&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;red&quot;</span><span class="p">);</span>
+</span><span id="__span-27-20"><a id="__codelineno-27-20" name="__codelineno-27-20" href="#__codelineno-27-20"></a><span class="p">});</span>
+</span><span id="__span-27-21"><a id="__codelineno-27-21" name="__codelineno-27-21" href="#__codelineno-27-21"></a>
+</span><span id="__span-27-22"><a id="__codelineno-27-22" name="__codelineno-27-22" href="#__codelineno-27-22"></a><span class="c1">//Esconder ou mostrar elementos (`.hide()` e `.show()`)</span>
+</span><span id="__span-27-23"><a id="__codelineno-27-23" name="__codelineno-27-23" href="#__codelineno-27-23"></a><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#meuElemento&quot;</span><span class="p">).</span><span class="nx">hide</span><span class="p">();</span>
+</span><span id="__span-27-24"><a id="__codelineno-27-24" name="__codelineno-27-24" href="#__codelineno-27-24"></a><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#meuElemento&quot;</span><span class="p">).</span><span class="nx">show</span><span class="p">();</span>
+</span><span id="__span-27-25"><a id="__codelineno-27-25" name="__codelineno-27-25" href="#__codelineno-27-25"></a><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#meuElemento&quot;</span><span class="p">).</span><span class="nx">toggle</span><span class="p">();</span>
+</span><span id="__span-27-26"><a id="__codelineno-27-26" name="__codelineno-27-26" href="#__codelineno-27-26"></a>
+</span><span id="__span-27-27"><a id="__codelineno-27-27" name="__codelineno-27-27" href="#__codelineno-27-27"></a><span class="c1">//Aplicação de estilos</span>
+</span><span id="__span-27-28"><a id="__codelineno-27-28" name="__codelineno-27-28" href="#__codelineno-27-28"></a><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;p&quot;</span><span class="p">).</span><span class="nx">css</span><span class="p">(</span><span class="s2">&quot;color&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;blue&quot;</span><span class="p">);</span>
+</span><span id="__span-27-29"><a id="__codelineno-27-29" name="__codelineno-27-29" href="#__codelineno-27-29"></a>
+</span><span id="__span-27-30"><a id="__codelineno-27-30" name="__codelineno-27-30" href="#__codelineno-27-30"></a><span class="c1">// Definição do conteúdo dos elementos</span>
+</span><span id="__span-27-31"><a id="__codelineno-27-31" name="__codelineno-27-31" href="#__codelineno-27-31"></a><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#meuElemento&quot;</span><span class="p">).</span><span class="nx">html</span><span class="p">(</span><span class="s2">&quot;&lt;strong&gt;Novo conteúdo HTML&lt;/strong&gt;&quot;</span><span class="p">);</span>
+</span><span id="__span-27-32"><a id="__codelineno-27-32" name="__codelineno-27-32" href="#__codelineno-27-32"></a><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#meuElemento&quot;</span><span class="p">).</span><span class="nx">text</span><span class="p">(</span><span class="s2">&quot;Novo conteúdo de texto&quot;</span><span class="p">);</span>
+</span></code></pre></div>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:1">
+<p>DHIS2 Design Lab. Introduction to javascript. 2025. URL: <a href="https://dhis2-app-course.ifi.uio.no/learn/javascript/introduction/getting-started/">https://dhis2-app-course.ifi.uio.no/learn/javascript/introduction/getting-started/</a>.&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn:2">
+<p>DigitalOcean. How to use the javascript fetch api to get data. 2024. URL: <a href="https://www.digitalocean.com/community/tutorials/how-to-use-the-javascript-fetch-api-to-get-data">https://www.digitalocean.com/community/tutorials/how-to-use-the-javascript-fetch-api-to-get-data</a>.&#160;<a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../../m-2/m-2/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Módulo II - Cascading Style Sheets">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Módulo II - Cascading Style Sheets
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../../../ads-164/" class="md-footer__link md-footer__link--next" aria-label="Next: Desenvolvimento Mobile">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Desenvolvimento Mobile
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2024 -  Diego A. Lusa
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://www.linkedin.com/in/diegolusa/" target="_blank" rel="noopener" title="www.linkedin.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3M135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5m282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="http://github.com/diegolusa" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../../../..", "features": ["navigation.top", "navigation.tabs", "navigation.instant", "toc.integrate", "toc.follow", "header.autohide", "navigation.footer", "navigation.top", "content.code.copy", "navigation.indexes"], "search": "../../../../../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../../../assets/javascripts/bundle.f1b6f286.min.js"></script>
+      
+        <script src="../../../../../javascript/config.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>
