@@ -1,0 +1,1 @@
+docker run -p 5432:5432 -d -e POSTGRESQL_PASSWORD=diego bitnami/postgresql:latest
