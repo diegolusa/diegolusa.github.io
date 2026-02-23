@@ -1,0 +1,1271 @@
+
+<!DOCTYPE html>
+
+<html class="no-js" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<link href="../fundamentos/" rel="prev"/>
+<link href="../navegacao/" rel="next"/>
+<link href="../../../../img/icon.ico" rel="icon"/>
+<meta content="mkdocs-1.6.1, mkdocs-material-9.6.4" name="generator"/>
+<title>Interfaces Android com XML (Views) - Diego A. Lusa</title>
+<link href="../../../../assets/stylesheets/main.8608ea7d.min.css" rel="stylesheet"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+<link href="../../../../css/custom.css" rel="stylesheet"/>
+<script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+</head>
+<body dir="ltr">
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#visao-geral">
+          Skip to content
+        </a>
+</div>
+<div data-md-component="announce">
+<aside class="md-banner">
+<div class="md-banner__inner md-grid md-typeset">
+<button aria-label="Don't show this again" class="md-banner__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+</button>
+<div class="md-announcement md-announcement--alert">
+<p>
+<strong>Importante</strong>: Alguns conteúdos foram elaborados com apoio de ferramentas de IA
+    Generativa. Embora façamos revisões cuidadosas, é possível que hajam erros
+    ou inconsistências. Se identificar algum, por favor, entre em contato
+    solicitando a devida correção.
+  </p>
+</div>
+</div>
+<script>var el=document.querySelector("[data-md-component=announce]");if(el){var content=el.querySelector(".md-typeset");__md_hash(content.innerHTML)===__md_get("__announce")&&(el.hidden=!0)}</script>
+</aside>
+</div>
+<header class="md-header" data-md-component="header">
+<nav aria-label="Header" class="md-header__inner md-grid">
+<a aria-label="Diego A. Lusa" class="md-header__button md-logo" data-md-component="logo" href="../../../.." title="Diego A. Lusa">
+<img alt="logo" src="../../../../img/icon.png"/>
+</a>
+<label class="md-header__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+</label>
+<div class="md-header__title" data-md-component="header-title">
+<div class="md-header__ellipsis">
+<div class="md-header__topic">
+<span class="md-ellipsis">
+            Diego A. Lusa
+          </span>
+</div>
+<div class="md-header__topic" data-md-component="header-topic">
+<span class="md-ellipsis">
+            
+              Interfaces Android com XML (Views)
+            
+          </span>
+</div>
+</div>
+</div>
+<script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+<label class="md-header__button md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+</label>
+<div class="md-search" data-md-component="search" role="dialog">
+<label class="md-search__overlay" for="__search"></label>
+<div class="md-search__inner" role="search">
+<form class="md-search__form" name="search">
+<input aria-label="Search" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" name="query" placeholder="Search" required="" spellcheck="false" type="text"/>
+<label class="md-search__icon md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+</label>
+<nav aria-label="Search" class="md-search__options">
+<button aria-label="Clear" class="md-search__icon md-icon" tabindex="-1" title="Clear" type="reset">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+</button>
+</nav>
+</form>
+<div class="md-search__output">
+<div class="md-search__scrollwrap" data-md-scrollfix="" tabindex="0">
+<div class="md-search-result" data-md-component="search-result">
+<div class="md-search-result__meta">
+            Initializing search
+          </div>
+<ol class="md-search-result__list" role="presentation"></ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+</nav>
+</header>
+<div class="md-container" data-md-component="container">
+<nav aria-label="Tabs" class="md-tabs" data-md-component="tabs">
+<div class="md-grid">
+<ul class="md-tabs__list">
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../../..">
+        
+  
+    
+  
+  Home
+
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../../../informatica/editores-texto/introducao/">
+          
+  
+    
+  
+  Informática Básica
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../ads-153/">
+          
+  
+    
+  
+  Web
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../hads-005/">
+          
+  
+    
+  
+  Mobile I
+
+        </a>
+</li>
+<li class="md-tabs__item md-tabs__item--active">
+<a class="md-tabs__link" href="../">
+          
+  
+    
+  
+  Mobile II
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../ccc-275/">
+          
+  
+    
+  
+  Algoritmos e Programação
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../ccc-296/">
+          
+  
+    
+  
+  Inteligência Artificial
+
+        </a>
+</li>
+</ul>
+</div>
+</nav>
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Navigation" class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="Diego A. Lusa" class="md-nav__button md-logo" data-md-component="logo" href="../../../.." title="Diego A. Lusa">
+<img alt="logo" src="../../../../img/icon.png"/>
+</a>
+    Diego A. Lusa
+  </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../..">
+<span class="md-ellipsis">
+    Home
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+<span class="md-ellipsis">
+    Informática Básica
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_2">
+<span class="md-nav__icon md-icon"></span>
+            Informática Básica
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_1" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
+<span class="md-ellipsis">
+    Editores de Texto
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_1_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_1">
+<span class="md-nav__icon md-icon"></span>
+            Editores de Texto
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../informatica/editores-texto/introducao/">
+<span class="md-ellipsis">
+    Writer
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../informatica/editores-texto/estilos/">
+<span class="md-ellipsis">
+    Estilos
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../informatica/editores-texto/abnt/">
+<span class="md-ellipsis">
+    ABNT
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_3" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../ads-153/">
+<span class="md-ellipsis">
+    Web
+    
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_3_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_3">
+<span class="md-nav__icon md-icon"></span>
+            Web
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../ads-153/m-1/m-1/">
+<span class="md-ellipsis">
+    Módulo I - Fundamentos e Linguagem HTML5
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../ads-153/m-2/m-2/">
+<span class="md-ellipsis">
+    Módulo II - Cascading Style Sheets
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../ads-153/m-3/m-3/">
+<span class="md-ellipsis">
+    Módulo III - Linguagem JavaScript
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_4" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../hads-005/">
+<span class="md-ellipsis">
+    Mobile I
+    
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_4_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_4">
+<span class="md-nav__icon md-icon"></span>
+            Mobile I
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../hads-005/dispositivos/">
+<span class="md-ellipsis">
+    Evolução dos Dispositivos Móveis e dos Sistemas Operacionais
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_5" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../">
+<span class="md-ellipsis">
+    Mobile II
+    
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="true" aria-labelledby="__nav_5_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_5">
+<span class="md-nav__icon md-icon"></span>
+            Mobile II
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../kotlin/">
+<span class="md-ellipsis">
+    Módulo I - Linguagem Kotlin
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../fundamentos/">
+<span class="md-ellipsis">
+    Módulo II - Fundamentos de Android
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+<span class="md-ellipsis">
+    Módulo III - Layouts XML
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./">
+<span class="md-ellipsis">
+    Módulo III - Layouts XML
+    
+  </span>
+</a>
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#visao-geral">
+<span class="md-ellipsis">
+      Visão geral
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#conceitos-fundamentais-views-e-viewgroups">
+<span class="md-ellipsis">
+      Conceitos fundamentais: Views e ViewGroups
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#estrutura-de-recursos-e-organizacao-de-pastas">
+<span class="md-ellipsis">
+      Estrutura de recursos e organização de pastas
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#layouts-mais-usados">
+<span class="md-ellipsis">
+      Layouts mais usados
+    </span>
+</a>
+<nav aria-label="Layouts mais usados" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#constraintlayout-recomendado-para-telas-complexas">
+<span class="md-ellipsis">
+      ConstraintLayout (recomendado para telas complexas)
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#linearlayout-bom-para-estruturas-simples-em-linhacoluna">
+<span class="md-ellipsis">
+      LinearLayout (bom para estruturas simples em linha/coluna)
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#framelayout-bom-para-sobreposicoes">
+<span class="md-ellipsis">
+      FrameLayout (bom para sobreposições)
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#relativelayout-legado">
+<span class="md-ellipsis">
+      RelativeLayout (legado)
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#propriedades-essenciais-de-layout">
+<span class="md-ellipsis">
+      Propriedades essenciais de layout
+    </span>
+</a>
+<nav aria-label="Propriedades essenciais de layout" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#layout_width-e-layout_height">
+<span class="md-ellipsis">
+      layout_width e layout_height
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#margens-padding-e-gravidade">
+<span class="md-ellipsis">
+      Margens, padding e gravidade
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#unidades">
+<span class="md-ellipsis">
+      Unidades
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#ids-e-acesso-aos-componentes-findviewbyid-vs-viewbinding">
+<span class="md-ellipsis">
+      IDs e acesso aos componentes: findViewById vs ViewBinding
+    </span>
+</a>
+<nav aria-label="IDs e acesso aos componentes: findViewById vs ViewBinding" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#findviewbyid-mais-simples-mas-menos-seguro">
+<span class="md-ellipsis">
+      findViewById (mais simples, mas menos seguro)
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#viewbinding-recomendado">
+<span class="md-ellipsis">
+      ViewBinding (recomendado)
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#fragments-ui-modular-dentro-de-uma-activity">
+<span class="md-ellipsis">
+      Fragments (UI modular dentro de uma Activity)
+    </span>
+</a>
+<nav aria-label="Fragments (UI modular dentro de uma Activity)" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#exemplo-viewbinding-em-fragment">
+<span class="md-ellipsis">
+      Exemplo: ViewBinding em Fragment
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#eventos-e-interacoes">
+<span class="md-ellipsis">
+      Eventos e interações
+    </span>
+</a>
+<nav aria-label="Eventos e interações" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#clicks-e-listeners-comuns">
+<span class="md-ellipsis">
+      Clicks e listeners comuns
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#android-no-xml-ou-no-kotlin">
+<span class="md-ellipsis">
+      Android: no XML ou no Kotlin?
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#recyclerview-listas-performaticas-em-xml">
+<span class="md-ellipsis">
+      RecyclerView: listas performáticas em XML
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#recursos-resources-strings-dimens-cores-e-drawables">
+<span class="md-ellipsis">
+      Recursos (resources): strings, dimens, cores e drawables
+    </span>
+</a>
+<nav aria-label="Recursos (resources): strings, dimens, cores e drawables" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#strings-e-internacionalizacao">
+<span class="md-ellipsis">
+      Strings e internacionalização
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#dimens-e-consistencia-visual">
+<span class="md-ellipsis">
+      Dimens e consistência visual
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#drawables-shapes-e-seletores">
+<span class="md-ellipsis">
+      Drawables: shapes e seletores
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#estilos-e-temas">
+<span class="md-ellipsis">
+      Estilos e temas
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#inclusao-e-reutilizacao-de-layouts">
+<span class="md-ellipsis">
+      Inclusão e reutilização de layouts
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#acessibilidade-a11y">
+<span class="md-ellipsis">
+      Acessibilidade (a11y)
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#boas-praticas-de-performance-no-sistema-de-views">
+<span class="md-ellipsis">
+      Boas práticas de performance no sistema de Views
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#integracao-com-arquiteturas-modernas">
+<span class="md-ellipsis">
+      Integração com arquiteturas modernas
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#referencias">
+<span class="md-ellipsis">
+      Referências
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../navegacao/">
+<span class="md-ellipsis">
+    Módulo IV - Navegação e Ciclo de Vida
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../persistencia/">
+<span class="md-ellipsis">
+    Módulo V - Persistência de Dados
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../firebase/">
+<span class="md-ellipsis">
+    Módulo VI - Firebase
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../api/">
+<span class="md-ellipsis">
+    Módulo VII -  Consumo de APIs
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../publicacao/">
+<span class="md-ellipsis">
+    Modulo VIII - Publicação
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_6" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../ccc-275/">
+<span class="md-ellipsis">
+    Algoritmos e Programação
+    
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_6_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_6">
+<span class="md-nav__icon md-icon"></span>
+            Algoritmos e Programação
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../ccc-275/conteudo-python/">
+<span class="md-ellipsis">
+    Fundamentos de algoritmos e programação com Python
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_7" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../ccc-296/">
+<span class="md-ellipsis">
+    Inteligência Artificial
+    
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_7_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_7">
+<span class="md-nav__icon md-icon"></span>
+            Inteligência Artificial
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_7_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_7_2" id="__nav_7_2_label" tabindex="0">
+<span class="md-ellipsis">
+    Um pouco de história
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_7_2_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_7_2">
+<span class="md-nav__icon md-icon"></span>
+            Um pouco de história
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../ccc-312/historia/">
+<span class="md-ellipsis">
+    Fundamentos
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_7_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_7_3" id="__nav_7_3_label" tabindex="0">
+<span class="md-ellipsis">
+    Paradigma Evolutivo
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_7_3_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_7_3">
+<span class="md-nav__icon md-icon"></span>
+            Paradigma Evolutivo
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../ccc-296/ag/">
+<span class="md-ellipsis">
+    Algoritmos Genéticos
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_7_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_7_4" id="__nav_7_4_label" tabindex="0">
+<span class="md-ellipsis">
+    Paradigma Conexionista
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_7_4_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_7_4">
+<span class="md-nav__icon md-icon"></span>
+            Paradigma Conexionista
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../ccc-296/rna/">
+<span class="md-ellipsis">
+    Redes Neurais Artificiais
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_7_5" type="checkbox"/>
+<label class="md-nav__link" for="__nav_7_5" id="__nav_7_5_label" tabindex="0">
+<span class="md-ellipsis">
+    Inteligência Artificial Generativa
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_7_5_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_7_5">
+<span class="md-nav__icon md-icon"></span>
+            Inteligência Artificial Generativa
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../ccc-296/genai/">
+<span class="md-ellipsis">
+    Inteligência Artificial Generativa
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<h1>Módulo III - Layouts XML</h1>
+<h2 id="visao-geral">Visão geral<a class="headerlink" href="#visao-geral" title="Permanent link">¶</a></h2>
+<p>O desenvolvimento de interfaces Android “clássico” (pré-Compose) é baseado no <strong>sistema de Views</strong>. Nesse modelo, a interface é descrita principalmente em <strong>arquivos XML de layout</strong> e instanciada (“inflada”) em tempo de execução por uma <strong>Activity</strong> ou um <strong>Fragment</strong>. Mesmo com a popularização do Jetpack Compose, o ecossistema Android ainda possui muitos aplicativos, bibliotecas e telas em XML, tornando esse conteúdo essencial para manutenção, evolução e integração de projetos.</p>
+<p>Em termos de fluxo, o sistema costuma seguir a sequência: <strong>layout XML</strong> → <strong>inflação</strong> → <strong>referência aos componentes</strong> → <strong>tratamento de eventos</strong> → <strong>atualização da UI</strong>.</p>
+<div class="mermaid">flowchart TD
+    A["Resources: layout XML, strings, dimens, drawables"] --&gt; B[Activity/Fragment]
+    B --&gt; C[LayoutInflater]
+    C --&gt; D["View tree: ViewGroups + Views"]
+    D --&gt; E["Eventos: click, scroll, text change"]
+    E --&gt; F["Lógica (ViewModel/Use cases)"]
+    F --&gt; D
+</div>
+<p>A documentação oficial descreve os fundamentos do sistema de Views e layouts <sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup> e a estrutura de recursos (resources) <sup id="fnref:2"><a class="footnote-ref" href="#fn:2">2</a></sup>.</p>
+<h2 id="conceitos-fundamentais-views-e-viewgroups">Conceitos fundamentais: Views e ViewGroups<a class="headerlink" href="#conceitos-fundamentais-views-e-viewgroups" title="Permanent link">¶</a></h2>
+<p>Uma <strong>View</strong> é um componente visual individual (por exemplo, <code>TextView</code>, <code>Button</code>, <code>ImageView</code>). Um <strong>ViewGroup</strong> é um contêiner que organiza outras Views e define regras de posicionamento e medição (por exemplo, <code>LinearLayout</code>, <code>FrameLayout</code>, <code>ConstraintLayout</code>).</p>
+<p>O Android mede e desenha a UI em duas fases relevantes:</p>
+<ul>
+<li><strong>Measure pass</strong>: cada View calcula o tamanho com base em regras do pai e em suas próprias restrições.</li>
+<li><strong>Layout/Draw pass</strong>: o pai posiciona as filhas e o sistema desenha a árvore de Views.</li>
+</ul>
+<p>Compreender essas etapas ajuda a evitar problemas de performance e “saltos” visuais (re-layouts excessivos).</p>
+<h2 id="estrutura-de-recursos-e-organizacao-de-pastas">Estrutura de recursos e organização de pastas<a class="headerlink" href="#estrutura-de-recursos-e-organizacao-de-pastas" title="Permanent link">¶</a></h2>
+<p>Em um projeto Android padrão, os arquivos de UI em XML aparecem principalmente em:</p>
+<ul>
+<li><code>res/layout/</code>: layouts de Activities, Fragments e itens de listas</li>
+<li><code>res/drawable/</code>: shapes, seletores, vetores (<code>VectorDrawable</code>), imagens</li>
+<li><code>res/values/</code>: <code>strings.xml</code>, <code>colors.xml</code>, <code>dimens.xml</code>, <code>styles.xml</code>/<code>themes.xml</code></li>
+</ul>
+<p>Um objetivo importante é <strong>evitar valores “hard-coded”</strong> em layouts, centralizando textos, dimensões e cores em resources para facilitar manutenção e internacionalização.</p>
+<h2 id="layouts-mais-usados">Layouts mais usados<a class="headerlink" href="#layouts-mais-usados" title="Permanent link">¶</a></h2>
+<h3 id="constraintlayout-recomendado-para-telas-complexas">ConstraintLayout (recomendado para telas complexas)<a class="headerlink" href="#constraintlayout-recomendado-para-telas-complexas" title="Permanent link">¶</a></h3>
+<p>O <code>ConstraintLayout</code> é frequentemente a melhor escolha para telas de complexidade média/alta. Ele permite posicionar elementos por <strong>restrições</strong> (constraints), reduzindo a necessidade de muitos níveis de ViewGroups.</p>
+<p>Exemplo: layout de tela simples com título, campo e botão.</p>
+<div class="language-xml highlight"><pre><span></span><code><span id="__span-0-1"><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="cp">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span>
+</span><span id="__span-0-2"><a href="#__codelineno-0-2" id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="nt">&lt;androidx.constraintlayout.widget.ConstraintLayout</span>
+</span><span id="__span-0-3"><a href="#__codelineno-0-3" id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="w">    </span><span class="na">xmlns:android=</span><span class="s">"http://schemas.android.com/apk/res/android"</span>
+</span><span id="__span-0-4"><a href="#__codelineno-0-4" id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="w">    </span><span class="na">xmlns:app=</span><span class="s">"http://schemas.android.com/apk/res-auto"</span>
+</span><span id="__span-0-5"><a href="#__codelineno-0-5" id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="w">    </span><span class="na">android:layout_width=</span><span class="s">"match_parent"</span>
+</span><span id="__span-0-6"><a href="#__codelineno-0-6" id="__codelineno-0-6" name="__codelineno-0-6"></a><span class="w">    </span><span class="na">android:layout_height=</span><span class="s">"match_parent"</span>
+</span><span id="__span-0-7"><a href="#__codelineno-0-7" id="__codelineno-0-7" name="__codelineno-0-7"></a><span class="w">    </span><span class="na">android:padding=</span><span class="s">"16dp"</span><span class="nt">&gt;</span>
+</span><span id="__span-0-8"><a href="#__codelineno-0-8" id="__codelineno-0-8" name="__codelineno-0-8"></a>
+</span><span id="__span-0-9"><a href="#__codelineno-0-9" id="__codelineno-0-9" name="__codelineno-0-9"></a><span class="w">    </span><span class="nt">&lt;TextView</span>
+</span><span id="__span-0-10"><a href="#__codelineno-0-10" id="__codelineno-0-10" name="__codelineno-0-10"></a><span class="w">        </span><span class="na">android:id=</span><span class="s">"@+id/titulo"</span>
+</span><span id="__span-0-11"><a href="#__codelineno-0-11" id="__codelineno-0-11" name="__codelineno-0-11"></a><span class="w">        </span><span class="na">android:layout_width=</span><span class="s">"0dp"</span>
+</span><span id="__span-0-12"><a href="#__codelineno-0-12" id="__codelineno-0-12" name="__codelineno-0-12"></a><span class="w">        </span><span class="na">android:layout_height=</span><span class="s">"wrap_content"</span>
+</span><span id="__span-0-13"><a href="#__codelineno-0-13" id="__codelineno-0-13" name="__codelineno-0-13"></a><span class="w">        </span><span class="na">android:text=</span><span class="s">"@string/titulo_login"</span>
+</span><span id="__span-0-14"><a href="#__codelineno-0-14" id="__codelineno-0-14" name="__codelineno-0-14"></a><span class="w">        </span><span class="na">android:textAppearance=</span><span class="s">"@style/TextAppearance.Material3.HeadlineSmall"</span>
+</span><span id="__span-0-15"><a href="#__codelineno-0-15" id="__codelineno-0-15" name="__codelineno-0-15"></a><span class="w">        </span><span class="na">app:layout_constraintTop_toTopOf=</span><span class="s">"parent"</span>
+</span><span id="__span-0-16"><a href="#__codelineno-0-16" id="__codelineno-0-16" name="__codelineno-0-16"></a><span class="w">        </span><span class="na">app:layout_constraintStart_toStartOf=</span><span class="s">"parent"</span>
+</span><span id="__span-0-17"><a href="#__codelineno-0-17" id="__codelineno-0-17" name="__codelineno-0-17"></a><span class="w">        </span><span class="na">app:layout_constraintEnd_toEndOf=</span><span class="s">"parent"</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-0-18"><a href="#__codelineno-0-18" id="__codelineno-0-18" name="__codelineno-0-18"></a>
+</span><span id="__span-0-19"><a href="#__codelineno-0-19" id="__codelineno-0-19" name="__codelineno-0-19"></a><span class="w">    </span><span class="nt">&lt;EditText</span>
+</span><span id="__span-0-20"><a href="#__codelineno-0-20" id="__codelineno-0-20" name="__codelineno-0-20"></a><span class="w">        </span><span class="na">android:id=</span><span class="s">"@+id/email"</span>
+</span><span id="__span-0-21"><a href="#__codelineno-0-21" id="__codelineno-0-21" name="__codelineno-0-21"></a><span class="w">        </span><span class="na">android:layout_width=</span><span class="s">"0dp"</span>
+</span><span id="__span-0-22"><a href="#__codelineno-0-22" id="__codelineno-0-22" name="__codelineno-0-22"></a><span class="w">        </span><span class="na">android:layout_height=</span><span class="s">"wrap_content"</span>
+</span><span id="__span-0-23"><a href="#__codelineno-0-23" id="__codelineno-0-23" name="__codelineno-0-23"></a><span class="w">        </span><span class="na">android:hint=</span><span class="s">"@string/hint_email"</span>
+</span><span id="__span-0-24"><a href="#__codelineno-0-24" id="__codelineno-0-24" name="__codelineno-0-24"></a><span class="w">        </span><span class="na">android:inputType=</span><span class="s">"textEmailAddress"</span>
+</span><span id="__span-0-25"><a href="#__codelineno-0-25" id="__codelineno-0-25" name="__codelineno-0-25"></a><span class="w">        </span><span class="na">app:layout_constraintTop_toBottomOf=</span><span class="s">"@id/titulo"</span>
+</span><span id="__span-0-26"><a href="#__codelineno-0-26" id="__codelineno-0-26" name="__codelineno-0-26"></a><span class="w">        </span><span class="na">app:layout_constraintStart_toStartOf=</span><span class="s">"parent"</span>
+</span><span id="__span-0-27"><a href="#__codelineno-0-27" id="__codelineno-0-27" name="__codelineno-0-27"></a><span class="w">        </span><span class="na">app:layout_constraintEnd_toEndOf=</span><span class="s">"parent"</span>
+</span><span id="__span-0-28"><a href="#__codelineno-0-28" id="__codelineno-0-28" name="__codelineno-0-28"></a><span class="w">        </span><span class="na">android:layout_marginTop=</span><span class="s">"16dp"</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-0-29"><a href="#__codelineno-0-29" id="__codelineno-0-29" name="__codelineno-0-29"></a>
+</span><span id="__span-0-30"><a href="#__codelineno-0-30" id="__codelineno-0-30" name="__codelineno-0-30"></a><span class="w">    </span><span class="nt">&lt;Button</span>
+</span><span id="__span-0-31"><a href="#__codelineno-0-31" id="__codelineno-0-31" name="__codelineno-0-31"></a><span class="w">        </span><span class="na">android:id=</span><span class="s">"@+id/entrar"</span>
+</span><span id="__span-0-32"><a href="#__codelineno-0-32" id="__codelineno-0-32" name="__codelineno-0-32"></a><span class="w">        </span><span class="na">android:layout_width=</span><span class="s">"0dp"</span>
+</span><span id="__span-0-33"><a href="#__codelineno-0-33" id="__codelineno-0-33" name="__codelineno-0-33"></a><span class="w">        </span><span class="na">android:layout_height=</span><span class="s">"wrap_content"</span>
+</span><span id="__span-0-34"><a href="#__codelineno-0-34" id="__codelineno-0-34" name="__codelineno-0-34"></a><span class="w">        </span><span class="na">android:text=</span><span class="s">"@string/acao_entrar"</span>
+</span><span id="__span-0-35"><a href="#__codelineno-0-35" id="__codelineno-0-35" name="__codelineno-0-35"></a><span class="w">        </span><span class="na">app:layout_constraintTop_toBottomOf=</span><span class="s">"@id/email"</span>
+</span><span id="__span-0-36"><a href="#__codelineno-0-36" id="__codelineno-0-36" name="__codelineno-0-36"></a><span class="w">        </span><span class="na">app:layout_constraintStart_toStartOf=</span><span class="s">"parent"</span>
+</span><span id="__span-0-37"><a href="#__codelineno-0-37" id="__codelineno-0-37" name="__codelineno-0-37"></a><span class="w">        </span><span class="na">app:layout_constraintEnd_toEndOf=</span><span class="s">"parent"</span>
+</span><span id="__span-0-38"><a href="#__codelineno-0-38" id="__codelineno-0-38" name="__codelineno-0-38"></a><span class="w">        </span><span class="na">android:layout_marginTop=</span><span class="s">"16dp"</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-0-39"><a href="#__codelineno-0-39" id="__codelineno-0-39" name="__codelineno-0-39"></a>
+</span><span id="__span-0-40"><a href="#__codelineno-0-40" id="__codelineno-0-40" name="__codelineno-0-40"></a><span class="nt">&lt;/androidx.constraintlayout.widget.ConstraintLayout&gt;</span>
+</span></code></pre></div>
+<p>== info "Boas práticas:"
+  - <code>layout_width="0dp"</code> em <code>ConstraintLayout</code> significa “match constraints” (preencher o espaço respeitando constraints).
+  - Preferir constraints claras e evitar cadeias (chains) desnecessárias quando a tela é simples.</p>
+<h3 id="linearlayout-bom-para-estruturas-simples-em-linhacoluna">LinearLayout (bom para estruturas simples em linha/coluna)<a class="headerlink" href="#linearlayout-bom-para-estruturas-simples-em-linhacoluna" title="Permanent link">¶</a></h3>
+<p><code>LinearLayout</code> organiza componentes em uma direção (<code>vertical</code> ou <code>horizontal</code>). É útil em layouts simples, mas pode gerar hierarquias profundas quando combinado em excesso.</p>
+<div class="language-xml highlight"><pre><span></span><code><span id="__span-1-1"><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="nt">&lt;LinearLayout</span>
+</span><span id="__span-1-2"><a href="#__codelineno-1-2" id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="w">    </span><span class="na">xmlns:android=</span><span class="s">"http://schemas.android.com/apk/res/android"</span>
+</span><span id="__span-1-3"><a href="#__codelineno-1-3" id="__codelineno-1-3" name="__codelineno-1-3"></a><span class="w">    </span><span class="na">android:layout_width=</span><span class="s">"match_parent"</span>
+</span><span id="__span-1-4"><a href="#__codelineno-1-4" id="__codelineno-1-4" name="__codelineno-1-4"></a><span class="w">    </span><span class="na">android:layout_height=</span><span class="s">"wrap_content"</span>
+</span><span id="__span-1-5"><a href="#__codelineno-1-5" id="__codelineno-1-5" name="__codelineno-1-5"></a><span class="w">    </span><span class="na">android:orientation=</span><span class="s">"vertical"</span>
+</span><span id="__span-1-6"><a href="#__codelineno-1-6" id="__codelineno-1-6" name="__codelineno-1-6"></a><span class="w">    </span><span class="na">android:padding=</span><span class="s">"16dp"</span><span class="nt">&gt;</span>
+</span><span id="__span-1-7"><a href="#__codelineno-1-7" id="__codelineno-1-7" name="__codelineno-1-7"></a>
+</span><span id="__span-1-8"><a href="#__codelineno-1-8" id="__codelineno-1-8" name="__codelineno-1-8"></a><span class="w">    </span><span class="nt">&lt;TextView</span>
+</span><span id="__span-1-9"><a href="#__codelineno-1-9" id="__codelineno-1-9" name="__codelineno-1-9"></a><span class="w">        </span><span class="na">android:layout_width=</span><span class="s">"wrap_content"</span>
+</span><span id="__span-1-10"><a href="#__codelineno-1-10" id="__codelineno-1-10" name="__codelineno-1-10"></a><span class="w">        </span><span class="na">android:layout_height=</span><span class="s">"wrap_content"</span>
+</span><span id="__span-1-11"><a href="#__codelineno-1-11" id="__codelineno-1-11" name="__codelineno-1-11"></a><span class="w">        </span><span class="na">android:text=</span><span class="s">"@string/titulo"</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-1-12"><a href="#__codelineno-1-12" id="__codelineno-1-12" name="__codelineno-1-12"></a>
+</span><span id="__span-1-13"><a href="#__codelineno-1-13" id="__codelineno-1-13" name="__codelineno-1-13"></a><span class="w">    </span><span class="nt">&lt;Button</span>
+</span><span id="__span-1-14"><a href="#__codelineno-1-14" id="__codelineno-1-14" name="__codelineno-1-14"></a><span class="w">        </span><span class="na">android:layout_width=</span><span class="s">"match_parent"</span>
+</span><span id="__span-1-15"><a href="#__codelineno-1-15" id="__codelineno-1-15" name="__codelineno-1-15"></a><span class="w">        </span><span class="na">android:layout_height=</span><span class="s">"wrap_content"</span>
+</span><span id="__span-1-16"><a href="#__codelineno-1-16" id="__codelineno-1-16" name="__codelineno-1-16"></a><span class="w">        </span><span class="na">android:text=</span><span class="s">"@string/acao"</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-1-17"><a href="#__codelineno-1-17" id="__codelineno-1-17" name="__codelineno-1-17"></a>
+</span><span id="__span-1-18"><a href="#__codelineno-1-18" id="__codelineno-1-18" name="__codelineno-1-18"></a><span class="nt">&lt;/LinearLayout&gt;</span>
+</span></code></pre></div>
+<h3 id="framelayout-bom-para-sobreposicoes">FrameLayout (bom para sobreposições)<a class="headerlink" href="#framelayout-bom-para-sobreposicoes" title="Permanent link">¶</a></h3>
+<p><code>FrameLayout</code> costuma ser usado para sobrepor elementos (por exemplo, conteúdo + loading). Em telas modernas, é comum vê-lo como container de <code>Fragment</code>.</p>
+<h3 id="relativelayout-legado">RelativeLayout (legado)<a class="headerlink" href="#relativelayout-legado" title="Permanent link">¶</a></h3>
+<p>Hoje é menos utilizado porque o <code>ConstraintLayout</code> cobre a maior parte dos casos com melhor ergonomia e performance. Em manutenção de projetos antigos, ainda aparece com frequência.</p>
+<h2 id="propriedades-essenciais-de-layout">Propriedades essenciais de layout<a class="headerlink" href="#propriedades-essenciais-de-layout" title="Permanent link">¶</a></h2>
+<h3 id="layout_width-e-layout_height"><code>layout_width</code> e <code>layout_height</code><a class="headerlink" href="#layout_width-e-layout_height" title="Permanent link">¶</a></h3>
+<ul>
+<li><code>wrap_content</code>: ajusta ao conteúdo</li>
+<li><code>match_parent</code>: ocupa o máximo permitido pelo pai</li>
+<li>valor em <code>dp</code>: tamanho fixo (usar com cuidado)</li>
+</ul>
+<h3 id="margens-padding-e-gravidade">Margens, padding e gravidade<a class="headerlink" href="#margens-padding-e-gravidade" title="Permanent link">¶</a></h3>
+<ul>
+<li><code>android:padding</code>: espaço interno da View</li>
+<li><code>android:layout_margin</code>: espaço externo (entre a View e o entorno)</li>
+<li><code>android:gravity</code>: alinha conteúdo dentro da View</li>
+<li><code>android:layout_gravity</code>: alinha a View dentro de certos ViewGroups (por exemplo, <code>LinearLayout</code>)</li>
+</ul>
+<h3 id="unidades">Unidades<a class="headerlink" href="#unidades" title="Permanent link">¶</a></h3>
+<ul>
+<li><code>dp</code>: dimensão para layout</li>
+<li><code>sp</code>: tamanho de texto</li>
+</ul>
+<p>O uso de <code>sp</code> para texto melhora acessibilidade, pois respeita configurações de fonte do sistema.</p>
+<h2 id="ids-e-acesso-aos-componentes-findviewbyid-vs-viewbinding">IDs e acesso aos componentes: findViewById vs ViewBinding<a class="headerlink" href="#ids-e-acesso-aos-componentes-findviewbyid-vs-viewbinding" title="Permanent link">¶</a></h2>
+<h3 id="findviewbyid-mais-simples-mas-menos-seguro">findViewById (mais simples, mas menos seguro)<a class="headerlink" href="#findviewbyid-mais-simples-mas-menos-seguro" title="Permanent link">¶</a></h3>
+<p>O <code>findViewById</code> exige cast e é propenso a erros quando IDs mudam.</p>
+<div class="language-kotlin highlight"><pre><span></span><code><span id="__span-2-1"><a href="#__codelineno-2-1" id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="kd">val</span><span class="w"> </span><span class="nv">botao</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">findViewById</span><span class="o">&lt;</span><span class="n">Button</span><span class="o">&gt;</span><span class="p">(</span><span class="n">R</span><span class="p">.</span><span class="na">id</span><span class="p">.</span><span class="na">entrar</span><span class="p">)</span>
+</span><span id="__span-2-2"><a href="#__codelineno-2-2" id="__codelineno-2-2" name="__codelineno-2-2"></a><span class="n">botao</span><span class="p">.</span><span class="na">setOnClickListener</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-2-3"><a href="#__codelineno-2-3" id="__codelineno-2-3" name="__codelineno-2-3"></a><span class="w">    </span><span class="c1">// ação</span>
+</span><span id="__span-2-4"><a href="#__codelineno-2-4" id="__codelineno-2-4" name="__codelineno-2-4"></a><span class="p">}</span>
+</span></code></pre></div>
+<h3 id="viewbinding-recomendado">ViewBinding (recomendado)<a class="headerlink" href="#viewbinding-recomendado" title="Permanent link">¶</a></h3>
+<p>O <strong>ViewBinding</strong> gera classes tipadas para cada layout, reduzindo <code>NullPointerException</code> e casts. Para habilitar:</p>
+<div class="language-kotlin highlight"><pre><span></span><code><span id="__span-3-1"><a href="#__codelineno-3-1" id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="n">android</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-3-2"><a href="#__codelineno-3-2" id="__codelineno-3-2" name="__codelineno-3-2"></a><span class="w">    </span><span class="n">buildFeatures</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-3-3"><a href="#__codelineno-3-3" id="__codelineno-3-3" name="__codelineno-3-3"></a><span class="w">        </span><span class="n">viewBinding</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span>
+</span><span id="__span-3-4"><a href="#__codelineno-3-4" id="__codelineno-3-4" name="__codelineno-3-4"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-3-5"><a href="#__codelineno-3-5" id="__codelineno-3-5" name="__codelineno-3-5"></a><span class="p">}</span>
+</span></code></pre></div>
+<p>Uso em Activity:</p>
+<div class="language-kotlin highlight"><pre><span></span><code><span id="__span-4-1"><a href="#__codelineno-4-1" id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="kd">class</span><span class="w"> </span><span class="nc">LoginActivity</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">AppCompatActivity</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-4-2"><a href="#__codelineno-4-2" id="__codelineno-4-2" name="__codelineno-4-2"></a>
+</span><span id="__span-4-3"><a href="#__codelineno-4-3" id="__codelineno-4-3" name="__codelineno-4-3"></a><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">lateinit</span><span class="w"> </span><span class="kd">var</span><span class="w"> </span><span class="nv">binding</span><span class="p">:</span><span class="w"> </span><span class="n">ActivityLoginBinding</span>
+</span><span id="__span-4-4"><a href="#__codelineno-4-4" id="__codelineno-4-4" name="__codelineno-4-4"></a>
+</span><span id="__span-4-5"><a href="#__codelineno-4-5" id="__codelineno-4-5" name="__codelineno-4-5"></a><span class="w">    </span><span class="kd">override</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="nf">onCreate</span><span class="p">(</span><span class="n">savedInstanceState</span><span class="p">:</span><span class="w"> </span><span class="n">Bundle?)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-4-6"><a href="#__codelineno-4-6" id="__codelineno-4-6" name="__codelineno-4-6"></a><span class="w">        </span><span class="k">super</span><span class="p">.</span><span class="na">onCreate</span><span class="p">(</span><span class="n">savedInstanceState</span><span class="p">)</span>
+</span><span id="__span-4-7"><a href="#__codelineno-4-7" id="__codelineno-4-7" name="__codelineno-4-7"></a><span class="w">        </span><span class="n">binding</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ActivityLoginBinding</span><span class="p">.</span><span class="na">inflate</span><span class="p">(</span><span class="n">layoutInflater</span><span class="p">)</span>
+</span><span id="__span-4-8"><a href="#__codelineno-4-8" id="__codelineno-4-8" name="__codelineno-4-8"></a><span class="w">        </span><span class="n">setContentView</span><span class="p">(</span><span class="n">binding</span><span class="p">.</span><span class="na">root</span><span class="p">)</span>
+</span><span id="__span-4-9"><a href="#__codelineno-4-9" id="__codelineno-4-9" name="__codelineno-4-9"></a>
+</span><span id="__span-4-10"><a href="#__codelineno-4-10" id="__codelineno-4-10" name="__codelineno-4-10"></a><span class="w">        </span><span class="n">binding</span><span class="p">.</span><span class="na">entrar</span><span class="p">.</span><span class="na">setOnClickListener</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-4-11"><a href="#__codelineno-4-11" id="__codelineno-4-11" name="__codelineno-4-11"></a><span class="w">            </span><span class="kd">val</span><span class="w"> </span><span class="nv">email</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">binding</span><span class="p">.</span><span class="na">email</span><span class="p">.</span><span class="na">text</span><span class="p">.</span><span class="na">toString</span><span class="p">()</span>
+</span><span id="__span-4-12"><a href="#__codelineno-4-12" id="__codelineno-4-12" name="__codelineno-4-12"></a><span class="w">            </span><span class="c1">// validação e ação</span>
+</span><span id="__span-4-13"><a href="#__codelineno-4-13" id="__codelineno-4-13" name="__codelineno-4-13"></a><span class="w">        </span><span class="p">}</span>
+</span><span id="__span-4-14"><a href="#__codelineno-4-14" id="__codelineno-4-14" name="__codelineno-4-14"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-4-15"><a href="#__codelineno-4-15" id="__codelineno-4-15" name="__codelineno-4-15"></a><span class="p">}</span>
+</span></code></pre></div>
+<p>Em projetos com Fragments, é comum usar ViewBinding com cuidado para evitar <em>memory leaks</em> (limpando a referência no <code>onDestroyView</code>).</p>
+<h2 id="fragments-ui-modular-dentro-de-uma-activity">Fragments (UI modular dentro de uma Activity)<a class="headerlink" href="#fragments-ui-modular-dentro-de-uma-activity" title="Permanent link">¶</a></h2>
+<p>No sistema de Views, um <strong>Fragment</strong> é um componente que encapsula uma porção de UI e pode ser combinado com outros fragments dentro de uma mesma Activity. Ele é especialmente útil quando se deseja:</p>
+<ul>
+<li>separar uma tela em partes reaproveitáveis (por exemplo, “lista” e “detalhe”);</li>
+<li>suportar diferentes tamanhos de tela com a mesma base de código (celular vs tablet);</li>
+<li>manter uma Activity mais enxuta, delegando UI e eventos para componentes menores.</li>
+</ul>
+<p>A diferença central em relação à Activity é o <strong>escopo</strong>: a Activity é uma tela de alto nível e o Fragment é um componente de UI hospedado dentro dela. Além disso, Fragments possuem um detalhe importante: o ciclo de vida da <strong>View do Fragment</strong> é separado do ciclo de vida do Fragment, sendo criado em <code>onCreateView</code> e destruído em <code>onDestroyView</code> <sup id="fnref:3"><a class="footnote-ref" href="#fn:3">3</a></sup>.</p>
+<h3 id="exemplo-viewbinding-em-fragment">Exemplo: ViewBinding em Fragment<a class="headerlink" href="#exemplo-viewbinding-em-fragment" title="Permanent link">¶</a></h3>
+<p>Em Fragments, é comum manter o binding como variável anulável e limpá-lo em <code>onDestroyView</code>, evitando manter referências para Views que já foram destruídas.</p>
+<div class="language-kotlin highlight"><pre><span></span><code><span id="__span-5-1"><a href="#__codelineno-5-1" id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="kd">class</span><span class="w"> </span><span class="nc">PerfilFragment</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">Fragment</span><span class="p">(</span><span class="n">R</span><span class="p">.</span><span class="na">layout</span><span class="p">.</span><span class="na">fragment_perfil</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-5-2"><a href="#__codelineno-5-2" id="__codelineno-5-2" name="__codelineno-5-2"></a>
+</span><span id="__span-5-3"><a href="#__codelineno-5-3" id="__codelineno-5-3" name="__codelineno-5-3"></a><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">var</span><span class="w"> </span><span class="nv">_binding</span><span class="p">:</span><span class="w"> </span><span class="n">FragmentPerfilBinding? </span><span class="o">=</span><span class="w"> </span><span class="kc">null</span>
+</span><span id="__span-5-4"><a href="#__codelineno-5-4" id="__codelineno-5-4" name="__codelineno-5-4"></a><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">val</span><span class="w"> </span><span class="nv">binding</span><span class="w"> </span><span class="k">get</span><span class="p">()</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">_binding</span><span class="o">!!</span>
+</span><span id="__span-5-5"><a href="#__codelineno-5-5" id="__codelineno-5-5" name="__codelineno-5-5"></a>
+</span><span id="__span-5-6"><a href="#__codelineno-5-6" id="__codelineno-5-6" name="__codelineno-5-6"></a><span class="w">    </span><span class="kd">override</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="nf">onViewCreated</span><span class="p">(</span><span class="n">view</span><span class="p">:</span><span class="w"> </span><span class="n">View</span><span class="p">,</span><span class="w"> </span><span class="n">savedInstanceState</span><span class="p">:</span><span class="w"> </span><span class="n">Bundle?)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-5-7"><a href="#__codelineno-5-7" id="__codelineno-5-7" name="__codelineno-5-7"></a><span class="w">        </span><span class="k">super</span><span class="p">.</span><span class="na">onViewCreated</span><span class="p">(</span><span class="n">view</span><span class="p">,</span><span class="w"> </span><span class="n">savedInstanceState</span><span class="p">)</span>
+</span><span id="__span-5-8"><a href="#__codelineno-5-8" id="__codelineno-5-8" name="__codelineno-5-8"></a><span class="w">        </span><span class="n">_binding</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">FragmentPerfilBinding</span><span class="p">.</span><span class="na">bind</span><span class="p">(</span><span class="n">view</span><span class="p">)</span>
+</span><span id="__span-5-9"><a href="#__codelineno-5-9" id="__codelineno-5-9" name="__codelineno-5-9"></a>
+</span><span id="__span-5-10"><a href="#__codelineno-5-10" id="__codelineno-5-10" name="__codelineno-5-10"></a><span class="w">        </span><span class="n">binding</span><span class="p">.</span><span class="na">botaoSalvar</span><span class="p">.</span><span class="na">setOnClickListener</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-5-11"><a href="#__codelineno-5-11" id="__codelineno-5-11" name="__codelineno-5-11"></a><span class="w">            </span><span class="c1">// ação</span>
+</span><span id="__span-5-12"><a href="#__codelineno-5-12" id="__codelineno-5-12" name="__codelineno-5-12"></a><span class="w">        </span><span class="p">}</span>
+</span><span id="__span-5-13"><a href="#__codelineno-5-13" id="__codelineno-5-13" name="__codelineno-5-13"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-5-14"><a href="#__codelineno-5-14" id="__codelineno-5-14" name="__codelineno-5-14"></a>
+</span><span id="__span-5-15"><a href="#__codelineno-5-15" id="__codelineno-5-15" name="__codelineno-5-15"></a><span class="w">    </span><span class="kd">override</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="nf">onDestroyView</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-5-16"><a href="#__codelineno-5-16" id="__codelineno-5-16" name="__codelineno-5-16"></a><span class="w">        </span><span class="k">super</span><span class="p">.</span><span class="na">onDestroyView</span><span class="p">()</span>
+</span><span id="__span-5-17"><a href="#__codelineno-5-17" id="__codelineno-5-17" name="__codelineno-5-17"></a><span class="w">        </span><span class="n">_binding</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">null</span>
+</span><span id="__span-5-18"><a href="#__codelineno-5-18" id="__codelineno-5-18" name="__codelineno-5-18"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-5-19"><a href="#__codelineno-5-19" id="__codelineno-5-19" name="__codelineno-5-19"></a><span class="p">}</span>
+</span></code></pre></div>
+<h2 id="eventos-e-interacoes">Eventos e interações<a class="headerlink" href="#eventos-e-interacoes" title="Permanent link">¶</a></h2>
+<h3 id="clicks-e-listeners-comuns">Clicks e listeners comuns<a class="headerlink" href="#clicks-e-listeners-comuns" title="Permanent link">¶</a></h3>
+<ul>
+<li><code>setOnClickListener</code>: clique</li>
+<li><code>addTextChangedListener</code>: alteração de texto</li>
+<li><code>setOnCheckedChangeListener</code>: toggles (CheckBox/Switch)</li>
+</ul>
+<p>Exemplo (validação básica no texto):</p>
+<div class="language-kotlin highlight"><pre><span></span><code><span id="__span-6-1"><a href="#__codelineno-6-1" id="__codelineno-6-1" name="__codelineno-6-1"></a><span class="n">binding</span><span class="p">.</span><span class="na">email</span><span class="p">.</span><span class="na">addTextChangedListener</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-6-2"><a href="#__codelineno-6-2" id="__codelineno-6-2" name="__codelineno-6-2"></a><span class="w">    </span><span class="kd">val</span><span class="w"> </span><span class="nv">valor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">it</span><span class="o">?.</span><span class="na">toString</span><span class="p">().</span><span class="na">orEmpty</span><span class="p">()</span>
+</span><span id="__span-6-3"><a href="#__codelineno-6-3" id="__codelineno-6-3" name="__codelineno-6-3"></a><span class="w">    </span><span class="n">binding</span><span class="p">.</span><span class="na">entrar</span><span class="p">.</span><span class="na">isEnabled</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">valor</span><span class="p">.</span><span class="na">contains</span><span class="p">(</span><span class="s">"@"</span><span class="p">)</span>
+</span><span id="__span-6-4"><a href="#__codelineno-6-4" id="__codelineno-6-4" name="__codelineno-6-4"></a><span class="p">}</span>
+</span></code></pre></div>
+<h3 id="android-no-xml-ou-no-kotlin">Android: no XML ou no Kotlin?<a class="headerlink" href="#android-no-xml-ou-no-kotlin" title="Permanent link">¶</a></h3>
+<p>Layouts XML permitem declarar <code>android:onClick</code>, mas isso costuma reduzir rastreabilidade e testabilidade. Para ensino e manutenção, geralmente é preferível associar listeners no Kotlin, centralizando a lógica.</p>
+<h2 id="recyclerview-listas-performaticas-em-xml">RecyclerView: listas performáticas em XML<a class="headerlink" href="#recyclerview-listas-performaticas-em-xml" title="Permanent link">¶</a></h2>
+<p>Quando uma tela precisa exibir listas longas, <code>RecyclerView</code> é a base do toolkit tradicional.</p>
+<p>Estrutura típica:</p>
+<ul>
+<li>layout da tela: inclui um <code>RecyclerView</code></li>
+<li>layout de item: define a linha/célula</li>
+<li><code>Adapter</code> + <code>ViewHolder</code>: liga dados aos itens</li>
+<li><code>LayoutManager</code>: define se é lista, grid, etc.</li>
+</ul>
+<p>Exemplo de item (<code>res/layout/item_usuario.xml</code>):</p>
+<div class="language-xml highlight"><pre><span></span><code><span id="__span-7-1"><a href="#__codelineno-7-1" id="__codelineno-7-1" name="__codelineno-7-1"></a><span class="nt">&lt;LinearLayout</span>
+</span><span id="__span-7-2"><a href="#__codelineno-7-2" id="__codelineno-7-2" name="__codelineno-7-2"></a><span class="w">    </span><span class="na">xmlns:android=</span><span class="s">"http://schemas.android.com/apk/res/android"</span>
+</span><span id="__span-7-3"><a href="#__codelineno-7-3" id="__codelineno-7-3" name="__codelineno-7-3"></a><span class="w">    </span><span class="na">android:layout_width=</span><span class="s">"match_parent"</span>
+</span><span id="__span-7-4"><a href="#__codelineno-7-4" id="__codelineno-7-4" name="__codelineno-7-4"></a><span class="w">    </span><span class="na">android:layout_height=</span><span class="s">"wrap_content"</span>
+</span><span id="__span-7-5"><a href="#__codelineno-7-5" id="__codelineno-7-5" name="__codelineno-7-5"></a><span class="w">    </span><span class="na">android:orientation=</span><span class="s">"vertical"</span>
+</span><span id="__span-7-6"><a href="#__codelineno-7-6" id="__codelineno-7-6" name="__codelineno-7-6"></a><span class="w">    </span><span class="na">android:padding=</span><span class="s">"12dp"</span><span class="nt">&gt;</span>
+</span><span id="__span-7-7"><a href="#__codelineno-7-7" id="__codelineno-7-7" name="__codelineno-7-7"></a>
+</span><span id="__span-7-8"><a href="#__codelineno-7-8" id="__codelineno-7-8" name="__codelineno-7-8"></a><span class="w">    </span><span class="nt">&lt;TextView</span>
+</span><span id="__span-7-9"><a href="#__codelineno-7-9" id="__codelineno-7-9" name="__codelineno-7-9"></a><span class="w">        </span><span class="na">android:id=</span><span class="s">"@+id/nome"</span>
+</span><span id="__span-7-10"><a href="#__codelineno-7-10" id="__codelineno-7-10" name="__codelineno-7-10"></a><span class="w">        </span><span class="na">android:layout_width=</span><span class="s">"wrap_content"</span>
+</span><span id="__span-7-11"><a href="#__codelineno-7-11" id="__codelineno-7-11" name="__codelineno-7-11"></a><span class="w">        </span><span class="na">android:layout_height=</span><span class="s">"wrap_content"</span>
+</span><span id="__span-7-12"><a href="#__codelineno-7-12" id="__codelineno-7-12" name="__codelineno-7-12"></a><span class="w">        </span><span class="na">android:textAppearance=</span><span class="s">"@style/TextAppearance.Material3.TitleMedium"</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-7-13"><a href="#__codelineno-7-13" id="__codelineno-7-13" name="__codelineno-7-13"></a>
+</span><span id="__span-7-14"><a href="#__codelineno-7-14" id="__codelineno-7-14" name="__codelineno-7-14"></a><span class="w">    </span><span class="nt">&lt;TextView</span>
+</span><span id="__span-7-15"><a href="#__codelineno-7-15" id="__codelineno-7-15" name="__codelineno-7-15"></a><span class="w">        </span><span class="na">android:id=</span><span class="s">"@+id/email"</span>
+</span><span id="__span-7-16"><a href="#__codelineno-7-16" id="__codelineno-7-16" name="__codelineno-7-16"></a><span class="w">        </span><span class="na">android:layout_width=</span><span class="s">"wrap_content"</span>
+</span><span id="__span-7-17"><a href="#__codelineno-7-17" id="__codelineno-7-17" name="__codelineno-7-17"></a><span class="w">        </span><span class="na">android:layout_height=</span><span class="s">"wrap_content"</span>
+</span><span id="__span-7-18"><a href="#__codelineno-7-18" id="__codelineno-7-18" name="__codelineno-7-18"></a><span class="w">        </span><span class="na">android:textAppearance=</span><span class="s">"@style/TextAppearance.Material3.BodyMedium"</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-7-19"><a href="#__codelineno-7-19" id="__codelineno-7-19" name="__codelineno-7-19"></a>
+</span><span id="__span-7-20"><a href="#__codelineno-7-20" id="__codelineno-7-20" name="__codelineno-7-20"></a><span class="nt">&lt;/LinearLayout&gt;</span>
+</span></code></pre></div>
+<p>Adapter (recorte):</p>
+<div class="language-kotlin highlight"><pre><span></span><code><span id="__span-8-1"><a href="#__codelineno-8-1" id="__codelineno-8-1" name="__codelineno-8-1"></a><span class="kd">class</span><span class="w"> </span><span class="nc">UsuarioAdapter</span><span class="p">(</span>
+</span><span id="__span-8-2"><a href="#__codelineno-8-2" id="__codelineno-8-2" name="__codelineno-8-2"></a><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">val</span><span class="w"> </span><span class="nv">itens</span><span class="p">:</span><span class="w"> </span><span class="n">List</span><span class="o">&lt;</span><span class="n">Usuario</span><span class="o">&gt;</span><span class="p">,</span>
+</span><span id="__span-8-3"><a href="#__codelineno-8-3" id="__codelineno-8-3" name="__codelineno-8-3"></a><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">val</span><span class="w"> </span><span class="nv">onClick</span><span class="p">:</span><span class="w"> </span><span class="p">(</span><span class="n">Usuario</span><span class="p">)</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="kt">Unit</span>
+</span><span id="__span-8-4"><a href="#__codelineno-8-4" id="__codelineno-8-4" name="__codelineno-8-4"></a><span class="p">)</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">RecyclerView</span><span class="p">.</span><span class="na">Adapter</span><span class="o">&lt;</span><span class="n">UsuarioAdapter</span><span class="p">.</span><span class="na">ViewHolder</span><span class="o">&gt;</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-8-5"><a href="#__codelineno-8-5" id="__codelineno-8-5" name="__codelineno-8-5"></a>
+</span><span id="__span-8-6"><a href="#__codelineno-8-6" id="__codelineno-8-6" name="__codelineno-8-6"></a><span class="w">    </span><span class="kd">class</span><span class="w"> </span><span class="nc">ViewHolder</span><span class="p">(</span><span class="kd">val</span><span class="w"> </span><span class="nv">binding</span><span class="p">:</span><span class="w"> </span><span class="n">ItemUsuarioBinding</span><span class="p">)</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">RecyclerView</span><span class="p">.</span><span class="na">ViewHolder</span><span class="p">(</span><span class="n">binding</span><span class="p">.</span><span class="na">root</span><span class="p">)</span>
+</span><span id="__span-8-7"><a href="#__codelineno-8-7" id="__codelineno-8-7" name="__codelineno-8-7"></a>
+</span><span id="__span-8-8"><a href="#__codelineno-8-8" id="__codelineno-8-8" name="__codelineno-8-8"></a><span class="w">    </span><span class="kd">override</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="nf">onCreateViewHolder</span><span class="p">(</span><span class="n">parent</span><span class="p">:</span><span class="w"> </span><span class="n">ViewGroup</span><span class="p">,</span><span class="w"> </span><span class="n">viewType</span><span class="p">:</span><span class="w"> </span><span class="kt">Int</span><span class="p">):</span><span class="w"> </span><span class="n">ViewHolder</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-8-9"><a href="#__codelineno-8-9" id="__codelineno-8-9" name="__codelineno-8-9"></a><span class="w">        </span><span class="kd">val</span><span class="w"> </span><span class="nv">binding</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ItemUsuarioBinding</span><span class="p">.</span><span class="na">inflate</span><span class="p">(</span><span class="n">LayoutInflater</span><span class="p">.</span><span class="na">from</span><span class="p">(</span><span class="n">parent</span><span class="p">.</span><span class="na">context</span><span class="p">),</span><span class="w"> </span><span class="n">parent</span><span class="p">,</span><span class="w"> </span><span class="kc">false</span><span class="p">)</span>
+</span><span id="__span-8-10"><a href="#__codelineno-8-10" id="__codelineno-8-10" name="__codelineno-8-10"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">ViewHolder</span><span class="p">(</span><span class="n">binding</span><span class="p">)</span>
+</span><span id="__span-8-11"><a href="#__codelineno-8-11" id="__codelineno-8-11" name="__codelineno-8-11"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-8-12"><a href="#__codelineno-8-12" id="__codelineno-8-12" name="__codelineno-8-12"></a>
+</span><span id="__span-8-13"><a href="#__codelineno-8-13" id="__codelineno-8-13" name="__codelineno-8-13"></a><span class="w">    </span><span class="kd">override</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="nf">onBindViewHolder</span><span class="p">(</span><span class="n">holder</span><span class="p">:</span><span class="w"> </span><span class="n">ViewHolder</span><span class="p">,</span><span class="w"> </span><span class="n">position</span><span class="p">:</span><span class="w"> </span><span class="kt">Int</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-8-14"><a href="#__codelineno-8-14" id="__codelineno-8-14" name="__codelineno-8-14"></a><span class="w">        </span><span class="kd">val</span><span class="w"> </span><span class="nv">item</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">itens</span><span class="o">[</span><span class="n">position</span><span class="o">]</span>
+</span><span id="__span-8-15"><a href="#__codelineno-8-15" id="__codelineno-8-15" name="__codelineno-8-15"></a><span class="w">        </span><span class="n">holder</span><span class="p">.</span><span class="na">binding</span><span class="p">.</span><span class="na">nome</span><span class="p">.</span><span class="na">text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">item</span><span class="p">.</span><span class="na">nome</span>
+</span><span id="__span-8-16"><a href="#__codelineno-8-16" id="__codelineno-8-16" name="__codelineno-8-16"></a><span class="w">        </span><span class="n">holder</span><span class="p">.</span><span class="na">binding</span><span class="p">.</span><span class="na">email</span><span class="p">.</span><span class="na">text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">item</span><span class="p">.</span><span class="na">email</span>
+</span><span id="__span-8-17"><a href="#__codelineno-8-17" id="__codelineno-8-17" name="__codelineno-8-17"></a><span class="w">        </span><span class="n">holder</span><span class="p">.</span><span class="na">binding</span><span class="p">.</span><span class="na">root</span><span class="p">.</span><span class="na">setOnClickListener</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">onClick</span><span class="p">(</span><span class="n">item</span><span class="p">)</span><span class="w"> </span><span class="p">}</span>
+</span><span id="__span-8-18"><a href="#__codelineno-8-18" id="__codelineno-8-18" name="__codelineno-8-18"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-8-19"><a href="#__codelineno-8-19" id="__codelineno-8-19" name="__codelineno-8-19"></a>
+</span><span id="__span-8-20"><a href="#__codelineno-8-20" id="__codelineno-8-20" name="__codelineno-8-20"></a><span class="w">    </span><span class="kd">override</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="nf">getItemCount</span><span class="p">()</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">itens</span><span class="p">.</span><span class="na">size</span>
+</span><span id="__span-8-21"><a href="#__codelineno-8-21" id="__codelineno-8-21" name="__codelineno-8-21"></a><span class="p">}</span>
+</span></code></pre></div>
+<p>Em projetos reais, costuma-se preferir <code>ListAdapter</code> + <code>DiffUtil</code> para atualizar listas com eficiência.</p>
+<h2 id="recursos-resources-strings-dimens-cores-e-drawables">Recursos (resources): strings, dimens, cores e drawables<a class="headerlink" href="#recursos-resources-strings-dimens-cores-e-drawables" title="Permanent link">¶</a></h2>
+<h3 id="strings-e-internacionalizacao">Strings e internacionalização<a class="headerlink" href="#strings-e-internacionalizacao" title="Permanent link">¶</a></h3>
+<p>Textos devem ir para <code>res/values/strings.xml</code> e, quando necessário, para variações por idioma (<code>values-pt</code>, <code>values-en</code>, etc.). Isso facilita a tradução e evita repetição.</p>
+<div class="language-xml highlight"><pre><span></span><code><span id="__span-9-1"><a href="#__codelineno-9-1" id="__codelineno-9-1" name="__codelineno-9-1"></a><span class="nt">&lt;resources&gt;</span>
+</span><span id="__span-9-2"><a href="#__codelineno-9-2" id="__codelineno-9-2" name="__codelineno-9-2"></a><span class="w">    </span><span class="nt">&lt;string</span><span class="w"> </span><span class="na">name=</span><span class="s">"titulo_login"</span><span class="nt">&gt;</span>Login<span class="nt">&lt;/string&gt;</span>
+</span><span id="__span-9-3"><a href="#__codelineno-9-3" id="__codelineno-9-3" name="__codelineno-9-3"></a><span class="w">    </span><span class="nt">&lt;string</span><span class="w"> </span><span class="na">name=</span><span class="s">"hint_email"</span><span class="nt">&gt;</span>E-mail<span class="nt">&lt;/string&gt;</span>
+</span><span id="__span-9-4"><a href="#__codelineno-9-4" id="__codelineno-9-4" name="__codelineno-9-4"></a><span class="w">    </span><span class="nt">&lt;string</span><span class="w"> </span><span class="na">name=</span><span class="s">"acao_entrar"</span><span class="nt">&gt;</span>Entrar<span class="nt">&lt;/string&gt;</span>
+</span><span id="__span-9-5"><a href="#__codelineno-9-5" id="__codelineno-9-5" name="__codelineno-9-5"></a><span class="nt">&lt;/resources&gt;</span>
+</span></code></pre></div>
+<h3 id="dimens-e-consistencia-visual">Dimens e consistência visual<a class="headerlink" href="#dimens-e-consistencia-visual" title="Permanent link">¶</a></h3>
+<p>Dimensões repetidas (margens, tamanhos) devem ser centralizadas em <code>dimens.xml</code>.</p>
+<div class="language-xml highlight"><pre><span></span><code><span id="__span-10-1"><a href="#__codelineno-10-1" id="__codelineno-10-1" name="__codelineno-10-1"></a><span class="nt">&lt;resources&gt;</span>
+</span><span id="__span-10-2"><a href="#__codelineno-10-2" id="__codelineno-10-2" name="__codelineno-10-2"></a><span class="w">    </span><span class="nt">&lt;dimen</span><span class="w"> </span><span class="na">name=</span><span class="s">"espaco_padrao"</span><span class="nt">&gt;</span>16dp<span class="nt">&lt;/dimen&gt;</span>
+</span><span id="__span-10-3"><a href="#__codelineno-10-3" id="__codelineno-10-3" name="__codelineno-10-3"></a><span class="nt">&lt;/resources&gt;</span>
+</span></code></pre></div>
+<h3 id="drawables-shapes-e-seletores">Drawables: shapes e seletores<a class="headerlink" href="#drawables-shapes-e-seletores" title="Permanent link">¶</a></h3>
+<p>Layouts XML costumam usar drawables para bordas e estados de interação. Exemplo de shape com cantos arredondados (<code>res/drawable/bg_input.xml</code>):</p>
+<div class="language-xml highlight"><pre><span></span><code><span id="__span-11-1"><a href="#__codelineno-11-1" id="__codelineno-11-1" name="__codelineno-11-1"></a><span class="nt">&lt;shape</span><span class="w"> </span><span class="na">xmlns:android=</span><span class="s">"http://schemas.android.com/apk/res/android"</span><span class="nt">&gt;</span>
+</span><span id="__span-11-2"><a href="#__codelineno-11-2" id="__codelineno-11-2" name="__codelineno-11-2"></a><span class="w">    </span><span class="nt">&lt;solid</span><span class="w"> </span><span class="na">android:color=</span><span class="s">"@android:color/transparent"</span><span class="nt">/&gt;</span>
+</span><span id="__span-11-3"><a href="#__codelineno-11-3" id="__codelineno-11-3" name="__codelineno-11-3"></a><span class="w">    </span><span class="nt">&lt;stroke</span><span class="w"> </span><span class="na">android:width=</span><span class="s">"1dp"</span><span class="w"> </span><span class="na">android:color=</span><span class="s">"@color/borda"</span><span class="nt">/&gt;</span>
+</span><span id="__span-11-4"><a href="#__codelineno-11-4" id="__codelineno-11-4" name="__codelineno-11-4"></a><span class="w">    </span><span class="nt">&lt;corners</span><span class="w"> </span><span class="na">android:radius=</span><span class="s">"8dp"</span><span class="nt">/&gt;</span>
+</span><span id="__span-11-5"><a href="#__codelineno-11-5" id="__codelineno-11-5" name="__codelineno-11-5"></a><span class="w">    </span><span class="nt">&lt;padding</span><span class="w"> </span><span class="na">android:left=</span><span class="s">"12dp"</span><span class="w"> </span><span class="na">android:top=</span><span class="s">"12dp"</span><span class="w"> </span><span class="na">android:right=</span><span class="s">"12dp"</span><span class="w"> </span><span class="na">android:bottom=</span><span class="s">"12dp"</span><span class="nt">/&gt;</span>
+</span><span id="__span-11-6"><a href="#__codelineno-11-6" id="__codelineno-11-6" name="__codelineno-11-6"></a><span class="nt">&lt;/shape&gt;</span>
+</span></code></pre></div>
+<p>Seletores permitem variar o drawable conforme estado (pressionado, focado). Exemplo (<code>res/drawable/btn_selector.xml</code>):</p>
+<div class="language-xml highlight"><pre><span></span><code><span id="__span-12-1"><a href="#__codelineno-12-1" id="__codelineno-12-1" name="__codelineno-12-1"></a><span class="nt">&lt;selector</span><span class="w"> </span><span class="na">xmlns:android=</span><span class="s">"http://schemas.android.com/apk/res/android"</span><span class="nt">&gt;</span>
+</span><span id="__span-12-2"><a href="#__codelineno-12-2" id="__codelineno-12-2" name="__codelineno-12-2"></a><span class="w">    </span><span class="nt">&lt;item</span><span class="w"> </span><span class="na">android:state_pressed=</span><span class="s">"true"</span><span class="w"> </span><span class="na">android:drawable=</span><span class="s">"@color/botao_pressionado"</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-12-3"><a href="#__codelineno-12-3" id="__codelineno-12-3" name="__codelineno-12-3"></a><span class="w">    </span><span class="nt">&lt;item</span><span class="w"> </span><span class="na">android:drawable=</span><span class="s">"@color/botao_normal"</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-12-4"><a href="#__codelineno-12-4" id="__codelineno-12-4" name="__codelineno-12-4"></a><span class="nt">&lt;/selector&gt;</span>
+</span></code></pre></div>
+<h2 id="estilos-e-temas">Estilos e temas<a class="headerlink" href="#estilos-e-temas" title="Permanent link">¶</a></h2>
+<p>Estilos evitam repetição de atributos e garantem consistência. O Material Design (Material 2/3) oferece uma base recomendada para componentes e tipografia <sup id="fnref:4"><a class="footnote-ref" href="#fn:4">4</a></sup>.</p>
+<p>Exemplo de estilo aplicado a um <code>TextView</code>:</p>
+<div class="language-xml highlight"><pre><span></span><code><span id="__span-13-1"><a href="#__codelineno-13-1" id="__codelineno-13-1" name="__codelineno-13-1"></a><span class="nt">&lt;style</span><span class="w"> </span><span class="na">name=</span><span class="s">"TextoTitulo"</span><span class="nt">&gt;</span>
+</span><span id="__span-13-2"><a href="#__codelineno-13-2" id="__codelineno-13-2" name="__codelineno-13-2"></a><span class="w">    </span><span class="nt">&lt;item</span><span class="w"> </span><span class="na">name=</span><span class="s">"android:textSize"</span><span class="nt">&gt;</span>20sp<span class="nt">&lt;/item&gt;</span>
+</span><span id="__span-13-3"><a href="#__codelineno-13-3" id="__codelineno-13-3" name="__codelineno-13-3"></a><span class="w">    </span><span class="nt">&lt;item</span><span class="w"> </span><span class="na">name=</span><span class="s">"android:textStyle"</span><span class="nt">&gt;</span>bold<span class="nt">&lt;/item&gt;</span>
+</span><span id="__span-13-4"><a href="#__codelineno-13-4" id="__codelineno-13-4" name="__codelineno-13-4"></a><span class="nt">&lt;/style&gt;</span>
+</span></code></pre></div>
+<p>Em aplicações modernas, <code>themes.xml</code> organiza cores, tipografia e comportamentos de componentes, com variações como tema claro/escuro.</p>
+<h2 id="inclusao-e-reutilizacao-de-layouts">Inclusão e reutilização de layouts<a class="headerlink" href="#inclusao-e-reutilizacao-de-layouts" title="Permanent link">¶</a></h2>
+<p>Para evitar duplicação, o XML suporta:</p>
+<ul>
+<li><code>&lt;include layout="@layout/algo" /&gt;</code>: reutiliza layout</li>
+<li><code>&lt;merge&gt;</code>: reduz um nível de hierarquia quando um layout é incluído</li>
+<li><code>&lt;ViewStub&gt;</code>: carrega conteúdo sob demanda (útil para otimização)</li>
+</ul>
+<p>O uso criterioso desses recursos pode reduzir hierarquia e melhorar performance.</p>
+<h2 id="acessibilidade-a11y">Acessibilidade (a11y)<a class="headerlink" href="#acessibilidade-a11y" title="Permanent link">¶</a></h2>
+<p>Interfaces com XML devem considerar:</p>
+<ul>
+<li><code>contentDescription</code> em imagens com significado</li>
+<li>tamanhos mínimos de toque (botões/ícones)</li>
+<li>contraste adequado entre texto e fundo</li>
+<li>suporte a fontes maiores (usar <code>sp</code> e evitar alturas fixas em textos)</li>
+</ul>
+<p>A acessibilidade é um requisito de qualidade e também reduz retrabalho, pois problemas costumam aparecer tarde no ciclo se não forem considerados desde o início.</p>
+<h2 id="boas-praticas-de-performance-no-sistema-de-views">Boas práticas de performance no sistema de Views<a class="headerlink" href="#boas-praticas-de-performance-no-sistema-de-views" title="Permanent link">¶</a></h2>
+<ul>
+<li>Evitar hierarquias profundas (muitos ViewGroups aninhados)</li>
+<li>Preferir <code>ConstraintLayout</code> para telas complexas</li>
+<li>Evitar <code>layout_width/height</code> fixos em excesso</li>
+<li>Minimizar <code>overdraw</code> (camadas desenhadas sem necessidade)</li>
+<li>Reutilizar itens com <code>RecyclerView</code> e evitar <code>notifyDataSetChanged()</code> indiscriminado</li>
+</ul>
+<h2 id="integracao-com-arquiteturas-modernas">Integração com arquiteturas modernas<a class="headerlink" href="#integracao-com-arquiteturas-modernas" title="Permanent link">¶</a></h2>
+<p>Mesmo usando XML, é comum aplicar padrões atuais:</p>
+<ul>
+<li>ViewModel (camada de estado)</li>
+<li>LiveData/StateFlow para observar mudanças</li>
+<li>Separação de camadas (UI, domínio, dados)</li>
+</ul>
+<p>O XML descreve a UI, mas a arquitetura define a forma como estado e eventos trafegam no aplicativo.</p>
+<h2 id="referencias">Referências<a class="headerlink" href="#referencias" title="Permanent link">¶</a></h2>
+<ul>
+<li>Android Developers: Layouts (Views) <sup id="fnref2:1"><a class="footnote-ref" href="#fn:1">1</a></sup></li>
+<li>Android Developers: Recursos (resources) <sup id="fnref2:2"><a class="footnote-ref" href="#fn:2">2</a></sup></li>
+<li>Material Design: Guidelines <sup id="fnref2:4"><a class="footnote-ref" href="#fn:4">4</a></sup></li>
+</ul>
+<div class="footnote">
+<hr/>
+<ol>
+<li id="fn:1">
+<p>Android Developers. Layouts (views). 2026. URL: <a href="https://developer.android.com/develop/ui/views/layout/declaring-layout">https://developer.android.com/develop/ui/views/layout/declaring-layout</a>. <a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref2:1" title="Jump back to footnote 1 in the text">↩</a></p>
+</li>
+<li id="fn:2">
+<p>Android Developers. App resources overview. 2026. URL: <a href="https://developer.android.com/guide/topics/resources/providing-resources">https://developer.android.com/guide/topics/resources/providing-resources</a>. <a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 2 in the text">↩</a><a class="footnote-backref" href="#fnref2:2" title="Jump back to footnote 2 in the text">↩</a></p>
+</li>
+<li id="fn:3">
+<p>Android Developers. Fragments. 2026. URL: <a href="https://developer.android.com/guide/fragments">https://developer.android.com/guide/fragments</a>. <a class="footnote-backref" href="#fnref:3" title="Jump back to footnote 3 in the text">↩</a></p>
+</li>
+<li id="fn:4">
+<p>Material Design. Material design 3. 2026. URL: <a href="https://m3.material.io/">https://m3.material.io/</a>. <a class="footnote-backref" href="#fnref:4" title="Jump back to footnote 4 in the text">↩</a><a class="footnote-backref" href="#fnref2:4" title="Jump back to footnote 4 in the text">↩</a></p>
+</li>
+</ol>
+</div>
+</article>
+</div>
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+</div>
+<button class="md-top md-icon" data-md-component="top" hidden="" type="button">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"></path></svg>
+  Back to top
+</button>
+</main>
+<footer class="md-footer">
+<nav aria-label="Footer" class="md-footer__inner md-grid">
+<a aria-label="Previous: Módulo II - Fundamentos de Android" class="md-footer__link md-footer__link--prev" href="../fundamentos/">
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+</div>
+<div class="md-footer__title">
+<span class="md-footer__direction">
+                Previous
+              </span>
+<div class="md-ellipsis">
+                Módulo II - Fundamentos de Android
+              </div>
+</div>
+</a>
+<a aria-label="Next: Módulo IV - Navegação e Ciclo de Vida" class="md-footer__link md-footer__link--next" href="../navegacao/">
+<div class="md-footer__title">
+<span class="md-footer__direction">
+                Next
+              </span>
+<div class="md-ellipsis">
+                Módulo IV - Navegação e Ciclo de Vida
+              </div>
+</div>
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"></path></svg>
+</div>
+</a>
+</nav>
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-copyright">
+<div class="md-copyright__highlight">
+      Copyright © 2024 -  Diego A. Lusa
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" rel="noopener" target="_blank">
+      Material for MkDocs
+    </a>
+</div>
+<div class="md-social">
+<a class="md-social__link" href="https://www.linkedin.com/in/diegolusa/" rel="noopener" target="_blank" title="www.linkedin.com">
+<svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3M135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5m282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9z"></path></svg>
+</a>
+<a class="md-social__link" href="http://github.com/diegolusa" rel="noopener" target="_blank" title="github.com">
+<svg viewbox="0 0 496 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"></path></svg>
+</a>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<div class="md-dialog" data-md-component="dialog">
+<div class="md-dialog__inner md-typeset"></div>
+</div>
+<script id="__config" type="application/json">{"base": "../../../..", "features": ["announce.dismiss", "navigation.top", "navigation.tabs", "navigation.path", "navigation.instant", "toc.integrate", "toc.follow", "header.autohide", "navigation.footer", "content.code.copy", "navigation.indexes"], "search": "../../../../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+<script src="../../../../assets/javascripts/bundle.f1b6f286.min.js"></script>
+<script src="../../../../javascript/config.js"></script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<script src="https://unpkg.com/mermaid@8.13.6/dist/mermaid.min.js"></script><script>mermaid.initialize({
+    theme: "base",
+    fontSize: "18px",
+    fontFamily: "Roboto"
+});</script></body>
+</html>

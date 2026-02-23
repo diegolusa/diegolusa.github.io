@@ -1,0 +1,1075 @@
+
+<!DOCTYPE html>
+
+<html class="no-js" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<link href="../firebase/" rel="prev"/>
+<link href="../publicacao/" rel="next"/>
+<link href="../../../../img/icon.ico" rel="icon"/>
+<meta content="mkdocs-1.6.1, mkdocs-material-9.6.4" name="generator"/>
+<title>Integração de apps Android com APIs REST - Diego A. Lusa</title>
+<link href="../../../../assets/stylesheets/main.8608ea7d.min.css" rel="stylesheet"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+<link href="../../../../css/custom.css" rel="stylesheet"/>
+<script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+</head>
+<body dir="ltr">
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#visao-geral">
+          Skip to content
+        </a>
+</div>
+<div data-md-component="announce">
+<aside class="md-banner">
+<div class="md-banner__inner md-grid md-typeset">
+<button aria-label="Don't show this again" class="md-banner__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+</button>
+<div class="md-announcement md-announcement--alert">
+<p>
+<strong>Importante</strong>: Alguns conteúdos foram elaborados com apoio de ferramentas de IA
+    Generativa. Embora façamos revisões cuidadosas, é possível que hajam erros
+    ou inconsistências. Se identificar algum, por favor, entre em contato
+    solicitando a devida correção.
+  </p>
+</div>
+</div>
+<script>var el=document.querySelector("[data-md-component=announce]");if(el){var content=el.querySelector(".md-typeset");__md_hash(content.innerHTML)===__md_get("__announce")&&(el.hidden=!0)}</script>
+</aside>
+</div>
+<header class="md-header" data-md-component="header">
+<nav aria-label="Header" class="md-header__inner md-grid">
+<a aria-label="Diego A. Lusa" class="md-header__button md-logo" data-md-component="logo" href="../../../.." title="Diego A. Lusa">
+<img alt="logo" src="../../../../img/icon.png"/>
+</a>
+<label class="md-header__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+</label>
+<div class="md-header__title" data-md-component="header-title">
+<div class="md-header__ellipsis">
+<div class="md-header__topic">
+<span class="md-ellipsis">
+            Diego A. Lusa
+          </span>
+</div>
+<div class="md-header__topic" data-md-component="header-topic">
+<span class="md-ellipsis">
+            
+              Integração de apps Android com APIs REST
+            
+          </span>
+</div>
+</div>
+</div>
+<script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+<label class="md-header__button md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+</label>
+<div class="md-search" data-md-component="search" role="dialog">
+<label class="md-search__overlay" for="__search"></label>
+<div class="md-search__inner" role="search">
+<form class="md-search__form" name="search">
+<input aria-label="Search" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" name="query" placeholder="Search" required="" spellcheck="false" type="text"/>
+<label class="md-search__icon md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+</label>
+<nav aria-label="Search" class="md-search__options">
+<button aria-label="Clear" class="md-search__icon md-icon" tabindex="-1" title="Clear" type="reset">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+</button>
+</nav>
+</form>
+<div class="md-search__output">
+<div class="md-search__scrollwrap" data-md-scrollfix="" tabindex="0">
+<div class="md-search-result" data-md-component="search-result">
+<div class="md-search-result__meta">
+            Initializing search
+          </div>
+<ol class="md-search-result__list" role="presentation"></ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+</nav>
+</header>
+<div class="md-container" data-md-component="container">
+<nav aria-label="Tabs" class="md-tabs" data-md-component="tabs">
+<div class="md-grid">
+<ul class="md-tabs__list">
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../../..">
+        
+  
+    
+  
+  Home
+
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../../../informatica/editores-texto/introducao/">
+          
+  
+    
+  
+  Informática Básica
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../ads-153/">
+          
+  
+    
+  
+  Web
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../hads-005/">
+          
+  
+    
+  
+  Mobile I
+
+        </a>
+</li>
+<li class="md-tabs__item md-tabs__item--active">
+<a class="md-tabs__link" href="../">
+          
+  
+    
+  
+  Mobile II
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../ccc-275/">
+          
+  
+    
+  
+  Algoritmos e Programação
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../ccc-296/">
+          
+  
+    
+  
+  Inteligência Artificial
+
+        </a>
+</li>
+</ul>
+</div>
+</nav>
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Navigation" class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="Diego A. Lusa" class="md-nav__button md-logo" data-md-component="logo" href="../../../.." title="Diego A. Lusa">
+<img alt="logo" src="../../../../img/icon.png"/>
+</a>
+    Diego A. Lusa
+  </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../..">
+<span class="md-ellipsis">
+    Home
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+<span class="md-ellipsis">
+    Informática Básica
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_2">
+<span class="md-nav__icon md-icon"></span>
+            Informática Básica
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_1" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
+<span class="md-ellipsis">
+    Editores de Texto
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_1_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_1">
+<span class="md-nav__icon md-icon"></span>
+            Editores de Texto
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../informatica/editores-texto/introducao/">
+<span class="md-ellipsis">
+    Writer
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../informatica/editores-texto/estilos/">
+<span class="md-ellipsis">
+    Estilos
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../informatica/editores-texto/abnt/">
+<span class="md-ellipsis">
+    ABNT
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_3" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../ads-153/">
+<span class="md-ellipsis">
+    Web
+    
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_3_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_3">
+<span class="md-nav__icon md-icon"></span>
+            Web
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../ads-153/m-1/m-1/">
+<span class="md-ellipsis">
+    Módulo I - Fundamentos e Linguagem HTML5
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../ads-153/m-2/m-2/">
+<span class="md-ellipsis">
+    Módulo II - Cascading Style Sheets
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../ads-153/m-3/m-3/">
+<span class="md-ellipsis">
+    Módulo III - Linguagem JavaScript
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_4" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../hads-005/">
+<span class="md-ellipsis">
+    Mobile I
+    
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_4_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_4">
+<span class="md-nav__icon md-icon"></span>
+            Mobile I
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../hads-005/dispositivos/">
+<span class="md-ellipsis">
+    Evolução dos Dispositivos Móveis e dos Sistemas Operacionais
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_5" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../">
+<span class="md-ellipsis">
+    Mobile II
+    
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="true" aria-labelledby="__nav_5_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_5">
+<span class="md-nav__icon md-icon"></span>
+            Mobile II
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../kotlin/">
+<span class="md-ellipsis">
+    Módulo I - Linguagem Kotlin
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../fundamentos/">
+<span class="md-ellipsis">
+    Módulo II - Fundamentos de Android
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../ui-xml/">
+<span class="md-ellipsis">
+    Módulo III - Layouts XML
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../navegacao/">
+<span class="md-ellipsis">
+    Módulo IV - Navegação e Ciclo de Vida
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../persistencia/">
+<span class="md-ellipsis">
+    Módulo V - Persistência de Dados
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../firebase/">
+<span class="md-ellipsis">
+    Módulo VI - Firebase
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+<span class="md-ellipsis">
+    Módulo VII -  Consumo de APIs
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./">
+<span class="md-ellipsis">
+    Módulo VII -  Consumo de APIs
+    
+  </span>
+</a>
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#visao-geral">
+<span class="md-ellipsis">
+      Visão geral
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#o-que-e-uma-api-rest-na-pratica">
+<span class="md-ellipsis">
+      O que é uma API REST (na prática)
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#ferramentas-comuns-no-android">
+<span class="md-ellipsis">
+      Ferramentas comuns no Android
+    </span>
+</a>
+<nav aria-label="Ferramentas comuns no Android" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#passo-1-modelar-dtos">
+<span class="md-ellipsis">
+      Passo 1 — Modelar DTOs
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#passo-2-definir-a-interface-da-api">
+<span class="md-ellipsis">
+      Passo 2 — Definir a interface da API
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#passo-3-construir-retrofit-okhttp">
+<span class="md-ellipsis">
+      Passo 3 — Construir Retrofit + OkHttp
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#tratamento-de-erros-o-que-o-app-precisa-fazer">
+<span class="md-ellipsis">
+      Tratamento de erros: o que o app precisa fazer
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#integracao-com-viewmodel-padrao-didatico">
+<span class="md-ellipsis">
+      Integração com ViewModel (padrão didático)
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#boas-praticas-que-evitam-problemas-em-producao">
+<span class="md-ellipsis">
+      Boas práticas que evitam problemas em produção
+    </span>
+</a>
+<nav aria-label="Boas práticas que evitam problemas em produção" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#timeouts-e-retry">
+<span class="md-ellipsis">
+      Timeouts e retry
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#paginacao">
+<span class="md-ellipsis">
+      Paginação
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#cache-local">
+<span class="md-ellipsis">
+      Cache local
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#checklist-de-integracao">
+<span class="md-ellipsis">
+      Checklist de integração
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#referencias">
+<span class="md-ellipsis">
+      Referências
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../publicacao/">
+<span class="md-ellipsis">
+    Modulo VIII - Publicação
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_6" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../ccc-275/">
+<span class="md-ellipsis">
+    Algoritmos e Programação
+    
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_6_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_6">
+<span class="md-nav__icon md-icon"></span>
+            Algoritmos e Programação
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../ccc-275/conteudo-python/">
+<span class="md-ellipsis">
+    Fundamentos de algoritmos e programação com Python
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_7" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../ccc-296/">
+<span class="md-ellipsis">
+    Inteligência Artificial
+    
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_7_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_7">
+<span class="md-nav__icon md-icon"></span>
+            Inteligência Artificial
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_7_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_7_2" id="__nav_7_2_label" tabindex="0">
+<span class="md-ellipsis">
+    Um pouco de história
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_7_2_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_7_2">
+<span class="md-nav__icon md-icon"></span>
+            Um pouco de história
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../ccc-312/historia/">
+<span class="md-ellipsis">
+    Fundamentos
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_7_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_7_3" id="__nav_7_3_label" tabindex="0">
+<span class="md-ellipsis">
+    Paradigma Evolutivo
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_7_3_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_7_3">
+<span class="md-nav__icon md-icon"></span>
+            Paradigma Evolutivo
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../ccc-296/ag/">
+<span class="md-ellipsis">
+    Algoritmos Genéticos
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_7_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_7_4" id="__nav_7_4_label" tabindex="0">
+<span class="md-ellipsis">
+    Paradigma Conexionista
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_7_4_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_7_4">
+<span class="md-nav__icon md-icon"></span>
+            Paradigma Conexionista
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../ccc-296/rna/">
+<span class="md-ellipsis">
+    Redes Neurais Artificiais
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_7_5" type="checkbox"/>
+<label class="md-nav__link" for="__nav_7_5" id="__nav_7_5_label" tabindex="0">
+<span class="md-ellipsis">
+    Inteligência Artificial Generativa
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_7_5_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_7_5">
+<span class="md-nav__icon md-icon"></span>
+            Inteligência Artificial Generativa
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../ccc-296/genai/">
+<span class="md-ellipsis">
+    Inteligência Artificial Generativa
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<h1>Módulo VII -  Consumo de APIs</h1>
+<h2 id="visao-geral">Visão geral<a class="headerlink" href="#visao-geral" title="Permanent link">¶</a></h2>
+<p>A maior parte dos aplicativos móveis modernos consome dados de <strong>APIs REST</strong> para autenticação, catálogo de itens, sincronização de dados e envio de eventos. No Android, a integração com APIs normalmente envolve:</p>
+<ul>
+<li>modelar o contrato de dados (JSON &lt;-&gt; modelos);</li>
+<li>configurar um cliente HTTP;</li>
+<li>implementar chamadas (GET/POST/PUT/DELETE);</li>
+<li>tratar erros e estados de rede;</li>
+<li>integrar a camada de rede com estado de UI (por exemplo, ViewModel).</li>
+</ul>
+<p>Basicamente, este processo é o que conecta a interface do usuário (UI) com o backend, permitindo que o app seja dinâmico e interativo. A seguir, vamos explorar os conceitos, ferramentas e boas práticas para consumir APIs REST em um aplicativo Android.</p>
+<div class="mermaid">flowchart RL
+  UI["UI: Activity/Fragment/Compose"] --&gt; VM[ViewModel]
+  VM --&gt; REPO[Repositório]
+  REPO --&gt; API["Cliente HTTP\nRetrofit + OkHttp"]
+  API --&gt; REST["(API REST)"]
+</div>
+<h2 id="o-que-e-uma-api-rest-na-pratica">O que é uma API REST (na prática)<a class="headerlink" href="#o-que-e-uma-api-rest-na-pratica" title="Permanent link">¶</a></h2>
+<p>Em uma API REST, os endpoints representam recursos e operações HTTP. Um exemplo típico é um recurso de tarefas:</p>
+<ul>
+<li><code>GET /tasks</code> → lista tarefas</li>
+<li><code>GET /tasks/{id}</code> → lê uma tarefa</li>
+<li><code>POST /tasks</code> → cria uma tarefa</li>
+<li><code>PUT /tasks/{id}</code> ou <code>PATCH /tasks/{id}</code> → atualiza</li>
+<li><code>DELETE /tasks/{id}</code> → remove</li>
+</ul>
+<p>A “forma REST” de pensar é:</p>
+<ul>
+<li><strong>Método HTTP</strong> expressa a ação.</li>
+<li><strong>URL</strong> identifica o recurso.</li>
+<li><strong>Código de status</strong> indica o resultado.</li>
+<li><strong>Corpo JSON</strong> carrega dados.</li>
+</ul>
+<div class="admonition info">
+<p class="admonition-title">Contrato é mais importante do que código</p>
+<p>Em projetos reais, integração bem-sucedida depende de um contrato claro: payloads, códigos de erro e regras de autenticação. Sem isso, a implementação vira tentativa e erro.</p>
+</div>
+<p>A maioria das APIs fornece uma <code>baseUrl</code> (por exemplo, <code>https://api.exemplo.com/</code>) e rotas versionadas (por exemplo, <code>/v1/</code>). O versionamento evita que mudanças quebrem aplicativos já publicados.</p>
+<p>O aplicativo geralmente recebe JSON e precisa convertê-lo em objetos Kotlin. Duas práticas importantes:</p>
+<ul>
+<li>manter <strong>nomes consistentes</strong> entre JSON e modelo (ou mapear com anotações);</li>
+<li>separar <strong>DTOs</strong> (objetos de transporte) de modelos internos quando o domínio for mais complexo.</li>
+</ul>
+<p>No caso de autenticação, o app deve enviar credenciais (token, chave, sessão) em cada requisição. Três padrões comuns:</p>
+<ul>
+<li><strong>Bearer token (JWT)</strong>: o app envia <code>Authorization: Bearer &lt;token&gt;</code>.</li>
+<li><strong>API key</strong>: mais comum em integração servidor-servidor; em apps, costuma ser inadequado se a chave der acesso amplo.</li>
+<li><strong>Sessão/cookies</strong>: menos comum em mobile moderno, mas existe.</li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">Segurança no cliente</p>
+<p>O aplicativo deve assumir que qualquer segredo embutido pode ser extraído. Em geral, chaves sensíveis devem ficar no backend. No cliente, a proteção real é autenticação do usuário + autorização no servidor.</p>
+</div>
+<h2 id="ferramentas-comuns-no-android">Ferramentas comuns no Android<a class="headerlink" href="#ferramentas-comuns-no-android" title="Permanent link">¶</a></h2>
+<p>No ecossistema Android, um stack muito usado é:</p>
+<ul>
+<li><strong>Retrofit</strong>: define a API por interface e gera a implementação.</li>
+<li><strong>OkHttp</strong>: cliente HTTP com interceptors, timeouts e cache.</li>
+<li><strong>Kotlin Coroutines</strong>: chamadas assíncronas com <code>suspend</code>.</li>
+<li><strong>kotlinx.serialization</strong> (ou Moshi/Gson): serialização de JSON.</li>
+</ul>
+<p>A documentação do Retrofit e do OkHttp descreve as peças principais (interfaces, conversores, interceptors e configuração de cliente) <sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup><sup id="fnref:2"><a class="footnote-ref" href="#fn:2">2</a></sup>. </p>
+<p>Para usar Retrofit no Android, adicione as dependências no <strong>módulo do app</strong> (normalmente <code>app/build.gradle</code> ou <code>app/build.gradle.kts</code>). O Retrofit por si só gera as chamadas a partir de interfaces; para JSON, você também precisa de um <strong>conversor</strong> (por exemplo, kotlinx.serialization, Moshi ou Gson).</p>
+<p>Exemplo (Groovy — <code>build.gradle</code>):</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a>dependencies {
+</span><span id="__span-0-2"><a href="#__codelineno-0-2" id="__codelineno-0-2" name="__codelineno-0-2"></a>    // Retrofit (cliente declarativo por interface)
+</span><span id="__span-0-3"><a href="#__codelineno-0-3" id="__codelineno-0-3" name="__codelineno-0-3"></a>    implementation "com.squareup.retrofit2:retrofit:2.11.0"
+</span><span id="__span-0-4"><a href="#__codelineno-0-4" id="__codelineno-0-4" name="__codelineno-0-4"></a>
+</span><span id="__span-0-5"><a href="#__codelineno-0-5" id="__codelineno-0-5" name="__codelineno-0-5"></a>    // OkHttp (engine HTTP usada pelo Retrofit)
+</span><span id="__span-0-6"><a href="#__codelineno-0-6" id="__codelineno-0-6" name="__codelineno-0-6"></a>    implementation "com.squareup.okhttp3:okhttp:4.12.0"
+</span><span id="__span-0-7"><a href="#__codelineno-0-7" id="__codelineno-0-7" name="__codelineno-0-7"></a>
+</span><span id="__span-0-8"><a href="#__codelineno-0-8" id="__codelineno-0-8" name="__codelineno-0-8"></a>    // Conversor para kotlinx.serialization (usado nos exemplos deste material)
+</span><span id="__span-0-9"><a href="#__codelineno-0-9" id="__codelineno-0-9" name="__codelineno-0-9"></a>    implementation "com.squareup.retrofit2:converter-kotlinx-serialization:2.11.0"
+</span><span id="__span-0-10"><a href="#__codelineno-0-10" id="__codelineno-0-10" name="__codelineno-0-10"></a>    implementation "org.jetbrains.kotlinx:kotlinx-serialization-json:1.6.3"
+</span><span id="__span-0-11"><a href="#__codelineno-0-11" id="__codelineno-0-11" name="__codelineno-0-11"></a>}
+</span></code></pre></div>
+<p>Exemplo (Kotlin DSL — <code>build.gradle.kts</code>):</p>
+<div class="language-kotlin highlight"><pre><span></span><code><span id="__span-1-1"><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="n">dependencies</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-1-2"><a href="#__codelineno-1-2" id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="w">    </span><span class="n">implementation</span><span class="p">(</span><span class="s">"com.squareup.retrofit2:retrofit:2.11.0"</span><span class="p">)</span>
+</span><span id="__span-1-3"><a href="#__codelineno-1-3" id="__codelineno-1-3" name="__codelineno-1-3"></a><span class="w">    </span><span class="n">implementation</span><span class="p">(</span><span class="s">"com.squareup.okhttp3:okhttp:4.12.0"</span><span class="p">)</span>
+</span><span id="__span-1-4"><a href="#__codelineno-1-4" id="__codelineno-1-4" name="__codelineno-1-4"></a><span class="w">    </span><span class="n">implementation</span><span class="p">(</span><span class="s">"com.squareup.retrofit2:converter-kotlinx-serialization:2.11.0"</span><span class="p">)</span>
+</span><span id="__span-1-5"><a href="#__codelineno-1-5" id="__codelineno-1-5" name="__codelineno-1-5"></a><span class="w">    </span><span class="n">implementation</span><span class="p">(</span><span class="s">"org.jetbrains.kotlinx:kotlinx-serialization-json:1.6.3"</span><span class="p">)</span>
+</span><span id="__span-1-6"><a href="#__codelineno-1-6" id="__codelineno-1-6" name="__codelineno-1-6"></a><span class="p">}</span>
+</span></code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">Versões</p>
+<p>Em projetos reais, mantenha versões consistentes entre os artefatos do Retrofit e valide a compatibilidade com a versão do Kotlin/AGP do projeto.</p>
+</div>
+<p>Agora vamos entender como usar essas ferramentas para consumir uma API REST de forma simplificada.</p>
+<h3 id="passo-1-modelar-dtos">Passo 1 — Modelar DTOs<a class="headerlink" href="#passo-1-modelar-dtos" title="Permanent link">¶</a></h3>
+<p>Supondo uma API de tarefas, um DTO de leitura pode semelhante ao abaixo. Observe o uso de <code>data class</code> e anotações de serialização para mapear campos JSON.</p>
+<div class="language-kotlin highlight"><pre><span></span><code><span id="__span-2-1"><a href="#__codelineno-2-1" id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="k">import</span><span class="w"> </span><span class="nn">kotlinx.serialization.SerialName</span>
+</span><span id="__span-2-2"><a href="#__codelineno-2-2" id="__codelineno-2-2" name="__codelineno-2-2"></a><span class="k">import</span><span class="w"> </span><span class="nn">kotlinx.serialization.Serializable</span>
+</span><span id="__span-2-3"><a href="#__codelineno-2-3" id="__codelineno-2-3" name="__codelineno-2-3"></a>
+</span><span id="__span-2-4"><a href="#__codelineno-2-4" id="__codelineno-2-4" name="__codelineno-2-4"></a><span class="nd">@Serializable</span>
+</span><span id="__span-2-5"><a href="#__codelineno-2-5" id="__codelineno-2-5" name="__codelineno-2-5"></a><span class="kd">data</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nc">TaskDto</span><span class="p">(</span>
+</span><span id="__span-2-6"><a href="#__codelineno-2-6" id="__codelineno-2-6" name="__codelineno-2-6"></a><span class="w">    </span><span class="kd">val</span><span class="w"> </span><span class="nv">id</span><span class="p">:</span><span class="w"> </span><span class="kt">Long</span><span class="p">,</span>
+</span><span id="__span-2-7"><a href="#__codelineno-2-7" id="__codelineno-2-7" name="__codelineno-2-7"></a><span class="w">    </span><span class="kd">val</span><span class="w"> </span><span class="nv">title</span><span class="p">:</span><span class="w"> </span><span class="kt">String</span><span class="p">,</span>
+</span><span id="__span-2-8"><a href="#__codelineno-2-8" id="__codelineno-2-8" name="__codelineno-2-8"></a><span class="w">    </span><span class="kd">val</span><span class="w"> </span><span class="nv">done</span><span class="p">:</span><span class="w"> </span><span class="kt">Boolean</span><span class="p">,</span>
+</span><span id="__span-2-9"><a href="#__codelineno-2-9" id="__codelineno-2-9" name="__codelineno-2-9"></a><span class="w">    </span><span class="nd">@SerialName</span><span class="p">(</span><span class="s">"created_at"</span><span class="p">)</span><span class="w"> </span><span class="kd">val</span><span class="w"> </span><span class="nv">createdAt</span><span class="p">:</span><span class="w"> </span><span class="kt">String</span><span class="p">,</span>
+</span><span id="__span-2-10"><a href="#__codelineno-2-10" id="__codelineno-2-10" name="__codelineno-2-10"></a><span class="p">)</span>
+</span></code></pre></div>
+<h3 id="passo-2-definir-a-interface-da-api">Passo 2 — Definir a interface da API<a class="headerlink" href="#passo-2-definir-a-interface-da-api" title="Permanent link">¶</a></h3>
+<p>Aqui utilizamos a sintaxe de Retrofit para declarar os endpoints. Cada função é anotada com o método HTTP e a rota, e os parâmetros indicam o corpo ou query params.</p>
+<div class="language-kotlin highlight"><pre><span></span><code><span id="__span-3-1"><a href="#__codelineno-3-1" id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="k">import</span><span class="w"> </span><span class="nn">retrofit2.http.Body</span>
+</span><span id="__span-3-2"><a href="#__codelineno-3-2" id="__codelineno-3-2" name="__codelineno-3-2"></a><span class="k">import</span><span class="w"> </span><span class="nn">retrofit2.http.GET</span>
+</span><span id="__span-3-3"><a href="#__codelineno-3-3" id="__codelineno-3-3" name="__codelineno-3-3"></a><span class="k">import</span><span class="w"> </span><span class="nn">retrofit2.http.POST</span>
+</span><span id="__span-3-4"><a href="#__codelineno-3-4" id="__codelineno-3-4" name="__codelineno-3-4"></a>
+</span><span id="__span-3-5"><a href="#__codelineno-3-5" id="__codelineno-3-5" name="__codelineno-3-5"></a><span class="kd">interface</span><span class="w"> </span><span class="nc">TaskApi</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-3-6"><a href="#__codelineno-3-6" id="__codelineno-3-6" name="__codelineno-3-6"></a><span class="w">    </span><span class="nd">@GET</span><span class="p">(</span><span class="s">"v1/tasks"</span><span class="p">)</span>
+</span><span id="__span-3-7"><a href="#__codelineno-3-7" id="__codelineno-3-7" name="__codelineno-3-7"></a><span class="w">    </span><span class="kd">suspend</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="nf">listTasks</span><span class="p">():</span><span class="w"> </span><span class="n">List</span><span class="o">&lt;</span><span class="n">TaskDto</span><span class="o">&gt;</span>
+</span><span id="__span-3-8"><a href="#__codelineno-3-8" id="__codelineno-3-8" name="__codelineno-3-8"></a>
+</span><span id="__span-3-9"><a href="#__codelineno-3-9" id="__codelineno-3-9" name="__codelineno-3-9"></a><span class="w">    </span><span class="nd">@POST</span><span class="p">(</span><span class="s">"v1/tasks"</span><span class="p">)</span>
+</span><span id="__span-3-10"><a href="#__codelineno-3-10" id="__codelineno-3-10" name="__codelineno-3-10"></a><span class="w">    </span><span class="kd">suspend</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="nf">createTask</span><span class="p">(</span><span class="nd">@Body</span><span class="w"> </span><span class="n">body</span><span class="p">:</span><span class="w"> </span><span class="n">CreateTaskRequest</span><span class="p">):</span><span class="w"> </span><span class="n">TaskDto</span>
+</span><span id="__span-3-11"><a href="#__codelineno-3-11" id="__codelineno-3-11" name="__codelineno-3-11"></a><span class="p">}</span>
+</span></code></pre></div>
+<h3 id="passo-3-construir-retrofit-okhttp">Passo 3 — Construir Retrofit + OkHttp<a class="headerlink" href="#passo-3-construir-retrofit-okhttp" title="Permanent link">¶</a></h3>
+<p>O exemplo abaixo ilustra:</p>
+<ul>
+<li><code>OkHttpClient</code> com timeouts;</li>
+<li>interceptor para autenticação;</li>
+<li>Retrofit com conversor de JSON.</li>
+</ul>
+<div class="language-kotlin highlight"><pre><span></span><code><span id="__span-4-1"><a href="#__codelineno-4-1" id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="k">import</span><span class="w"> </span><span class="nn">kotlinx.serialization.json.Json</span>
+</span><span id="__span-4-2"><a href="#__codelineno-4-2" id="__codelineno-4-2" name="__codelineno-4-2"></a><span class="k">import</span><span class="w"> </span><span class="nn">okhttp3.Interceptor</span>
+</span><span id="__span-4-3"><a href="#__codelineno-4-3" id="__codelineno-4-3" name="__codelineno-4-3"></a><span class="k">import</span><span class="w"> </span><span class="nn">okhttp3.OkHttpClient</span>
+</span><span id="__span-4-4"><a href="#__codelineno-4-4" id="__codelineno-4-4" name="__codelineno-4-4"></a><span class="k">import</span><span class="w"> </span><span class="nn">okhttp3.Response</span>
+</span><span id="__span-4-5"><a href="#__codelineno-4-5" id="__codelineno-4-5" name="__codelineno-4-5"></a><span class="k">import</span><span class="w"> </span><span class="nn">retrofit2.Retrofit</span>
+</span><span id="__span-4-6"><a href="#__codelineno-4-6" id="__codelineno-4-6" name="__codelineno-4-6"></a><span class="k">import</span><span class="w"> </span><span class="nn">retrofit2.converter.kotlinx.serialization.asConverterFactory</span>
+</span><span id="__span-4-7"><a href="#__codelineno-4-7" id="__codelineno-4-7" name="__codelineno-4-7"></a><span class="k">import</span><span class="w"> </span><span class="nn">okhttp3.MediaType.Companion.toMediaType</span>
+</span><span id="__span-4-8"><a href="#__codelineno-4-8" id="__codelineno-4-8" name="__codelineno-4-8"></a><span class="k">import</span><span class="w"> </span><span class="nn">java.util.concurrent.TimeUnit</span>
+</span><span id="__span-4-9"><a href="#__codelineno-4-9" id="__codelineno-4-9" name="__codelineno-4-9"></a>
+</span><span id="__span-4-10"><a href="#__codelineno-4-10" id="__codelineno-4-10" name="__codelineno-4-10"></a><span class="kd">class</span><span class="w"> </span><span class="nc">AuthInterceptor</span><span class="p">(</span>
+</span><span id="__span-4-11"><a href="#__codelineno-4-11" id="__codelineno-4-11" name="__codelineno-4-11"></a><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">val</span><span class="w"> </span><span class="nv">tokenProvider</span><span class="p">:</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="kt">String?</span><span class="p">,</span>
+</span><span id="__span-4-12"><a href="#__codelineno-4-12" id="__codelineno-4-12" name="__codelineno-4-12"></a><span class="p">)</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">Interceptor</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-4-13"><a href="#__codelineno-4-13" id="__codelineno-4-13" name="__codelineno-4-13"></a><span class="w">    </span><span class="kd">override</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="nf">intercept</span><span class="p">(</span><span class="n">chain</span><span class="p">:</span><span class="w"> </span><span class="n">Interceptor</span><span class="p">.</span><span class="na">Chain</span><span class="p">):</span><span class="w"> </span><span class="n">Response</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-4-14"><a href="#__codelineno-4-14" id="__codelineno-4-14" name="__codelineno-4-14"></a><span class="w">        </span><span class="kd">val</span><span class="w"> </span><span class="nv">original</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">chain</span><span class="p">.</span><span class="na">request</span><span class="p">()</span>
+</span><span id="__span-4-15"><a href="#__codelineno-4-15" id="__codelineno-4-15" name="__codelineno-4-15"></a><span class="w">        </span><span class="kd">val</span><span class="w"> </span><span class="nv">token</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tokenProvider</span><span class="p">()</span>
+</span><span id="__span-4-16"><a href="#__codelineno-4-16" id="__codelineno-4-16" name="__codelineno-4-16"></a>
+</span><span id="__span-4-17"><a href="#__codelineno-4-17" id="__codelineno-4-17" name="__codelineno-4-17"></a><span class="w">        </span><span class="kd">val</span><span class="w"> </span><span class="nv">request</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">token</span><span class="p">.</span><span class="na">isNullOrBlank</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-4-18"><a href="#__codelineno-4-18" id="__codelineno-4-18" name="__codelineno-4-18"></a><span class="w">            </span><span class="n">original</span>
+</span><span id="__span-4-19"><a href="#__codelineno-4-19" id="__codelineno-4-19" name="__codelineno-4-19"></a><span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-4-20"><a href="#__codelineno-4-20" id="__codelineno-4-20" name="__codelineno-4-20"></a><span class="w">            </span><span class="n">original</span><span class="p">.</span><span class="na">newBuilder</span><span class="p">()</span>
+</span><span id="__span-4-21"><a href="#__codelineno-4-21" id="__codelineno-4-21" name="__codelineno-4-21"></a><span class="w">                </span><span class="p">.</span><span class="na">addHeader</span><span class="p">(</span><span class="s">"Authorization"</span><span class="p">,</span><span class="w"> </span><span class="s">"Bearer </span><span class="si">$</span><span class="n">token</span><span class="s">"</span><span class="p">)</span>
+</span><span id="__span-4-22"><a href="#__codelineno-4-22" id="__codelineno-4-22" name="__codelineno-4-22"></a><span class="w">                </span><span class="p">.</span><span class="na">build</span><span class="p">()</span>
+</span><span id="__span-4-23"><a href="#__codelineno-4-23" id="__codelineno-4-23" name="__codelineno-4-23"></a><span class="w">        </span><span class="p">}</span>
+</span><span id="__span-4-24"><a href="#__codelineno-4-24" id="__codelineno-4-24" name="__codelineno-4-24"></a>
+</span><span id="__span-4-25"><a href="#__codelineno-4-25" id="__codelineno-4-25" name="__codelineno-4-25"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">chain</span><span class="p">.</span><span class="na">proceed</span><span class="p">(</span><span class="n">request</span><span class="p">)</span>
+</span><span id="__span-4-26"><a href="#__codelineno-4-26" id="__codelineno-4-26" name="__codelineno-4-26"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-4-27"><a href="#__codelineno-4-27" id="__codelineno-4-27" name="__codelineno-4-27"></a><span class="p">}</span>
+</span><span id="__span-4-28"><a href="#__codelineno-4-28" id="__codelineno-4-28" name="__codelineno-4-28"></a>
+</span><span id="__span-4-29"><a href="#__codelineno-4-29" id="__codelineno-4-29" name="__codelineno-4-29"></a><span class="kd">fun</span><span class="w"> </span><span class="nf">buildTaskApi</span><span class="p">(</span><span class="n">baseUrl</span><span class="p">:</span><span class="w"> </span><span class="kt">String</span><span class="p">,</span><span class="w"> </span><span class="n">tokenProvider</span><span class="p">:</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="kt">String?</span><span class="p">):</span><span class="w"> </span><span class="n">TaskApi</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-4-30"><a href="#__codelineno-4-30" id="__codelineno-4-30" name="__codelineno-4-30"></a><span class="w">    </span><span class="kd">val</span><span class="w"> </span><span class="nv">json</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Json</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-4-31"><a href="#__codelineno-4-31" id="__codelineno-4-31" name="__codelineno-4-31"></a><span class="w">        </span><span class="n">ignoreUnknownKeys</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span>
+</span><span id="__span-4-32"><a href="#__codelineno-4-32" id="__codelineno-4-32" name="__codelineno-4-32"></a><span class="w">        </span><span class="n">isLenient</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span>
+</span><span id="__span-4-33"><a href="#__codelineno-4-33" id="__codelineno-4-33" name="__codelineno-4-33"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-4-34"><a href="#__codelineno-4-34" id="__codelineno-4-34" name="__codelineno-4-34"></a>
+</span><span id="__span-4-35"><a href="#__codelineno-4-35" id="__codelineno-4-35" name="__codelineno-4-35"></a><span class="w">    </span><span class="kd">val</span><span class="w"> </span><span class="nv">contentType</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"application/json"</span><span class="p">.</span><span class="na">toMediaType</span><span class="p">()</span>
+</span><span id="__span-4-36"><a href="#__codelineno-4-36" id="__codelineno-4-36" name="__codelineno-4-36"></a>
+</span><span id="__span-4-37"><a href="#__codelineno-4-37" id="__codelineno-4-37" name="__codelineno-4-37"></a><span class="w">    </span><span class="kd">val</span><span class="w"> </span><span class="nv">okHttp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">OkHttpClient</span><span class="p">.</span><span class="na">Builder</span><span class="p">()</span>
+</span><span id="__span-4-38"><a href="#__codelineno-4-38" id="__codelineno-4-38" name="__codelineno-4-38"></a><span class="w">        </span><span class="p">.</span><span class="na">connectTimeout</span><span class="p">(</span><span class="m">15</span><span class="p">,</span><span class="w"> </span><span class="n">TimeUnit</span><span class="p">.</span><span class="na">SECONDS</span><span class="p">)</span>
+</span><span id="__span-4-39"><a href="#__codelineno-4-39" id="__codelineno-4-39" name="__codelineno-4-39"></a><span class="w">        </span><span class="p">.</span><span class="na">readTimeout</span><span class="p">(</span><span class="m">30</span><span class="p">,</span><span class="w"> </span><span class="n">TimeUnit</span><span class="p">.</span><span class="na">SECONDS</span><span class="p">)</span>
+</span><span id="__span-4-40"><a href="#__codelineno-4-40" id="__codelineno-4-40" name="__codelineno-4-40"></a><span class="w">        </span><span class="p">.</span><span class="na">writeTimeout</span><span class="p">(</span><span class="m">30</span><span class="p">,</span><span class="w"> </span><span class="n">TimeUnit</span><span class="p">.</span><span class="na">SECONDS</span><span class="p">)</span>
+</span><span id="__span-4-41"><a href="#__codelineno-4-41" id="__codelineno-4-41" name="__codelineno-4-41"></a><span class="w">        </span><span class="p">.</span><span class="na">addInterceptor</span><span class="p">(</span><span class="n">AuthInterceptor</span><span class="p">(</span><span class="n">tokenProvider</span><span class="p">))</span>
+</span><span id="__span-4-42"><a href="#__codelineno-4-42" id="__codelineno-4-42" name="__codelineno-4-42"></a><span class="w">        </span><span class="p">.</span><span class="na">build</span><span class="p">()</span>
+</span><span id="__span-4-43"><a href="#__codelineno-4-43" id="__codelineno-4-43" name="__codelineno-4-43"></a>
+</span><span id="__span-4-44"><a href="#__codelineno-4-44" id="__codelineno-4-44" name="__codelineno-4-44"></a><span class="w">    </span><span class="kd">val</span><span class="w"> </span><span class="nv">retrofit</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Retrofit</span><span class="p">.</span><span class="na">Builder</span><span class="p">()</span>
+</span><span id="__span-4-45"><a href="#__codelineno-4-45" id="__codelineno-4-45" name="__codelineno-4-45"></a><span class="w">        </span><span class="p">.</span><span class="na">baseUrl</span><span class="p">(</span><span class="n">baseUrl</span><span class="p">)</span>
+</span><span id="__span-4-46"><a href="#__codelineno-4-46" id="__codelineno-4-46" name="__codelineno-4-46"></a><span class="w">        </span><span class="p">.</span><span class="na">client</span><span class="p">(</span><span class="n">okHttp</span><span class="p">)</span>
+</span><span id="__span-4-47"><a href="#__codelineno-4-47" id="__codelineno-4-47" name="__codelineno-4-47"></a><span class="w">        </span><span class="p">.</span><span class="na">addConverterFactory</span><span class="p">(</span><span class="n">json</span><span class="p">.</span><span class="na">asConverterFactory</span><span class="p">(</span><span class="n">contentType</span><span class="p">))</span>
+</span><span id="__span-4-48"><a href="#__codelineno-4-48" id="__codelineno-4-48" name="__codelineno-4-48"></a><span class="w">        </span><span class="p">.</span><span class="na">build</span><span class="p">()</span>
+</span><span id="__span-4-49"><a href="#__codelineno-4-49" id="__codelineno-4-49" name="__codelineno-4-49"></a>
+</span><span id="__span-4-50"><a href="#__codelineno-4-50" id="__codelineno-4-50" name="__codelineno-4-50"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">retrofit</span><span class="p">.</span><span class="na">create</span><span class="p">(</span><span class="n">TaskApi</span><span class="o">::</span><span class="n">class</span><span class="p">.</span><span class="na">java</span><span class="p">)</span>
+</span><span id="__span-4-51"><a href="#__codelineno-4-51" id="__codelineno-4-51" name="__codelineno-4-51"></a><span class="p">}</span>
+</span></code></pre></div>
+<div class="admonition info">
+<p class="admonition-title">Por que ignoreUnknownKeys?</p>
+<p>Em integração com APIs, o servidor pode adicionar campos ao JSON. Configurar o parser para ignorar campos desconhecidos torna o app mais resiliente a mudanças não destrutivas.</p>
+</div>
+<h2 id="tratamento-de-erros-o-que-o-app-precisa-fazer">Tratamento de erros: o que o app precisa fazer<a class="headerlink" href="#tratamento-de-erros-o-que-o-app-precisa-fazer" title="Permanent link">¶</a></h2>
+<p>Uma integração “funciona” quando o app consegue tratar pelo menos estes casos:</p>
+<ul>
+<li>sem internet / DNS / timeout;</li>
+<li>resposta HTTP 4xx/5xx;</li>
+<li>JSON inválido ou inesperado;</li>
+<li>autenticação expirada (401) e fluxo de re-login.</li>
+</ul>
+<p>Um padrão útil é modelar um resultado com <code>sealed class</code>.</p>
+<div class="admonition info">
+<p class="admonition-title">O que é <code>sealed class</code> (na prática)</p>
+<p>Uma <code>sealed class</code> define uma <strong>hierarquia fechada</strong>: todos os tipos que estendem aquela classe são conhecidos (e declarados no mesmo arquivo, em geral). Isso é útil para representar um conjunto <strong>finito</strong> de estados possíveis — por exemplo: sucesso, erro HTTP, erro de rede, erro desconhecido.</p>
+<p>Ela lembra um <code>enum</code> no sentido de modelar um conjunto finito de opções, mas não é a mesma coisa: <code>enum</code> é uma lista de <strong>valores</strong> fixos; <code>sealed class</code> é uma família de <strong>tipos</strong>, e cada caso pode carregar dados diferentes (por exemplo, <code>HttpError(code, body)</code> vs <code>NetworkError(error)</code>).</p>
+<p>Na UI, isso ajuda porque um <code>when (result)</code> pode ser <strong>exaustivo</strong> (o compilador te força a tratar todos os casos), evitando que algum cenário de erro fique “esquecido” e vire bug em produção.</p>
+</div>
+<div class="language-kotlin highlight"><pre><span></span><code><span id="__span-5-1"><a href="#__codelineno-5-1" id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="kd">sealed</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nc">ApiResult</span><span class="o">&lt;</span><span class="k">out</span><span class="w"> </span><span class="n">T</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-5-2"><a href="#__codelineno-5-2" id="__codelineno-5-2" name="__codelineno-5-2"></a><span class="w">    </span><span class="kd">data</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nc">Success</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="p">(</span><span class="kd">val</span><span class="w"> </span><span class="nv">value</span><span class="p">:</span><span class="w"> </span><span class="n">T</span><span class="p">)</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">ApiResult</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="p">()</span>
+</span><span id="__span-5-3"><a href="#__codelineno-5-3" id="__codelineno-5-3" name="__codelineno-5-3"></a><span class="w">    </span><span class="kd">data</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nc">HttpError</span><span class="p">(</span><span class="kd">val</span><span class="w"> </span><span class="nv">code</span><span class="p">:</span><span class="w"> </span><span class="kt">Int</span><span class="p">,</span><span class="w"> </span><span class="kd">val</span><span class="w"> </span><span class="nv">body</span><span class="p">:</span><span class="w"> </span><span class="kt">String?</span><span class="p">)</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">ApiResult</span><span class="o">&lt;</span><span class="n">Nothing</span><span class="o">&gt;</span><span class="p">()</span>
+</span><span id="__span-5-4"><a href="#__codelineno-5-4" id="__codelineno-5-4" name="__codelineno-5-4"></a><span class="w">    </span><span class="kd">data</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nc">NetworkError</span><span class="p">(</span><span class="kd">val</span><span class="w"> </span><span class="nv">error</span><span class="p">:</span><span class="w"> </span><span class="n">Throwable</span><span class="p">)</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">ApiResult</span><span class="o">&lt;</span><span class="n">Nothing</span><span class="o">&gt;</span><span class="p">()</span>
+</span><span id="__span-5-5"><a href="#__codelineno-5-5" id="__codelineno-5-5" name="__codelineno-5-5"></a><span class="w">    </span><span class="kd">data</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nc">UnknownError</span><span class="p">(</span><span class="kd">val</span><span class="w"> </span><span class="nv">error</span><span class="p">:</span><span class="w"> </span><span class="n">Throwable</span><span class="p">)</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">ApiResult</span><span class="o">&lt;</span><span class="n">Nothing</span><span class="o">&gt;</span><span class="p">()</span>
+</span><span id="__span-5-6"><a href="#__codelineno-5-6" id="__codelineno-5-6" name="__codelineno-5-6"></a><span class="p">}</span>
+</span></code></pre></div>
+<p>E encapsular chamadas em uma <strong>corrotina</strong> (função <code>suspend</code>) que retorna <code>ApiResult</code>. Corrotinas são o modelo de concorrência leve do Kotlin: você escreve código com aparência “sequencial”, mas ele pode <strong>suspender</strong> durante operações de I/O (rede, disco) sem <strong>bloquear</strong> a thread.</p>
+<p>Neste caso (chamadas HTTP), isso é útil porque:</p>
+<ul>
+<li>a UI não trava: a requisição pode suspender e retomar quando a resposta chegar;</li>
+<li>o código fica linear e legível (em vez de callbacks encadeados);</li>
+<li>existe <strong>cancelamento</strong>: se a tela sai de cena (por exemplo, ViewModel é limpo), a operação pode ser cancelada;</li>
+<li>o repositório centraliza o tratamento de erro (mapeando exceções para <code>ApiResult</code>), e a UI renderiza estados de forma previsível.</li>
+</ul>
+<div class="language-kotlin highlight"><pre><span></span><code><span id="__span-6-1"><a href="#__codelineno-6-1" id="__codelineno-6-1" name="__codelineno-6-1"></a><span class="k">import</span><span class="w"> </span><span class="nn">retrofit2.HttpException</span>
+</span><span id="__span-6-2"><a href="#__codelineno-6-2" id="__codelineno-6-2" name="__codelineno-6-2"></a><span class="k">import</span><span class="w"> </span><span class="nn">java.io.IOException</span>
+</span><span id="__span-6-3"><a href="#__codelineno-6-3" id="__codelineno-6-3" name="__codelineno-6-3"></a>
+</span><span id="__span-6-4"><a href="#__codelineno-6-4" id="__codelineno-6-4" name="__codelineno-6-4"></a><span class="kd">suspend</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="w"> </span><span class="nf">safeApiCall</span><span class="p">(</span><span class="n">block</span><span class="p">:</span><span class="w"> </span><span class="n">suspend</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">T</span><span class="p">):</span><span class="w"> </span><span class="n">ApiResult</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-6-5"><a href="#__codelineno-6-5" id="__codelineno-6-5" name="__codelineno-6-5"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="k">try</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-6-6"><a href="#__codelineno-6-6" id="__codelineno-6-6" name="__codelineno-6-6"></a><span class="w">        </span><span class="n">ApiResult</span><span class="p">.</span><span class="na">Success</span><span class="p">(</span><span class="n">block</span><span class="p">())</span>
+</span><span id="__span-6-7"><a href="#__codelineno-6-7" id="__codelineno-6-7" name="__codelineno-6-7"></a><span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">e</span><span class="p">:</span><span class="w"> </span><span class="n">HttpException</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-6-8"><a href="#__codelineno-6-8" id="__codelineno-6-8" name="__codelineno-6-8"></a><span class="w">        </span><span class="n">ApiResult</span><span class="p">.</span><span class="na">HttpError</span><span class="p">(</span><span class="n">e</span><span class="p">.</span><span class="na">code</span><span class="p">(),</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="na">response</span><span class="p">()</span><span class="o">?.</span><span class="na">errorBody</span><span class="p">()</span><span class="o">?.</span><span class="na">string</span><span class="p">())</span>
+</span><span id="__span-6-9"><a href="#__codelineno-6-9" id="__codelineno-6-9" name="__codelineno-6-9"></a><span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">e</span><span class="p">:</span><span class="w"> </span><span class="n">IOException</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-6-10"><a href="#__codelineno-6-10" id="__codelineno-6-10" name="__codelineno-6-10"></a><span class="w">        </span><span class="n">ApiResult</span><span class="p">.</span><span class="na">NetworkError</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
+</span><span id="__span-6-11"><a href="#__codelineno-6-11" id="__codelineno-6-11" name="__codelineno-6-11"></a><span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">e</span><span class="p">:</span><span class="w"> </span><span class="n">Throwable</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-6-12"><a href="#__codelineno-6-12" id="__codelineno-6-12" name="__codelineno-6-12"></a><span class="w">        </span><span class="n">ApiResult</span><span class="p">.</span><span class="na">UnknownError</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
+</span><span id="__span-6-13"><a href="#__codelineno-6-13" id="__codelineno-6-13" name="__codelineno-6-13"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-6-14"><a href="#__codelineno-6-14" id="__codelineno-6-14" name="__codelineno-6-14"></a><span class="p">}</span>
+</span></code></pre></div>
+<div class="admonition warning">
+<p class="admonition-title">Thread principal</p>
+<p>Mesmo com <code>suspend</code>, a equipe deve evitar trabalho pesado na thread principal. Bibliotecas como Retrofit/OkHttp já executam I/O fora da UI thread, mas conversões e pós-processamentos grandes ainda podem causar travamentos.</p>
+</div>
+<h2 id="integracao-com-viewmodel-padrao-didatico">Integração com ViewModel (padrão didático)<a class="headerlink" href="#integracao-com-viewmodel-padrao-didatico" title="Permanent link">¶</a></h2>
+<p>Um recorte simples de arquitetura em sala:</p>
+<ul>
+<li>UI dispara eventos (clique, refresh).</li>
+<li>ViewModel chama repositório.</li>
+<li>Repositório executa <code>safeApiCall</code> e retorna <code>ApiResult</code>.</li>
+<li>UI renderiza <code>Loading/Success/Error</code>.</li>
+</ul>
+<div class="language-kotlin highlight"><pre><span></span><code><span id="__span-7-1"><a href="#__codelineno-7-1" id="__codelineno-7-1" name="__codelineno-7-1"></a><span class="kd">class</span><span class="w"> </span><span class="nc">TaskRepository</span><span class="p">(</span><span class="kd">private</span><span class="w"> </span><span class="kd">val</span><span class="w"> </span><span class="nv">api</span><span class="p">:</span><span class="w"> </span><span class="n">TaskApi</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-7-2"><a href="#__codelineno-7-2" id="__codelineno-7-2" name="__codelineno-7-2"></a><span class="w">    </span><span class="kd">suspend</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="nf">listTasks</span><span class="p">():</span><span class="w"> </span><span class="n">ApiResult</span><span class="o">&lt;</span><span class="n">List</span><span class="o">&lt;</span><span class="n">TaskDto</span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">safeApiCall</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-7-3"><a href="#__codelineno-7-3" id="__codelineno-7-3" name="__codelineno-7-3"></a><span class="w">        </span><span class="n">api</span><span class="p">.</span><span class="na">listTasks</span><span class="p">()</span>
+</span><span id="__span-7-4"><a href="#__codelineno-7-4" id="__codelineno-7-4" name="__codelineno-7-4"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-7-5"><a href="#__codelineno-7-5" id="__codelineno-7-5" name="__codelineno-7-5"></a><span class="p">}</span>
+</span></code></pre></div>
+<h2 id="boas-praticas-que-evitam-problemas-em-producao">Boas práticas que evitam problemas em produção<a class="headerlink" href="#boas-praticas-que-evitam-problemas-em-producao" title="Permanent link">¶</a></h2>
+<h3 id="timeouts-e-retry">Timeouts e retry<a class="headerlink" href="#timeouts-e-retry" title="Permanent link">¶</a></h3>
+<ul>
+<li>timeouts devem ser explícitos para evitar “carregando infinito”; </li>
+<li>retries automáticos devem ser usados com cuidado (para não duplicar POST/PUT).</li>
+</ul>
+<h3 id="paginacao">Paginação<a class="headerlink" href="#paginacao" title="Permanent link">¶</a></h3>
+<p>APIs de lista quase sempre precisam de paginação (offset/limit, cursor, page/token). O app deve:</p>
+<ul>
+<li>exibir loading incremental;</li>
+<li>evitar carregar tudo em memória;</li>
+<li>tratar “fim da lista”.</li>
+</ul>
+<h3 id="cache-local">Cache local<a class="headerlink" href="#cache-local" title="Permanent link">¶</a></h3>
+<p>Se a UX exigir navegação offline, a equipe pode combinar:</p>
+<ul>
+<li>cache local (por exemplo, Room) com dados “últimos conhecidos”;</li>
+<li>atualização em background quando a rede voltar.</li>
+</ul>
+<h2 id="checklist-de-integracao">Checklist de integração<a class="headerlink" href="#checklist-de-integracao" title="Permanent link">¶</a></h2>
+<p>Ao final, uma integração com API REST deve responder “sim” para:</p>
+<ul>
+<li>Existe uma <code>baseUrl</code> configurada e versionada?</li>
+<li>Os DTOs cobrem os payloads reais da API?</li>
+<li>O app trata <code>timeout</code>, <code>401</code>, <code>403</code>, <code>404</code> e <code>500</code> de modo previsível?</li>
+<li>Existe um ponto único de autenticação (interceptor) e um fluxo de expiração?</li>
+<li>As telas conseguem exibir estados de carregamento e erro?</li>
+</ul>
+<h2 id="referencias">Referências<a class="headerlink" href="#referencias" title="Permanent link">¶</a></h2>
+<ul>
+<li>Square: Retrofit <sup id="fnref2:1"><a class="footnote-ref" href="#fn:1">1</a></sup></li>
+<li>Square: OkHttp <sup id="fnref2:2"><a class="footnote-ref" href="#fn:2">2</a></sup></li>
+<li>Kotlinx Serialization <sup id="fnref:3"><a class="footnote-ref" href="#fn:3">3</a></sup></li>
+</ul>
+<div class="footnote">
+<hr/>
+<ol>
+<li id="fn:1">
+<p>Square. Retrofit. 2026. URL: <a href="https://square.github.io/retrofit/">https://square.github.io/retrofit/</a>. <a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref2:1" title="Jump back to footnote 1 in the text">↩</a></p>
+</li>
+<li id="fn:2">
+<p>Square. Okhttp. 2026. URL: <a href="https://square.github.io/okhttp/">https://square.github.io/okhttp/</a>. <a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 2 in the text">↩</a><a class="footnote-backref" href="#fnref2:2" title="Jump back to footnote 2 in the text">↩</a></p>
+</li>
+<li id="fn:3">
+<p>JetBrains. Kotlinx.serialization. 2026. URL: <a href="https://github.com/Kotlin/kotlinx.serialization">https://github.com/Kotlin/kotlinx.serialization</a>. <a class="footnote-backref" href="#fnref:3" title="Jump back to footnote 3 in the text">↩</a></p>
+</li>
+</ol>
+</div>
+</article>
+</div>
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+</div>
+<button class="md-top md-icon" data-md-component="top" hidden="" type="button">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"></path></svg>
+  Back to top
+</button>
+</main>
+<footer class="md-footer">
+<nav aria-label="Footer" class="md-footer__inner md-grid">
+<a aria-label="Previous: Módulo VI - Firebase" class="md-footer__link md-footer__link--prev" href="../firebase/">
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+</div>
+<div class="md-footer__title">
+<span class="md-footer__direction">
+                Previous
+              </span>
+<div class="md-ellipsis">
+                Módulo VI - Firebase
+              </div>
+</div>
+</a>
+<a aria-label="Next: Modulo VIII - Publicação" class="md-footer__link md-footer__link--next" href="../publicacao/">
+<div class="md-footer__title">
+<span class="md-footer__direction">
+                Next
+              </span>
+<div class="md-ellipsis">
+                Modulo VIII - Publicação
+              </div>
+</div>
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"></path></svg>
+</div>
+</a>
+</nav>
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-copyright">
+<div class="md-copyright__highlight">
+      Copyright © 2024 -  Diego A. Lusa
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" rel="noopener" target="_blank">
+      Material for MkDocs
+    </a>
+</div>
+<div class="md-social">
+<a class="md-social__link" href="https://www.linkedin.com/in/diegolusa/" rel="noopener" target="_blank" title="www.linkedin.com">
+<svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3M135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5m282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9z"></path></svg>
+</a>
+<a class="md-social__link" href="http://github.com/diegolusa" rel="noopener" target="_blank" title="github.com">
+<svg viewbox="0 0 496 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"></path></svg>
+</a>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<div class="md-dialog" data-md-component="dialog">
+<div class="md-dialog__inner md-typeset"></div>
+</div>
+<script id="__config" type="application/json">{"base": "../../../..", "features": ["announce.dismiss", "navigation.top", "navigation.tabs", "navigation.path", "navigation.instant", "toc.integrate", "toc.follow", "header.autohide", "navigation.footer", "content.code.copy", "navigation.indexes"], "search": "../../../../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+<script src="../../../../assets/javascripts/bundle.f1b6f286.min.js"></script>
+<script src="../../../../javascript/config.js"></script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<script src="https://unpkg.com/mermaid@8.13.6/dist/mermaid.min.js"></script><script>mermaid.initialize({
+    theme: "base",
+    fontSize: "18px",
+    fontFamily: "Roboto"
+});</script></body>
+</html>

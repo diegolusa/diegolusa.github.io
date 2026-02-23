@@ -1,0 +1,1298 @@
+
+<!DOCTYPE html>
+
+<html class="no-js" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<link href="../persistencia/" rel="prev"/>
+<link href="../api/" rel="next"/>
+<link href="../../../../img/icon.ico" rel="icon"/>
+<meta content="mkdocs-1.6.1, mkdocs-material-9.6.4" name="generator"/>
+<title>Integração com Firebase no Android - Diego A. Lusa</title>
+<link href="../../../../assets/stylesheets/main.8608ea7d.min.css" rel="stylesheet"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+<link href="../../../../css/custom.css" rel="stylesheet"/>
+<script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+</head>
+<body dir="ltr">
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#visao-geral">
+          Skip to content
+        </a>
+</div>
+<div data-md-component="announce">
+<aside class="md-banner">
+<div class="md-banner__inner md-grid md-typeset">
+<button aria-label="Don't show this again" class="md-banner__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+</button>
+<div class="md-announcement md-announcement--alert">
+<p>
+<strong>Importante</strong>: Alguns conteúdos foram elaborados com apoio de ferramentas de IA
+    Generativa. Embora façamos revisões cuidadosas, é possível que hajam erros
+    ou inconsistências. Se identificar algum, por favor, entre em contato
+    solicitando a devida correção.
+  </p>
+</div>
+</div>
+<script>var el=document.querySelector("[data-md-component=announce]");if(el){var content=el.querySelector(".md-typeset");__md_hash(content.innerHTML)===__md_get("__announce")&&(el.hidden=!0)}</script>
+</aside>
+</div>
+<header class="md-header" data-md-component="header">
+<nav aria-label="Header" class="md-header__inner md-grid">
+<a aria-label="Diego A. Lusa" class="md-header__button md-logo" data-md-component="logo" href="../../../.." title="Diego A. Lusa">
+<img alt="logo" src="../../../../img/icon.png"/>
+</a>
+<label class="md-header__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+</label>
+<div class="md-header__title" data-md-component="header-title">
+<div class="md-header__ellipsis">
+<div class="md-header__topic">
+<span class="md-ellipsis">
+            Diego A. Lusa
+          </span>
+</div>
+<div class="md-header__topic" data-md-component="header-topic">
+<span class="md-ellipsis">
+            
+              Integração com Firebase no Android
+            
+          </span>
+</div>
+</div>
+</div>
+<script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+<label class="md-header__button md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+</label>
+<div class="md-search" data-md-component="search" role="dialog">
+<label class="md-search__overlay" for="__search"></label>
+<div class="md-search__inner" role="search">
+<form class="md-search__form" name="search">
+<input aria-label="Search" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" name="query" placeholder="Search" required="" spellcheck="false" type="text"/>
+<label class="md-search__icon md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+</label>
+<nav aria-label="Search" class="md-search__options">
+<button aria-label="Clear" class="md-search__icon md-icon" tabindex="-1" title="Clear" type="reset">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+</button>
+</nav>
+</form>
+<div class="md-search__output">
+<div class="md-search__scrollwrap" data-md-scrollfix="" tabindex="0">
+<div class="md-search-result" data-md-component="search-result">
+<div class="md-search-result__meta">
+            Initializing search
+          </div>
+<ol class="md-search-result__list" role="presentation"></ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+</nav>
+</header>
+<div class="md-container" data-md-component="container">
+<nav aria-label="Tabs" class="md-tabs" data-md-component="tabs">
+<div class="md-grid">
+<ul class="md-tabs__list">
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../../..">
+        
+  
+    
+  
+  Home
+
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../../../informatica/editores-texto/introducao/">
+          
+  
+    
+  
+  Informática Básica
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../ads-153/">
+          
+  
+    
+  
+  Web
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../hads-005/">
+          
+  
+    
+  
+  Mobile I
+
+        </a>
+</li>
+<li class="md-tabs__item md-tabs__item--active">
+<a class="md-tabs__link" href="../">
+          
+  
+    
+  
+  Mobile II
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../ccc-275/">
+          
+  
+    
+  
+  Algoritmos e Programação
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../ccc-296/">
+          
+  
+    
+  
+  Inteligência Artificial
+
+        </a>
+</li>
+</ul>
+</div>
+</nav>
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Navigation" class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="Diego A. Lusa" class="md-nav__button md-logo" data-md-component="logo" href="../../../.." title="Diego A. Lusa">
+<img alt="logo" src="../../../../img/icon.png"/>
+</a>
+    Diego A. Lusa
+  </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../..">
+<span class="md-ellipsis">
+    Home
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+<span class="md-ellipsis">
+    Informática Básica
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_2">
+<span class="md-nav__icon md-icon"></span>
+            Informática Básica
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_1" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
+<span class="md-ellipsis">
+    Editores de Texto
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_1_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_1">
+<span class="md-nav__icon md-icon"></span>
+            Editores de Texto
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../informatica/editores-texto/introducao/">
+<span class="md-ellipsis">
+    Writer
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../informatica/editores-texto/estilos/">
+<span class="md-ellipsis">
+    Estilos
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../informatica/editores-texto/abnt/">
+<span class="md-ellipsis">
+    ABNT
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_3" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../ads-153/">
+<span class="md-ellipsis">
+    Web
+    
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_3_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_3">
+<span class="md-nav__icon md-icon"></span>
+            Web
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../ads-153/m-1/m-1/">
+<span class="md-ellipsis">
+    Módulo I - Fundamentos e Linguagem HTML5
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../ads-153/m-2/m-2/">
+<span class="md-ellipsis">
+    Módulo II - Cascading Style Sheets
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../ads-153/m-3/m-3/">
+<span class="md-ellipsis">
+    Módulo III - Linguagem JavaScript
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_4" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../hads-005/">
+<span class="md-ellipsis">
+    Mobile I
+    
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_4_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_4">
+<span class="md-nav__icon md-icon"></span>
+            Mobile I
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../hads-005/dispositivos/">
+<span class="md-ellipsis">
+    Evolução dos Dispositivos Móveis e dos Sistemas Operacionais
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_5" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../">
+<span class="md-ellipsis">
+    Mobile II
+    
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="true" aria-labelledby="__nav_5_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_5">
+<span class="md-nav__icon md-icon"></span>
+            Mobile II
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../kotlin/">
+<span class="md-ellipsis">
+    Módulo I - Linguagem Kotlin
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../fundamentos/">
+<span class="md-ellipsis">
+    Módulo II - Fundamentos de Android
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../ui-xml/">
+<span class="md-ellipsis">
+    Módulo III - Layouts XML
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../navegacao/">
+<span class="md-ellipsis">
+    Módulo IV - Navegação e Ciclo de Vida
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../persistencia/">
+<span class="md-ellipsis">
+    Módulo V - Persistência de Dados
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+<span class="md-ellipsis">
+    Módulo VI - Firebase
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./">
+<span class="md-ellipsis">
+    Módulo VI - Firebase
+    
+  </span>
+</a>
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#visao-geral">
+<span class="md-ellipsis">
+      Visão geral
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#modelo-mental-cliente-servidor-e-regras">
+<span class="md-ellipsis">
+      Modelo mental: cliente, servidor e regras
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#pre-requisitos">
+<span class="md-ellipsis">
+      Pré-requisitos
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#passo-1-criar-um-projeto-no-firebase-console">
+<span class="md-ellipsis">
+      Passo 1 — Criar um projeto no Firebase Console
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#passo-2-baixar-e-adicionar-o-arquivo-de-configuracao">
+<span class="md-ellipsis">
+      Passo 2 — Baixar e adicionar o arquivo de configuração
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#passo-3-adicionar-dependencias-do-firebase-bom">
+<span class="md-ellipsis">
+      Passo 3 — Adicionar dependências do Firebase (BoM)
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#passo-31-organizacao-por-ambientes-devhomologprod">
+<span class="md-ellipsis">
+      Passo 3.1 — Organização por ambientes (dev/homolog/prod)
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#passo-4-inicializacao-do-firebase-no-app">
+<span class="md-ellipsis">
+      Passo 4 — Inicialização do Firebase no app
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#passo-41-diagnostico-de-problemas-comuns-integracao-inicial">
+<span class="md-ellipsis">
+      Passo 4.1 — Diagnóstico de problemas comuns (integração inicial)
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#passo-5-integrar-servicos-comuns-visao-pratica">
+<span class="md-ellipsis">
+      Passo 5 — Integrar serviços comuns (visão prática)
+    </span>
+</a>
+<nav aria-label="Passo 5 — Integrar serviços comuns (visão prática)" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#autenticacao-firebase-authentication">
+<span class="md-ellipsis">
+      Autenticação (Firebase Authentication)
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#banco-de-dados-cloud-firestore">
+<span class="md-ellipsis">
+      Banco de dados (Cloud Firestore)
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#armazenamento-de-arquivos-cloud-storage">
+<span class="md-ellipsis">
+      Armazenamento de arquivos (Cloud Storage)
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#notificacoes-firebase-cloud-messaging">
+<span class="md-ellipsis">
+      Notificações (Firebase Cloud Messaging)
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#crashlytics-observabilidade">
+<span class="md-ellipsis">
+      Crashlytics (observabilidade)
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#passo-51-analytics-instrumentacao-minima">
+<span class="md-ellipsis">
+      Passo 5.1 — Analytics (instrumentação mínima)
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#passo-6-seguranca-regras-chaves-e-ambientes">
+<span class="md-ellipsis">
+      Passo 6 — Segurança: regras, chaves e ambientes
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#passo-61-emuladores-para-desenvolvimento-quando-disponivel">
+<span class="md-ellipsis">
+      Passo 6.1 — Emuladores para desenvolvimento (quando disponível)
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#exemplos-de-codigo-kotlin">
+<span class="md-ellipsis">
+      Exemplos de código (Kotlin)
+    </span>
+</a>
+<nav aria-label="Exemplos de código (Kotlin)" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#dependencias-exemplo-em-gradle-kotlin-dsl">
+<span class="md-ellipsis">
+      Dependências (exemplo em Gradle Kotlin DSL)
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#authentication-obter-o-id-token-do-usuario">
+<span class="md-ellipsis">
+      Authentication: obter o ID token do usuário
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#firestore-gravar-e-ler-documentos">
+<span class="md-ellipsis">
+      Firestore: gravar e ler documentos
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#storage-upload-de-arquivo-por-uri">
+<span class="md-ellipsis">
+      Storage: upload de arquivo (por URI)
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#fcm-obter-token-do-dispositivo-e-receber-mensagens">
+<span class="md-ellipsis">
+      FCM: obter token do dispositivo e receber mensagens
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#crashlytics-e-analytics-instrumentacao-minima">
+<span class="md-ellipsis">
+      Crashlytics e Analytics: instrumentação mínima
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#inicializacao-do-admin-sdk">
+<span class="md-ellipsis">
+      Inicialização do Admin SDK
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#validacao-de-identidade-verificar-um-id-token">
+<span class="md-ellipsis">
+      Validação de identidade: verificar um ID token
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#firestore-gravar-e-ler-documentos-admin">
+<span class="md-ellipsis">
+      Firestore: gravar e ler documentos (admin)
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#fcm-envio-de-notificacao-para-um-token">
+<span class="md-ellipsis">
+      FCM: envio de notificação para um token
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#passo-7-validacao-e-checklist">
+<span class="md-ellipsis">
+      Passo 7 — Validação e checklist
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#referencias">
+<span class="md-ellipsis">
+      Referências
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../api/">
+<span class="md-ellipsis">
+    Módulo VII -  Consumo de APIs
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../publicacao/">
+<span class="md-ellipsis">
+    Modulo VIII - Publicação
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_6" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../ccc-275/">
+<span class="md-ellipsis">
+    Algoritmos e Programação
+    
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_6_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_6">
+<span class="md-nav__icon md-icon"></span>
+            Algoritmos e Programação
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../ccc-275/conteudo-python/">
+<span class="md-ellipsis">
+    Fundamentos de algoritmos e programação com Python
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_7" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../ccc-296/">
+<span class="md-ellipsis">
+    Inteligência Artificial
+    
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_7_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_7">
+<span class="md-nav__icon md-icon"></span>
+            Inteligência Artificial
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_7_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_7_2" id="__nav_7_2_label" tabindex="0">
+<span class="md-ellipsis">
+    Um pouco de história
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_7_2_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_7_2">
+<span class="md-nav__icon md-icon"></span>
+            Um pouco de história
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../ccc-312/historia/">
+<span class="md-ellipsis">
+    Fundamentos
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_7_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_7_3" id="__nav_7_3_label" tabindex="0">
+<span class="md-ellipsis">
+    Paradigma Evolutivo
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_7_3_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_7_3">
+<span class="md-nav__icon md-icon"></span>
+            Paradigma Evolutivo
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../ccc-296/ag/">
+<span class="md-ellipsis">
+    Algoritmos Genéticos
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_7_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_7_4" id="__nav_7_4_label" tabindex="0">
+<span class="md-ellipsis">
+    Paradigma Conexionista
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_7_4_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_7_4">
+<span class="md-nav__icon md-icon"></span>
+            Paradigma Conexionista
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../ccc-296/rna/">
+<span class="md-ellipsis">
+    Redes Neurais Artificiais
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_7_5" type="checkbox"/>
+<label class="md-nav__link" for="__nav_7_5" id="__nav_7_5_label" tabindex="0">
+<span class="md-ellipsis">
+    Inteligência Artificial Generativa
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_7_5_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_7_5">
+<span class="md-nav__icon md-icon"></span>
+            Inteligência Artificial Generativa
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../ccc-296/genai/">
+<span class="md-ellipsis">
+    Inteligência Artificial Generativa
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<h1>Módulo VI - Firebase</h1>
+<h2 id="visao-geral">Visão geral<a class="headerlink" href="#visao-geral" title="Permanent link">¶</a></h2>
+<p>O Firebase é uma plataforma de serviços gerenciados que apoia o desenvolvimento de aplicativos com recursos como <strong>autenticação</strong>, <strong>banco de dados</strong>, <strong>armazenamento de arquivos</strong>, <strong>notificações</strong>, <strong>analytics</strong> e <strong>monitoramento de falhas</strong>. Em Android, a integração ocorre por meio do <strong>Firebase SDK</strong>, que conecta o aplicativo a um projeto configurado no console.</p>
+<p>A integração típica segue a sequência: criar o projeto no console → registrar o aplicativo Android → incluir o arquivo de configuração → adicionar dependências → validar a comunicação com um serviço inicial (por exemplo, Analytics ou Crashlytics) <sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup>.</p>
+<div class="mermaid">flowchart LR
+    APP[Aplicativo Android] --&gt; SDK[Firebase SDK]
+    SDK --&gt; AUTH[Authentication]
+    SDK --&gt; DB[Firestore / Realtime Database]
+    SDK --&gt; ST[Storage]
+    SDK --&gt; MSG[Cloud Messaging]
+    SDK --&gt; CR[Crashlytics]
+    SDK --&gt; AN[Analytics]
+</div>
+<h2 id="modelo-mental-cliente-servidor-e-regras">Modelo mental: cliente, servidor e regras<a class="headerlink" href="#modelo-mental-cliente-servidor-e-regras" title="Permanent link">¶</a></h2>
+<p>Para entender “como integrar Firebase” de forma segura, é útil separar o que roda no <strong>cliente</strong> (o aplicativo Android) do que roda em um <strong>servidor</strong> (quando existe). O SDK do Firebase no Android é um SDK de cliente: ele executa requisições diretamente aos serviços do Firebase usando as credenciais e o contexto do app.</p>
+<p>Isso não significa que o app “pode tudo”. O acesso a dados (Firestore e Storage) é controlado por <strong>Security Rules</strong>. Essas regras definem o que um usuário autenticado (ou anônimo) pode ler e escrever. Essa é a base da segurança no lado do Firebase para apps móveis.</p>
+<p>Quando o projeto precisa de operações privilegiadas (por exemplo, tarefas administrativas, envio de notificações em massa, validações que não devem ficar no app), é comum existir uma camada de servidor usando o <strong>Firebase Admin SDK</strong>. O Admin SDK usa credenciais de serviço e não deve ser embutido no aplicativo.</p>
+<div class="mermaid">flowchart TB
+    subgraph Cliente
+        A[App Android\nFirebase Client SDK]
+    end
+
+    subgraph Firebase
+        F[(Firestore)]
+        S[(Storage)]
+        M[(FCM)]
+        R[Security Rules]
+    end
+
+    subgraph Servidor\n(opcional)
+        B[Backend\nFirebase Admin SDK]
+    end
+
+    A --&gt;|leitura/escrita\nregulada por Rules| R
+    R --&gt; F
+    R --&gt; S
+
+    B --&gt;|operações privilegiadas| F
+    B --&gt;|operações privilegiadas| S
+    B --&gt;|envio de mensagens| M
+</div>
+<h2 id="pre-requisitos">Pré-requisitos<a class="headerlink" href="#pre-requisitos" title="Permanent link">¶</a></h2>
+<p>Para uma integração previsível, o projeto precisa atender a alguns requisitos práticos:</p>
+<ul>
+<li>possuir um pacote Android definido (applicationId), pois ele identifica o app no Firebase;</li>
+<li>usar uma versão do Gradle/Android Gradle Plugin compatível com as bibliotecas atuais;</li>
+<li>ter acesso a uma conta Google para criar e administrar o projeto no console.</li>
+</ul>
+<p>A documentação oficial é a referência primária para requisitos e passos atualizados, pois eles podem mudar ao longo do tempo <sup id="fnref2:1"><a class="footnote-ref" href="#fn:1">1</a></sup>.</p>
+<h2 id="passo-1-criar-um-projeto-no-firebase-console">Passo 1 — Criar um projeto no Firebase Console<a class="headerlink" href="#passo-1-criar-um-projeto-no-firebase-console" title="Permanent link">¶</a></h2>
+<p>No Firebase Console, a equipe cria um novo projeto. Em seguida, registra-se o aplicativo Android informando o <strong>package name</strong> (applicationId). Em muitos casos também se informa o <strong>SHA-1</strong> (e, às vezes, SHA-256) para habilitar recursos como logins com provedores e APIs específicas.</p>
+<p>O resultado desse passo é o registro do app dentro do projeto Firebase.</p>
+<h2 id="passo-2-baixar-e-adicionar-o-arquivo-de-configuracao">Passo 2 — Baixar e adicionar o arquivo de configuração<a class="headerlink" href="#passo-2-baixar-e-adicionar-o-arquivo-de-configuracao" title="Permanent link">¶</a></h2>
+<p>Após registrar o app, o console fornece o arquivo <code>google-services.json</code>. Esse arquivo deve ser colocado no módulo do aplicativo (normalmente <code>app/</code> no projeto Android).</p>
+<p>Esse arquivo contém identificadores e chaves públicas do projeto e permite que o plugin de build gere recursos e metadados necessários para o SDK localizar o projeto correto.</p>
+<h2 id="passo-3-adicionar-dependencias-do-firebase-bom">Passo 3 — Adicionar dependências do Firebase (BoM)<a class="headerlink" href="#passo-3-adicionar-dependencias-do-firebase-bom" title="Permanent link">¶</a></h2>
+<p>Em projetos modernos, recomenda-se usar o <strong>Firebase BoM (Bill of Materials)</strong> para manter versões coerentes entre bibliotecas <sup id="fnref:2"><a class="footnote-ref" href="#fn:2">2</a></sup>. Com o BoM, a equipe define uma versão única e adiciona as dependências de serviços específicos sem declarar versões individuais.</p>
+<p>Nesta etapa, o projeto normalmente também habilita o plugin do Google Services, que processa o <code>google-services.json</code> <sup id="fnref3:1"><a class="footnote-ref" href="#fn:1">1</a></sup>.</p>
+<h2 id="passo-31-organizacao-por-ambientes-devhomologprod">Passo 3.1 — Organização por ambientes (dev/homolog/prod)<a class="headerlink" href="#passo-31-organizacao-por-ambientes-devhomologprod" title="Permanent link">¶</a></h2>
+<p>Em projetos de ensino e projetos reais, o time normalmente precisa separar ao menos dois ambientes: um para desenvolvimento e outro para produção. Uma prática comum é usar projetos Firebase distintos (por exemplo, “app-dev” e “app-prod”), cada um com seu próprio <code>google-services.json</code>.</p>
+<p>O objetivo é reduzir risco: testes e dados de sala/laboratório não devem afetar o ambiente de produção. Essa separação também facilita mudar configurações (como regras e provedores de login) sem impactar usuários reais.</p>
+<h2 id="passo-4-inicializacao-do-firebase-no-app">Passo 4 — Inicialização do Firebase no app<a class="headerlink" href="#passo-4-inicializacao-do-firebase-no-app" title="Permanent link">¶</a></h2>
+<p>Em geral, a inicialização do Firebase é automática quando o projeto inclui o arquivo de configuração e as dependências. Ao iniciar o app, o SDK lê as configurações e prepara os serviços.</p>
+<p>Para verificar a integração, é comum começar por um serviço simples:</p>
+<ul>
+<li><strong>Analytics</strong>: verificar eventos no console;</li>
+<li><strong>Crashlytics</strong>: forçar um crash controlado (em ambiente de teste) e confirmar o relatório no console.</li>
+</ul>
+<h2 id="passo-41-diagnostico-de-problemas-comuns-integracao-inicial">Passo 4.1 — Diagnóstico de problemas comuns (integração inicial)<a class="headerlink" href="#passo-41-diagnostico-de-problemas-comuns-integracao-inicial" title="Permanent link">¶</a></h2>
+<p>Quando o Firebase “não funciona” logo após o setup, os problemas mais comuns tendem a ser de configuração e identificação do app.</p>
+<p>O time costuma validar, em ordem:</p>
+<ul>
+<li>o <code>applicationId</code> do módulo Android é exatamente o mesmo registrado no Firebase Console;</li>
+<li>o arquivo <code>google-services.json</code> foi adicionado no módulo correto (o módulo do app);</li>
+<li>o build está resolvendo as dependências do BoM e sincronizando sem conflitos de versão <sup id="fnref5:2"><a class="footnote-ref" href="#fn:2">2</a></sup>;</li>
+<li>o dispositivo/emulador tem conectividade e data/hora corretas (certificados e TLS podem falhar quando o relógio está muito errado).</li>
+</ul>
+<h2 id="passo-5-integrar-servicos-comuns-visao-pratica">Passo 5 — Integrar serviços comuns (visão prática)<a class="headerlink" href="#passo-5-integrar-servicos-comuns-visao-pratica" title="Permanent link">¶</a></h2>
+<p>A integração “completa” com Firebase costuma ser incremental: a equipe habilita apenas o que o app precisa, um serviço por vez, testando o comportamento no emulador e em dispositivos reais.</p>
+<h3 id="autenticacao-firebase-authentication">Autenticação (Firebase Authentication)<a class="headerlink" href="#autenticacao-firebase-authentication" title="Permanent link">¶</a></h3>
+<p>O Firebase Authentication oferece autenticação por e-mail/senha e por provedores (Google, Apple, etc.). O fluxo geral é:</p>
+<ol>
+<li>habilitar o provedor no console;</li>
+<li>implementar o fluxo de login no app;</li>
+<li>ler o usuário autenticado e proteger rotas/telas.</li>
+</ol>
+<p>A documentação oficial apresenta os passos e decisões de integração por provedor <sup id="fnref:3"><a class="footnote-ref" href="#fn:3">3</a></sup>.</p>
+<p>Uma distinção importante para a arquitetura do app é: o cliente autentica o usuário e obtém um <strong>ID token</strong>. Em cenários com backend próprio, esse token é enviado ao servidor, que valida a identidade do usuário (normalmente com Admin SDK) antes de executar ações privilegiadas.</p>
+<h3 id="banco-de-dados-cloud-firestore">Banco de dados (Cloud Firestore)<a class="headerlink" href="#banco-de-dados-cloud-firestore" title="Permanent link">¶</a></h3>
+<p>O Firestore é um banco NoSQL orientado a documentos, muito usado para dados sincronizados e consultas simples a moderadas. A integração típica envolve:</p>
+<ul>
+<li>definir coleções e documentos;</li>
+<li>criar regras de segurança (Security Rules);</li>
+<li>ler/gravar dados a partir do app;</li>
+<li>testar regras e consultas.</li>
+</ul>
+<p>A documentação do Firestore descreve modelagem e regras de segurança para Android <sup id="fnref:4"><a class="footnote-ref" href="#fn:4">4</a></sup>.</p>
+<p>Ao modelar dados, uma regra prática é preferir documentos “pequenos e coesos”, evitando coleções com documentos gigantes. O custo de leitura no Firestore é por documento lido; portanto, uma modelagem que reduz leituras desnecessárias tende a ser mais eficiente.</p>
+<h3 id="armazenamento-de-arquivos-cloud-storage">Armazenamento de arquivos (Cloud Storage)<a class="headerlink" href="#armazenamento-de-arquivos-cloud-storage" title="Permanent link">¶</a></h3>
+<p>O Cloud Storage é usado para arquivos (imagens, PDFs, áudios). Um roteiro comum é:</p>
+<ul>
+<li>definir “pastas” lógicas (caminhos) para organização;</li>
+<li>enviar arquivos com metadados quando necessário;</li>
+<li>recuperar URLs para exibição;</li>
+<li>configurar regras de acesso (por exemplo, apenas usuário autenticado).</li>
+</ul>
+<p>A referência oficial de início rápido do Storage (Android) detalha o fluxo de upload/download e as decisões típicas de configuração <sup id="fnref:5"><a class="footnote-ref" href="#fn:5">5</a></sup>.</p>
+<h3 id="notificacoes-firebase-cloud-messaging">Notificações (Firebase Cloud Messaging)<a class="headerlink" href="#notificacoes-firebase-cloud-messaging" title="Permanent link">¶</a></h3>
+<p>O FCM permite enviar push notifications. Em alto nível, a integração exige:</p>
+<ul>
+<li>registrar o dispositivo e obter um token;</li>
+<li>enviar mensagens a partir de um servidor (ou do console, para testes);</li>
+<li>tratar mensagens em primeiro e segundo plano.</li>
+</ul>
+<p>Como mensagens impactam UX e permissões, a equipe costuma validar cuidadosamente o comportamento por versão do Android.</p>
+<p>No FCM, existem duas “pontas”: o <strong>cliente</strong> (app) recebe um token e processa mensagens, e um <strong>servidor</strong> (ou ferramenta de envio) envia mensagens para tokens ou tópicos. A documentação de FCM em Android descreve os requisitos e o comportamento do cliente <sup id="fnref:6"><a class="footnote-ref" href="#fn:6">6</a></sup>.</p>
+<h3 id="crashlytics-observabilidade">Crashlytics (observabilidade)<a class="headerlink" href="#crashlytics-observabilidade" title="Permanent link">¶</a></h3>
+<p>Crashlytics coleta e organiza falhas (crashes) e alguns tipos de erros não fatais (non-fatal) quando configurado. Ele ajuda a priorizar correções com base em frequência e impacto. A documentação do Crashlytics descreve integração, testes e publicação <sup id="fnref:7"><a class="footnote-ref" href="#fn:7">7</a></sup>.</p>
+<h2 id="passo-51-analytics-instrumentacao-minima">Passo 5.1 — Analytics (instrumentação mínima)<a class="headerlink" href="#passo-51-analytics-instrumentacao-minima" title="Permanent link">¶</a></h2>
+<p>Em muitos cursos e projetos, Analytics é adotado primeiro por ser uma validação rápida do setup: eventos aparecem no console sem exigir modelagem de dados. A documentação de Analytics em Android descreve a instrumentação inicial e as formas de enviar eventos <sup id="fnref:8"><a class="footnote-ref" href="#fn:8">8</a></sup>.</p>
+<h2 id="passo-6-seguranca-regras-chaves-e-ambientes">Passo 6 — Segurança: regras, chaves e ambientes<a class="headerlink" href="#passo-6-seguranca-regras-chaves-e-ambientes" title="Permanent link">¶</a></h2>
+<p>Integração com Firebase sempre envolve decisões de segurança. Três recomendações de base são:</p>
+<ol>
+<li><strong>Regras de segurança</strong>: Firestore/Storage devem ter regras que reflitam a política do app; nunca confiar apenas na validação do cliente.</li>
+<li><strong>Separação de ambientes</strong>: é comum manter projetos distintos para desenvolvimento e produção, reduzindo risco de testes afetarem dados reais.</li>
+<li><strong>Princípio do menor privilégio</strong>: permissões e acessos devem ser mínimos para a necessidade do app.</li>
+</ol>
+<p>As referências de Security Rules ajudam a compreender como escrever regras e testá-las para Firestore e Storage <sup id="fnref:9"><a class="footnote-ref" href="#fn:9">9</a></sup><sup id="fnref:10"><a class="footnote-ref" href="#fn:10">10</a></sup><sup id="fnref:11"><a class="footnote-ref" href="#fn:11">11</a></sup>.</p>
+<div class="admonition warning">
+<p class="admonition-title">Sobre chaves e credenciais</p>
+<p>O aplicativo Android não deve conter credenciais do Admin SDK (service account). Chaves privadas devem ficar apenas em ambientes controlados (servidores, CI/CD ou máquinas de desenvolvimento com proteção adequada). No app, a segurança depende principalmente de autenticação e Security Rules.</p>
+</div>
+<h2 id="passo-61-emuladores-para-desenvolvimento-quando-disponivel">Passo 6.1 — Emuladores para desenvolvimento (quando disponível)<a class="headerlink" href="#passo-61-emuladores-para-desenvolvimento-quando-disponivel" title="Permanent link">¶</a></h2>
+<p>Quando a turma ou o time deseja desenvolver sem depender de ambiente remoto o tempo todo, é possível usar o <strong>Firebase Emulator Suite</strong>, que simula serviços localmente. Isso tende a reduzir atrito em sala (rede instável, limites de cota, criação de dados de teste). A documentação oficial descreve como habilitar e usar os emuladores <sup id="fnref:12"><a class="footnote-ref" href="#fn:12">12</a></sup>.</p>
+<h2 id="exemplos-de-codigo-kotlin">Exemplos de código (Kotlin)<a class="headerlink" href="#exemplos-de-codigo-kotlin" title="Permanent link">¶</a></h2>
+<p>Os exemplos a seguir usam <strong>Kotlin</strong> e estão divididos em dois contextos:</p>
+<ul>
+<li><strong>Android (Client SDK)</strong>: o app integra autenticação, Firestore/Storage e recebe mensagens via FCM.</li>
+<li><strong>Servidor (Kotlin/JVM com Admin SDK)</strong>: um backend valida tokens, acessa dados com privilégios e envia notificações.</li>
+</ul>
+<p>Em um projeto real, o Admin SDK deve rodar no <strong>servidor</strong>, não no aplicativo Android <sup id="fnref:13"><a class="footnote-ref" href="#fn:13">13</a></sup>.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio"><input id="__tabbed_1_2" name="__tabbed_1" type="radio"><div class="tabbed-labels"><label for="__tabbed_1_1">Android (Client SDK)</label><label for="__tabbed_1_2">Servidor (Kotlin/JVM com Admin SDK)</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<h3 id="dependencias-exemplo-em-gradle-kotlin-dsl">Dependências (exemplo em Gradle Kotlin DSL)<a class="headerlink" href="#dependencias-exemplo-em-gradle-kotlin-dsl" title="Permanent link">¶</a></h3>
+<p>O uso do BoM reduz conflitos de versão entre bibliotecas <sup id="fnref4:2"><a class="footnote-ref" href="#fn:2">2</a></sup>.</p>
+<div class="language-kotlin highlight"><pre><span></span><code><span id="__span-0-1"><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="c1">// build.gradle.kts (módulo :app)</span>
+</span><span id="__span-0-2"><a href="#__codelineno-0-2" id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="n">dependencies</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-3"><a href="#__codelineno-0-3" id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="w">    </span><span class="n">implementation</span><span class="p">(</span><span class="n">platform</span><span class="p">(</span><span class="s">"com.google.firebase:firebase-bom:&lt;versao&gt;"</span><span class="p">))</span>
+</span><span id="__span-0-4"><a href="#__codelineno-0-4" id="__codelineno-0-4" name="__codelineno-0-4"></a>
+</span><span id="__span-0-5"><a href="#__codelineno-0-5" id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="w">    </span><span class="n">implementation</span><span class="p">(</span><span class="s">"com.google.firebase:firebase-auth-ktx"</span><span class="p">)</span>
+</span><span id="__span-0-6"><a href="#__codelineno-0-6" id="__codelineno-0-6" name="__codelineno-0-6"></a><span class="w">    </span><span class="n">implementation</span><span class="p">(</span><span class="s">"com.google.firebase:firebase-firestore-ktx"</span><span class="p">)</span>
+</span><span id="__span-0-7"><a href="#__codelineno-0-7" id="__codelineno-0-7" name="__codelineno-0-7"></a><span class="w">    </span><span class="n">implementation</span><span class="p">(</span><span class="s">"com.google.firebase:firebase-storage-ktx"</span><span class="p">)</span>
+</span><span id="__span-0-8"><a href="#__codelineno-0-8" id="__codelineno-0-8" name="__codelineno-0-8"></a><span class="w">    </span><span class="n">implementation</span><span class="p">(</span><span class="s">"com.google.firebase:firebase-messaging-ktx"</span><span class="p">)</span>
+</span><span id="__span-0-9"><a href="#__codelineno-0-9" id="__codelineno-0-9" name="__codelineno-0-9"></a><span class="w">    </span><span class="n">implementation</span><span class="p">(</span><span class="s">"com.google.firebase:firebase-crashlytics-ktx"</span><span class="p">)</span>
+</span><span id="__span-0-10"><a href="#__codelineno-0-10" id="__codelineno-0-10" name="__codelineno-0-10"></a><span class="w">    </span><span class="n">implementation</span><span class="p">(</span><span class="s">"com.google.firebase:firebase-analytics-ktx"</span><span class="p">)</span>
+</span><span id="__span-0-11"><a href="#__codelineno-0-11" id="__codelineno-0-11" name="__codelineno-0-11"></a><span class="p">}</span>
+</span></code></pre></div>
+<h3 id="authentication-obter-o-id-token-do-usuario">Authentication: obter o ID token do usuário<a class="headerlink" href="#authentication-obter-o-id-token-do-usuario" title="Permanent link">¶</a></h3>
+<p>Esse token pode ser enviado ao backend para validação (via Admin SDK) quando o projeto usa um servidor próprio.</p>
+<div class="language-kotlin highlight"><pre><span></span><code><span id="__span-1-1"><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="k">import</span><span class="w"> </span><span class="nn">com.google.firebase.auth.FirebaseAuth</span>
+</span><span id="__span-1-2"><a href="#__codelineno-1-2" id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="k">import</span><span class="w"> </span><span class="nn">kotlinx.coroutines.tasks.await</span>
+</span><span id="__span-1-3"><a href="#__codelineno-1-3" id="__codelineno-1-3" name="__codelineno-1-3"></a>
+</span><span id="__span-1-4"><a href="#__codelineno-1-4" id="__codelineno-1-4" name="__codelineno-1-4"></a><span class="kd">suspend</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="nf">obterIdToken</span><span class="p">():</span><span class="w"> </span><span class="kt">String?</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-1-5"><a href="#__codelineno-1-5" id="__codelineno-1-5" name="__codelineno-1-5"></a><span class="w">    </span><span class="kd">val</span><span class="w"> </span><span class="nv">user</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">FirebaseAuth</span><span class="p">.</span><span class="na">getInstance</span><span class="p">().</span><span class="na">currentUser</span><span class="w"> </span><span class="o">?:</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="kc">null</span>
+</span><span id="__span-1-6"><a href="#__codelineno-1-6" id="__codelineno-1-6" name="__codelineno-1-6"></a><span class="w">    </span><span class="kd">val</span><span class="w"> </span><span class="nv">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">user</span><span class="p">.</span><span class="na">getIdToken</span><span class="p">(</span><span class="kc">false</span><span class="p">).</span><span class="na">await</span><span class="p">()</span>
+</span><span id="__span-1-7"><a href="#__codelineno-1-7" id="__codelineno-1-7" name="__codelineno-1-7"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">result</span><span class="p">.</span><span class="na">token</span>
+</span><span id="__span-1-8"><a href="#__codelineno-1-8" id="__codelineno-1-8" name="__codelineno-1-8"></a><span class="p">}</span>
+</span></code></pre></div>
+<h3 id="firestore-gravar-e-ler-documentos">Firestore: gravar e ler documentos<a class="headerlink" href="#firestore-gravar-e-ler-documentos" title="Permanent link">¶</a></h3>
+<div class="language-kotlin highlight"><pre><span></span><code><span id="__span-2-1"><a href="#__codelineno-2-1" id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="k">import</span><span class="w"> </span><span class="nn">com.google.firebase.firestore.FirebaseFirestore</span>
+</span><span id="__span-2-2"><a href="#__codelineno-2-2" id="__codelineno-2-2" name="__codelineno-2-2"></a><span class="k">import</span><span class="w"> </span><span class="nn">kotlinx.coroutines.tasks.await</span>
+</span><span id="__span-2-3"><a href="#__codelineno-2-3" id="__codelineno-2-3" name="__codelineno-2-3"></a>
+</span><span id="__span-2-4"><a href="#__codelineno-2-4" id="__codelineno-2-4" name="__codelineno-2-4"></a><span class="kd">data</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nc">Usuario</span><span class="p">(</span>
+</span><span id="__span-2-5"><a href="#__codelineno-2-5" id="__codelineno-2-5" name="__codelineno-2-5"></a><span class="w">    </span><span class="kd">val</span><span class="w"> </span><span class="nv">nome</span><span class="p">:</span><span class="w"> </span><span class="kt">String</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">""</span><span class="p">,</span>
+</span><span id="__span-2-6"><a href="#__codelineno-2-6" id="__codelineno-2-6" name="__codelineno-2-6"></a><span class="w">    </span><span class="kd">val</span><span class="w"> </span><span class="nv">ativo</span><span class="p">:</span><span class="w"> </span><span class="kt">Boolean</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+</span><span id="__span-2-7"><a href="#__codelineno-2-7" id="__codelineno-2-7" name="__codelineno-2-7"></a><span class="p">)</span>
+</span><span id="__span-2-8"><a href="#__codelineno-2-8" id="__codelineno-2-8" name="__codelineno-2-8"></a>
+</span><span id="__span-2-9"><a href="#__codelineno-2-9" id="__codelineno-2-9" name="__codelineno-2-9"></a><span class="kd">suspend</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="nf">criarUsuario</span><span class="p">(</span><span class="n">uid</span><span class="p">:</span><span class="w"> </span><span class="kt">String</span><span class="p">,</span><span class="w"> </span><span class="n">nome</span><span class="p">:</span><span class="w"> </span><span class="kt">String</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-2-10"><a href="#__codelineno-2-10" id="__codelineno-2-10" name="__codelineno-2-10"></a><span class="w">    </span><span class="kd">val</span><span class="w"> </span><span class="nv">db</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">FirebaseFirestore</span><span class="p">.</span><span class="na">getInstance</span><span class="p">()</span>
+</span><span id="__span-2-11"><a href="#__codelineno-2-11" id="__codelineno-2-11" name="__codelineno-2-11"></a><span class="w">    </span><span class="n">db</span><span class="p">.</span><span class="na">collection</span><span class="p">(</span><span class="s">"usuarios"</span><span class="p">).</span><span class="na">document</span><span class="p">(</span><span class="n">uid</span><span class="p">)</span>
+</span><span id="__span-2-12"><a href="#__codelineno-2-12" id="__codelineno-2-12" name="__codelineno-2-12"></a><span class="w">        </span><span class="p">.</span><span class="na">set</span><span class="p">(</span><span class="n">Usuario</span><span class="p">(</span><span class="n">nome</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">nome</span><span class="p">,</span><span class="w"> </span><span class="n">ativo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="p">))</span>
+</span><span id="__span-2-13"><a href="#__codelineno-2-13" id="__codelineno-2-13" name="__codelineno-2-13"></a><span class="w">        </span><span class="p">.</span><span class="na">await</span><span class="p">()</span>
+</span><span id="__span-2-14"><a href="#__codelineno-2-14" id="__codelineno-2-14" name="__codelineno-2-14"></a><span class="p">}</span>
+</span><span id="__span-2-15"><a href="#__codelineno-2-15" id="__codelineno-2-15" name="__codelineno-2-15"></a>
+</span><span id="__span-2-16"><a href="#__codelineno-2-16" id="__codelineno-2-16" name="__codelineno-2-16"></a><span class="kd">suspend</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="nf">listarUsuariosAtivos</span><span class="p">(</span><span class="n">limit</span><span class="p">:</span><span class="w"> </span><span class="kt">Long</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">20</span><span class="p">):</span><span class="w"> </span><span class="n">List</span><span class="o">&lt;</span><span class="n">Pair</span><span class="o">&lt;</span><span class="kt">String</span><span class="p">,</span><span class="w"> </span><span class="n">Usuario</span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-2-17"><a href="#__codelineno-2-17" id="__codelineno-2-17" name="__codelineno-2-17"></a><span class="w">    </span><span class="kd">val</span><span class="w"> </span><span class="nv">db</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">FirebaseFirestore</span><span class="p">.</span><span class="na">getInstance</span><span class="p">()</span>
+</span><span id="__span-2-18"><a href="#__codelineno-2-18" id="__codelineno-2-18" name="__codelineno-2-18"></a><span class="w">    </span><span class="kd">val</span><span class="w"> </span><span class="nv">snapshot</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">db</span><span class="p">.</span><span class="na">collection</span><span class="p">(</span><span class="s">"usuarios"</span><span class="p">)</span>
+</span><span id="__span-2-19"><a href="#__codelineno-2-19" id="__codelineno-2-19" name="__codelineno-2-19"></a><span class="w">        </span><span class="p">.</span><span class="na">whereEqualTo</span><span class="p">(</span><span class="s">"ativo"</span><span class="p">,</span><span class="w"> </span><span class="kc">true</span><span class="p">)</span>
+</span><span id="__span-2-20"><a href="#__codelineno-2-20" id="__codelineno-2-20" name="__codelineno-2-20"></a><span class="w">        </span><span class="p">.</span><span class="na">limit</span><span class="p">(</span><span class="n">limit</span><span class="p">)</span>
+</span><span id="__span-2-21"><a href="#__codelineno-2-21" id="__codelineno-2-21" name="__codelineno-2-21"></a><span class="w">        </span><span class="p">.</span><span class="na">get</span><span class="p">()</span>
+</span><span id="__span-2-22"><a href="#__codelineno-2-22" id="__codelineno-2-22" name="__codelineno-2-22"></a><span class="w">        </span><span class="p">.</span><span class="na">await</span><span class="p">()</span>
+</span><span id="__span-2-23"><a href="#__codelineno-2-23" id="__codelineno-2-23" name="__codelineno-2-23"></a>
+</span><span id="__span-2-24"><a href="#__codelineno-2-24" id="__codelineno-2-24" name="__codelineno-2-24"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">snapshot</span><span class="p">.</span><span class="na">documents</span><span class="p">.</span><span class="na">mapNotNull</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">doc</span><span class="w"> </span><span class="o">-&gt;</span>
+</span><span id="__span-2-25"><a href="#__codelineno-2-25" id="__codelineno-2-25" name="__codelineno-2-25"></a><span class="w">        </span><span class="kd">val</span><span class="w"> </span><span class="nv">usuario</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">doc</span><span class="p">.</span><span class="na">toObject</span><span class="p">(</span><span class="n">Usuario</span><span class="o">::</span><span class="n">class</span><span class="p">.</span><span class="na">java</span><span class="p">)</span>
+</span><span id="__span-2-26"><a href="#__codelineno-2-26" id="__codelineno-2-26" name="__codelineno-2-26"></a><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">usuario</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="kc">null</span><span class="p">)</span><span class="w"> </span><span class="n">doc</span><span class="p">.</span><span class="na">id</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">usuario</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="kc">null</span>
+</span><span id="__span-2-27"><a href="#__codelineno-2-27" id="__codelineno-2-27" name="__codelineno-2-27"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-2-28"><a href="#__codelineno-2-28" id="__codelineno-2-28" name="__codelineno-2-28"></a><span class="p">}</span>
+</span></code></pre></div>
+<h3 id="storage-upload-de-arquivo-por-uri">Storage: upload de arquivo (por URI)<a class="headerlink" href="#storage-upload-de-arquivo-por-uri" title="Permanent link">¶</a></h3>
+<div class="language-kotlin highlight"><pre><span></span><code><span id="__span-3-1"><a href="#__codelineno-3-1" id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="k">import</span><span class="w"> </span><span class="nn">android.net.Uri</span>
+</span><span id="__span-3-2"><a href="#__codelineno-3-2" id="__codelineno-3-2" name="__codelineno-3-2"></a><span class="k">import</span><span class="w"> </span><span class="nn">com.google.firebase.storage.FirebaseStorage</span>
+</span><span id="__span-3-3"><a href="#__codelineno-3-3" id="__codelineno-3-3" name="__codelineno-3-3"></a><span class="k">import</span><span class="w"> </span><span class="nn">kotlinx.coroutines.tasks.await</span>
+</span><span id="__span-3-4"><a href="#__codelineno-3-4" id="__codelineno-3-4" name="__codelineno-3-4"></a>
+</span><span id="__span-3-5"><a href="#__codelineno-3-5" id="__codelineno-3-5" name="__codelineno-3-5"></a><span class="kd">suspend</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="nf">uploadAvatar</span><span class="p">(</span><span class="n">uid</span><span class="p">:</span><span class="w"> </span><span class="kt">String</span><span class="p">,</span><span class="w"> </span><span class="n">uri</span><span class="p">:</span><span class="w"> </span><span class="n">Uri</span><span class="p">):</span><span class="w"> </span><span class="kt">String</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-3-6"><a href="#__codelineno-3-6" id="__codelineno-3-6" name="__codelineno-3-6"></a><span class="w">    </span><span class="kd">val</span><span class="w"> </span><span class="nv">storage</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">FirebaseStorage</span><span class="p">.</span><span class="na">getInstance</span><span class="p">()</span>
+</span><span id="__span-3-7"><a href="#__codelineno-3-7" id="__codelineno-3-7" name="__codelineno-3-7"></a><span class="w">    </span><span class="kd">val</span><span class="w"> </span><span class="nv">ref</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">storage</span><span class="p">.</span><span class="na">reference</span><span class="p">.</span><span class="na">child</span><span class="p">(</span><span class="s">"avatars/</span><span class="si">$</span><span class="n">uid</span><span class="s">.jpg"</span><span class="p">)</span>
+</span><span id="__span-3-8"><a href="#__codelineno-3-8" id="__codelineno-3-8" name="__codelineno-3-8"></a>
+</span><span id="__span-3-9"><a href="#__codelineno-3-9" id="__codelineno-3-9" name="__codelineno-3-9"></a><span class="w">    </span><span class="n">ref</span><span class="p">.</span><span class="na">putFile</span><span class="p">(</span><span class="n">uri</span><span class="p">).</span><span class="na">await</span><span class="p">()</span>
+</span><span id="__span-3-10"><a href="#__codelineno-3-10" id="__codelineno-3-10" name="__codelineno-3-10"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">ref</span><span class="p">.</span><span class="na">path</span>
+</span><span id="__span-3-11"><a href="#__codelineno-3-11" id="__codelineno-3-11" name="__codelineno-3-11"></a><span class="p">}</span>
+</span></code></pre></div>
+<h3 id="fcm-obter-token-do-dispositivo-e-receber-mensagens">FCM: obter token do dispositivo e receber mensagens<a class="headerlink" href="#fcm-obter-token-do-dispositivo-e-receber-mensagens" title="Permanent link">¶</a></h3>
+<p>Obter o token (para associar ao usuário no Firestore e permitir envios direcionados):</p>
+<div class="language-kotlin highlight"><pre><span></span><code><span id="__span-4-1"><a href="#__codelineno-4-1" id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="k">import</span><span class="w"> </span><span class="nn">com.google.firebase.messaging.FirebaseMessaging</span>
+</span><span id="__span-4-2"><a href="#__codelineno-4-2" id="__codelineno-4-2" name="__codelineno-4-2"></a><span class="k">import</span><span class="w"> </span><span class="nn">kotlinx.coroutines.tasks.await</span>
+</span><span id="__span-4-3"><a href="#__codelineno-4-3" id="__codelineno-4-3" name="__codelineno-4-3"></a>
+</span><span id="__span-4-4"><a href="#__codelineno-4-4" id="__codelineno-4-4" name="__codelineno-4-4"></a><span class="kd">suspend</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="nf">obterTokenFcm</span><span class="p">():</span><span class="w"> </span><span class="kt">String</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-4-5"><a href="#__codelineno-4-5" id="__codelineno-4-5" name="__codelineno-4-5"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">FirebaseMessaging</span><span class="p">.</span><span class="na">getInstance</span><span class="p">().</span><span class="na">token</span><span class="p">.</span><span class="na">await</span><span class="p">()</span>
+</span><span id="__span-4-6"><a href="#__codelineno-4-6" id="__codelineno-4-6" name="__codelineno-4-6"></a><span class="p">}</span>
+</span></code></pre></div>
+<p>Receber mensagens (exemplo minimalista):</p>
+<div class="language-kotlin highlight"><pre><span></span><code><span id="__span-5-1"><a href="#__codelineno-5-1" id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="k">import</span><span class="w"> </span><span class="nn">com.google.firebase.messaging.FirebaseMessagingService</span>
+</span><span id="__span-5-2"><a href="#__codelineno-5-2" id="__codelineno-5-2" name="__codelineno-5-2"></a><span class="k">import</span><span class="w"> </span><span class="nn">com.google.firebase.messaging.RemoteMessage</span>
+</span><span id="__span-5-3"><a href="#__codelineno-5-3" id="__codelineno-5-3" name="__codelineno-5-3"></a>
+</span><span id="__span-5-4"><a href="#__codelineno-5-4" id="__codelineno-5-4" name="__codelineno-5-4"></a><span class="kd">class</span><span class="w"> </span><span class="nc">AppMessagingService</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">FirebaseMessagingService</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-5-5"><a href="#__codelineno-5-5" id="__codelineno-5-5" name="__codelineno-5-5"></a><span class="w">    </span><span class="kd">override</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="nf">onMessageReceived</span><span class="p">(</span><span class="n">message</span><span class="p">:</span><span class="w"> </span><span class="n">RemoteMessage</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-5-6"><a href="#__codelineno-5-6" id="__codelineno-5-6" name="__codelineno-5-6"></a><span class="w">        </span><span class="c1">// Processar payload e gerar notificação local (se necessário)</span>
+</span><span id="__span-5-7"><a href="#__codelineno-5-7" id="__codelineno-5-7" name="__codelineno-5-7"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-5-8"><a href="#__codelineno-5-8" id="__codelineno-5-8" name="__codelineno-5-8"></a>
+</span><span id="__span-5-9"><a href="#__codelineno-5-9" id="__codelineno-5-9" name="__codelineno-5-9"></a><span class="w">    </span><span class="kd">override</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="nf">onNewToken</span><span class="p">(</span><span class="n">token</span><span class="p">:</span><span class="w"> </span><span class="kt">String</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-5-10"><a href="#__codelineno-5-10" id="__codelineno-5-10" name="__codelineno-5-10"></a><span class="w">        </span><span class="c1">// Enviar token atualizado para o backend ou salvar no Firestore</span>
+</span><span id="__span-5-11"><a href="#__codelineno-5-11" id="__codelineno-5-11" name="__codelineno-5-11"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-5-12"><a href="#__codelineno-5-12" id="__codelineno-5-12" name="__codelineno-5-12"></a><span class="p">}</span>
+</span></code></pre></div>
+<h3 id="crashlytics-e-analytics-instrumentacao-minima">Crashlytics e Analytics: instrumentação mínima<a class="headerlink" href="#crashlytics-e-analytics-instrumentacao-minima" title="Permanent link">¶</a></h3>
+<div class="language-kotlin highlight"><pre><span></span><code><span id="__span-6-1"><a href="#__codelineno-6-1" id="__codelineno-6-1" name="__codelineno-6-1"></a><span class="k">import</span><span class="w"> </span><span class="nn">android.os.Bundle</span>
+</span><span id="__span-6-2"><a href="#__codelineno-6-2" id="__codelineno-6-2" name="__codelineno-6-2"></a><span class="k">import</span><span class="w"> </span><span class="nn">com.google.firebase.analytics.FirebaseAnalytics</span>
+</span><span id="__span-6-3"><a href="#__codelineno-6-3" id="__codelineno-6-3" name="__codelineno-6-3"></a><span class="k">import</span><span class="w"> </span><span class="nn">com.google.firebase.crashlytics.FirebaseCrashlytics</span>
+</span><span id="__span-6-4"><a href="#__codelineno-6-4" id="__codelineno-6-4" name="__codelineno-6-4"></a>
+</span><span id="__span-6-5"><a href="#__codelineno-6-5" id="__codelineno-6-5" name="__codelineno-6-5"></a><span class="kd">fun</span><span class="w"> </span><span class="nf">registrarEventoAnalytcs</span><span class="p">(</span><span class="n">analytics</span><span class="p">:</span><span class="w"> </span><span class="n">FirebaseAnalytics</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-6-6"><a href="#__codelineno-6-6" id="__codelineno-6-6" name="__codelineno-6-6"></a><span class="w">    </span><span class="n">analytics</span><span class="p">.</span><span class="na">logEvent</span><span class="p">(</span><span class="s">"abrir_tela"</span><span class="p">,</span><span class="w"> </span><span class="n">Bundle</span><span class="p">().</span><span class="na">apply</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-6-7"><a href="#__codelineno-6-7" id="__codelineno-6-7" name="__codelineno-6-7"></a><span class="w">        </span><span class="n">putString</span><span class="p">(</span><span class="s">"nome"</span><span class="p">,</span><span class="w"> </span><span class="s">"home"</span><span class="p">)</span>
+</span><span id="__span-6-8"><a href="#__codelineno-6-8" id="__codelineno-6-8" name="__codelineno-6-8"></a><span class="w">    </span><span class="p">})</span>
+</span><span id="__span-6-9"><a href="#__codelineno-6-9" id="__codelineno-6-9" name="__codelineno-6-9"></a><span class="p">}</span>
+</span><span id="__span-6-10"><a href="#__codelineno-6-10" id="__codelineno-6-10" name="__codelineno-6-10"></a>
+</span><span id="__span-6-11"><a href="#__codelineno-6-11" id="__codelineno-6-11" name="__codelineno-6-11"></a><span class="kd">fun</span><span class="w"> </span><span class="nf">registrarErro</span><span class="p">(</span><span class="n">crashlytics</span><span class="p">:</span><span class="w"> </span><span class="n">FirebaseCrashlytics</span><span class="p">,</span><span class="w"> </span><span class="n">err</span><span class="p">:</span><span class="w"> </span><span class="n">Throwable</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-6-12"><a href="#__codelineno-6-12" id="__codelineno-6-12" name="__codelineno-6-12"></a><span class="w">    </span><span class="n">crashlytics</span><span class="p">.</span><span class="na">recordException</span><span class="p">(</span><span class="n">err</span><span class="p">)</span>
+</span><span id="__span-6-13"><a href="#__codelineno-6-13" id="__codelineno-6-13" name="__codelineno-6-13"></a><span class="p">}</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="admonition warning">
+<p class="admonition-title">Admin SDK é para servidor</p>
+<p>Esses exemplos são para um backend em Kotlin/JVM. Eles não devem ser executados no Android.</p>
+</div>
+<h3 id="inicializacao-do-admin-sdk">Inicialização do Admin SDK<a class="headerlink" href="#inicializacao-do-admin-sdk" title="Permanent link">¶</a></h3>
+<p>O backend lê credenciais de service account em ambiente controlado (por exemplo, variável de ambiente apontando para um JSON protegido) <sup id="fnref3:13"><a class="footnote-ref" href="#fn:13">13</a></sup>.</p>
+<div class="language-kotlin highlight"><pre><span></span><code><span id="__span-7-1"><a href="#__codelineno-7-1" id="__codelineno-7-1" name="__codelineno-7-1"></a><span class="k">import</span><span class="w"> </span><span class="nn">com.google.auth.oauth2.GoogleCredentials</span>
+</span><span id="__span-7-2"><a href="#__codelineno-7-2" id="__codelineno-7-2" name="__codelineno-7-2"></a><span class="k">import</span><span class="w"> </span><span class="nn">com.google.firebase.FirebaseApp</span>
+</span><span id="__span-7-3"><a href="#__codelineno-7-3" id="__codelineno-7-3" name="__codelineno-7-3"></a><span class="k">import</span><span class="w"> </span><span class="nn">com.google.firebase.FirebaseOptions</span>
+</span><span id="__span-7-4"><a href="#__codelineno-7-4" id="__codelineno-7-4" name="__codelineno-7-4"></a><span class="k">import</span><span class="w"> </span><span class="nn">java.io.FileInputStream</span>
+</span><span id="__span-7-5"><a href="#__codelineno-7-5" id="__codelineno-7-5" name="__codelineno-7-5"></a>
+</span><span id="__span-7-6"><a href="#__codelineno-7-6" id="__codelineno-7-6" name="__codelineno-7-6"></a><span class="kd">fun</span><span class="w"> </span><span class="nf">initAdmin</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-7-7"><a href="#__codelineno-7-7" id="__codelineno-7-7" name="__codelineno-7-7"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">FirebaseApp</span><span class="p">.</span><span class="na">getApps</span><span class="p">().</span><span class="na">isNotEmpty</span><span class="p">())</span><span class="w"> </span><span class="k">return</span>
+</span><span id="__span-7-8"><a href="#__codelineno-7-8" id="__codelineno-7-8" name="__codelineno-7-8"></a>
+</span><span id="__span-7-9"><a href="#__codelineno-7-9" id="__codelineno-7-9" name="__codelineno-7-9"></a><span class="w">    </span><span class="kd">val</span><span class="w"> </span><span class="nv">credPath</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">System</span><span class="p">.</span><span class="na">getenv</span><span class="p">(</span><span class="s">"GOOGLE_APPLICATION_CREDENTIALS"</span><span class="p">)</span>
+</span><span id="__span-7-10"><a href="#__codelineno-7-10" id="__codelineno-7-10" name="__codelineno-7-10"></a><span class="w">        </span><span class="o">?:</span><span class="w"> </span><span class="n">error</span><span class="p">(</span><span class="s">"Definir GOOGLE_APPLICATION_CREDENTIALS"</span><span class="p">)</span>
+</span><span id="__span-7-11"><a href="#__codelineno-7-11" id="__codelineno-7-11" name="__codelineno-7-11"></a>
+</span><span id="__span-7-12"><a href="#__codelineno-7-12" id="__codelineno-7-12" name="__codelineno-7-12"></a><span class="w">    </span><span class="n">FileInputStream</span><span class="p">(</span><span class="n">credPath</span><span class="p">).</span><span class="na">use</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">stream</span><span class="w"> </span><span class="o">-&gt;</span>
+</span><span id="__span-7-13"><a href="#__codelineno-7-13" id="__codelineno-7-13" name="__codelineno-7-13"></a><span class="w">        </span><span class="kd">val</span><span class="w"> </span><span class="nv">options</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">FirebaseOptions</span><span class="p">.</span><span class="na">builder</span><span class="p">()</span>
+</span><span id="__span-7-14"><a href="#__codelineno-7-14" id="__codelineno-7-14" name="__codelineno-7-14"></a><span class="w">            </span><span class="p">.</span><span class="na">setCredentials</span><span class="p">(</span><span class="n">GoogleCredentials</span><span class="p">.</span><span class="na">fromStream</span><span class="p">(</span><span class="n">stream</span><span class="p">))</span>
+</span><span id="__span-7-15"><a href="#__codelineno-7-15" id="__codelineno-7-15" name="__codelineno-7-15"></a><span class="w">            </span><span class="p">.</span><span class="na">build</span><span class="p">()</span>
+</span><span id="__span-7-16"><a href="#__codelineno-7-16" id="__codelineno-7-16" name="__codelineno-7-16"></a>
+</span><span id="__span-7-17"><a href="#__codelineno-7-17" id="__codelineno-7-17" name="__codelineno-7-17"></a><span class="w">        </span><span class="n">FirebaseApp</span><span class="p">.</span><span class="na">initializeApp</span><span class="p">(</span><span class="n">options</span><span class="p">)</span>
+</span><span id="__span-7-18"><a href="#__codelineno-7-18" id="__codelineno-7-18" name="__codelineno-7-18"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-7-19"><a href="#__codelineno-7-19" id="__codelineno-7-19" name="__codelineno-7-19"></a><span class="p">}</span>
+</span></code></pre></div>
+<h3 id="validacao-de-identidade-verificar-um-id-token">Validação de identidade: verificar um ID token<a class="headerlink" href="#validacao-de-identidade-verificar-um-id-token" title="Permanent link">¶</a></h3>
+<div class="language-kotlin highlight"><pre><span></span><code><span id="__span-8-1"><a href="#__codelineno-8-1" id="__codelineno-8-1" name="__codelineno-8-1"></a><span class="k">import</span><span class="w"> </span><span class="nn">com.google.firebase.auth.FirebaseAuth</span>
+</span><span id="__span-8-2"><a href="#__codelineno-8-2" id="__codelineno-8-2" name="__codelineno-8-2"></a>
+</span><span id="__span-8-3"><a href="#__codelineno-8-3" id="__codelineno-8-3" name="__codelineno-8-3"></a><span class="kd">data</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nc">UsuarioAutenticado</span><span class="p">(</span>
+</span><span id="__span-8-4"><a href="#__codelineno-8-4" id="__codelineno-8-4" name="__codelineno-8-4"></a><span class="w">    </span><span class="kd">val</span><span class="w"> </span><span class="nv">uid</span><span class="p">:</span><span class="w"> </span><span class="kt">String</span><span class="p">,</span>
+</span><span id="__span-8-5"><a href="#__codelineno-8-5" id="__codelineno-8-5" name="__codelineno-8-5"></a><span class="w">    </span><span class="kd">val</span><span class="w"> </span><span class="nv">email</span><span class="p">:</span><span class="w"> </span><span class="kt">String?</span><span class="p">,</span>
+</span><span id="__span-8-6"><a href="#__codelineno-8-6" id="__codelineno-8-6" name="__codelineno-8-6"></a><span class="w">    </span><span class="kd">val</span><span class="w"> </span><span class="nv">provider</span><span class="p">:</span><span class="w"> </span><span class="kt">String?</span><span class="p">,</span>
+</span><span id="__span-8-7"><a href="#__codelineno-8-7" id="__codelineno-8-7" name="__codelineno-8-7"></a><span class="p">)</span>
+</span><span id="__span-8-8"><a href="#__codelineno-8-8" id="__codelineno-8-8" name="__codelineno-8-8"></a>
+</span><span id="__span-8-9"><a href="#__codelineno-8-9" id="__codelineno-8-9" name="__codelineno-8-9"></a><span class="kd">fun</span><span class="w"> </span><span class="nf">verificarToken</span><span class="p">(</span><span class="n">idToken</span><span class="p">:</span><span class="w"> </span><span class="kt">String</span><span class="p">):</span><span class="w"> </span><span class="n">UsuarioAutenticado</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-8-10"><a href="#__codelineno-8-10" id="__codelineno-8-10" name="__codelineno-8-10"></a><span class="w">    </span><span class="kd">val</span><span class="w"> </span><span class="nv">decoded</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">FirebaseAuth</span><span class="p">.</span><span class="na">getInstance</span><span class="p">().</span><span class="na">verifyIdToken</span><span class="p">(</span><span class="n">idToken</span><span class="p">)</span>
+</span><span id="__span-8-11"><a href="#__codelineno-8-11" id="__codelineno-8-11" name="__codelineno-8-11"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">UsuarioAutenticado</span><span class="p">(</span>
+</span><span id="__span-8-12"><a href="#__codelineno-8-12" id="__codelineno-8-12" name="__codelineno-8-12"></a><span class="w">        </span><span class="n">uid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">decoded</span><span class="p">.</span><span class="na">uid</span><span class="p">,</span>
+</span><span id="__span-8-13"><a href="#__codelineno-8-13" id="__codelineno-8-13" name="__codelineno-8-13"></a><span class="w">        </span><span class="n">email</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">decoded</span><span class="p">.</span><span class="na">email</span><span class="p">,</span>
+</span><span id="__span-8-14"><a href="#__codelineno-8-14" id="__codelineno-8-14" name="__codelineno-8-14"></a><span class="w">        </span><span class="n">provider</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">decoded</span><span class="p">.</span><span class="na">claims</span><span class="o">[</span><span class="s">"firebase"</span><span class="o">]</span>
+</span><span id="__span-8-15"><a href="#__codelineno-8-15" id="__codelineno-8-15" name="__codelineno-8-15"></a><span class="w">            </span><span class="o">?.</span><span class="na">let</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nb">it</span><span class="w"> </span><span class="k">as?</span><span class="w"> </span><span class="n">Map</span><span class="o">&lt;*</span><span class="p">,</span><span class="w"> </span><span class="o">*&gt;</span><span class="w"> </span><span class="p">}</span>
+</span><span id="__span-8-16"><a href="#__codelineno-8-16" id="__codelineno-8-16" name="__codelineno-8-16"></a><span class="w">            </span><span class="o">?.</span><span class="na">get</span><span class="p">(</span><span class="s">"sign_in_provider"</span><span class="p">)</span>
+</span><span id="__span-8-17"><a href="#__codelineno-8-17" id="__codelineno-8-17" name="__codelineno-8-17"></a><span class="w">            </span><span class="o">?.</span><span class="na">toString</span><span class="p">(),</span>
+</span><span id="__span-8-18"><a href="#__codelineno-8-18" id="__codelineno-8-18" name="__codelineno-8-18"></a><span class="w">    </span><span class="p">)</span>
+</span><span id="__span-8-19"><a href="#__codelineno-8-19" id="__codelineno-8-19" name="__codelineno-8-19"></a><span class="p">}</span>
+</span></code></pre></div>
+<h3 id="firestore-gravar-e-ler-documentos-admin">Firestore: gravar e ler documentos (admin)<a class="headerlink" href="#firestore-gravar-e-ler-documentos-admin" title="Permanent link">¶</a></h3>
+<div class="language-kotlin highlight"><pre><span></span><code><span id="__span-9-1"><a href="#__codelineno-9-1" id="__codelineno-9-1" name="__codelineno-9-1"></a><span class="k">import</span><span class="w"> </span><span class="nn">com.google.cloud.firestore.Firestore</span>
+</span><span id="__span-9-2"><a href="#__codelineno-9-2" id="__codelineno-9-2" name="__codelineno-9-2"></a><span class="k">import</span><span class="w"> </span><span class="nn">com.google.firebase.cloud.FirestoreClient</span>
+</span><span id="__span-9-3"><a href="#__codelineno-9-3" id="__codelineno-9-3" name="__codelineno-9-3"></a>
+</span><span id="__span-9-4"><a href="#__codelineno-9-4" id="__codelineno-9-4" name="__codelineno-9-4"></a><span class="kd">data</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nc">Usuario</span><span class="p">(</span><span class="kd">val</span><span class="w"> </span><span class="nv">nome</span><span class="p">:</span><span class="w"> </span><span class="kt">String</span><span class="p">,</span><span class="w"> </span><span class="kd">val</span><span class="w"> </span><span class="nv">ativo</span><span class="p">:</span><span class="w"> </span><span class="kt">Boolean</span><span class="p">)</span>
+</span><span id="__span-9-5"><a href="#__codelineno-9-5" id="__codelineno-9-5" name="__codelineno-9-5"></a>
+</span><span id="__span-9-6"><a href="#__codelineno-9-6" id="__codelineno-9-6" name="__codelineno-9-6"></a><span class="kd">fun</span><span class="w"> </span><span class="nf">criarUsuario</span><span class="p">(</span><span class="n">uid</span><span class="p">:</span><span class="w"> </span><span class="kt">String</span><span class="p">,</span><span class="w"> </span><span class="n">nome</span><span class="p">:</span><span class="w"> </span><span class="kt">String</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-9-7"><a href="#__codelineno-9-7" id="__codelineno-9-7" name="__codelineno-9-7"></a><span class="w">    </span><span class="kd">val</span><span class="w"> </span><span class="nv">db</span><span class="p">:</span><span class="w"> </span><span class="n">Firestore</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">FirestoreClient</span><span class="p">.</span><span class="na">getFirestore</span><span class="p">()</span>
+</span><span id="__span-9-8"><a href="#__codelineno-9-8" id="__codelineno-9-8" name="__codelineno-9-8"></a><span class="w">    </span><span class="n">db</span><span class="p">.</span><span class="na">collection</span><span class="p">(</span><span class="s">"usuarios"</span><span class="p">).</span><span class="na">document</span><span class="p">(</span><span class="n">uid</span><span class="p">).</span><span class="na">set</span><span class="p">(</span><span class="n">Usuario</span><span class="p">(</span><span class="n">nome</span><span class="p">,</span><span class="w"> </span><span class="kc">true</span><span class="p">))</span>
+</span><span id="__span-9-9"><a href="#__codelineno-9-9" id="__codelineno-9-9" name="__codelineno-9-9"></a><span class="p">}</span>
+</span></code></pre></div>
+<h3 id="fcm-envio-de-notificacao-para-um-token">FCM: envio de notificação para um token<a class="headerlink" href="#fcm-envio-de-notificacao-para-um-token" title="Permanent link">¶</a></h3>
+<div class="language-kotlin highlight"><pre><span></span><code><span id="__span-10-1"><a href="#__codelineno-10-1" id="__codelineno-10-1" name="__codelineno-10-1"></a><span class="k">import</span><span class="w"> </span><span class="nn">com.google.firebase.messaging.FirebaseMessaging</span>
+</span><span id="__span-10-2"><a href="#__codelineno-10-2" id="__codelineno-10-2" name="__codelineno-10-2"></a><span class="k">import</span><span class="w"> </span><span class="nn">com.google.firebase.messaging.Message</span>
+</span><span id="__span-10-3"><a href="#__codelineno-10-3" id="__codelineno-10-3" name="__codelineno-10-3"></a><span class="k">import</span><span class="w"> </span><span class="nn">com.google.firebase.messaging.Notification</span>
+</span><span id="__span-10-4"><a href="#__codelineno-10-4" id="__codelineno-10-4" name="__codelineno-10-4"></a>
+</span><span id="__span-10-5"><a href="#__codelineno-10-5" id="__codelineno-10-5" name="__codelineno-10-5"></a><span class="kd">fun</span><span class="w"> </span><span class="nf">enviarPush</span><span class="p">(</span><span class="n">token</span><span class="p">:</span><span class="w"> </span><span class="kt">String</span><span class="p">,</span><span class="w"> </span><span class="n">titulo</span><span class="p">:</span><span class="w"> </span><span class="kt">String</span><span class="p">,</span><span class="w"> </span><span class="n">corpo</span><span class="p">:</span><span class="w"> </span><span class="kt">String</span><span class="p">):</span><span class="w"> </span><span class="kt">String</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-10-6"><a href="#__codelineno-10-6" id="__codelineno-10-6" name="__codelineno-10-6"></a><span class="w">    </span><span class="kd">val</span><span class="w"> </span><span class="nv">message</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Message</span><span class="p">.</span><span class="na">builder</span><span class="p">()</span>
+</span><span id="__span-10-7"><a href="#__codelineno-10-7" id="__codelineno-10-7" name="__codelineno-10-7"></a><span class="w">        </span><span class="p">.</span><span class="na">setToken</span><span class="p">(</span><span class="n">token</span><span class="p">)</span>
+</span><span id="__span-10-8"><a href="#__codelineno-10-8" id="__codelineno-10-8" name="__codelineno-10-8"></a><span class="w">        </span><span class="p">.</span><span class="na">setNotification</span><span class="p">(</span><span class="n">Notification</span><span class="p">.</span><span class="na">builder</span><span class="p">().</span><span class="na">setTitle</span><span class="p">(</span><span class="n">titulo</span><span class="p">).</span><span class="na">setBody</span><span class="p">(</span><span class="n">corpo</span><span class="p">).</span><span class="na">build</span><span class="p">())</span>
+</span><span id="__span-10-9"><a href="#__codelineno-10-9" id="__codelineno-10-9" name="__codelineno-10-9"></a><span class="w">        </span><span class="p">.</span><span class="na">build</span><span class="p">()</span>
+</span><span id="__span-10-10"><a href="#__codelineno-10-10" id="__codelineno-10-10" name="__codelineno-10-10"></a>
+</span><span id="__span-10-11"><a href="#__codelineno-10-11" id="__codelineno-10-11" name="__codelineno-10-11"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">FirebaseMessaging</span><span class="p">.</span><span class="na">getInstance</span><span class="p">().</span><span class="na">send</span><span class="p">(</span><span class="n">message</span><span class="p">)</span>
+</span><span id="__span-10-12"><a href="#__codelineno-10-12" id="__codelineno-10-12" name="__codelineno-10-12"></a><span class="p">}</span>
+</span></code></pre></div>
+</div>
+</div>
+</input></input></div>
+<h2 id="passo-7-validacao-e-checklist">Passo 7 — Validação e checklist<a class="headerlink" href="#passo-7-validacao-e-checklist" title="Permanent link">¶</a></h2>
+<p>Ao finalizar a primeira integração, espera-se que o projeto consiga confirmar:</p>
+<ul>
+<li>o app está registrado corretamente no console e o <code>google-services.json</code> corresponde ao applicationId;</li>
+<li>o build inclui o BoM e as dependências necessárias <sup id="fnref3:2"><a class="footnote-ref" href="#fn:2">2</a></sup>;</li>
+<li>ao menos um serviço foi validado ponta a ponta (por exemplo, um evento no Analytics ou um crash no Crashlytics);</li>
+<li>regras de Firestore/Storage estão configuradas (quando esses serviços são usados);</li>
+<li>o app trata erros de rede e estados offline de forma previsível.</li>
+</ul>
+<h2 id="referencias">Referências<a class="headerlink" href="#referencias" title="Permanent link">¶</a></h2>
+<ul>
+<li>Firebase Documentation: Add Firebase to your Android project <sup id="fnref4:1"><a class="footnote-ref" href="#fn:1">1</a></sup></li>
+<li>Firebase Documentation: Firebase BoM (Android) <sup id="fnref2:2"><a class="footnote-ref" href="#fn:2">2</a></sup></li>
+<li>Firebase Documentation: Firebase Authentication on Android <sup id="fnref2:3"><a class="footnote-ref" href="#fn:3">3</a></sup></li>
+<li>Firebase Documentation: Cloud Firestore on Android <sup id="fnref2:4"><a class="footnote-ref" href="#fn:4">4</a></sup></li>
+<li>Firebase Documentation: Cloud Storage for Android <sup id="fnref2:5"><a class="footnote-ref" href="#fn:5">5</a></sup></li>
+<li>Firebase Documentation: Firebase Cloud Messaging on Android <sup id="fnref2:6"><a class="footnote-ref" href="#fn:6">6</a></sup></li>
+<li>Firebase Documentation: Google Analytics for Firebase (Android) <sup id="fnref2:8"><a class="footnote-ref" href="#fn:8">8</a></sup></li>
+<li>Firebase Documentation: Crashlytics on Android <sup id="fnref2:7"><a class="footnote-ref" href="#fn:7">7</a></sup></li>
+<li>Firebase Documentation: Security Rules <sup id="fnref2:9"><a class="footnote-ref" href="#fn:9">9</a></sup></li>
+<li>Firebase Documentation: Firebase Emulator Suite <sup id="fnref2:12"><a class="footnote-ref" href="#fn:12">12</a></sup></li>
+<li>Firebase Documentation: Admin SDK <sup id="fnref2:13"><a class="footnote-ref" href="#fn:13">13</a></sup></li>
+</ul>
+<div class="footnote">
+<hr/>
+<ol>
+<li id="fn:1">
+<p>Firebase Documentation. Add firebase to your android project. 2026. URL: <a href="https://firebase.google.com/docs/android/setup">https://firebase.google.com/docs/android/setup</a>. <a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref2:1" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref3:1" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref4:1" title="Jump back to footnote 1 in the text">↩</a></p>
+</li>
+<li id="fn:2">
+<p>Firebase Documentation. Use the firebase android bom. 2026. URL: <a href="https://firebase.google.com/docs/android/learn-more#bom">https://firebase.google.com/docs/android/learn-more#bom</a>. <a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 2 in the text">↩</a><a class="footnote-backref" href="#fnref2:2" title="Jump back to footnote 2 in the text">↩</a><a class="footnote-backref" href="#fnref3:2" title="Jump back to footnote 2 in the text">↩</a><a class="footnote-backref" href="#fnref4:2" title="Jump back to footnote 2 in the text">↩</a><a class="footnote-backref" href="#fnref5:2" title="Jump back to footnote 2 in the text">↩</a></p>
+</li>
+<li id="fn:3">
+<p>Firebase Documentation. Get started with firebase authentication on android. 2026. URL: <a href="https://firebase.google.com/docs/auth/android/start">https://firebase.google.com/docs/auth/android/start</a>. <a class="footnote-backref" href="#fnref:3" title="Jump back to footnote 3 in the text">↩</a><a class="footnote-backref" href="#fnref2:3" title="Jump back to footnote 3 in the text">↩</a></p>
+</li>
+<li id="fn:4">
+<p>Firebase Documentation. Get started with cloud firestore on android. 2026. URL: <a href="https://firebase.google.com/docs/firestore/quickstart">https://firebase.google.com/docs/firestore/quickstart</a>. <a class="footnote-backref" href="#fnref:4" title="Jump back to footnote 4 in the text">↩</a><a class="footnote-backref" href="#fnref2:4" title="Jump back to footnote 4 in the text">↩</a></p>
+</li>
+<li id="fn:5">
+<p>Firebase Documentation. Get started with cloud storage on android. 2026. URL: <a href="https://firebase.google.com/docs/storage/android/start">https://firebase.google.com/docs/storage/android/start</a>. <a class="footnote-backref" href="#fnref:5" title="Jump back to footnote 5 in the text">↩</a><a class="footnote-backref" href="#fnref2:5" title="Jump back to footnote 5 in the text">↩</a></p>
+</li>
+<li id="fn:6">
+<p>Firebase Documentation. Set up a firebase cloud messaging client app on android. 2026. URL: <a href="https://firebase.google.com/docs/cloud-messaging/android/client">https://firebase.google.com/docs/cloud-messaging/android/client</a>. <a class="footnote-backref" href="#fnref:6" title="Jump back to footnote 6 in the text">↩</a><a class="footnote-backref" href="#fnref2:6" title="Jump back to footnote 6 in the text">↩</a></p>
+</li>
+<li id="fn:7">
+<p>Firebase Documentation. Get started with firebase crashlytics. 2026. URL: <a href="https://firebase.google.com/docs/crashlytics/get-started">https://firebase.google.com/docs/crashlytics/get-started</a>. <a class="footnote-backref" href="#fnref:7" title="Jump back to footnote 7 in the text">↩</a><a class="footnote-backref" href="#fnref2:7" title="Jump back to footnote 7 in the text">↩</a></p>
+</li>
+<li id="fn:8">
+<p>Firebase Documentation. Get started with google analytics for firebase on android. 2026. URL: <a href="https://firebase.google.com/docs/analytics/get-started?platform=android">https://firebase.google.com/docs/analytics/get-started?platform=android</a>. <a class="footnote-backref" href="#fnref:8" title="Jump back to footnote 8 in the text">↩</a><a class="footnote-backref" href="#fnref2:8" title="Jump back to footnote 8 in the text">↩</a></p>
+</li>
+<li id="fn:9">
+<p>Firebase Documentation. Firebase security rules. 2026. URL: <a href="https://firebase.google.com/docs/rules">https://firebase.google.com/docs/rules</a>. <a class="footnote-backref" href="#fnref:9" title="Jump back to footnote 9 in the text">↩</a><a class="footnote-backref" href="#fnref2:9" title="Jump back to footnote 9 in the text">↩</a></p>
+</li>
+<li id="fn:10">
+<p>Firebase Documentation. Get started with cloud firestore security rules. 2026. URL: <a href="https://firebase.google.com/docs/firestore/security/get-started">https://firebase.google.com/docs/firestore/security/get-started</a>. <a class="footnote-backref" href="#fnref:10" title="Jump back to footnote 10 in the text">↩</a></p>
+</li>
+<li id="fn:11">
+<p>Firebase Documentation. Get started with cloud storage security rules. 2026. URL: <a href="https://firebase.google.com/docs/storage/security">https://firebase.google.com/docs/storage/security</a>. <a class="footnote-backref" href="#fnref:11" title="Jump back to footnote 11 in the text">↩</a></p>
+</li>
+<li id="fn:12">
+<p>Firebase Documentation. Firebase local emulator suite. 2026. URL: <a href="https://firebase.google.com/docs/emulator-suite">https://firebase.google.com/docs/emulator-suite</a>. <a class="footnote-backref" href="#fnref:12" title="Jump back to footnote 12 in the text">↩</a><a class="footnote-backref" href="#fnref2:12" title="Jump back to footnote 12 in the text">↩</a></p>
+</li>
+<li id="fn:13">
+<p>Firebase Documentation. Firebase admin sdk. 2026. URL: <a href="https://firebase.google.com/docs/admin/setup">https://firebase.google.com/docs/admin/setup</a>. <a class="footnote-backref" href="#fnref:13" title="Jump back to footnote 13 in the text">↩</a><a class="footnote-backref" href="#fnref2:13" title="Jump back to footnote 13 in the text">↩</a><a class="footnote-backref" href="#fnref3:13" title="Jump back to footnote 13 in the text">↩</a></p>
+</li>
+</ol>
+</div>
+</article>
+</div>
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+</div>
+<button class="md-top md-icon" data-md-component="top" hidden="" type="button">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"></path></svg>
+  Back to top
+</button>
+</main>
+<footer class="md-footer">
+<nav aria-label="Footer" class="md-footer__inner md-grid">
+<a aria-label="Previous: Módulo V - Persistência de Dados" class="md-footer__link md-footer__link--prev" href="../persistencia/">
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+</div>
+<div class="md-footer__title">
+<span class="md-footer__direction">
+                Previous
+              </span>
+<div class="md-ellipsis">
+                Módulo V - Persistência de Dados
+              </div>
+</div>
+</a>
+<a aria-label="Next: Módulo VII -  Consumo de APIs" class="md-footer__link md-footer__link--next" href="../api/">
+<div class="md-footer__title">
+<span class="md-footer__direction">
+                Next
+              </span>
+<div class="md-ellipsis">
+                Módulo VII -  Consumo de APIs
+              </div>
+</div>
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"></path></svg>
+</div>
+</a>
+</nav>
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-copyright">
+<div class="md-copyright__highlight">
+      Copyright © 2024 -  Diego A. Lusa
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" rel="noopener" target="_blank">
+      Material for MkDocs
+    </a>
+</div>
+<div class="md-social">
+<a class="md-social__link" href="https://www.linkedin.com/in/diegolusa/" rel="noopener" target="_blank" title="www.linkedin.com">
+<svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3M135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5m282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9z"></path></svg>
+</a>
+<a class="md-social__link" href="http://github.com/diegolusa" rel="noopener" target="_blank" title="github.com">
+<svg viewbox="0 0 496 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"></path></svg>
+</a>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<div class="md-dialog" data-md-component="dialog">
+<div class="md-dialog__inner md-typeset"></div>
+</div>
+<script id="__config" type="application/json">{"base": "../../../..", "features": ["announce.dismiss", "navigation.top", "navigation.tabs", "navigation.path", "navigation.instant", "toc.integrate", "toc.follow", "header.autohide", "navigation.footer", "content.code.copy", "navigation.indexes"], "search": "../../../../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+<script src="../../../../assets/javascripts/bundle.f1b6f286.min.js"></script>
+<script src="../../../../javascript/config.js"></script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<script src="https://unpkg.com/mermaid@8.13.6/dist/mermaid.min.js"></script><script>mermaid.initialize({
+    theme: "base",
+    fontSize: "18px",
+    fontFamily: "Roboto"
+});</script></body>
+</html>

@@ -1,5 +1,6 @@
 :root {
   --md-primary-fg-color:        rgb(15, 91, 33);
+  font-size: 14pt;
 }
 
 svg[id^="mermaid-"] { margin:auto;display: block;zoom: 150%;}
@@ -61,12 +62,6 @@ p img {
   padding: 5px;
 }
 
-code {
-  border: 1px solid black;
-  font-weight: bold;
-  text-wrap: wrap;
-  border-radius: 30%;
-}
 
 
 
