@@ -5,11 +5,11 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
-<link href="../api/" rel="prev"/>
-<link href="../../ccc-275/" rel="next"/>
+<link href="../" rel="prev"/>
+<link href="../kotlin/" rel="next"/>
 <link href="../../../../img/icon.ico" rel="icon"/>
 <meta content="mkdocs-1.6.1, mkdocs-material-9.6.4" name="generator"/>
-<title>Publicação de aplicativos Android na Google Play Store - Diego A. Lusa</title>
+<title>Visão Geral: Arquitetura Android - Diego A. Lusa</title>
 <link href="../../../../assets/stylesheets/main.8608ea7d.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
@@ -22,7 +22,7 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
-<a class="md-skip" href="#visao-geral">
+<a class="md-skip" href="#contexto-e-surgimento-do-android">
           Skip to content
         </a>
 </div>
@@ -62,7 +62,7 @@
 <div class="md-header__topic" data-md-component="header-topic">
 <span class="md-ellipsis">
             
-              Publicação de aplicativos Android na Google Play Store
+              Visão Geral: Arquitetura Android
             
           </span>
 </div>
@@ -354,13 +354,110 @@
             Mobile II
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="../overview/">
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+<span class="md-ellipsis">
+    Visão Geral - Arquitetura Android
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./">
 <span class="md-ellipsis">
     Visão Geral - Arquitetura Android
     
   </span>
 </a>
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#contexto-e-surgimento-do-android">
+<span class="md-ellipsis">
+      Contexto e surgimento do Android
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#mercado-relevancia-e-por-que-isso-importa">
+<span class="md-ellipsis">
+      Mercado, relevância e por que isso importa
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#arquitetura-android-em-camadas-visao-de-plataforma">
+<span class="md-ellipsis">
+      Arquitetura Android em camadas (visão de plataforma)
+    </span>
+</a>
+<nav aria-label="Arquitetura Android em camadas (visão de plataforma)" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#kernel-linux">
+<span class="md-ellipsis">
+      Kernel Linux
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#hal-hardware-abstraction-layer">
+<span class="md-ellipsis">
+      HAL (Hardware Abstraction Layer)
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#runtime-art-e-bibliotecas-nativas">
+<span class="md-ellipsis">
+      Runtime (ART) e bibliotecas nativas
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#android-framework">
+<span class="md-ellipsis">
+      Android Framework
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#aosp-google-mobile-services-gms-e-o-android-que-se-ve-no-mercado">
+<span class="md-ellipsis">
+      AOSP, Google Mobile Services (GMS) e “o Android que se vê no mercado”
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#fragmentacao-problema-causa-e-como-lidar-na-pratica">
+<span class="md-ellipsis">
+      Fragmentação: problema, causa e como lidar na prática
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#por-que-essa-visao-de-arquitetura-acelera-a-aprendizagem">
+<span class="md-ellipsis">
+      Por que essa visão de arquitetura acelera a aprendizagem
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#leituras-e-materiais-recomendados">
+<span class="md-ellipsis">
+      Leituras e materiais recomendados
+    </span>
+</a>
+</li>
+</ul>
+</nav>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../kotlin/">
@@ -418,163 +515,13 @@
   </span>
 </a>
 </li>
-<li class="md-nav__item md-nav__item--active">
-<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
-<label class="md-nav__link md-nav__link--active" for="__toc">
-<span class="md-ellipsis">
-    Modulo VIII - Publicação
-    
-  </span>
-<span class="md-nav__icon md-icon"></span>
-</label>
-<a class="md-nav__link md-nav__link--active" href="./">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../publicacao/">
 <span class="md-ellipsis">
     Modulo VIII - Publicação
     
   </span>
 </a>
-<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
-<label class="md-nav__title" for="__toc">
-<span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#visao-geral">
-<span class="md-ellipsis">
-      Visão geral
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#pre-requisitos">
-<span class="md-ellipsis">
-      Pré-requisitos
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#etapa-1-preparar-o-aplicativo-para-release">
-<span class="md-ellipsis">
-      Etapa 1 — Preparar o aplicativo para release
-    </span>
-</a>
-<nav aria-label="Etapa 1 — Preparar o aplicativo para release" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#11-versionamento-versioncode-e-versionname">
-<span class="md-ellipsis">
-      1.1 Versionamento: versionCode e versionName
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#12-build-recomendado-android-app-bundle-aab">
-<span class="md-ellipsis">
-      1.2 Build recomendado: Android App Bundle (AAB)
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#13-assinatura-do-app-e-play-app-signing">
-<span class="md-ellipsis">
-      1.3 Assinatura do app e Play App Signing
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#14-r8proguard-e-otimizacao">
-<span class="md-ellipsis">
-      1.4 R8/ProGuard e otimização
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#15-testes-minimos-antes-do-upload">
-<span class="md-ellipsis">
-      1.5 Testes mínimos antes do upload
-    </span>
-</a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#etapa-2-criar-e-configurar-o-app-no-play-console">
-<span class="md-ellipsis">
-      Etapa 2 — Criar e configurar o app no Play Console
-    </span>
-</a>
-<nav aria-label="Etapa 2 — Criar e configurar o app no Play Console" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#21-criar-o-aplicativo">
-<span class="md-ellipsis">
-      2.1 Criar o aplicativo
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#22-escolher-trilhas-tracks-e-estrategia-de-teste">
-<span class="md-ellipsis">
-      2.2 Escolher trilhas (tracks) e estratégia de teste
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#23-enviar-o-artefato-aab-e-criar-um-release">
-<span class="md-ellipsis">
-      2.3 Enviar o artefato (AAB) e criar um release
-    </span>
-</a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#etapa-3-metadados-do-app-store-listing">
-<span class="md-ellipsis">
-      Etapa 3 — Metadados do app (Store Listing)
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#etapa-4-conformidade-politicas-privacidade-e-requisitos-legais">
-<span class="md-ellipsis">
-      Etapa 4 — Conformidade: políticas, privacidade e requisitos legais
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#etapa-5-revisao-publicacao-e-rollout">
-<span class="md-ellipsis">
-      Etapa 5 — Revisão, publicação e rollout
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#etapa-6-pos-publicacao-monitoramento-e-manutencao">
-<span class="md-ellipsis">
-      Etapa 6 — Pós-publicação: monitoramento e manutenção
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#checklist-resumido-passo-a-passo">
-<span class="md-ellipsis">
-      Checklist resumido (passo a passo)
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#referencias">
-<span class="md-ellipsis">
-      Referências
-    </span>
-</a>
-</li>
-</ul>
-</nav>
 </li>
 </ul>
 </nav>
@@ -704,144 +651,110 @@
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
-<h1>Modulo VIII - Publicação</h1>
-<h2 id="visao-geral">Visão geral<a class="headerlink" href="#visao-geral" title="Permanent link">¶</a></h2>
-<p>Publicar um aplicativo na Google Play Store é um processo que combina <strong>preparação técnica do build</strong>, <strong>requisitos de conformidade (políticas)</strong> e <strong>cadastro de metadados</strong> no Play Console. Em termos práticos, a publicação costuma ocorrer em três fases:</p>
+<h1>Visão Geral - Arquitetura Android</h1>
+<h2 id="contexto-e-surgimento-do-android">Contexto e surgimento do Android<a class="headerlink" href="#contexto-e-surgimento-do-android" title="Permanent link">¶</a></h2>
+<p>O Android é um sistema operacional (SO) para dispositivos móveis cujo desenvolvimento ganhou tração a partir da aquisição da empresa Android Inc. pelo Google (2005) e, principalmente, do anúncio da <strong>Open Handset Alliance (OHA)</strong> (2007), um consórcio que reuniu empresas de hardware, software e operadoras para fomentar um ecossistema aberto de dispositivos e aplicativos <sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup>.</p>
+<p>Do ponto de vista técnico, o Android foi concebido com uma base em <strong>kernel Linux</strong> e com uma arquitetura em camadas que permite suportar diferentes fabricantes e famílias de dispositivos. Essa decisão de projeto foi central para a expansão do sistema: o mesmo “núcleo” pode ser adaptado para aparelhos com requisitos distintos (de smartphones a TVs e dispositivos embarcados).</p>
+<h2 id="mercado-relevancia-e-por-que-isso-importa">Mercado, relevância e por que isso importa<a class="headerlink" href="#mercado-relevancia-e-por-que-isso-importa" title="Permanent link">¶</a></h2>
+<p>O Android é relevante para estudantes iniciando em desenvolvimento mobile por três motivos recorrentes:</p>
 <ol>
-<li>preparar o aplicativo para release (versão, assinatura, bundle e validações);</li>
-<li>configurar a entrega no Play Console (tracks, testes e rollout);</li>
-<li>finalizar a ficha do app (conteúdo, privacidade e requisitos legais) e enviar para revisão.</li>
+<li><strong>Escala de mercado</strong>: em muitos recortes de mercado, o Android aparece com participação dominante em sistemas operacionais móveis, o que amplia o alcance potencial de aplicações e serviços <sup id="fnref2:2"><a class="footnote-ref" href="#fn:2">2</a></sup>.</li>
+<li><strong>Diversidade de dispositivos</strong>: o ecossistema inclui uma grande variedade de fabricantes, tamanhos de tela, capacidades de hardware e versões do SO. Isso cria desafios reais de engenharia (compatibilidade, desempenho, testes) e, ao mesmo tempo, um ambiente fértil para aprendizado.</li>
+<li><strong>Ecossistema de plataforma e ferramentas</strong>: a plataforma conta com documentação técnica ampla, bibliotecas de suporte (Jetpack), padrões de compatibilidade e uma cadeia de distribuição (Google Play) que moldam como aplicações são projetadas, publicadas e mantidas.</li>
 </ol>
-<p>A documentação oficial do Play Console descreve fluxos, requisitos e telas que podem mudar ao longo do tempo <sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup>.</p>
+<p>Essa relevância, porém, vem com uma contrapartida: a realidade do Android envolve <strong>fragmentação</strong> (variação de versões e personalizações), exigindo que os estudantes entendam não apenas “como programar”, mas <strong>como a plataforma é organizada</strong> e onde podem surgir diferenças entre aparelhos <sup id="fnref:3"><a class="footnote-ref" href="#fn:3">3</a></sup>.</p>
+<h2 id="arquitetura-android-em-camadas-visao-de-plataforma">Arquitetura Android em camadas (visão de plataforma)<a class="headerlink" href="#arquitetura-android-em-camadas-visao-de-plataforma" title="Permanent link">¶</a></h2>
+<p>Uma maneira didática de compreender a plataforma é visualizá-la como um conjunto de camadas. Cada camada tem responsabilidades específicas e “esconde” detalhes da camada inferior, oferecendo interfaces mais estáveis para a camada superior.</p>
 <div class="mermaid">flowchart TB
-  A[Preparar release\nAAB + assinatura + versão] --&gt; B[Play Console\nApp + tracks + artefatos]
-  B --&gt; C[Testes\ninternal/closed/open]
-  C --&gt; D[Produção\nrollout e monitoramento]
+  A[Aplicativos
+(Apps do usuário e do sistema)] --&gt; B[Android Framework
+(Activities, Views/Compose, Services,
+Content Providers, Notification, etc.)]
+  B --&gt; C[Android Runtime (ART)
++ Bibliotecas Nativas (C/C++)]
+  C --&gt; D[HAL
+(Hardware Abstraction Layer)]
+  D --&gt; E[Kernel Linux
+(Processos, memória, drivers,
+segurança, energia, rede)]
 </div>
-<h2 id="pre-requisitos">Pré-requisitos<a class="headerlink" href="#pre-requisitos" title="Permanent link">¶</a></h2>
-<p>Antes de começar a publicação, a equipe precisa garantir:</p>
+<h3 id="kernel-linux">Kernel Linux<a class="headerlink" href="#kernel-linux" title="Permanent link">¶</a></h3>
+<p>O kernel atua como base do sistema. Ele lida com aspectos essenciais como:</p>
 <ul>
-<li>uma conta Google com acesso ao <strong>Google Play Console</strong>;</li>
-<li>um aplicativo Android que gere build de release (preferencialmente como <strong>Android App Bundle</strong>);</li>
-<li>um plano mínimo de testes (ao menos em dispositivos reais e em emuladores);</li>
-<li>clareza sobre dados coletados, permissões e fluxos sensíveis (login, pagamentos, localização).</li>
+<li><strong>Processos e threads</strong> (isolamento e agendamento)</li>
+<li><strong>Memória</strong> (alocação e gerenciamento)</li>
+<li><strong>Drivers e dispositivos</strong> (câmera, áudio, sensores, modem, etc.)</li>
+<li><strong>Rede e energia</strong> (crítico para mobilidade)</li>
 </ul>
-<h2 id="etapa-1-preparar-o-aplicativo-para-release">Etapa 1 — Preparar o aplicativo para release<a class="headerlink" href="#etapa-1-preparar-o-aplicativo-para-release" title="Permanent link">¶</a></h2>
-<h3 id="11-versionamento-versioncode-e-versionname">1.1 Versionamento: versionCode e versionName<a class="headerlink" href="#11-versionamento-versioncode-e-versionname" title="Permanent link">¶</a></h3>
-<p>A Play Store exige que cada upload tenha um <code>versionCode</code> <strong>maior</strong> do que o anterior. O <code>versionName</code> é exibido ao usuário.</p>
-<p>Regras didáticas úteis:</p>
+<p>Entender que o Android está sobre Linux ajuda os estudantes a contextualizar decisões de desempenho, permissões, sandboxing e até limitações de hardware.</p>
+<h3 id="hal-hardware-abstraction-layer">HAL (Hardware Abstraction Layer)<a class="headerlink" href="#hal-hardware-abstraction-layer" title="Permanent link">¶</a></h3>
+<p>A HAL é uma “ponte” entre o Android e as implementações específicas de hardware. Ela permite que o sistema e o framework conversem com componentes (câmera, GPS, áudio) sem depender diretamente do detalhe de cada fabricante. Isso é fundamental para a portabilidade do Android em vários aparelhos <sup id="fnref:4"><a class="footnote-ref" href="#fn:4">4</a></sup>.</p>
+<h3 id="runtime-art-e-bibliotecas-nativas">Runtime (ART) e bibliotecas nativas<a class="headerlink" href="#runtime-art-e-bibliotecas-nativas" title="Permanent link">¶</a></h3>
+<p>O Android Runtime (ART) é responsável por executar o código das aplicações (tipicamente escrito em Kotlin/Java e compilado para o ambiente Android). Em paralelo, existem bibliotecas nativas (C/C++) usadas por partes do sistema e, em alguns casos, por aplicações com necessidades específicas.</p>
+<p>Essa camada explica por que o Android consegue combinar produtividade (Kotlin/Java) com desempenho (componentes nativos) quando necessário.</p>
+<h3 id="android-framework">Android Framework<a class="headerlink" href="#android-framework" title="Permanent link">¶</a></h3>
+<p>O framework oferece os blocos de construção do desenvolvimento Android: componentes de aplicação, gerenciamento de recursos, notificações, ciclo de vida, permissões e APIs para a maior parte das capacidades do dispositivo.</p>
+<p>Para iniciantes, é especialmente importante perceber que o framework:</p>
 <ul>
-<li><code>versionCode</code>: inteiro crescente (por exemplo, 1, 2, 3…)</li>
-<li><code>versionName</code>: versão legível (por exemplo, 1.0.0, 1.0.1…)</li>
+<li>Define <strong>componentes e ciclo de vida</strong> (a aplicação não “controla” tudo; o sistema participa ativamente)</li>
+<li>Promove <strong>reuso</strong> e <strong>padronização</strong> (APIs que funcionam de modo similar em aparelhos distintos)</li>
+<li>Impõe regras de <strong>segurança e privacidade</strong> (permissões, isolamento por app, etc.)</li>
 </ul>
-<p>Se o <code>versionCode</code> não aumentar, o upload será recusado.</p>
-<h3 id="12-build-recomendado-android-app-bundle-aab">1.2 Build recomendado: Android App Bundle (AAB)<a class="headerlink" href="#12-build-recomendado-android-app-bundle-aab" title="Permanent link">¶</a></h3>
-<p>O formato recomendado para publicação é o <strong>Android App Bundle (AAB)</strong>, pois ele permite que a Play Store entregue ao dispositivo apenas os recursos necessários (por ABI, densidade, idioma), reduzindo tamanho de download. A documentação do Android descreve o conceito e as implicações do App Bundle <sup id="fnref:2"><a class="footnote-ref" href="#fn:2">2</a></sup>.</p>
-<h3 id="13-assinatura-do-app-e-play-app-signing">1.3 Assinatura do app e Play App Signing<a class="headerlink" href="#13-assinatura-do-app-e-play-app-signing" title="Permanent link">¶</a></h3>
-<p>Aplicativos na Play Store precisam ser assinados. O modelo atual mais comum é habilitar <strong>Play App Signing</strong>, em que a Play gerencia a chave de assinatura de produção e a equipe usa uma chave de upload (mais segura para o dia a dia). O Play Console descreve esse fluxo e os cuidados de gerenciamento de chaves <sup id="fnref:3"><a class="footnote-ref" href="#fn:3">3</a></sup>.</p>
-<div class="admonition warning">
-<p class="admonition-title">Perda de chaves</p>
-<p>Se a equipe perder a chave de assinatura (ou o controle dela, quando não usa Play App Signing), pode ser impossível atualizar o app para os usuários existentes. Por isso, a gestão de chaves é um requisito crítico.</p>
-</div>
-<h3 id="14-r8proguard-e-otimizacao">1.4 R8/ProGuard e otimização<a class="headerlink" href="#14-r8proguard-e-otimizacao" title="Permanent link">¶</a></h3>
-<p>Para builds de release, é comum habilitar minificação/otimização. Isso reduz tamanho do app, mas pode quebrar reflexão/serialização se regras não estiverem corretas. A equipe deve:</p>
+<p>Uma descrição consolidada dessa visão de plataforma e suas camadas está presente na documentação oficial <sup id="fnref:5"><a class="footnote-ref" href="#fn:5">5</a></sup>.</p>
+<h2 id="aosp-google-mobile-services-gms-e-o-android-que-se-ve-no-mercado">AOSP, Google Mobile Services (GMS) e “o Android que se vê no mercado”<a class="headerlink" href="#aosp-google-mobile-services-gms-e-o-android-que-se-ve-no-mercado" title="Permanent link">¶</a></h2>
+<p>No cotidiano, é comum tratar “Android” como uma coisa só. Na prática, o ecossistema combina:</p>
 <ul>
-<li>testar o release build;</li>
-<li>manter regras de keep para bibliotecas que usam reflexão;</li>
-<li>validar logs/stack traces em ambiente de teste.</li>
+<li><strong>AOSP (Android Open Source Project)</strong>: a base aberta do sistema.</li>
+<li><strong>Implementações de fabricantes (OEMs)</strong>: customizações na interface, apps nativos, ajustes de desempenho e integrações.</li>
+<li><strong>Serviços Google (GMS/Play services)</strong>: em muitos aparelhos, bibliotecas e serviços que oferecem funcionalidades amplamente usadas por apps (por exemplo: APIs de mapas, autenticação, mensageria, etc.).</li>
 </ul>
-<h3 id="15-testes-minimos-antes-do-upload">1.5 Testes mínimos antes do upload<a class="headerlink" href="#15-testes-minimos-antes-do-upload" title="Permanent link">¶</a></h3>
-<p>Uma lista mínima de validações práticas:</p>
+<p>Para os estudantes, essa distinção é importante porque alguns recursos “do dia a dia” do Android comercial (por exemplo, certas integrações) podem depender de bibliotecas e serviços específicos, mesmo quando a base do SO é aberta.</p>
+<h2 id="fragmentacao-problema-causa-e-como-lidar-na-pratica">Fragmentação: problema, causa e como lidar na prática<a class="headerlink" href="#fragmentacao-problema-causa-e-como-lidar-na-pratica" title="Permanent link">¶</a></h2>
+<p>A fragmentação no Android não é um único fenômeno, mas uma combinação de fatores:</p>
 <ul>
-<li>o app abre e navega nas telas principais;</li>
-<li>fluxos críticos funcionam (login, cadastro, sincronização, pagamento);</li>
-<li>permissões são pedidas no momento correto e com justificativa;</li>
-<li>o app lida com offline/timeout sem travar;</li>
-<li>crash básico não acontece nas primeiras interações.</li>
+<li><strong>Versões do Android em circulação</strong>: nem todos os aparelhos recebem atualizações na mesma velocidade <sup id="fnref3:3"><a class="footnote-ref" href="#fn:3">3</a></sup>.</li>
+<li><strong>Personalizações de fabricantes</strong>: diferentes camadas de interface, configurações e apps pré-instalados.</li>
+<li><strong>Variação de hardware</strong>: memória, CPU, GPU, sensores e tamanhos de tela.</li>
 </ul>
-<h2 id="etapa-2-criar-e-configurar-o-app-no-play-console">Etapa 2 — Criar e configurar o app no Play Console<a class="headerlink" href="#etapa-2-criar-e-configurar-o-app-no-play-console" title="Permanent link">¶</a></h2>
-<h3 id="21-criar-o-aplicativo">2.1 Criar o aplicativo<a class="headerlink" href="#21-criar-o-aplicativo" title="Permanent link">¶</a></h3>
-<p>No Play Console, a equipe cria o app, define idioma padrão, nome e categoria. Essa criação inicial habilita as demais abas de configuração.</p>
-<h3 id="22-escolher-trilhas-tracks-e-estrategia-de-teste">2.2 Escolher trilhas (tracks) e estratégia de teste<a class="headerlink" href="#22-escolher-trilhas-tracks-e-estrategia-de-teste" title="Permanent link">¶</a></h3>
-<p>O Play Console organiza releases em trilhas. Uma estratégia didática simples:</p>
+<p>Do ponto de vista didático, a fragmentação é um “laboratório real” para aprender engenharia de software orientada a produto. Entre as estratégias mais relevantes estão:</p>
 <ul>
-<li><strong>Internal testing</strong>: validar rapidamente com poucos testadores.</li>
-<li><strong>Closed testing</strong>: validar com um grupo maior (turma/time) com controle.</li>
-<li><strong>Open testing</strong>: beta público, quando aplicável.</li>
-<li><strong>Production</strong>: publicação final.</li>
+<li>Usar bibliotecas de compatibilidade e recomendações oficiais.</li>
+<li>Projetar interfaces responsivas (diferentes tamanhos/densidades).</li>
+<li>Testar em emuladores e em uma amostra de aparelhos físicos.</li>
+<li>Evitar dependência desnecessária de comportamentos específicos de fabricante.</li>
 </ul>
-<p>O objetivo é reduzir risco: problemas aparecem em testes antes de chegar em produção.</p>
-<h3 id="23-enviar-o-artefato-aab-e-criar-um-release">2.3 Enviar o artefato (AAB) e criar um release<a class="headerlink" href="#23-enviar-o-artefato-aab-e-criar-um-release" title="Permanent link">¶</a></h3>
-<p>A equipe faz upload do AAB na trilha escolhida e descreve a versão (release notes). Em seguida, configura rollout.</p>
-<h2 id="etapa-3-metadados-do-app-store-listing">Etapa 3 — Metadados do app (Store Listing)<a class="headerlink" href="#etapa-3-metadados-do-app-store-listing" title="Permanent link">¶</a></h2>
-<p>A publicação exige preencher dados que aparecem na Play Store:</p>
+<h2 id="por-que-essa-visao-de-arquitetura-acelera-a-aprendizagem">Por que essa visão de arquitetura acelera a aprendizagem<a class="headerlink" href="#por-que-essa-visao-de-arquitetura-acelera-a-aprendizagem" title="Permanent link">¶</a></h2>
+<p>Quando os estudantes compreendem as camadas da plataforma, eles passam a diagnosticar problemas com mais clareza:</p>
 <ul>
-<li>nome do app;</li>
-<li>descrição curta e completa;</li>
-<li>ícone e imagens;</li>
-<li>categoria e tags;</li>
-<li>dados de contato.</li>
+<li>Um erro de permissões e isolamento tende a estar relacionado a regras do framework e do sistema.</li>
+<li>Um problema de câmera pode envolver HAL, drivers e particularidades do aparelho.</li>
+<li>Questões de desempenho podem vir de escolhas na UI, de uso de bibliotecas, ou de limitações de hardware.</li>
 </ul>
-<p>Essa etapa influencia descoberta e confiança do usuário.</p>
-<h2 id="etapa-4-conformidade-politicas-privacidade-e-requisitos-legais">Etapa 4 — Conformidade: políticas, privacidade e requisitos legais<a class="headerlink" href="#etapa-4-conformidade-politicas-privacidade-e-requisitos-legais" title="Permanent link">¶</a></h2>
-<p>A Play Store exige respostas e declarações sobre:</p>
+<p>Em outras palavras, a arquitetura não é apenas “teoria do SO”; ela explica por que o Android se comporta como se comporta e como as decisões de projeto impactam desenvolvimento, testes, manutenção e publicação.</p>
+<h2 id="leituras-e-materiais-recomendados">Leituras e materiais recomendados<a class="headerlink" href="#leituras-e-materiais-recomendados" title="Permanent link">¶</a></h2>
 <ul>
-<li><strong>conteúdo</strong> (classificação indicativa);</li>
-<li><strong>privacidade</strong> e coleta/compartilhamento de dados;</li>
-<li>permissões sensíveis;</li>
-<li>anúncios e monetização;</li>
-<li>crianças e público-alvo.</li>
-</ul>
-<p>O conjunto exato de formulários pode variar, mas a regra de ouro é: as respostas no Console devem refletir o comportamento real do app.</p>
-<div class="admonition info">
-<p class="admonition-title">Privacidade como parte do projeto</p>
-<p>Em um curso, é útil tratar privacidade como requisito desde o início: quais dados são coletados, por que, e como o usuário é informado.</p>
-</div>
-<h2 id="etapa-5-revisao-publicacao-e-rollout">Etapa 5 — Revisão, publicação e rollout<a class="headerlink" href="#etapa-5-revisao-publicacao-e-rollout" title="Permanent link">¶</a></h2>
-<p>Após configurar release, metadados e conformidade, a equipe envia para revisão. A revisão pode ser automática e/ou manual.</p>
-<p>Quando aprovado, o app pode:</p>
-<ul>
-<li>ser liberado imediatamente;</li>
-<li>ser liberado com <strong>rollout gradual</strong> (porcentagem de usuários).</li>
-</ul>
-<p>Rollout gradual é útil quando a equipe deseja monitorar estabilidade (crashes, ANRs) e reverter rapidamente em caso de regressão.</p>
-<h2 id="etapa-6-pos-publicacao-monitoramento-e-manutencao">Etapa 6 — Pós-publicação: monitoramento e manutenção<a class="headerlink" href="#etapa-6-pos-publicacao-monitoramento-e-manutencao" title="Permanent link">¶</a></h2>
-<p>Publicar não encerra o trabalho. Um ciclo mínimo de manutenção inclui:</p>
-<ul>
-<li>monitorar crashes e ANRs;</li>
-<li>acompanhar reviews e feedback;</li>
-<li>publicar correções com <code>versionCode</code> crescente;</li>
-<li>planejar mudanças de API target e dependências.</li>
-</ul>
-<h2 id="checklist-resumido-passo-a-passo">Checklist resumido (passo a passo)<a class="headerlink" href="#checklist-resumido-passo-a-passo" title="Permanent link">¶</a></h2>
-<ol>
-<li>Definir <code>versionCode</code>/<code>versionName</code> e gerar build de release.</li>
-<li>Gerar <strong>AAB</strong> e validar funcionamento do release build.</li>
-<li>Configurar assinatura e (quando possível) habilitar <strong>Play App Signing</strong>.</li>
-<li>Criar o app no Play Console.</li>
-<li>Preencher Store Listing (ícone, descrição, imagens).</li>
-<li>Preencher formulários de privacidade, conteúdo e permissões.</li>
-<li>Subir o AAB em <strong>Internal testing</strong> e testar.</li>
-<li>Promover para Closed/Open testing (se necessário) e testar.</li>
-<li>Publicar em produção com rollout (opcional) e monitorar.</li>
-</ol>
-<h2 id="referencias">Referências<a class="headerlink" href="#referencias" title="Permanent link">¶</a></h2>
-<ul>
-<li>Google Play Console Help: Visão geral e fluxos de publicação <sup id="fnref2:1"><a class="footnote-ref" href="#fn:1">1</a></sup></li>
-<li>Android Developers: Android App Bundle <sup id="fnref2:2"><a class="footnote-ref" href="#fn:2">2</a></sup></li>
-<li>Google Play Console Help: Play App Signing <sup id="fnref2:3"><a class="footnote-ref" href="#fn:3">3</a></sup></li>
+<li>Documentação oficial sobre arquitetura e camadas do Android (AOSP) <sup id="fnref2:4"><a class="footnote-ref" href="#fn:4">4</a></sup>.</li>
+<li>Visão geral da arquitetura de plataforma na documentação Android <sup id="fnref2:5"><a class="footnote-ref" href="#fn:5">5</a></sup>.</li>
+<li>Indicadores e painéis de distribuição de versões (para entender fragmentação) <sup id="fnref2:3"><a class="footnote-ref" href="#fn:3">3</a></sup>.</li>
+<li>Indicadores de participação de mercado (para contextualizar relevância) <sup id="fnref:2"><a class="footnote-ref" href="#fn:2">2</a></sup>.</li>
 </ul>
 <div class="footnote">
 <hr/>
 <ol>
 <li id="fn:1">
-<p>Google Play Console Help. Google play console help. 2026. URL: <a href="https://support.google.com/googleplay/android-developer/">https://support.google.com/googleplay/android-developer/</a>. <a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref2:1" title="Jump back to footnote 1 in the text">↩</a></p>
+<p>Google. Open handset alliance. 2007. URL: <a href="https://www.openhandsetalliance.com/">https://www.openhandsetalliance.com/</a>. <a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">↩</a></p>
 </li>
 <li id="fn:2">
-<p>Android Developers. Android app bundle. 2026. URL: <a href="https://developer.android.com/guide/app-bundle">https://developer.android.com/guide/app-bundle</a>. <a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 2 in the text">↩</a><a class="footnote-backref" href="#fnref2:2" title="Jump back to footnote 2 in the text">↩</a></p>
+<p>StatCounter Global Stats. Mobile operating system market share worldwide. 2026. URL: <a href="https://gs.statcounter.com/os-market-share/mobile/worldwide">https://gs.statcounter.com/os-market-share/mobile/worldwide</a>. <a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 2 in the text">↩</a><a class="footnote-backref" href="#fnref2:2" title="Jump back to footnote 2 in the text">↩</a></p>
 </li>
 <li id="fn:3">
-<p>Google Play Console Help. Use play app signing. 2026. URL: <a href="https://support.google.com/googleplay/android-developer/answer/9842756">https://support.google.com/googleplay/android-developer/answer/9842756</a>. <a class="footnote-backref" href="#fnref:3" title="Jump back to footnote 3 in the text">↩</a><a class="footnote-backref" href="#fnref2:3" title="Jump back to footnote 3 in the text">↩</a></p>
+<p>Android Developers. Android version distribution dashboard. 2026. URL: <a href="https://developer.android.com/about/dashboards">https://developer.android.com/about/dashboards</a>. <a class="footnote-backref" href="#fnref:3" title="Jump back to footnote 3 in the text">↩</a><a class="footnote-backref" href="#fnref2:3" title="Jump back to footnote 3 in the text">↩</a><a class="footnote-backref" href="#fnref3:3" title="Jump back to footnote 3 in the text">↩</a></p>
+</li>
+<li id="fn:4">
+<p>Android Open Source Project. Platform architecture. 2026. URL: <a href="https://source.android.com/docs/core/architecture">https://source.android.com/docs/core/architecture</a>. <a class="footnote-backref" href="#fnref:4" title="Jump back to footnote 4 in the text">↩</a><a class="footnote-backref" href="#fnref2:4" title="Jump back to footnote 4 in the text">↩</a></p>
+</li>
+<li id="fn:5">
+<p>Android Developers. Platform architecture. 2026. URL: <a href="https://developer.android.com/guide/platform">https://developer.android.com/guide/platform</a>. <a class="footnote-backref" href="#fnref:5" title="Jump back to footnote 5 in the text">↩</a><a class="footnote-backref" href="#fnref2:5" title="Jump back to footnote 5 in the text">↩</a></p>
 </li>
 </ol>
 </div>
@@ -856,7 +769,7 @@
 </main>
 <footer class="md-footer">
 <nav aria-label="Footer" class="md-footer__inner md-grid">
-<a aria-label="Previous: Módulo VII -  Consumo de APIs" class="md-footer__link md-footer__link--prev" href="../api/">
+<a aria-label="Previous: Desenvolvimento Mobile" class="md-footer__link md-footer__link--prev" href="../">
 <div class="md-footer__button md-icon">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
 </div>
@@ -865,17 +778,17 @@
                 Previous
               </span>
 <div class="md-ellipsis">
-                Módulo VII -  Consumo de APIs
+                Desenvolvimento Mobile
               </div>
 </div>
 </a>
-<a aria-label="Next: Algoritmos, programação e a sua relação com o mundo contemporâneo" class="md-footer__link md-footer__link--next" href="../../ccc-275/">
+<a aria-label="Next: Módulo I - Linguagem Kotlin" class="md-footer__link md-footer__link--next" href="../kotlin/">
 <div class="md-footer__title">
 <span class="md-footer__direction">
                 Next
               </span>
 <div class="md-ellipsis">
-                Algoritmos, programação e a sua relação com o mundo contemporâneo
+                Módulo I - Linguagem Kotlin
               </div>
 </div>
 <div class="md-footer__button md-icon">

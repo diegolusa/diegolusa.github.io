@@ -13,6 +13,8 @@ O desenvolvimento de aplicativos móveis é uma das áreas mais dinâmicas da te
 
 Esta disciplina tem como objetivo capacitar os estudantes no desenvolvimento básico de aplicativos para Android, abordando desde os fundamentos da linguagem Kotlin até a construção de interfaces modernas utilizando Jetpack Compose. Além disso, serão explorados conceitos essenciais, como o ciclo de vida dos aplicativos, gerenciamento de estados e formas de armazenamento de dados.
 
+Como material de apoio, recomenda-se iniciar pela página **Visão Geral: Arquitetura Android**, que contextualiza o surgimento da plataforma, sua relevância no mercado e uma visão em camadas do sistema operacional.
+
 Para um melhor aproveitamento do conteúdo, recomenda-se que os estudantes tenham conhecimento prévio em:
 
 - Lógica de programação e estrutura de dados.
