@@ -9,7 +9,7 @@ date: 2026-03-07 08:00:00
 
 ## Visão geral
 
-**Engenharia de prompt** é o conjunto de técnicas para **formular instruções** e **organizar contexto** de modo que um modelo de linguagem (LLM) produza respostas **úteis, corretas dentro do possível, seguras e no formato esperado**. Na prática, é uma disciplina de comunicação técnica: em vez de “programar” por código, especifica-se comportamento por linguagem natural, exemplos e restrições.
+**Engenharia de prompt** é o conjunto de técnicas para **formular instruções** e **organizar contexto** de modo que um modelo de linguagem (LLM) produza respostas **úteis, corretas dentro do possível, seguras e no formato esperado**. Na prática, é uma disciplina de comunicação técnica: em vez de “programar” por código, especifica-se comportamento por linguagem natural, exemplos e restrições [@dairai2026promptingguide].
 
 Embora pareça simples (“basta perguntar”), LLMs são sensíveis a detalhes: uma pequena mudança no enunciado pode alterar a interpretação, a profundidade, a estrutura da saída e até a confiabilidade. Por isso, a engenharia de prompt trata o prompt como um artefato de engenharia: com requisitos, testes, iteração e controle de qualidade.
 
@@ -24,6 +24,8 @@ Um **prompt** pode ser entendido como a “entrada completa” de texto que o mo
 3. **Restrições**: formato, limites, estilo e critérios.
 4. **Exemplos**: demonstrações do tipo de entrada/saída (quando útil).
 
+Outra forma comum de descrever os elementos de um prompt é: **instrução**, **contexto**, **dados de entrada** e **indicador de saída** (ou seja, o formato/tipo esperado de resposta) [@dairai2026prompt_elements]. As duas visões são compatíveis: elas apenas destacam componentes diferentes que costumam aparecer em aplicações reais.
+
 !!! note "Prompt não substitui dados"
     Prompt não é “mágica” para criar fatos. Se faltam dados (por exemplo, valores, políticas internas ou trechos de um documento), o prompt deve **pedir ao modelo para fazer perguntas**, ou então deve ser combinado com **recuperação de informação** (RAG) e ferramentas.
 
@@ -31,7 +33,7 @@ Um **prompt** pode ser entendido como a “entrada completa” de texto que o mo
 
 ## Componentes básicos de um bom prompt
 
-###  Objetivo explícito
+### Objetivo explícito
 
 Um objetivo bem definido reduz ambiguidades. Compare:
 
@@ -43,7 +45,7 @@ Um objetivo bem definido reduz ambiguidades. Compare:
 
 > Explicar redes neurais para estudantes iniciantes, em até 12 linhas, destacando neurônios, camadas e treinamento por erro. Incluir um exemplo simples em Python.
 
-###  Contexto e pressupostos
+### Contexto e pressupostos
 
 Contexto deve ser suficiente e relevante. Quando o contexto é grande, recomenda-se:
 
@@ -61,7 +63,7 @@ Contexto deve ser suficiente e relevante. Quando o contexto é grande, recomenda
 >
 > Pergunta: quais são as datas importantes?
 
-###  Restrições e critérios de aceitação
+### Restrições e critérios de aceitação
 
 Restrições funcionam como “testes” embutidos. Exemplos de restrições comuns:
 
@@ -74,7 +76,7 @@ Restrições funcionam como “testes” embutidos. Exemplos de restrições com
 
 > Produzir um resumo em 5 frases. Cada frase deve conter um fato verificável no texto. Se alguma frase depender de inferência, marcar com “(inferência)”.
 
-###  Formato da saída
+### Formato da saída
 
 Quanto mais estruturada a saída precisa ser, mais o prompt deve ser específico.
 
@@ -89,7 +91,7 @@ Quanto mais estruturada a saída precisa ser, mais o prompt deve ser específico
 !!! warning "Validação"
     Quando o formato for crítico, é uma boa prática validar a saída com um parser (por exemplo, tentar carregar o JSON). Em caso de falha, o sistema pode pedir correção ao modelo, anexando o erro do parser.
 
-###  Exemplos (zero-shot, one-shot, few-shot)
+### Exemplos (zero-shot, one-shot, few-shot)
 
 Prompts podem incluir demonstrações do comportamento desejado. Isso é especialmente útil quando:
 
@@ -113,6 +115,23 @@ A ideia de que LLMs conseguem aprender o padrão “na hora” a partir de exemp
 >
 > Agora converter:
 > Requisito: “CPF deve ter 11 dígitos”.
+
+---
+
+## Configurações do LLM (amostragem e limites)
+
+Ao testar prompts via API, é comum existir um conjunto de parâmetros que afeta diretamente **variabilidade**, **tamanho** e **estrutura** da resposta. Em geral, não basta “escrever bem”: para tarefas que exigem consistência, a configuração do modelo faz parte do projeto [@dairai2026llm_settings].
+
+Entre os parâmetros mais comuns estão:
+
+- **Temperature**: em geral, quanto menor, mais determinística tende a ser a saída; valores maiores aumentam diversidade (útil para criatividade, mais arriscado para precisão).
+- **Top-p** (nucleus sampling): restringe os tokens considerados para a resposta, controlando o quão “conservadora” tende a ser a geração.
+- **Max length / max tokens**: limita o comprimento e ajuda a evitar respostas longas/irrelevantes.
+- **Stop sequences**: interrompem a geração ao encontrar um marcador específico, ajudando a controlar estrutura (por exemplo, parar após uma lista).
+- **Frequency/presence penalty**: penalizam repetições (útil para reduzir redundância).
+
+!!! tip "Regra prática"
+    Para ajustar determinismo/diversidade, costuma-se alterar *temperature* **ou** *top-p*, mas não os dois ao mesmo tempo, para manter o efeito mais previsível [@dairai2026llm_settings].
 
 ---
 
@@ -185,6 +204,8 @@ LLMs podem “alucinar”: produzir afirmações plausíveis, mas falsas. O prom
 ### Delimitadores e isolamento de dados
 
 Delimitadores ajudam a evitar que o modelo confunda instruções com dados.
+
+Além disso, separar a instrução do contexto (por exemplo, com cabeçalhos como `### Instrução` / `### Contexto`) costuma melhorar a legibilidade do prompt e reduzir ambiguidades [@dairai2026prompt_tips].
 
 **Exemplo (instrução + dados separados):**
 
@@ -282,6 +303,8 @@ Um prompt “bom” é o que passa em testes do mundo real. Para isso, recomenda
 3. **Rodar avaliações**: manualmente no início; depois automatizar.
 4. **Ajustar**: mudar uma coisa por vez (objetivo, contexto, exemplos ou restrições).
 
+Essas iterações tendem a ser mais eficazes quando o processo começa simples e vai ganhando precisão por refinamento: mais especificidade, melhor formatação, e separação clara entre instruções e dados [@dairai2026prompt_tips].
+
 !!! tip "Testes de formato"
     Sempre que houver exigência estrutural (JSON, tabela, YAML), vale incluir um validador no pipeline. Isso transforma o problema em algo mensurável: “passa/falha”.
 
@@ -295,6 +318,8 @@ Um prompt “bom” é o que passa em testes do mundo real. Para isso, recomenda
 4. **Formato indefinido**: esperar estrutura sem especificar estrutura.
 5. **Não permitir recusa/limite**: não permitir “não sei” aumenta alucinação.
 
+6. **Negar sem especificar alternativa**: instruções do tipo “não faça X” podem falhar. Em muitos casos, funciona melhor dizer explicitamente **o que fazer** e o que fazer quando não houver evidência (por exemplo, “responder ‘não consta’”) [@dairai2026prompt_tips].
+
 Uma boa prática é sempre incluir uma cláusula de robustez:
 
 > Se faltar informação, listar as perguntas necessárias antes de responder.
@@ -306,3 +331,4 @@ Uma boa prática é sempre incluir uma cláusula de robustez:
 - Few-shot learning em LLMs e padronização por exemplos [@brown2020language].
 - Ganhos de desempenho com indução de etapas intermediárias [@wei2022chain].
 - Integração entre raciocínio e ação com ferramentas [@yao2022react].
+- Prompt Engineering Guide (elementos, dicas e configurações de LLM) [@dairai2026promptingguide; @dairai2026prompt_elements; @dairai2026prompt_tips; @dairai2026llm_settings].
