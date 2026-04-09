@@ -5,11 +5,11 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
-<link href="../" rel="prev"/>
-<link href="../kotlin/" rel="next"/>
+<link href="../publicacao/" rel="prev"/>
+<link href="../../ccc-275/" rel="next"/>
 <link href="../../../../img/icon.ico" rel="icon"/>
 <meta content="mkdocs-1.6.1, mkdocs-material-9.6.4" name="generator"/>
-<title>Visão Geral: Arquitetura Android - Diego A. Lusa</title>
+<title>Git e GitHub no Android Studio (uso básico) - Diego A. Lusa</title>
 <link href="../../../../assets/stylesheets/main.8608ea7d.min.css" rel="stylesheet"/>
 <link href="../../../../assets/stylesheets/palette.06af60db.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
@@ -23,7 +23,7 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
-<a class="md-skip" href="#contexto-e-surgimento-do-android">
+<a class="md-skip" href="#objetivo">
           Ir para o conteúdo
         </a>
 </div>
@@ -63,7 +63,7 @@
 <div class="md-header__topic" data-md-component="header-topic">
 <span class="md-ellipsis">
             
-              Visão Geral: Arquitetura Android
+              Git e GitHub no Android Studio (uso básico)
             
           </span>
 </div>
@@ -389,110 +389,13 @@
             Mobile II
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item md-nav__item--active">
-<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
-<label class="md-nav__link md-nav__link--active" for="__toc">
-<span class="md-ellipsis">
-    Visão Geral - Arquitetura Android
-    
-  </span>
-<span class="md-nav__icon md-icon"></span>
-</label>
-<a class="md-nav__link md-nav__link--active" href="./">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../overview/">
 <span class="md-ellipsis">
     Visão Geral - Arquitetura Android
     
   </span>
 </a>
-<nav aria-label="Índice" class="md-nav md-nav--secondary">
-<label class="md-nav__title" for="__toc">
-<span class="md-nav__icon md-icon"></span>
-      Índice
-    </label>
-<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#contexto-e-surgimento-do-android">
-<span class="md-ellipsis">
-      Contexto e surgimento do Android
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#mercado-relevancia-e-por-que-isso-importa">
-<span class="md-ellipsis">
-      Mercado, relevância e por que isso importa
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#arquitetura-android-em-camadas-visao-de-plataforma">
-<span class="md-ellipsis">
-      Arquitetura Android em camadas (visão de plataforma)
-    </span>
-</a>
-<nav aria-label="Arquitetura Android em camadas (visão de plataforma)" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#kernel-linux">
-<span class="md-ellipsis">
-      Kernel Linux
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#hal-hardware-abstraction-layer">
-<span class="md-ellipsis">
-      HAL (Hardware Abstraction Layer)
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#runtime-art-e-bibliotecas-nativas">
-<span class="md-ellipsis">
-      Runtime (ART) e bibliotecas nativas
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#android-framework">
-<span class="md-ellipsis">
-      Android Framework
-    </span>
-</a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#aosp-google-mobile-services-gms-e-o-android-que-se-ve-no-mercado">
-<span class="md-ellipsis">
-      AOSP, Google Mobile Services (GMS) e “o Android que se vê no mercado”
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#fragmentacao-problema-causa-e-como-lidar-na-pratica">
-<span class="md-ellipsis">
-      Fragmentação: problema, causa e como lidar na prática
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#por-que-essa-visao-de-arquitetura-acelera-a-aprendizagem">
-<span class="md-ellipsis">
-      Por que essa visão de arquitetura acelera a aprendizagem
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#leituras-e-materiais-recomendados">
-<span class="md-ellipsis">
-      Leituras e materiais recomendados
-    </span>
-</a>
-</li>
-</ul>
-</nav>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../kotlin/">
@@ -558,13 +461,134 @@
   </span>
 </a>
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../git/">
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+<span class="md-ellipsis">
+    Integração com Git
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./">
 <span class="md-ellipsis">
     Integração com Git
     
   </span>
 </a>
+<nav aria-label="Índice" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Índice
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#objetivo">
+<span class="md-ellipsis">
+      Objetivo
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#pre-requisitos">
+<span class="md-ellipsis">
+      Pré-requisitos
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#conceitos-minimos-o-vocabulario-do-dia-a-dia">
+<span class="md-ellipsis">
+      Conceitos mínimos (o vocabulário do dia a dia)
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#visao-geral-do-fluxo">
+<span class="md-ellipsis">
+      Visão geral do fluxo
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1-configurar-git-no-android-studio">
+<span class="md-ellipsis">
+      1) Configurar Git no Android Studio
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2-conectar-o-android-studio-ao-github-autenticacao">
+<span class="md-ellipsis">
+      2) Conectar o Android Studio ao GitHub (autenticação)
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3-clonar-um-repositorio-do-github">
+<span class="md-ellipsis">
+      3) Clonar um repositório do GitHub
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#4-criar-um-repositorio-a-partir-de-um-projeto-ja-existente">
+<span class="md-ellipsis">
+      4) Criar um repositório a partir de um projeto já existente
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#5-fazer-o-primeiro-commit-e-entender-commit-vs-push">
+<span class="md-ellipsis">
+      5) Fazer o primeiro commit (e entender “commit” vs “push”)
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#6-atualizar-o-projeto-pull-update">
+<span class="md-ellipsis">
+      6) Atualizar o projeto: Pull / Update
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#7-trabalhar-com-branches-basico">
+<span class="md-ellipsis">
+      7) Trabalhar com branches (básico)
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#8-pull-request-pr-no-github">
+<span class="md-ellipsis">
+      8) Pull Request (PR) no GitHub
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#9-resolucao-de-conflitos-quando-o-git-nao-consegue-adivinhar">
+<span class="md-ellipsis">
+      9) Resolução de conflitos (quando o Git “não consegue adivinhar”)
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#boas-praticas-minimas-para-evitar-problemas-tipicos">
+<span class="md-ellipsis">
+      Boas práticas mínimas (para evitar problemas típicos)
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#recursos-adicionais">
+<span class="md-ellipsis">
+      Recursos adicionais
+    </span>
+</a>
+</li>
+</ul>
+</nav>
 </li>
 </ul>
 </nav>
@@ -702,113 +726,161 @@
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
-<a class="md-content__button md-icon" href="https://github.com/diegolusa/my-site/edit/master/docs/disciplinas/upf/ads-164/overview.md" title="Editar esta página">
+<a class="md-content__button md-icon" href="https://github.com/diegolusa/my-site/edit/master/docs/disciplinas/upf/ads-164/git.md" title="Editar esta página">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"></path></svg>
 </a>
-<h1>Visão Geral - Arquitetura Android</h1>
-<h2 id="contexto-e-surgimento-do-android">Contexto e surgimento do Android<a class="headerlink" href="#contexto-e-surgimento-do-android" title="Permanent link">¶</a></h2>
-<p>O Android é um sistema operacional (SO) para dispositivos móveis cujo desenvolvimento ganhou tração a partir da aquisição da empresa Android Inc. pelo Google (2005) e, principalmente, do anúncio da <strong>Open Handset Alliance (OHA)</strong> (2007), um consórcio que reuniu empresas de hardware, software e operadoras para fomentar um ecossistema aberto de dispositivos e aplicativos <sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup>.</p>
-<p>Do ponto de vista técnico, o Android foi concebido com uma base em <strong>kernel Linux</strong> e com uma arquitetura em camadas que permite suportar diferentes fabricantes e famílias de dispositivos. Essa decisão de projeto foi central para a expansão do sistema: o mesmo “núcleo” pode ser adaptado para aparelhos com requisitos distintos (de smartphones a TVs e dispositivos embarcados).</p>
-<h2 id="mercado-relevancia-e-por-que-isso-importa">Mercado, relevância e por que isso importa<a class="headerlink" href="#mercado-relevancia-e-por-que-isso-importa" title="Permanent link">¶</a></h2>
-<p>O Android é relevante para estudantes iniciando em desenvolvimento mobile por três motivos recorrentes:</p>
+<h1>Integração com Git</h1>
+<h2 id="objetivo">Objetivo<a class="headerlink" href="#objetivo" title="Permanent link">¶</a></h2>
+<p>Este material apresenta um tutorial de uso básico do Git no Android Studio, considerando um fluxo comum de trabalho com repositórios hospedados no GitHub. O foco é fazer com que os estudantes consigam: clonar um repositório, criar commits, enviar (push) e baixar (pull) alterações, trabalhar com branches e resolver conflitos simples, além de interagir com Pull Requests.</p>
+<h2 id="pre-requisitos">Pré-requisitos<a class="headerlink" href="#pre-requisitos" title="Permanent link">¶</a></h2>
+<p>Para acompanhar o tutorial, considera-se que:</p>
 <ol>
-<li><strong>Escala de mercado</strong>: em muitos recortes de mercado, o Android aparece com participação dominante em sistemas operacionais móveis, o que amplia o alcance potencial de aplicações e serviços <sup id="fnref2:2"><a class="footnote-ref" href="#fn:2">2</a></sup>.</li>
-<li><strong>Diversidade de dispositivos</strong>: o ecossistema inclui uma grande variedade de fabricantes, tamanhos de tela, capacidades de hardware e versões do SO. Isso cria desafios reais de engenharia (compatibilidade, desempenho, testes) e, ao mesmo tempo, um ambiente fértil para aprendizado.</li>
-<li><strong>Ecossistema de plataforma e ferramentas</strong>: a plataforma conta com documentação técnica ampla, bibliotecas de suporte (Jetpack), padrões de compatibilidade e uma cadeia de distribuição (Google Play) que moldam como aplicações são projetadas, publicadas e mantidas.</li>
+<li>O Git está instalado no sistema operacional e acessível pelo Android Studio.</li>
+<li>Existe uma conta no GitHub e acesso a um repositório (próprio ou da turma).</li>
+<li>O Android Studio está instalado e atualizado.</li>
 </ol>
-<p>Essa relevância, porém, vem com uma contrapartida: a realidade do Android envolve <strong>fragmentação</strong> (variação de versões e personalizações), exigindo que os estudantes entendam não apenas “como programar”, mas <strong>como a plataforma é organizada</strong> e onde podem surgir diferenças entre aparelhos <sup id="fnref:3"><a class="footnote-ref" href="#fn:3">3</a></sup>.</p>
-<h2 id="arquitetura-android-em-camadas-visao-de-plataforma">Arquitetura Android em camadas (visão de plataforma)<a class="headerlink" href="#arquitetura-android-em-camadas-visao-de-plataforma" title="Permanent link">¶</a></h2>
-<p>Uma maneira didática de compreender a plataforma é visualizá-la como um conjunto de camadas. Cada camada tem responsabilidades específicas e “esconde” detalhes da camada inferior, oferecendo interfaces mais estáveis para a camada superior.</p>
-<div class="mermaid">flowchart TB
-  A[Aplicativos
-(Apps do usuário e do sistema)] --&gt; B[Android Framework
-(Activities, Views/Compose, Services,
-Content Providers, Notification, etc.)]
-  B --&gt; C[Android Runtime (ART)
-+ Bibliotecas Nativas (C/C++)]
-  C --&gt; D[HAL
-(Hardware Abstraction Layer)]
-  D --&gt; E[Kernel Linux
-(Processos, memória, drivers,
-segurança, energia, rede)]
+<p>Como referência de estudo e consulta, recomenda-se a leitura do livro oficial do Git <sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup> e a documentação do GitHub sobre autenticação e trabalho com repositórios <sup id="fnref:2"><a class="footnote-ref" href="#fn:2">2</a></sup>. Para a interface do Android Studio (baseada na plataforma IntelliJ), a documentação de controle de versão também é útil <sup id="fnref:3"><a class="footnote-ref" href="#fn:3">3</a></sup>.</p>
+<h2 id="conceitos-minimos-o-vocabulario-do-dia-a-dia">Conceitos mínimos (o vocabulário do dia a dia)<a class="headerlink" href="#conceitos-minimos-o-vocabulario-do-dia-a-dia" title="Permanent link">¶</a></h2>
+<p>Antes do passo a passo, convém fixar algumas palavras que aparecem na interface do Android Studio e no GitHub:</p>
+<ul>
+<li><strong>Repositório (repo)</strong>: pasta do projeto com histórico de versões.</li>
+<li><strong>Commit</strong>: “foto” das mudanças, registrada localmente, com mensagem e autor.</li>
+<li><strong>Branch</strong>: linha de desenvolvimento paralela (por exemplo, <code>main</code> e <code>feature/login</code>).</li>
+<li><strong>Remote</strong>: servidor remoto (no GitHub, geralmente chamado <code>origin</code>).</li>
+<li><strong>Push</strong>: envia commits locais para o GitHub.</li>
+<li><strong>Pull / Update</strong>: traz commits do GitHub para a máquina.</li>
+<li><strong>Pull Request (PR)</strong>: proposta de mudança no GitHub, usada para revisão e merge.</li>
+</ul>
+<h2 id="visao-geral-do-fluxo">Visão geral do fluxo<a class="headerlink" href="#visao-geral-do-fluxo" title="Permanent link">¶</a></h2>
+<p>O fluxo mais comum no GitHub para trabalhos em equipe pode ser resumido assim:</p>
+<div class="mermaid">flowchart TD
+  A[Clonar repositório do GitHub] --&gt; B[Abrir no Android Studio]
+  B --&gt; C[Editar arquivos]
+  C --&gt; D[Revisar mudanças]
+  D --&gt; E[Commit local]
+  E --&gt; F[Push para o GitHub]
+  F --&gt; G[Abrir Pull Request]
+  G --&gt; H[Revisão e ajustes]
+  H --&gt; I[Merge no GitHub]
+  I --&gt; J[Pull/Update no Android Studio]
 </div>
-<h3 id="kernel-linux">Kernel Linux<a class="headerlink" href="#kernel-linux" title="Permanent link">¶</a></h3>
-<p>O kernel atua como base do sistema. Ele lida com aspectos essenciais como:</p>
+<h2 id="1-configurar-git-no-android-studio">1) Configurar Git no Android Studio<a class="headerlink" href="#1-configurar-git-no-android-studio" title="Permanent link">¶</a></h2>
+<p>O Android Studio costuma detectar o Git automaticamente. Quando isso não acontece, configura-se manualmente:</p>
+<ol>
+<li>Abrir as configurações do Android Studio.</li>
+<li>Localizar as opções de <strong>Version Control / Git</strong>.</li>
+<li>Apontar o caminho do executável do Git (por exemplo, <code>git</code> no macOS/Linux).</li>
+<li>Usar o botão de teste (quando disponível) para validar a detecção.</li>
+</ol>
+<p>Além disso, recomenda-se configurar a identidade (nome e e-mail) que aparecerá nos commits. Em geral, isso pode ser feito no terminal embutido do Android Studio:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>user.name<span class="w"> </span><span class="s2">"Nome Sobrenome"</span>
+</span><span id="__span-0-2"><a href="#__codelineno-0-2" id="__codelineno-0-2" name="__codelineno-0-2"></a>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>user.email<span class="w"> </span><span class="s2">"email@exemplo.com"</span>
+</span></code></pre></div>
+<h2 id="2-conectar-o-android-studio-ao-github-autenticacao">2) Conectar o Android Studio ao GitHub (autenticação)<a class="headerlink" href="#2-conectar-o-android-studio-ao-github-autenticacao" title="Permanent link">¶</a></h2>
+<p>A integração com o GitHub permite operações como clone, push e navegação por PRs a partir do IDE. O método exato pode variar por versão do Android Studio, mas em geral envolve:</p>
+<ol>
+<li>Abrir as configurações do Android Studio.</li>
+<li>Ir até a seção de <strong>Accounts / GitHub</strong>.</li>
+<li>Fazer login via navegador (OAuth) ou fornecer um token (PAT) quando solicitado.</li>
+</ol>
+<p>Em termos práticos, o importante é entender que o GitHub não aceita mais autenticação por senha em operações Git via HTTPS; normalmente usa-se OAuth no IDE ou um token <sup id="fnref2:2"><a class="footnote-ref" href="#fn:2">2</a></sup>.</p>
+<h2 id="3-clonar-um-repositorio-do-github">3) Clonar um repositório do GitHub<a class="headerlink" href="#3-clonar-um-repositorio-do-github" title="Permanent link">¶</a></h2>
+<p>Para iniciar um projeto a partir de um repositório existente:</p>
+<ol>
+<li>No Android Studio, escolher a opção de <strong>Get from VCS</strong> (ou equivalente).</li>
+<li>Selecionar <strong>Git</strong>.</li>
+<li>Colar a URL do repositório no GitHub.</li>
+<li>Escolher a pasta local onde o projeto será salvo.</li>
+<li>Confirmar o clone e aguardar a importação/abertura do projeto.</li>
+</ol>
+<p>Depois do clone, o Android Studio passa a mostrar janelas e menus de versionamento, como o painel de mudanças (Changes) e ações de commit/push.</p>
+<h2 id="4-criar-um-repositorio-a-partir-de-um-projeto-ja-existente">4) Criar um repositório a partir de um projeto já existente<a class="headerlink" href="#4-criar-um-repositorio-a-partir-de-um-projeto-ja-existente" title="Permanent link">¶</a></h2>
+<p>Quando o projeto já existe localmente, mas ainda não está versionado:</p>
+<ol>
+<li>Inicializar o Git no projeto (geralmente via menu <strong>VCS</strong> → <strong>Enable Version Control Integration</strong>).</li>
+<li>Selecionar <strong>Git</strong>.</li>
+<li>Verificar o arquivo <code>.gitignore</code> (um projeto Android normalmente ignora <code>build/</code>, <code>.idea/</code> parcialmente, e artefatos de compilação).</li>
+</ol>
+<p>Se a atividade exigir que o projeto seja publicado no GitHub, o Android Studio também costuma oferecer uma ação para compartilhar o projeto (por exemplo, “Share Project on GitHub”), criando o repositório remoto e fazendo o primeiro push.</p>
+<h2 id="5-fazer-o-primeiro-commit-e-entender-commit-vs-push">5) Fazer o primeiro commit (e entender “commit” vs “push”)<a class="headerlink" href="#5-fazer-o-primeiro-commit-e-entender-commit-vs-push" title="Permanent link">¶</a></h2>
+<p>Um erro comum no início é acreditar que “commit” já envia mudanças para o GitHub. Na prática:</p>
 <ul>
-<li><strong>Processos e threads</strong> (isolamento e agendamento)</li>
-<li><strong>Memória</strong> (alocação e gerenciamento)</li>
-<li><strong>Drivers e dispositivos</strong> (câmera, áudio, sensores, modem, etc.)</li>
-<li><strong>Rede e energia</strong> (crítico para mobilidade)</li>
+<li><strong>Commit</strong> grava o histórico localmente.</li>
+<li><strong>Push</strong> envia os commits locais para o GitHub.</li>
 </ul>
-<p>Entender que o Android está sobre Linux ajuda os estudantes a contextualizar decisões de desempenho, permissões, sandboxing e até limitações de hardware.</p>
-<h3 id="hal-hardware-abstraction-layer">HAL (Hardware Abstraction Layer)<a class="headerlink" href="#hal-hardware-abstraction-layer" title="Permanent link">¶</a></h3>
-<p>A HAL é uma “ponte” entre o Android e as implementações específicas de hardware. Ela permite que o sistema e o framework conversem com componentes (câmera, GPS, áudio) sem depender diretamente do detalhe de cada fabricante. Isso é fundamental para a portabilidade do Android em vários aparelhos <sup id="fnref:4"><a class="footnote-ref" href="#fn:4">4</a></sup>.</p>
-<h3 id="runtime-art-e-bibliotecas-nativas">Runtime (ART) e bibliotecas nativas<a class="headerlink" href="#runtime-art-e-bibliotecas-nativas" title="Permanent link">¶</a></h3>
-<p>O Android Runtime (ART) é responsável por executar o código das aplicações (tipicamente escrito em Kotlin/Java e compilado para o ambiente Android). Em paralelo, existem bibliotecas nativas (C/C++) usadas por partes do sistema e, em alguns casos, por aplicações com necessidades específicas.</p>
-<p>Essa camada explica por que o Android consegue combinar produtividade (Kotlin/Java) com desempenho (componentes nativos) quando necessário.</p>
-<h3 id="android-framework">Android Framework<a class="headerlink" href="#android-framework" title="Permanent link">¶</a></h3>
-<p>O framework oferece os blocos de construção do desenvolvimento Android: componentes de aplicação, gerenciamento de recursos, notificações, ciclo de vida, permissões e APIs para a maior parte das capacidades do dispositivo.</p>
-<p>Para iniciantes, é especialmente importante perceber que o framework:</p>
+<p>No Android Studio, um fluxo típico para commitar é:</p>
+<ol>
+<li>Abrir a janela de <strong>Commit</strong> (ou <strong>Git</strong> → <strong>Commit</strong>).</li>
+<li>Revisar os arquivos alterados.</li>
+<li>Selecionar quais arquivos entram no commit (equivalente ao “stage”).</li>
+<li>Escrever uma mensagem objetiva.</li>
+<li>Confirmar o commit.</li>
+</ol>
+<p>Após isso, executa-se <strong>Push</strong> (às vezes existe o atalho “Commit and Push”).</p>
+<h2 id="6-atualizar-o-projeto-pull-update">6) Atualizar o projeto: Pull / Update<a class="headerlink" href="#6-atualizar-o-projeto-pull-update" title="Permanent link">¶</a></h2>
+<p>Em projetos em equipe, é importante atualizar o repositório com frequência para reduzir conflitos:</p>
+<ol>
+<li>Usar <strong>Pull</strong> (ou <strong>Update Project</strong>) para baixar mudanças do GitHub.</li>
+<li>Verificar se há conflitos.</li>
+<li>Rodar o projeto ou os testes necessários após a atualização.</li>
+</ol>
+<h2 id="7-trabalhar-com-branches-basico">7) Trabalhar com branches (básico)<a class="headerlink" href="#7-trabalhar-com-branches-basico" title="Permanent link">¶</a></h2>
+<p>Branches evitam que todos editem diretamente a <code>main</code> ao mesmo tempo. Um fluxo simples para uma tarefa é:</p>
+<ol>
+<li>Criar uma branch para a tarefa (por exemplo, <code>feature/tela-login</code>).</li>
+<li>Fazer commits pequenos ao longo do desenvolvimento.</li>
+<li>Fazer push da branch para o GitHub.</li>
+<li>Abrir um Pull Request para revisão/merge.</li>
+</ol>
+<p>No Android Studio, a troca/criação de branches geralmente está acessível pelo menu Git ou pelo indicador de branch na barra inferior.</p>
+<h2 id="8-pull-request-pr-no-github">8) Pull Request (PR) no GitHub<a class="headerlink" href="#8-pull-request-pr-no-github" title="Permanent link">¶</a></h2>
+<p>O Pull Request é o mecanismo mais comum para integrar uma branch ao código principal no GitHub.</p>
+<p>Um passo a passo mínimo (do ponto de vista do processo) é:</p>
+<ol>
+<li>Fazer push da branch para o GitHub.</li>
+<li>Abrir um PR no GitHub (branch → <code>main</code>).</li>
+<li>Ler as verificações (checks) e comentários.</li>
+<li>Ajustar o código no Android Studio e fazer novos commits na mesma branch.</li>
+<li>Fazer push novamente; o PR é atualizado automaticamente.</li>
+<li>Após aprovação, fazer o merge.</li>
+<li>De volta ao Android Studio, fazer pull/update para sincronizar.</li>
+</ol>
+<h2 id="9-resolucao-de-conflitos-quando-o-git-nao-consegue-adivinhar">9) Resolução de conflitos (quando o Git “não consegue adivinhar”)<a class="headerlink" href="#9-resolucao-de-conflitos-quando-o-git-nao-consegue-adivinhar" title="Permanent link">¶</a></h2>
+<p>Conflitos aparecem quando duas pessoas (ou duas branches) modificam as mesmas linhas de um arquivo e o Git não consegue decidir qual versão deve prevalecer.</p>
+<p>Quando isso ocorrer:</p>
+<ol>
+<li>O Android Studio apresentará os arquivos em conflito.</li>
+<li>Abrir o resolvedor de merge da IDE.</li>
+<li>Comparar <strong>Local</strong> vs <strong>Remote</strong> (ou <strong>Current</strong> vs <strong>Incoming</strong>), escolhendo trechos.</li>
+<li>Salvar o resultado final.</li>
+<li>Finalizar o merge e fazer commit.</li>
+<li>Rodar o projeto para confirmar que está consistente.</li>
+</ol>
+<p>A regra prática é: primeiro entender <em>o que mudou</em> em cada lado; só depois escolher a versão final.</p>
+<h2 id="boas-praticas-minimas-para-evitar-problemas-tipicos">Boas práticas mínimas (para evitar problemas típicos)<a class="headerlink" href="#boas-praticas-minimas-para-evitar-problemas-tipicos" title="Permanent link">¶</a></h2>
 <ul>
-<li>Define <strong>componentes e ciclo de vida</strong> (a aplicação não “controla” tudo; o sistema participa ativamente)</li>
-<li>Promove <strong>reuso</strong> e <strong>padronização</strong> (APIs que funcionam de modo similar em aparelhos distintos)</li>
-<li>Impõe regras de <strong>segurança e privacidade</strong> (permissões, isolamento por app, etc.)</li>
+<li>Fazer commits pequenos e frequentes, com mensagens que descrevem a intenção.</li>
+<li>Atualizar (pull) antes de começar uma tarefa e antes de abrir PR.</li>
+<li>Evitar versionar segredos (tokens, chaves, senhas) e arquivos gerados de build.</li>
+<li>Preferir branch por tarefa e PR para integração.</li>
 </ul>
-<p>Uma descrição consolidada dessa visão de plataforma e suas camadas está presente na documentação oficial <sup id="fnref:5"><a class="footnote-ref" href="#fn:5">5</a></sup>.</p>
-<h2 id="aosp-google-mobile-services-gms-e-o-android-que-se-ve-no-mercado">AOSP, Google Mobile Services (GMS) e “o Android que se vê no mercado”<a class="headerlink" href="#aosp-google-mobile-services-gms-e-o-android-que-se-ve-no-mercado" title="Permanent link">¶</a></h2>
-<p>No cotidiano, é comum tratar “Android” como uma coisa só. Na prática, o ecossistema combina:</p>
+<h2 id="recursos-adicionais">Recursos adicionais<a class="headerlink" href="#recursos-adicionais" title="Permanent link">¶</a></h2>
 <ul>
-<li><strong>AOSP (Android Open Source Project)</strong>: a base aberta do sistema.</li>
-<li><strong>Implementações de fabricantes (OEMs)</strong>: customizações na interface, apps nativos, ajustes de desempenho e integrações.</li>
-<li><strong>Serviços Google (GMS/Play services)</strong>: em muitos aparelhos, bibliotecas e serviços que oferecem funcionalidades amplamente usadas por apps (por exemplo: APIs de mapas, autenticação, mensageria, etc.).</li>
-</ul>
-<p>Para os estudantes, essa distinção é importante porque alguns recursos “do dia a dia” do Android comercial (por exemplo, certas integrações) podem depender de bibliotecas e serviços específicos, mesmo quando a base do SO é aberta.</p>
-<h2 id="fragmentacao-problema-causa-e-como-lidar-na-pratica">Fragmentação: problema, causa e como lidar na prática<a class="headerlink" href="#fragmentacao-problema-causa-e-como-lidar-na-pratica" title="Permanent link">¶</a></h2>
-<p>A fragmentação no Android não é um único fenômeno, mas uma combinação de fatores:</p>
-<ul>
-<li><strong>Versões do Android em circulação</strong>: nem todos os aparelhos recebem atualizações na mesma velocidade <sup id="fnref3:3"><a class="footnote-ref" href="#fn:3">3</a></sup>.</li>
-<li><strong>Personalizações de fabricantes</strong>: diferentes camadas de interface, configurações e apps pré-instalados.</li>
-<li><strong>Variação de hardware</strong>: memória, CPU, GPU, sensores e tamanhos de tela.</li>
-</ul>
-<p>Do ponto de vista didático, a fragmentação é um “laboratório real” para aprender engenharia de software orientada a produto. Entre as estratégias mais relevantes estão:</p>
-<ul>
-<li>Usar bibliotecas de compatibilidade e recomendações oficiais.</li>
-<li>Projetar interfaces responsivas (diferentes tamanhos/densidades).</li>
-<li>Testar em emuladores e em uma amostra de aparelhos físicos.</li>
-<li>Evitar dependência desnecessária de comportamentos específicos de fabricante.</li>
-</ul>
-<h2 id="por-que-essa-visao-de-arquitetura-acelera-a-aprendizagem">Por que essa visão de arquitetura acelera a aprendizagem<a class="headerlink" href="#por-que-essa-visao-de-arquitetura-acelera-a-aprendizagem" title="Permanent link">¶</a></h2>
-<p>Quando os estudantes compreendem as camadas da plataforma, eles passam a diagnosticar problemas com mais clareza:</p>
-<ul>
-<li>Um erro de permissões e isolamento tende a estar relacionado a regras do framework e do sistema.</li>
-<li>Um problema de câmera pode envolver HAL, drivers e particularidades do aparelho.</li>
-<li>Questões de desempenho podem vir de escolhas na UI, de uso de bibliotecas, ou de limitações de hardware.</li>
-</ul>
-<p>Em outras palavras, a arquitetura não é apenas “teoria do SO”; ela explica por que o Android se comporta como se comporta e como as decisões de projeto impactam desenvolvimento, testes, manutenção e publicação.</p>
-<h2 id="leituras-e-materiais-recomendados">Leituras e materiais recomendados<a class="headerlink" href="#leituras-e-materiais-recomendados" title="Permanent link">¶</a></h2>
-<ul>
-<li>Documentação oficial sobre arquitetura e camadas do Android (AOSP) <sup id="fnref2:4"><a class="footnote-ref" href="#fn:4">4</a></sup>.</li>
-<li>Visão geral da arquitetura de plataforma na documentação Android <sup id="fnref2:5"><a class="footnote-ref" href="#fn:5">5</a></sup>.</li>
-<li>Indicadores e painéis de distribuição de versões (para entender fragmentação) <sup id="fnref2:3"><a class="footnote-ref" href="#fn:3">3</a></sup>.</li>
-<li>Indicadores de participação de mercado (para contextualizar relevância) <sup id="fnref:2"><a class="footnote-ref" href="#fn:2">2</a></sup>.</li>
+<li>Livro “Pro Git” (base conceitual e prática) <sup id="fnref2:1"><a class="footnote-ref" href="#fn:1">1</a></sup></li>
+<li>Documentação do GitHub sobre autenticação e tokens <sup id="fnref3:2"><a class="footnote-ref" href="#fn:2">2</a></sup></li>
+<li>Documentação da plataforma IntelliJ/JetBrains sobre VCS (interface do IDE) <sup id="fnref2:3"><a class="footnote-ref" href="#fn:3">3</a></sup></li>
 </ul>
 <div class="footnote">
 <hr/>
 <ol>
 <li id="fn:1">
-<p>Google. Open handset alliance. 2007. URL: <a href="https://www.openhandsetalliance.com/">https://www.openhandsetalliance.com/</a>. <a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">↩</a></p>
+<p>Scott Chacon and Ben Straub. <em>Pro Git</em>. Apress, 2 edition, 2014. URL: <a href="https://git-scm.com/book/en/v2">https://git-scm.com/book/en/v2</a>. <a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref2:1" title="Jump back to footnote 1 in the text">↩</a></p>
 </li>
 <li id="fn:2">
-<p>StatCounter Global Stats. Mobile operating system market share worldwide. 2026. URL: <a href="https://gs.statcounter.com/os-market-share/mobile/worldwide">https://gs.statcounter.com/os-market-share/mobile/worldwide</a>. <a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 2 in the text">↩</a><a class="footnote-backref" href="#fnref2:2" title="Jump back to footnote 2 in the text">↩</a></p>
+<p>GitHub Docs. Authenticating to github. 2026. URL: <a href="https://docs.github.com/en/authentication">https://docs.github.com/en/authentication</a>. <a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 2 in the text">↩</a><a class="footnote-backref" href="#fnref2:2" title="Jump back to footnote 2 in the text">↩</a><a class="footnote-backref" href="#fnref3:2" title="Jump back to footnote 2 in the text">↩</a></p>
 </li>
 <li id="fn:3">
-<p>Android Developers. Android version distribution dashboard. 2026. URL: <a href="https://developer.android.com/about/dashboards">https://developer.android.com/about/dashboards</a>. <a class="footnote-backref" href="#fnref:3" title="Jump back to footnote 3 in the text">↩</a><a class="footnote-backref" href="#fnref2:3" title="Jump back to footnote 3 in the text">↩</a><a class="footnote-backref" href="#fnref3:3" title="Jump back to footnote 3 in the text">↩</a></p>
-</li>
-<li id="fn:4">
-<p>Android Open Source Project. Platform architecture. 2026. URL: <a href="https://source.android.com/docs/core/architecture">https://source.android.com/docs/core/architecture</a>. <a class="footnote-backref" href="#fnref:4" title="Jump back to footnote 4 in the text">↩</a><a class="footnote-backref" href="#fnref2:4" title="Jump back to footnote 4 in the text">↩</a></p>
-</li>
-<li id="fn:5">
-<p>Android Developers. Platform architecture. 2026. URL: <a href="https://developer.android.com/guide/platform">https://developer.android.com/guide/platform</a>. <a class="footnote-backref" href="#fnref:5" title="Jump back to footnote 5 in the text">↩</a><a class="footnote-backref" href="#fnref2:5" title="Jump back to footnote 5 in the text">↩</a></p>
+<p>JetBrains. Version control systems integration. 2026. URL: <a href="https://www.jetbrains.com/help/idea/version-control-integration.html">https://www.jetbrains.com/help/idea/version-control-integration.html</a>. <a class="footnote-backref" href="#fnref:3" title="Jump back to footnote 3 in the text">↩</a><a class="footnote-backref" href="#fnref2:3" title="Jump back to footnote 3 in the text">↩</a></p>
 </li>
 </ol>
 </div>
@@ -823,7 +895,7 @@ segurança, energia, rede)]
 </main>
 <footer class="md-footer">
 <nav aria-label="Rodapé" class="md-footer__inner md-grid">
-<a aria-label="Anterior: Desenvolvimento Mobile" class="md-footer__link md-footer__link--prev" href="../">
+<a aria-label="Anterior: Modulo VIII - Publicação" class="md-footer__link md-footer__link--prev" href="../publicacao/">
 <div class="md-footer__button md-icon">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
 </div>
@@ -832,17 +904,17 @@ segurança, energia, rede)]
                 Anterior
               </span>
 <div class="md-ellipsis">
-                Desenvolvimento Mobile
+                Modulo VIII - Publicação
               </div>
 </div>
 </a>
-<a aria-label="Próximo: Módulo I - Linguagem Kotlin" class="md-footer__link md-footer__link--next" href="../kotlin/">
+<a aria-label="Próximo: Algoritmos, programação e a sua relação com o mundo contemporâneo" class="md-footer__link md-footer__link--next" href="../../ccc-275/">
 <div class="md-footer__title">
 <span class="md-footer__direction">
                 Próximo
               </span>
 <div class="md-ellipsis">
-                Módulo I - Linguagem Kotlin
+                Algoritmos, programação e a sua relação com o mundo contemporâneo
               </div>
 </div>
 <div class="md-footer__button md-icon">

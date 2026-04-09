@@ -1,9 +1,22 @@
 :root {
-  --md-primary-fg-color:        rgb(15, 91, 33);
-  font-size: 14pt;
+  font-size: clamp(18px, 1vw + 12px, 18px);
+  text-indent: first-line 1.5em;
+  
 }
 
-svg[id^="mermaid-"] { margin:auto;display: block;zoom: 150%;}
+svg[id^="mermaid-"] {
+  margin: auto;
+  display: block;
+  max-width: 100%;
+  height: auto;
+  zoom: 135%;
+}
+
+@media (max-width: 959px) {
+  svg[id^="mermaid-"] {
+    zoom: 115%;
+  }
+}
 
 
 p {
@@ -18,6 +31,7 @@ h5,
 h6 {
   padding-top: 0.1em;
   padding-bottom: 0.1em;
+  scroll-margin-top: 4.5rem;
   text-align: left;
   font-weight: bolder !important;
   text-transform: initial !important;
@@ -46,7 +60,7 @@ h4 {
 
 h5 {
   font-size: 1.1em !important;
-  color: black !important;
+  color: var(--md-default-fg-color) !important;
 
 }
 
@@ -54,12 +68,20 @@ img {
   display: block;
   margin-left: auto;
   margin-right: auto;
+  max-width: 100%;
+  height: auto;
 }
 
 p img {
   /*border: 1px solid black;*/
-  box-shadow: 1px 1px 5px rgb(141, 136, 136);
-  padding: 5px;
+  box-shadow: var(--md-shadow-z2);
+  padding: 0.35rem;
+}
+
+.md-typeset__table {
+  display: block;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
 }
 
 
