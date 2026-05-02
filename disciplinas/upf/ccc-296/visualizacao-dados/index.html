@@ -5,11 +5,11 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
-<link href="../" rel="prev"/>
-<link href="../kotlin/" rel="next"/>
+<link href="../../ccc-312/engenharia-prompt-avancado/" rel="prev"/>
+<link href="../ciencia-dados/" rel="next"/>
 <link href="../../../../img/icon.ico" rel="icon"/>
 <meta content="mkdocs-1.6.1, mkdocs-material-9.6.4" name="generator"/>
-<title>Visão Geral: Arquitetura Android - Diego A. Lusa</title>
+<title>Visualização de Dados - Diego A. Lusa</title>
 <link href="../../../../assets/stylesheets/main.8608ea7d.min.css" rel="stylesheet"/>
 <link href="../../../../assets/stylesheets/palette.06af60db.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
@@ -23,7 +23,7 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
-<a class="md-skip" href="#contexto-e-surgimento-do-android">
+<a class="md-skip" href="#por-que-visualizar-dados-e-util">
           Ir para o conteúdo
         </a>
 </div>
@@ -63,7 +63,7 @@
 <div class="md-header__topic" data-md-component="header-topic">
 <span class="md-ellipsis">
             
-              Visão Geral: Arquitetura Android
+              Visualização de Dados
             
           </span>
 </div>
@@ -170,8 +170,8 @@
 
         </a>
 </li>
-<li class="md-tabs__item md-tabs__item--active">
-<a class="md-tabs__link" href="../">
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../ads-164/">
           
   
     
@@ -190,8 +190,8 @@
 
         </a>
 </li>
-<li class="md-tabs__item">
-<a class="md-tabs__link" href="../../ccc-296/">
+<li class="md-tabs__item md-tabs__item--active">
+<a class="md-tabs__link" href="../">
           
   
     
@@ -370,132 +370,35 @@
 </ul>
 </nav>
 </li>
-<li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
-<input checked="" class="md-nav__toggle md-toggle" id="__nav_5" type="checkbox"/>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_5" type="checkbox"/>
 <div class="md-nav__link md-nav__container">
-<a class="md-nav__link" href="../">
+<a class="md-nav__link" href="../../ads-164/">
 <span class="md-ellipsis">
     Mobile II
     
   </span>
 </a>
-<label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+<label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
 <span class="md-nav__icon md-icon"></span>
 </label>
 </div>
-<nav aria-expanded="true" aria-labelledby="__nav_5_label" class="md-nav" data-md-level="1">
+<nav aria-expanded="false" aria-labelledby="__nav_5_label" class="md-nav" data-md-level="1">
 <label class="md-nav__title" for="__nav_5">
 <span class="md-nav__icon md-icon"></span>
             Mobile II
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item md-nav__item--active">
-<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
-<label class="md-nav__link md-nav__link--active" for="__toc">
-<span class="md-ellipsis">
-    Visão Geral - Arquitetura Android
-    
-  </span>
-<span class="md-nav__icon md-icon"></span>
-</label>
-<a class="md-nav__link md-nav__link--active" href="./">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../ads-164/overview/">
 <span class="md-ellipsis">
     Visão Geral - Arquitetura Android
     
   </span>
 </a>
-<nav aria-label="Índice" class="md-nav md-nav--secondary">
-<label class="md-nav__title" for="__toc">
-<span class="md-nav__icon md-icon"></span>
-      Índice
-    </label>
-<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#contexto-e-surgimento-do-android">
-<span class="md-ellipsis">
-      Contexto e surgimento do Android
-    </span>
-</a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#mercado-relevancia-e-por-que-isso-importa">
-<span class="md-ellipsis">
-      Mercado, relevância e por que isso importa
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#arquitetura-android-em-camadas-visao-de-plataforma">
-<span class="md-ellipsis">
-      Arquitetura Android em camadas (visão de plataforma)
-    </span>
-</a>
-<nav aria-label="Arquitetura Android em camadas (visão de plataforma)" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#kernel-linux">
-<span class="md-ellipsis">
-      Kernel Linux
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#hal-hardware-abstraction-layer">
-<span class="md-ellipsis">
-      HAL (Hardware Abstraction Layer)
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#runtime-art-e-bibliotecas-nativas">
-<span class="md-ellipsis">
-      Runtime (ART) e bibliotecas nativas
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#android-framework">
-<span class="md-ellipsis">
-      Android Framework
-    </span>
-</a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#aosp-google-mobile-services-gms-e-o-android-que-se-ve-no-mercado">
-<span class="md-ellipsis">
-      AOSP, Google Mobile Services (GMS) e “o Android que se vê no mercado”
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#fragmentacao-problema-causa-e-como-lidar-na-pratica">
-<span class="md-ellipsis">
-      Fragmentação: problema, causa e como lidar na prática
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#por-que-essa-visao-de-arquitetura-acelera-a-aprendizagem">
-<span class="md-ellipsis">
-      Por que essa visão de arquitetura acelera a aprendizagem
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#leituras-e-materiais-recomendados">
-<span class="md-ellipsis">
-      Leituras e materiais recomendados
-    </span>
-</a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../kotlin/">
+<a class="md-nav__link" href="../../ads-164/kotlin/">
 <span class="md-ellipsis">
     Módulo I - Linguagem Kotlin
     
@@ -503,7 +406,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../fundamentos/">
+<a class="md-nav__link" href="../../ads-164/fundamentos/">
 <span class="md-ellipsis">
     Módulo II - Fundamentos de Android
     
@@ -511,7 +414,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../ui-xml/">
+<a class="md-nav__link" href="../../ads-164/ui-xml/">
 <span class="md-ellipsis">
     Módulo III - Layouts XML
     
@@ -519,7 +422,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../navegacao/">
+<a class="md-nav__link" href="../../ads-164/navegacao/">
 <span class="md-ellipsis">
     Módulo IV - Navegação e Ciclo de Vida
     
@@ -527,7 +430,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../persistencia/">
+<a class="md-nav__link" href="../../ads-164/persistencia/">
 <span class="md-ellipsis">
     Módulo V - Persistência de Dados
     
@@ -535,7 +438,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../firebase/">
+<a class="md-nav__link" href="../../ads-164/firebase/">
 <span class="md-ellipsis">
     Módulo VI - Firebase
     
@@ -543,7 +446,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../api/">
+<a class="md-nav__link" href="../../ads-164/api/">
 <span class="md-ellipsis">
     Módulo VII -  Consumo de APIs
     
@@ -551,7 +454,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../publicacao/">
+<a class="md-nav__link" href="../../ads-164/publicacao/">
 <span class="md-ellipsis">
     Modulo VIII - Publicação
     
@@ -559,7 +462,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../git/">
+<a class="md-nav__link" href="../../ads-164/git/">
 <span class="md-ellipsis">
     Integração com Git
     
@@ -599,20 +502,20 @@
 </ul>
 </nav>
 </li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_7" type="checkbox"/>
+<li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_7" type="checkbox"/>
 <div class="md-nav__link md-nav__container">
-<a class="md-nav__link" href="../../ccc-296/">
+<a class="md-nav__link" href="../">
 <span class="md-ellipsis">
     Inteligência Artificial
     
   </span>
 </a>
-<label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+<label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="">
 <span class="md-nav__icon md-icon"></span>
 </label>
 </div>
-<nav aria-expanded="false" aria-labelledby="__nav_7_label" class="md-nav" data-md-level="1">
+<nav aria-expanded="true" aria-labelledby="__nav_7_label" class="md-nav" data-md-level="1">
 <label class="md-nav__title" for="__nav_7">
 <span class="md-nav__icon md-icon"></span>
             Inteligência Artificial
@@ -627,7 +530,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../ccc-296/ag/">
+<a class="md-nav__link" href="../ag/">
 <span class="md-ellipsis">
     Paradigma Evolutivo
     
@@ -635,7 +538,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../ccc-296/rna/">
+<a class="md-nav__link" href="../rna/">
 <span class="md-ellipsis">
     Paradigma Conexionista
     
@@ -666,7 +569,7 @@
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../ccc-296/genai/">
+<a class="md-nav__link" href="../genai/">
 <span class="md-ellipsis">
     Inteligência Artificial Generativa
     
@@ -692,16 +595,92 @@
 </ul>
 </nav>
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../ccc-296/visualizacao-dados/">
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+<span class="md-ellipsis">
+    Visualização de Dados
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./">
 <span class="md-ellipsis">
     Visualização de Dados
     
   </span>
 </a>
+<nav aria-label="Índice" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Índice
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#por-que-visualizar-dados-e-util">
+<span class="md-ellipsis">
+      Por que visualizar dados é útil
+    </span>
+</a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../ccc-296/ciencia-dados/">
+<a class="md-nav__link" href="#tipos-comuns-de-visualizacao-e-o-que-eles-respondem">
+<span class="md-ellipsis">
+      Tipos comuns de visualização (e o que eles respondem)
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#boas-praticas-clareza-honestidade-e-acessibilidade">
+<span class="md-ellipsis">
+      Boas práticas (clareza, honestidade e acessibilidade)
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#relacao-com-inteligencia-artificial">
+<span class="md-ellipsis">
+      Relação com Inteligência Artificial
+    </span>
+</a>
+<nav aria-label="Relação com Inteligência Artificial" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#visualizacao-antes-do-modelo">
+<span class="md-ellipsis">
+      Visualização “antes” do modelo
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#visualizacao-durante-e-depois-do-modelo">
+<span class="md-ellipsis">
+      Visualização “durante e depois” do modelo
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#um-ciclo-integrado-dados-visualizacao-ia-acao">
+<span class="md-ellipsis">
+      Um ciclo integrado (dados → visualização → IA → ação)
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#agronegocio-exemplos-de-visualizacao-e-por-que-importam">
+<span class="md-ellipsis">
+      Agronegócio: exemplos de visualização e por que importam
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../ciencia-dados/">
 <span class="md-ellipsis">
     Ciência de Dados
     
@@ -718,113 +697,111 @@
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
-<a class="md-content__button md-icon" href="https://github.com/diegolusa/my-site/edit/master/docs/disciplinas/upf/ads-164/overview.md" title="Editar esta página">
+<a class="md-content__button md-icon" href="https://github.com/diegolusa/my-site/edit/master/docs/disciplinas/upf/ccc-296/visualizacao-dados.md" title="Editar esta página">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"></path></svg>
 </a>
-<h1>Visão Geral - Arquitetura Android</h1>
-<h2 id="contexto-e-surgimento-do-android">Contexto e surgimento do Android<a class="headerlink" href="#contexto-e-surgimento-do-android" title="Permanent link">¶</a></h2>
-<p>O Android é um sistema operacional (SO) para dispositivos móveis cujo desenvolvimento ganhou tração a partir da aquisição da empresa Android Inc. pelo Google (2005) e, principalmente, do anúncio da <strong>Open Handset Alliance (OHA)</strong> (2007), um consórcio que reuniu empresas de hardware, software e operadoras para fomentar um ecossistema aberto de dispositivos e aplicativos <sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup>.</p>
-<p>Do ponto de vista técnico, o Android foi concebido com uma base em <strong>kernel Linux</strong> e com uma arquitetura em camadas que permite suportar diferentes fabricantes e famílias de dispositivos. Essa decisão de projeto foi central para a expansão do sistema: o mesmo “núcleo” pode ser adaptado para aparelhos com requisitos distintos (de smartphones a TVs e dispositivos embarcados).</p>
-<h2 id="mercado-relevancia-e-por-que-isso-importa">Mercado, relevância e por que isso importa<a class="headerlink" href="#mercado-relevancia-e-por-que-isso-importa" title="Permanent link">¶</a></h2>
-<p>O Android é relevante para estudantes iniciando em desenvolvimento mobile por três motivos recorrentes:</p>
+<h1>Visualização de Dados</h1>
+<p>Visualização de dados é o conjunto de técnicas e princípios usados para <strong>representar dados de forma gráfica</strong> (ou visual) com o objetivo de <strong>entender padrões</strong>, <strong>identificar problemas</strong>, <strong>comparar cenários</strong> e <strong>comunicar resultados</strong> de maneira clara. Em vez de tratar gráficos como “enfeites”, a visualização é considerada parte central do raciocínio analítico: ela ajuda a transformar números e tabelas em evidências observáveis e discutíveis <sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup><sup id="fnref:2"><a class="footnote-ref" href="#fn:2">2</a></sup>.</p>
+<p>É uma habilidade transversal em Ciência de Dados e IA: ela ajuda a formular hipóteses, validar a qualidade do conjunto de dados, diagnosticar modelos e comunicar resultados com clareza. Em domínios como o agronegócio, em que variabilidade e sazonalidade são centrais, visualizações (especialmente temporais e espaciais) são parte essencial do processo de decisão e do uso responsável de IA.</p>
+<p>Em projetos reais, a visualização aparece em dois momentos complementares:</p>
+<ul>
+<li><strong>Exploração (EDA — análise exploratória)</strong>: quando a equipe ainda está entendendo os dados, avaliando qualidade e levantando hipóteses.</li>
+<li><strong>Comunicação (explanatory)</strong>: quando a equipe precisa explicar conclusões, riscos e recomendações para tomada de decisão (gestão, operação, clientes, órgãos públicos etc.) <sup id="fnref:3"><a class="footnote-ref" href="#fn:3">3</a></sup>.</li>
+</ul>
+<h2 id="por-que-visualizar-dados-e-util">Por que visualizar dados é útil<a class="headerlink" href="#por-que-visualizar-dados-e-util" title="Permanent link">¶</a></h2>
+<p>A visualização de dados é útil porque reduz a carga cognitiva de analisar grandes volumes de informação: relações que seriam difíceis de perceber em uma planilha (tendências, sazonalidade, outliers, agrupamentos) podem se tornar evidentes em um gráfico bem escolhido.</p>
+<p>Alguns objetivos típicos:</p>
 <ol>
-<li><strong>Escala de mercado</strong>: em muitos recortes de mercado, o Android aparece com participação dominante em sistemas operacionais móveis, o que amplia o alcance potencial de aplicações e serviços <sup id="fnref2:2"><a class="footnote-ref" href="#fn:2">2</a></sup>.</li>
-<li><strong>Diversidade de dispositivos</strong>: o ecossistema inclui uma grande variedade de fabricantes, tamanhos de tela, capacidades de hardware e versões do SO. Isso cria desafios reais de engenharia (compatibilidade, desempenho, testes) e, ao mesmo tempo, um ambiente fértil para aprendizado.</li>
-<li><strong>Ecossistema de plataforma e ferramentas</strong>: a plataforma conta com documentação técnica ampla, bibliotecas de suporte (Jetpack), padrões de compatibilidade e uma cadeia de distribuição (Google Play) que moldam como aplicações são projetadas, publicadas e mantidas.</li>
+<li><strong>Entender o comportamento do fenômeno</strong> (ex.: vendas por mês, produtividade por talhão).</li>
+<li><strong>Detectar problemas de qualidade</strong> (ex.: valores faltantes, medições impossíveis, duplicidades).</li>
+<li><strong>Comparar grupos</strong> (ex.: fazendas, cultivares, turnos, regiões).</li>
+<li><strong>Monitorar processos</strong> (ex.: indicadores operacionais, metas, alertas).</li>
+<li><strong>Dar suporte à decisão</strong> com evidências (ex.: priorizar ações de manejo, definir janelas de plantio/colheita).</li>
 </ol>
-<p>Essa relevância, porém, vem com uma contrapartida: a realidade do Android envolve <strong>fragmentação</strong> (variação de versões e personalizações), exigindo que os estudantes entendam não apenas “como programar”, mas <strong>como a plataforma é organizada</strong> e onde podem surgir diferenças entre aparelhos <sup id="fnref:3"><a class="footnote-ref" href="#fn:3">3</a></sup>.</p>
-<h2 id="arquitetura-android-em-camadas-visao-de-plataforma">Arquitetura Android em camadas (visão de plataforma)<a class="headerlink" href="#arquitetura-android-em-camadas-visao-de-plataforma" title="Permanent link">¶</a></h2>
-<p>Uma maneira didática de compreender a plataforma é visualizá-la como um conjunto de camadas. Cada camada tem responsabilidades específicas e “esconde” detalhes da camada inferior, oferecendo interfaces mais estáveis para a camada superior.</p>
-<div class="mermaid">flowchart TB
-  A[Aplicativos
-(Apps do usuário e do sistema)] --&gt; B[Android Framework
-(Activities, Views/Compose, Services,
-Content Providers, Notification, etc.)]
-  B --&gt; C[Android Runtime (ART)
-+ Bibliotecas Nativas (C/C++)]
-  C --&gt; D[HAL
-(Hardware Abstraction Layer)]
-  D --&gt; E[Kernel Linux
-(Processos, memória, drivers,
-segurança, energia, rede)]
+<h2 id="tipos-comuns-de-visualizacao-e-o-que-eles-respondem">Tipos comuns de visualização (e o que eles respondem)<a class="headerlink" href="#tipos-comuns-de-visualizacao-e-o-que-eles-respondem" title="Permanent link">¶</a></h2>
+<p>A escolha do gráfico deve seguir a pergunta analítica, não a preferência estética. Um resumo útil:</p>
+<ul>
+<li><strong>Distribuição</strong>: histogramas e boxplots ajudam a responder “quais valores são comuns e quais são raros?”</li>
+<li><strong>Relação entre variáveis</strong>: dispersão (scatter) ajuda a responder “quando <span class="arithmatex">\(X\)</span> aumenta, <span class="arithmatex">\(Y\)</span> tende a aumentar ou diminuir?”</li>
+<li><strong>Séries temporais</strong>: linhas ajudam a responder “qual é a tendência ao longo do tempo?” e “há sazonalidade?”</li>
+<li><strong>Comparações</strong>: barras ajudam a responder “qual categoria tem mais/menos?”</li>
+<li><strong>Dados espaciais</strong>: mapas e heatmaps ajudam a responder “onde está acontecendo?” (ex.: talhões, municípios, regiões)</li>
+</ul>
+<p>Em áreas como o agronegócio, a dimensão <strong>temporal</strong> (safra, clima, janelas de plantio) e a dimensão <strong>espacial</strong> (talhões, variabilidade intra-talhão) tornam séries temporais e visualizações georreferenciadas especialmente relevantes <sup id="fnref:4"><a class="footnote-ref" href="#fn:4">4</a></sup>.</p>
+<h2 id="boas-praticas-clareza-honestidade-e-acessibilidade">Boas práticas (clareza, honestidade e acessibilidade)<a class="headerlink" href="#boas-praticas-clareza-honestidade-e-acessibilidade" title="Permanent link">¶</a></h2>
+<p>A literatura clássica enfatiza que um bom gráfico deve favorecer a leitura correta dos dados e reduzir o risco de interpretações equivocadas <sup id="fnref2:1"><a class="footnote-ref" href="#fn:1">1</a></sup><sup id="fnref2:2"><a class="footnote-ref" href="#fn:2">2</a></sup>. Na prática, algumas recomendações recorrentes são:</p>
+<ul>
+<li><strong>Definir a pergunta antes do gráfico</strong>: o mesmo dado pode exigir gráficos diferentes dependendo do objetivo.</li>
+<li><strong>Usar escalas e eixos com cuidado</strong>: em gráficos de barras, é comum iniciar o eixo em zero; em séries temporais, deve-se registrar quebras e mudanças de escala.</li>
+<li><strong>Evitar 3D e efeitos decorativos</strong>: aumentam ruído sem melhorar o entendimento.</li>
+<li><strong>Rotular unidades e contexto</strong>: título informativo, legenda, período analisado, fonte dos dados.</li>
+<li><strong>Pensar em acessibilidade</strong>: evitar depender apenas de cor para diferenciar grupos; escolher paletas amigáveis para daltonismo e manter contraste adequado.</li>
+</ul>
+<h2 id="relacao-com-inteligencia-artificial">Relação com Inteligência Artificial<a class="headerlink" href="#relacao-com-inteligencia-artificial" title="Permanent link">¶</a></h2>
+<p>A visualização de dados se relaciona com Inteligência Artificial (IA) de forma direta porque a maior parte do trabalho com IA começa (e frequentemente termina) com <strong>entendimento e comunicação</strong> baseada em dados.</p>
+<h3 id="visualizacao-antes-do-modelo">Visualização “antes” do modelo<a class="headerlink" href="#visualizacao-antes-do-modelo" title="Permanent link">¶</a></h3>
+<p>Antes de treinar um modelo, visualizações são usadas para:</p>
+<ul>
+<li>verificar distribuição de variáveis, outliers e valores faltantes;</li>
+<li>entender correlações e redundâncias (úteis para seleção/engenharia de atributos);</li>
+<li>inspecionar desbalanceamento de classes (ex.: poucas ocorrências de praga/doença);</li>
+<li>identificar vazamentos de informação (variáveis que “entregam” o alvo).</li>
+</ul>
+<p>Isso aumenta a chance de o modelo ser treinado com dados consistentes e melhora a capacidade de diagnóstico quando os resultados não são bons.</p>
+<h3 id="visualizacao-durante-e-depois-do-modelo">Visualização “durante e depois” do modelo<a class="headerlink" href="#visualizacao-durante-e-depois-do-modelo" title="Permanent link">¶</a></h3>
+<p>Após o treinamento, a visualização é essencial para <strong>avaliar</strong> e <strong>explicar</strong> resultados:</p>
+<ul>
+<li>curvas de aprendizado e métricas por época (especialmente em redes neurais);</li>
+<li>matriz de confusão, ROC/PR e métricas por grupo (para checar erros críticos);</li>
+<li>análise de erro (quais casos o modelo erra e por quê);</li>
+<li>explicabilidade e interpretação (quando a decisão exige justificativa) <sup id="fnref:5"><a class="footnote-ref" href="#fn:5">5</a></sup>.</li>
+</ul>
+<p>Um ponto importante: nem toda explicação é “a verdade do modelo”; muitas técnicas produzem aproximações úteis para auditoria e comunicação. O foco didático é aprender a usar visualizações como ferramenta de <strong>diagnóstico</strong> e <strong>governança</strong> do sistema de IA.</p>
+<h3 id="um-ciclo-integrado-dados-visualizacao-ia-acao">Um ciclo integrado (dados → visualização → IA → ação)<a class="headerlink" href="#um-ciclo-integrado-dados-visualizacao-ia-acao" title="Permanent link">¶</a></h3>
+<p>Em projetos aplicados, a visualização também aparece no produto final (painéis e relatórios) e no monitoramento contínuo (drift e mudanças sazonais). Um ciclo simplificado pode ser representado assim:</p>
+<div class="mermaid">flowchart LR
+  A["Dados brutos"] --&gt; B["Preparação e qualidade"]
+  B --&gt; C["Visualização e EDA"]
+  C --&gt; D["Modelagem (ML/IA)"]
+  D --&gt; E["Avaliação"]
+  E --&gt; F["Visualização de resultados"]
+  F --&gt; G["Decisão e ação"]
+  G --&gt; H[Monitoramento]
+  H --&gt; A
 </div>
-<h3 id="kernel-linux">Kernel Linux<a class="headerlink" href="#kernel-linux" title="Permanent link">¶</a></h3>
-<p>O kernel atua como base do sistema. Ele lida com aspectos essenciais como:</p>
+<h2 id="agronegocio-exemplos-de-visualizacao-e-por-que-importam">Agronegócio: exemplos de visualização e por que importam<a class="headerlink" href="#agronegocio-exemplos-de-visualizacao-e-por-que-importam" title="Permanent link">¶</a></h2>
+<p>No agronegócio, decisões costumam ser tomadas sob <strong>incerteza</strong> (clima, pragas, mercado) e com <strong>variabilidade espacial</strong> (solo, relevo, manejo). Por isso, visualizações são amplamente usadas para apoiar o planejamento e a operação.</p>
+<p>Exemplos frequentes:</p>
 <ul>
-<li><strong>Processos e threads</strong> (isolamento e agendamento)</li>
-<li><strong>Memória</strong> (alocação e gerenciamento)</li>
-<li><strong>Drivers e dispositivos</strong> (câmera, áudio, sensores, modem, etc.)</li>
-<li><strong>Rede e energia</strong> (crítico para mobilidade)</li>
+<li><strong>Mapas de produtividade</strong>: visualizar produtividade por talhão para localizar zonas de manejo e investigar causas.</li>
+<li><strong>Séries temporais climáticas</strong>: chuva, temperatura e umidade ao longo de dias/semanas para apoiar manejo e janelas de aplicação.</li>
+<li><strong>Índices de vegetação e mapas (ex.: NDVI)</strong>: visualizações a partir de sensoriamento remoto para monitorar vigor, estresse hídrico e evolução da cultura.</li>
+<li><strong>Dashboards de frota e operações</strong>: telemetria de máquinas, consumo, rotas e tempo de operação.</li>
 </ul>
-<p>Entender que o Android está sobre Linux ajuda os estudantes a contextualizar decisões de desempenho, permissões, sandboxing e até limitações de hardware.</p>
-<h3 id="hal-hardware-abstraction-layer">HAL (Hardware Abstraction Layer)<a class="headerlink" href="#hal-hardware-abstraction-layer" title="Permanent link">¶</a></h3>
-<p>A HAL é uma “ponte” entre o Android e as implementações específicas de hardware. Ela permite que o sistema e o framework conversem com componentes (câmera, GPS, áudio) sem depender diretamente do detalhe de cada fabricante. Isso é fundamental para a portabilidade do Android em vários aparelhos <sup id="fnref:4"><a class="footnote-ref" href="#fn:4">4</a></sup>.</p>
-<h3 id="runtime-art-e-bibliotecas-nativas">Runtime (ART) e bibliotecas nativas<a class="headerlink" href="#runtime-art-e-bibliotecas-nativas" title="Permanent link">¶</a></h3>
-<p>O Android Runtime (ART) é responsável por executar o código das aplicações (tipicamente escrito em Kotlin/Java e compilado para o ambiente Android). Em paralelo, existem bibliotecas nativas (C/C++) usadas por partes do sistema e, em alguns casos, por aplicações com necessidades específicas.</p>
-<p>Essa camada explica por que o Android consegue combinar produtividade (Kotlin/Java) com desempenho (componentes nativos) quando necessário.</p>
-<h3 id="android-framework">Android Framework<a class="headerlink" href="#android-framework" title="Permanent link">¶</a></h3>
-<p>O framework oferece os blocos de construção do desenvolvimento Android: componentes de aplicação, gerenciamento de recursos, notificações, ciclo de vida, permissões e APIs para a maior parte das capacidades do dispositivo.</p>
-<p>Para iniciantes, é especialmente importante perceber que o framework:</p>
-<ul>
-<li>Define <strong>componentes e ciclo de vida</strong> (a aplicação não “controla” tudo; o sistema participa ativamente)</li>
-<li>Promove <strong>reuso</strong> e <strong>padronização</strong> (APIs que funcionam de modo similar em aparelhos distintos)</li>
-<li>Impõe regras de <strong>segurança e privacidade</strong> (permissões, isolamento por app, etc.)</li>
-</ul>
-<p>Uma descrição consolidada dessa visão de plataforma e suas camadas está presente na documentação oficial <sup id="fnref:5"><a class="footnote-ref" href="#fn:5">5</a></sup>.</p>
-<h2 id="aosp-google-mobile-services-gms-e-o-android-que-se-ve-no-mercado">AOSP, Google Mobile Services (GMS) e “o Android que se vê no mercado”<a class="headerlink" href="#aosp-google-mobile-services-gms-e-o-android-que-se-ve-no-mercado" title="Permanent link">¶</a></h2>
-<p>No cotidiano, é comum tratar “Android” como uma coisa só. Na prática, o ecossistema combina:</p>
-<ul>
-<li><strong>AOSP (Android Open Source Project)</strong>: a base aberta do sistema.</li>
-<li><strong>Implementações de fabricantes (OEMs)</strong>: customizações na interface, apps nativos, ajustes de desempenho e integrações.</li>
-<li><strong>Serviços Google (GMS/Play services)</strong>: em muitos aparelhos, bibliotecas e serviços que oferecem funcionalidades amplamente usadas por apps (por exemplo: APIs de mapas, autenticação, mensageria, etc.).</li>
-</ul>
-<p>Para os estudantes, essa distinção é importante porque alguns recursos “do dia a dia” do Android comercial (por exemplo, certas integrações) podem depender de bibliotecas e serviços específicos, mesmo quando a base do SO é aberta.</p>
-<h2 id="fragmentacao-problema-causa-e-como-lidar-na-pratica">Fragmentação: problema, causa e como lidar na prática<a class="headerlink" href="#fragmentacao-problema-causa-e-como-lidar-na-pratica" title="Permanent link">¶</a></h2>
-<p>A fragmentação no Android não é um único fenômeno, mas uma combinação de fatores:</p>
-<ul>
-<li><strong>Versões do Android em circulação</strong>: nem todos os aparelhos recebem atualizações na mesma velocidade <sup id="fnref3:3"><a class="footnote-ref" href="#fn:3">3</a></sup>.</li>
-<li><strong>Personalizações de fabricantes</strong>: diferentes camadas de interface, configurações e apps pré-instalados.</li>
-<li><strong>Variação de hardware</strong>: memória, CPU, GPU, sensores e tamanhos de tela.</li>
-</ul>
-<p>Do ponto de vista didático, a fragmentação é um “laboratório real” para aprender engenharia de software orientada a produto. Entre as estratégias mais relevantes estão:</p>
-<ul>
-<li>Usar bibliotecas de compatibilidade e recomendações oficiais.</li>
-<li>Projetar interfaces responsivas (diferentes tamanhos/densidades).</li>
-<li>Testar em emuladores e em uma amostra de aparelhos físicos.</li>
-<li>Evitar dependência desnecessária de comportamentos específicos de fabricante.</li>
-</ul>
-<h2 id="por-que-essa-visao-de-arquitetura-acelera-a-aprendizagem">Por que essa visão de arquitetura acelera a aprendizagem<a class="headerlink" href="#por-que-essa-visao-de-arquitetura-acelera-a-aprendizagem" title="Permanent link">¶</a></h2>
-<p>Quando os estudantes compreendem as camadas da plataforma, eles passam a diagnosticar problemas com mais clareza:</p>
-<ul>
-<li>Um erro de permissões e isolamento tende a estar relacionado a regras do framework e do sistema.</li>
-<li>Um problema de câmera pode envolver HAL, drivers e particularidades do aparelho.</li>
-<li>Questões de desempenho podem vir de escolhas na UI, de uso de bibliotecas, ou de limitações de hardware.</li>
-</ul>
-<p>Em outras palavras, a arquitetura não é apenas “teoria do SO”; ela explica por que o Android se comporta como se comporta e como as decisões de projeto impactam desenvolvimento, testes, manutenção e publicação.</p>
-<h2 id="leituras-e-materiais-recomendados">Leituras e materiais recomendados<a class="headerlink" href="#leituras-e-materiais-recomendados" title="Permanent link">¶</a></h2>
-<ul>
-<li>Documentação oficial sobre arquitetura e camadas do Android (AOSP) <sup id="fnref2:4"><a class="footnote-ref" href="#fn:4">4</a></sup>.</li>
-<li>Visão geral da arquitetura de plataforma na documentação Android <sup id="fnref2:5"><a class="footnote-ref" href="#fn:5">5</a></sup>.</li>
-<li>Indicadores e painéis de distribuição de versões (para entender fragmentação) <sup id="fnref2:3"><a class="footnote-ref" href="#fn:3">3</a></sup>.</li>
-<li>Indicadores de participação de mercado (para contextualizar relevância) <sup id="fnref:2"><a class="footnote-ref" href="#fn:2">2</a></sup>.</li>
-</ul>
+<p>Quando IA é aplicada (por exemplo, visão computacional para identificar doenças em folhas, ou modelos para prever produtividade), a visualização continua indispensável para validar dados e resultados e reduzir riscos de decisões erradas <sup id="fnref:6"><a class="footnote-ref" href="#fn:6">6</a></sup>. Em cenários com drones e imagens aéreas, revisões sobre agricultura de precisão destacam o papel de mapas e imagens como base para análises e recomendações <sup id="fnref:7"><a class="footnote-ref" href="#fn:7">7</a></sup>.</p>
 <div class="footnote">
 <hr/>
 <ol>
 <li id="fn:1">
-<p>Google. Open handset alliance. 2007. URL: <a href="https://www.openhandsetalliance.com/">https://www.openhandsetalliance.com/</a>. <a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">↩</a></p>
+<p>Edward R. Tufte. <em>The Visual Display of Quantitative Information</em>. Graphics Press, 2 edition, 2001. <a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref2:1" title="Jump back to footnote 1 in the text">↩</a></p>
 </li>
 <li id="fn:2">
-<p>StatCounter Global Stats. Mobile operating system market share worldwide. 2026. URL: <a href="https://gs.statcounter.com/os-market-share/mobile/worldwide">https://gs.statcounter.com/os-market-share/mobile/worldwide</a>. <a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 2 in the text">↩</a><a class="footnote-backref" href="#fnref2:2" title="Jump back to footnote 2 in the text">↩</a></p>
+<p>William S. Cleveland. <em>The Elements of Graphing Data</em>. Hobart Press, 2 edition, 1994. <a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 2 in the text">↩</a><a class="footnote-backref" href="#fnref2:2" title="Jump back to footnote 2 in the text">↩</a></p>
 </li>
 <li id="fn:3">
-<p>Android Developers. Android version distribution dashboard. 2026. URL: <a href="https://developer.android.com/about/dashboards">https://developer.android.com/about/dashboards</a>. <a class="footnote-backref" href="#fnref:3" title="Jump back to footnote 3 in the text">↩</a><a class="footnote-backref" href="#fnref2:3" title="Jump back to footnote 3 in the text">↩</a><a class="footnote-backref" href="#fnref3:3" title="Jump back to footnote 3 in the text">↩</a></p>
+<p>Stephen Few. <em>Show Me the Numbers: Designing Tables and Graphs to Enlighten</em>. Analytics Press, 2 edition, 2012. <a class="footnote-backref" href="#fnref:3" title="Jump back to footnote 3 in the text">↩</a></p>
 </li>
 <li id="fn:4">
-<p>Android Open Source Project. Platform architecture. 2026. URL: <a href="https://source.android.com/docs/core/architecture">https://source.android.com/docs/core/architecture</a>. <a class="footnote-backref" href="#fnref:4" title="Jump back to footnote 4 in the text">↩</a><a class="footnote-backref" href="#fnref2:4" title="Jump back to footnote 4 in the text">↩</a></p>
+<p>Sjaak Wolfert, Lan Ge, Cor Verdouw, and Marc-Jan Bogaardt. Big data in smart farming—a review. <em>Agricultural Systems</em>, 153:69–80, 2017. <a href="https://doi.org/10.1016/j.agsy.2017.01.023">doi:10.1016/j.agsy.2017.01.023</a>. <a class="footnote-backref" href="#fnref:4" title="Jump back to footnote 4 in the text">↩</a></p>
 </li>
 <li id="fn:5">
-<p>Android Developers. Platform architecture. 2026. URL: <a href="https://developer.android.com/guide/platform">https://developer.android.com/guide/platform</a>. <a class="footnote-backref" href="#fnref:5" title="Jump back to footnote 5 in the text">↩</a><a class="footnote-backref" href="#fnref2:5" title="Jump back to footnote 5 in the text">↩</a></p>
+<p>Christoph Molnar. Interpretable machine learning: a guide for making black box models explainable. 2022. Acesso em 01 maio 2026. URL: <a href="https://christophm.github.io/interpretable-ml-book/">https://christophm.github.io/interpretable-ml-book/</a>. <a class="footnote-backref" href="#fnref:5" title="Jump back to footnote 5 in the text">↩</a></p>
+</li>
+<li id="fn:6">
+<p>Andreas Kamilaris and Francesc X. Prenafeta-Boldú. Deep learning in agriculture: a survey. <em>Computers and Electronics in Agriculture</em>, 147:70–90, 2018. <a href="https://doi.org/10.1016/j.compag.2018.02.016">doi:10.1016/j.compag.2018.02.016</a>. <a class="footnote-backref" href="#fnref:6" title="Jump back to footnote 6 in the text">↩</a></p>
+</li>
+<li id="fn:7">
+<p>Changying Zhang and John M. Kovacs. The application of small unmanned aerial systems for precision agriculture: a review. <em>Precision Agriculture</em>, 13(6):693–712, 2012. <a href="https://doi.org/10.1007/s11119-012-9274-5">doi:10.1007/s11119-012-9274-5</a>. <a class="footnote-backref" href="#fnref:7" title="Jump back to footnote 7 in the text">↩</a></p>
 </li>
 </ol>
 </div>
@@ -839,7 +816,7 @@ segurança, energia, rede)]
 </main>
 <footer class="md-footer">
 <nav aria-label="Rodapé" class="md-footer__inner md-grid">
-<a aria-label="Anterior: Desenvolvimento Mobile" class="md-footer__link md-footer__link--prev" href="../">
+<a aria-label="Anterior: Engenharia de Prompt Avançada" class="md-footer__link md-footer__link--prev" href="../../ccc-312/engenharia-prompt-avancado/">
 <div class="md-footer__button md-icon">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
 </div>
@@ -848,17 +825,17 @@ segurança, energia, rede)]
                 Anterior
               </span>
 <div class="md-ellipsis">
-                Desenvolvimento Mobile
+                Engenharia de Prompt Avançada
               </div>
 </div>
 </a>
-<a aria-label="Próximo: Módulo I - Linguagem Kotlin" class="md-footer__link md-footer__link--next" href="../kotlin/">
+<a aria-label="Próximo: Ciência de Dados" class="md-footer__link md-footer__link--next" href="../ciencia-dados/">
 <div class="md-footer__title">
 <span class="md-footer__direction">
                 Próximo
               </span>
 <div class="md-ellipsis">
-                Módulo I - Linguagem Kotlin
+                Ciência de Dados
               </div>
 </div>
 <div class="md-footer__button md-icon">
