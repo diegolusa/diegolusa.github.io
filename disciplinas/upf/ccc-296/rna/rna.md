@@ -24,13 +24,13 @@ As Redes Neurais Artificiais (RNAs) foram inspiradas diretamente no funcionament
 | Sistema Biológico     | Rede Neural Artificial                         |
 | --------------------- | ---------------------------------------------- |
 | Neurônio biológico    | Neurônio artificial (unidade de processamento) |
-| Dendritos             | Entradas (features)                            |
+| Dendritos             | Entradas (atributos / *features*)              |
 | Sinapses              | Pesos (w)                                      |
-| Potencial de ação     | Ativação (output do neurônio)                  |
+| Potencial de ação     | Ativação (saída do neurônio)                   |
 | Axônio                | Saída do neurônio                              |
 | Aprendizado sináptico | Ajuste de pesos (via retropropagação)          |
 
-No cérebro, a força das conexões sinápticas muda com a experiência — um processo conhecido como plasticidade sináptica. De forma análoga, nas RNAs, os pesos das conexões são ajustados durante o treinamento para refletir padrões aprendidos a partir de dados.
+No cérebro, a força das conexões sinápticas muda com a experiência, um processo conhecido como plasticidade sináptica. De forma análoga, nas RNAs, os pesos das conexões são ajustados durante o treinamento para refletir padrões aprendidos a partir de dados.
 
 
 
@@ -62,14 +62,14 @@ Atualmente, as RNAs são amplamente utilizadas para diversas finalidades. Abaixo
 - Veículos autônomos
 - Previsão de séries temporais financeiras
 - Geração de imagens, música e texto (ex.: modelos generativos)
-- 
 
 
-## Funcionamento 
+
+## Funcionamento
 
 As redes neurais artificiais (RNAs) funcionam como sistemas computacionais inspirados no funcionamento do cérebro humano, sendo compostas por unidades chamadas neurônios artificiais organizados em camadas. Essas redes são capazes de aprender padrões e realizar tarefas complexas, como reconhecimento de imagens, tradução automática e diagnóstico médico, a partir de exemplos.
 
-As RNAs normalmente são compostas de três ou mais camadas, as quais tem atribuições especiais no processamento:
+As RNAs normalmente são compostas de três ou mais camadas, as quais têm atribuições especiais no processamento:
 
 - **Camada de entrada**: recebe os dados de entrada (ex.: pixels de uma imagem).
 - **Camadas ocultas**: processam os dados por meio de transformações não lineares.
@@ -78,21 +78,22 @@ As RNAs normalmente são compostas de três ou mais camadas, as quais tem atribu
 
 
 !!! note "Importância das camadas"
-	- O número de camadas e neurônios determina a capacidade de modelagem da rede.
-	- Redes com múltiplas camadas (deep networks) são chamadas de redes profundas e são a base do deep learning.
+    - O número de camadas e neurônios determina a capacidade de modelagem da rede.
+    - Redes com múltiplas camadas (*deep networks*) são chamadas de redes profundas e são a base do *deep learning*.
 
 
 
-Cada neurônio que compõe a rede realiza duas operação básicas:
+Cada neurônio que compõe a rede realiza duas operações básicas:
+
 - Soma ponderada dos sinais de entrada.
-- Aplicação de uma função de ativação não linear, como *ReLU* ou *Sigmoid*.
+- Aplicação de uma função de ativação não linear, como *ReLU* ou *sigmoid*.
 
 
 Quando um dado de entrada é fornecido à rede (por exemplo, os pixels de uma imagem), ele percorre a rede camada por camada. Cada neurônio recebe sinais das camadas anteriores, realiza uma soma ponderada dessas entradas (ou seja, cada entrada é multiplicada por um peso) e aplica uma função de ativação para gerar uma saída.
 
 A saída de cada neurônio serve como entrada para os neurônios da camada seguinte, até que o resultado final seja obtido na camada de saída.
 
-Fórmula de ativação de um neurônio:
+De forma simplificada, a ativação de um neurônio pode ser representada por:
 $$
 z = \sum_{i=1}^n w_i x_i + b \quad \text{e} \quad y = \phi(z)
 $$
@@ -102,17 +103,46 @@ Onde:
 - $x_i$: entrada
 - $w_i$: peso
 - $b$: viés
-- $\phi$: função de ativação (ex.: ReLU, Sigmoid, Tanh)
+- $\phi$: função de ativação (ex.: ReLU, *sigmoid*, *tanh*)
 
 O viés (bias) é um componente essencial que desempenha um papel crítico na capacidade da rede de aprender padrões complexos. Embora muitas vezes menos discutido do que os pesos, o viés é fundamental para garantir a flexibilidade e expressividade dos neurônios artificiais. Sem o viés, todas as saídas da função de ativação estariam fixadas na origem do espaço de entrada. Isso limitaria severamente a capacidade da rede de modelar funções complexas.
 
 
+## Funções de ativação (5 mais usadas)
+
+As funções de ativação introduzem **não linearidade**, permitindo que RNAs aprendam relações complexas. Na prática, costuma-se escolher ativações diferentes para **camadas ocultas** e para a **camada de saída**, dependendo do tipo de problema (classificação, regressão etc.).
+
+![Gráficos de exemplo das ativações mais usadas](../../../img/ia/ativacoes_principais.svg)
+
+As cinco funções mais comuns (e onde elas aparecem com frequência) são:
+
+| Função         | Definição                                                      | Intervalo da saída   | Uso típico                                                                                                            |
+| -------------- | -------------------------------------------------------------- | -------------------- | --------------------------------------------------------------------------------------------------------------------- |
+| **Sigmoid**    | $\sigma(z)=\dfrac{1}{1+e^{-z}}$                                | $(0,1)$              | Saída em **classificação binária** (probabilidade); menos comum em camadas ocultas por saturação/gradientes pequenos. |
+| **Tanh**       | $\tanh(z)$                                                     | $(-1,1)$             | Camadas ocultas em redes pequenas/antigas; útil quando se deseja saída centrada em 0.                                 |
+| **ReLU**       | $\max(0,z)$                                                    | $[0,\infty)$         | Padrão em **camadas ocultas** em muitas arquiteturas (treino eficiente e simples).                                    |
+| **Leaky ReLU** | $\max(\alpha z, z)$ (com $\alpha\approx 0{,}01$)               | $(-\infty,\infty)$   | Alternativa à ReLU para reduzir “neurônios mortos” (mantém pequeno gradiente para $z<0$).                             |
+| **Softmax**    | $\text{softmax}(\mathbf{z})_k=\dfrac{e^{z_k}}{\sum_j e^{z_j}}$ | Soma das saídas $=1$ | Saída em **classificação multiclasse** (distribuição de probabilidades).                                              |
+
+Em termos de comportamento, vale destacar que *sigmoid* e *tanh* **saturam** para valores grandes de $|z|$, o que tende a reduzir os gradientes; por isso, elas aparecem com mais frequência na **saída** (no caso da *sigmoid*) ou em redes específicas. Já a ReLU é simples e eficiente, mas pode levar a *neurônios mortos* quando muitos valores ficam negativos; a Leaky ReLU mitiga esse efeito ao manter uma pequena inclinação para $z<0$. Para a *softmax*, implementações reais costumam subtrair $\max(\mathbf{z})$ antes do exponencial para melhorar a estabilidade numérica.
+
+!!! note "Vocabulário rápido"
+    - **Saturação**: ocorre quando a função de ativação entra em uma região “quase plana”. Nessa região, pequenas variações em $z$ mudam muito pouco a saída $y=\phi(z)$, e o gradiente $\phi'(z)$ tende a ficar **próximo de 0**. Exemplo: na *sigmoid*, valores como $z\gg 0$ produzem saída próxima de 1; como a curva fica quase horizontal, o aprendizado pode ficar lento em camadas onde isso acontece com frequência.
+    - **Neurônios mortos**: acontece principalmente com ReLU quando um neurônio passa a produzir **sempre 0** (isto é, $z<0$ para praticamente todas as entradas). Como a derivada da ReLU é 0 no lado negativo, o neurônio pode parar de atualizar seus pesos e “morrer” durante o treinamento.
+    - **Hiperparâmetros**: são escolhas feitas **antes** (ou ao longo) do treinamento e que não são aprendidas diretamente a partir dos dados como os pesos e vieses. Exemplos comuns: taxa de aprendizado $\eta$, número de épocas, tamanho do *batch*, número de camadas/neurônios, escolha do otimizador (SGD/Adam) e parâmetros da própria ativação (por exemplo, $\alpha$ da Leaky ReLU).
+
+!!! note "Escolha rápida (regra prática)"
+    - Camadas ocultas: ReLU ou Leaky ReLU.
+    - Saída binária: sigmoid.
+    - Saída multiclasse: softmax.
+    - Regressão: muitas vezes **sem** ativação na saída (identidade), dependendo da escala do alvo.
+
 
 !!! note "Importância da função de ativação"
-	A escolha de funções de ativação e do otimizador influencia significativamente o desempenho.
+  A escolha de funções de ativação e do otimizador influencia significativamente o desempenho.
 
 
-Após a propagação, a rede compara o valor da saída obtida com o valor real (esperado), utilizando uma função de custo (ou função de perda), que mede o erro da previsão.
+Após a **propagação direta** (*forward pass*), a rede compara o valor da saída obtida com o valor real (esperado), utilizando uma função de custo (ou função de perda), que mede o erro da previsão.
 
 Exemplos de funções de custo:
 
@@ -120,7 +150,7 @@ Exemplos de funções de custo:
 - Entropia cruzada (Cross-Entropy)
 
 
-Com o erro calculado, a rede precisa ajustá-lo. Isso é feito pela **retropropagação**, um processo que distribui o erro de volta através da rede (da saída para a entrada), utilizando o *teorema do gradiente* para determinar quanto cada peso contribuiu para o erro total.
+Com o erro calculado, a rede precisa ajustá-lo. Isso é feito pela **retropropagação**, um processo que distribui o erro de volta através da rede (da saída para a entrada), aplicando a **regra da cadeia** para determinar quanto cada peso contribuiu para o erro total.
 
 Através desse processo, são calculados os gradientes (derivadas parciais da função de custo em relação aos pesos). Usando os gradientes calculados, os pesos da rede são atualizados por meio de um algoritmo de otimização, como o *Gradiente Descendente* ou o *Adam*. O objetivo é minimizar o erro da rede ajustando os pesos iterativamente.
 
@@ -136,11 +166,12 @@ Onde:
 
 
 !!! note "Taxa de Aprendizado"
-	A taxa de aprendizado (learning *rate*) é um hiperparâmetro fundamental no treinamento de redes neurais e outros algoritmos de aprendizado de máquina. Ela controla o tamanho dos passos que o algoritmo de otimização dá ao atualizar os pesos da rede durante o processo de aprendizado.
 
-	Imagine que o algoritmo está tentando descer uma montanha (ou minimizar uma função de erro). A taxa de aprendizado determina o quão grande será cada passo:
-	- Se o passo for **muito pequeno**: o progresso será lento, e pode demorar muito para encontrar o mínimo.
-	- Se o passo for **muito grande**: pode ultrapassar o mínimo e até divergir, oscilando sem convergir.
+  A taxa de aprendizado (learning *rate*) é um hiperparâmetro fundamental no treinamento de redes neurais e outros algoritmos de aprendizado de máquina. Ela controla o tamanho dos passos que o algoritmo de otimização dá ao atualizar os pesos da rede durante o processo de aprendizado.
+
+  Pode-se imaginar que o algoritmo está tentando descer uma montanha (ou minimizar uma função de erro). A taxa de aprendizado determina o quão grande será cada passo:
+  - Se o passo for **muito pequeno**: o progresso será lento, e pode demorar muito para encontrar o mínimo.
+  - Se o passo for **muito grande**: pode ultrapassar o mínimo e até divergir, oscilando sem convergir.
 
 Esse ciclo (propagação → erro → retropropagação → ajuste de pesos) é repetido por várias **épocas** (iterações sobre o conjunto de dados), até que a rede atinja um bom desempenho, isto é, consiga realizar previsões com erro mínimo. Se fôssemos representar graficamente as etapas, teríamos a seguinte sequência:
 
@@ -238,12 +269,12 @@ $$
 
 **Exemplo de Matriz de Confusão:**
 
-Suponha um modelo de classificação binária com os seguintes resultados:
+Considere um modelo de classificação binária com os seguintes resultados:
 
-|                       | Predito Positivo | Predito Negativo |
-|-----------------------|------------------|------------------|
-| **Real Positivo**     | 50 (VP)          | 10 (FN)          |
-| **Real Negativo**     | 5 (FP)           | 100 (VN)         |
+|                   | Predito Positivo | Predito Negativo |
+| ----------------- | ---------------- | ---------------- |
+| **Real Positivo** | 50 (VP)          | 10 (FN)          |
+| **Real Negativo** | 5 (FP)           | 100 (VN)         |
 
 Legenda:
 
@@ -271,84 +302,6 @@ Com base nessa matriz, é possível calcular todas as outras métricas (precisã
 - **\( R^2 \) Score (Coeficiente de Determinação)**  
   Mede o quão bem a regressão explica a variabilidade dos dados. Varia de 0 (sem explicação) a 1 (explicação perfeita).
 
-!!! note "Dica pedagógica"
+!!! note "Dica"
     Sempre escolha a métrica que reflete melhor o objetivo do modelo e o contexto do problema. Em problemas de desequilíbrio de classes, métricas como F1-Score ou AUC são mais indicadas que a simples acurácia.
 
-## Implementação de exemplo
-
-Abaixo apresentamos uma implementação de rede neural artificial simplificada para ilustrar em código as operações descritas.
-
-
-```python
-
-# Reprodução do código disponível no repositório https://github.com/mempirate/simple-neural-network/
-
-import numpy as np
-
-class NeuralNetwork():
-
-    def __init__(self):
-
-        np.random.seed(1)
-
-        self.synaptic_weights = 2 * np.random.random((3, 1)) - 1
-
-    def sigmoid(self, x):
-
-        return 1 / (1 + np.exp(-x))
-
-    def sigmoid_derivative(self, x):
-        return x * (1 - x)
-
-    def train(self, training_inputs, training_outputs, training_iterations):
-
-        for iteration in range(training_iterations):
-
-            output = self.think(training_inputs)
-
-
-            error = training_outputs - output
-
-            adjustments = np.dot(training_inputs.T, error * self.sigmoid_derivative(output))
-
-            self.synaptic_weights += adjustments
-
-    def think(self, inputs):
-
-        inputs = inputs.astype(float)
-        output = self.sigmoid(np.dot(inputs, self.synaptic_weights))
-        return output
-
-
-if __name__ == "__main__":
-
-    # Initialize the single neuron neural network
-    neural_network = NeuralNetwork()
-
-    print("Random starting synaptic weights: ")
-    print(neural_network.synaptic_weights)
-
-    # The training set, with 4 examples consisting of 3
-    # input values and 1 output value
-    training_inputs = np.array([[0,0,1],
-                                [1,1,1],
-                                [1,0,1],
-                                [0,1,1]])
-
-    training_outputs = np.array([[0,1,1,0]]).T
-
-    # Train the neural network
-    neural_network.train(training_inputs, training_outputs, 10000)
-
-    print("Synaptic weights after training: ")
-    print(neural_network.synaptic_weights)
-
-    A = str(input("Input 1: "))
-    B = str(input("Input 2: "))
-    C = str(input("Input 3: "))
-
-    print("New situation: input data = ", A, B, C)
-    print("Output data: ")
-    print(neural_network.think(np.array([A, B, C])))
-
-```

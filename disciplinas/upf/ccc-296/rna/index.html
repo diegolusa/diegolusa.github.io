@@ -6,7 +6,7 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <link href="../ag/" rel="prev"/>
-<link href="../../ccc-312/etica/" rel="next"/>
+<link href="../keras/" rel="next"/>
 <link href="../../../../img/icon.ico" rel="icon"/>
 <meta content="mkdocs-1.6.1, mkdocs-material-9.6.4" name="generator"/>
 <title>Redes Neurais Artificiais - Diego A. Lusa</title>
@@ -587,6 +587,13 @@
 </a>
 </li>
 <li class="md-nav__item">
+<a class="md-nav__link" href="#funcoes-de-ativacao-5-mais-usadas">
+<span class="md-ellipsis">
+      Funções de ativação (5 mais usadas)
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="#tipos-de-treinamento-de-redes-neurais">
 <span class="md-ellipsis">
       Tipos de Treinamento de Redes Neurais
@@ -657,15 +664,16 @@
 </ul>
 </nav>
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#implementacao-de-exemplo">
-<span class="md-ellipsis">
-      Implementação de exemplo
-    </span>
-</a>
-</li>
 </ul>
 </nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../keras/">
+<span class="md-ellipsis">
+    RNA com Keras
+    
+  </span>
+</a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../ccc-312/etica/">
@@ -676,16 +684,16 @@
 </a>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_7_6" type="checkbox"/>
-<label class="md-nav__link" for="__nav_7_6" id="__nav_7_6_label" tabindex="0">
+<input class="md-nav__toggle md-toggle" id="__nav_7_7" type="checkbox"/>
+<label class="md-nav__link" for="__nav_7_7" id="__nav_7_7_label" tabindex="0">
 <span class="md-ellipsis">
     Inteligência Artificial Generativa
     
   </span>
 <span class="md-nav__icon md-icon"></span>
 </label>
-<nav aria-expanded="false" aria-labelledby="__nav_7_6_label" class="md-nav" data-md-level="2">
-<label class="md-nav__title" for="__nav_7_6">
+<nav aria-expanded="false" aria-labelledby="__nav_7_7_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_7_7">
 <span class="md-nav__icon md-icon"></span>
             Inteligência Artificial Generativa
           </label>
@@ -767,7 +775,7 @@
 </tr>
 <tr>
 <td>Dendritos</td>
-<td>Entradas (features)</td>
+<td>Entradas (atributos / <em>features</em>)</td>
 </tr>
 <tr>
 <td>Sinapses</td>
@@ -775,7 +783,7 @@
 </tr>
 <tr>
 <td>Potencial de ação</td>
-<td>Ativação (output do neurônio)</td>
+<td>Ativação (saída do neurônio)</td>
 </tr>
 <tr>
 <td>Axônio</td>
@@ -787,7 +795,7 @@
 </tr>
 </tbody>
 </table>
-<p>No cérebro, a força das conexões sinápticas muda com a experiência — um processo conhecido como plasticidade sináptica. De forma análoga, nas RNAs, os pesos das conexões são ajustados durante o treinamento para refletir padrões aprendidos a partir de dados.</p>
+<p>No cérebro, a força das conexões sinápticas muda com a experiência, um processo conhecido como plasticidade sináptica. De forma análoga, nas RNAs, os pesos das conexões são ajustados durante o treinamento para refletir padrões aprendidos a partir de dados.</p>
 <h2 id="posicionamento-das-rnas-na-inteligencia-artificial">Posicionamento das RNAs na Inteligência Artificial<a class="headerlink" href="#posicionamento-das-rnas-na-inteligencia-artificial" title="Permanent link">¶</a></h2>
 <p>As Redes Neurais Artificiais (RNAs) fazem parte da grande área da Inteligência Artificial (IA), sendo um subconjunto do campo de <strong>Aprendizado de Máquina (Machine Learning)</strong>. Elas se destacam por sua capacidade de modelar funções altamente complexas por meio de estruturas compostas por múltiplas camadas de unidades computacionais interconectadas, conhecidas como neurônios artificiais.</p>
 <p>A hierarquia pode ser descrita da seguinte forma:</p>
@@ -813,11 +821,10 @@
 <li>Veículos autônomos</li>
 <li>Previsão de séries temporais financeiras</li>
 <li>Geração de imagens, música e texto (ex.: modelos generativos)</li>
-<li></li>
 </ul>
 <h2 id="funcionamento">Funcionamento<a class="headerlink" href="#funcionamento" title="Permanent link">¶</a></h2>
 <p>As redes neurais artificiais (RNAs) funcionam como sistemas computacionais inspirados no funcionamento do cérebro humano, sendo compostas por unidades chamadas neurônios artificiais organizados em camadas. Essas redes são capazes de aprender padrões e realizar tarefas complexas, como reconhecimento de imagens, tradução automática e diagnóstico médico, a partir de exemplos.</p>
-<p>As RNAs normalmente são compostas de três ou mais camadas, as quais tem atribuições especiais no processamento:</p>
+<p>As RNAs normalmente são compostas de três ou mais camadas, as quais têm atribuições especiais no processamento:</p>
 <ul>
 <li><strong>Camada de entrada</strong>: recebe os dados de entrada (ex.: pixels de uma imagem).</li>
 <li><strong>Camadas ocultas</strong>: processam os dados por meio de transformações não lineares.</li>
@@ -827,15 +834,17 @@
 <p class="admonition-title">Importância das camadas</p>
 <ul>
 <li>O número de camadas e neurônios determina a capacidade de modelagem da rede.</li>
-<li>Redes com múltiplas camadas (deep networks) são chamadas de redes profundas e são a base do deep learning.</li>
+<li>Redes com múltiplas camadas (<em>deep networks</em>) são chamadas de redes profundas e são a base do <em>deep learning</em>.</li>
 </ul>
 </div>
-<p>Cada neurônio que compõe a rede realiza duas operação básicas:
-- Soma ponderada dos sinais de entrada.
-- Aplicação de uma função de ativação não linear, como <em>ReLU</em> ou <em>Sigmoid</em>.</p>
+<p>Cada neurônio que compõe a rede realiza duas operações básicas:</p>
+<ul>
+<li>Soma ponderada dos sinais de entrada.</li>
+<li>Aplicação de uma função de ativação não linear, como <em>ReLU</em> ou <em>sigmoid</em>.</li>
+</ul>
 <p>Quando um dado de entrada é fornecido à rede (por exemplo, os pixels de uma imagem), ele percorre a rede camada por camada. Cada neurônio recebe sinais das camadas anteriores, realiza uma soma ponderada dessas entradas (ou seja, cada entrada é multiplicada por um peso) e aplica uma função de ativação para gerar uma saída.</p>
 <p>A saída de cada neurônio serve como entrada para os neurônios da camada seguinte, até que o resultado final seja obtido na camada de saída.</p>
-<p>Fórmula de ativação de um neurônio:
+<p>De forma simplificada, a ativação de um neurônio pode ser representada por:
 $$
 z = \sum_{i=1}^n w_i x_i + b \quad \text{e} \quad y = \phi(z)
 $$</p>
@@ -844,20 +853,84 @@ $$</p>
 <li><span class="arithmatex">\(x_i\)</span>: entrada</li>
 <li><span class="arithmatex">\(w_i\)</span>: peso</li>
 <li><span class="arithmatex">\(b\)</span>: viés</li>
-<li><span class="arithmatex">\(\phi\)</span>: função de ativação (ex.: ReLU, Sigmoid, Tanh)</li>
+<li><span class="arithmatex">\(\phi\)</span>: função de ativação (ex.: ReLU, <em>sigmoid</em>, <em>tanh</em>)</li>
 </ul>
 <p>O viés (bias) é um componente essencial que desempenha um papel crítico na capacidade da rede de aprender padrões complexos. Embora muitas vezes menos discutido do que os pesos, o viés é fundamental para garantir a flexibilidade e expressividade dos neurônios artificiais. Sem o viés, todas as saídas da função de ativação estariam fixadas na origem do espaço de entrada. Isso limitaria severamente a capacidade da rede de modelar funções complexas.</p>
+<h2 id="funcoes-de-ativacao-5-mais-usadas">Funções de ativação (5 mais usadas)<a class="headerlink" href="#funcoes-de-ativacao-5-mais-usadas" title="Permanent link">¶</a></h2>
+<p>As funções de ativação introduzem <strong>não linearidade</strong>, permitindo que RNAs aprendam relações complexas. Na prática, costuma-se escolher ativações diferentes para <strong>camadas ocultas</strong> e para a <strong>camada de saída</strong>, dependendo do tipo de problema (classificação, regressão etc.).</p>
+<p><img alt="Gráficos de exemplo das ativações mais usadas" src="../../../../img/ia/ativacoes_principais.svg"/></p>
+<p>As cinco funções mais comuns (e onde elas aparecem com frequência) são:</p>
+<table>
+<thead>
+<tr>
+<th>Função</th>
+<th>Definição</th>
+<th>Intervalo da saída</th>
+<th>Uso típico</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Sigmoid</strong></td>
+<td><span class="arithmatex">\(\sigma(z)=\dfrac{1}{1+e^{-z}}\)</span></td>
+<td><span class="arithmatex">\((0,1)\)</span></td>
+<td>Saída em <strong>classificação binária</strong> (probabilidade); menos comum em camadas ocultas por saturação/gradientes pequenos.</td>
+</tr>
+<tr>
+<td><strong>Tanh</strong></td>
+<td><span class="arithmatex">\(\tanh(z)\)</span></td>
+<td><span class="arithmatex">\((-1,1)\)</span></td>
+<td>Camadas ocultas em redes pequenas/antigas; útil quando se deseja saída centrada em 0.</td>
+</tr>
+<tr>
+<td><strong>ReLU</strong></td>
+<td><span class="arithmatex">\(\max(0,z)\)</span></td>
+<td><span class="arithmatex">\([0,\infty)\)</span></td>
+<td>Padrão em <strong>camadas ocultas</strong> em muitas arquiteturas (treino eficiente e simples).</td>
+</tr>
+<tr>
+<td><strong>Leaky ReLU</strong></td>
+<td><span class="arithmatex">\(\max(\alpha z, z)\)</span> (com <span class="arithmatex">\(\alpha\approx 0{,}01\)</span>)</td>
+<td><span class="arithmatex">\((-\infty,\infty)\)</span></td>
+<td>Alternativa à ReLU para reduzir “neurônios mortos” (mantém pequeno gradiente para <span class="arithmatex">\(z&lt;0\)</span>).</td>
+</tr>
+<tr>
+<td><strong>Softmax</strong></td>
+<td><span class="arithmatex">\(\text{softmax}(\mathbf{z})_k=\dfrac{e^{z_k}}{\sum_j e^{z_j}}\)</span></td>
+<td>Soma das saídas <span class="arithmatex">\(=1\)</span></td>
+<td>Saída em <strong>classificação multiclasse</strong> (distribuição de probabilidades).</td>
+</tr>
+</tbody>
+</table>
+<p>Em termos de comportamento, vale destacar que <em>sigmoid</em> e <em>tanh</em> <strong>saturam</strong> para valores grandes de <span class="arithmatex">\(|z|\)</span>, o que tende a reduzir os gradientes; por isso, elas aparecem com mais frequência na <strong>saída</strong> (no caso da <em>sigmoid</em>) ou em redes específicas. Já a ReLU é simples e eficiente, mas pode levar a <em>neurônios mortos</em> quando muitos valores ficam negativos; a Leaky ReLU mitiga esse efeito ao manter uma pequena inclinação para <span class="arithmatex">\(z&lt;0\)</span>. Para a <em>softmax</em>, implementações reais costumam subtrair <span class="arithmatex">\(\max(\mathbf{z})\)</span> antes do exponencial para melhorar a estabilidade numérica.</p>
+<div class="admonition note">
+<p class="admonition-title">Vocabulário rápido</p>
+<ul>
+<li><strong>Saturação</strong>: ocorre quando a função de ativação entra em uma região “quase plana”. Nessa região, pequenas variações em <span class="arithmatex">\(z\)</span> mudam muito pouco a saída <span class="arithmatex">\(y=\phi(z)\)</span>, e o gradiente <span class="arithmatex">\(\phi'(z)\)</span> tende a ficar <strong>próximo de 0</strong>. Exemplo: na <em>sigmoid</em>, valores como <span class="arithmatex">\(z\gg 0\)</span> produzem saída próxima de 1; como a curva fica quase horizontal, o aprendizado pode ficar lento em camadas onde isso acontece com frequência.</li>
+<li><strong>Neurônios mortos</strong>: acontece principalmente com ReLU quando um neurônio passa a produzir <strong>sempre 0</strong> (isto é, <span class="arithmatex">\(z&lt;0\)</span> para praticamente todas as entradas). Como a derivada da ReLU é 0 no lado negativo, o neurônio pode parar de atualizar seus pesos e “morrer” durante o treinamento.</li>
+<li><strong>Hiperparâmetros</strong>: são escolhas feitas <strong>antes</strong> (ou ao longo) do treinamento e que não são aprendidas diretamente a partir dos dados como os pesos e vieses. Exemplos comuns: taxa de aprendizado <span class="arithmatex">\(\eta\)</span>, número de épocas, tamanho do <em>batch</em>, número de camadas/neurônios, escolha do otimizador (SGD/Adam) e parâmetros da própria ativação (por exemplo, <span class="arithmatex">\(\alpha\)</span> da Leaky ReLU).</li>
+</ul>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Escolha rápida (regra prática)</p>
+<ul>
+<li>Camadas ocultas: ReLU ou Leaky ReLU.</li>
+<li>Saída binária: sigmoid.</li>
+<li>Saída multiclasse: softmax.</li>
+<li>Regressão: muitas vezes <strong>sem</strong> ativação na saída (identidade), dependendo da escala do alvo.</li>
+</ul>
+</div>
 <div class="admonition note">
 <p class="admonition-title">Importância da função de ativação</p>
-<p>A escolha de funções de ativação e do otimizador influencia significativamente o desempenho.</p>
 </div>
-<p>Após a propagação, a rede compara o valor da saída obtida com o valor real (esperado), utilizando uma função de custo (ou função de perda), que mede o erro da previsão.</p>
+<p>A escolha de funções de ativação e do otimizador influencia significativamente o desempenho.</p>
+<p>Após a <strong>propagação direta</strong> (<em>forward pass</em>), a rede compara o valor da saída obtida com o valor real (esperado), utilizando uma função de custo (ou função de perda), que mede o erro da previsão.</p>
 <p>Exemplos de funções de custo:</p>
 <ul>
 <li>Erro quadrático médio (MSE)</li>
 <li>Entropia cruzada (Cross-Entropy)</li>
 </ul>
-<p>Com o erro calculado, a rede precisa ajustá-lo. Isso é feito pela <strong>retropropagação</strong>, um processo que distribui o erro de volta através da rede (da saída para a entrada), utilizando o <em>teorema do gradiente</em> para determinar quanto cada peso contribuiu para o erro total.</p>
+<p>Com o erro calculado, a rede precisa ajustá-lo. Isso é feito pela <strong>retropropagação</strong>, um processo que distribui o erro de volta através da rede (da saída para a entrada), aplicando a <strong>regra da cadeia</strong> para determinar quanto cada peso contribuiu para o erro total.</p>
 <p>Através desse processo, são calculados os gradientes (derivadas parciais da função de custo em relação aos pesos). Usando os gradientes calculados, os pesos da rede são atualizados por meio de um algoritmo de otimização, como o <em>Gradiente Descendente</em> ou o <em>Adam</em>. O objetivo é minimizar o erro da rede ajustando os pesos iterativamente.</p>
 <div class="arithmatex">\[
 w \leftarrow w - \eta \cdot \frac{\partial \mathcal{L}}{\partial w}
@@ -869,11 +942,11 @@ w \leftarrow w - \eta \cdot \frac{\partial \mathcal{L}}{\partial w}
 </ul>
 <div class="admonition note">
 <p class="admonition-title">Taxa de Aprendizado</p>
-<p>A taxa de aprendizado (learning <em>rate</em>) é um hiperparâmetro fundamental no treinamento de redes neurais e outros algoritmos de aprendizado de máquina. Ela controla o tamanho dos passos que o algoritmo de otimização dá ao atualizar os pesos da rede durante o processo de aprendizado.</p>
-<p>Imagine que o algoritmo está tentando descer uma montanha (ou minimizar uma função de erro). A taxa de aprendizado determina o quão grande será cada passo:
-- Se o passo for <strong>muito pequeno</strong>: o progresso será lento, e pode demorar muito para encontrar o mínimo.
-- Se o passo for <strong>muito grande</strong>: pode ultrapassar o mínimo e até divergir, oscilando sem convergir.</p>
 </div>
+<p>A taxa de aprendizado (learning <em>rate</em>) é um hiperparâmetro fundamental no treinamento de redes neurais e outros algoritmos de aprendizado de máquina. Ela controla o tamanho dos passos que o algoritmo de otimização dá ao atualizar os pesos da rede durante o processo de aprendizado.</p>
+<p>Pode-se imaginar que o algoritmo está tentando descer uma montanha (ou minimizar uma função de erro). A taxa de aprendizado determina o quão grande será cada passo:
+  - Se o passo for <strong>muito pequeno</strong>: o progresso será lento, e pode demorar muito para encontrar o mínimo.
+  - Se o passo for <strong>muito grande</strong>: pode ultrapassar o mínimo e até divergir, oscilando sem convergir.</p>
 <p>Esse ciclo (propagação → erro → retropropagação → ajuste de pesos) é repetido por várias <strong>épocas</strong> (iterações sobre o conjunto de dados), até que a rede atinja um bom desempenho, isto é, consiga realizar previsões com erro mínimo. Se fôssemos representar graficamente as etapas, teríamos a seguinte sequência:</p>
 <div class="mermaid">graph LR
 A[Entrada de dados] --&gt; B[Camada de entrada]
@@ -949,7 +1022,7 @@ $$</p>
 </li>
 </ul>
 <p><strong>Exemplo de Matriz de Confusão:</strong></p>
-<p>Suponha um modelo de classificação binária com os seguintes resultados:</p>
+<p>Considere um modelo de classificação binária com os seguintes resultados:</p>
 <table>
 <thead>
 <tr>
@@ -1003,81 +1076,9 @@ $$</p>
 </li>
 </ul>
 <div class="admonition note">
-<p class="admonition-title">Dica pedagógica</p>
+<p class="admonition-title">Dica</p>
 <p>Sempre escolha a métrica que reflete melhor o objetivo do modelo e o contexto do problema. Em problemas de desequilíbrio de classes, métricas como F1-Score ou AUC são mais indicadas que a simples acurácia.</p>
 </div>
-<h2 id="implementacao-de-exemplo">Implementação de exemplo<a class="headerlink" href="#implementacao-de-exemplo" title="Permanent link">¶</a></h2>
-<p>Abaixo apresentamos uma implementação de rede neural artificial simplificada para ilustrar em código as operações descritas.</p>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-0-1"><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="c1"># Reprodução do código disponível no repositório https://github.com/mempirate/simple-neural-network/</span>
-</span><span id="__span-0-2"><a href="#__codelineno-0-2" id="__codelineno-0-2" name="__codelineno-0-2"></a>
-</span><span id="__span-0-3"><a href="#__codelineno-0-3" id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
-</span><span id="__span-0-4"><a href="#__codelineno-0-4" id="__codelineno-0-4" name="__codelineno-0-4"></a>
-</span><span id="__span-0-5"><a href="#__codelineno-0-5" id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="k">class</span><span class="w"> </span><span class="nc">NeuralNetwork</span><span class="p">():</span>
-</span><span id="__span-0-6"><a href="#__codelineno-0-6" id="__codelineno-0-6" name="__codelineno-0-6"></a>
-</span><span id="__span-0-7"><a href="#__codelineno-0-7" id="__codelineno-0-7" name="__codelineno-0-7"></a>    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-</span><span id="__span-0-8"><a href="#__codelineno-0-8" id="__codelineno-0-8" name="__codelineno-0-8"></a>
-</span><span id="__span-0-9"><a href="#__codelineno-0-9" id="__codelineno-0-9" name="__codelineno-0-9"></a>        <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-</span><span id="__span-0-10"><a href="#__codelineno-0-10" id="__codelineno-0-10" name="__codelineno-0-10"></a>
-</span><span id="__span-0-11"><a href="#__codelineno-0-11" id="__codelineno-0-11" name="__codelineno-0-11"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">synaptic_weights</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">((</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span> <span class="o">-</span> <span class="mi">1</span>
-</span><span id="__span-0-12"><a href="#__codelineno-0-12" id="__codelineno-0-12" name="__codelineno-0-12"></a>
-</span><span id="__span-0-13"><a href="#__codelineno-0-13" id="__codelineno-0-13" name="__codelineno-0-13"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">sigmoid</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
-</span><span id="__span-0-14"><a href="#__codelineno-0-14" id="__codelineno-0-14" name="__codelineno-0-14"></a>
-</span><span id="__span-0-15"><a href="#__codelineno-0-15" id="__codelineno-0-15" name="__codelineno-0-15"></a>        <span class="k">return</span> <span class="mi">1</span> <span class="o">/</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">x</span><span class="p">))</span>
-</span><span id="__span-0-16"><a href="#__codelineno-0-16" id="__codelineno-0-16" name="__codelineno-0-16"></a>
-</span><span id="__span-0-17"><a href="#__codelineno-0-17" id="__codelineno-0-17" name="__codelineno-0-17"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">sigmoid_derivative</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
-</span><span id="__span-0-18"><a href="#__codelineno-0-18" id="__codelineno-0-18" name="__codelineno-0-18"></a>        <span class="k">return</span> <span class="n">x</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">x</span><span class="p">)</span>
-</span><span id="__span-0-19"><a href="#__codelineno-0-19" id="__codelineno-0-19" name="__codelineno-0-19"></a>
-</span><span id="__span-0-20"><a href="#__codelineno-0-20" id="__codelineno-0-20" name="__codelineno-0-20"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">train</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">training_inputs</span><span class="p">,</span> <span class="n">training_outputs</span><span class="p">,</span> <span class="n">training_iterations</span><span class="p">):</span>
-</span><span id="__span-0-21"><a href="#__codelineno-0-21" id="__codelineno-0-21" name="__codelineno-0-21"></a>
-</span><span id="__span-0-22"><a href="#__codelineno-0-22" id="__codelineno-0-22" name="__codelineno-0-22"></a>        <span class="k">for</span> <span class="n">iteration</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">training_iterations</span><span class="p">):</span>
-</span><span id="__span-0-23"><a href="#__codelineno-0-23" id="__codelineno-0-23" name="__codelineno-0-23"></a>
-</span><span id="__span-0-24"><a href="#__codelineno-0-24" id="__codelineno-0-24" name="__codelineno-0-24"></a>            <span class="n">output</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">think</span><span class="p">(</span><span class="n">training_inputs</span><span class="p">)</span>
-</span><span id="__span-0-25"><a href="#__codelineno-0-25" id="__codelineno-0-25" name="__codelineno-0-25"></a>
-</span><span id="__span-0-26"><a href="#__codelineno-0-26" id="__codelineno-0-26" name="__codelineno-0-26"></a>
-</span><span id="__span-0-27"><a href="#__codelineno-0-27" id="__codelineno-0-27" name="__codelineno-0-27"></a>            <span class="n">error</span> <span class="o">=</span> <span class="n">training_outputs</span> <span class="o">-</span> <span class="n">output</span>
-</span><span id="__span-0-28"><a href="#__codelineno-0-28" id="__codelineno-0-28" name="__codelineno-0-28"></a>
-</span><span id="__span-0-29"><a href="#__codelineno-0-29" id="__codelineno-0-29" name="__codelineno-0-29"></a>            <span class="n">adjustments</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">training_inputs</span><span class="o">.</span><span class="n">T</span><span class="p">,</span> <span class="n">error</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">sigmoid_derivative</span><span class="p">(</span><span class="n">output</span><span class="p">))</span>
-</span><span id="__span-0-30"><a href="#__codelineno-0-30" id="__codelineno-0-30" name="__codelineno-0-30"></a>
-</span><span id="__span-0-31"><a href="#__codelineno-0-31" id="__codelineno-0-31" name="__codelineno-0-31"></a>            <span class="bp">self</span><span class="o">.</span><span class="n">synaptic_weights</span> <span class="o">+=</span> <span class="n">adjustments</span>
-</span><span id="__span-0-32"><a href="#__codelineno-0-32" id="__codelineno-0-32" name="__codelineno-0-32"></a>
-</span><span id="__span-0-33"><a href="#__codelineno-0-33" id="__codelineno-0-33" name="__codelineno-0-33"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">think</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">inputs</span><span class="p">):</span>
-</span><span id="__span-0-34"><a href="#__codelineno-0-34" id="__codelineno-0-34" name="__codelineno-0-34"></a>
-</span><span id="__span-0-35"><a href="#__codelineno-0-35" id="__codelineno-0-35" name="__codelineno-0-35"></a>        <span class="n">inputs</span> <span class="o">=</span> <span class="n">inputs</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">float</span><span class="p">)</span>
-</span><span id="__span-0-36"><a href="#__codelineno-0-36" id="__codelineno-0-36" name="__codelineno-0-36"></a>        <span class="n">output</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">sigmoid</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">inputs</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">synaptic_weights</span><span class="p">))</span>
-</span><span id="__span-0-37"><a href="#__codelineno-0-37" id="__codelineno-0-37" name="__codelineno-0-37"></a>        <span class="k">return</span> <span class="n">output</span>
-</span><span id="__span-0-38"><a href="#__codelineno-0-38" id="__codelineno-0-38" name="__codelineno-0-38"></a>
-</span><span id="__span-0-39"><a href="#__codelineno-0-39" id="__codelineno-0-39" name="__codelineno-0-39"></a>
-</span><span id="__span-0-40"><a href="#__codelineno-0-40" id="__codelineno-0-40" name="__codelineno-0-40"></a><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">"__main__"</span><span class="p">:</span>
-</span><span id="__span-0-41"><a href="#__codelineno-0-41" id="__codelineno-0-41" name="__codelineno-0-41"></a>
-</span><span id="__span-0-42"><a href="#__codelineno-0-42" id="__codelineno-0-42" name="__codelineno-0-42"></a>    <span class="c1"># Initialize the single neuron neural network</span>
-</span><span id="__span-0-43"><a href="#__codelineno-0-43" id="__codelineno-0-43" name="__codelineno-0-43"></a>    <span class="n">neural_network</span> <span class="o">=</span> <span class="n">NeuralNetwork</span><span class="p">()</span>
-</span><span id="__span-0-44"><a href="#__codelineno-0-44" id="__codelineno-0-44" name="__codelineno-0-44"></a>
-</span><span id="__span-0-45"><a href="#__codelineno-0-45" id="__codelineno-0-45" name="__codelineno-0-45"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">"Random starting synaptic weights: "</span><span class="p">)</span>
-</span><span id="__span-0-46"><a href="#__codelineno-0-46" id="__codelineno-0-46" name="__codelineno-0-46"></a>    <span class="nb">print</span><span class="p">(</span><span class="n">neural_network</span><span class="o">.</span><span class="n">synaptic_weights</span><span class="p">)</span>
-</span><span id="__span-0-47"><a href="#__codelineno-0-47" id="__codelineno-0-47" name="__codelineno-0-47"></a>
-</span><span id="__span-0-48"><a href="#__codelineno-0-48" id="__codelineno-0-48" name="__codelineno-0-48"></a>    <span class="c1"># The training set, with 4 examples consisting of 3</span>
-</span><span id="__span-0-49"><a href="#__codelineno-0-49" id="__codelineno-0-49" name="__codelineno-0-49"></a>    <span class="c1"># input values and 1 output value</span>
-</span><span id="__span-0-50"><a href="#__codelineno-0-50" id="__codelineno-0-50" name="__codelineno-0-50"></a>    <span class="n">training_inputs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span>
-</span><span id="__span-0-51"><a href="#__codelineno-0-51" id="__codelineno-0-51" name="__codelineno-0-51"></a>                                <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span>
-</span><span id="__span-0-52"><a href="#__codelineno-0-52" id="__codelineno-0-52" name="__codelineno-0-52"></a>                                <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span>
-</span><span id="__span-0-53"><a href="#__codelineno-0-53" id="__codelineno-0-53" name="__codelineno-0-53"></a>                                <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">]])</span>
-</span><span id="__span-0-54"><a href="#__codelineno-0-54" id="__codelineno-0-54" name="__codelineno-0-54"></a>
-</span><span id="__span-0-55"><a href="#__codelineno-0-55" id="__codelineno-0-55" name="__codelineno-0-55"></a>    <span class="n">training_outputs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">]])</span><span class="o">.</span><span class="n">T</span>
-</span><span id="__span-0-56"><a href="#__codelineno-0-56" id="__codelineno-0-56" name="__codelineno-0-56"></a>
-</span><span id="__span-0-57"><a href="#__codelineno-0-57" id="__codelineno-0-57" name="__codelineno-0-57"></a>    <span class="c1"># Train the neural network</span>
-</span><span id="__span-0-58"><a href="#__codelineno-0-58" id="__codelineno-0-58" name="__codelineno-0-58"></a>    <span class="n">neural_network</span><span class="o">.</span><span class="n">train</span><span class="p">(</span><span class="n">training_inputs</span><span class="p">,</span> <span class="n">training_outputs</span><span class="p">,</span> <span class="mi">10000</span><span class="p">)</span>
-</span><span id="__span-0-59"><a href="#__codelineno-0-59" id="__codelineno-0-59" name="__codelineno-0-59"></a>
-</span><span id="__span-0-60"><a href="#__codelineno-0-60" id="__codelineno-0-60" name="__codelineno-0-60"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">"Synaptic weights after training: "</span><span class="p">)</span>
-</span><span id="__span-0-61"><a href="#__codelineno-0-61" id="__codelineno-0-61" name="__codelineno-0-61"></a>    <span class="nb">print</span><span class="p">(</span><span class="n">neural_network</span><span class="o">.</span><span class="n">synaptic_weights</span><span class="p">)</span>
-</span><span id="__span-0-62"><a href="#__codelineno-0-62" id="__codelineno-0-62" name="__codelineno-0-62"></a>
-</span><span id="__span-0-63"><a href="#__codelineno-0-63" id="__codelineno-0-63" name="__codelineno-0-63"></a>    <span class="n">A</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">"Input 1: "</span><span class="p">))</span>
-</span><span id="__span-0-64"><a href="#__codelineno-0-64" id="__codelineno-0-64" name="__codelineno-0-64"></a>    <span class="n">B</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">"Input 2: "</span><span class="p">))</span>
-</span><span id="__span-0-65"><a href="#__codelineno-0-65" id="__codelineno-0-65" name="__codelineno-0-65"></a>    <span class="n">C</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">"Input 3: "</span><span class="p">))</span>
-</span><span id="__span-0-66"><a href="#__codelineno-0-66" id="__codelineno-0-66" name="__codelineno-0-66"></a>
-</span><span id="__span-0-67"><a href="#__codelineno-0-67" id="__codelineno-0-67" name="__codelineno-0-67"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">"New situation: input data = "</span><span class="p">,</span> <span class="n">A</span><span class="p">,</span> <span class="n">B</span><span class="p">,</span> <span class="n">C</span><span class="p">)</span>
-</span><span id="__span-0-68"><a href="#__codelineno-0-68" id="__codelineno-0-68" name="__codelineno-0-68"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">"Output data: "</span><span class="p">)</span>
-</span><span id="__span-0-69"><a href="#__codelineno-0-69" id="__codelineno-0-69" name="__codelineno-0-69"></a>    <span class="nb">print</span><span class="p">(</span><span class="n">neural_network</span><span class="o">.</span><span class="n">think</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">A</span><span class="p">,</span> <span class="n">B</span><span class="p">,</span> <span class="n">C</span><span class="p">])))</span>
-</span></code></pre></div>
 <div class="footnote">
 <hr/>
 <ol>
@@ -1116,13 +1117,13 @@ $$</p>
               </div>
 </div>
 </a>
-<a aria-label="Próximo: Ética na IA" class="md-footer__link md-footer__link--next" href="../../ccc-312/etica/">
+<a aria-label="Próximo: RNA com Keras" class="md-footer__link md-footer__link--next" href="../keras/">
 <div class="md-footer__title">
 <span class="md-footer__direction">
                 Próximo
               </span>
 <div class="md-ellipsis">
-                Ética na IA
+                RNA com Keras
               </div>
 </div>
 <div class="md-footer__button md-icon">
