@@ -249,44 +249,135 @@ A seguir, listamos as principais métricas utilizadas em cada tipo de tarefa:
 
 ### Métricas para Classificação
 
-- **Acurácia**  
+#### **Acurácia**  
   Proporção de previsões corretas sobre o total de exemplos.
 $$
   \text{Acurácia} = \frac{\text{número de acertos}}{\text{total de exemplos}}
 $$
-
-- **Precisão (Precision)**  
+#### **Precisão (Precision)**  
   Proporção de exemplos positivos preditos corretamente entre todos os exemplos preditos como positivos.
 
-- **Revocação (Recall ou Sensibilidade)**  
+#### **Revocação (Recall ou Sensibilidade)**  
   Proporção de exemplos positivos corretamente identificados pelo modelo.
 
-- **F1-Score**  
+#### **F1-Score**  
   Média harmônica entre precisão e revocação. Equilibra as duas medidas, útil quando há desequilíbrio de classes.
 
-- **Matriz de Confusão**  
-  Tabela que mostra os acertos e erros do modelo divididos por classe, útil para análise detalhada.
+#### **Matriz de Confusão**  
 
-**Exemplo de Matriz de Confusão:**
+A matriz de confusão é uma tabela que resume o desempenho de um modelo de classificação, comparando os **valores reais** com os **valores preditos**.
 
-Considere um modelo de classificação binária com os seguintes resultados:
 
-|                   | Predito Positivo | Predito Negativo |
-| ----------------- | ---------------- | ---------------- |
-| **Real Positivo** | 50 (VP)          | 10 (FN)          |
-| **Real Negativo** | 5 (FP)           | 100 (VN)         |
+```
+                    PREDITO
+                 Positivo  Negativo
+REAL  Positivo |    VP    |   FN   |
+      Negativo |    FP    |   VN   |
+```
+ 
+Neste exemplo, cada célula tem um significado:
+ 
+| Sigla | Nome | Significado |
+|-------|------|-------------|
+| **VP** | Verdadeiro Positivo | O modelo disse **positivo** e estava **certo** |
+| **VN** | Verdadeiro Negativo | O modelo disse **negativo** e estava **certo** |
+| **FP** | Falso Positivo | O modelo disse **positivo** mas estava **errado** (Erro Tipo I) |
+| **FN** | Falso Negativo | O modelo disse **negativo** mas estava **errado** (Erro Tipo II) |
 
-Legenda:
 
-- **VP (Verdadeiro Positivo)**: o modelo previu positivo corretamente.
-- **FN (Falso Negativo)**: o modelo errou ao prever negativo quando era positivo.
-- **FP (Falso Positivo)**: o modelo errou ao prever positivo quando era negativo.
-- **VN (Verdadeiro Negativo)**: o modelo previu negativo corretamente.
 
-Com base nessa matriz, é possível calcular todas as outras métricas (precisão, revocação, F1-score, etc.).
+Imagine um modelo de detecção de câncer que analisa 100 exames e apresenta o seguinte resultado:
+ 
+```
+                    PREDITO
+                 Doente  Saudável
+REAL  Doente  |   40   |   10   |   50 pacientes doentes
+      Saudável|    5   |   45   |   50 pacientes saudáveis
+```
+ 
+A interpretação da matriz de confusão seria a seguinte:
+- **40 VP** → doentes corretamente identificados
+- **45 VN** → saudáveis corretamente identificados
+- **10 FN** → doentes classificados como saudáveis *(perigoso!)*
+- **5 FP** → saudáveis classificados como doentes
 
-- **AUC-ROC (Área sob a Curva ROC)**  
-  Mede a capacidade do modelo em distinguir entre classes. Quanto mais próximo de 1, melhor.
+
+Com base nessa matriz, é possível calcular todas as outras métricas derivadas (precisão, revocação, F1-score, etc.). Vamos entender um pouco mais sobre cada uma delas.
+
+
+
+1. **Acurácia**
+
+> "De tudo que o modelo classificou, quanto ele acertou?"
+
+$$\text{Acurácia} = \frac{VP + VN}{VP + VN + FP + FN}$$
+
+No exemplo: (40+45)/100 = **85%**
+
+É enganosa em dados desbalanceados (ex: 95% das amostras são da classe A).
+
+---
+
+2. **Precisão (Precision)**
+
+> "De tudo que o modelo disse ser positivo, quanto realmente era?"
+
+$$\text{Precisão} = \frac{VP}{VP + FP}$$
+
+No exemplo: 40/(40+5) = **88,9%**
+
+É útil quando **falsos positivos** são custosos (ex: spam filter — não quero bloquear e-mails legítimos).
+
+---
+
+3. **Recall (Sensibilidade)**
+
+> "De todos os positivos reais, quantos o modelo encontrou?"
+
+$$\text{Recall} = \frac{VP}{VP + FN}$$
+
+No exemplo: 40/(40+10) = **80%**
+
+É útil quando **falsos negativos** são custosos (ex: diagnóstico de câncer — não quero deixar doentes passarem).
+
+---
+
+4. **F1-Score**
+
+> "Média harmônica entre Precisão e Recall."
+
+$$\text{F1} = 2 \times \frac{\text{Precisão} \times \text{Recall}}{\text{Precisão} + \text{Recall}}$$
+
+No exemplo: 2 × (0.889 × 0.80)/(0.889 + 0.80) = **84,2%**
+
+É uma métrica que equilibra as duas outras. Ideal quando há **desbalanceamento de classes**.
+
+---
+
+5. **Especificidade**
+
+> "De todos os negativos reais, quantos o modelo identificou corretamente?"
+
+$$\text{Especificidade} = \frac{VN}{VN + FP}$$
+
+No exemplo: 45/(45+5) = **90%**
+
+---
+
+
+##### Extensão para múltiplas classes
+
+Em problemas com N classes (ex: classificar dígitos 0–9), a matriz vira **N×N**:
+
+```
+           Predito: 0   1   2
+Real: 0  [  45    2   3  ]
+Real: 1  [   1   48   1  ]
+Real: 2  [   2    1  47  ]
+```
+
+A diagonal principal representa os **acertos**. Fora dela, os erros. As mesmas métricas são calculadas **por classe** (one-vs-rest) e depois agregadas com estratégias como *macro average* ou *weighted average*.
+
 
 ### Métricas para Regressão
 

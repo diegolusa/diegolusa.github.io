@@ -653,6 +653,56 @@
       Métricas para Classificação
     </span>
 </a>
+<nav aria-label="Métricas para Classificação" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#acuracia">
+<span class="md-ellipsis">
+      Acurácia
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#precisao-precision">
+<span class="md-ellipsis">
+      Precisão (Precision)
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#revocacao-recall-ou-sensibilidade">
+<span class="md-ellipsis">
+      Revocação (Recall ou Sensibilidade)
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#f1-score">
+<span class="md-ellipsis">
+      F1-Score
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#matriz-de-confusao">
+<span class="md-ellipsis">
+      Matriz de Confusão
+    </span>
+</a>
+<nav aria-label="Matriz de Confusão" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#extensao-para-multiplas-classes">
+<span class="md-ellipsis">
+      Extensão para múltiplas classes
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#metricas-para-regressao">
@@ -724,6 +774,14 @@
 </li>
 </ul>
 </nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../agentic-ai/">
+<span class="md-ellipsis">
+    Agentic AI (LangChain + Llama)
+    
+  </span>
+</a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../visualizacao-dados/">
@@ -996,66 +1054,125 @@ H --&gt; B
 </ul>
 <p>A seguir, listamos as principais métricas utilizadas em cada tipo de tarefa:</p>
 <h3 id="metricas-para-classificacao">Métricas para Classificação<a class="headerlink" href="#metricas-para-classificacao" title="Permanent link">¶</a></h3>
-<ul>
-<li>
-<p><strong>Acurácia</strong><br/>
-  Proporção de previsões corretas sobre o total de exemplos.
+<h4 id="acuracia"><strong>Acurácia</strong><a class="headerlink" href="#acuracia" title="Permanent link">¶</a></h4>
+<p>Proporção de previsões corretas sobre o total de exemplos.
 $$
   \text{Acurácia} = \frac{\text{número de acertos}}{\text{total de exemplos}}
 $$</p>
-</li>
-<li>
-<p><strong>Precisão (Precision)</strong><br/>
-  Proporção de exemplos positivos preditos corretamente entre todos os exemplos preditos como positivos.</p>
-</li>
-<li>
-<p><strong>Revocação (Recall ou Sensibilidade)</strong><br/>
-  Proporção de exemplos positivos corretamente identificados pelo modelo.</p>
-</li>
-<li>
-<p><strong>F1-Score</strong><br/>
-  Média harmônica entre precisão e revocação. Equilibra as duas medidas, útil quando há desequilíbrio de classes.</p>
-</li>
-<li>
-<p><strong>Matriz de Confusão</strong><br/>
-  Tabela que mostra os acertos e erros do modelo divididos por classe, útil para análise detalhada.</p>
-</li>
-</ul>
-<p><strong>Exemplo de Matriz de Confusão:</strong></p>
-<p>Considere um modelo de classificação binária com os seguintes resultados:</p>
+<h4 id="precisao-precision"><strong>Precisão (Precision)</strong><a class="headerlink" href="#precisao-precision" title="Permanent link">¶</a></h4>
+<p>Proporção de exemplos positivos preditos corretamente entre todos os exemplos preditos como positivos.</p>
+<h4 id="revocacao-recall-ou-sensibilidade"><strong>Revocação (Recall ou Sensibilidade)</strong><a class="headerlink" href="#revocacao-recall-ou-sensibilidade" title="Permanent link">¶</a></h4>
+<p>Proporção de exemplos positivos corretamente identificados pelo modelo.</p>
+<h4 id="f1-score"><strong>F1-Score</strong><a class="headerlink" href="#f1-score" title="Permanent link">¶</a></h4>
+<p>Média harmônica entre precisão e revocação. Equilibra as duas medidas, útil quando há desequilíbrio de classes.</p>
+<h4 id="matriz-de-confusao"><strong>Matriz de Confusão</strong><a class="headerlink" href="#matriz-de-confusao" title="Permanent link">¶</a></h4>
+<p>A matriz de confusão é uma tabela que resume o desempenho de um modelo de classificação, comparando os <strong>valores reais</strong> com os <strong>valores preditos</strong>.</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a>                    PREDITO
+</span><span id="__span-0-2"><a href="#__codelineno-0-2" id="__codelineno-0-2" name="__codelineno-0-2"></a>                 Positivo  Negativo
+</span><span id="__span-0-3"><a href="#__codelineno-0-3" id="__codelineno-0-3" name="__codelineno-0-3"></a>REAL  Positivo |    VP    |   FN   |
+</span><span id="__span-0-4"><a href="#__codelineno-0-4" id="__codelineno-0-4" name="__codelineno-0-4"></a>      Negativo |    FP    |   VN   |
+</span></code></pre></div>
+<p>Neste exemplo, cada célula tem um significado:</p>
 <table>
 <thead>
 <tr>
-<th></th>
-<th>Predito Positivo</th>
-<th>Predito Negativo</th>
+<th>Sigla</th>
+<th>Nome</th>
+<th>Significado</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><strong>Real Positivo</strong></td>
-<td>50 (VP)</td>
-<td>10 (FN)</td>
+<td><strong>VP</strong></td>
+<td>Verdadeiro Positivo</td>
+<td>O modelo disse <strong>positivo</strong> e estava <strong>certo</strong></td>
 </tr>
 <tr>
-<td><strong>Real Negativo</strong></td>
-<td>5 (FP)</td>
-<td>100 (VN)</td>
+<td><strong>VN</strong></td>
+<td>Verdadeiro Negativo</td>
+<td>O modelo disse <strong>negativo</strong> e estava <strong>certo</strong></td>
+</tr>
+<tr>
+<td><strong>FP</strong></td>
+<td>Falso Positivo</td>
+<td>O modelo disse <strong>positivo</strong> mas estava <strong>errado</strong> (Erro Tipo I)</td>
+</tr>
+<tr>
+<td><strong>FN</strong></td>
+<td>Falso Negativo</td>
+<td>O modelo disse <strong>negativo</strong> mas estava <strong>errado</strong> (Erro Tipo II)</td>
 </tr>
 </tbody>
 </table>
-<p>Legenda:</p>
-<ul>
-<li><strong>VP (Verdadeiro Positivo)</strong>: o modelo previu positivo corretamente.</li>
-<li><strong>FN (Falso Negativo)</strong>: o modelo errou ao prever negativo quando era positivo.</li>
-<li><strong>FP (Falso Positivo)</strong>: o modelo errou ao prever positivo quando era negativo.</li>
-<li><strong>VN (Verdadeiro Negativo)</strong>: o modelo previu negativo corretamente.</li>
-</ul>
-<p>Com base nessa matriz, é possível calcular todas as outras métricas (precisão, revocação, F1-score, etc.).</p>
-<ul>
-<li><strong>AUC-ROC (Área sob a Curva ROC)</strong><br/>
-  Mede a capacidade do modelo em distinguir entre classes. Quanto mais próximo de 1, melhor.</li>
-</ul>
+<p>Imagine um modelo de detecção de câncer que analisa 100 exames e apresenta o seguinte resultado:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a>                    PREDITO
+</span><span id="__span-1-2"><a href="#__codelineno-1-2" id="__codelineno-1-2" name="__codelineno-1-2"></a>                 Doente  Saudável
+</span><span id="__span-1-3"><a href="#__codelineno-1-3" id="__codelineno-1-3" name="__codelineno-1-3"></a>REAL  Doente  |   40   |   10   |   50 pacientes doentes
+</span><span id="__span-1-4"><a href="#__codelineno-1-4" id="__codelineno-1-4" name="__codelineno-1-4"></a>      Saudável|    5   |   45   |   50 pacientes saudáveis
+</span></code></pre></div>
+<p>A interpretação da matriz de confusão seria a seguinte:
+- <strong>40 VP</strong> → doentes corretamente identificados
+- <strong>45 VN</strong> → saudáveis corretamente identificados
+- <strong>10 FN</strong> → doentes classificados como saudáveis <em>(perigoso!)</em>
+- <strong>5 FP</strong> → saudáveis classificados como doentes</p>
+<p>Com base nessa matriz, é possível calcular todas as outras métricas derivadas (precisão, revocação, F1-score, etc.). Vamos entender um pouco mais sobre cada uma delas.</p>
+<ol>
+<li><strong>Acurácia</strong></li>
+</ol>
+<blockquote>
+<p>"De tudo que o modelo classificou, quanto ele acertou?"</p>
+</blockquote>
+<div class="arithmatex">\[\text{Acurácia} = \frac{VP + VN}{VP + VN + FP + FN}\]</div>
+<p>No exemplo: (40+45)/100 = <strong>85%</strong></p>
+<p>É enganosa em dados desbalanceados (ex: 95% das amostras são da classe A).</p>
+<hr/>
+<ol>
+<li><strong>Precisão (Precision)</strong></li>
+</ol>
+<blockquote>
+<p>"De tudo que o modelo disse ser positivo, quanto realmente era?"</p>
+</blockquote>
+<div class="arithmatex">\[\text{Precisão} = \frac{VP}{VP + FP}\]</div>
+<p>No exemplo: 40/(40+5) = <strong>88,9%</strong></p>
+<p>É útil quando <strong>falsos positivos</strong> são custosos (ex: spam filter — não quero bloquear e-mails legítimos).</p>
+<hr/>
+<ol>
+<li><strong>Recall (Sensibilidade)</strong></li>
+</ol>
+<blockquote>
+<p>"De todos os positivos reais, quantos o modelo encontrou?"</p>
+</blockquote>
+<div class="arithmatex">\[\text{Recall} = \frac{VP}{VP + FN}\]</div>
+<p>No exemplo: 40/(40+10) = <strong>80%</strong></p>
+<p>É útil quando <strong>falsos negativos</strong> são custosos (ex: diagnóstico de câncer — não quero deixar doentes passarem).</p>
+<hr/>
+<ol>
+<li><strong>F1-Score</strong></li>
+</ol>
+<blockquote>
+<p>"Média harmônica entre Precisão e Recall."</p>
+</blockquote>
+<div class="arithmatex">\[\text{F1} = 2 \times \frac{\text{Precisão} \times \text{Recall}}{\text{Precisão} + \text{Recall}}\]</div>
+<p>No exemplo: 2 × (0.889 × 0.80)/(0.889 + 0.80) = <strong>84,2%</strong></p>
+<p>É uma métrica que equilibra as duas outras. Ideal quando há <strong>desbalanceamento de classes</strong>.</p>
+<hr/>
+<ol>
+<li><strong>Especificidade</strong></li>
+</ol>
+<blockquote>
+<p>"De todos os negativos reais, quantos o modelo identificou corretamente?"</p>
+</blockquote>
+<div class="arithmatex">\[\text{Especificidade} = \frac{VN}{VN + FP}\]</div>
+<p>No exemplo: 45/(45+5) = <strong>90%</strong></p>
+<hr/>
+<h5 id="extensao-para-multiplas-classes">Extensão para múltiplas classes<a class="headerlink" href="#extensao-para-multiplas-classes" title="Permanent link">¶</a></h5>
+<p>Em problemas com N classes (ex: classificar dígitos 0–9), a matriz vira <strong>N×N</strong>:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a href="#__codelineno-2-1" id="__codelineno-2-1" name="__codelineno-2-1"></a>           Predito: 0   1   2
+</span><span id="__span-2-2"><a href="#__codelineno-2-2" id="__codelineno-2-2" name="__codelineno-2-2"></a>Real: 0  [  45    2   3  ]
+</span><span id="__span-2-3"><a href="#__codelineno-2-3" id="__codelineno-2-3" name="__codelineno-2-3"></a>Real: 1  [   1   48   1  ]
+</span><span id="__span-2-4"><a href="#__codelineno-2-4" id="__codelineno-2-4" name="__codelineno-2-4"></a>Real: 2  [   2    1  47  ]
+</span></code></pre></div>
+<p>A diagonal principal representa os <strong>acertos</strong>. Fora dela, os erros. As mesmas métricas são calculadas <strong>por classe</strong> (one-vs-rest) e depois agregadas com estratégias como <em>macro average</em> ou <em>weighted average</em>.</p>
 <h3 id="metricas-para-regressao">Métricas para Regressão<a class="headerlink" href="#metricas-para-regressao" title="Permanent link">¶</a></h3>
 <ul>
 <li>
