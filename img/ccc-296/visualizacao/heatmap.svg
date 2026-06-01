@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="480" viewBox="0 0 900 480" role="img" aria-label="Exemplo de heatmap (mapa de calor)">
+  <rect width="100%" height="100%" fill="white"/>
+
+  <!-- axes -->
+  <line x1="110" y1="380" x2="820" y2="380" stroke="#111" stroke-width="3"/>
+  <line x1="110" y1="380" x2="110" y2="90" stroke="#111" stroke-width="3"/>
+
+  <!-- grid -->
+  <g transform="translate(170,120)">
+    <!-- 6x4 cells -->
+    <rect x="0" y="0" width="90" height="70" fill="#e0e0e0" stroke="#fff" stroke-width="3"/>
+    <rect x="90" y="0" width="90" height="70" fill="#cfcfcf" stroke="#fff" stroke-width="3"/>
+    <rect x="180" y="0" width="90" height="70" fill="#bdbdbd" stroke="#fff" stroke-width="3"/>
+    <rect x="270" y="0" width="90" height="70" fill="#d6d6d6" stroke="#fff" stroke-width="3"/>
+    <rect x="360" y="0" width="90" height="70" fill="#a9a9a9" stroke="#fff" stroke-width="3"/>
+    <rect x="450" y="0" width="90" height="70" fill="#f0f0f0" stroke="#fff" stroke-width="3"/>
+
+    <rect x="0" y="70" width="90" height="70" fill="#c6c6c6" stroke="#fff" stroke-width="3"/>
+    <rect x="90" y="70" width="90" height="70" fill="#b3b3b3" stroke="#fff" stroke-width="3"/>
+    <rect x="180" y="70" width="90" height="70" fill="#9e9e9e" stroke="#fff" stroke-width="3"/>
+    <rect x="270" y="70" width="90" height="70" fill="#cfcfcf" stroke="#fff" stroke-width="3"/>
+    <rect x="360" y="70" width="90" height="70" fill="#8d8d8d" stroke="#fff" stroke-width="3"/>
+    <rect x="450" y="70" width="90" height="70" fill="#dcdcdc" stroke="#fff" stroke-width="3"/>
+
+    <rect x="0" y="140" width="90" height="70" fill="#dedede" stroke="#fff" stroke-width="3"/>
+    <rect x="90" y="140" width="90" height="70" fill="#c1c1c1" stroke="#fff" stroke-width="3"/>
+    <rect x="180" y="140" width="90" height="70" fill="#ababab" stroke="#fff" stroke-width="3"/>
+    <rect x="270" y="140" width="90" height="70" fill="#9a9a9a" stroke="#fff" stroke-width="3"/>
+    <rect x="360" y="140" width="90" height="70" fill="#7f7f7f" stroke="#fff" stroke-width="3"/>
+    <rect x="450" y="140" width="90" height="70" fill="#bdbdbd" stroke="#fff" stroke-width="3"/>
+
+    <rect x="0" y="210" width="90" height="70" fill="#f0f0f0" stroke="#fff" stroke-width="3"/>
+    <rect x="90" y="210" width="90" height="70" fill="#d7d7d7" stroke="#fff" stroke-width="3"/>
+    <rect x="180" y="210" width="90" height="70" fill="#bdbdbd" stroke="#fff" stroke-width="3"/>
+    <rect x="270" y="210" width="90" height="70" fill="#a7a7a7" stroke="#fff" stroke-width="3"/>
+    <rect x="360" y="210" width="90" height="70" fill="#8f8f8f" stroke="#fff" stroke-width="3"/>
+    <rect x="450" y="210" width="90" height="70" fill="#d0d0d0" stroke="#fff" stroke-width="3"/>
+  </g>
+
+  <!-- labels -->
+  <text x="110" y="430" font-family="Roboto, Arial" font-size="22" fill="#111">Eixo X</text>
+  <text x="20" y="160" font-family="Roboto, Arial" font-size="22" fill="#111" transform="rotate(-90 20,160)">Eixo Y</text>
+  <text x="650" y="115" font-family="Roboto, Arial" font-size="18" fill="#111">Intensidade por cor</text>
+</svg>

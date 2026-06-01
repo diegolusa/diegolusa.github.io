@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="480" viewBox="0 0 900 480" role="img" aria-label="Exemplo de gráfico de barras">
+  <rect width="100%" height="100%" fill="white"/>
+  <!-- axes -->
+  <line x1="110" y1="380" x2="820" y2="380" stroke="#111" stroke-width="3"/>
+  <line x1="110" y1="380" x2="110" y2="90" stroke="#111" stroke-width="3"/>
+
+  <!-- bars -->
+  <rect x="170" y="230" width="90" height="150" fill="#9aa0a6"/>
+  <rect x="310" y="170" width="90" height="210" fill="#9aa0a6"/>
+  <rect x="450" y="120" width="90" height="260" fill="#9aa0a6"/>
+  <rect x="590" y="200" width="90" height="180" fill="#9aa0a6"/>
+
+  <!-- labels -->
+  <text x="110" y="430" font-family="Roboto, Arial" font-size="22" fill="#111">Categorias</text>
+  <text x="20" y="110" font-family="Roboto, Arial" font-size="22" fill="#111" transform="rotate(-90 20,110)">Valor</text>
+  <text x="190" y="410" font-family="Roboto, Arial" font-size="18" fill="#111">A</text>
+  <text x="330" y="410" font-family="Roboto, Arial" font-size="18" fill="#111">B</text>
+  <text x="470" y="410" font-family="Roboto, Arial" font-size="18" fill="#111">C</text>
+  <text x="610" y="410" font-family="Roboto, Arial" font-size="18" fill="#111">D</text>
+</svg>

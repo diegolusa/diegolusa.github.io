@@ -23,7 +23,7 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
-<a class="md-skip" href="#por-que-visualizar-dados-e-util">
+<a class="md-skip" href="#analise-e-visualizacao-uma-relacao-de-mao-dupla">
           Ir para o conteúdo
         </a>
 </div>
@@ -633,6 +633,13 @@
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
+<a class="md-nav__link" href="#analise-e-visualizacao-uma-relacao-de-mao-dupla">
+<span class="md-ellipsis">
+      Análise e visualização: uma relação de mão dupla
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="#por-que-visualizar-dados-e-util">
 <span class="md-ellipsis">
       Por que visualizar dados é útil
@@ -647,9 +654,76 @@
 </a>
 </li>
 <li class="md-nav__item">
+<a class="md-nav__link" href="#principais-tipos-de-grafico-com-figuras">
+<span class="md-ellipsis">
+      Principais tipos de gráfico (com figuras)
+    </span>
+</a>
+<nav aria-label="Principais tipos de gráfico (com figuras)" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#grafico-de-barras-comparar-categorias">
+<span class="md-ellipsis">
+      Gráfico de barras (comparar categorias)
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#grafico-de-linhas-series-temporais">
+<span class="md-ellipsis">
+      Gráfico de linhas (séries temporais)
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#dispersao-relacao-entre-variaveis">
+<span class="md-ellipsis">
+      Dispersão (relação entre variáveis)
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#histograma-distribuicao">
+<span class="md-ellipsis">
+      Histograma (distribuição)
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#boxplot-resumo-robusto-da-distribuicao">
+<span class="md-ellipsis">
+      Boxplot (resumo robusto da distribuição)
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#heatmap-mapa-de-calor-matrizes-e-padroes">
+<span class="md-ellipsis">
+      Heatmap (mapa de calor: matrizes e padrões)
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#outros-graficos-relevantes-quando-fizer-sentido">
+<span class="md-ellipsis">
+      Outros gráficos relevantes (quando fizer sentido)
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="#boas-praticas-clareza-honestidade-e-acessibilidade">
 <span class="md-ellipsis">
       Boas práticas (clareza, honestidade e acessibilidade)
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#storytelling-com-dados-narrativa-baseada-em-evidencias">
+<span class="md-ellipsis">
+      Storytelling com dados (narrativa baseada em evidências)
     </span>
 </a>
 </li>
@@ -722,8 +796,21 @@
 <p>Em projetos reais, a visualização aparece em dois momentos complementares:</p>
 <ul>
 <li><strong>Exploração (EDA — análise exploratória)</strong>: quando a equipe ainda está entendendo os dados, avaliando qualidade e levantando hipóteses.</li>
-<li><strong>Comunicação (explanatory)</strong>: quando a equipe precisa explicar conclusões, riscos e recomendações para tomada de decisão (gestão, operação, clientes, órgãos públicos etc.) <sup id="fnref:3"><a class="footnote-ref" href="#fn:3">3</a></sup>.</li>
+<li><strong>Comunicação (explanatory)</strong>: quando a equipe precisa explicar conclusões, riscos e recomendações para tomada de decisão (gestão, operação, clientes, órgãos públicos etc.) <sup id="fnref2:3"><a class="footnote-ref" href="#fn:3">3</a></sup>.</li>
 </ul>
+<h2 id="analise-e-visualizacao-uma-relacao-de-mao-dupla">Análise e visualização: uma relação de mão dupla<a class="headerlink" href="#analise-e-visualizacao-uma-relacao-de-mao-dupla" title="Permanent link">¶</a></h2>
+<p>Em Ciência de Dados, “analisar” não significa apenas calcular métricas ou treinar modelos. Analisar significa <strong>produzir entendimento</strong>: identificar padrões, detectar exceções, propor explicações, comparar cenários e justificar decisões. Nesse sentido, visualização e análise caminham juntas.</p>
+<p>Durante a exploração, a visualização costuma ser a forma mais rápida de descobrir inconsistências (valores faltantes, faixas impossíveis, mudanças bruscas), relações prováveis entre variáveis e recortes relevantes (por grupo, por período, por região). Durante a comunicação, a visualização passa a ter outro objetivo: <strong>convencer com evidência</strong>, reduzindo ambiguidade e tornando a conclusão auditável <sup id="fnref:3"><a class="footnote-ref" href="#fn:3">3</a></sup>.</p>
+<p>Como prática, é comum um ciclo iterativo no qual cada gráfico sugere uma hipótese, e cada hipótese sugere um novo gráfico. Esse ciclo pode ser resumido assim:</p>
+<div class="mermaid">flowchart LR
+  P["Pergunta / decisão"] --&gt; D["Dados disponíveis"]
+  D --&gt; V["Visualização e EDA"]
+  V --&gt; H["Hipóteses"]
+  H --&gt; T["Testes / métricas / modelos"]
+  T --&gt; C["Conclusão provisória"]
+  C --&gt; V
+  C --&gt; R["Relato (gráficos + texto + contexto)"]
+</div>
 <h2 id="por-que-visualizar-dados-e-util">Por que visualizar dados é útil<a class="headerlink" href="#por-que-visualizar-dados-e-util" title="Permanent link">¶</a></h2>
 <p>A visualização de dados é útil porque reduz a carga cognitiva de analisar grandes volumes de informação: relações que seriam difíceis de perceber em uma planilha (tendências, sazonalidade, outliers, agrupamentos) podem se tornar evidentes em um gráfico bem escolhido.</p>
 <p>Alguns objetivos típicos:</p>
@@ -744,8 +831,30 @@
 <li><strong>Dados espaciais</strong>: mapas e heatmaps ajudam a responder “onde está acontecendo?” (ex.: talhões, municípios, regiões)</li>
 </ul>
 <p>Em áreas como o agronegócio, a dimensão <strong>temporal</strong> (safra, clima, janelas de plantio) e a dimensão <strong>espacial</strong> (talhões, variabilidade intra-talhão) tornam séries temporais e visualizações georreferenciadas especialmente relevantes <sup id="fnref:4"><a class="footnote-ref" href="#fn:4">4</a></sup>.</p>
+<h2 id="principais-tipos-de-grafico-com-figuras">Principais tipos de gráfico (com figuras)<a class="headerlink" href="#principais-tipos-de-grafico-com-figuras" title="Permanent link">¶</a></h2>
+<p>Esta seção organiza os gráficos mais comuns por tipo de pergunta. Em atividades práticas, a ideia é que os estudantes consigam justificar a escolha do gráfico com base no objetivo analítico.</p>
+<h3 id="grafico-de-barras-comparar-categorias">Gráfico de barras (comparar categorias)<a class="headerlink" href="#grafico-de-barras-comparar-categorias" title="Permanent link">¶</a></h3>
+<p><img alt="Exemplo de gráfico de barras" src="../../../../img/ccc-296/visualizacao/bar.svg" width="750"/></p>
+<p>Gráficos de barras são apropriados quando a pergunta é “qual categoria tem mais/menos?” ou “como as categorias se comparam?”. Eles funcionam bem para contagens e agregações (média, soma) por grupo. Um cuidado recorrente é evitar escalas enganosas: em muitas situações de comparação direta, iniciar o eixo em zero torna as diferenças mais honestas.</p>
+<h3 id="grafico-de-linhas-series-temporais">Gráfico de linhas (séries temporais)<a class="headerlink" href="#grafico-de-linhas-series-temporais" title="Permanent link">¶</a></h3>
+<p><img alt="Exemplo de gráfico de linhas" src="../../../../img/ccc-296/visualizacao/line.svg" width="750"/></p>
+<p>Gráficos de linhas são adequados para acompanhar um indicador ao longo do tempo e responder perguntas como “há tendência?”, “há sazonalidade?” e “houve mudança de patamar?”. Em domínios com sazonalidade forte (como o agronegócio), é útil explicitar período (safra), frequência (diária, semanal, mensal) e eventuais lacunas de medição.</p>
+<h3 id="dispersao-relacao-entre-variaveis">Dispersão (relação entre variáveis)<a class="headerlink" href="#dispersao-relacao-entre-variaveis" title="Permanent link">¶</a></h3>
+<p><img alt="Exemplo de gráfico de dispersão" src="../../../../img/ccc-296/visualizacao/scatter.svg" width="750"/></p>
+<p>Um gráfico de dispersão ajuda a avaliar associação entre duas variáveis numéricas e a perceber agrupamentos, relações não lineares e outliers. É um gráfico típico para iniciar discussões do tipo “quando <span class="arithmatex">\(X\)</span> aumenta, <span class="arithmatex">\(Y\)</span> tende a aumentar/diminuir?” — com o cuidado didático de lembrar que associação não implica causalidade.</p>
+<h3 id="histograma-distribuicao">Histograma (distribuição)<a class="headerlink" href="#histograma-distribuicao" title="Permanent link">¶</a></h3>
+<p><img alt="Exemplo de histograma" src="../../../../img/ccc-296/visualizacao/histogram.svg" width="750"/></p>
+<p>Histogramas representam a distribuição de uma variável numérica e ajudam a responder “quais valores são comuns e quais são raros?”. A escolha do número de intervalos (bins) influencia bastante a leitura: poucos bins podem esconder estrutura, e bins demais podem criar ruído. É comum comparar histogramas por grupo (ex.: regiões, turnos, cultivares) para observar diferenças de perfil.</p>
+<h3 id="boxplot-resumo-robusto-da-distribuicao">Boxplot (resumo robusto da distribuição)<a class="headerlink" href="#boxplot-resumo-robusto-da-distribuicao" title="Permanent link">¶</a></h3>
+<p><img alt="Exemplo de boxplot" src="../../../../img/ccc-296/visualizacao/boxplot.svg" width="750"/></p>
+<p>Boxplots resumem distribuição por grupo destacando mediana, quartis e possíveis outliers. São úteis quando os estudantes precisam comparar rapidamente muitos grupos e manter uma leitura robusta a valores extremos. Como contrapartida, boxplots escondem detalhes de formato (por exemplo, bimodalidade), então frequentemente são complementados por histogramas ou gráficos de violino.</p>
+<h3 id="heatmap-mapa-de-calor-matrizes-e-padroes">Heatmap (mapa de calor: matrizes e padrões)<a class="headerlink" href="#heatmap-mapa-de-calor-matrizes-e-padroes" title="Permanent link">¶</a></h3>
+<p><img alt="Exemplo de heatmap" src="../../../../img/ccc-296/visualizacao/heatmap.svg" width="750"/></p>
+<p>Heatmaps são úteis quando existe uma matriz de valores e a cor comunica intensidade. Exemplos típicos incluem: matriz de correlação, presença/ausência de dados por dia e sensor, e “calendários” (dia x hora) para ver picos de atividade. Como boa prática, é importante escolher uma escala de cores que preserve contraste e não dependa apenas de tons problemáticos para daltonismo.</p>
+<h3 id="outros-graficos-relevantes-quando-fizer-sentido">Outros gráficos relevantes (quando fizer sentido)<a class="headerlink" href="#outros-graficos-relevantes-quando-fizer-sentido" title="Permanent link">¶</a></h3>
+<p>Além dos tipos acima, aparecem com frequência: gráficos de área (acúmulo), barras empilhadas (composição), bolhas (3 variáveis), mapas coropléticos e mapas por pontos (dimensão espacial), e gráficos de rede (relações entre entidades). A regra didática permanece a mesma: a escolha deve ser guiada pela pergunta e pela forma do dado, e não pela estética <sup id="fnref2:1"><a class="footnote-ref" href="#fn:1">1</a></sup><sup id="fnref2:2"><a class="footnote-ref" href="#fn:2">2</a></sup>.</p>
 <h2 id="boas-praticas-clareza-honestidade-e-acessibilidade">Boas práticas (clareza, honestidade e acessibilidade)<a class="headerlink" href="#boas-praticas-clareza-honestidade-e-acessibilidade" title="Permanent link">¶</a></h2>
-<p>A literatura clássica enfatiza que um bom gráfico deve favorecer a leitura correta dos dados e reduzir o risco de interpretações equivocadas <sup id="fnref2:1"><a class="footnote-ref" href="#fn:1">1</a></sup><sup id="fnref2:2"><a class="footnote-ref" href="#fn:2">2</a></sup>. Na prática, algumas recomendações recorrentes são:</p>
+<p>A literatura clássica enfatiza que um bom gráfico deve favorecer a leitura correta dos dados e reduzir o risco de interpretações equivocadas <sup id="fnref3:1"><a class="footnote-ref" href="#fn:1">1</a></sup><sup id="fnref3:2"><a class="footnote-ref" href="#fn:2">2</a></sup>. Na prática, algumas recomendações recorrentes são:</p>
 <ul>
 <li><strong>Definir a pergunta antes do gráfico</strong>: o mesmo dado pode exigir gráficos diferentes dependendo do objetivo.</li>
 <li><strong>Usar escalas e eixos com cuidado</strong>: em gráficos de barras, é comum iniciar o eixo em zero; em séries temporais, deve-se registrar quebras e mudanças de escala.</li>
@@ -753,6 +862,17 @@
 <li><strong>Rotular unidades e contexto</strong>: título informativo, legenda, período analisado, fonte dos dados.</li>
 <li><strong>Pensar em acessibilidade</strong>: evitar depender apenas de cor para diferenciar grupos; escolher paletas amigáveis para daltonismo e manter contraste adequado.</li>
 </ul>
+<h2 id="storytelling-com-dados-narrativa-baseada-em-evidencias">Storytelling com dados (narrativa baseada em evidências)<a class="headerlink" href="#storytelling-com-dados-narrativa-baseada-em-evidencias" title="Permanent link">¶</a></h2>
+<p>Storytelling com dados é a prática de <strong>organizar evidências</strong> (gráficos, tabelas, números e contexto) em uma narrativa que facilita compreensão e tomada de decisão. A ênfase está menos em “contar uma história bonita” e mais em <strong>reduzir ambiguidades</strong>: explicitar qual é a mensagem central, por que ela importa e quais evidências a sustentam <sup id="fnref:5"><a class="footnote-ref" href="#fn:5">5</a></sup><sup id="fnref:6"><a class="footnote-ref" href="#fn:6">6</a></sup>.</p>
+<p>Em um relatório técnico, uma estrutura simples (e recorrente) é:</p>
+<div class="mermaid">flowchart TD
+  A["Contexto: qual decisão está em jogo?"] --&gt; B["Pergunta: o que precisa ser respondido?"]
+  B --&gt; C["Evidências: gráficos e métricas"]
+  C --&gt; D["Interpretação: o que isso significa?"]
+  D --&gt; E["Recomendação: o que fazer agora?"]
+  E --&gt; F["Riscos e limitações"]
+</div>
+<p>Do ponto de vista didático, algumas técnicas comuns no storytelling com dados incluem: reduzir o número de gráficos ao essencial, usar títulos que expressem a mensagem (não apenas o tema), aplicar anotações e destaques para guiar a leitura e registrar limitações (viés de amostragem, mudanças de coleta, períodos incomparáveis). Essas escolhas também se relacionam à ética: uma narrativa bem feita não “esconde o que incomoda”; ela mostra com honestidade e contextualiza <sup id="fnref4:1"><a class="footnote-ref" href="#fn:1">1</a></sup>.</p>
 <h2 id="relacao-com-inteligencia-artificial">Relação com Inteligência Artificial<a class="headerlink" href="#relacao-com-inteligencia-artificial" title="Permanent link">¶</a></h2>
 <p>A visualização de dados se relaciona com Inteligência Artificial (IA) de forma direta porque a maior parte do trabalho com IA começa (e frequentemente termina) com <strong>entendimento e comunicação</strong> baseada em dados.</p>
 <h3 id="visualizacao-antes-do-modelo">Visualização “antes” do modelo<a class="headerlink" href="#visualizacao-antes-do-modelo" title="Permanent link">¶</a></h3>
@@ -770,7 +890,7 @@
 <li>curvas de aprendizado e métricas por época (especialmente em redes neurais);</li>
 <li>matriz de confusão, ROC/PR e métricas por grupo (para checar erros críticos);</li>
 <li>análise de erro (quais casos o modelo erra e por quê);</li>
-<li>explicabilidade e interpretação (quando a decisão exige justificativa) <sup id="fnref:5"><a class="footnote-ref" href="#fn:5">5</a></sup>.</li>
+<li>explicabilidade e interpretação (quando a decisão exige justificativa) <sup id="fnref:7"><a class="footnote-ref" href="#fn:7">7</a></sup>.</li>
 </ul>
 <p>Um ponto importante: nem toda explicação é “a verdade do modelo”; muitas técnicas produzem aproximações úteis para auditoria e comunicação. O foco didático é aprender a usar visualizações como ferramenta de <strong>diagnóstico</strong> e <strong>governança</strong> do sistema de IA.</p>
 <h3 id="um-ciclo-integrado-dados-visualizacao-ia-acao">Um ciclo integrado (dados → visualização → IA → ação)<a class="headerlink" href="#um-ciclo-integrado-dados-visualizacao-ia-acao" title="Permanent link">¶</a></h3>
@@ -794,30 +914,36 @@
 <li><strong>Índices de vegetação e mapas (ex.: NDVI)</strong>: visualizações a partir de sensoriamento remoto para monitorar vigor, estresse hídrico e evolução da cultura.</li>
 <li><strong>Dashboards de frota e operações</strong>: telemetria de máquinas, consumo, rotas e tempo de operação.</li>
 </ul>
-<p>Quando IA é aplicada (por exemplo, visão computacional para identificar doenças em folhas, ou modelos para prever produtividade), a visualização continua indispensável para validar dados e resultados e reduzir riscos de decisões erradas <sup id="fnref:6"><a class="footnote-ref" href="#fn:6">6</a></sup>. Em cenários com drones e imagens aéreas, revisões sobre agricultura de precisão destacam o papel de mapas e imagens como base para análises e recomendações <sup id="fnref:7"><a class="footnote-ref" href="#fn:7">7</a></sup>.</p>
+<p>Quando IA é aplicada (por exemplo, visão computacional para identificar doenças em folhas, ou modelos para prever produtividade), a visualização continua indispensável para validar dados e resultados e reduzir riscos de decisões erradas <sup id="fnref:8"><a class="footnote-ref" href="#fn:8">8</a></sup>. Em cenários com drones e imagens aéreas, revisões sobre agricultura de precisão destacam o papel de mapas e imagens como base para análises e recomendações <sup id="fnref:9"><a class="footnote-ref" href="#fn:9">9</a></sup>.</p>
 <div class="footnote">
 <hr/>
 <ol>
 <li id="fn:1">
-<p>Edward R. Tufte. <em>The Visual Display of Quantitative Information</em>. Graphics Press, 2 edition, 2001. <a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref2:1" title="Jump back to footnote 1 in the text">↩</a></p>
+<p>Edward R. Tufte. <em>The Visual Display of Quantitative Information</em>. Graphics Press, 2 edition, 2001. <a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref2:1" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref3:1" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref4:1" title="Jump back to footnote 1 in the text">↩</a></p>
 </li>
 <li id="fn:2">
-<p>William S. Cleveland. <em>The Elements of Graphing Data</em>. Hobart Press, 2 edition, 1994. <a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 2 in the text">↩</a><a class="footnote-backref" href="#fnref2:2" title="Jump back to footnote 2 in the text">↩</a></p>
+<p>William S. Cleveland. <em>The Elements of Graphing Data</em>. Hobart Press, 2 edition, 1994. <a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 2 in the text">↩</a><a class="footnote-backref" href="#fnref2:2" title="Jump back to footnote 2 in the text">↩</a><a class="footnote-backref" href="#fnref3:2" title="Jump back to footnote 2 in the text">↩</a></p>
 </li>
 <li id="fn:3">
-<p>Stephen Few. <em>Show Me the Numbers: Designing Tables and Graphs to Enlighten</em>. Analytics Press, 2 edition, 2012. <a class="footnote-backref" href="#fnref:3" title="Jump back to footnote 3 in the text">↩</a></p>
+<p>Stephen Few. <em>Show Me the Numbers: Designing Tables and Graphs to Enlighten</em>. Analytics Press, 2 edition, 2012. <a class="footnote-backref" href="#fnref:3" title="Jump back to footnote 3 in the text">↩</a><a class="footnote-backref" href="#fnref2:3" title="Jump back to footnote 3 in the text">↩</a></p>
 </li>
 <li id="fn:4">
 <p>Sjaak Wolfert, Lan Ge, Cor Verdouw, and Marc-Jan Bogaardt. Big data in smart farming—a review. <em>Agricultural Systems</em>, 153:69–80, 2017. <a href="https://doi.org/10.1016/j.agsy.2017.01.023">doi:10.1016/j.agsy.2017.01.023</a>. <a class="footnote-backref" href="#fnref:4" title="Jump back to footnote 4 in the text">↩</a></p>
 </li>
 <li id="fn:5">
-<p>Christoph Molnar. Interpretable machine learning: a guide for making black box models explainable. 2022. Acesso em 01 maio 2026. URL: <a href="https://christophm.github.io/interpretable-ml-book/">https://christophm.github.io/interpretable-ml-book/</a>. <a class="footnote-backref" href="#fnref:5" title="Jump back to footnote 5 in the text">↩</a></p>
+<p>Cole Nussbaumer Knaflic. <em>Storytelling with Data: A Data Visualization Guide for Business Professionals</em>. John Wiley &amp; Sons, 2015. ISBN 978-1119002253. <a class="footnote-backref" href="#fnref:5" title="Jump back to footnote 5 in the text">↩</a></p>
 </li>
 <li id="fn:6">
-<p>Andreas Kamilaris and Francesc X. Prenafeta-Boldú. Deep learning in agriculture: a survey. <em>Computers and Electronics in Agriculture</em>, 147:70–90, 2018. <a href="https://doi.org/10.1016/j.compag.2018.02.016">doi:10.1016/j.compag.2018.02.016</a>. <a class="footnote-backref" href="#fnref:6" title="Jump back to footnote 6 in the text">↩</a></p>
+<p>Jonathan A. Schwabish. <em>Better Data Visualizations: A Guide for Scholars, Researchers, and Wonks</em>. Columbia University Press, 2021. ISBN 978-0231193115. <a class="footnote-backref" href="#fnref:6" title="Jump back to footnote 6 in the text">↩</a></p>
 </li>
 <li id="fn:7">
-<p>Changying Zhang and John M. Kovacs. The application of small unmanned aerial systems for precision agriculture: a review. <em>Precision Agriculture</em>, 13(6):693–712, 2012. <a href="https://doi.org/10.1007/s11119-012-9274-5">doi:10.1007/s11119-012-9274-5</a>. <a class="footnote-backref" href="#fnref:7" title="Jump back to footnote 7 in the text">↩</a></p>
+<p>Christoph Molnar. Interpretable machine learning: a guide for making black box models explainable. 2022. Acesso em 01 maio 2026. URL: <a href="https://christophm.github.io/interpretable-ml-book/">https://christophm.github.io/interpretable-ml-book/</a>. <a class="footnote-backref" href="#fnref:7" title="Jump back to footnote 7 in the text">↩</a></p>
+</li>
+<li id="fn:8">
+<p>Andreas Kamilaris and Francesc X. Prenafeta-Boldú. Deep learning in agriculture: a survey. <em>Computers and Electronics in Agriculture</em>, 147:70–90, 2018. <a href="https://doi.org/10.1016/j.compag.2018.02.016">doi:10.1016/j.compag.2018.02.016</a>. <a class="footnote-backref" href="#fnref:8" title="Jump back to footnote 8 in the text">↩</a></p>
+</li>
+<li id="fn:9">
+<p>Changying Zhang and John M. Kovacs. The application of small unmanned aerial systems for precision agriculture: a review. <em>Precision Agriculture</em>, 13(6):693–712, 2012. <a href="https://doi.org/10.1007/s11119-012-9274-5">doi:10.1007/s11119-012-9274-5</a>. <a class="footnote-backref" href="#fnref:9" title="Jump back to footnote 9 in the text">↩</a></p>
 </li>
 </ol>
 </div>

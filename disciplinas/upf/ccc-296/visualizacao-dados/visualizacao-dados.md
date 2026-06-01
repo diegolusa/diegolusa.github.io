@@ -18,6 +18,25 @@ Em projetos reais, a visualização aparece em dois momentos complementares:
 - **Exploração (EDA — análise exploratória)**: quando a equipe ainda está entendendo os dados, avaliando qualidade e levantando hipóteses.
 - **Comunicação (explanatory)**: quando a equipe precisa explicar conclusões, riscos e recomendações para tomada de decisão (gestão, operação, clientes, órgãos públicos etc.) [@few2012show].
 
+## Análise e visualização: uma relação de mão dupla
+
+Em Ciência de Dados, “analisar” não significa apenas calcular métricas ou treinar modelos. Analisar significa **produzir entendimento**: identificar padrões, detectar exceções, propor explicações, comparar cenários e justificar decisões. Nesse sentido, visualização e análise caminham juntas.
+
+Durante a exploração, a visualização costuma ser a forma mais rápida de descobrir inconsistências (valores faltantes, faixas impossíveis, mudanças bruscas), relações prováveis entre variáveis e recortes relevantes (por grupo, por período, por região). Durante a comunicação, a visualização passa a ter outro objetivo: **convencer com evidência**, reduzindo ambiguidade e tornando a conclusão auditável [@few2012show].
+
+Como prática, é comum um ciclo iterativo no qual cada gráfico sugere uma hipótese, e cada hipótese sugere um novo gráfico. Esse ciclo pode ser resumido assim:
+
+```mermaid
+flowchart LR
+  P["Pergunta / decisão"] --> D["Dados disponíveis"]
+  D --> V["Visualização e EDA"]
+  V --> H["Hipóteses"]
+  H --> T["Testes / métricas / modelos"]
+  T --> C["Conclusão provisória"]
+  C --> V
+  C --> R["Relato (gráficos + texto + contexto)"]
+```
+
 ## Por que visualizar dados é útil
 
 A visualização de dados é útil porque reduz a carga cognitiva de analisar grandes volumes de informação: relações que seriam difíceis de perceber em uma planilha (tendências, sazonalidade, outliers, agrupamentos) podem se tornar evidentes em um gráfico bem escolhido.
@@ -42,6 +61,50 @@ A escolha do gráfico deve seguir a pergunta analítica, não a preferência est
 
 Em áreas como o agronegócio, a dimensão **temporal** (safra, clima, janelas de plantio) e a dimensão **espacial** (talhões, variabilidade intra-talhão) tornam séries temporais e visualizações georreferenciadas especialmente relevantes [@wolfert2017bigdata].
 
+## Principais tipos de gráfico (com figuras)
+
+Esta seção organiza os gráficos mais comuns por tipo de pergunta. Em atividades práticas, a ideia é que os estudantes consigam justificar a escolha do gráfico com base no objetivo analítico.
+
+### Gráfico de barras (comparar categorias)
+
+![Exemplo de gráfico de barras](../../../img/ccc-296/visualizacao/bar.svg){ width="750" }
+
+Gráficos de barras são apropriados quando a pergunta é “qual categoria tem mais/menos?” ou “como as categorias se comparam?”. Eles funcionam bem para contagens e agregações (média, soma) por grupo. Um cuidado recorrente é evitar escalas enganosas: em muitas situações de comparação direta, iniciar o eixo em zero torna as diferenças mais honestas.
+
+### Gráfico de linhas (séries temporais)
+
+![Exemplo de gráfico de linhas](../../../img/ccc-296/visualizacao/line.svg){ width="750" }
+
+Gráficos de linhas são adequados para acompanhar um indicador ao longo do tempo e responder perguntas como “há tendência?”, “há sazonalidade?” e “houve mudança de patamar?”. Em domínios com sazonalidade forte (como o agronegócio), é útil explicitar período (safra), frequência (diária, semanal, mensal) e eventuais lacunas de medição.
+
+### Dispersão (relação entre variáveis)
+
+![Exemplo de gráfico de dispersão](../../../img/ccc-296/visualizacao/scatter.svg){ width="750" }
+
+Um gráfico de dispersão ajuda a avaliar associação entre duas variáveis numéricas e a perceber agrupamentos, relações não lineares e outliers. É um gráfico típico para iniciar discussões do tipo “quando $X$ aumenta, $Y$ tende a aumentar/diminuir?” — com o cuidado didático de lembrar que associação não implica causalidade.
+
+### Histograma (distribuição)
+
+![Exemplo de histograma](../../../img/ccc-296/visualizacao/histogram.svg){ width="750" }
+
+Histogramas representam a distribuição de uma variável numérica e ajudam a responder “quais valores são comuns e quais são raros?”. A escolha do número de intervalos (bins) influencia bastante a leitura: poucos bins podem esconder estrutura, e bins demais podem criar ruído. É comum comparar histogramas por grupo (ex.: regiões, turnos, cultivares) para observar diferenças de perfil.
+
+### Boxplot (resumo robusto da distribuição)
+
+![Exemplo de boxplot](../../../img/ccc-296/visualizacao/boxplot.svg){ width="750" }
+
+Boxplots resumem distribuição por grupo destacando mediana, quartis e possíveis outliers. São úteis quando os estudantes precisam comparar rapidamente muitos grupos e manter uma leitura robusta a valores extremos. Como contrapartida, boxplots escondem detalhes de formato (por exemplo, bimodalidade), então frequentemente são complementados por histogramas ou gráficos de violino.
+
+### Heatmap (mapa de calor: matrizes e padrões)
+
+![Exemplo de heatmap](../../../img/ccc-296/visualizacao/heatmap.svg){ width="750" }
+
+Heatmaps são úteis quando existe uma matriz de valores e a cor comunica intensidade. Exemplos típicos incluem: matriz de correlação, presença/ausência de dados por dia e sensor, e “calendários” (dia x hora) para ver picos de atividade. Como boa prática, é importante escolher uma escala de cores que preserve contraste e não dependa apenas de tons problemáticos para daltonismo.
+
+### Outros gráficos relevantes (quando fizer sentido)
+
+Além dos tipos acima, aparecem com frequência: gráficos de área (acúmulo), barras empilhadas (composição), bolhas (3 variáveis), mapas coropléticos e mapas por pontos (dimensão espacial), e gráficos de rede (relações entre entidades). A regra didática permanece a mesma: a escolha deve ser guiada pela pergunta e pela forma do dado, e não pela estética [@tufte2001visual; @cleveland1994elements].
+
 ## Boas práticas (clareza, honestidade e acessibilidade)
 
 A literatura clássica enfatiza que um bom gráfico deve favorecer a leitura correta dos dados e reduzir o risco de interpretações equivocadas [@tufte2001visual; @cleveland1994elements]. Na prática, algumas recomendações recorrentes são:
@@ -51,6 +114,23 @@ A literatura clássica enfatiza que um bom gráfico deve favorecer a leitura cor
 - **Evitar 3D e efeitos decorativos**: aumentam ruído sem melhorar o entendimento.
 - **Rotular unidades e contexto**: título informativo, legenda, período analisado, fonte dos dados.
 - **Pensar em acessibilidade**: evitar depender apenas de cor para diferenciar grupos; escolher paletas amigáveis para daltonismo e manter contraste adequado.
+
+## Storytelling com dados (narrativa baseada em evidências)
+
+Storytelling com dados é a prática de **organizar evidências** (gráficos, tabelas, números e contexto) em uma narrativa que facilita compreensão e tomada de decisão. A ênfase está menos em “contar uma história bonita” e mais em **reduzir ambiguidades**: explicitar qual é a mensagem central, por que ela importa e quais evidências a sustentam [@knaflic2015storytelling; @schwabish2021better].
+
+Em um relatório técnico, uma estrutura simples (e recorrente) é:
+
+```mermaid
+flowchart TD
+  A["Contexto: qual decisão está em jogo?"] --> B["Pergunta: o que precisa ser respondido?"]
+  B --> C["Evidências: gráficos e métricas"]
+  C --> D["Interpretação: o que isso significa?"]
+  D --> E["Recomendação: o que fazer agora?"]
+  E --> F["Riscos e limitações"]
+```
+
+Do ponto de vista didático, algumas técnicas comuns no storytelling com dados incluem: reduzir o número de gráficos ao essencial, usar títulos que expressem a mensagem (não apenas o tema), aplicar anotações e destaques para guiar a leitura e registrar limitações (viés de amostragem, mudanças de coleta, períodos incomparáveis). Essas escolhas também se relacionam à ética: uma narrativa bem feita não “esconde o que incomoda”; ela mostra com honestidade e contextualiza [@tufte2001visual].
 
 ## Relação com Inteligência Artificial
 
