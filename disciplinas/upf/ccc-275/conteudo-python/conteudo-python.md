@@ -828,6 +828,110 @@ O **escopo global**, por sua vez, compreende as variáveis definidas fora de qua
  
 Para certas situações, é necessário utilizar as palavras reservadas [`global`](https://www.w3schools.com/python/ref_keyword_global.asp) e [`nonlocal`](https://www.w3schools.com/python/ref_keyword_nonlocal.asp) para resolver questões associadas com escopo de variáveis no Python.
 
+## Recursividade
+
+Recursividade é uma técnica em que uma função resolve um problema chamando a si mesma com uma versão menor (ou mais simples) do problema original. Ela é muito útil quando o problema possui natureza **repetitiva e auto semelhante**, como cálculos matemáticos, estruturas em árvore e percursos em diretórios.
+
+Toda solução recursiva precisa de dois componentes obrigatórios:
+
+- **Caso base**: condição de parada que encerra as chamadas recursivas.
+- **Passo recursivo**: chamada da função para um subproblema menor.
+
+Sem caso base, a função entrará em chamadas infinitas até ocorrer erro de execução por limite de profundidade.
+
+### Como pensar em recursividade
+
+Ao projetar uma função recursiva, siga este raciocínio:
+
+1. Identifique a menor entrada possível (caso base).
+2. Defina como reduzir o problema atual para uma versão menor.
+3. Garanta que a redução sempre se aproxima do caso base.
+
+Em Python, cada chamada recursiva ocupa um espaço na pilha de execução (*call stack*). Por esse motivo, recursão muito profunda pode gerar `RecursionError`.
+
+### Exemplo 1: fatorial
+
+O fatorial de `n` (com `n >= 0`) é definido por:
+
+- `0! = 1` (caso base)
+- `n! = n * (n-1)!` (passo recursivo)
+
+```python
+def fatorial(n):
+    if n < 0:
+        raise ValueError("n deve ser maior ou igual a 0")
+    if n == 0:
+        return 1
+    return n * fatorial(n - 1)
+
+
+print(fatorial(5))  # 120
+```
+
+### Exemplo 2: soma dos elementos de uma lista
+
+Neste caso, somamos o primeiro elemento com a soma recursiva do restante da lista.
+
+```python
+def soma_lista(valores):
+    if len(valores) == 0:
+        return 0
+    return valores[0] + soma_lista(valores[1:])
+
+
+print(soma_lista([10, 20, 30, 40]))  # 100
+```
+
+### Exemplo 3: percorrendo estrutura hierárquica (uso prático)
+
+Recursividade é especialmente útil para percorrer dados hierárquicos, como menus, árvores de categorias ou estruturas de pastas.
+
+```python
+arvore = {
+    "nome": "raiz",
+    "filhos": [
+        {
+            "nome": "documentos",
+            "filhos": [
+                {"nome": "aula.pdf", "filhos": []},
+                {"nome": "exercicios", "filhos": []},
+            ],
+        },
+        {
+            "nome": "imagens",
+            "filhos": [
+                {"nome": "foto.png", "filhos": []}
+            ],
+        },
+    ],
+}
+
+
+def imprimir_arvore(no, nivel=0):
+    print("  " * nivel + "- " + no["nome"])
+    for filho in no["filhos"]:
+        imprimir_arvore(filho, nivel + 1)
+
+
+imprimir_arvore(arvore)
+```
+
+### Quando usar recursividade
+
+Use recursividade quando:
+
+- o problema pode ser naturalmente dividido em subproblemas do mesmo tipo;
+- existe uma condição de parada clara;
+- a solução recursiva fica mais legível que uma solução iterativa.
+
+Evite recursividade quando:
+
+- a profundidade esperada é muito alta;
+- uma abordagem iterativa com laços (`for`/`while`) é mais simples e eficiente para o caso.
+
+!!! note "Resumo"
+    Recursividade é uma técnica poderosa para resolver problemas hierárquicos e matemáticos. O ponto mais importante é sempre garantir um **caso base correto** e um **passo recursivo que progrida para a parada**.
+
 ## Captura e tratamento de exceções
 
 
